@@ -4,6 +4,7 @@
   import { go } from '../lib/router.svelte';
   import type { MapHandle } from '../lib/map';
   import type { Origin, RankedSite } from '../lib/proximity';
+  import { handleMapError, type MapFailure } from '../lib/update';
   import MapNotice from './MapNotice.svelte';
 
   /**
@@ -14,7 +15,7 @@
 
   let el: HTMLDivElement;
   let handle = $state<MapHandle | null>(null);
-  let failed = $state(false);
+  let failed = $state<MapFailure | null>(null);
   let marker: { remove(): void; setLngLat(ll: [number, number]): unknown } | null = null;
   let MarkerCls: (new (o: { element: HTMLElement }) => { setLngLat(ll: [number, number]): { addTo(m: unknown): unknown }; remove(): void }) | null = null;
 
@@ -28,7 +29,7 @@
         h.map.once('idle', () => h.upgradeDetail());
         handle = h;
       })
-      .catch(() => { failed = true; });
+      .catch((e) => { failed = handleMapError(e); });
     return () => { destroyed = true; marker?.remove(); handle?.destroy(); };
   });
 
@@ -52,7 +53,7 @@
 
 <figure class="near-map card" aria-label={t('near.mapLabel')}>
   <div class="canvas" bind:this={el}></div>
-  {#if failed}<MapNotice />{/if}
+  {#if failed}<MapNotice kind={failed} />{/if}
 </figure>
 
 <style>

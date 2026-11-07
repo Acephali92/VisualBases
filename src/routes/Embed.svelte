@@ -7,11 +7,12 @@
   import type { MapHandle } from '../lib/map';
   import Legend from '../components/Legend.svelte';
   import MapNotice from '../components/MapNotice.svelte';
+  import { handleMapError, type MapFailure } from '../lib/update';
 
   /** chrome-free map for iframes on partner sites: #/embed?themes=drones */
   let el: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
-  let mapFailed = $state(false);
+  let mapFailed = $state<MapFailure | null>(null);
   let tip = $state<{ name: string; x: number; y: number } | null>(null);
   const filters = $derived(queryToFilters(route.query));
   const shown = $derived(db.bases.filter((b) => matches(b, filters, countryName)));
@@ -36,13 +37,13 @@
         onSelect: (id) => open(`${site()}#/base/${id}`, '_blank', 'noopener'),
         onHover: (b, x, y) => (tip = b ? { name: b.name, x, y } : null),
       }),
-    ).then((h) => { if (dead) h.destroy(); else handle = h; }).catch((e) => { console.warn(e); mapFailed = true; });
+    ).then((h) => { if (dead) h.destroy(); else handle = h; }).catch((e) => { mapFailed = handleMapError(e); });
     return () => { dead = true; handle?.destroy(); };
   });
 </script>
 
 <div class="embed">
-  <div class="map" bind:this={el}>{#if mapFailed}<MapNotice />{/if}</div>
+  <div class="map" bind:this={el}>{#if mapFailed}<MapNotice kind={mapFailed} />{/if}</div>
   {#if tip}<div class="tip" style:left="{tip.x}px" style:top="{tip.y}px">{tip.name}</div>{/if}
   <a class="badge" href="{site()}#/atlas{route.query ? '?' + route.query : ''}" target="_blank" rel="noopener">
     Visual<b>Bases</b> · {t('filters.results', { n: shown.length })} ↗

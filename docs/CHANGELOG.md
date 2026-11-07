@@ -18,6 +18,15 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ### Geändert
 - `distanceKm`: numerisch stabile atan2-Form, mittlerer Erdradius 6371,0088 km, `NaN` statt Scheinwert bei ungültigen Koordinaten.
 
+## [Unreleased] – Karte nach Updates
+
+### Behoben
+- **Karte fehlte nach einem Update** („Die interaktive Karte kann in diesem Browser nicht angezeigt werden … WebGL“): Browser mit der vorigen Version im Service-Worker-Cache führten nach dem Deployment noch die alte App aus. Deren nachgeladenes Kartenmodul gab es auf dem Server nicht mehr (404), und jeder Ladefehler wurde als fehlendes WebGL gemeldet.
+  - Der Service Worker wird jetzt per `virtual:pwa-register` registriert; mit `autoUpdate` lädt die Seite neu, sobald die neue Version übernimmt.
+  - Schlägt das Nachladen eines Moduls fehl, lädt die Seite einmal neu (`src/lib/update.ts`, Sperre gegen Endlosschleifen: höchstens einmal pro Minute).
+  - Der WebGL-Hinweis erscheint nur noch bei fehlendem WebGL; ein Ladefehler zeigt „Die Karte konnte nicht geladen werden“ mit Knopf „Neu laden“.
+
+
 ## [Unreleased] – Workflow „Recherche“
 
 ### Geändert

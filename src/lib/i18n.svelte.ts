@@ -55,6 +55,9 @@ const de = {
   'map.unavailable': 'Die interaktive Karte kann in diesem Browser nicht angezeigt werden.',
   'map.unavailableText': 'Sie benötigt WebGL, das hier nicht verfügbar oder deaktiviert ist.',
   'map.listHint': 'Alle Standorte, Filter und Profile funktionieren weiterhin über die Liste.',
+  'map.loadFailed': 'Die Karte konnte nicht geladen werden.',
+  'map.loadFailedText': 'Wahrscheinlich wurde VisualBases gerade aktualisiert. Bitte die Seite neu laden.',
+  'map.reload': 'Neu laden',
   'map.reset': 'Ganze Welt',
 
 
@@ -381,6 +384,9 @@ const en: Dict = {
   'map.unavailable': 'The interactive map cannot be shown in this browser.',
   'map.unavailableText': 'It needs WebGL, which is unavailable or disabled here.',
   'map.listHint': 'All sites, filters and profiles still work via the list.',
+  'map.loadFailed': 'The map could not be loaded.',
+  'map.loadFailedText': 'VisualBases was probably just updated. Please reload the page.',
+  'map.reload': 'Reload',
   'map.reset': 'Whole world',
 
 

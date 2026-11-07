@@ -12,10 +12,11 @@
   import Legend from '../components/Legend.svelte';
   import BaseProfile from '../components/BaseProfile.svelte';
   import MapNotice from '../components/MapNotice.svelte';
+  import { handleMapError, type MapFailure } from '../lib/update';
 
   let mapEl: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
-  let mapFailed = $state(false);
+  let mapFailed = $state<MapFailure | null>(null);
   let tip = $state<{ name: string; x: number; y: number } | null>(null);
   let filterOpen = $state(false);
   let sheetOpen = $state(false);
@@ -162,9 +163,8 @@
       if (destroyed) return h.destroy();
       handle = h;
     }).catch((e) => {
-      console.warn(e);
-      mapFailed = true;
-      sheetOpen = true;
+      mapFailed = handleMapError(e);
+      if (mapFailed) sheetOpen = true;
     });
     return () => {
       destroyed = true;
@@ -176,13 +176,13 @@
 
 <div class="atlas">
   <div class="map" bind:this={mapEl} role="application" aria-label={t('nav.atlas')}>
-    {#if mapFailed}<MapNotice hint={t('map.listHint')} />{/if}
+    {#if mapFailed}<MapNotice kind={mapFailed} hint={t('map.listHint')} />{/if}
   </div>
   {#if tip}
     <div class="tip" style:left="{tip.x}px" style:top="{tip.y}px">{tip.name}</div>
   {/if}
 
-  <div class="map-tools" hidden={mapFailed}>
+  <div class="map-tools" hidden={!!mapFailed}>
     <button class="btn btn-sm" aria-pressed={settings.satellite} title={t('map.satelliteHint')} onclick={() => setSatellite(!settings.satellite)}>
       🛰 {t('map.satellite')}
     </button>
