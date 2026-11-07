@@ -37,6 +37,18 @@
   }
  },
  "ab-comalpa-el-salvador": {
+  "bsr": {
+   "fy2023": {
+    "country": "El Salvador",
+    "site": "CSL El Salvador",
+    "component": "Navy Active",
+    "city": "San Salvador",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q587675",
    "coord": [
@@ -56,21 +68,21 @@
    "inception": "1979",
    "dissolved": null,
    "website": "http://www.cepa.gob.sv/aies/"
-  },
+  }
+ },
+ "abdullah-al-mubarak-ab": {
   "bsr": {
    "fy2023": {
-    "country": "El Salvador",
-    "site": "CSL El Salvador",
-    "component": "Navy Active",
-    "city": "San Salvador",
+    "country": "Kuwait",
+    "site": "Al Mubarak Air Base",
+    "component": "Air Force Active",
+    "city": "Kuwait",
     "match": "manual",
     "score": 1
    },
    "fy2019": null,
    "review": "supports"
-  }
- },
- "abdullah-al-mubarak-ab": {
+  },
   "wikidata": {
    "item": "Q527157",
    "coord": [
@@ -91,18 +103,6 @@
    "inception": null,
    "dissolved": null,
    "website": "http://www.kuwait-airport.com.kw/Index_e.htm"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Kuwait",
-    "site": "Al Mubarak Air Base",
-    "component": "Air Force Active",
-    "city": "Kuwait",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "abu-dhabi-uae-2": {
@@ -116,22 +116,6 @@
   }
  },
  "air-force-301-cameroon": {
-  "wikidata": {
-   "item": "Q55606491",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Cameroon"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -167,25 +151,25 @@
    "count": 5,
    "lat": 9.3351,
    "lon": 13.378
-  }
- },
- "aircom": {
+  },
   "wikidata": {
-   "item": "Q1421943",
+   "item": "Q55606491",
    "coord": null,
    "distanceKm": null,
    "operators": [],
    "occupants": [],
    "country": [
-    "Germany"
+    "Cameroon"
    ],
    "instanceOf": [
-    "military aviation command"
+    "airbase"
    ],
-   "inception": "2013-01-01",
+   "inception": null,
    "dissolved": null,
-   "website": "https://ac.nato.int/"
-  },
+   "website": null
+  }
+ },
+ "aircom": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -221,32 +205,25 @@
    "count": 40,
    "lat": 49.457,
    "lon": 7.596
-  }
- },
- "airport-leipzig-halle": {
+  },
   "wikidata": {
-   "item": "Q668382",
-   "coord": [
-    51.42399,
-    12.23638
-   ],
-   "distanceKm": 1.2,
-   "operators": [
-    "Flughafen Leipzig/Halle GmbH"
-   ],
-   "occupants": [
-    "Lufthansa"
-   ],
+   "item": "Q1421943",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
    "country": [
     "Germany"
    ],
    "instanceOf": [
-    "commercial airport"
+    "military aviation command"
    ],
-   "inception": "1927",
+   "inception": "2013-01-01",
    "dissolved": null,
-   "website": "https://www.mdf-ag.com/reisende-und-besucher/flughafen-leipzig-halle/"
-  },
+   "website": "https://ac.nato.int/"
+  }
+ },
+ "airport-leipzig-halle": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -275,6 +252,29 @@
    "count": 2,
    "lat": 51.4133,
    "lon": 12.235
+  },
+  "wikidata": {
+   "item": "Q668382",
+   "coord": [
+    51.42399,
+    12.23638
+   ],
+   "distanceKm": 1.2,
+   "operators": [
+    "Flughafen Leipzig/Halle GmbH"
+   ],
+   "occupants": [
+    "Lufthansa"
+   ],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "commercial airport"
+   ],
+   "inception": "1927",
+   "dissolved": null,
+   "website": "https://www.mdf-ag.com/reisende-und-besucher/flughafen-leipzig-halle/"
   }
  },
  "aitos-bulgaria": {
@@ -342,29 +342,6 @@
   }
  },
  "al-dhafra-air-base": {
-  "wikidata": {
-   "item": "Q2886453",
-   "coord": [
-    24.24806,
-    54.5475
-   ],
-   "distanceKm": 0.5,
-   "operators": [
-    "United Arab Emirates Air Force",
-    "French Air Force",
-    "United States Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "United Arab Emirates"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": "1992",
-   "dissolved": null,
-   "website": "https://www.dhafra.af.mil/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -397,18 +374,18 @@
     "score": 1
    },
    "fy2019": null
-  }
- },
- "al-minhad-ab": {
+  },
   "wikidata": {
-   "item": "Q1934988",
+   "item": "Q2886453",
    "coord": [
-    25.03333,
-    55.4
+    24.24806,
+    54.5475
    ],
-   "distanceKm": 3.4,
+   "distanceKm": 0.5,
    "operators": [
-    "United Arab Emirates Air Force"
+    "United Arab Emirates Air Force",
+    "French Air Force",
+    "United States Air Force"
    ],
    "occupants": [],
    "country": [
@@ -417,10 +394,12 @@
    "instanceOf": [
     "airbase"
    ],
-   "inception": null,
+   "inception": "1992",
    "dissolved": null,
-   "website": null
-  },
+   "website": "https://www.dhafra.af.mil/"
+  }
+ },
+ "al-minhad-ab": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -449,6 +428,27 @@
    "count": 14,
    "lat": 25.0231,
    "lon": 55.3685
+  },
+  "wikidata": {
+   "item": "Q1934988",
+   "coord": [
+    25.03333,
+    55.4
+   ],
+   "distanceKm": 3.4,
+   "operators": [
+    "United Arab Emirates Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "United Arab Emirates"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "al-tanf-syria": {
@@ -457,6 +457,18 @@
   }
  },
  "al-udeid-doha": {
+  "bsr": {
+   "fy2023": {
+    "country": "Qatar",
+    "site": "Al Udeid Air Base",
+    "component": "Air Force Active",
+    "city": "Al Udeid Air Base",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q542588",
    "coord": [
@@ -481,40 +493,9 @@
    "inception": "1996",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Qatar",
-    "site": "Al Udeid Air Base",
-    "component": "Air Force Active",
-    "city": "Al Udeid Air Base",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "altmark-training-area": {
-  "wikidata": {
-   "item": "Q2456533",
-   "coord": [
-    52.43,
-    11.57
-   ],
-   "distanceKm": 7.2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military training area"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -550,6 +531,25 @@
    "count": 21,
    "lat": 52.488,
    "lon": 11.6161
+  },
+  "wikidata": {
+   "item": "Q2456533",
+   "coord": [
+    52.43,
+    11.57
+   ],
+   "distanceKm": 7.2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military training area"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "amari-air-base": {
@@ -577,6 +577,25 @@
   }
  },
  "andersen-afb-guam": {
+  "bsr": {
+   "fy2023": {
+    "country": "Guam",
+    "site": "Andersen AFB",
+    "component": "Navy Active",
+    "city": "Andersen Air Force Base",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Guam",
+    "site": "Andersen AFB",
+    "component": "Navy Active",
+    "city": "Andersen Ab",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q491372",
    "coord": [
@@ -597,50 +616,9 @@
    "inception": "1944",
    "dissolved": null,
    "website": "http://www.andersen.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Guam",
-    "site": "Andersen AFB",
-    "component": "Navy Active",
-    "city": "Andersen Air Force Base",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Guam",
-    "site": "Andersen AFB",
-    "component": "Navy Active",
-    "city": "Andersen Ab",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "apiay-ab": {
-  "wikidata": {
-   "item": "Q5036722",
-   "coord": [
-    4.07607,
-    -73.56269
-   ],
-   "distanceKm": 0.4,
-   "operators": [
-    "Colombian Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Colombia"
-   ],
-   "instanceOf": [
-    "airport",
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "http://www.cacom2.mil.co/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -676,31 +654,31 @@
    "count": 3,
    "lat": 4.0764,
    "lon": -73.5589
+  },
+  "wikidata": {
+   "item": "Q5036722",
+   "coord": [
+    4.07607,
+    -73.56269
+   ],
+   "distanceKm": 0.4,
+   "operators": [
+    "Colombian Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Colombia"
+   ],
+   "instanceOf": [
+    "airport",
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "http://www.cacom2.mil.co/"
   }
  },
  "arauca": {
-  "wikidata": {
-   "item": "Q626543",
-   "coord": [
-    7.09028,
-    -70.76167
-   ],
-   "distanceKm": 2.1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Colombia",
-    "Viceroyalty of New Granada"
-   ],
-   "instanceOf": [
-    "municipality of Colombia",
-    "city of Colombia",
-    "border city"
-   ],
-   "inception": "1780-12-04",
-   "dissolved": null,
-   "website": "https://www.arauca-arauca.gov.co/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -736,6 +714,28 @@
    "count": 4,
    "lat": 7.0823,
    "lon": -70.7443
+  },
+  "wikidata": {
+   "item": "Q626543",
+   "coord": [
+    7.09028,
+    -70.76167
+   ],
+   "distanceKm": 2.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Colombia",
+    "Viceroyalty of New Granada"
+   ],
+   "instanceOf": [
+    "municipality of Colombia",
+    "city of Colombia",
+    "border city"
+   ],
+   "inception": "1780-12-04",
+   "dissolved": null,
+   "website": "https://www.arauca-arauca.gov.co/"
   }
  },
  "armed-forces-djibouti": {
@@ -820,6 +820,14 @@
   }
  },
  "aruba": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 12.5894,
+   "lon": -69.9654
+  },
   "wikidata": {
    "item": "Q6857712",
    "coord": null,
@@ -833,14 +841,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 12.5894,
-   "lon": -69.9654
   }
  },
  "ausenfeuerstellung-205-baumholder": {
@@ -880,22 +880,6 @@
   }
  },
  "autec-bahamas": {
-  "wikidata": {
-   "item": "Q4816578",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [
-    "United States Navy"
-   ],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "naval base"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -943,9 +927,44 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q4816578",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [
+    "United States Navy"
+   ],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "naval base"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "aviano-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "Aviano AB",
+    "component": "Air Force Active",
+    "city": "Aviano",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Italy",
+    "site": "Aviano AB",
+    "component": "Air Force Active",
+    "city": "Aviano",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q790794",
    "coord": [
@@ -969,47 +988,9 @@
    "inception": "1911",
    "dissolved": null,
    "website": "http://www.aviano.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Italy",
-    "site": "Aviano AB",
-    "component": "Air Force Active",
-    "city": "Aviano",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Italy",
-    "site": "Aviano AB",
-    "component": "Air Force Active",
-    "city": "Aviano",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "ayios-nikolaos-station": {
-  "wikidata": {
-   "item": "Q81522",
-   "coord": [
-    35.0931,
-    33.8867
-   ],
-   "distanceKm": 0.8,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Cyprus"
-   ],
-   "instanceOf": [
-    "human settlement"
-   ],
-   "inception": "1946",
-   "dissolved": null,
-   "website": "https://www.gov.uk/guidance/british-forces-overseas-posting-ayios-nikolaos-cyprus"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1045,9 +1026,50 @@
    "count": 12,
    "lat": 35.0884,
    "lon": 33.8935
+  },
+  "wikidata": {
+   "item": "Q81522",
+   "coord": [
+    35.0931,
+    33.8867
+   ],
+   "distanceKm": 0.8,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Cyprus"
+   ],
+   "instanceOf": [
+    "human settlement"
+   ],
+   "inception": "1946",
+   "dissolved": null,
+   "website": "https://www.gov.uk/guidance/british-forces-overseas-posting-ayios-nikolaos-cyprus"
   }
  },
  "bagram-air-base": {
+  "osm": {
+   "verdict": "confirmed",
+   "nearest": {
+    "km": 0,
+    "osm": "way/350142690",
+    "name": "Bagram Air Base",
+    "operator": "Afghan Armed Forces",
+    "kind": "airfield"
+   },
+   "named": [
+    {
+     "km": 0,
+     "osm": "way/350142690",
+     "name": "Bagram Air Base",
+     "operator": "Afghan Armed Forces",
+     "kind": "airfield"
+    }
+   ],
+   "count": 1,
+   "lat": 34.9392,
+   "lon": 69.271
+  },
   "wikidata": {
    "item": "Q800126",
    "coord": [
@@ -1070,45 +1092,9 @@
    "inception": "1950",
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "confirmed",
-   "nearest": {
-    "km": 0,
-    "osm": "way/350142690",
-    "name": "Bagram Air Base",
-    "operator": "Afghan Armed Forces",
-    "kind": "airfield"
-   },
-   "named": [
-    {
-     "km": 0,
-     "osm": "way/350142690",
-     "name": "Bagram Air Base",
-     "operator": "Afghan Armed Forces",
-     "kind": "airfield"
-    }
-   ],
-   "count": 1,
-   "lat": 34.9392,
-   "lon": 69.271
   }
  },
  "bahia-malaga": {
-  "wikidata": {
-   "item": "Q1935172",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "military installation"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -1144,9 +1130,31 @@
    "count": 3,
    "lat": 3.9542,
    "lon": -77.3379
+  },
+  "wikidata": {
+   "item": "Q1935172",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "military installation"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "bahrain": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 26.0722,
+   "lon": 50.7458
+  },
   "wikidata": {
    "item": "Q788615",
    "coord": null,
@@ -1162,14 +1170,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 26.0722,
-   "lon": 50.7458
   }
  },
  "bamako-mali": {
@@ -1197,25 +1197,6 @@
   }
  },
  "bann-communications-station": {
-  "wikidata": {
-   "item": "Q22691269",
-   "coord": [
-    49.3975,
-    7.5951
-   ],
-   "distanceKm": 2.6,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "radio transmitter"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1270,16 +1251,14 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "bann-communications-station-2": {
+  },
   "wikidata": {
    "item": "Q22691269",
    "coord": [
     49.3975,
     7.5951
    ],
-   "distanceKm": 0.1,
+   "distanceKm": 2.6,
    "operators": [],
    "occupants": [],
    "country": [
@@ -1291,7 +1270,9 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "bann-communications-station-2": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1346,6 +1327,25 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q22691269",
+   "coord": [
+    49.3975,
+    7.5951
+   ],
+   "distanceKm": 0.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "radio transmitter"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "barton-barracks-ansbach": {
@@ -1455,25 +1455,6 @@
   }
  },
  "base-aerienne-de-chabelley": {
-  "wikidata": {
-   "item": "Q5066007",
-   "coord": [
-    11.51667,
-    43.06667
-   ],
-   "distanceKm": 0.4,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Djibouti"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1514,6 +1495,25 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q5066007",
+   "coord": [
+    11.51667,
+    43.06667
+   ],
+   "distanceKm": 0.4,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Djibouti"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "baumholder-army-health-clinic": {
@@ -1555,25 +1555,6 @@
   }
  },
  "baumholder-community": {
-  "wikidata": {
-   "item": "Q541832",
-   "coord": [
-    49.61389,
-    7.33333
-   ],
-   "distanceKm": 6,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "urban municipality in Germany"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.baumholder.de/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1621,30 +1602,28 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "baumholder-training-area": {
+  },
   "wikidata": {
-   "item": "Q811581",
+   "item": "Q541832",
    "coord": [
-    49.6514,
-    7.30528
+    49.61389,
+    7.33333
    ],
-   "distanceKm": 5.9,
-   "operators": [
-    "United States Army"
-   ],
+   "distanceKm": 6,
+   "operators": [],
    "occupants": [],
    "country": [
     "Germany"
    ],
    "instanceOf": [
-    "airbase"
+    "urban municipality in Germany"
    ],
    "inception": null,
-   "dissolved": "2020",
-   "website": null
-  },
+   "dissolved": null,
+   "website": "https://www.baumholder.de/"
+  }
+ },
+ "baumholder-training-area": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1698,30 +1677,30 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q811581",
+   "coord": [
+    49.6514,
+    7.30528
+   ],
+   "distanceKm": 5.9,
+   "operators": [
+    "United States Army"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": "2020",
+   "website": null
   }
  },
  "bdf-glen-valley-botswana": {
-  "wikidata": {
-   "item": "Q3919",
-   "coord": [
-    -24.65694,
-    25.90861
-   ],
-   "distanceKm": 9.7,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Botswana"
-   ],
-   "instanceOf": [
-    "big city",
-    "administrative territorial entity",
-    "city"
-   ],
-   "inception": "1965",
-   "dissolved": null,
-   "website": "http://www.gov.bw/en/Ministries--Authorities/Local-Authorities/Gaborone-City-Council"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1750,9 +1729,49 @@
    "count": 2,
    "lat": -24.5897,
    "lon": 25.9705
+  },
+  "wikidata": {
+   "item": "Q3919",
+   "coord": [
+    -24.65694,
+    25.90861
+   ],
+   "distanceKm": 9.7,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Botswana"
+   ],
+   "instanceOf": [
+    "big city",
+    "administrative territorial entity",
+    "city"
+   ],
+   "inception": "1965",
+   "dissolved": null,
+   "website": "http://www.gov.bw/en/Ministries--Authorities/Local-Authorities/Gaborone-City-Council"
   }
  },
  "beale-air-force-base-california": {
+  "bsr": {
+   "fy2023": {
+    "country": "California",
+    "site": "Beale AFB",
+    "component": "Air Force Active",
+    "city": "Beale Afb",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "California",
+    "site": "Beale AFB",
+    "component": "Air Force Active",
+    "city": "Beale Afb",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q812921",
    "coord": [
@@ -1775,25 +1794,6 @@
    "inception": "1942",
    "dissolved": null,
    "website": "https://www.beale.af.mil"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "California",
-    "site": "Beale AFB",
-    "component": "Air Force Active",
-    "city": "Beale Afb",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "California",
-    "site": "Beale AFB",
-    "component": "Air Force Active",
-    "city": "Beale Afb",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "bemowo-piskie": {
@@ -1818,25 +1818,6 @@
   }
  },
  "bergen-training-area": {
-  "wikidata": {
-   "item": "Q881967",
-   "coord": [
-    52.8,
-    9.81667
-   ],
-   "distanceKm": 4.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military training area"
-   ],
-   "inception": "1935",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -1872,9 +1853,36 @@
    "count": 4,
    "lat": 52.8285,
    "lon": 9.8599
+  },
+  "wikidata": {
+   "item": "Q881967",
+   "coord": [
+    52.8,
+    9.81667
+   ],
+   "distanceKm": 4.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military training area"
+   ],
+   "inception": "1935",
+   "dissolved": null,
+   "website": null
   }
  },
  "bezmer-air-base": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 42.4497,
+   "lon": 26.4257
+  },
   "wikidata": {
    "item": "Q4900372",
    "coord": [
@@ -1893,38 +1901,9 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 42.4497,
-   "lon": 26.4257
   }
  },
  "bfb-garrison-seria": {
-  "wikidata": {
-   "item": "Q2925738",
-   "coord": [
-    4.60871,
-    114.31409
-   ],
-   "distanceKm": 0.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Brunei"
-   ],
-   "instanceOf": [
-    "military unit",
-    "British Army unit",
-    "garrison"
-   ],
-   "inception": "1963",
-   "dissolved": null,
-   "website": "https://www.army.mod.uk/learn-and-explore/global-operations/brunei/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -1960,6 +1939,27 @@
    "count": 3,
    "lat": 4.6061,
    "lon": 114.3145
+  },
+  "wikidata": {
+   "item": "Q2925738",
+   "coord": [
+    4.60871,
+    114.31409
+   ],
+   "distanceKm": 0.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Brunei"
+   ],
+   "instanceOf": [
+    "military unit",
+    "British Army unit",
+    "garrison"
+   ],
+   "inception": "1963",
+   "dissolved": null,
+   "website": "https://www.army.mod.uk/learn-and-explore/global-operations/brunei/"
   }
  },
  "bismarck-kaserne-ansbach": {
@@ -2024,25 +2024,6 @@
   }
  },
  "boblingen-panzerkaserne": {
-  "wikidata": {
-   "item": "Q7132028",
-   "coord": [
-    48.6845,
-    9.04542
-   ],
-   "distanceKm": 2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -2096,6 +2077,25 @@
     "match": "city",
     "score": 0.67
    }
+  },
+  "wikidata": {
+   "item": "Q7132028",
+   "coord": [
+    48.6845,
+    9.04542
+   ],
+   "distanceKm": 2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "boufarik-base": {
@@ -2146,25 +2146,6 @@
   }
  },
  "bruchmuhlbach-miesau-us-army-depot": {
-  "wikidata": {
-   "item": "Q1932177",
-   "coord": [
-    49.3922,
-    7.40833
-   ],
-   "distanceKm": 0.4,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military depot"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -2212,31 +2193,28 @@
    },
    "fy2019": null,
    "review": "supports"
-  }
- },
- "buechel-nato-air-base": {
+  },
   "wikidata": {
-   "item": "Q320257",
+   "item": "Q1932177",
    "coord": [
-    50.1738,
-    7.06333
+    49.3922,
+    7.40833
    ],
-   "distanceKm": 0.6,
-   "operators": [
-    "German Air Force"
-   ],
+   "distanceKm": 0.4,
+   "operators": [],
    "occupants": [],
    "country": [
     "Germany"
    ],
    "instanceOf": [
-    "airbase",
-    "aerodrome"
+    "military depot"
    ],
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "buechel-nato-air-base": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -2272,29 +2250,31 @@
    "count": 39,
    "lat": 50.1746,
    "lon": 7.0548
+  },
+  "wikidata": {
+   "item": "Q320257",
+   "coord": [
+    50.1738,
+    7.06333
+   ],
+   "distanceKm": 0.6,
+   "operators": [
+    "German Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase",
+    "aerodrome"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "bujumbura-burundi": {
-  "wikidata": {
-   "item": "Q3854",
-   "coord": [
-    -3.3825,
-    29.36111
-   ],
-   "distanceKm": 7.1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Burundi"
-   ],
-   "instanceOf": [
-    "city",
-    "big city"
-   ],
-   "inception": "1871",
-   "dissolved": null,
-   "website": "http://www.mairiebujumbura.gov.bi"
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -2316,6 +2296,26 @@
    "count": 3,
    "lat": -3.3208,
    "lon": 29.3447
+  },
+  "wikidata": {
+   "item": "Q3854",
+   "coord": [
+    -3.3825,
+    29.36111
+   ],
+   "distanceKm": 7.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Burundi"
+   ],
+   "instanceOf": [
+    "city",
+    "big city"
+   ],
+   "inception": "1871",
+   "dissolved": null,
+   "website": "http://www.mairiebujumbura.gov.bi"
   }
  },
  "cairo-west-ab": {
@@ -2340,6 +2340,18 @@
   }
  },
  "camp-as-sayliayah": {
+  "bsr": {
+   "fy2023": {
+    "country": "Qatar",
+    "site": "Camp As Sayliyah",
+    "component": "Army Active",
+    "city": "Doha",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q4802969",
    "coord": [
@@ -2358,18 +2370,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Qatar",
-    "site": "Camp As Sayliyah",
-    "component": "Army Active",
-    "city": "Doha",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "camp-buehring": {
@@ -2387,6 +2387,25 @@
   }
  },
  "camp-carroll-waegwan": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Camp Carroll",
+    "component": "Army Active",
+    "city": "Waegwan",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Camp Carroll",
+    "component": "Army Active",
+    "city": "Waegwan",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q498272",
    "coord": [
@@ -2407,47 +2426,9 @@
    "inception": "1959-05",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Camp Carroll",
-    "component": "Army Active",
-    "city": "Waegwan",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Camp Carroll",
-    "component": "Army Active",
-    "city": "Waegwan",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "camp-casy-dongducheon": {
-  "wikidata": {
-   "item": "Q483988",
-   "coord": [
-    37.92191,
-    127.08546
-   ],
-   "distanceKm": 0.1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "United States"
-   ],
-   "instanceOf": [
-    "military base"
-   ],
-   "inception": "1952",
-   "dissolved": null,
-   "website": "http://www.army.mil/redcloudcasey"
-  },
   "bsr": {
    "fy2023": {
     "country": "South Korea",
@@ -2466,6 +2447,25 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q483988",
+   "coord": [
+    37.92191,
+    127.08546
+   ],
+   "distanceKm": 0.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United States"
+   ],
+   "instanceOf": [
+    "military base"
+   ],
+   "inception": "1952",
+   "dissolved": null,
+   "website": "http://www.army.mil/redcloudcasey"
   }
  },
  "camp-century-greenland": {
@@ -2492,6 +2492,25 @@
   }
  },
  "camp-darby-tirrenia-livorno": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "Camp Darby",
+    "component": "Army Active",
+    "city": "Tirrenia",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Italy",
+    "site": "Camp Darby",
+    "component": "Army Active",
+    "city": "Tirrenia",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q1029796",
    "coord": [
@@ -2510,28 +2529,28 @@
    "inception": "1952-01-01",
    "dissolved": null,
    "website": "http://www.usag.livorno.army.mil/"
-  },
+  }
+ },
+ "camp-ederle-vicenza": {
   "bsr": {
    "fy2023": {
     "country": "Italy",
-    "site": "Camp Darby",
+    "site": "Camp Ederle",
     "component": "Army Active",
-    "city": "Tirrenia",
+    "city": "Vicenza",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "Italy",
-    "site": "Camp Darby",
+    "site": "Camp Ederle",
     "component": "Army Active",
-    "city": "Tirrenia",
+    "city": "Vicenza",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "camp-ederle-vicenza": {
+  },
   "wikidata": {
    "item": "Q3661698",
    "coord": [
@@ -2550,28 +2569,28 @@
    "inception": "1942",
    "dissolved": null,
    "website": "https://home.army.mil/italy/index.php"
-  },
+  }
+ },
+ "camp-foster-zukeran": {
   "bsr": {
    "fy2023": {
-    "country": "Italy",
-    "site": "Camp Ederle",
-    "component": "Army Active",
-    "city": "Vicenza",
+    "country": "Japan",
+    "site": "Camp Foster",
+    "component": "Marine Corps Active",
+    "city": "Camp Foster Okinawa",
     "match": "site",
     "score": 1
    },
    "fy2019": {
-    "country": "Italy",
-    "site": "Camp Ederle",
-    "component": "Army Active",
-    "city": "Vicenza",
+    "country": "Japan",
+    "site": "Camp Foster",
+    "component": "Marine Corps Active",
+    "city": "Zukeran",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "camp-foster-zukeran": {
+  },
   "wikidata": {
    "item": "Q4419750",
    "coord": [
@@ -2592,28 +2611,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "camp-hansen-okinawa": {
   "bsr": {
    "fy2023": {
     "country": "Japan",
-    "site": "Camp Foster",
+    "site": "Camp Hansen",
     "component": "Marine Corps Active",
-    "city": "Camp Foster Okinawa",
+    "city": "Onna Okinawa",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "Japan",
-    "site": "Camp Foster",
+    "site": "Camp Hansen",
     "component": "Marine Corps Active",
-    "city": "Zukeran",
+    "city": "Onna Okinawa",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "camp-hansen-okinawa": {
+  },
   "wikidata": {
    "item": "Q4419980",
    "coord": [
@@ -2634,28 +2653,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "camp-henry-daegu": {
   "bsr": {
    "fy2023": {
-    "country": "Japan",
-    "site": "Camp Hansen",
-    "component": "Marine Corps Active",
-    "city": "Onna Okinawa",
+    "country": "South Korea",
+    "site": "Camp Henry",
+    "component": "Army Active",
+    "city": "Taegu",
     "match": "site",
     "score": 1
    },
    "fy2019": {
-    "country": "Japan",
-    "site": "Camp Hansen",
-    "component": "Marine Corps Active",
-    "city": "Onna Okinawa",
+    "country": "Korea, Republic Of",
+    "site": "Camp Henry",
+    "component": "Army Active",
+    "city": "Taegu",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "camp-henry-daegu": {
+  },
   "wikidata": {
    "item": "Q12620466",
    "coord": [
@@ -2676,25 +2695,6 @@
    "inception": "1921",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Camp Henry",
-    "component": "Army Active",
-    "city": "Taegu",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Camp Henry",
-    "component": "Army Active",
-    "city": "Taegu",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "camp-kim-yongsan": {
@@ -2719,6 +2719,25 @@
   }
  },
  "camp-kinser-okinawa": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Camp Kinser",
+    "component": "Marine Corps Active",
+    "city": "Makiminato Okinawa",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "Camp Kinser",
+    "component": "Marine Corps Active",
+    "city": "Makiminato Okinawa",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q5027315",
    "coord": [
@@ -2739,25 +2758,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Camp Kinser",
-    "component": "Marine Corps Active",
-    "city": "Makiminato Okinawa",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "Camp Kinser",
-    "component": "Marine Corps Active",
-    "city": "Makiminato Okinawa",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "camp-lester-okinawa": {
@@ -2782,28 +2782,6 @@
   }
  },
  "camp-marmal-john-pratt": {
-  "wikidata": {
-   "item": "Q470684",
-   "coord": [
-    36.71133,
-    67.21577
-   ],
-   "distanceKm": 2.8,
-   "operators": [
-    "Afghan Air Force",
-    "Bundeswehr"
-   ],
-   "occupants": [],
-   "country": [
-    "Afghanistan"
-   ],
-   "instanceOf": [
-    "military base"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -2839,26 +2817,31 @@
    "count": 7,
    "lat": 36.6973,
    "lon": 67.2423
-  }
- },
- "camp-shaheen-camp-mike-spann": {
+  },
   "wikidata": {
-   "item": "Q29546985",
+   "item": "Q470684",
    "coord": [
-    36.71667,
-    67.11667
+    36.71133,
+    67.21577
    ],
-   "distanceKm": 12.3,
-   "operators": [],
+   "distanceKm": 2.8,
+   "operators": [
+    "Afghan Air Force",
+    "Bundeswehr"
+   ],
    "occupants": [],
-   "country": [],
+   "country": [
+    "Afghanistan"
+   ],
    "instanceOf": [
-    "attempted murder"
+    "military base"
    ],
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "camp-shaheen-camp-mike-spann": {
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -2887,6 +2870,23 @@
    "count": 4,
    "lat": 36.6336,
    "lon": 67.0252
+  },
+  "wikidata": {
+   "item": "Q29546985",
+   "coord": [
+    36.71667,
+    67.11667
+   ],
+   "distanceKm": 12.3,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "attempted murder"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "camp-speicher": {
@@ -2912,23 +2912,6 @@
   }
  },
  "camp-walker-taeku": {
-  "wikidata": {
-   "item": "Q15206997",
-   "coord": [
-    35.83639,
-    128.59028
-   ],
-   "distanceKm": 0.5,
-   "operators": [],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "military unit"
-   ],
-   "inception": "1921",
-   "dissolved": null,
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "South Korea",
@@ -2947,6 +2930,23 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q15206997",
+   "coord": [
+    35.83639,
+    128.59028
+   ],
+   "distanceKm": 0.5,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "military unit"
+   ],
+   "inception": "1921",
+   "dissolved": null,
+   "website": null
   }
  },
  "campia-turzii-air-base": {
@@ -2973,9 +2973,6 @@
   }
  },
  "cape-cod-air-force-station": {
-  "wikidata": {
-   "item": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Massachusetts",
@@ -2994,9 +2991,20 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "cartagena": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 10.3406,
+   "lon": -75.3844
+  },
   "wikidata": {
    "item": "Q657461",
    "coord": [
@@ -3018,38 +3026,9 @@
    "inception": "1533",
    "dissolved": null,
    "website": "http://www.cartagena.gov.co/"
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 10.3406,
-   "lon": -75.3844
   }
  },
  "chievres-ab": {
-  "wikidata": {
-   "item": "Q43363",
-   "coord": [
-    50.57583,
-    3.83111
-   ],
-   "distanceKm": 0.6,
-   "operators": [
-    "United States Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Belgium"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3097,6 +3076,27 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q43363",
+   "coord": [
+    50.57583,
+    3.83111
+   ],
+   "distanceKm": 0.6,
+   "operators": [
+    "United States Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Belgium"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "chinese-naval-base": {
@@ -3105,9 +3105,6 @@
   }
  },
  "clear-air-force-station-alaska": {
-  "wikidata": {
-   "item": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Alaska",
@@ -3126,29 +3123,12 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "coleman-barracks-mannheim": {
-  "wikidata": {
-   "item": "Q872084",
-   "coord": [
-    49.56,
-    8.46639
-   ],
-   "distanceKm": 0.1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "airbase",
-    "barracks"
-   ],
-   "inception": "1925",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3202,6 +3182,26 @@
     "match": "city",
     "score": 0.67
    }
+  },
+  "wikidata": {
+   "item": "Q872084",
+   "coord": [
+    49.56,
+    8.46639
+   ],
+   "distanceKm": 0.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase",
+    "barracks"
+   ],
+   "inception": "1925",
+   "dissolved": null,
+   "website": null
   }
  },
  "command-ground-system-sigonella": {
@@ -3219,28 +3219,6 @@
   }
  },
  "conversion-area-bitburg": {
-  "wikidata": {
-   "item": "Q323983",
-   "coord": [
-    49.94833,
-    6.57167
-   ],
-   "distanceKm": 0.7,
-   "operators": [
-    "United States Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "German special airfield",
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "http://www.flugplatz-bitburg.de/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3262,9 +3240,50 @@
    "count": 1,
    "lat": 49.9467,
    "lon": 6.5625
+  },
+  "wikidata": {
+   "item": "Q323983",
+   "coord": [
+    49.94833,
+    6.57167
+   ],
+   "distanceKm": 0.7,
+   "operators": [
+    "United States Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "German special airfield",
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "http://www.flugplatz-bitburg.de/"
   }
  },
  "creech-air-force-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Nevada",
+    "site": "Creech AFB",
+    "component": "Air Force Active",
+    "city": "Indian Springs",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Nevada",
+    "site": "Creech AFB",
+    "component": "Air Force Active",
+    "city": "Indian Springs",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q1658047",
    "coord": [
@@ -3285,25 +3304,6 @@
    "inception": "1942",
    "dissolved": null,
    "website": "http://www.creech.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Nevada",
-    "site": "Creech AFB",
-    "component": "Air Force Active",
-    "city": "Indian Springs",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Nevada",
-    "site": "Creech AFB",
-    "component": "Air Force Active",
-    "city": "Indian Springs",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "daenner-kaserne": {
@@ -3387,25 +3387,6 @@
   }
  },
  "darmstadt-griesheim-dagger-complex": {
-  "wikidata": {
-   "item": "Q14537410",
-   "coord": [
-    49.8439,
-    8.58417
-   ],
-   "distanceKm": 0.6,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "built structure"
-   ],
-   "inception": "1951",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3434,6 +3415,25 @@
    "count": 3,
    "lat": 49.843,
    "lon": 8.5929
+  },
+  "wikidata": {
+   "item": "Q14537410",
+   "coord": [
+    49.8439,
+    8.58417
+   ],
+   "distanceKm": 0.6,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "built structure"
+   ],
+   "inception": "1951",
+   "dissolved": null,
+   "website": null
   }
  },
  "darmstadt-training-center": {
@@ -3515,27 +3515,6 @@
   }
  },
  "davis-monthan-ab-curacao": {
-  "wikidata": {
-   "item": "Q25279",
-   "coord": [
-    12.2,
-    -69
-   ],
-   "distanceKm": 4.9,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Kingdom of the Netherlands"
-   ],
-   "instanceOf": [
-    "country of the Kingdom of the Netherlands",
-    "island country",
-    "country"
-   ],
-   "inception": "1954-01-01",
-   "dissolved": null,
-   "website": "https://curacao.com"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3583,6 +3562,27 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q25279",
+   "coord": [
+    12.2,
+    -69
+   ],
+   "distanceKm": 4.9,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Kingdom of the Netherlands"
+   ],
+   "instanceOf": [
+    "country of the Kingdom of the Netherlands",
+    "island country",
+    "country"
+   ],
+   "inception": "1954-01-01",
+   "dissolved": null,
+   "website": "https://curacao.com"
   }
  },
  "de-kl-warrior-preparation-center": {
@@ -3648,25 +3648,6 @@
   }
  },
  "del-din-barracks-vicenza": {
-  "wikidata": {
-   "item": "Q1313587",
-   "coord": [
-    45.57341,
-    11.52955
-   ],
-   "distanceKm": 0,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Italy"
-   ],
-   "instanceOf": [
-    "airport"
-   ],
-   "inception": "2004-08",
-   "dissolved": "2005-12-23",
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Italy",
@@ -3685,33 +3666,28 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1313587",
+   "coord": [
+    45.57341,
+    11.52955
+   ],
+   "distanceKm": 0,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Italy"
+   ],
+   "instanceOf": [
+    "airport"
+   ],
+   "inception": "2004-08",
+   "dissolved": "2005-12-23",
+   "website": null
   }
  },
  "deu-bellheim": {
-  "wikidata": {
-   "item": "Q872940",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [
-    "Fernleitungs-Betriebsgesellschaft",
-    "Belgian Pipeline Organisation"
-   ],
-   "occupants": [],
-   "country": [
-    "France",
-    "Luxembourg",
-    "Germany",
-    "Belgium",
-    "Kingdom of the Netherlands"
-   ],
-   "instanceOf": [
-    "network",
-    "system"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3747,30 +3723,33 @@
    "count": 7,
    "lat": 49.2062,
    "lon": 8.3316
-  }
- },
- "deu-wiesbaden-mainz-kastel": {
+  },
   "wikidata": {
-   "item": "Q18149928",
-   "coord": [
-    50.0114,
-    8.2877
-   ],
-   "distanceKm": 0.3,
+   "item": "Q872940",
+   "coord": null,
+   "distanceKm": null,
    "operators": [
-    "National Security Agency"
+    "Fernleitungs-Betriebsgesellschaft",
+    "Belgian Pipeline Organisation"
    ],
    "occupants": [],
    "country": [
-    "Germany"
+    "France",
+    "Luxembourg",
+    "Germany",
+    "Belgium",
+    "Kingdom of the Netherlands"
    ],
    "instanceOf": [
-    "facility"
+    "network",
+    "system"
    ],
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "deu-wiesbaden-mainz-kastel": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3817,9 +3796,49 @@
     "match": "site",
     "score": 0.67
    }
+  },
+  "wikidata": {
+   "item": "Q18149928",
+   "coord": [
+    50.0114,
+    8.2877
+   ],
+   "distanceKm": 0.3,
+   "operators": [
+    "National Security Agency"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "facility"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "deveselu-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Romania",
+    "site": "NAVSUPPFAC Romania",
+    "component": "Navy Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Romania",
+    "site": "NAVSUPPFAC Romania",
+    "component": "Navy Active",
+    "city": "Deveselu",
+    "match": "city",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q12724722",
    "coord": [
@@ -3845,47 +3864,9 @@
    "inception": null,
    "dissolved": null,
    "website": "http://www.primariadeveselu.judetulolt.ro/main.php"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Romania",
-    "site": "NAVSUPPFAC Romania",
-    "component": "Navy Active",
-    "city": "Unknown",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Romania",
-    "site": "NAVSUPPFAC Romania",
-    "component": "Navy Active",
-    "city": "Deveselu",
-    "match": "city",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "dhekelia-military-camp": {
-  "wikidata": {
-   "item": "Q37362",
-   "coord": [
-    34.58333,
-    32.98333
-   ],
-   "distanceKm": 82.2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "United Kingdom"
-   ],
-   "instanceOf": [
-    "British Overseas Territories"
-   ],
-   "inception": "1960-08-16",
-   "dissolved": null,
-   "website": "http://www.sba.mod.uk/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -3921,9 +3902,46 @@
    "count": 13,
    "lat": 34.9917,
    "lon": 33.7342
+  },
+  "wikidata": {
+   "item": "Q37362",
+   "coord": [
+    34.58333,
+    32.98333
+   ],
+   "distanceKm": 82.2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United Kingdom"
+   ],
+   "instanceOf": [
+    "British Overseas Territories"
+   ],
+   "inception": "1960-08-16",
+   "dissolved": null,
+   "website": "http://www.sba.mod.uk/"
   }
  },
  "diego-garcia-airport": {
+  "bsr": {
+   "fy2023": {
+    "country": "Diego Garcia",
+    "site": "NAVSUPPFAC Diego Garcia",
+    "component": "Navy Active",
+    "city": "Unknown",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Diego Garcia",
+    "site": "NAVSUPPFAC Diego Garcia",
+    "component": "Navy Active",
+    "city": "Diego Garcia, Naval Fac",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q184851",
    "coord": [
@@ -3942,24 +3960,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Diego Garcia",
-    "site": "NAVSUPPFAC Diego Garcia",
-    "component": "Navy Active",
-    "city": "Unknown",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Diego Garcia",
-    "site": "NAVSUPPFAC Diego Garcia",
-    "component": "Navy Active",
-    "city": "Diego Garcia, Naval Fac",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "dimona-radar-facility": {
@@ -4005,27 +4005,6 @@
   }
  },
  "dulmen-tower-barracks": {
-  "wikidata": {
-   "item": "Q6910",
-   "coord": [
-    51.83083,
-    7.27833
-   ],
-   "distanceKm": 2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "urban municipality in Germany",
-    "medium-sized district town",
-    "Hanseatic city"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.duelmen.de/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4065,6 +4044,27 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q6910",
+   "coord": [
+    51.83083,
+    7.27833
+   ],
+   "distanceKm": 2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "urban municipality in Germany",
+    "medium-sized district town",
+    "Hanseatic city"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.duelmen.de/"
   }
  },
  "durres-albania": {
@@ -4187,26 +4187,6 @@
   }
  },
  "egelsbach-transmitter-fac": {
-  "wikidata": {
-   "item": "Q622212",
-   "coord": [
-    49.96944,
-    8.66667
-   ],
-   "distanceKm": 4.9,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "Gemarkung",
-    "municipality without town privileges in Germany"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.egelsbach.de/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4247,6 +4227,26 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q622212",
+   "coord": [
+    49.96944,
+    8.66667
+   ],
+   "distanceKm": 4.9,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "Gemarkung",
+    "municipality without town privileges in Germany"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.egelsbach.de/"
   }
  },
  "eichbuck-illesheim": {
@@ -4336,25 +4336,6 @@
   }
  },
  "fort-greely-alaska": {
-  "wikidata": {
-   "item": "Q5471246",
-   "coord": [
-    63.90833,
-    -146.24917
-   ],
-   "distanceKm": 29.7,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "United States"
-   ],
-   "instanceOf": [
-    "military installation"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://home.army.mil/greely/"
-  },
   "bsr": {
    "fy2023": {
     "country": "Alaska",
@@ -4373,6 +4354,25 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q5471246",
+   "coord": [
+    63.90833,
+    -146.24917
+   ],
+   "distanceKm": 29.7,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United States"
+   ],
+   "instanceOf": [
+    "military installation"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://home.army.mil/greely/"
   }
  },
  "fort-lamy-ab-djamena": {
@@ -4399,28 +4399,6 @@
   }
  },
  "frankfurt-hahn": {
-  "wikidata": {
-   "item": "Q158211",
-   "coord": [
-    49.94582,
-    7.26108
-   ],
-   "distanceKm": 1,
-   "operators": [
-    "Flughafen Frankfurt-Hahn GmbH"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "commercial airport",
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.hahn-airport.de/de"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4449,6 +4427,28 @@
    "count": 23,
    "lat": 49.9403,
    "lon": 7.2728
+  },
+  "wikidata": {
+   "item": "Q158211",
+   "coord": [
+    49.94582,
+    7.26108
+   ],
+   "distanceKm": 1,
+   "operators": [
+    "Flughafen Frankfurt-Hahn GmbH"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "commercial airport",
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.hahn-airport.de/de"
   }
  },
  "freihoelser-training-area-amberg": {
@@ -4495,26 +4495,6 @@
   }
  },
  "fuerte-militar-larandia": {
-  "wikidata": {
-   "item": "Q5507213",
-   "coord": [
-    1.47889,
-    -75.48667
-   ],
-   "distanceKm": 1.2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Colombia"
-   ],
-   "instanceOf": [
-    "airport",
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4536,30 +4516,29 @@
    "count": 1,
    "lat": 1.4692,
    "lon": -75.482
-  }
- },
- "fuerte-militar-tolemaida": {
+  },
   "wikidata": {
-   "item": "Q5309000",
+   "item": "Q5507213",
    "coord": [
-    4.24472,
-    -74.64972
+    1.47889,
+    -75.48667
    ],
-   "distanceKm": 2.1,
-   "operators": [
-    "Military Forces of Colombia"
-   ],
+   "distanceKm": 1.2,
+   "operators": [],
    "occupants": [],
    "country": [
     "Colombia"
    ],
    "instanceOf": [
+    "airport",
     "airbase"
    ],
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "fuerte-militar-tolemaida": {
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -4595,6 +4574,27 @@
    "count": 6,
    "lat": 4.2262,
    "lon": -74.645
+  },
+  "wikidata": {
+   "item": "Q5309000",
+   "coord": [
+    4.24472,
+    -74.64972
+   ],
+   "distanceKm": 2.1,
+   "operators": [
+    "Military Forces of Colombia"
+   ],
+   "occupants": [],
+   "country": [
+    "Colombia"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "gaiziunu-poligonas-rukla-lithuania": {
@@ -4642,27 +4642,6 @@
   }
  },
  "geilenkirchen-nato-air-base": {
-  "wikidata": {
-   "item": "Q329095",
-   "coord": [
-    50.96083,
-    6.0425
-   ],
-   "distanceKm": 0.8,
-   "operators": [
-    "NATO"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4696,6 +4675,27 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q329095",
+   "coord": [
+    50.96083,
+    6.0425
+   ],
+   "distanceKm": 0.8,
+   "operators": [
+    "NATO"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "germersheim-us-army-depot": {
@@ -4779,6 +4779,25 @@
   }
  },
  "ghedi-ab": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "Ghedi Radio Relay Site",
+    "component": "Air Force Active",
+    "city": "Brescia",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Italy",
+    "site": "Ghedi Radio Relay Site",
+    "component": "Air Force Active",
+    "city": "Brescia",
+    "match": "site",
+    "score": 1
+   },
+   "review": "context"
+  },
   "wikidata": {
    "item": "Q1934972",
    "coord": [
@@ -4799,25 +4818,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Italy",
-    "site": "Ghedi Radio Relay Site",
-    "component": "Air Force Active",
-    "city": "Brescia",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Italy",
-    "site": "Ghedi Radio Relay Site",
-    "component": "Air Force Active",
-    "city": "Brescia",
-    "match": "site",
-    "score": 1
-   },
-   "review": "context"
   }
  },
  "gitmo-guantanamo-bay": {
@@ -4897,26 +4897,6 @@
   }
  },
  "graf-ignatievo-ab-bulgaria": {
-  "wikidata": {
-   "item": "Q3914569",
-   "coord": [
-    42.29028,
-    24.71389
-   ],
-   "distanceKm": 0.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Bulgaria"
-   ],
-   "instanceOf": [
-    "airbase",
-    "aerodrome"
-   ],
-   "inception": "1994-08-18",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -4956,33 +4936,29 @@
     "score": 1
    },
    "fy2019": null
+  },
+  "wikidata": {
+   "item": "Q3914569",
+   "coord": [
+    42.29028,
+    24.71389
+   ],
+   "distanceKm": 0.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Bulgaria"
+   ],
+   "instanceOf": [
+    "airbase",
+    "aerodrome"
+   ],
+   "inception": "1994-08-18",
+   "dissolved": null,
+   "website": null
   }
  },
  "grafenwoehr-training-area": {
-  "wikidata": {
-   "item": "Q2456565",
-   "coord": [
-    49.7167,
-    11.9
-   ],
-   "distanceKm": 6.7,
-   "operators": [
-    "United States Armed Forces",
-    "7th Army Training Command"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "unincorporated area in Germany",
-    "military training area",
-    "military base"
-   ],
-   "inception": "1907-01-01",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "none",
    "nearest": null,
@@ -5008,6 +4984,30 @@
     "match": "city",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q2456565",
+   "coord": [
+    49.7167,
+    11.9
+   ],
+   "distanceKm": 6.7,
+   "operators": [
+    "United States Armed Forces",
+    "7th Army Training Command"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "unincorporated area in Germany",
+    "military training area",
+    "military base"
+   ],
+   "inception": "1907-01-01",
+   "dissolved": null,
+   "website": null
   }
  },
  "gruenstadt-aafes-fac": {
@@ -5066,29 +5066,6 @@
   }
  },
  "guantanamo-bay-naval-base": {
-  "wikidata": {
-   "item": "Q762570",
-   "coord": [
-    19.9175,
-    -75.16
-   ],
-   "distanceKm": 1.7,
-   "operators": [
-    "United States Navy"
-   ],
-   "occupants": [],
-   "country": [
-    "Cuba"
-   ],
-   "instanceOf": [
-    "naval base",
-    "concession",
-    "disputed territory"
-   ],
-   "inception": "1898",
-   "dissolved": null,
-   "website": "http://www.cnic.navy.mil/regions/cnrse/installations/ns_guantanamo_bay.html"
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -5128,6 +5105,29 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q762570",
+   "coord": [
+    19.9175,
+    -75.16
+   ],
+   "distanceKm": 1.7,
+   "operators": [
+    "United States Navy"
+   ],
+   "occupants": [],
+   "country": [
+    "Cuba"
+   ],
+   "instanceOf": [
+    "naval base",
+    "concession",
+    "disputed territory"
+   ],
+   "inception": "1898",
+   "dissolved": null,
+   "website": "http://www.cnic.navy.mil/regions/cnrse/installations/ns_guantanamo_bay.html"
   }
  },
  "guelmim-airport": {
@@ -5155,6 +5155,24 @@
   }
  },
  "henoko-camp-schwab": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Camp Schwab",
+    "component": "Marine Corps Active",
+    "city": "Henoko Okinawa",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "Camp Schwab",
+    "component": "Marine Corps Active",
+    "city": "Henoko Okinawa",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q4419959",
    "coord": [
@@ -5176,30 +5194,9 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Camp Schwab",
-    "component": "Marine Corps Active",
-    "city": "Henoko Okinawa",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "Camp Schwab",
-    "component": "Marine Corps Active",
-    "city": "Henoko Okinawa",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "herat-unnamed": {
-  "wikidata": {
-   "item": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -5221,6 +5218,9 @@
    "count": 7,
    "lat": 34.2034,
    "lon": 62.25
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "hm-naval-base-gibraltar": {
@@ -5254,26 +5254,6 @@
   }
  },
  "hohenfels-training-area": {
-  "wikidata": {
-   "item": "Q524364",
-   "coord": [
-    49.2,
-    11.85
-   ],
-   "distanceKm": 7.9,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "market municipality of Germany",
-    "municipality without town privileges in Germany"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "http://www.markt-hohenfels.de"
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -5321,28 +5301,29 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "hospital-weilerbach": {
+  },
   "wikidata": {
-   "item": "Q553992",
+   "item": "Q524364",
    "coord": [
-    49.48139,
-    7.63222
+    49.2,
+    11.85
    ],
-   "distanceKm": 3.2,
+   "distanceKm": 7.9,
    "operators": [],
    "occupants": [],
    "country": [
     "Germany"
    ],
    "instanceOf": [
+    "market municipality of Germany",
     "municipality without town privileges in Germany"
    ],
    "inception": null,
    "dissolved": null,
-   "website": "https://www.weilerbach-pfalz.de/"
-  },
+   "website": "http://www.markt-hohenfels.de"
+  }
+ },
+ "hospital-weilerbach": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -5378,30 +5359,28 @@
    "count": 40,
    "lat": 49.4544,
    "lon": 7.6189
+  },
+  "wikidata": {
+   "item": "Q553992",
+   "coord": [
+    49.48139,
+    7.63222
+   ],
+   "distanceKm": 3.2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "municipality without town privileges in Germany"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.weilerbach-pfalz.de/"
   }
  },
  "husterhoeh-polygone": {
-  "wikidata": {
-   "item": "Q1952423",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [
-    "United States Air Force",
-    "German Air Force",
-    "French Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "France"
-   ],
-   "instanceOf": [
-    "training ground",
-    "Training Center of the German Airforce"
-   ],
-   "inception": "1979-04",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -5449,6 +5428,27 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1952423",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [
+    "United States Air Force",
+    "German Air Force",
+    "French Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "France"
+   ],
+   "instanceOf": [
+    "training ground",
+    "Training Center of the German Airforce"
+   ],
+   "inception": "1979-04",
+   "dissolved": null,
+   "website": null
   }
  },
  "i-solbiate-olona": {
@@ -5470,6 +5470,24 @@
   }
  },
  "incirlik-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Turkey",
+    "site": "Incirlik AB",
+    "component": "Air Force Active",
+    "city": "Adana",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Turkey",
+    "site": "Incirlik AB",
+    "component": "Air Force Active",
+    "city": "Adana",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q1083424",
    "coord": [
@@ -5493,24 +5511,6 @@
    "inception": "1951",
    "dissolved": null,
    "website": "https://www.incirlik.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Turkey",
-    "site": "Incirlik AB",
-    "component": "Air Force Active",
-    "city": "Adana",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Turkey",
-    "site": "Incirlik AB",
-    "component": "Air Force Active",
-    "city": "Adana",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "inezgane-airport": {
@@ -5584,6 +5584,25 @@
   }
  },
  "jasdf-naha-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Naha Port",
+    "component": "Army Active",
+    "city": "Okinawa Island",
+    "match": "city",
+    "score": 0.67
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "Naha Port",
+    "component": "Army Active",
+    "city": "Okinawa Island",
+    "match": "city",
+    "score": 0.67
+   },
+   "review": "context"
+  },
   "wikidata": {
    "item": "Q1529149",
    "coord": [
@@ -5606,25 +5625,6 @@
    "inception": "1933-01-01",
    "dissolved": null,
    "website": "https://www.mod.go.jp/asdf/naha/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Naha Port",
-    "component": "Army Active",
-    "city": "Okinawa Island",
-    "match": "city",
-    "score": 0.67
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "Naha Port",
-    "component": "Army Active",
-    "city": "Okinawa Island",
-    "match": "city",
-    "score": 0.67
-   },
-   "review": "context"
   }
  },
  "jeju-island-naval-base-gangjeong": {
@@ -5649,25 +5649,6 @@
   }
  },
  "johnston-atoll": {
-  "wikidata": {
-   "item": "Q2900983",
-   "coord": [
-    16.72861,
-    -169.53417
-   ],
-   "distanceKm": 0.4,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "United States"
-   ],
-   "instanceOf": [
-    "airport"
-   ],
-   "inception": null,
-   "dissolved": "2005",
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Johnston Atoll",
@@ -5686,6 +5667,25 @@
     "score": 1
    },
    "review": "context"
+  },
+  "wikidata": {
+   "item": "Q2900983",
+   "coord": [
+    16.72861,
+    -169.53417
+   ],
+   "distanceKm": 0.4,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United States"
+   ],
+   "instanceOf": [
+    "airport"
+   ],
+   "inception": null,
+   "dissolved": "2005",
+   "website": null
   }
  },
  "jpn-yonaguni": {
@@ -5794,6 +5794,25 @@
   }
  },
  "kadena-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Kadena AB",
+    "component": "Air Force Active",
+    "city": "Kadena Air Base Okinawa",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "Kadena AB",
+    "component": "Air Force Active",
+    "city": "Kadena Air Base Okinawa",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q608289",
    "coord": [
@@ -5816,11 +5835,13 @@
    "inception": "1945",
    "dissolved": null,
    "website": "http://www.kadena.af.mil"
-  },
+  }
+ },
+ "kadena-ammunition-okinawa": {
   "bsr": {
    "fy2023": {
     "country": "Japan",
-    "site": "Kadena AB",
+    "site": "Kadena Ammo Storage Annex",
     "component": "Air Force Active",
     "city": "Kadena Air Base Okinawa",
     "match": "site",
@@ -5828,16 +5849,14 @@
    },
    "fy2019": {
     "country": "Japan",
-    "site": "Kadena AB",
+    "site": "Kadena Ammo Storage Annex",
     "component": "Air Force Active",
     "city": "Kadena Air Base Okinawa",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "kadena-ammunition-okinawa": {
+  },
   "wikidata": {
    "item": "Q694313",
    "coord": [
@@ -5857,25 +5876,6 @@
    "inception": "2005-04-01",
    "dissolved": null,
    "website": "https://www.city.uruma.lg.jp/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Kadena Ammo Storage Annex",
-    "component": "Air Force Active",
-    "city": "Kadena Air Base Okinawa",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "Kadena Ammo Storage Annex",
-    "component": "Air Force Active",
-    "city": "Kadena Air Base Okinawa",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "kaiserslautern-army-depot": {
@@ -5936,23 +5936,6 @@
   }
  },
  "kaiserslautern-ramstein-community": {
-  "wikidata": {
-   "item": "Q1721740",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "human settlement",
-    "military installation"
-   ],
-   "inception": "1975-06-20",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -5988,6 +5971,23 @@
    "count": 40,
    "lat": 49.4266,
    "lon": 7.6049
+  },
+  "wikidata": {
+   "item": "Q1721740",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "human settlement",
+    "military installation"
+   ],
+   "inception": "1975-06-20",
+   "dissolved": null,
+   "website": null
   }
  },
  "kalkar-von-seydlitz-kaserne": {
@@ -6022,6 +6022,28 @@
   }
  },
  "kandahar-airfield": {
+  "osm": {
+   "verdict": "confirmed",
+   "nearest": {
+    "km": 0.16,
+    "osm": "way/1265002470",
+    "name": null,
+    "operator": null,
+    "kind": "military area"
+   },
+   "named": [
+    {
+     "km": 1.92,
+     "osm": "relation/13400473",
+     "name": "د احمد شاه بابا نړیوال هوايي ډګر",
+     "operator": "Afghan Air Force",
+     "kind": "aerodrome"
+    }
+   ],
+   "count": 9,
+   "lat": 31.5014,
+   "lon": 65.8663
+  },
   "wikidata": {
    "item": "Q33156",
    "coord": [
@@ -6045,28 +6067,6 @@
    "inception": null,
    "dissolved": null,
    "website": "http://www.kandaharinternationalairport.com/"
-  },
-  "osm": {
-   "verdict": "confirmed",
-   "nearest": {
-    "km": 0.16,
-    "osm": "way/1265002470",
-    "name": null,
-    "operator": null,
-    "kind": "military area"
-   },
-   "named": [
-    {
-     "km": 1.92,
-     "osm": "relation/13400473",
-     "name": "د احمد شاه بابا نړیوال هوايي ډګر",
-     "operator": "Afghan Air Force",
-     "kind": "aerodrome"
-    }
-   ],
-   "count": 9,
-   "lat": 31.5014,
-   "lon": 65.8663
   }
  },
  "kapaun-air-station-kaiserslautern": {
@@ -6127,25 +6127,6 @@
   }
  },
  "katterbach-kaserne-ansbach": {
-  "wikidata": {
-   "item": "Q1433462",
-   "coord": [
-    49.3092,
-    10.6369
-   ],
-   "distanceKm": 0.6,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": "1935",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6199,6 +6180,25 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q1433462",
+   "coord": [
+    49.3092,
+    10.6369
+   ],
+   "distanceKm": 0.6,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": "1935",
+   "dissolved": null,
+   "website": null
   }
  },
  "keflavik-base": {
@@ -6225,25 +6225,6 @@
   }
  },
  "kelley-barracks-stuttgart": {
-  "wikidata": {
-   "item": "Q835307",
-   "coord": [
-    48.7239,
-    9.17917
-   ],
-   "distanceKm": 0.7,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6283,6 +6264,25 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q835307",
+   "coord": [
+    48.7239,
+    9.17917
+   ],
+   "distanceKm": 0.7,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "kenyan-naval-base": {
@@ -6427,27 +6427,6 @@
   }
  },
  "kleine-brogel-air-base": {
-  "wikidata": {
-   "item": "Q1857706",
-   "coord": [
-    51.16389,
-    5.46667
-   ],
-   "distanceKm": 0.9,
-   "operators": [
-    "Belgian Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Belgium"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.kleinebrogelairbase.be/index.php/en"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6495,6 +6474,27 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1857706",
+   "coord": [
+    51.16389,
+    5.46667
+   ],
+   "distanceKm": 0.9,
+   "operators": [
+    "Belgian Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Belgium"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.kleinebrogelairbase.be/index.php/en"
   }
  },
  "kleine-brogel-nuclear": {
@@ -6555,27 +6555,6 @@
   }
  },
  "kucova-albania": {
-  "wikidata": {
-   "item": "Q18774",
-   "coord": [
-    40.80389,
-    19.91444
-   ],
-   "distanceKm": 3.1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Albania"
-   ],
-   "instanceOf": [
-    "city",
-    "human settlement",
-    "small city"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "http://www.bashkiakucove.gov.al/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6597,9 +6576,49 @@
    "count": 1,
    "lat": 40.7756,
    "lon": 19.9142
+  },
+  "wikidata": {
+   "item": "Q18774",
+   "coord": [
+    40.80389,
+    19.91444
+   ],
+   "distanceKm": 3.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Albania"
+   ],
+   "instanceOf": [
+    "city",
+    "human settlement",
+    "small city"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "http://www.bashkiakucove.gov.al/"
   }
  },
  "kunsan-ab-gunsan": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Kunsan AB",
+    "component": "Air Force Active",
+    "city": "Kunsan",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Kunsan AB",
+    "component": "Air Force Active",
+    "city": "Kunsan",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q491258",
    "coord": [
@@ -6619,28 +6638,21 @@
    "inception": "1992-12-14",
    "dissolved": null,
    "website": "http://www.airport.co.kr/gunsaneng/index.do"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Kunsan AB",
-    "component": "Air Force Active",
-    "city": "Kunsan",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Kunsan AB",
-    "component": "Air Force Active",
-    "city": "Kunsan",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "kurecik-radar-station": {
+  "bsr": {
+   "fy2023": {
+    "country": "Turkey",
+    "site": "Kurecik",
+    "component": "Army Active",
+    "city": "Malatya",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q6028444",
    "coord": [
@@ -6661,21 +6673,27 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Turkey",
-    "site": "Kurecik",
-    "component": "Army Active",
-    "city": "Malatya",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "lajes-azores": {
+  "bsr": {
+   "fy2023": {
+    "country": "Portugal",
+    "site": "Lajes Field",
+    "component": "Air Force Active",
+    "city": "Lajes",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Portugal",
+    "site": "Lajes Field",
+    "component": "Air Force Active",
+    "city": "Lajesfield",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q1800787",
    "coord": [
@@ -6697,47 +6715,9 @@
    "inception": "1943",
    "dissolved": null,
    "website": "https://aerogarelajes.azores.gov.pt"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Portugal",
-    "site": "Lajes Field",
-    "component": "Air Force Active",
-    "city": "Lajes",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Portugal",
-    "site": "Lajes Field",
-    "component": "Air Force Active",
-    "city": "Lajesfield",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "landstuhl-us-hospital": {
-  "wikidata": {
-   "item": "Q778782",
-   "coord": [
-    49.40417,
-    7.56028
-   ],
-   "distanceKm": 0.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military base",
-    "military hospital"
-   ],
-   "inception": "1951-10-15",
-   "dissolved": null,
-   "website": "https://landstuhl.tricare.mil/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6792,6 +6772,26 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q778782",
+   "coord": [
+    49.40417,
+    7.56028
+   ],
+   "distanceKm": 0.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military base",
+    "military hospital"
+   ],
+   "inception": "1951-10-15",
+   "dissolved": null,
+   "website": "https://landstuhl.tricare.mil/"
   }
  },
  "lask-air-base": {
@@ -6926,25 +6926,6 @@
   }
  },
  "malambo-ab": {
-  "wikidata": {
-   "item": "Q568597",
-   "coord": [
-    10.86028,
-    -74.77889
-   ],
-   "distanceKm": 2.9,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Colombia"
-   ],
-   "instanceOf": [
-    "municipality of Colombia"
-   ],
-   "inception": "1531-08-30",
-   "dissolved": null,
-   "website": "http://www.malambo-atlantico.gov.co/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -6980,6 +6961,25 @@
    "count": 3,
    "lat": 10.8868,
    "lon": -74.7789
+  },
+  "wikidata": {
+   "item": "Q568597",
+   "coord": [
+    10.86028,
+    -74.77889
+   ],
+   "distanceKm": 2.9,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Colombia"
+   ],
+   "instanceOf": [
+    "municipality of Colombia"
+   ],
+   "inception": "1531-08-30",
+   "dissolved": null,
+   "website": "http://www.malambo-atlantico.gov.co/"
   }
  },
  "maria-argana-paraguay": {
@@ -7006,25 +7006,6 @@
   }
  },
  "marinestutzpunkt-hohe-dune-rostock": {
-  "wikidata": {
-   "item": "Q15833978",
-   "coord": [
-    54.17639,
-    12.11611
-   ],
-   "distanceKm": 1,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "naval base"
-   ],
-   "inception": "1913",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -7053,9 +7034,40 @@
    "count": 4,
    "lat": 54.1759,
    "lon": 12.132
+  },
+  "wikidata": {
+   "item": "Q15833978",
+   "coord": [
+    54.17639,
+    12.11611
+   ],
+   "distanceKm": 1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "naval base"
+   ],
+   "inception": "1913",
+   "dissolved": null,
+   "website": null
   }
  },
  "maritime-component-command-naples": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "Lago Patria",
+    "component": "Navy Active",
+    "city": "Naples",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  },
   "wikidata": {
    "item": "Q1476257",
    "coord": [
@@ -7074,18 +7086,6 @@
    "inception": "2004",
    "dissolved": null,
    "website": "https://jfcnaples.nato.int/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Italy",
-    "site": "Lago Patria",
-    "component": "Navy Active",
-    "city": "Naples",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "context"
   }
  },
  "marshall-islands": {
@@ -7132,6 +7132,14 @@
   }
  },
  "masar-i-sharif-communnity": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 36.6566,
+   "lon": 67.1186
+  },
   "wikidata": {
    "item": "Q130469",
    "coord": [
@@ -7151,14 +7159,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 36.6566,
-   "lon": 67.1186
   }
  },
  "masirah-ab": {
@@ -7210,6 +7210,18 @@
   }
  },
  "mcas-futenma": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "MCAS Futenma",
+    "component": "Marine Corps Active",
+    "city": "Futenma Marine Corps Air Stati",
+    "match": "city",
+    "score": 0.75
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q1031547",
    "coord": [
@@ -7231,18 +7243,6 @@
    "inception": "1945",
    "dissolved": null,
    "website": "http://www.mcasfutenma.marines.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "MCAS Futenma",
-    "component": "Marine Corps Active",
-    "city": "Futenma Marine Corps Air Stati",
-    "match": "city",
-    "score": 0.75
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "mccully-barracks-wackernheim": {
@@ -7303,9 +7303,6 @@
   }
  },
  "medical-material-center-europe": {
-  "wikidata": {
-   "item": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -7334,9 +7331,30 @@
    "count": 7,
    "lat": 49.2275,
    "lon": 7.6211
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "menwith-hill-air-force-harrogate": {
+  "bsr": {
+   "fy2023": {
+    "country": "United Kingdom",
+    "site": "RAF Menwith Hill",
+    "component": "Air Force Active",
+    "city": "Harrogate",
+    "match": "site",
+    "score": 0.67
+   },
+   "fy2019": {
+    "country": "United Kingdom",
+    "site": "RAF Menwith Hill",
+    "component": "Air Force Active",
+    "city": "Harrogate",
+    "match": "site",
+    "score": 0.67
+   }
+  },
   "wikidata": {
    "item": "Q3928142",
    "coord": [
@@ -7358,27 +7376,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "United Kingdom",
-    "site": "RAF Menwith Hill",
-    "component": "Air Force Active",
-    "city": "Harrogate",
-    "match": "site",
-    "score": 0.67
-   },
-   "fy2019": {
-    "country": "United Kingdom",
-    "site": "RAF Menwith Hill",
-    "component": "Air Force Active",
-    "city": "Harrogate",
-    "match": "site",
-    "score": 0.67
-   }
   }
  },
  "mihail-kogalniceanu-constanta": {
+  "bsr": {
+   "fy2023": {
+    "country": "Romania",
+    "site": "Mihail Kogalniceanu Airfield",
+    "component": "Army Active",
+    "city": "Unknown",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Romania",
+    "site": "Mihail Kogalniceanu Airfield",
+    "component": "Army Active",
+    "city": "Mihail Kogălniceanu",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q5753943",
    "coord": [
@@ -7399,28 +7418,17 @@
    "inception": "1955",
    "dissolved": null,
    "website": "https://www.roaf.ro/?p=3876"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Romania",
-    "site": "Mihail Kogalniceanu Airfield",
-    "component": "Army Active",
-    "city": "Unknown",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Romania",
-    "site": "Mihail Kogalniceanu Airfield",
-    "component": "Army Active",
-    "city": "Mihail Kogălniceanu",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "money-island-south-chinese-sea": {
+  "osm": {
+   "verdict": "none",
+   "nearest": null,
+   "named": [],
+   "count": 0,
+   "lat": 16.4907,
+   "lon": 111.5593
+  },
   "wikidata": {
    "item": "Q1098039",
    "coord": [
@@ -7439,17 +7447,21 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "osm": {
-   "verdict": "none",
-   "nearest": null,
-   "named": [],
-   "count": 0,
-   "lat": 16.4907,
-   "lon": 111.5593
   }
  },
  "moron-air-base-spain": {
+  "bsr": {
+   "fy2023": {
+    "country": "Spain",
+    "site": "Moron AB",
+    "component": "Air Force Active",
+    "city": "Moron De La Frontera",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q924498",
    "coord": [
@@ -7472,18 +7484,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Spain",
-    "site": "Moron AB",
-    "component": "Air Force Active",
-    "city": "Moron De La Frontera",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "mount-st-rita-naval-link-station": {
@@ -7508,25 +7508,6 @@
   }
  },
  "munster-training-area": {
-  "wikidata": {
-   "item": "Q830816",
-   "coord": [
-    53.0356,
-    10.1186
-   ],
-   "distanceKm": 4.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military training area"
-   ],
-   "inception": "1893-04-01",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -7562,9 +7543,40 @@
    "count": 11,
    "lat": 52.9978,
    "lon": 10.1297
+  },
+  "wikidata": {
+   "item": "Q830816",
+   "coord": [
+    53.0356,
+    10.1186
+   ],
+   "distanceKm": 4.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military training area"
+   ],
+   "inception": "1893-04-01",
+   "dissolved": null,
+   "website": null
   }
  },
  "muwaffaq-salti-air-base-al-azraq-jordan": {
+  "bsr": {
+   "fy2023": {
+    "country": "Jordan",
+    "site": "Muwaffaq Salti Air Base",
+    "component": "Air Force Active",
+    "city": "Al Mafraq",
+    "match": "site",
+    "score": 0.67
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q2886524",
    "coord": [
@@ -7585,21 +7597,21 @@
    "inception": "1976",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Jordan",
-    "site": "Muwaffaq Salti Air Base",
-    "component": "Air Force Active",
-    "city": "Al Mafraq",
-    "match": "site",
-    "score": 0.67
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "namfi-souda": {
+  "bsr": {
+   "fy2023": {
+    "country": "Greece",
+    "site": "NSA Souda Bay NAMFI Compound",
+    "component": "Navy Active",
+    "city": "Ormos Soudas",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q1441847",
    "coord": [
@@ -7618,18 +7630,6 @@
    "inception": "1967-01-01",
    "dissolved": null,
    "website": "https://www.namfi.gr/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Greece",
-    "site": "NSA Souda Bay NAMFI Compound",
-    "component": "Navy Active",
-    "city": "Ormos Soudas",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "namfi-souda-bay": {
@@ -7653,27 +7653,6 @@
   }
  },
  "nas-argentia-newfoundland": {
-  "wikidata": {
-   "item": "Q3017610",
-   "coord": [
-    47.30611,
-    -53.99
-   ],
-   "distanceKm": 0.9,
-   "operators": [
-    "United States Navy"
-   ],
-   "occupants": [],
-   "country": [
-    "Canada"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": "1941",
-   "dissolved": "1994",
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -7714,28 +7693,30 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q3017610",
+   "coord": [
+    47.30611,
+    -53.99
+   ],
+   "distanceKm": 0.9,
+   "operators": [
+    "United States Navy"
+   ],
+   "occupants": [],
+   "country": [
+    "Canada"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": "1941",
+   "dissolved": "1994",
+   "website": null
   }
  },
  "nato-pipeline-station-bitburg": {
-  "wikidata": {
-   "item": "Q2392845",
-   "coord": [
-    49.91833,
-    6.485
-   ],
-   "distanceKm": 0.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "explosion"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -7764,9 +7745,40 @@
    "count": 2,
    "lat": 49.9185,
    "lon": 6.4802
+  },
+  "wikidata": {
+   "item": "Q2392845",
+   "coord": [
+    49.91833,
+    6.485
+   ],
+   "distanceKm": 0.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "explosion"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "naval-air-facility-atsugi-kanagawa": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "NAF Atsugi",
+    "component": "Navy Active",
+    "city": "Atsugi",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q3016710",
    "coord": [
@@ -7790,18 +7802,6 @@
    "inception": null,
    "dissolved": null,
    "website": "http://www.cnic.navy.mil/regions/cnrj/installations/naf_atsugi.html/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "NAF Atsugi",
-    "component": "Navy Active",
-    "city": "Atsugi",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "naval-base-fort-saint-louis": {
@@ -7826,6 +7826,18 @@
   }
  },
  "naval-base-guam": {
+  "bsr": {
+   "fy2023": {
+    "country": "Guam",
+    "site": "NAVBASE Guam",
+    "component": "Navy Active",
+    "city": "Agana",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q6981760",
    "coord": [
@@ -7844,46 +7856,9 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Guam",
-    "site": "NAVBASE Guam",
-    "component": "Navy Active",
-    "city": "Agana",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "naval-comm-station-exmouth": {
-  "wikidata": {
-   "item": "Q1898404",
-   "coord": [
-    -21.8164,
-    114.16563
-   ],
-   "distanceKm": 14.2,
-   "operators": [
-    "United States Navy",
-    "Royal Australian Navy",
-    "Capability Acquisition and Sustainment Group"
-   ],
-   "occupants": [],
-   "country": [
-    "Australia"
-   ],
-   "instanceOf": [
-    "military installation",
-    "transmitter station",
-    "heritage site"
-   ],
-   "inception": "1967",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "none",
    "nearest": null,
@@ -7910,28 +7885,34 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1898404",
+   "coord": [
+    -21.8164,
+    114.16563
+   ],
+   "distanceKm": 14.2,
+   "operators": [
+    "United States Navy",
+    "Royal Australian Navy",
+    "Capability Acquisition and Sustainment Group"
+   ],
+   "occupants": [],
+   "country": [
+    "Australia"
+   ],
+   "instanceOf": [
+    "military installation",
+    "transmitter station",
+    "heritage site"
+   ],
+   "inception": "1967",
+   "dissolved": null,
+   "website": null
   }
  },
  "naval-radio-transmitter-grindavik": {
-  "wikidata": {
-   "item": "Q6981898",
-   "coord": [
-    63.8503,
-    -22.4667
-   ],
-   "distanceKm": 1.2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Iceland"
-   ],
-   "instanceOf": [
-    "transmitter station"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Iceland",
@@ -7950,28 +7931,28 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "naval-radio-transmitter-lualualei": {
+  },
   "wikidata": {
-   "item": "Q984166",
+   "item": "Q6981898",
    "coord": [
-    21.42,
-    -158.148
+    63.8503,
+    -22.4667
    ],
-   "distanceKm": 1,
+   "distanceKm": 1.2,
    "operators": [],
    "occupants": [],
    "country": [
-    "United States"
+    "Iceland"
    ],
    "instanceOf": [
     "transmitter station"
    ],
-   "inception": "1972",
+   "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "naval-radio-transmitter-lualualei": {
   "bsr": {
    "fy2023": {
     "country": "Hawaii",
@@ -7990,9 +7971,47 @@
     "score": 1
    },
    "review": "context"
+  },
+  "wikidata": {
+   "item": "Q984166",
+   "coord": [
+    21.42,
+    -158.148
+   ],
+   "distanceKm": 1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United States"
+   ],
+   "instanceOf": [
+    "transmitter station"
+   ],
+   "inception": "1972",
+   "dissolved": null,
+   "website": null
   }
  },
  "naval-station-rota": {
+  "bsr": {
+   "fy2023": {
+    "country": "Spain",
+    "site": "NS Rota",
+    "component": "Navy Active",
+    "city": "Rota",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Spain",
+    "site": "NS Rota",
+    "component": "Navy Active",
+    "city": "Rota",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q729530",
    "coord": [
@@ -8015,31 +8034,9 @@
    "inception": "1953-09-26",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Spain",
-    "site": "NS Rota",
-    "component": "Navy Active",
-    "city": "Rota",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Spain",
-    "site": "NS Rota",
-    "component": "Navy Active",
-    "city": "Rota",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "naval-transmitter-site-aguada": {
-  "wikidata": {
-   "item": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Puerto Rico",
@@ -8058,6 +8055,9 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "niamey-air-base": {
@@ -8142,31 +8142,6 @@
   }
  },
  "nsa-coast-guard-bahrain": {
-  "wikidata": {
-   "item": "Q6981953",
-   "coord": [
-    26.20972,
-    50.60972
-   ],
-   "distanceKm": 1.9,
-   "operators": [
-    "United States Navy"
-   ],
-   "occupants": [
-    "United States Naval Forces Central Command",
-    "United States Fifth Fleet",
-    "Combined Maritime Forces"
-   ],
-   "country": [
-    "Bahrain"
-   ],
-   "instanceOf": [
-    "military installation"
-   ],
-   "inception": "1997",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8214,9 +8189,52 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q6981953",
+   "coord": [
+    26.20972,
+    50.60972
+   ],
+   "distanceKm": 1.9,
+   "operators": [
+    "United States Navy"
+   ],
+   "occupants": [
+    "United States Naval Forces Central Command",
+    "United States Fifth Fleet",
+    "Combined Maritime Forces"
+   ],
+   "country": [
+    "Bahrain"
+   ],
+   "instanceOf": [
+    "military installation"
+   ],
+   "inception": "1997",
+   "dissolved": null,
+   "website": null
   }
  },
  "nsa-souda-bay": {
+  "bsr": {
+   "fy2023": {
+    "country": "Greece",
+    "site": "NSA Souda Bay",
+    "component": "Navy Active",
+    "city": "Ormos Soudas",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Greece",
+    "site": "NSA Souda Bay",
+    "component": "Navy Active",
+    "city": "Soudha Bay",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q23302630",
    "coord": [
@@ -8235,24 +8253,6 @@
    "inception": "1951",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Greece",
-    "site": "NSA Souda Bay",
-    "component": "Navy Active",
-    "city": "Ormos Soudas",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Greece",
-    "site": "NSA Souda Bay",
-    "component": "Navy Active",
-    "city": "Soudha Bay",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "nurmsi-airfield-estonia": {
@@ -8277,27 +8277,6 @@
   }
  },
  "oberauerbach-polygone": {
-  "wikidata": {
-   "item": "Q1952423",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [
-    "United States Air Force",
-    "German Air Force",
-    "French Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "France"
-   ],
-   "instanceOf": [
-    "training ground",
-    "Training Center of the German Airforce"
-   ],
-   "inception": "1979-04",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8333,6 +8312,27 @@
    "count": 12,
    "lat": 49.28203,
    "lon": 7.39358
+  },
+  "wikidata": {
+   "item": "Q1952423",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [
+    "United States Air Force",
+    "German Air Force",
+    "French Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "France"
+   ],
+   "instanceOf": [
+    "training ground",
+    "Training Center of the German Airforce"
+   ],
+   "inception": "1979-04",
+   "dissolved": null,
+   "website": null
   }
  },
  "oberdachstetten-training-area": {
@@ -8379,25 +8379,6 @@
   }
  },
  "oberlausitz-training-area": {
-  "wikidata": {
-   "item": "Q160945",
-   "coord": [
-    51.4333,
-    14.7
-   ],
-   "distanceKm": 2.8,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military training area"
-   ],
-   "inception": "1945",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8419,6 +8400,25 @@
    "count": 29,
    "lat": 51.4103,
    "lon": 14.6836
+  },
+  "wikidata": {
+   "item": "Q160945",
+   "coord": [
+    51.4333,
+    14.7
+   ],
+   "distanceKm": 2.8,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military training area"
+   ],
+   "inception": "1945",
+   "dissolved": null,
+   "website": null
   }
  },
  "okinawa": {
@@ -8443,6 +8443,25 @@
   }
  },
  "osan-ab-pyeongtaek": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Osan AFB",
+    "component": "Air Force Active",
+    "city": "Osan",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Osan AFB",
+    "component": "Air Force Active",
+    "city": "Osan Afb",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q492965",
    "coord": [
@@ -8463,25 +8482,6 @@
    "inception": "1951",
    "dissolved": null,
    "website": "https://www.osan.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Osan AFB",
-    "component": "Air Force Active",
-    "city": "Osan",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Osan AFB",
-    "component": "Air Force Active",
-    "city": "Osan Afb",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "ouagadougou": {
@@ -8534,20 +8534,6 @@
   }
  },
  "palanquero-ab": {
-  "wikidata": {
-   "item": "Q1935172",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "military installation"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8569,6 +8555,20 @@
    "count": 1,
    "lat": 5.4843,
    "lon": -74.6564
+  },
+  "wikidata": {
+   "item": "Q1935172",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "military installation"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "palau": {
@@ -8697,25 +8697,6 @@
   }
  },
  "patch-barracks-stuttgart": {
-  "wikidata": {
-   "item": "Q2056645",
-   "coord": [
-    48.7364,
-    9.08111
-   ],
-   "distanceKm": 0.6,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8769,6 +8750,25 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q2056645",
+   "coord": [
+    48.7364,
+    9.08111
+   ],
+   "distanceKm": 0.6,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "pattle-island": {
@@ -8788,6 +8788,25 @@
   }
  },
  "paya-lebar-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Singapore",
+    "site": "Paya Lebar Air Base",
+    "component": "Navy Active",
+    "city": "Singapore",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Singapore",
+    "site": "Paya Lebar AB",
+    "component": "Navy Active",
+    "city": "Singapore",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q3504948",
    "coord": [
@@ -8808,25 +8827,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Singapore",
-    "site": "Paya Lebar Air Base",
-    "component": "Navy Active",
-    "city": "Singapore",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Singapore",
-    "site": "Paya Lebar AB",
-    "component": "Navy Active",
-    "city": "Singapore",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "pemba-naval-base": {
@@ -8871,25 +8871,6 @@
   }
  },
  "pratas-islands-south-china-sea": {
-  "wikidata": {
-   "item": "Q11103595",
-   "coord": [
-    20.70357,
-    116.72754
-   ],
-   "distanceKm": 0.2,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Taiwan"
-   ],
-   "instanceOf": [
-    "island"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -8918,6 +8899,25 @@
    "count": 3,
    "lat": 20.70408,
    "lon": 116.72564
+  },
+  "wikidata": {
+   "item": "Q11103595",
+   "coord": [
+    20.70357,
+    116.72754
+   ],
+   "distanceKm": 0.2,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Taiwan"
+   ],
+   "instanceOf": [
+    "island"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "prince-sultan-air-base": {
@@ -9068,32 +9068,6 @@
   }
  },
  "raf-akrotiri": {
-  "wikidata": {
-   "item": "Q60509",
-   "coord": [
-    34.59042,
-    32.98786
-   ],
-   "distanceKm": 0,
-   "operators": [
-    "Royal Air Force"
-   ],
-   "occupants": [
-    "No. 84 Squadron RAF",
-    "No. 903 Expeditionary Air Wing Royal Air Force"
-   ],
-   "country": [
-    "United Kingdom"
-   ],
-   "instanceOf": [
-    "Royal Air Force station",
-    "Royal Air Force aerodrome",
-    "airbase"
-   ],
-   "inception": "1956-01-01",
-   "dissolved": null,
-   "website": "https://www.raf.mod.uk/our-organisation/stations/raf-akrotiri/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -9134,9 +9108,54 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q60509",
+   "coord": [
+    34.59042,
+    32.98786
+   ],
+   "distanceKm": 0,
+   "operators": [
+    "Royal Air Force"
+   ],
+   "occupants": [
+    "No. 84 Squadron RAF",
+    "No. 903 Expeditionary Air Wing Royal Air Force"
+   ],
+   "country": [
+    "United Kingdom"
+   ],
+   "instanceOf": [
+    "Royal Air Force station",
+    "Royal Air Force aerodrome",
+    "airbase"
+   ],
+   "inception": "1956-01-01",
+   "dissolved": null,
+   "website": "https://www.raf.mod.uk/our-organisation/stations/raf-akrotiri/"
   }
  },
  "raf-alconbury": {
+  "bsr": {
+   "fy2023": {
+    "country": "United Kingdom",
+    "site": "RAF Alconbury",
+    "component": "Air Force Active",
+    "city": "Cambridge",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "United Kingdom",
+    "site": "RAF Alconbury",
+    "component": "Air Force Active",
+    "city": "Cambridge",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q564876",
    "coord": [
@@ -9162,28 +9181,28 @@
    "inception": "1938-05",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "United Kingdom",
-    "site": "RAF Alconbury",
-    "component": "Air Force Active",
-    "city": "Cambridge",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "United Kingdom",
-    "site": "RAF Alconbury",
-    "component": "Air Force Active",
-    "city": "Cambridge",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "raf-ascension-island-st-helena": {
+  "bsr": {
+   "fy2023": {
+    "country": "Saint Helena, Ascension, And Tristan Da Cunha",
+    "site": "Ascension Auxiliary Airfield",
+    "component": "Air Force Active",
+    "city": "Ascension Island",
+    "match": "city",
+    "score": 0.67
+   },
+   "fy2019": {
+    "country": "St. Helena",
+    "site": "Ascension Auxiliary Airfield",
+    "component": "Air Force Active",
+    "city": "Ascension Island",
+    "match": "city",
+    "score": 0.67
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q46197",
    "coord": [
@@ -9204,28 +9223,27 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Saint Helena, Ascension, And Tristan Da Cunha",
-    "site": "Ascension Auxiliary Airfield",
-    "component": "Air Force Active",
-    "city": "Ascension Island",
-    "match": "city",
-    "score": 0.67
-   },
-   "fy2019": {
-    "country": "St. Helena",
-    "site": "Ascension Auxiliary Airfield",
-    "component": "Air Force Active",
-    "city": "Ascension Island",
-    "match": "city",
-    "score": 0.67
-   },
-   "review": "supports"
   }
  },
  "raf-barford-st-john": {
+  "bsr": {
+   "fy2023": {
+    "country": "United Kingdom",
+    "site": "RAF Barford St John Transmitter Annex",
+    "component": "Air Force Active",
+    "city": "Croughton",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "United Kingdom",
+    "site": "RAF Barford St John Transmitter Annex",
+    "component": "Air Force Active",
+    "city": "Northamptonshire",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q7275155",
    "coord": [
@@ -9247,27 +9265,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "raf-bicester": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "RAF Barford St John Transmitter Annex",
+    "site": "RAF Bicester",
     "component": "Air Force Active",
-    "city": "Croughton",
+    "city": "Bicester Afb",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "RAF Barford St John Transmitter Annex",
+    "site": "RAF Bicester",
     "component": "Air Force Active",
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
-   }
-  }
- },
- "raf-bicester": {
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q619674",
    "coord": [
@@ -9289,28 +9308,28 @@
    "inception": "1917-01-01",
    "dissolved": "1976-01-01",
    "website": null
-  },
+  }
+ },
+ "raf-blenheim-crescent": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "RAF Bicester",
+    "site": "Blenheim Crescent",
     "component": "Air Force Active",
-    "city": "Bicester Afb",
+    "city": "Croughton",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "RAF Bicester",
+    "site": "Blenheim Crescent",
     "component": "Air Force Active",
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "raf-blenheim-crescent": {
+  },
   "wikidata": {
    "item": "Q7275181",
    "coord": [
@@ -9331,11 +9350,13 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "raf-croughton": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "Blenheim Crescent",
+    "site": "RAF Croughton",
     "component": "Air Force Active",
     "city": "Croughton",
     "match": "site",
@@ -9343,16 +9364,13 @@
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "Blenheim Crescent",
+    "site": "RAF Croughton",
     "component": "Air Force Active",
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
-   },
-   "review": "supports"
-  }
- },
- "raf-croughton": {
+   }
+  },
   "wikidata": {
    "item": "Q7275260",
    "coord": [
@@ -9373,24 +9391,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "United Kingdom",
-    "site": "RAF Croughton",
-    "component": "Air Force Active",
-    "city": "Croughton",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "United Kingdom",
-    "site": "RAF Croughton",
-    "component": "Air Force Active",
-    "city": "Northamptonshire",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "raf-digby": {
@@ -9419,6 +9419,24 @@
   }
  },
  "raf-fairford": {
+  "bsr": {
+   "fy2023": {
+    "country": "United Kingdom",
+    "site": "RAF Fairford",
+    "component": "Air Force Active",
+    "city": "Fairford",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "United Kingdom",
+    "site": "RAF Fairford",
+    "component": "Air Force Active",
+    "city": "Fairford",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q1427413",
    "coord": [
@@ -9440,27 +9458,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "raf-feltwell": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "RAF Fairford",
+    "site": "RAF Feltwell",
     "component": "Air Force Active",
-    "city": "Fairford",
+    "city": "Feltwell",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "RAF Fairford",
+    "site": "RAF Feltwell",
     "component": "Air Force Active",
-    "city": "Fairford",
+    "city": "Feltwell",
     "match": "site",
     "score": 1
-   }
-  }
- },
- "raf-feltwell": {
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q7275312",
    "coord": [
@@ -9483,25 +9502,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "United Kingdom",
-    "site": "RAF Feltwell",
-    "component": "Air Force Active",
-    "city": "Feltwell",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "United Kingdom",
-    "site": "RAF Feltwell",
-    "component": "Air Force Active",
-    "city": "Feltwell",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "raf-fylingdales": {
@@ -9552,6 +9552,25 @@
   }
  },
  "raf-lakenheath": {
+  "bsr": {
+   "fy2023": {
+    "country": "United Kingdom",
+    "site": "RAF Lakenheath",
+    "component": "Air Force Active",
+    "city": "Lakenheath",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "United Kingdom",
+    "site": "RAF Lakenheath",
+    "component": "Air Force Active",
+    "city": "Lakenheath",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q285198",
    "coord": [
@@ -9575,28 +9594,28 @@
    "inception": "1941",
    "dissolved": null,
    "website": "https://www.lakenheath.af.mil/"
-  },
+  }
+ },
+ "raf-mildenhall": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "RAF Lakenheath",
+    "site": "RAF Mildenhall",
     "component": "Air Force Active",
-    "city": "Lakenheath",
+    "city": "Mildenhall",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "RAF Lakenheath",
+    "site": "RAF Mildenhall",
     "component": "Air Force Active",
-    "city": "Lakenheath",
+    "city": "Mildenhall",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "raf-mildenhall": {
+  },
   "wikidata": {
    "item": "Q772162",
    "coord": [
@@ -9619,28 +9638,28 @@
    "inception": null,
    "dissolved": null,
    "website": "https://www.mildenhall.af.mil/"
-  },
+  }
+ },
+ "raf-molesworth": {
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
-    "site": "RAF Mildenhall",
+    "site": "RAF Molesworth",
     "component": "Air Force Active",
-    "city": "Mildenhall",
+    "city": "Cambridge",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "United Kingdom",
-    "site": "RAF Mildenhall",
+    "site": "RAF Molesworth",
     "component": "Air Force Active",
-    "city": "Mildenhall",
+    "city": "Cambridge",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "raf-molesworth": {
+  },
   "wikidata": {
    "item": "Q7275484",
    "coord": [
@@ -9661,25 +9680,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "United Kingdom",
-    "site": "RAF Molesworth",
-    "component": "Air Force Active",
-    "city": "Cambridge",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "United Kingdom",
-    "site": "RAF Molesworth",
-    "component": "Air Force Active",
-    "city": "Cambridge",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "raf-mount-pleasant-falkland": {
@@ -9717,9 +9717,6 @@
   }
  },
  "raf-oakhanger": {
-  "wikidata": {
-   "item": null
-  },
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
@@ -9738,12 +9735,12 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "raf-troodos": {
-  "wikidata": {
-   "item": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -9772,28 +9769,12 @@
    "count": 3,
    "lat": 34.9138,
    "lon": 32.8856
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "raf-welford-ammo-storage-area": {
-  "wikidata": {
-   "item": "Q7275663",
-   "coord": [
-    51.47,
-    -1.4
-   ],
-   "distanceKm": 0.5,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "United Kingdom"
-   ],
-   "instanceOf": [
-    "Royal Air Force station"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "United Kingdom",
@@ -9812,31 +9793,28 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q7275663",
+   "coord": [
+    51.47,
+    -1.4
+   ],
+   "distanceKm": 0.5,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "United Kingdom"
+   ],
+   "instanceOf": [
+    "Royal Air Force station"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "ramstein-air-base": {
-  "wikidata": {
-   "item": "Q161348",
-   "coord": [
-    49.43694,
-    7.6
-   ],
-   "distanceKm": 0.3,
-   "operators": [
-    "United States Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "airbase",
-    "aerodrome"
-   ],
-   "inception": "1953-06-01",
-   "dissolved": null,
-   "website": "https://www.ramstein.af.mil/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -9890,6 +9868,28 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q161348",
+   "coord": [
+    49.43694,
+    7.6
+   ],
+   "distanceKm": 0.3,
+   "operators": [
+    "United States Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase",
+    "aerodrome"
+   ],
+   "inception": "1953-06-01",
+   "dissolved": null,
+   "website": "https://www.ramstein.af.mil/"
   }
  },
  "ramsund-naval-station": {
@@ -9914,6 +9914,17 @@
   }
  },
  "redzikowo": {
+  "bsr": {
+   "fy2023": null,
+   "fy2019": {
+    "country": "Poland",
+    "site": "Varloc Poland",
+    "component": "Navy Active",
+    "city": "Redzikowo",
+    "match": "city",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q4064211",
    "coord": [
@@ -9932,17 +9943,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": null,
-   "fy2019": {
-    "country": "Poland",
-    "site": "Varloc Poland",
-    "component": "Navy Active",
-    "city": "Redzikowo",
-    "match": "city",
-    "score": 1
-   }
   }
  },
  "reunion": {
@@ -10027,27 +10027,6 @@
   }
  },
  "robertson-barracks": {
-  "wikidata": {
-   "item": "Q7352085",
-   "coord": [
-    -12.445,
-    130.974
-   ],
-   "distanceKm": 9.5,
-   "operators": [
-    "Australia"
-   ],
-   "occupants": [],
-   "country": [
-    "Australia"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": "1989",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -10069,28 +10048,30 @@
    "count": 1,
    "lat": -12.3695,
    "lon": 130.9323
-  }
- },
- "robinson-barracks-stuttgart": {
+  },
   "wikidata": {
-   "item": "Q1471920",
+   "item": "Q7352085",
    "coord": [
-    48.8214,
-    9.18778
+    -12.445,
+    130.974
    ],
-   "distanceKm": 0.5,
-   "operators": [],
+   "distanceKm": 9.5,
+   "operators": [
+    "Australia"
+   ],
    "occupants": [],
    "country": [
-    "Germany"
+    "Australia"
    ],
    "instanceOf": [
     "barracks"
    ],
-   "inception": null,
+   "inception": "1989",
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "robinson-barracks-stuttgart": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10145,6 +10126,25 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1471920",
+   "coord": [
+    48.8214,
+    9.18778
+   ],
+   "distanceKm": 0.5,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "rudninkai-litauen": {
@@ -10317,6 +10317,25 @@
   }
  },
  "sasebo-naval-base-nagasaki": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "COMFLEACT Sasebo",
+    "component": "Navy Active",
+    "city": "Sasebo",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "COMFLEACT Sasebo",
+    "component": "Navy Active",
+    "city": "Sasebo",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q4420953",
    "coord": [
@@ -10337,46 +10356,9 @@
    "inception": "1945",
    "dissolved": null,
    "website": "https://cnrj.cnic.navy.mil/Installations/CFA-Sasebo/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "COMFLEACT Sasebo",
-    "component": "Navy Active",
-    "city": "Sasebo",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "COMFLEACT Sasebo",
-    "component": "Navy Active",
-    "city": "Sasebo",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "satcom-landstuhl": {
-  "wikidata": {
-   "item": "Q2567808",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [
-    "United States Space Force"
-   ],
-   "occupants": [],
-   "country": [
-    "United States"
-   ],
-   "instanceOf": [
-    "communication system"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10412,23 +10394,27 @@
    "count": 9,
    "lat": 49.40269,
    "lon": 7.53429
-  }
- },
- "satellite-ground-system-ramstein": {
+  },
   "wikidata": {
-   "item": "Q6597311",
+   "item": "Q2567808",
    "coord": null,
    "distanceKm": null,
-   "operators": [],
+   "operators": [
+    "United States Space Force"
+   ],
    "occupants": [],
-   "country": [],
+   "country": [
+    "United States"
+   ],
    "instanceOf": [
-    "human"
+    "communication system"
    ],
    "inception": null,
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "satellite-ground-system-ramstein": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10464,24 +10450,23 @@
    "count": 40,
    "lat": 49.4462,
    "lon": 7.61247
-  }
- },
- "savaneta-kamp": {
+  },
   "wikidata": {
-   "item": "Q1311437",
+   "item": "Q6597311",
    "coord": null,
    "distanceKm": null,
    "operators": [],
    "occupants": [],
    "country": [],
    "instanceOf": [
-    "marine force",
-    "marine unit"
+    "human"
    ],
-   "inception": "1665-01-01",
+   "inception": null,
    "dissolved": null,
-   "website": "http://www.marine.nl/mariniers/"
-  },
+   "website": null
+  }
+ },
+ "savaneta-kamp": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10510,6 +10495,21 @@
    "count": 2,
    "lat": 12.446,
    "lon": -69.9356
+  },
+  "wikidata": {
+   "item": "Q1311437",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "marine force",
+    "marine unit"
+   ],
+   "inception": "1665-01-01",
+   "dissolved": null,
+   "website": "http://www.marine.nl/mariniers/"
   }
  },
  "secon-thomas-shoal": {
@@ -10532,27 +10532,6 @@
   }
  },
  "sembach-kaserne": {
-  "wikidata": {
-   "item": "Q820540",
-   "coord": [
-    49.52833,
-    7.86583
-   ],
-   "distanceKm": 0.9,
-   "operators": [
-    "United States Army"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "barracks"
-   ],
-   "inception": "1951",
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10600,26 +10579,30 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "sennelager": {
+  },
   "wikidata": {
-   "item": "Q24996973",
+   "item": "Q820540",
    "coord": [
-    51.778,
-    8.72
+    49.52833,
+    7.86583
    ],
-   "distanceKm": 8.1,
-   "operators": [],
+   "distanceKm": 0.9,
+   "operators": [
+    "United States Army"
+   ],
    "occupants": [],
    "country": [
     "Germany"
    ],
-   "instanceOf": [],
-   "inception": null,
+   "instanceOf": [
+    "barracks"
+   ],
+   "inception": "1951",
    "dissolved": null,
    "website": null
-  },
+  }
+ },
+ "sennelager": {
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -10655,6 +10638,23 @@
    "count": 11,
    "lat": 51.8472,
    "lon": 8.7571
+  },
+  "wikidata": {
+   "item": "Q24996973",
+   "coord": [
+    51.778,
+    8.72
+   ],
+   "distanceKm": 8.1,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "shahbaz-ab": {
@@ -10681,27 +10681,6 @@
   }
  },
  "shaikh-isa-air-base-bahrain": {
-  "wikidata": {
-   "item": "Q82928",
-   "coord": [
-    25.91833,
-    50.59056
-   ],
-   "distanceKm": 4.6,
-   "operators": [
-    "Royal Bahraini Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Bahrain"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "near",
    "nearest": {
@@ -10735,6 +10714,27 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q82928",
+   "coord": [
+    25.91833,
+    50.59056
+   ],
+   "distanceKm": 4.6,
+   "operators": [
+    "Royal Bahraini Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Bahrain"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "shamsi-airfield-pakistan": {
@@ -10785,25 +10785,6 @@
   }
  },
  "shape-mons": {
-  "wikidata": {
-   "item": "Q1432908",
-   "coord": [
-    50.50044,
-    3.98325
-   ],
-   "distanceKm": 0.8,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Belgium"
-   ],
-   "instanceOf": [
-    "headquarters"
-   ],
-   "inception": "1951-04-02",
-   "dissolved": null,
-   "website": "https://shape.nato.int/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -10851,6 +10832,25 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q1432908",
+   "coord": [
+    50.50044,
+    3.98325
+   ],
+   "distanceKm": 0.8,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Belgium"
+   ],
+   "instanceOf": [
+    "headquarters"
+   ],
+   "inception": "1951-04-02",
+   "dissolved": null,
+   "website": "https://shape.nato.int/"
   }
  },
  "shipton-kaserne-ansbach": {
@@ -10933,6 +10933,25 @@
   }
  },
  "sigonalla-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "NAS Sigonella",
+    "component": "Navy Active",
+    "city": "Sigonella",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Italy",
+    "site": "NAS Sigonella",
+    "component": "Navy Active",
+    "city": "Sigonella Sicily",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q938394",
    "coord": [
@@ -10954,25 +10973,6 @@
    "inception": "1959-06-15",
    "dissolved": null,
    "website": "http://www.cnic.navy.mil/Sigonella/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Italy",
-    "site": "NAS Sigonella",
-    "component": "Navy Active",
-    "city": "Sigonella",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Italy",
-    "site": "NAS Sigonella",
-    "component": "Navy Active",
-    "city": "Sigonella Sicily",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "singapore": {
@@ -11011,25 +11011,6 @@
   }
  },
  "smith-barracks-baumholder": {
-  "wikidata": {
-   "item": "Q541832",
-   "coord": [
-    49.61389,
-    7.33333
-   ],
-   "distanceKm": 1.3,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "urban municipality in Germany"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": "https://www.baumholder.de/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -11084,6 +11065,25 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q541832",
+   "coord": [
+    49.61389,
+    7.33333
+   ],
+   "distanceKm": 1.3,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "urban municipality in Germany"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": "https://www.baumholder.de/"
   }
  },
  "sola-military-air-station": {
@@ -11112,25 +11112,6 @@
   }
  },
  "soto-cano-honduras": {
-  "wikidata": {
-   "item": "Q747620",
-   "coord": [
-    14.38198,
-    -87.61326
-   ],
-   "distanceKm": 0.5,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Honduras"
-   ],
-   "instanceOf": [
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Honduras",
@@ -11149,30 +11130,28 @@
     "score": 1
    },
    "review": "supports"
-  }
- },
- "spangdahlem-air-base": {
+  },
   "wikidata": {
-   "item": "Q656939",
+   "item": "Q747620",
    "coord": [
-    49.9727,
-    6.6925
+    14.38198,
+    -87.61326
    ],
    "distanceKm": 0.5,
-   "operators": [
-    "United States Air Force"
-   ],
+   "operators": [],
    "occupants": [],
    "country": [
-    "Germany"
+    "Honduras"
    ],
    "instanceOf": [
     "airbase"
    ],
-   "inception": "1952-09",
+   "inception": null,
    "dissolved": null,
-   "website": "https://www.spangdahlem.af.mil/"
-  },
+   "website": null
+  }
+ },
+ "spangdahlem-air-base": {
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -11212,23 +11191,30 @@
     "match": "site",
     "score": 1
    }
+  },
+  "wikidata": {
+   "item": "Q656939",
+   "coord": [
+    49.9727,
+    6.6925
+   ],
+   "distanceKm": 0.5,
+   "operators": [
+    "United States Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "airbase"
+   ],
+   "inception": "1952-09",
+   "dissolved": null,
+   "website": "https://www.spangdahlem.af.mil/"
   }
  },
  "stock-barracks-illesheim": {
-  "wikidata": {
-   "item": "Q108337154",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "military base"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -11269,9 +11255,42 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q108337154",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "military base"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "suwon-ab": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Suwon AB",
+    "component": "Air Force Active",
+    "city": "Suwon",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Suwon AB",
+    "component": "Air Force Active",
+    "city": "Suwon",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q11252889",
    "coord": [
@@ -11292,25 +11311,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Suwon AB",
-    "component": "Air Force Active",
-    "city": "Suwon",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Suwon AB",
-    "component": "Air Force Active",
-    "city": "Suwon",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "taara-estonia": {
@@ -11465,6 +11465,20 @@
   }
  },
  "telecom-cape-verde": {
+  "osm": {
+   "verdict": "confirmed",
+   "nearest": {
+    "km": 0.16,
+    "osm": "relation/14778618",
+    "name": null,
+    "operator": null,
+    "kind": "military area"
+   },
+   "named": [],
+   "count": 1,
+   "lat": 16.87056,
+   "lon": -24.93238
+  },
   "wikidata": {
    "item": "Q1011",
    "coord": [
@@ -11487,23 +11501,21 @@
    "inception": "1975-07-05",
    "dissolved": null,
    "website": "http://www.governo.cv"
-  },
-  "osm": {
-   "verdict": "confirmed",
-   "nearest": {
-    "km": 0.16,
-    "osm": "relation/14778618",
-    "name": null,
-    "operator": null,
-    "kind": "military area"
-   },
-   "named": [],
-   "count": 1,
-   "lat": 16.87056,
-   "lon": -24.93238
   }
  },
  "tengan-pier-camp-courtney": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Camp Courtney",
+    "component": "Marine Corps Active",
+    "city": "Camp Courtney Okinawa",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q4381152",
    "coord": [
@@ -11524,18 +11536,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Camp Courtney",
-    "component": "Marine Corps Active",
-    "city": "Camp Courtney Okinawa",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "thadd-deployment-base": {
@@ -11557,6 +11557,18 @@
   }
  },
  "thule-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Greenland",
+    "site": "Thule AB",
+    "component": "Air Force Active",
+    "city": "Thule",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q131520504",
    "coord": [
@@ -11575,21 +11587,21 @@
    "inception": "1951",
    "dissolved": null,
    "website": "https://www.petersonschriever.spaceforce.mil/Pituffik-SB-Greenland/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Greenland",
-    "site": "Thule AB",
-    "component": "Air Force Active",
-    "city": "Thule",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "thumrait": {
+  "bsr": {
+   "fy2023": null,
+   "fy2019": {
+    "country": "Oman",
+    "site": "Thumrait MAP",
+    "component": "Air Force Active",
+    "city": "Muscat",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q1001917",
    "coord": [
@@ -11608,21 +11620,31 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": null,
-   "fy2019": {
-    "country": "Oman",
-    "site": "Thumrait MAP",
-    "component": "Air Force Active",
-    "city": "Muscat",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "tindal-raaf-base": {
+  "osm": {
+   "verdict": "confirmed",
+   "nearest": {
+    "km": 0.63,
+    "osm": "way/953259684",
+    "name": "RAAF Base Tindal",
+    "operator": "RAAF / Katherine Town Council",
+    "kind": "airfield"
+   },
+   "named": [
+    {
+     "km": 0.63,
+     "osm": "way/953259684",
+     "name": "RAAF Base Tindal",
+     "operator": "RAAF / Katherine Town Council",
+     "kind": "airfield"
+    }
+   ],
+   "count": 12,
+   "lat": -14.5239,
+   "lon": 132.3818
+  },
   "wikidata": {
    "item": "Q1551495",
    "coord": [
@@ -11646,45 +11668,9 @@
    "inception": null,
    "dissolved": null,
    "website": "http://www.airforce.gov.au/Bases/Northern-Territory/RAAF-Base-Tindal/?RAAF-hHBYVzFK6EsZI++TiITQwfB6YNnQZ/Lc"
-  },
-  "osm": {
-   "verdict": "confirmed",
-   "nearest": {
-    "km": 0.63,
-    "osm": "way/953259684",
-    "name": "RAAF Base Tindal",
-    "operator": "RAAF / Katherine Town Council",
-    "kind": "airfield"
-   },
-   "named": [
-    {
-     "km": 0.63,
-     "osm": "way/953259684",
-     "name": "RAAF Base Tindal",
-     "operator": "RAAF / Katherine Town Council",
-     "kind": "airfield"
-    }
-   ],
-   "count": 12,
-   "lat": -14.5239,
-   "lon": 132.3818
   }
  },
  "tirpitzhafen-kiel": {
-  "wikidata": {
-   "item": "Q2649176",
-   "coord": null,
-   "distanceKm": null,
-   "operators": [],
-   "occupants": [],
-   "country": [],
-   "instanceOf": [
-    "military unit"
-   ],
-   "inception": "1962-01-01",
-   "dissolved": "2002",
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -11720,6 +11706,20 @@
    "count": 12,
    "lat": 54.356,
    "lon": 10.1477
+  },
+  "wikidata": {
+   "item": "Q2649176",
+   "coord": null,
+   "distanceKm": null,
+   "operators": [],
+   "occupants": [],
+   "country": [],
+   "instanceOf": [
+    "military unit"
+   ],
+   "inception": "1962-01-01",
+   "dissolved": "2002",
+   "website": null
   }
  },
  "training-area-eugen-kvaternik": {
@@ -11746,9 +11746,6 @@
   }
  },
  "training-center-drawsko": {
-  "wikidata": {
-   "item": null
-  },
   "bsr": {
    "fy2023": {
     "country": "Poland",
@@ -11760,6 +11757,9 @@
    },
    "fy2019": null,
    "review": "supports"
+  },
+  "wikidata": {
+   "item": null
   }
  },
  "training-centre-general-popescu": {
@@ -11848,6 +11848,18 @@
   }
  },
  "us-air-base-201": {
+  "bsr": {
+   "fy2023": {
+    "country": "Niger",
+    "site": "Csl Agadez",
+    "component": "Air Force Active",
+    "city": "Unknown",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q389944",
    "coord": [
@@ -11866,21 +11878,28 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Niger",
-    "site": "Csl Agadez",
-    "component": "Air Force Active",
-    "city": "Unknown",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "us-army-garrison-yongsan": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Yongsan Garrison",
+    "component": "Army Active",
+    "city": "Seoul",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Yongsan Garrison",
+    "component": "Army Active",
+    "city": "Seoul",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q483832",
    "coord": [
@@ -11901,25 +11920,6 @@
    "inception": "2006-10-01",
    "dissolved": null,
    "website": "https://home.army.mil/yongsan/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Yongsan Garrison",
-    "component": "Army Active",
-    "city": "Seoul",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Yongsan Garrison",
-    "component": "Army Active",
-    "city": "Seoul",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "us-camp-bondsteel": {
@@ -11969,6 +11969,18 @@
   }
  },
  "us-camp-lemonnier": {
+  "bsr": {
+   "fy2023": {
+    "country": "Djibouti",
+    "site": "Camp Lemonier Djibouti",
+    "component": "Navy Active",
+    "city": "Djibouti",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q2935221",
    "coord": [
@@ -11989,18 +12001,6 @@
    "inception": "2001",
    "dissolved": null,
    "website": "http://www.cnic.navy.mil/cldj/index.htm"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Djibouti",
-    "site": "Camp Lemonier Djibouti",
-    "component": "Navy Active",
-    "city": "Djibouti",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "supports"
   }
  },
  "usag-ansbach": {
@@ -12070,6 +12070,24 @@
   }
  },
  "usag-humphreys": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Camp Humphreys",
+    "component": "Army Active",
+    "city": "Pyeongtaek",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Korea, Republic Of",
+    "site": "Camp Humphreys",
+    "component": "Army Active",
+    "city": "Pyong Taek",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q626752",
    "coord": [
@@ -12088,48 +12106,9 @@
    "inception": null,
    "dissolved": null,
    "website": "https://home.army.mil/humphreys/index.php/?from=wiki"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "South Korea",
-    "site": "Camp Humphreys",
-    "component": "Army Active",
-    "city": "Pyeongtaek",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Korea, Republic Of",
-    "site": "Camp Humphreys",
-    "component": "Army Active",
-    "city": "Pyong Taek",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "ushuaia": {
-  "wikidata": {
-   "item": "Q44254",
-   "coord": [
-    -54.80722,
-    -68.30806
-   ],
-   "distanceKm": 1.7,
-   "operators": [],
-   "occupants": [],
-   "country": [
-    "Argentina"
-   ],
-   "instanceOf": [
-    "city",
-    "municipality",
-    "city of Argentina"
-   ],
-   "inception": "1884-10-12",
-   "dissolved": null,
-   "website": "http://www.ushuaia.gob.ar"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -12165,6 +12144,27 @@
    "count": 4,
    "lat": -54.7993,
    "lon": -68.2849
+  },
+  "wikidata": {
+   "item": "Q44254",
+   "coord": [
+    -54.80722,
+    -68.30806
+   ],
+   "distanceKm": 1.7,
+   "operators": [],
+   "occupants": [],
+   "country": [
+    "Argentina"
+   ],
+   "instanceOf": [
+    "city",
+    "municipality",
+    "city of Argentina"
+   ],
+   "inception": "1884-10-12",
+   "dissolved": null,
+   "website": "http://www.ushuaia.gob.ar"
   }
  },
  "vandenberg-space-force-base": {
@@ -12216,6 +12216,18 @@
   }
  },
  "vieques-island-training-area": {
+  "bsr": {
+   "fy2023": {
+    "country": "Puerto Rico",
+    "site": "Vieques West",
+    "component": "Navy Active",
+    "city": "Vieques",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  },
   "wikidata": {
    "item": "Q737624",
    "coord": [
@@ -12236,21 +12248,28 @@
    "inception": "1843",
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Puerto Rico",
-    "site": "Vieques West",
-    "component": "Navy Active",
-    "city": "Vieques",
-    "match": "manual",
-    "score": 1
-   },
-   "fy2019": null,
-   "review": "context"
   }
  },
  "volkel-ab": {
+  "bsr": {
+   "fy2023": {
+    "country": "Netherlands",
+    "site": "Volkel AB",
+    "component": "Air Force Active",
+    "city": "Volkel",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Netherlands",
+    "site": "Volkel AB",
+    "component": "Air Force Active",
+    "city": "Volkel",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q2271372",
    "coord": [
@@ -12271,25 +12290,6 @@
    "inception": null,
    "dissolved": null,
    "website": null
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Netherlands",
-    "site": "Volkel AB",
-    "component": "Air Force Active",
-    "city": "Volkel",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Netherlands",
-    "site": "Volkel AB",
-    "component": "Air Force Active",
-    "city": "Volkel",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "walter-wetzel-kaserne-baumholder": {
@@ -12388,6 +12388,24 @@
   }
  },
  "white-beach-okinawa": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "White Beach",
+    "component": "Navy Active",
+    "city": "White Beach Nav Inst",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "White Beach",
+    "component": "Navy Active",
+    "city": "White Beach Nav Inst",
+    "match": "site",
+    "score": 1
+   }
+  },
   "wikidata": {
    "item": "Q694313",
    "coord": [
@@ -12407,51 +12425,9 @@
    "inception": "2005-04-01",
    "dissolved": null,
    "website": "https://www.city.uruma.lg.jp/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "White Beach",
-    "component": "Navy Active",
-    "city": "White Beach Nav Inst",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "White Beach",
-    "component": "Navy Active",
-    "city": "White Beach Nav Inst",
-    "match": "site",
-    "score": 1
-   }
   }
  },
  "wiesbaden-erbenheim-army-airfield": {
-  "wikidata": {
-   "item": "Q327689",
-   "coord": [
-    50.0498,
-    8.3254
-   ],
-   "distanceKm": 0.7,
-   "operators": [
-    "United States Army"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "military base",
-    "airbase",
-    "airport",
-    "horse racing venue"
-   ],
-   "inception": "1929",
-   "dissolved": null,
-   "website": "https://home.army.mil/wiesbaden/"
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -12487,6 +12463,30 @@
    "count": 22,
    "lat": 50.0446,
    "lon": 8.3298
+  },
+  "wikidata": {
+   "item": "Q327689",
+   "coord": [
+    50.0498,
+    8.3254
+   ],
+   "distanceKm": 0.7,
+   "operators": [
+    "United States Army"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "military base",
+    "airbase",
+    "airport",
+    "horse racing venue"
+   ],
+   "inception": "1929",
+   "dissolved": null,
+   "website": "https://home.army.mil/wiesbaden/"
   }
  },
  "wiesbaden-military-community": {
@@ -12518,28 +12518,6 @@
   }
  },
  "wilhelmsburg-barracks-ulm": {
-  "wikidata": {
-   "item": "Q50709",
-   "coord": [
-    48.41194,
-    9.98278
-   ],
-   "distanceKm": 0.5,
-   "operators": [
-    "Association of Ulm Federal Fortress"
-   ],
-   "occupants": [],
-   "country": [
-    "Germany"
-   ],
-   "instanceOf": [
-    "fortress",
-    "fortification system"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -12575,6 +12553,28 @@
    "count": 10,
    "lat": 48.4168,
    "lon": 9.9833
+  },
+  "wikidata": {
+   "item": "Q50709",
+   "coord": [
+    48.41194,
+    9.98278
+   ],
+   "distanceKm": 0.5,
+   "operators": [
+    "Association of Ulm Federal Fortress"
+   ],
+   "occupants": [],
+   "country": [
+    "Germany"
+   ],
+   "instanceOf": [
+    "fortress",
+    "fortification system"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  },
  "windhoek-namibia": {
@@ -12600,6 +12600,25 @@
   }
  },
  "yokosuka-fleet": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "COMFLEACT Yokosuka",
+    "component": "Navy Active",
+    "city": "Yokosuka",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Japan",
+    "site": "COMFLEACT Yokosuka",
+    "component": "Navy Active",
+    "city": "Yokosuka",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  },
   "wikidata": {
    "item": "Q2886663",
    "coord": [
@@ -12620,28 +12639,28 @@
    "inception": "1870",
    "dissolved": null,
    "website": "https://www.cnic.navy.mil/Yokosuka/index.htm"
-  },
+  }
+ },
+ "yokota-air-base-tokyo": {
   "bsr": {
    "fy2023": {
     "country": "Japan",
-    "site": "COMFLEACT Yokosuka",
-    "component": "Navy Active",
-    "city": "Yokosuka",
+    "site": "Yokota AB",
+    "component": "Air Force Active",
+    "city": "Yokota Air Base",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "Japan",
-    "site": "COMFLEACT Yokosuka",
-    "component": "Navy Active",
-    "city": "Yokosuka",
+    "site": "Yokota AB",
+    "component": "Air Force Active",
+    "city": "Yokota Afb",
     "match": "site",
     "score": 1
    },
    "review": "supports"
-  }
- },
- "yokota-air-base-tokyo": {
+  },
   "wikidata": {
    "item": "Q1806489",
    "coord": [
@@ -12662,50 +12681,9 @@
    "inception": "1940",
    "dissolved": null,
    "website": "http://www.yokota.af.mil/"
-  },
-  "bsr": {
-   "fy2023": {
-    "country": "Japan",
-    "site": "Yokota AB",
-    "component": "Air Force Active",
-    "city": "Yokota Air Base",
-    "match": "site",
-    "score": 1
-   },
-   "fy2019": {
-    "country": "Japan",
-    "site": "Yokota AB",
-    "component": "Air Force Active",
-    "city": "Yokota Afb",
-    "match": "site",
-    "score": 1
-   },
-   "review": "supports"
   }
  },
  "zutendaal-ab-belgium": {
-  "wikidata": {
-   "item": "Q8075444",
-   "coord": [
-    50.95,
-    5.59389
-   ],
-   "distanceKm": 0.3,
-   "operators": [
-    "Belgian Air Force"
-   ],
-   "occupants": [],
-   "country": [
-    "Belgium"
-   ],
-   "instanceOf": [
-    "ammunition dump",
-    "airbase"
-   ],
-   "inception": null,
-   "dissolved": null,
-   "website": null
-  },
   "osm": {
    "verdict": "confirmed",
    "nearest": {
@@ -12760,6 +12738,28 @@
     "score": 1
    },
    "review": "supports"
+  },
+  "wikidata": {
+   "item": "Q8075444",
+   "coord": [
+    50.95,
+    5.59389
+   ],
+   "distanceKm": 0.3,
+   "operators": [
+    "Belgian Air Force"
+   ],
+   "occupants": [],
+   "country": [
+    "Belgium"
+   ],
+   "instanceOf": [
+    "ammunition dump",
+    "airbase"
+   ],
+   "inception": null,
+   "dissolved": null,
+   "website": null
   }
  }
 }
