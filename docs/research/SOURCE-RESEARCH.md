@@ -206,4 +206,4 @@ Viele Standorte sind **keine Basen im engeren Sinn**: Zugangsrechte aus Abkommen
 | `data/research/checks.json` | BSR-, Wikidata- und OSM-Prüfungen je Standort |
 | `docs/research/coverage.csv` | eine Zeile je Standort: Quellen, Urteile, Prüfungen, offene Punkte |
 
-Nachvollziehen: `node scripts/research/manual.mjs && node scripts/research/bsr.mjs && node scripts/research/summarize.mjs`; die Validierung (`npm run validate`) prüft das Schema aller Recherche-Dateien.
+Nachvollziehen: `node scripts/research/manual.mjs && node scripts/research/bsr.mjs && node scripts/research/summarize.mjs`. Die automatischen Sammler (BSR, Wikidata, Wikipedia, OSM) laufen im Workflow **„Recherche“** monatlich und auf Knopfdruck vom Stand `main`, als parallele Jobs; `scripts/research/merge.mjs` führt die Ergebnisse zusammen, nach erfolgreicher Validierung landen sie auf dem Daten-Branch `research-data` (= `main` + ein Daten-Commit). Der Workflow ist Datensammlung, kein Codetest – die Skripte selbst prüft „CI & Deploy“. die Validierung (`npm run validate`) prüft das Schema aller Recherche-Dateien.
