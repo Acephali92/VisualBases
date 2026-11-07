@@ -28,6 +28,11 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm run build
+      - name: Browser smoke test
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+          npm run test:smoke
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:
