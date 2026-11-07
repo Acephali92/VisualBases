@@ -12,6 +12,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KINDS, FACILITIES, THEMES, CONTINENTS } from '../src/lib/taxonomy.ts';
+import { SOURCE_TYPES, CLAIMS, VERDICTS } from './research/lib.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -39,7 +40,7 @@ const FREE_LICENSE = /^(cc0|cc[- ]by(-sa)?([- ]\d\.\d)?.*|public domain|pd.*|att
 /**
  * @returns {{ errors: {rule:string, id?:string, msg:string}[], warnings: {rule:string, id?:string, msg:string}[], stats: Record<string, number> }}
  */
-export function validate({ bases, media = {}, wikimedia = {}, news = [], movement = {}, corrections = {}, fileExists = () => true }) {
+export function validate({ bases, media = {}, wikimedia = {}, news = [], movement = {}, corrections = {}, research = {}, fileExists = () => true }) {
   const errors = [];
   const warnings = [];
   const err = (rule, msg, id) => errors.push({ rule, id, msg });
@@ -135,6 +136,24 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   }
   for (const s of movement.congress?.speakers ?? []) if (s.base && !byId.has(s.base)) err('movement-base', `speaker ${s.name} links unknown base "${s.base}"`);
 
+  // research files (data/research/*.json)
+  for (const [file, list] of Object.entries({ 'sources.json': research.sources ?? [], 'candidates.json': research.candidates ?? [] })) {
+    for (const s of list) {
+      const where = `${file}: ${s.base} ${s.url}`;
+      if (!byId.has(s.base)) err('research-base', `unknown base in ${where}`);
+      if (!/^https?:\/\//.test(s.url ?? '')) err('research-url', `invalid URL in ${where}`);
+      if (!SOURCE_TYPES.includes(s.type)) err('research-type', `unknown type "${s.type}" in ${where}`);
+      if (!VERDICTS.includes(s.verdict)) err('research-verdict', `unknown verdict "${s.verdict}" in ${where}`);
+      for (const c of s.supports ?? []) if (!CLAIMS.includes(c)) err('research-claim', `unknown claim "${c}" in ${where}`);
+      if (!DATE.test(s.accessed ?? '')) err('research-date', `missing or invalid access date in ${where}`);
+      if (s.published && !DATE.test(s.published)) err('research-date', `invalid publication date "${s.published}" in ${where}`);
+      // only checked sources may say "supports"/"contradicts"
+      if ((s.verdict === 'supports' || s.verdict === 'contradicts') && s.method !== 'manual') err('research-verdict', `"${s.verdict}" needs method "manual" (${where})`);
+      if (s.method === 'manual' && !s.summary) err('research-summary', `manual source without summary (${where})`);
+    }
+  }
+  for (const id of Object.keys(research.checks ?? {})) if (!byId.has(id)) err('research-base', `checks.json refers to unknown base "${id}"`);
+
   const stats = {
     bases: bases.length,
     withSources: bases.filter((b) => (b.sources ?? []).length).length,
@@ -200,6 +219,11 @@ async function main() {
     news: await read('data/news.json', []),
     movement: await read('data/movement.json', {}),
     corrections: await read('data/corrections.json', {}),
+    research: {
+      sources: await read('data/research/sources.json', []),
+      candidates: await read('data/research/candidates.json', []),
+      checks: await read('data/research/checks.json', {}),
+    },
     fileExists: (rel) => existsSync(path.join(ROOT, 'public', rel)),
   });
   const args = process.argv.slice(2);
