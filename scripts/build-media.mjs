@@ -110,7 +110,8 @@ async function main() {
     try {
       const img = sharp(src, { animated: false }).rotate();
       const m = await img.metadata();
-      if (!m.width || m.width < 120) continue;
+      // logos may be small; photos and maps below 120 px are not useful
+      if (!m.width || m.width < (meta.type === 'logo' ? 80 : 120)) continue;
       const q = meta.type === 'logo' || meta.type === 'map' ? 86 : 78;
       const f = await img.clone().resize({ width: 1400, withoutEnlargement: true }).webp({ quality: q }).toFile(full);
       const t = meta.type === 'portrait'

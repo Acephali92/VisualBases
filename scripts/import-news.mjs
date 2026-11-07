@@ -78,7 +78,8 @@ export function parseNewsPage(html, lang) {
       teaser: teaser.length > 320 ? teaser.slice(0, 317) + '…' : teaser || undefined,
       source: source || undefined,
       date,
-      url: decode(link[1]),
+      // some links on the source page start with an encoded space ("%20https://…")
+      url: decode(link[1]).trim().replace(/^(%20|\s)+/i, ''),
     });
   }
   return items;

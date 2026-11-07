@@ -113,9 +113,17 @@
     <h2>{base.name}</h2>
     <p class="where">{#if base.country}<a class="cc" href={href('/atlas', `countries=${base.country}`)}>{flag(base.country)} {countryName(base.country)}</a>{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
     <p class="kind-info">{t(`kindInfo.${base.kind}`)}</p>
+    {#if base.positionCheck?.status === 'proposed'}
+      {@const dup = base.positionCheck.duplicateOf ? db.byId.get(base.positionCheck.duplicateOf) : undefined}
+      <p class="pos-warn" role="note">
+        {t('base.positionText')}{#if dup}{' '}<a href={href(`/base/${dup.id}`, route.query)}>{dup.name}</a>.{/if}
+        {#if base.positionCheck.proposal}{' '}{t('base.positionProposal')}: <a href={base.positionCheck.proposal.url} target="_blank" rel="noopener">{base.positionCheck.proposal.source}</a>.{/if}
+      </p>
+    {/if}
     <div class="flags">
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
       {#if base.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
+      {#if base.positionCheck?.status === 'proposed'}<span class="tag warn">⚠ {t('base.positionUnverified')}</span>{/if}
       {#if base.sourceType.includes('bsr') || base.sourceType.includes('bsr-multi')}<span class="tag">📄 {t('base.bsr')}</span>{/if}
     </div>
   </header>
@@ -277,6 +285,8 @@
   .kind { background: transparent; }
   .flags { display: flex; flex-wrap: wrap; gap: 6px; }
   .warn { color: #ffd27a; border-color: #5a4a22; }
+  .pos-warn { font-size: 0.85rem; color: #ffd27a; background: rgb(90 74 34 / 0.25); border: 1px solid #5a4a22; border-radius: var(--radius-s); padding: 8px 10px; }
+  .pos-warn a { color: inherit; }
 
   .sat-toggle { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; margin: 12px 0 4px; padding: 10px 12px; border-radius: var(--radius-s); border: 1px solid var(--line); background: var(--bg-2); }
   .st-text { display: flex; flex-direction: column; flex: 1; }

@@ -1874,5 +1874,16 @@
   "credit": "Yasuo Osakabe",
   "license": "Public domain",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base,_Japan,_Oct._7,_2013_131007-F-PM645-014.jpg"
+ },
+ "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg": {
+  "src": "media/campaign-shannon-watch.webp",
+  "thumb": "media/campaign-shannon-watch-480.webp",
+  "w": 116,
+  "h": 113,
+  "tw": 116,
+  "th": 113,
+  "type": "logo",
+  "credit": "Kampagne / campaign",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg"
  }
 }

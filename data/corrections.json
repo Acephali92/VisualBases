@@ -1,0 +1,40 @@
+{
+ "_comment": "Manual review layer on top of the imported data (bases.json is overwritten by the importer). Entries with status 'proposed' are NOT applied to the data – they mark a record as unverified and document a suggested fix for the project owner. See docs/DATA-QUALITY.md.",
+ "positions": [
+  {
+   "id": "puerto-castilla-honduras",
+   "status": "proposed",
+   "issue": "duplicate-in-source",
+   "detail": "On visualbases.org this post (URL slug 'puerto-castilla-honduras') has the title and the exact coordinates of Soto Cano Air Base (soto-cano-honduras).",
+   "duplicateOf": "soto-cano-honduras",
+   "options": [
+    "Merge with soto-cano-honduras (duplicate entry).",
+    "If the post is meant to describe Puerto Castilla: move it there."
+   ],
+   "proposal": {
+    "lat": 16.0096,
+    "lon": -85.9494,
+    "precision": "town",
+    "source": "OpenStreetMap node 830322610 (Puerto Castilla, Colón, Honduras)",
+    "url": "https://www.openstreetmap.org/node/830322610",
+    "retrieved": "2026-11-07"
+   }
+  },
+  {
+   "id": "karlovac-croatia-2",
+   "status": "proposed",
+   "issue": "duplicate-in-source",
+   "detail": "On visualbases.org this post has exactly the same coordinates as 'Zadar Gazenica' (zadar-gazenica-croatia), about 160 km from Karlovac.",
+   "duplicateOf": "zadar-gazenica-croatia",
+   "options": ["Move to Karlovac; the exact site (helipad/training) still needs to be identified."],
+   "proposal": {
+    "lat": 45.4893,
+    "lon": 15.5486,
+    "precision": "town",
+    "source": "OpenStreetMap relation 11227312 (Karlovac, Croatia)",
+    "url": "https://www.openstreetmap.org/relation/11227312",
+    "retrieved": "2026-11-07"
+   }
+  }
+ ]
+}

@@ -17,6 +17,14 @@ const stories = JSON.parse(await fs.readFile(path.join(ROOT, 'data/stories.json'
 const readOpt = async (f) => { try { return JSON.parse(await fs.readFile(path.join(ROOT, f), 'utf8')); } catch { return {}; } };
 const media = await readOpt('data/media.json');
 const wikimedia = await readOpt('data/wikimedia.json');
+const corrections = await readOpt('data/corrections.json');
+
+// manual review layer: proposed position fixes are shown as "unverified", never applied silently
+for (const c of corrections.positions ?? []) {
+  const b = bases.find((x) => x.id === c.id);
+  if (!b) continue;
+  b.positionCheck = { status: c.status, issue: c.issue, duplicateOf: c.duplicateOf, proposal: c.proposal };
+}
 
 // resolve image references to optimised files; satellites chronologically, photos first
 const ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
@@ -61,12 +69,12 @@ const geojson = {
 };
 await fs.writeFile(path.join(out, 'bases.geojson'), JSON.stringify(geojson));
 
-const cols = ['id', 'name', 'country', 'lat', 'lon', 'kind', 'nations', 'sharedWith', 'facilities', 'themes', 'usType', 'continent', 'region', 'subregion', 'wikipedia_en', 'origin', 'lastmod'];
+const cols = ['id', 'name', 'country', 'lat', 'lon', 'kind', 'nations', 'sharedWith', 'facilities', 'themes', 'usType', 'continent', 'region', 'subregion', 'wikipedia_en', 'position_check', 'origin', 'lastmod'];
 const esc = (v) => {
   const s = v == null ? '' : Array.isArray(v) ? v.join(';') : String(v);
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
-const csv = [cols.join(','), ...bases.map((b) => cols.map((c) => esc(c === 'wikipedia_en' ? b.wikipedia?.en : b[c])).join(','))].join('\n');
+const csv = [cols.join(','), ...bases.map((b) => cols.map((c) => esc(c === 'wikipedia_en' ? b.wikipedia?.en : c === 'position_check' ? (b.positionCheck ? `unverified:${b.positionCheck.issue}` : b.approx ? 'approximate' : '') : b[c])).join(','))].join('\n');
 await fs.writeFile(path.join(out, 'bases.csv'), '﻿' + csv + '\n');
 
 console.log(`✔ public/data: ${bases.length} bases (json, geojson, csv), ${stories.length} stories`);
