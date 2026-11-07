@@ -64,6 +64,14 @@ export function bsrRows(file) {
   return rows.slice(start + 1).filter((r) => r[0] && r[1]).map((r) => ({ country: String(r[0]).trim(), site: String(r[1]).trim(), component: String(r[2] ?? '').trim(), city: String(r[3] ?? '').trim() }));
 }
 
+/** the BSR's "Country/State" column names US states directly – "Georgia" there is the state, never the country */
+const US_STATES = new Set(('alabama alaska arizona arkansas california colorado connecticut delaware florida georgia hawaii idaho illinois ' +
+  'indiana iowa kansas kentucky louisiana maine maryland massachusetts michigan minnesota mississippi missouri montana nebraska ' +
+  'nevada new_hampshire new_jersey new_mexico new_york north_carolina north_dakota ohio oklahoma oregon pennsylvania rhode_island ' +
+  'south_carolina south_dakota tennessee texas utah vermont virginia washington west_virginia wisconsin wyoming district_of_columbia')
+  .split(' ').map((s) => s.replace(/_/g, ' ')));
+export const rowCountry = (r) => (US_STATES.has(fold(r.country).trim()) ? 'US' : countryCode(r.country));
+
 const SECONDARY = /housing|school|family|commissary|exchange|clinic|hospital|chapel|annex|storage|warehouse|hotel/i;
 
 /**
@@ -76,7 +84,8 @@ export function bestMatch(base, rows) {
   const countries = new Set([base.country, ...(SAME_COUNTRY[base.country] ?? [])]);
   // words that only name the host country ("Kenyan", "Japan") must not create a match
   const hostPrefix = fold(regionName(base.country)).slice(0, 5);
-  const strip = (s) => tokens(s).filter((w) => !(hostPrefix.length === 5 && w.startsWith(hostPrefix))).join(' ');
+  // … nor the US state in "Beale Air Force Base, California"
+  const strip = (s) => tokens(s).filter((w) => !(hostPrefix.length === 5 && w.startsWith(hostPrefix)) && !(base.country === 'US' && US_STATES.has(w))).join(' ');
   const name = strip(base.name);
   // "Ansbach: Katterbach Kaserne" – the part after the colon names the facility itself
   const facility = base.name.includes(':') ? strip(base.name.split(':').slice(1).join(':')) : '';
@@ -88,7 +97,7 @@ export function bestMatch(base, rows) {
     (m.match === 'site' ? 2 : 1) * 10 + m.score * 5 - (SECONDARY.test(m.site) ? 1 : 0) +
     (place && matchScore(place, m.city) >= MIN_SCORE ? 3 : 0) + exactness(facility ? base.name.split(':').slice(1).join(':') : base.name, m.site);
   for (const r of rows) {
-    const cc = countryCode(r.country);
+    const cc = rowCountry(r);
     if (!cc || !(countries.has(cc) || (SAME_COUNTRY[cc] ?? []).includes(base.country))) continue;
     const site = Math.max(matchScore(name, r.site), facility ? matchScore(facility, r.site) : 0);
     const city = matchScore(name, `${r.site} ${r.city}`);
@@ -110,7 +119,7 @@ export function applyReview(match, review, rows, country) {
   if (!review) return { row: match, review: null };
   if (review.verdict === 'reject') return { row: null, review };
   if (match && match.site === review.site) return { row: match, review };
-  const row = rows.find((r) => r.site === review.site && (!country || countryCode(r.country) === country || (SAME_COUNTRY[country] ?? []).includes(countryCode(r.country))));
+  const row = rows.find((r) => r.site === review.site && (!country || rowCountry(r) === country || (SAME_COUNTRY[country] ?? []).includes(rowCountry(r)) || (SAME_COUNTRY[rowCountry(r)] ?? []).includes(country)));
   return row ? { row: { ...row, match: 'manual', score: 1 }, review } : { row: match, review: null, stale: true };
 }
 

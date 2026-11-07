@@ -74,7 +74,7 @@ const GENERIC = new Set(
     'depot training area ta range us usa u s the of de di du la le el al raf rnas field airfield airport aerodrome aeroporto ' +
     'flughafen flugplatz site sites community military garrison usag annex facility facilities fac center centre command ' +
     'joint support activity storage housing complex comp radio relay comm communications station point base militar ' +
-    'militaire militare airbase ' +
+    'militaire militare airbase force transmitter ' +
     'north south east west new upper lower').split(/\s+/),
 );
 
