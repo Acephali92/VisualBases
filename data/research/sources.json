@@ -1,5 +1,24 @@
 [
  {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "aitos-bulgaria",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "al-dhafra-air-base",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Al Dhafra Air Base (Air Force Active, Al Dhafra Air Base)",
@@ -152,6 +171,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.defense.gouv.fr/en/node/111",
+  "title": "Forces armées en Polynésie française (FAPF)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
+  "note": "Name outdated: Base aérienne 190 was dissolved in 2012; the air component at Faa'a is now listed as „Groupement aéronautique militaire (GAM Faa'a)“.",
+  "base": "base-aerienne190",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "baumholder-community",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Baumholder Airfield (Army Active, Baumholder)",
@@ -190,6 +228,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "bezmer-air-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "boblingen-panzerkaserne",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Panzer Kaserne (Army Active, Stuttgart)",
@@ -207,6 +264,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Panzer Kaserne\", Army Active, nearest city Stuttgart, Germany.",
   "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
   "collector": "bsr"
+ },
+ {
+  "url": "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/",
+  "title": "Guyana Defence Force (Camp Ayanganna)",
+  "publisher": "National Trust of Guyana",
+  "type": "official",
+  "published": "2022-09-05",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position",
+   "nation"
+  ],
+  "verdict": "contradicts",
+  "summary": "Camp Ayanganna is in Thomas Lands, Georgetown (Guyana), established 1965 as a site of the Guyana Defence Force.",
+  "note": "Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.",
+  "base": "camp-ayanganna",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "camp-carroll-waegwan",
@@ -264,6 +340,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Darby\", Army Active, nearest city Tirrenia, Italy.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://outremers360.com/bassin-atlantique-appli/guadeloupe-les-forces-armees-aux-antilles-et-le-rsma-signent-une-convention-formalisant-leur-cooperation",
+  "title": "Guadeloupe : Les Forces armées aux Antilles et le RSMA signent une convention formalisant leur coopération",
+  "publisher": "Outremers360",
+  "type": "media",
+  "published": "2026-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A convention governs the Jaille and Dugommier camps in Guadeloupe, which host both the RSMA and elements of the French Forces aux Antilles.",
+  "base": "camp-dugommier-rsma",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "camp-ederle-vicenza",
@@ -570,6 +665,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://nautilus.org/publications/books/australian-forces-abroad/defence-facilities/australian-defence-satellite-communications-station-kojarena/",
+  "title": "Australian Defence Satellite Communications Station, Kojarena",
+  "publisher": "Nautilus Institute for Security and Sustainability",
+  "type": "academic",
+  "published": "2011-12-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Describes three adjacent facilities near Geraldton: the Australian interception station, the MUOS Radio Access Facility and the Satellite Ground Station – West, the latter two built by the United States for US forces' satellite communications.",
+  "note": "The dataset names the site „East Chapman“; Nautilus calls it Kojarena (east of Geraldton) – position to be checked.",
+  "base": "east-chapman-satellite-station",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "echterdingen-airfield",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Echterdingen Airfield (Army Active, Stuttgart)",
@@ -665,6 +780,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://pmtranscripts.pmc.gov.au/node/18152",
+  "title": "Parliamentary statement by the Prime Minister on the joint defence facilities (Transcript 7438)",
+  "publisher": "Australian Government, Department of the Prime Minister and Cabinet (PM Transcripts)",
+  "type": "official",
+  "published": "1988-11-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Prime Minister Hawke describes the arrangements under which the Australian and US governments cooperate in running the joint defence facilities at Pine Gap and Nurrungar.",
+  "note": "Historical source (1988); confirms the joint Australian–US character of Pine Gap, not the current state.",
+  "base": "ghan-joint-defence-pine-gap",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "ghedi-ab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Ghedi Radio Relay Site (Air Force Active, Brescia)",
@@ -720,6 +854,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Graf Ignatievo Air Base\", Air Force Active, nearest city Plovdiv, Bulgaria.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "graf-ignatievo-ab-bulgaria",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "grafenwoehr-training-area",
@@ -1349,6 +1502,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "novo-selo",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "nsa-souda-bay",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – NSA Souda Bay (Navy Active, Ormos Soudas)",
@@ -1387,6 +1559,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://thebarentsobserver.com/en/security/2024/02/norway-expands-defense-agreement-american-troops",
+  "title": "Norway expands defense agreement with American troops",
+  "publisher": "The Barents Observer",
+  "type": "media",
+  "published": "2024-02-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Lists the proposed new agreed facilities and areas under the US–Norway SDCA, including Ørland air station and airfield.",
+  "note": "Access and use rights under the agreement (proposal of February 2024, later approved by parliament according to other reports).",
+  "base": "orland-militaerbase",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "osan-ab-pyeongtaek",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Osan AFB (Air Force Active, Osan)",
@@ -1404,6 +1595,44 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Osan AFB\", Air Force Active, nearest city Osan, South Korea.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://sverigesradio.se/artikel/sweden-and-the-us-sign-historic-defence-deal",
+  "title": "Sweden and the US sign historic defence deal",
+  "publisher": "Sveriges Radio",
+  "type": "media",
+  "published": "2023-12-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "summary": "Swedish public radio reports the signing of the DCA, giving the US military access to 17 bases in Sweden; individual sites are not named.",
+  "base": "overview-new-us-access-in-sweden",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "overview-new-us-access-in-sweden",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "panzer-kaserne-kaiserslautern",
@@ -1803,6 +2032,176 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Robinson Barracks\", Army Active, nearest city Stuttgart, Germany.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.lnc.nc/article/nouvelle-caledonie/nord/koumac/cinquante-trois-stagiaires-du-rsma-ont-ete-presentes-au-drapeau-a-koumac",
+  "title": "Cinquante-trois stagiaires du RSMA ont été présentés au drapeau à Koumac",
+  "publisher": "Les Nouvelles Calédoniennes",
+  "type": "media",
+  "published": "2021-07-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "supports",
+  "summary": "Report on a flag ceremony of the adapted military service regiment (RSMA-NC) in Koumac.",
+  "base": "rsma-nc",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-berga",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-boden-regimental-area-and-military-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Annex A names „Halmstad: Regimental Area and Air Base“; the dataset calls it „regimental area and flotilla area“. Access rights, not permanent stationing.",
+  "base": "s-halmstad-regimental-area-and-flotilla-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-harnosand",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kiruna",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kristinehamm",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kvarn",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-ravlunda-military-camp-and-training-area",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "sasebo-naval-base-nagasaki",
