@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { untrack } from 'svelte';
   import { t, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href, route } from '../lib/router.svelte';
@@ -14,6 +15,41 @@
   let { base, nearby, onClose, onSelect }: { base: Base; nearby: Ranked[]; onClose: () => void; onSelect: (id: string) => void } = $props();
 
   let copied = $state(false);
+  let card = $state<{ url: string; blob: Blob } | null>(null);
+  let cardBusy = $state(false);
+  const canShareFiles = typeof navigator !== 'undefined' && 'canShare' in navigator;
+
+  async function makeCard() {
+    cardBusy = true;
+    try {
+      const { renderBaseCard } = await import('../lib/shareImage');
+      const lines = [
+        base.nations.length ? `${t('base.nations')}: ${base.nations.map(countryName).join(', ')}` : '',
+        base.facilities.length ? base.facilities.slice(0, 4).map((f) => t(`fac.${f}`)).join(' · ') : '',
+        base.themes.length ? base.themes.slice(0, 3).map((th) => t(`theme.${th}`)).join(' · ') : '',
+      ].filter(Boolean);
+      const blob = await renderBaseCard({
+        base,
+        image: cover ? { src: cover.src, credit: cover.credit, year: cover.year } : undefined,
+        kindLabel: t(`kind.${base.kind}`),
+        country: `${countryName(base.country)}${base.subregion ? ' · ' + base.subregion : ''}`,
+        lines,
+        footer: location.host + location.pathname.replace(/index\.html$/, '').replace(/\/$/, ''),
+        accent: GROUP_COLOR[group],
+      });
+      if (card) URL.revokeObjectURL(card.url);
+      card = { url: URL.createObjectURL(blob), blob };
+    } finally {
+      cardBusy = false;
+    }
+  }
+  async function shareCard() {
+    if (!card) return;
+    const file = new File([card.blob], `visualbases-${base.id}.png`, { type: 'image/png' });
+    if (navigator.canShare?.({ files: [file] })) {
+      try { await navigator.share({ files: [file], title: base.name }); } catch { /* cancelled */ }
+    }
+  }
   let scroller: HTMLDivElement;
 
   const group = $derived(KIND_GROUP[base.kind]);
@@ -35,6 +71,8 @@
     void base.id;
     scroller?.scrollTo({ top: 0 });
     copied = false;
+    // reset the share card only when the base changes (untracked: must not react to `card` itself)
+    untrack(() => { if (card) { URL.revokeObjectURL(card.url); card = null; } });
   });
 
   async function share() {
@@ -58,6 +96,7 @@
   <div class="top">
     <button class="btn btn-sm btn-ghost" onclick={onClose}>← {t('base.back')}</button>
     <div class="acts">
+      <button class="btn btn-sm" onclick={makeCard} disabled={cardBusy} title={t('base.card')}>🖼</button>
       <button class="btn btn-sm" onclick={share}>{copied ? '✓ ' + t('base.copied') : '↗ ' + t('base.share')}</button>
     </div>
   </div>
@@ -86,6 +125,17 @@
     <span class="st-text"><b>{t('map.satellite')}</b><small>{t('map.satelliteHint')}</small></span>
     <span class="switch" aria-hidden="true"></span>
   </button>
+
+  {#if card}
+    <div class="card-out">
+      <img src={card.url} alt="{base.name} – {t('base.card')}" width="270" height="338" />
+      <div class="card-actions">
+        {#if canShareFiles}<button class="btn btn-primary btn-sm" onclick={shareCard}>↗ {t('share.native')}</button>{/if}
+        <a class="btn btn-sm" href={card.url} download="visualbases-{base.id}.png">⬇ {t('share.download')}</a>
+        <button class="btn btn-sm btn-ghost" onclick={() => { if (card) URL.revokeObjectURL(card.url); card = null; }}>✕</button>
+      </div>
+    </div>
+  {/if}
 
   {#if pair}
     <section class="first">
@@ -212,6 +262,10 @@
   .cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgb(13 18 32 / 1)); pointer-events: none; }
   .cover figcaption { position: absolute; right: 10px; bottom: 6px; z-index: 1; font-size: 0.68rem; color: var(--muted); }
   .first { margin-top: 14px; }
+  .acts { display: flex; gap: 6px; }
+  .card-out { display: flex; gap: 12px; align-items: flex-end; margin: 14px 0; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--bg-2); }
+  .card-out img { width: 135px; height: auto; border-radius: 6px; }
+  .card-actions { display: flex; flex-direction: column; gap: 8px; }
   h2 { font-size: 1.6rem; margin: 0.45em 0 0.2em; }
   .where { color: var(--text-2); margin: 0 0 0.6em; }
   .kind-info { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6em; }

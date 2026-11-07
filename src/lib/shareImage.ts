@@ -122,3 +122,76 @@ function wrap(ctx: CanvasRenderingContext2D, text: string, x: number, y: number,
   if (line) { ctx.fillText(line, x, y); y += lh; }
   return y;
 }
+
+interface BaseCardOpts {
+  base: Base;
+  image?: { src: string; credit?: string; year?: number };
+  kindLabel: string;
+  country: string;
+  lines: string[];
+  footer: string;
+  accent: string;
+}
+
+function loadImage(src: string): Promise<HTMLImageElement> {
+  return new Promise((res, rej) => {
+    const img = new Image();
+    img.onload = () => res(img);
+    img.onerror = rej;
+    img.src = src;
+  });
+}
+
+/** 1080×1350 card (Instagram portrait) for a single base */
+export async function renderBaseCard(o: BaseCardOpts): Promise<Blob> {
+  const W = 1080, H = 1350;
+  const c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  const ctx = c.getContext('2d')!;
+  const font = (w: number, s: number) => `${w} ${s}px 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif`;
+  ctx.fillStyle = '#07090f'; ctx.fillRect(0, 0, W, H);
+
+  const photoH = 720;
+  if (o.image) {
+    try {
+      const img = await loadImage(o.image.src);
+      const scale = Math.max(W / img.width, photoH / img.height);
+      const w = img.width * scale, h = img.height * scale;
+      ctx.save();
+      ctx.beginPath(); ctx.rect(0, 0, W, photoH); ctx.clip();
+      ctx.drawImage(img, (W - w) / 2, (photoH - h) / 2, w, h);
+      ctx.restore();
+    } catch { /* keep plain background */ }
+  }
+  const fade = ctx.createLinearGradient(0, photoH - 260, 0, photoH);
+  fade.addColorStop(0, 'rgba(7,9,15,0)'); fade.addColorStop(1, 'rgba(7,9,15,1)');
+  ctx.fillStyle = fade; ctx.fillRect(0, photoH - 260, W, 260);
+  if (o.image?.credit) {
+    ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.font = font(500, 22); ctx.textAlign = 'right';
+    ctx.fillText(`© ${o.image.credit}${o.image.year ? ' · ' + o.image.year : ''}`, W - 40, 50);
+    ctx.textAlign = 'left';
+  }
+
+  // kind pill
+  ctx.font = font(700, 30);
+  const pillW = ctx.measureText(o.kindLabel).width + 76;
+  ctx.fillStyle = 'rgba(7,9,15,0.85)';
+  ctx.beginPath(); ctx.roundRect(70, photoH - 40, pillW, 56, 28); ctx.fill();
+  ctx.fillStyle = o.accent; ctx.beginPath(); ctx.arc(102, photoH - 12, 11, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = '#eef1f7'; ctx.fillText(o.kindLabel, 126, photoH - 1);
+
+  ctx.fillStyle = '#ffffff'; ctx.font = font(800, 72);
+  let y = wrap(ctx, o.base.name, 70, photoH + 110, W - 140, 82);
+  ctx.fillStyle = '#b4bccd'; ctx.font = font(500, 38);
+  ctx.fillText(o.country, 70, y + 6);
+  y += 70;
+  ctx.font = font(500, 34); ctx.fillStyle = '#eef1f7';
+  for (const line of o.lines.slice(0, 3)) { y = wrap(ctx, line, 70, y, W - 140, 46) + 4; }
+
+  ctx.fillStyle = '#ff5a3c'; ctx.font = font(800, 30);
+  ctx.fillText('VISUALBASES', 70, H - 70);
+  ctx.fillStyle = '#8790a6'; ctx.font = font(500, 26); ctx.textAlign = 'right';
+  ctx.fillText(o.footer, W - 70, H - 70);
+
+  return new Promise((res, rej) => c.toBlob((bl) => (bl ? res(bl) : rej(new Error('toBlob failed'))), 'image/png'));
+}
