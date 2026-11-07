@@ -265,7 +265,7 @@
   .search:focus-within { border-color: var(--focus); }
   .search input { flex: 1; min-width: 0; border: 0; background: none; outline: none; color: var(--text); }
   .filter-btn { min-height: 40px; }
-  .badge { background: var(--accent); color: #fff; border-radius: 999px; font-size: 0.72rem; padding: 0 6px; line-height: 1.5; }
+  .badge { background: var(--accent-strong); color: #fff; border-radius: 999px; font-size: 0.72rem; padding: 0 6px; line-height: 1.5; }
 
   .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 16px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--line); }
   .row-actions { display: flex; gap: 12px; }

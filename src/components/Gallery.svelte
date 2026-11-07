@@ -43,7 +43,7 @@
       <figcaption>
         <span class="cap">{label(cur)}</span>
         <span class="credit">
-          © {cur.credit ?? 'visualbases.org'}{#if cur.license}{' · '}{#if cur.licenseUrl}<a href={cur.licenseUrl} target="_blank" rel="noopener">{cur.license}</a>{:else}{cur.license}{/if}{/if}
+          {cur.license ? t('img.by') : '©'} {cur.credit ?? 'visualbases.org'}{#if cur.license}{' · '}{#if cur.licenseUrl}<a href={cur.licenseUrl} target="_blank" rel="noopener">{cur.license}</a>{:else}{cur.license}{/if}{/if}
           {#if cur.sourceUrl}{' · '}<a href={cur.sourceUrl} target="_blank" rel="noopener">{t('img.source')}</a>{/if}
         </span>
       </figcaption>

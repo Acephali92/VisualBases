@@ -293,9 +293,9 @@
   .panel {
     pointer-events: auto; max-width: 420px; margin-left: max(0px, calc((100vw - 1180px) / 2));
     padding: 24px 26px; border-radius: var(--radius); background: rgb(13 18 32 / 0.82); backdrop-filter: blur(10px);
-    border: 1px solid var(--line); box-shadow: var(--shadow); opacity: 0.45; transition: opacity 0.4s;
+    border: 1px solid var(--line); box-shadow: var(--shadow); transition: border-color 0.4s, transform 0.4s;
   }
-  .panel.current { opacity: 1; }
+  .panel.current { border-color: rgb(255 90 60 / 0.55); }
   .panel h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
   .panel p { color: var(--text-2); }
   .panel .ctas { margin: 1em 0 0; }

@@ -64,8 +64,8 @@
 
   {#if cover}
     <figure class="cover">
-      <img src={cover.src} width={cover.w} height={cover.h} alt={cover.caption ?? base.name} />
-      <figcaption>© {cover.credit}{#if cover.year}{' · '}{cover.year}{/if}</figcaption>
+      <img src={cover.src} width={cover.w} height={cover.h} alt={cover.caption ?? ""} />
+      <figcaption>{cover.license ? t('img.by') : '©'} {cover.credit}{#if cover.license}{' · '}{cover.license}{/if}{#if cover.year}{' · '}{cover.year}{/if}</figcaption>
     </figure>
   {/if}
 

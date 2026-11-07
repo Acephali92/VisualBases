@@ -23,7 +23,8 @@ const ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
 for (const b of bases) {
   const refs = [...(b.images ?? [])];
   const w = wikimedia[b.id];
-  if (w?.url) refs.unshift({ url: w.url, caption: w.title ?? '' });
+  // the project's own photos (protests, campaigns) come before the generic Wikimedia photo
+  if (w?.url) refs.push({ url: w.url, caption: w.title ?? '' });
   const imgs = refs
     .map((r) => (media[r.url] ? { ...media[r.url], caption: r.caption || undefined } : null))
     .filter(Boolean)

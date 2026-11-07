@@ -1,0 +1,31 @@
+# Aufgaben für dich (Projekt-Inhaber)
+
+Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub-Konto, Entscheidungen oder Kontakte erfordern. Sortiert nach Dringlichkeit.
+
+## 1. Sofort: damit die Seite online geht
+
+- [ ] **Pull Request zusammenführen:** [Acephali92/VisualBases#1](https://github.com/Acephali92/VisualBases/pull/1) öffnen, kurz durchsehen und auf **„Merge pull request“** klicken.
+  (Mir fehlt die Berechtigung, ohne Review auf `main` zu mergen.)
+- [ ] **GitHub Pages auf „GitHub Actions“ stellen:** Repository → **Settings → Pages → Build and deployment → Source: „GitHub Actions“**.
+  Im Moment steht die Quelle vermutlich auf „Deploy from a branch“. Dann würde nur die README angezeigt, nicht die App.
+- [ ] Nach dem Merge unter **Actions** prüfen, dass „CI & Deploy“ grün durchläuft. Die Seite ist danach unter
+  **https://acephali92.github.io/VisualBases/** erreichbar.
+
+## 2. Bald: Inhalte und Rechte
+
+- [ ] **Datenlizenz festlegen** (mit Karl-Heinz Peil): Unter welcher Lizenz dürfen andere die Daten nutzen? Vorschlag: **CC BY 4.0** (Namensnennung „VisualBases“).
+  Danach ersetze ich den Hinweis „Lizenz noch abzustimmen“ in README und „Über & Daten“.
+- [ ] **Bildrechte der eigenen Fotos bestätigen:** Die Protestfotos stammen aus dem Archiv von visualbases.org. Bei Fotos Dritter (z. B. Kampagnen, Flickr-Bild von Menwith Hill, „Marcha a Rota“) bitte mit Karl-Heinz Peil klären, ob Urheber genannt werden sollen. Ich trage sie dann ein (`data/media.json` → `credit`).
+- [ ] **Google-Earth-Bilder:** Google erlaubt die nicht-kommerzielle Nutzung mit Namensnennung. Die Bilder müssen die eingebaute Google-Kennzeichnung behalten; das tun sie. Nichts weiter zu tun, solange das Projekt nicht kommerziell wird.
+- [ ] **Impressum / Verantwortliche Stelle:** Für eine öffentliche deutsche Seite ist ein Impressum Pflicht. Bitte Name und Adresse der verantwortlichen Person oder des Vereins nennen (z. B. Friedens- und Zukunftswerkstatt e. V.). Ich baue dann eine Impressum-Seite.
+
+## 3. Optional: Reichweite
+
+- [ ] **Eigene Domain** (z. B. `visualbases.org` auf die neue App umstellen oder `app.visualbases.org`): DNS-Eintrag (CNAME auf `acephali92.github.io`) setzen und unter Settings → Pages die „Custom domain“ eintragen. Danach passe ich `SITE_URL` an (für Vorschaubilder und Sitemap).
+- [ ] **Partner informieren**, dass es eine einbettbare Karte gibt (Atlas → „Einbetten“): Stopp Ramstein, World BEYOND War, CND, No to NATO …
+- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur` (werden von den Issue-Formularen gesetzt).
+- [ ] **Branch-Schutz** für `main` aktivieren (Settings → Branches), damit Änderungen immer über Pull Requests mit grüner CI laufen.
+
+## Was ich selbstständig weiterentwickle
+
+Siehe offene Pull Requests und die Liste „Nächste Schritte“ im README.

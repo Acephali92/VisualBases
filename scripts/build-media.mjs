@@ -44,15 +44,37 @@ export function classify(file, caption = '') {
 
 const slugify = (s) => s.toLowerCase().replace(/\.[a-z0-9]+$/, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 
+let limitedInARow = 0;
+/** after several rate-limited images in a row, stop downloading for this run (resume later) */
+const MAX_LIMITED = 3;
+
 async function download(url, file) {
   try {
     await fs.access(file);
     return true;
   } catch {
-    if (offline) return false;
-    await sleep(300);
-    const res = await fetch(url, { headers: { 'user-agent': UA } });
-    if (!res.ok || !/^image\//.test(res.headers.get('content-type') ?? '')) { console.warn(`  ! ${res.status} ${url}`); return false; }
+    if (offline || limitedInARow >= MAX_LIMITED) return false;
+    await sleep(400);
+    let res;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        res = await fetch(url, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(60000) });
+      } catch (e) {
+        console.warn(`  ! ${e.cause?.code ?? e.name} ${url}`);
+        await sleep(3000);
+        continue;
+      }
+      if (res.status !== 429) break;
+      const wait = 15 * 2 ** attempt;
+      console.log(`  … rate limited, waiting ${wait}s`);
+      await sleep(wait * 1000);
+    }
+    if (res?.status === 429) {
+      if (++limitedInARow >= MAX_LIMITED) console.warn('  ! rate limited repeatedly – stopping downloads for now, run again later');
+      return false;
+    }
+    limitedInARow = 0;
+    if (!res || !res.ok || !/^image\//.test(res.headers.get('content-type') ?? '')) { console.warn(`  ! ${res?.status ?? 'failed'} ${url}`); return false; }
     await fs.writeFile(file, Buffer.from(await res.arrayBuffer()));
     return true;
   }
@@ -101,6 +123,7 @@ async function main() {
         license: meta.license, licenseUrl: meta.licenseUrl, sourceUrl: meta.sourceUrl ?? url,
       };
       done++;
+      if (done % 10 === 0) await fs.writeFile(path.join(ROOT, 'data/media.json'), JSON.stringify(media, null, 1) + '\n');
     } catch (e) {
       console.warn(`  ! ${file}: ${e.message}`);
     }
