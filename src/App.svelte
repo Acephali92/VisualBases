@@ -15,6 +15,13 @@
   const section = $derived(route.path.split('/')[1] || '');
   const isMapView = $derived(section === 'atlas' || section === 'base');
   let menuOpen = $state(false);
+  let scrolled = $state(false);
+  onMount(() => {
+    const on = () => (scrolled = scrollY > 40);
+    on();
+    addEventListener('scroll', on, { passive: true });
+    return () => removeEventListener('scroll', on);
+  });
 
   const nav = [
     { path: '/', key: 'nav.home', match: '' },
@@ -32,7 +39,7 @@
 
 <a class="skip-link" href="#main" onclick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('nav.skip')}</a>
 
-<header class="site-header" class:solid={section !== ''}>
+<header class="site-header" class:solid={section !== '' || scrolled || menuOpen}>
   <div class="bar">
     <a class="brand" href={href('/')} aria-label="VisualBases – {t('nav.home')}">
       <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">

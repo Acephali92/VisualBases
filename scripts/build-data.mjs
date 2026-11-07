@@ -14,6 +14,22 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(ROOT, 'public/data');
 const bases = JSON.parse(await fs.readFile(path.join(ROOT, 'data/bases.json'), 'utf8'));
 const stories = JSON.parse(await fs.readFile(path.join(ROOT, 'data/stories.json'), 'utf8'));
+const readOpt = async (f) => { try { return JSON.parse(await fs.readFile(path.join(ROOT, f), 'utf8')); } catch { return {}; } };
+const media = await readOpt('data/media.json');
+const wikimedia = await readOpt('data/wikimedia.json');
+
+// resolve image references to optimised files; satellites chronologically, photos first
+const ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
+for (const b of bases) {
+  const refs = [...(b.images ?? [])];
+  const w = wikimedia[b.id];
+  if (w?.url) refs.unshift({ url: w.url, caption: w.title ?? '' });
+  const imgs = refs
+    .map((r) => (media[r.url] ? { ...media[r.url], caption: r.caption || undefined } : null))
+    .filter(Boolean)
+    .sort((x, y) => ORDER[x.type] - ORDER[y.type] || (x.year ?? 0) - (y.year ?? 0));
+  if (imgs.length) b.images = imgs; else delete b.images;
+}
 await fs.mkdir(out, { recursive: true });
 
 await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(bases));
@@ -27,7 +43,7 @@ const geojson = {
     generated: new Date().toISOString().slice(0, 10),
     count: bases.length,
   },
-  features: bases.map(({ lat, lon, ...props }) => ({
+  features: bases.map(({ lat, lon, images, ...props }) => ({
     type: 'Feature',
     id: props.id,
     geometry: { type: 'Point', coordinates: [lon, lat] },

@@ -20,6 +20,22 @@ export interface Source {
   label: string;
 }
 
+export interface Image {
+  src: string;
+  thumb: string;
+  w: number;
+  h: number;
+  tw: number;
+  th: number;
+  type: 'photo' | 'satellite' | 'map' | 'document' | 'logo';
+  year?: number;
+  caption?: string;
+  credit?: string;
+  license?: string;
+  licenseUrl?: string;
+  sourceUrl?: string;
+}
+
 export interface Base {
   id: string;
   name: string;
@@ -48,6 +64,7 @@ export interface Base {
   related?: string[];
   sources: Source[];
   notes: string[];
+  images?: Image[];
   origin: string;
   lastmod?: string;
 }

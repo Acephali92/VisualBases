@@ -189,7 +189,25 @@ export function parsePost(html, slug) {
     if (!notes.includes(cleaned)) notes.push(cleaned.length > 600 ? cleaned.slice(0, 597) + '…' : cleaned);
   }
 
-  return { slug, title, cats, tags, lat, lon, zoom, approx, wikipedia, related, sources, notes };
+  const images = parseImages(bodyMain);
+  return { slug, title, cats, tags, lat, lon, zoom, approx, wikipedia, related, sources, notes, images };
+}
+
+/** images inside a post: full-size URL (link target or src without -WxH suffix) + caption */
+export function parseImages(body) {
+  const out = [];
+  const re = /(?:<a [^>]*href="([^"]+)"[^>]*>\s*)?<img ([^>]+)>(?:\s*<\/a>)?(?:\s*<figcaption[^>]*>([\s\S]*?)<\/figcaption>)?/g;
+  for (const m of body.matchAll(re)) {
+    const [, href, attrs, cap] = m;
+    let src = attrs.match(/src="([^"]+)"/)?.[1];
+    if (!src || /pin[_-]|pushpin|figuren|emoji|\/plugins\//.test(src)) continue;
+    let url = href && /\/wp-content\/uploads\/.+\.(jpe?g|png|webp|gif)$/i.test(href) ? href : src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+    if (url.startsWith('//')) url = 'https:' + url;
+    if (!url.startsWith(ORIGIN + '/wp-content/uploads/')) continue; // only the project's own uploads
+    const caption = stripTags(cap ?? '');
+    if (!out.some((o) => o.url === url)) out.push({ url, caption: /^(click|anklicken)/i.test(caption) ? '' : caption });
+  }
+  return out;
 }
 
 export function toBase(p, lastmod) {
@@ -238,6 +256,7 @@ export function toBase(p, lastmod) {
     related: p.related.length ? p.related : undefined,
     sources: p.sources,
     notes: p.notes,
+    images: p.images.length ? p.images : undefined,
     origin: `${ORIGIN}/${p.slug}/`,
     lastmod: lastmod?.slice(0, 10),
   };

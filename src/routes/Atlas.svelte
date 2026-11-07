@@ -199,7 +199,11 @@
         {#each results.slice(0, 400) as b (b.id)}
           <li>
             <a href={href(`/base/${encodeURIComponent(b.id)}`, route.query)} onmouseenter={() => handle?.focus([b.id])} onmouseleave={() => handle?.focus([])}>
-              <span class="dot" class:ring={KIND_GROUP[b.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[b.kind]]}></span>
+              {#if b.images?.length}
+                <img class="r-thumb" src={b.images[0].thumb} alt="" loading="lazy" decoding="async" />
+              {:else}
+                <span class="r-thumb ph"><span class="dot" class:ring={KIND_GROUP[b.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[b.kind]]}></span></span>
+              {/if}
               <span class="r-main">
                 <span class="r-name">{b.name}</span>
                 <span class="r-sub">{#if b.country}{flag(b.country)} {countryName(b.country)} · {/if}{t(`kind.${b.kind}`)}</span>
@@ -259,6 +263,8 @@
   .results { list-style: none; margin: 0; padding: 6px; overflow-y: auto; flex: 1; overscroll-behavior: contain; }
   .results a { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: var(--radius-s); text-decoration: none; }
   .results a:hover, .results a:focus-visible { background: var(--surface-2); }
+  .r-thumb { width: 44px; height: 44px; flex: none; border-radius: 8px; object-fit: cover; background: var(--bg-2); border: 1px solid var(--line); }
+  .r-thumb.ph { display: grid; place-items: center; }
   .r-main { display: flex; flex-direction: column; min-width: 0; flex: 1; }
   .r-name { font-weight: 600; font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .r-sub { color: var(--muted); font-size: 0.8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

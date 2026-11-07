@@ -61,6 +61,12 @@
   "notes": [
    "click to full size"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_AbuDhabi-e1621505423522.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/abu-dhabi-uae-2/",
   "lastmod": "2026-09-20"
  },
@@ -156,6 +162,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GA_Bagram-AB_20212009.png",
+    "caption": "Google Earth 2021 (2009)"
+   }
+  ],
   "origin": "https://visualbases.org/bagram-air-base/",
   "lastmod": "2026-09-27"
  },
@@ -297,6 +309,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Kandaher_AF_20212010.png",
+    "caption": "Google Earth 2021 (2010)"
+   }
+  ],
   "origin": "https://visualbases.org/kandahar-airfield/",
   "lastmod": "2026-09-27"
  },
@@ -637,6 +655,12 @@
   "notes": [
    "BSR entries: Chievres AB – Daumerie Caserne"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Chievres_5-2015.png",
+    "caption": "Google Earth 2015"
+   }
+  ],
   "origin": "https://visualbases.org/chievres-ab/",
   "lastmod": "2026-09-22"
  },
@@ -673,6 +697,12 @@
   "notes": [
    "Additional locations: Oud militair brandstoffendepot – Atomic Weapons depot"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel_1-2015.png",
+    "caption": "Google Earth 2015"
+   }
+  ],
   "origin": "https://visualbases.org/kleine-brogel-air-base/",
   "lastmod": "2026-09-22"
  },
@@ -700,6 +730,16 @@
   "sources": [],
   "notes": [
    "Belongs to: Kleine Brogel Air Base"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Brogel-nuclear.png",
+    "caption": "Google Earth 2021 (Zoom pixelated)"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel-nuclear-8-2012.png",
+    "caption": "Google Earth 2012"
+   }
   ],
   "origin": "https://visualbases.org/kleine-brogel-nuclear/",
   "lastmod": "2026-09-22"
@@ -736,6 +776,12 @@
   "notes": [
    "BSR entries: Chateau Gendebien, Mons – Mons – Shape Headquarters – Sterrebeek Dependent School, Brussels – Brussels"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_NATO-HQ_5-2015.png",
+    "caption": "Google Earth 2015"
+   }
+  ],
   "origin": "https://visualbases.org/shape-mons/",
   "lastmod": "2026-09-22"
  },
@@ -765,6 +811,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Zutendaal_9-2013.png",
+    "caption": "Google Earth 2013"
+   }
+  ],
   "origin": "https://visualbases.org/zutendaal-ab-belgium/",
   "lastmod": "2026-09-22"
  },
@@ -948,6 +1000,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Bahrein.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/bahrain/",
   "lastmod": "2026-09-27"
  },
@@ -1562,6 +1620,12 @@
   "notes": [
    "Camp Delta, Source: Wikipedia"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Camp_Delta_Guantanamo_Bay_Wikipedia.jpg",
+    "caption": "Camp Delta, Source: Wikipedia"
+   }
+  ],
   "origin": "https://visualbases.org/guantanamo-bay-naval-base/",
   "lastmod": "2026-09-27"
  },
@@ -1605,6 +1669,20 @@
    "military and naval base wiretapping and espionage center",
    "torture camp occupied territory",
    "In 2018, the Pentagon commissioned a construction company to build a supplies warehouse for migrants on the site of the naval base, for which a budget of $ 23 million was available. According to the contract, the infrastructure should be designed for up to 13,000 migrants and 5,000 troops deployed for them and usable for at least 50 years."
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-titel.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-interventions.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-final.png",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/gitmo-guantanamo-bay/",
   "lastmod": "2026-09-27"
@@ -1795,6 +1873,20 @@
    "Google Earth „Schnöggersburg“ 2020",
    "Google Earth „Schnöggersburg“ 2011"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Altmark.jpg",
+    "caption": "Openstreetbrowser 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Altmark_8-2020.png",
+    "caption": "Google Earth „Schnöggersburg“ 2020"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Altmark_9-2011.png",
+    "caption": "Google Earth „Schnöggersburg“ 2011"
+   }
+  ],
   "origin": "https://visualbases.org/altmark-training-area/",
   "lastmod": "2026-09-13"
  },
@@ -1913,6 +2005,16 @@
   "notes": [
    "Environmental impact: Helicopter noise, PFAS soil and water load"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ansbach_2018.png",
+    "caption": "Google Earth 2018"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Ansbach.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/katterbach-kaserne-ansbach/",
   "lastmod": "2026-09-13"
  },
@@ -2003,6 +2105,12 @@
   "notes": [
    "Locations in VisualBases: Baumholder Army Health Clinic – Smith Barracks Baumholder – Wetzel Kaserne Baumholder – Baumholder Airfield (including Baumholder Training Area)",
    "Additional BSR entries (3): Baumholder Family Housing – Hoppstaedten Works Baumholder – Wetzel Family Housing Baumholder"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Baumholder.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/baumholder-community/",
   "lastmod": "2026-09-13"
@@ -2188,6 +2296,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Bergen.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/bergen-training-area/",
   "lastmod": "2026-09-13"
  },
@@ -2246,6 +2360,12 @@
   "notes": [
    "Source: Landesbetrieb LBB RLP Projektdoku Pipelinesystem"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2015_LBB_NATO-Pipeline-RLP.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/nato-pipeline-station-bitburg/",
   "lastmod": "2026-09-13"
  },
@@ -2276,6 +2396,16 @@
   ],
   "notes": [
    "950th Transportation Company (since 2014)"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/US-Army-Bremerhaven.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Bremerhaven_Detail.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/bremerhaven/",
   "lastmod": "2026-09-13"
@@ -2312,6 +2442,12 @@
   "notes": [
    "belongs to: Military community Kaiserslautern – Ramstein",
    "BSR: Miesau – Miesau Ammo Depot"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Miesau-Depot-KL.png",
+    "caption": "Google Earth 2021"
+   }
   ],
   "origin": "https://visualbases.org/bruchmuhlbach-miesau-us-army-depot/",
   "lastmod": "2026-09-13"
@@ -2352,6 +2488,16 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Buechel.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Buchel.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/buechel-nato-air-base/",
   "lastmod": "2026-09-13"
  },
@@ -2550,6 +2696,12 @@
    "Screenshot from homepage campaign",
    "Environmental issues: Hazardous material"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Germersheim_Homepage.png",
+    "caption": "Screenshot from homepage campaign"
+   }
+  ],
   "origin": "https://visualbases.org/germersheim-us-army-depot/",
   "lastmod": "2026-09-13"
  },
@@ -2598,6 +2750,12 @@
    "U.S. Army Garrison Bavaria suspended fishing in five lakes and streams in the Grafenwoehr Training Area earlier this month after elevated levels of PFAS were discovered in the samples. Anglers were advised not to consume any fish caught in the affected bodies of water: Little Mike Lake, Rod and Gun Lakes 1 and 2, Thumbach Stream and Schaumbach Stream. […]",
    "The samples were taken in November 2024 and sent to a contracted lab for analysis, base spokeswoman Susanne Bartsch said Monday. The analysis and evaluation took one year, she said. It was not clear why several months apparently passed between completion of the testing process and the public advisory. Bartsch did not answer questions about the timing. Fishing in Germany is for consumption only, since catch-and-release practices are prohibited under German fishing regulations. Drinking water on and around the installation remains safe and is monitored by U.S. and German environmental officia…",
    "The base stopped using firefighting foam containing the chemicals in 2024, she added. Dubbed “forever chemicals” because they accumulate in the body over time, PFAS have long been a thorny issue for the U.S. military around the world. They were an ingredient in aviation firefighting foams used to combat fuel fires on military bases starting in the 1970s, according to the Department of Veterans Affairs website. The foams became a “major source” of groundwater contamination, it added. […]"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Grafenwohr.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/grafenwoehr-training-area/",
   "lastmod": "2026-10-12"
@@ -2679,6 +2837,12 @@
    "Dabei tanken/tankten sie auf dem Hahn ebenfalls lediglich auf.",
    "Auf dem Rückweg landen/landeten die Maschinen ebenfalls nur zum Auftanken auf dem Hahn und fliegen/flogen dann weiter nach Jeddah, Riad oder Dammam, alle in Saudi-Arabien, sowie im Juli und August nach Bahrain und im September nach Amman in Jordanien und in den Oman."
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Hahn_Homepage_Statistic_2006-2020.png",
+    "caption": "Screenshot from homepage campaign"
+   }
+  ],
   "origin": "https://visualbases.org/frankfurt-hahn/",
   "lastmod": "2026-10-12"
  },
@@ -2710,6 +2874,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Hohenfels.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/hohenfels-training-area/",
   "lastmod": "2026-09-13"
  },
@@ -3114,6 +3284,12 @@
   "notes": [
    "against NATO Joint Air Power Competence Centre (JAPCC)"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Kalkar.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/kalkar-von-seydlitz-kaserne/",
   "lastmod": "2026-09-13"
  },
@@ -3144,6 +3320,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Kiel-Eckernforde.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/tirpitzhafen-kiel/",
   "lastmod": "2026-09-13"
  },
@@ -3237,6 +3419,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Breitenbach.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/satcom-landstuhl/",
   "lastmod": "2026-09-13"
  },
@@ -3304,6 +3492,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Egelsbach_2023.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/egelsbach-transmitter-fac/",
   "lastmod": "2026-09-13"
  },
@@ -3380,6 +3574,12 @@
    "Note: temporary closed but since 2015 used again for logistical purpose.",
    "Declared as APS-2 (Army Propositioned Stock Europe)"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Coleman-Barracks_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/coleman-barracks-mannheim/",
   "lastmod": "2026-09-13"
  },
@@ -3408,6 +3608,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Munster.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/munster-training-area/",
   "lastmod": "2026-09-13"
  },
@@ -3465,6 +3671,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Oberlausitz.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/oberlausitz-training-area/",
   "lastmod": "2026-09-13"
  },
@@ -3556,6 +3768,12 @@
   "notes": [
    "Belongs to: Ramstein Air Base"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Weilerbach_20212019.png",
+    "caption": "Google Earth 2021 (2019)"
+   }
+  ],
   "origin": "https://visualbases.org/hospital-weilerbach/",
   "lastmod": "2026-10-02"
  },
@@ -3619,6 +3837,32 @@
    "Environmental issues: Aircraft noise, PFAS, Oil spill, Groundwater",
    "Terrestrial Protected Area: Westricher Moorniederung"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Ramstein_complete_13.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ramstein_10-2000.png",
+    "caption": "Google Earth 2000"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ramstein_2021.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2021-05-30_Stopp-Ramstein_Fahrradmarathon.jpeg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2015_SABR1.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/2017_SABR-1.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/ramstein-air-base/",
   "lastmod": "2026-10-18"
  },
@@ -3653,6 +3897,16 @@
   "sources": [],
   "notes": [
    "belongs to: Ramstein Air Base"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-10-2017.png",
+    "caption": "Google Earth 2017"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-12-2010.png",
+    "caption": "Google Earth 2010"
+   }
   ],
   "origin": "https://visualbases.org/satellite-ground-system-ramstein/",
   "lastmod": "2026-09-13"
@@ -4039,6 +4293,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Ansbach.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/usag-ansbach/",
   "lastmod": "2026-09-13"
  },
@@ -4085,6 +4345,12 @@
   ],
   "notes": [
    "The Kaiserslautern Military Community consists of Army facilities at Sembach, Kleber, Panzer and Daenner Kasernes, Landstuhl, Miesau and Kaiserslautern Army Depots, Rhine Ordnance and Pulaski Barracks along with Air Force facilities located at Ramstein Air Base, Einsiedlerhof, Vogelweh and Kapaun Air Station. The garrison also has geographically separated sites at Baumholder, Mannheim, Gruenstadt and Germersheim in Germany, Mihail Kogalniceau Air Base in Romania, and Novo Selo Training Area in Bulgaria."
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Kaiserslautern_11.png",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/kaiserslautern-ramstein-community/",
   "lastmod": "2026-09-13"
@@ -4139,6 +4405,12 @@
    "Locations in VisualBases: Panzer Kaserne Böblingen – Kelley Barracks – Patch Barracks – Robinson Barracks – Echterdingen Airfield",
    "Additional BSR entries (7): Stuttgart Dependent School – Weilimdorf Warehouse Stuttgart – Steuben & Weicht Vil Family Housing Stuttgart – Robinson-Grenadier Family Housing Stuttgart – Moehringen Family Housing – Kefurt & Craig Village Family Housing Stuttgart – Sonderlandeplatz Pattonville / Kornwestheim Golf Course"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Stuttgart.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/u-s-army-garrison-stuttgart/",
   "lastmod": "2026-09-13"
  },
@@ -4178,6 +4450,12 @@
   "notes": [
    "Locations in VisualBases: Wiesbaden Army Airfield – McCully Barracks Wackernheim – Egelsbach Transmitter Fac, Langen – Dagger Complex, Darmstadt-Griesheim",
    "BSR entries (8): Wiesbaden Army Airfield – Aukamm Hsg Area – Crestview Hsg Area – Hainerberg Housing and Shop Ctr – Kastel Housing Area – Mainz-Kastel Station – Rheinblick Rec Annex – Darmstadt Training Center (closed)"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Wiesbaden.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/wiesbaden-military-community/",
   "lastmod": "2026-09-13"
@@ -4240,6 +4518,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Ansbach.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/usag-bavaria/",
   "lastmod": "2026-10-05"
  },
@@ -4362,6 +4646,16 @@
    "Im Keyes-Building kehrt keine ruhe ein. Das ist bei einem militärischen Oberkommando wie dem Hauptquartier der US-Army für Europa und Afrika, das in dem historischen Gebäude der Clay-Kaserne in Wiesbaden ihren Sitz hat, auch nicht zu erwarten. Aber seit dem Beginn der zweiten Amtszeit des amerikanischen Präsidenten Donald Trump nimmt die Unruhe kein Ende mehr […]",
    "Welche Bedeutung das Wiesbadener Hauptquartier für das US-Militär und damit auch die NATO hat, zeigt nicht zuletzt die Tatsache, dass von der Clay-Kaserne aus die gesamte militärische Unterstützung des Bündnisses für die Ukraine organisiert und koordiniert wird. Das NATO-Hauptquartier für die Ukraine, kurz NSATU, hat seit Juli 2024 sein Hauptquartier in einem früheren Flugzeughangar auf dem Stützpunkt […]"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Wiesbaden-Erbenheim.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Erbenheim.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/wiesbaden-erbenheim-army-airfield/",
   "lastmod": "2026-09-13"
  },
@@ -4418,6 +4712,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Arienne_Chabelley_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/base-aerienne-de-chabelley/",
   "lastmod": "2026-10-01"
  },
@@ -4448,6 +4748,16 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Djibouti_11-2020.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Djibouti_10-2011.png",
+    "caption": "Google Earth 2011"
+   }
+  ],
   "origin": "https://visualbases.org/us-camp-lemonnier/",
   "lastmod": "2026-09-27"
  },
@@ -4518,6 +4828,16 @@
   ],
   "notes": [
    "(Webinar by World Beyond War -April 10, 2024)"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Djibouti.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Djibouti_Webinar_Overview.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/armed-forces-djibouti/",
   "lastmod": "2026-09-27"
@@ -4838,6 +5158,12 @@
    "Source: Wikimedia",
    "Aegis Missile Defence EN: Host port for ship based Aegis systems"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Marcha_contra_la_base_de_rota-scaled.jpg",
+    "caption": "Source: Wikimedia"
+   }
+  ],
   "origin": "https://visualbases.org/naval-station-rota/",
   "lastmod": "2026-09-22"
  },
@@ -4984,6 +5310,12 @@
   "notes": [
    "Locations: Naval Base Fort Saint Louis – Pôle Aéronautique Etatique du Lamentin – Pointe Des Sables – RSMA-M – 33e régiment d’infanterie de marine – Tartenson"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Martinique.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/martinique-france/",
   "lastmod": "2026-09-27"
  },
@@ -5125,6 +5457,16 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Reunion-IndianOcean.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Reunion_Level11.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/reunion/",
   "lastmod": "2026-09-27"
  },
@@ -5151,6 +5493,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Taihiti.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/tahiti-french-polynesia/",
   "lastmod": "2026-09-27"
  },
@@ -5247,6 +5595,20 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_DiegoGarcia_2021.png",
+    "caption": "Google Earth 2021 (2019)"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_DiegoGarcia.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_IndianOcean.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/diego-garcia-airport/",
   "lastmod": "2026-09-21"
  },
@@ -5380,6 +5742,24 @@
    "Network Control Station Forest Moor",
    "Images: Menwith Hill Accountabilty Campaign (MHAC)"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_4-2020.png",
+    "caption": "Google Earth 2020"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_12-2002.png",
+    "caption": "Google Earth 2002"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Yorkshire.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Menwith-Hill-Day-of-Action-2011-Flickr.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/menwith-hill-air-force-harrogate/",
   "lastmod": "2026-10-02"
  },
@@ -5409,6 +5789,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_RAF-Alconbury_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/raf-alconbury/",
   "lastmod": "2026-09-21"
  },
@@ -5445,6 +5831,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_RAF_Barford_St-John_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/raf-barford-st-john/",
   "lastmod": "2026-09-21"
  },
@@ -5512,6 +5904,12 @@
   "notes": [
    "Campaign info: (Croughton Watch)"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_RAF-Roughton.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/raf-croughton/",
   "lastmod": "2026-09-21"
  },
@@ -5541,6 +5939,12 @@
   ],
   "notes": [
    "Locations in VisualBases: Blenheim Crescent – RAF Barford St John Transmitter Annex – RAF Bicester – RAF Croughton – RAF Oakhanger – RAF Fairford"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Croughton.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/croughton-fairford/",
   "lastmod": "2026-09-13"
@@ -5689,6 +6093,12 @@
   "notes": [
    "Source: Wikimedia"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_Yorkshire.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/raf-fylingdales/",
   "lastmod": "2026-09-21"
  },
@@ -5749,6 +6159,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_RAF-Mildenhall_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/raf-mildenhall/",
   "lastmod": "2026-09-21"
  },
@@ -5838,6 +6254,12 @@
    "Source: Wikimedia",
    "Review: Operator is Airbus Defence, but mentioned in BSR"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Wikimedia_Satellite_Dish_RAF_Oakhanger_328959.jpeg",
+    "caption": "Source: Wikimedia"
+   }
+  ],
   "origin": "https://visualbases.org/raf-oakhanger/",
   "lastmod": "2026-09-21"
  },
@@ -5900,6 +6322,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_RAF-Welford.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/raf-welford-ammo-storage-area/",
   "lastmod": "2026-09-21"
  },
@@ -6089,6 +6517,16 @@
    "Belongs to: Naval Support Souda Bay",
    "Further source: NATO Missile Firing Installation"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_2021.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_4-2017.png",
+    "caption": "Google Earth 2017"
+   }
+  ],
   "origin": "https://visualbases.org/namfi-souda-bay/",
   "lastmod": "2026-09-21"
  },
@@ -6121,6 +6559,16 @@
   "sources": [],
   "notes": [
    "Belongs to: Naval Support Souda Bay"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_namfi-souda_2017-06.png",
+    "caption": "Google Earth 2017"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_namfi-souda-2016-07.png",
+    "caption": "Google Earth 2016"
+   }
   ],
   "origin": "https://visualbases.org/namfi-souda/",
   "lastmod": "2026-09-21"
@@ -6163,6 +6611,12 @@
    "BSR entries: NATO Ordnance Area – NSA Souda Bay – NSA Souda Bay Marathi Pier Area – NSA Souda Bay NAMFI Compound",
    "Additional Facility View: NAMFI radar station – NATO Missile Firing Installation (NAMFI)",
    "Further sources: NATO Integrated Air & Missile Defence Centre of Excellence"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_SoudaBay.png",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/nsa-souda-bay/",
   "lastmod": "2026-10-02"
@@ -6321,6 +6775,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_EugenKvaterni-Croatia.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/training-area-eugen-kvaternik/",
   "lastmod": "2026-09-21"
  },
@@ -6438,6 +6898,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/shannon-airport/",
   "lastmod": "2026-09-27"
  },
@@ -6506,6 +6972,12 @@
    "Google Earth 20021 (2004)",
    "Update: US military expanding Ain al-Asad air base despite calls to withdraw troops from Iraq"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Al-Asad-AB_20212004.png",
+    "caption": "Google Earth 20021 (2004)"
+   }
+  ],
   "origin": "https://visualbases.org/al-asad-ab/",
   "lastmod": "2026-10-01"
  },
@@ -6539,6 +7011,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Camp-Speicher_20212005.png",
+    "caption": "Google Earth 2021 (2005)"
+   }
+  ],
   "origin": "https://visualbases.org/camp-speicher/",
   "lastmod": "2026-10-01"
  },
@@ -6842,6 +7320,16 @@
   "notes": [
    "Belongs to: Sigonella Air Base"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_6-2020.png",
+    "caption": "Google Earth 2020"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_7-2017.png",
+    "caption": "Google Earth 2017"
+   }
+  ],
   "origin": "https://visualbases.org/command-ground-system-sigonella/",
   "lastmod": "2026-09-21"
  },
@@ -6882,6 +7370,20 @@
   "notes": [
    "Environmental issues: Exposure to harmful electromagnetic waves, destruction of the Niscemi Nature Reserve"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_6-2018.png",
+    "caption": "Google Earth 2018"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_7-2013.png",
+    "caption": "Google Earth 2013"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_noMUOS.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/niscemi-radar-station-muos/",
   "lastmod": "2026-09-21"
  },
@@ -6911,6 +7413,16 @@
   "sources": [],
   "notes": [
    "BSR entries: NAS Sigonella – NAS Pensacola Transmitter Site – NATO Ordnance Faciilty"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Sigonella_14.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Sigonella-AB_20212018.png",
+    "caption": "Google Earth 2021 (2018)"
+   }
   ],
   "origin": "https://visualbases.org/sigonalla-air-base/",
   "lastmod": "2026-10-01"
@@ -6949,6 +7461,12 @@
    "The role of Camp Darby, the largest US arsenal outside US territory, is of particular importance. In recent days, new and more powerful armored vehicles have arrived from the United States at this base – located between Pisa and Livorno – and will be sent to Ukraine from Camp Darby via the port of Livorno.",
    "The US bases at Camp Darby, Sigonella, and others on Italian territory also support war operations in the Middle East, where the United States continues to arm Israel as part of an agreement, stipulated by President Barack Obama and his Vice President Joe Biden, whose plans to supply Israel with $38 billion worth of weapons, including the bombs Israel is exterminating Palestinians in Gaza with."
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Livorn-Depot.png",
+    "caption": "Googler Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/camp-darby-tirrenia-livorno/",
   "lastmod": "2026-09-21"
  },
@@ -6974,6 +7492,12 @@
   "sources": [],
   "notes": [
    "click to full size"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Vicenza-Padova.png",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/vicenza-padova/",
   "lastmod": "2026-09-21"
@@ -7171,6 +7695,16 @@
   "notes": [
    "Source: Wikimedia"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Community_Okinawa.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Military_facilities_of_the_United_States_in_Japan_2016.gif",
+    "caption": "Source: Wikimedia"
+   }
+  ],
   "origin": "https://visualbases.org/okinawa/",
   "lastmod": "2026-09-28"
  },
@@ -7235,6 +7769,20 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Henoko_11-2020.png",
+    "caption": "Google Earth 2020"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Henoko_2014.png",
+    "caption": "Google Earth 2014"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_okinawa.jpg",
+    "caption": "."
+   }
+  ],
   "origin": "https://visualbases.org/henoko-camp-schwab/",
   "lastmod": "2026-09-28"
  },
@@ -7335,6 +7883,16 @@
   "notes": [
    "no BSR entry",
    "Takae residents protest against US military expansion in Yanbaru Forest."
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_JungleWarfare-Okinawa.jpg",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_nohelipads-okinawa.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/jungle-warfare-training-center/",
   "lastmod": "2026-09-28"
@@ -7520,6 +8078,12 @@
   "sources": [],
   "notes": [
    "Belongs to: Kadena Air Base"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Kadena_Ammunition_2021.png",
+    "caption": "Google Earth 2021 (Planet.com)"
+   }
   ],
   "origin": "https://visualbases.org/kadena-ammunition-okinawa/",
   "lastmod": "2026-09-28"
@@ -7761,6 +8325,12 @@
   "notes": [
    "Additional BSR entries: Camp George"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/camp-walker-taeku/",
   "lastmod": "2026-09-27"
  },
@@ -7825,6 +8395,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/campaign_jeju-island.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/jeju-island-naval-base-gangjeong/",
   "lastmod": "2026-10-02"
  },
@@ -7920,6 +8496,16 @@
   "notes": [
    "includes: Desiderio Army Airfield (DAAF) – ROKAF 7th Aerospace Communication Service Group"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Humphreys.png",
+    "caption": ""
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/usag-humphreys/",
   "lastmod": "2026-10-05"
  },
@@ -7976,6 +8562,12 @@
   "notes": [
    "BSR entries: Camp George – Camp Walker – Camp Henry – Camp Carroll – Daegu International Airport"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Taeju-Korea.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/taegu-region/",
   "lastmod": "2026-09-28"
  },
@@ -8003,6 +8595,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_THADD-Base-Korea.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/thadd-deployment-base/",
   "lastmod": "2026-09-28"
  },
@@ -8030,6 +8628,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/camp-carroll-waegwan/",
   "lastmod": "2026-09-28"
  },
@@ -8085,6 +8689,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_Yongsan.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/us-army-garrison-yongsan/",
   "lastmod": "2026-09-28"
  },
@@ -8203,6 +8813,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Rudninkai_LT_2021.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/rudninkai-litauen/",
   "lastmod": "2026-09-22"
  },
@@ -8366,6 +8982,12 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Sinjajevina.webp",
+    "caption": "Source: https://sinjajevina.org/where-is-sinjajevina/"
+   }
+  ],
   "origin": "https://visualbases.org/sinjajevina-montenegro/",
   "lastmod": "2026-09-21"
  },
@@ -8490,6 +9112,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Camp-Castor_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/us-camp-castor/",
   "lastmod": "2026-09-27"
  },
@@ -8582,6 +9210,16 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Niger201_6-2017.png",
+    "caption": "Google Earth 2017"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Niger201_2021.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/us-air-base-201/",
   "lastmod": "2024-09-17"
  },
@@ -8616,6 +9254,12 @@
   "notes": [
    "18.96835, 12.86481 (not visible in Google Earth)",
    "Planet.com 2021"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Plant_drone_base_dirkou_niger_2021.jpg",
+    "caption": "Planet.com 2021"
+   }
   ],
   "origin": "https://visualbases.org/dirkou-ab-niger/",
   "lastmod": "2024-09-17"
@@ -9062,6 +9706,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Trondheim.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/trondheim/",
   "lastmod": "2026-09-27"
  },
@@ -9130,6 +9780,12 @@
   "notes": [
    "Same content in: theregister.co.uk",
    "Note: More locations should be identified in Oman like BSR entry MPT Site 1, Muscat"
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_OPC1-Muscat.png",
+    "caption": "Google Earth 2021"
+   }
   ],
   "origin": "https://visualbases.org/opc-1-muscat/",
   "lastmod": "2024-04-05"
@@ -9445,6 +10101,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Orzysz-Poland.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/bemowo-piskie/",
   "lastmod": "2026-09-22"
  },
@@ -9502,6 +10164,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Drawsko-Poland.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/training-center-drawsko/",
   "lastmod": "2026-09-22"
  },
@@ -9640,6 +10308,12 @@
    "„AFSBn-Poland is charged with providing and coordinating receipt, transfer, storage and maintenance of APS-2 tactical vehicles and equipment sets at Powidz to enable commanders to conduct unified action and a full range of military operations in support of U.S European Command. The Powidz APS-2 worksite houses an entire armored brigade combat team’s worth of APS-2 tactical vehicles and equipment sets, managed and maintained at ready-to-issue standards by AFSBn-Poland and the 33rd APS Battalion. The Powidz APS-2 worksite demonstrates the U.S., Poland and NATO’s commitment to maintaining rapi…",
    "Source: Kaiserslautern American, Dec. 5, 2025, Page 11"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Powidz_APS-2_web.jpg",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/33rd-air-base-powidz/",
   "lastmod": "2026-10-02"
  },
@@ -9676,6 +10350,16 @@
    }
   ],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_20212020.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_2016.png",
+    "caption": "Google Earth 2016"
+   }
+  ],
   "origin": "https://visualbases.org/redzikowo/",
   "lastmod": "2026-09-22"
  },
@@ -9738,6 +10422,12 @@
   "sourceType": [],
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Zagan.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/zagan-training-area/",
   "lastmod": "2026-09-22"
  },
@@ -10075,6 +10765,20 @@
    "Aegis Missile Defence EN: –",
    "Review location: foreign or shared base"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Deveslu_3-2014.png",
+    "caption": "Google Earth 2014"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Deveslu_2021.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/Wikimedia_Aegis_Ashore_Missile_Defense_Complex_Romania.jpg",
+    "caption": "Wikimedia 2016"
+   }
+  ],
   "origin": "https://visualbases.org/deveselu-base/",
   "lastmod": "2026-09-22"
  },
@@ -10140,6 +10844,12 @@
    "On 28 February 2022, France deployed a spearhead battalion of the rapid response force to Romania. […]",
    "To house the battlegroup, a new military base was constructed in Cincu. The base consists of hangars, ammunition depots, as well as, auxiliary buildings for civilian purposes. The military town was constructed by a multinational detachment of engineers, and the costs were covered by France and Romania with construction materials acquired from Romania. […]",
    "In 2025, the Multinational Battlegroup increased its size to a brigade level. Originally intended to be deployed during the Dacian Spring exercise, the 5,000 NATO soldiers of the brigade were deployed for the Dacian Fall exercise which took place between 20 October and 13 November 2025. Future plans are to further increase the size of the NATO unit to division level, with Cincu expected to host over 15,000 troops by 2027/2028."
+  ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_TA_Popescu-Cincu-Romania.jpg",
+    "caption": ""
+   }
   ],
   "origin": "https://visualbases.org/training-centre-general-popescu/",
   "lastmod": "2026-10-02"
@@ -10537,6 +11247,12 @@
   "notes": [
    "click to full size"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Singapore.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/singapore/",
   "lastmod": "2026-09-27"
  },
@@ -10566,6 +11282,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HostSpot_Dakar.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/dakar-senegal/",
   "lastmod": "2024-04-04"
  },
@@ -11008,6 +11730,12 @@
    "(not specified)",
    "Source: GlobalSecurity ($) Oct 29, 2021"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_Taiwan.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/taiwan/",
   "lastmod": "2026-09-27"
  },
@@ -11122,6 +11850,12 @@
   "notes": [
    "Creech Air Base 2021"
   ],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Creech_AFB.png",
+    "caption": "Creech Air Base 2021"
+   }
+  ],
   "origin": "https://visualbases.org/creech-air-force-base/",
   "lastmod": "2026-09-27"
  },
@@ -11177,6 +11911,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Guam.png",
+    "caption": ""
+   }
+  ],
   "origin": "https://visualbases.org/guam-naval-base/",
   "lastmod": "2026-09-27"
  },
@@ -11265,6 +12005,16 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Lualualei_2021.png",
+    "caption": "Google Earth 2021"
+   },
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Lualualei_1-2011.png",
+    "caption": "Google Earth 2011"
+   }
+  ],
   "origin": "https://visualbases.org/naval-radio-transmitter-lualualei/",
   "lastmod": "2026-09-27"
  },
@@ -11291,6 +12041,12 @@
   },
   "sources": [],
   "notes": [],
+  "images": [
+   {
+    "url": "https://visualbases.org/wp-content/uploads/GE_Johnston-Atoll.png",
+    "caption": "Google Earth 2021"
+   }
+  ],
   "origin": "https://visualbases.org/johnston-atoll/",
   "lastmod": "2026-09-27"
  },

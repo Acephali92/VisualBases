@@ -6,6 +6,8 @@
   import { settings, setSatellite } from '../lib/settings.svelte';
   import type { Ranked } from '../lib/data';
   import type { Base } from '../lib/types';
+  import Compare from './Compare.svelte';
+  import Gallery from './Gallery.svelte';
 
   let { base, nearby, onClose, onSelect }: { base: Base; nearby: Ranked[]; onClose: () => void; onSelect: (id: string) => void } = $props();
 
@@ -13,6 +15,10 @@
   let scroller: HTMLDivElement;
 
   const group = $derived(KIND_GROUP[base.kind]);
+  const images = $derived(base.images ?? []);
+  const sats = $derived(images.filter((i) => i.type === 'satellite' && i.year).sort((a, b) => a.year! - b.year!));
+  const pair = $derived(sats.length >= 2 && sats[0].year !== sats.at(-1)!.year ? ([sats[0], sats.at(-1)!] as const) : null);
+  const cover = $derived(images.find((i) => i.type === 'photo') ?? sats.at(-1) ?? images.find((i) => i.type === 'map'));
   const related = $derived((base.related ?? []).map((id) => db.byId.get(id)).filter((b): b is Base => !!b));
   const partOf = $derived(db.bases.filter((b) => b.group && b.related?.includes(base.id)));
   const z = $derived(Math.min(base.zoom ?? 14, 16));
@@ -52,6 +58,13 @@
     </div>
   </div>
 
+  {#if cover}
+    <figure class="cover">
+      <img src={cover.src} width={cover.w} height={cover.h} alt={cover.caption ?? base.name} />
+      <figcaption>© {cover.credit}{#if cover.year}{' · '}{cover.year}{/if}</figcaption>
+    </figure>
+  {/if}
+
   <header>
     <span class="tag kind"><span class="dot" class:ring={group === 'hotspot'} style:background={GROUP_COLOR[group]}></span>{t(`kind.${base.kind}`)}</span>
     <h2>{base.name}</h2>
@@ -69,6 +82,12 @@
     <span class="st-text"><b>{t('map.satellite')}</b><small>{t('map.satelliteHint')}</small></span>
     <span class="switch" aria-hidden="true"></span>
   </button>
+
+  {#if pair}
+    <section class="first">
+      <Compare before={pair[0]} after={pair[1]} />
+    </section>
+  {/if}
 
   <dl class="facts">
     {#if base.nations.length}
@@ -100,6 +119,13 @@
       <div class="chips">
         {#each base.themes as th}<a class="chip theme-{th}" href={href('/atlas', `themes=${th}`)}>{t(`theme.${th}`)}</a>{/each}
       </div>
+    </section>
+  {/if}
+
+  {#if images.length}
+    <section>
+      <h3>{t('img.photos')} · {images.length}</h3>
+      <Gallery {images} title={base.name} />
     </section>
   {/if}
 
@@ -169,6 +195,11 @@
   .top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 12px 0 8px; margin: 0 -18px; padding-inline: 10px 14px;
     background: linear-gradient(rgb(13 18 32 / 1) 75%, rgb(13 18 32 / 0)); }
   header { padding: 4px 0 8px; }
+  .cover { position: relative; margin: 0 -18px 4px; }
+  .cover img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+  .cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, rgb(13 18 32 / 1)); pointer-events: none; }
+  .cover figcaption { position: absolute; right: 10px; bottom: 6px; z-index: 1; font-size: 0.68rem; color: var(--muted); }
+  .first { margin-top: 14px; }
   h2 { font-size: 1.6rem; margin: 0.45em 0 0.2em; }
   .where { color: var(--text-2); margin: 0 0 0.6em; }
   .kind-info { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6em; }

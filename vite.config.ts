@@ -29,6 +29,11 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         runtimeCaching: [
           {
+            urlPattern: /\/media\/.+\.webp$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'media', expiration: { maxEntries: 300, maxAgeSeconds: 60 * 60 * 24 * 60 } },
+          },
+          {
             urlPattern: /^https:\/\/tiles\.maps\.eox\.at\//,
             handler: 'CacheFirst',
             options: { cacheName: 'satellite-tiles', expiration: { maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 30 } },

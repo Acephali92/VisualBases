@@ -8,6 +8,25 @@
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
   import type { Base, Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
+  import Compare from '../components/Compare.svelte';
+  import type { Image } from '../lib/types';
+
+  // protest photos from the archive, each linked to its base
+  const FACES = ['stopp-ramstein-fahrradmarathon', 'marcha-contra-la-base-de-rota', 'menwith-hill-day-of-action', '2015-sabr1', 'guantanomo-final'];
+  const faces = $derived(
+    FACES.map((key) => {
+      for (const b of db.bases) {
+        const img = b.images?.find((i) => i.src.includes(key));
+        if (img) return { base: b, img };
+      }
+      return null;
+    }).filter((x): x is { base: Base; img: Image } => !!x),
+  );
+  const showcase = $derived.by(() => {
+    const b = db.byId.get('ramstein-air-base');
+    const s = (b?.images ?? []).filter((i) => i.type === 'satellite' && i.year).sort((x, y) => x.year! - y.year!);
+    return b && s.length >= 2 ? { base: b, before: s[0], after: s.at(-1)! } : null;
+  });
 
   let mapEl: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
@@ -177,6 +196,34 @@
   </div>
 </section>
 
+{#if faces.length}
+  <section class="faces container" aria-labelledby="faces-h">
+    <p class="kicker">{t('home.facesKicker')}</p>
+    <h2 id="faces-h">{t('home.facesTitle')}</h2>
+    <p class="sub">{t('home.facesText')}</p>
+    <div class="mosaic">
+      {#each faces as f, i}
+        <a class="tile" class:wide={i === 0} href={href(`/base/${f.base.id}`)}>
+          <img src={i === 0 ? f.img.src : f.img.thumb} alt="{f.base.name}" loading="lazy" decoding="async" />
+          <span class="tl-cap"><b>{f.base.name}</b><small>© {f.img.credit}</small></span>
+        </a>
+      {/each}
+    </div>
+  </section>
+{/if}
+
+{#if showcase}
+  <section class="change container" aria-labelledby="change-h">
+    <div class="change-text">
+      <p class="kicker">{t('home.changeKicker')}</p>
+      <h2 id="change-h">{t('home.changeTitle')}</h2>
+      <p class="sub">{t('home.changeText')}</p>
+      <a class="btn" href={href(`/base/${showcase.base.id}`)}>{showcase.base.name} →</a>
+    </div>
+    <div class="change-img"><Compare before={showcase.before} after={showcase.after} /></div>
+  </section>
+{/if}
+
 <section class="topics container" aria-labelledby="topics-h">
   <h2 id="topics-h">{t('filters.theme')}</h2>
   <div class="topic-grid">
@@ -257,6 +304,21 @@
     .legend-wrap { top: calc(var(--header-h) + 8px); bottom: auto; right: 8px; }
   }
 
+  .faces, .change { padding: 88px 0 8px; }
+  .faces h2, .change h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); font-weight: 800; max-width: 18em; }
+  .sub { color: var(--text-2); max-width: 40em; }
+  .mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 8px; margin-top: 24px; }
+  .tile { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); }
+  .tile.wide { grid-column: span 2; grid-row: span 2; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; filter: saturate(0.9); }
+  .tile:hover img { transform: scale(1.04); filter: none; }
+  .tl-cap { position: absolute; inset: auto 0 0 0; padding: 28px 12px 10px; background: linear-gradient(transparent, rgb(7 9 15 / 0.9)); display: flex; flex-direction: column; font-size: 0.85rem; }
+  .tl-cap small { color: var(--muted); font-size: 0.7rem; }
+  @media (max-width: 700px) {
+    .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+  }
+  .change { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: center; }
+  @media (max-width: 820px) { .change { grid-template-columns: 1fr; } }
   .topics, .stories { padding: 72px 0 24px; }
   .topics h2, .stories h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
   .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
