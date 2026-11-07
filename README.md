@@ -87,6 +87,10 @@ NODE_USE_ENV_PROXY=1 node scripts/import-wikimedia.mjs   # nur nötig hinter ein
 npm run data:media       # Bilder laden und optimieren
 ```
 
+## Automatische Aktualisierung
+
+Der Workflow `.github/workflows/update-data.yml` läuft jeden Montag (und auf Knopfdruck unter *Actions*). Er lädt nur geänderte Beiträge von visualbases.org neu, aktualisiert die Presseschau und die freien Fotos und öffnet einen Pull Request mit den Änderungen.
+
 ## Deployment
 
 Jeder Push auf `main` wird über `.github/workflows/deploy.yml` geprüft (Typen, Unit-Tests, Build, Browser-Test) und auf GitHub Pages veröffentlicht. In den Repository-Einstellungen muss dafür **Settings → Pages → Source: „GitHub Actions“** gewählt sein.

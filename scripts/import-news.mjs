@@ -97,12 +97,17 @@ async function main() {
   for (const pg of PAGES) {
     const file = path.join(CACHE, pg.file);
     let html;
-    try { html = await fs.readFile(file, 'utf8'); } catch {
-      if (offline) continue;
+    try {
+      if (!offline) throw new Error('refresh'); // press reviews change often – always fetch fresh online
+      html = await fs.readFile(file, 'utf8');
+    } catch {
+      if (offline) { try { html = await fs.readFile(file, 'utf8'); } catch { continue; } }
+      else {
       const res = await fetch(pg.url, { headers: { 'user-agent': 'VisualBases-open-data-import' } });
       html = await res.text();
       await fs.mkdir(CACHE, { recursive: true });
       await fs.writeFile(file, html);
+      }
     }
     all.push(...parseNewsPage(html, pg.lang));
   }

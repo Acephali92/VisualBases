@@ -1,0 +1,64 @@
+name: Daten aktualisieren
+
+# Holt wöchentlich neue und geänderte Standorte, die Presseschau und freie Fotos
+# von visualbases.org und Wikimedia Commons und öffnet dafür einen Pull Request.
+on:
+  schedule:
+    - cron: '17 4 * * 1' # montags 04:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # crawler cache: only pages changed on visualbases.org are downloaded again
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: data-cache-${{ github.run_id }}
+          restore-keys: data-cache-
+
+      - name: Standorte (visualbases.org)
+        run: node scripts/import-visualbases.mjs
+      - name: Presseschau
+        run: node scripts/import-news.mjs
+      - name: Freie Fotos (Wikimedia Commons)
+        run: node scripts/import-wikimedia.mjs
+      - name: Bilder optimieren
+        run: node scripts/build-media.mjs --prune
+      - name: Prüfen
+        run: |
+          npm test
+          npm run build
+
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data-update
+          delete-branch: true
+          commit-message: 'Daten aktualisiert (visualbases.org, Presseschau, Wikimedia)'
+          title: 'Daten-Update: Standorte, Presseschau und Fotos'
+          body: |
+            Automatische Aktualisierung durch den Workflow „Daten aktualisieren“.
+
+            - neue und geänderte Standorte von visualbases.org
+            - aktuelle Presseschau (DE/EN)
+            - frei lizenzierte Fotos von Wikimedia Commons (nur freie Lizenzen, mit Urheber)
+
+            Tests und Build sind im Workflow durchgelaufen. Bitte kurz durchsehen und zusammenführen.
+          labels: daten

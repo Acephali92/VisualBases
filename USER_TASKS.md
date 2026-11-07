@@ -29,3 +29,10 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 ## Was ich selbstständig weiterentwickle
 
 Siehe offene Pull Requests und die Liste „Nächste Schritte“ im README.
+
+## 4. Automatische Daten-Aktualisierung einschalten
+
+- [ ] **Settings → Actions → General → Workflow permissions:** „Read and write permissions“ wählen **und** „Allow GitHub Actions to create and approve pull requests“ anhaken.
+  Danach erstellt der Workflow **„Daten aktualisieren“** jeden Montag automatisch einen Pull Request mit neuen Standorten, Presseschau und Fotos.
+- [ ] Einmal manuell starten: **Actions → „Daten aktualisieren“ → „Run workflow“.** Dabei werden auch die restlichen Wikimedia-Fotos geladen (aus meiner Cloud-Umgebung wurde der Download von Wikimedia gedrosselt).
+- [ ] Label **`daten`** im Repo anlegen (optional; der Workflow setzt es an den Pull Request).

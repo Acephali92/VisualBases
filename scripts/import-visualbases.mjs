@@ -109,10 +109,23 @@ export function decode(s) {
 }
 export const stripTags = (s) => decode(s.replace(/<[^>]+>/g, '')).replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
 
-async function fetchCached(url, name) {
+/** lastmod of every cached page, so that only posts changed on the site are downloaded again */
+let lastmodIndex = null;
+async function readIndex() {
+  if (lastmodIndex) return lastmodIndex;
+  try { lastmodIndex = JSON.parse(await fs.readFile(path.join(cacheDir, '_lastmod.json'), 'utf8')); } catch { lastmodIndex = {}; }
+  return lastmodIndex;
+}
+
+async function fetchCached(url, name, lastmod) {
   const file = path.join(cacheDir, name);
+  const index = await readIndex();
+  const stale = !offline && lastmod && index[name] && index[name] !== lastmod;
   try {
-    return await fs.readFile(file, 'utf8');
+    if (stale) throw new Error('changed');
+    const text = await fs.readFile(file, 'utf8');
+    if (lastmod && !index[name]) index[name] = lastmod;
+    return text;
   } catch {
     if (offline) return null;
     await sleep(500);
@@ -121,6 +134,7 @@ async function fetchCached(url, name) {
     const text = await res.text();
     await fs.mkdir(cacheDir, { recursive: true });
     await fs.writeFile(file, text);
+    if (lastmod) index[name] = lastmod;
     return text;
   }
 }
@@ -265,6 +279,8 @@ export function toBase(p, lastmod) {
 /* ---------------------------------------------------------------- main */
 
 async function main() {
+  // the sitemap itself is always fetched fresh (unless --offline) to learn about new and changed posts
+  if (!offline) await fs.rm(path.join(cacheDir, '_sitemap-posts.xml'), { force: true });
   const sitemap = await fetchCached(`${ORIGIN}/wp-sitemap-posts-post-1.xml`, '_sitemap-posts.xml');
   if (!sitemap) throw new Error('Could not load sitemap');
   const entries = [...sitemap.matchAll(/<url><loc>([^<]+)<\/loc>(?:<lastmod>([^<]+)<\/lastmod>)?/g)].map((m) => ({ url: m[1], lastmod: m[2] }));
@@ -275,7 +291,7 @@ async function main() {
   let n = 0;
   for (const e of entries) {
     const slug = e.url.replace(ORIGIN, '').replace(/^\/|\/$/g, '');
-    const html = await fetchCached(e.url, `${slug}.html`);
+    const html = await fetchCached(e.url, `${slug}.html`, e.lastmod);
     if (++n % 50 === 0) console.log(`  ${n}/${entries.length}`);
     if (!html) continue;
     const p = parsePost(html, slug);
@@ -301,6 +317,7 @@ async function main() {
     if (b.related && !b.related.length) delete b.related;
   }
 
+  await fs.writeFile(path.join(cacheDir, '_lastmod.json'), JSON.stringify(await readIndex()));
   await fs.mkdir(path.join(ROOT, 'data'), { recursive: true });
   await fs.writeFile(path.join(ROOT, 'data/bases.json'), JSON.stringify(bases, null, 1) + '\n');
   await fs.writeFile(path.join(ROOT, 'data/stories.json'), JSON.stringify(stories, null, 1) + '\n');

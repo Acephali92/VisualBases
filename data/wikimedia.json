@@ -43,30 +43,9 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg"
  },
- "masar-i-sharif-communnity": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Nowruz_in_northern_Afghanistan-2011_%28cropped%29.jpg",
-  "title": "Nowruz in northern Afghanistan-2011 (cropped)",
-  "credit": "Peretz Partensky from San Francisco, USA",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Nowruz_in_northern_Afghanistan-2011_(cropped).jpg"
- },
- "kucova-albania": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ku%C3%A7ov%C3%AB_Main_street.jpg/1920px-Ku%C3%A7ov%C3%AB_Main_street.jpg",
-  "title": "Kuçovë Main street",
-  "credit": "Albinfo",
-  "license": "CC0",
-  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Ku%C3%A7ov%C3%AB_Main_street.jpg"
- },
- "ushuaia": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ushuaia_aerial_panorama.jpg/1920px-Ushuaia_aerial_panorama.jpg",
-  "title": "Ushuaia aerial panorama",
-  "credit": "Deensel",
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ushuaia_aerial_panorama.jpg"
- },
+ "masar-i-sharif-communnity": null,
+ "kucova-albania": null,
+ "ushuaia": null,
  "naval-comm-station-exmouth": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Harold_E_Holt_Naval_Base.jpg",
   "title": "Harold E Holt Naval Base",
@@ -118,14 +97,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:US_Navy_050816-N-9563N-006_New_chief_petty_officer_(CPO)_selectees_perform_morning_colors_on_board_Naval_Support_Activity_(NSA)_Bahrain.jpg"
  },
- "bujumbura-burundi": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/BujumburaFromCathedral.jpg/1920px-BujumburaFromCathedral.jpg",
-  "title": "BujumburaFromCathedral",
-  "credit": "SteveRwanda",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "page": "https://commons.wikimedia.org/wiki/File:BujumburaFromCathedral.jpg"
- },
+ "bujumbura-burundi": null,
  "autec-bahamas": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/AUTEC_from_the_air.jpg",
   "title": "AUTEC from the air",
@@ -133,14 +105,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:AUTEC_from_the_air.jpg"
  },
- "bdf-glen-valley-botswana": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/View_from_I-Tower_SE_20200712.jpg/1920px-View_from_I-Tower_SE_20200712.jpg",
-  "title": "View from I-Tower SE 20200712",
-  "credit": "CNJerem",
-  "license": "CC BY 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:View_from_I-Tower_SE_20200712.jpg"
- },
+ "bdf-glen-valley-botswana": null,
  "nas-argentia-newfoundland": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Argentia_airphoto.jpg",
   "title": "Argentia airphoto",
@@ -148,44 +113,11 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Argentia_airphoto.jpg"
  },
- "pratas-islands-south-china-sea": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pratas_Island_ISS004-10210.jpg/1920px-Pratas_Island_ISS004-10210.jpg",
-  "title": "Pratas Island ISS004-10210",
-  "credit": "ISS Crew Earth Observations experiment and the Image Science &amp; Analysis Laboratory, NASA - Johnson Space Center",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Pratas_Island_ISS004-10210.jpg"
- },
- "money-island-south-chinese-sea": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Money_Island_%28Paracel_Islands%29_2023-04-04.jpg",
-  "title": "Money Island (Paracel Islands) 2023-04-04",
-  "credit": "ESA sentinel -2 via sentinel hub",
-  "license": "Attribution",
-  "page": "https://commons.wikimedia.org/wiki/File:Money_Island_(Paracel_Islands)_2023-04-04.jpg"
- },
- "arauca": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG/1920px-Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG",
-  "title": "Alcaldía de Arauca y monumento 2",
-  "credit": "Gersonparra11",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG"
- },
- "cartagena": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Museo_Naval_del_Caribe.JPG/1920px-Museo_Naval_del_Caribe.JPG",
-  "title": "Museo Naval del Caribe",
-  "credit": "Sgonzalezb",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Museo_Naval_del_Caribe.JPG"
- },
- "malambo-ab": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Iglesia_Santa_Mar%C3%ADa_Magdalena_-2.JPG/1920px-Iglesia_Santa_Mar%C3%ADa_Magdalena_-2.JPG",
-  "title": "Iglesia Santa María Magdalena -2",
-  "credit": "Yemepa84",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Iglesia_Santa_Mar%C3%ADa_Magdalena_-2.JPG"
- },
+ "pratas-islands-south-china-sea": null,
+ "money-island-south-chinese-sea": null,
+ "arauca": null,
+ "cartagena": null,
+ "malambo-ab": null,
  "guantanamo-bay-naval-base": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay%2C_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg/1920px-thumbnail.jpg",
   "title": "US Navy 100506-N-8241M-191 An aerial view of Bulkeley Hall at Naval Station Guantanamo Bay, Cuba. Bulkeley Hall is the naval station headquarters and administration building",
@@ -216,23 +148,9 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:2-227th_Aviation_Regiment,_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg"
  },
- "baumholder-community": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg/1920px-Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg",
-  "title": "Ortsbefestigung Baumholder Leichenpförtchen",
-  "credit": "Leiflive",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg"
- },
+ "baumholder-community": null,
  "baumholder-training-area": null,
- "smith-barracks-baumholder": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg/1920px-Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg",
-  "title": "Ortsbefestigung Baumholder Leichenpförtchen",
-  "credit": "Leiflive",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Ortsbefestigung_Baumholder_Leichenpf%C3%B6rtchen.jpg"
- },
+ "smith-barracks-baumholder": null,
  "deu-bellheim": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/CEPS_Untergruppenbach_20070818.jpg",
   "title": "CEPS Untergruppenbach 20070818",
@@ -273,14 +191,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Frankfurt-Hahn_airport.jpg"
  },
- "hohenfels-training-area": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Burg_Hohenfels_6652.jpg/1920px-Burg_Hohenfels_6652.jpg",
-  "title": "Burg Hohenfels 6652",
-  "credit": "Buendia22",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Burg_Hohenfels_6652.jpg"
- },
+ "hohenfels-training-area": null,
  "stock-barracks-illesheim": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Storck_-bks-1968.jpg",
   "title": "Storck -bks-1968",
@@ -288,29 +199,9 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Storck_-bks-1968.jpg"
  },
- "bann-communications-station": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Insigne_PGE.jpg",
-  "title": "Insigne PGE",
-  "credit": "Mike-tango",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Insigne_PGE.jpg"
- },
- "bann-communications-station-2": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Insigne_PGE.jpg",
-  "title": "Insigne PGE",
-  "credit": "Mike-tango",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Insigne_PGE.jpg"
- },
- "satcom-landstuhl": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/MC-2941_Wideband_Global_SATCOM_Satellite.png/1920px-MC-2941_Wideband_Global_SATCOM_Satellite.png",
-  "title": "MC-2941 Wideband Global SATCOM Satellite",
-  "credit": "United States Air Force",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:MC-2941_Wideband_Global_SATCOM_Satellite.png"
- },
+ "bann-communications-station": null,
+ "bann-communications-station-2": null,
+ "satcom-landstuhl": null,
  "landstuhl-us-hospital": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Landstuhl_Regional_Medical_Center_%282008%29.jpg",
   "title": "Landstuhl Regional Medical Center (2008)",
@@ -318,22 +209,8 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Landstuhl_Regional_Medical_Center_(2008).jpg"
  },
- "egelsbach-transmitter-fac": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Luftaufnahme_Egelsbach.jpg/1920px-Luftaufnahme_Egelsbach.jpg",
-  "title": "Luftaufnahme Egelsbach",
-  "credit": "Hessische Flugplatz GmbH Egelsbach,",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "page": "https://commons.wikimedia.org/wiki/File:Luftaufnahme_Egelsbach.jpg"
- },
- "hospital-weilerbach": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NSG_Magerwiesen_am_Eulenkopf%2C_Erzenhausen_1.jpg/1920px-NSG_Magerwiesen_am_Eulenkopf%2C_Erzenhausen_1.jpg",
-  "title": "NSG Magerwiesen am Eulenkopf, Erzenhausen 1",
-  "credit": "Pueblodelapablo",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:NSG_Magerwiesen_am_Eulenkopf,_Erzenhausen_1.jpg"
- },
+ "egelsbach-transmitter-fac": null,
+ "hospital-weilerbach": null,
  "ramstein-air-base": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Europe_District_supported%2C_managed_construction_projects_around_U.S._air_base_%283985995069%29.jpg/1920px-Europe_District_supported%2C_managed_construction_projects_around_U.S._air_base_%283985995069%29.jpg",
   "title": "Europe District supported, managed construction projects around U.S. air base (3985995069)",
@@ -399,14 +276,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
   "page": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%8D%D1%80%D0%BE%D0%B4%D1%80%D0%BE%D0%BC_%D0%94%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9.jpg"
  },
- "tapa-training-area": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Tapa%2C_Estonia.jpg/1920px-Tapa%2C_Estonia.jpg",
-  "title": "Tapa, Estonia",
-  "credit": "Bandaranaice",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Tapa,_Estonia.jpg"
- },
+ "tapa-training-area": null,
  "cairo-west-ab": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bright_Start_to_BRIGHT_STAR_25-_U_S_and_Egypt_participate_in_joint_COMAO_%289286476%29.jpg/1920px-Bright_Start_to_BRIGHT_STAR_25-_U_S_and_Egypt_participate_in_joint_COMAO_%289286476%29.jpg",
   "title": "Bright Start to BRIGHT STAR 25- U S and Egypt participate in joint COMAO (9286476)",
@@ -445,14 +315,7 @@
   "license": "Attribution",
   "page": "https://commons.wikimedia.org/wiki/File:Diego_Garcia_photographi%C3%A9_par_le_satellite_Sentinel_2.jpg"
  },
- "gchq-bude": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Cattle_by_GCHQ_radio_station_-_geograph.org.uk_-_412255.jpg",
-  "title": "Cattle by GCHQ radio station - geograph.org.uk - 412255",
-  "credit": "David Hawgood",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Cattle_by_GCHQ_radio_station_-_geograph.org.uk_-_412255.jpg"
- },
+ "gchq-bude": null,
  "raf-gibraltar": null,
  "menwith-hill-air-force-harrogate": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Menwith_Hill_radomes_x_26.jpg/1920px-Menwith_Hill_radomes_x_26.jpg",
@@ -581,14 +444,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_(BSRF)_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg"
  },
- "librevillegabon": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Libreville_frond_de_mer.jpg",
-  "title": "Libreville frond de mer",
-  "credit": "Shirmy25",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Libreville_frond_de_mer.jpg"
- },
+ "librevillegabon": null,
  "camp-century-greenland": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Camp_Century_layout_color.png",
   "title": "Camp Century layout color",
@@ -717,14 +573,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:Atsugi_air_base_(2352837131).jpg"
  },
- "okinawa": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Naha_Okinawa_Japan_Shuri-Castle-01.jpg/1920px-Naha_Okinawa_Japan_Shuri-Castle-01.jpg",
-  "title": "Naha Okinawa Japan Shuri-Castle-01",
-  "credit": "CEphoto, Uwe Aranas",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Naha_Okinawa_Japan_Shuri-Castle-01.jpg"
- },
+ "okinawa": null,
  "mcas-futenma": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Marine_Corps_Air_Station_Futenma_20100526.jpg/1920px-Marine_Corps_Air_Station_Futenma_20100526.jpg",
   "title": "Marine Corps Air Station Futenma 20100526",
@@ -769,22 +618,8 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:150821-F-ZC102-051.jpg"
  },
- "kadena-ammunition-okinawa": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Uruma_Montage.jpg",
-  "title": "Uruma Montage",
-  "credit": "File:Nakabaru Historic Site 2.jpg by Hideyuki KAMON File:Bulls Ishikawa, Okinawa 2007.jpg by Lance Cpl. Tyler J. Hlavac,",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "page": "https://commons.wikimedia.org/wiki/File:Uruma_Montage.jpg"
- },
- "white-beach-okinawa": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Uruma_Montage.jpg",
-  "title": "Uruma Montage",
-  "credit": "File:Nakabaru Historic Site 2.jpg by Hideyuki KAMON File:Bulls Ishikawa, Okinawa 2007.jpg by Lance Cpl. Tyler J. Hlavac,",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "page": "https://commons.wikimedia.org/wiki/File:Uruma_Montage.jpg"
- },
+ "kadena-ammunition-okinawa": null,
+ "white-beach-okinawa": null,
  "tachikawa-air-base-tokyo": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Showa_kinen_park_1989.jpg",
   "title": "Showa kinen park 1989",
@@ -828,22 +663,8 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:%D9%85%D8%A8%D9%86%D9%89_%D8%A7%D9%84%D8%B1%D9%83%D8%A7%D8%A8_4_%D9%85%D8%B7%D8%A7%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA_%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A.jpg"
  },
- "pabrades-poligonas-lithuania": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Pabrad%C4%97%2C_Lithuania_-_panoramio_%285%29.jpg/1920px-Pabrad%C4%97%2C_Lithuania_-_panoramio_%285%29.jpg",
-  "title": "Pabradė, Lithuania - panoramio (5)",
-  "credit": "VietovesLt",
-  "license": "CC BY 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Pabrad%C4%97,_Lithuania_-_panoramio_(5).jpg"
- },
- "gaiziunu-poligonas-rukla-lithuania": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gele%C5%BEinio_vilko_pastatai.JPG/1920px-Gele%C5%BEinio_vilko_pastatai.JPG",
-  "title": "Geležinio vilko pastatai",
-  "credit": "Bearas",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Gele%C5%BEinio_vilko_pastatai.JPG"
- },
+ "pabrades-poligonas-lithuania": null,
+ "gaiziunu-poligonas-rukla-lithuania": null,
  "siauliai-lithuania": null,
  "guelmim-airport": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Guelmim_Airport.jpg",
@@ -868,37 +689,10 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:Vermont_Guard_trains_Macedonia_military_for_peacekeeping_missions.jpg"
  },
- "bamako-mali": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Place_de_la_libert%C3%A9_-_Bamako.jpg/1920px-Place_de_la_libert%C3%A9_-_Bamako.jpg",
-  "title": "Place de la liberté - Bamako",
-  "credit": "Rgaudin",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Place_de_la_libert%C3%A9_-_Bamako.jpg"
- },
- "pemba-naval-base": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Wimbe_Beach_2_%284871485865%29.jpg/1920px-Wimbe_Beach_2_%284871485865%29.jpg",
-  "title": "Wimbe Beach 2 (4871485865)",
-  "credit": "Ton Rulkens from Mozambique",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Wimbe_Beach_2_(4871485865).jpg"
- },
- "windhoek-namibia": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Christ_Church_in_Windhoek%2C_Namibia.jpg/1920px-Christ_Church_in_Windhoek%2C_Namibia.jpg",
-  "title": "Christ Church in Windhoek, Namibia",
-  "credit": "Christoph Strässler",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Christ_Church_in_Windhoek,_Namibia.jpg"
- },
- "us-air-base-201": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Bivouac_%C3%A0_Arakao%2C_Massif_de_l%27A%C3%AFr%2C_Niger.jpg",
-  "title": "Bivouac à Arakao, Massif de l'Aïr, Niger",
-  "credit": "Jacques Taberlet",
-  "license": "CC BY 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Bivouac_%C3%A0_Arakao,_Massif_de_l%27A%C3%AFr,_Niger.jpg"
- },
+ "bamako-mali": null,
+ "pemba-naval-base": null,
+ "windhoek-namibia": null,
+ "us-air-base-201": null,
  "dirkou-ab-niger": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Niger_Dirkou_Airport_drone_base.jpg",
   "title": "Niger Dirkou Airport drone base",
@@ -961,14 +755,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Vaernes2016.jpg"
  },
- "thumrait": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Thumrait_filled_red.png/1920px-Thumrait_filled_red.png",
-  "title": "Thumrait filled red",
-  "credit": "ChristianSP124",
-  "license": "CC0",
-  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Thumrait_filled_red.png"
- },
+ "thumrait": null,
  "iquitos-airport": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Iquitos_International_Airport.jpg",
   "title": "Iquitos International Airport",
@@ -1014,14 +801,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:190812-N-AW818-875.jpg"
  },
- "rzeszow": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/PL_Rzesz%C3%B3w%2C_ratusz_2021-05-04--11-00-20_%28cropped%29.jpg/1920px-PL_Rzesz%C3%B3w%2C_ratusz_2021-05-04--11-00-20_%28cropped%29.jpg",
-  "title": "PL Rzeszów, ratusz 2021-05-04--11-00-20 (cropped)",
-  "credit": "Kroton",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:PL_Rzesz%C3%B3w,_ratusz_2021-05-04--11-00-20_(cropped).jpg"
- },
+ "rzeszow": null,
  "naval-transmitter-site-aguada": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/5_Naval_Radio_Transmitter_Facility_Aguada.jpg/1920px-5_Naval_Radio_Transmitter_Facility_Aguada.jpg",
   "title": "5 Naval Radio Transmitter Facility Aguada",
@@ -1030,14 +810,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:5_Naval_Radio_Transmitter_Facility_Aguada.jpg"
  },
- "vieques-island-training-area": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Vieques_Bio_Bay_NR.jpg",
-  "title": "Vieques Bio Bay NR",
-  "credit": "USDA, DRNA PR",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Vieques_Bio_Bay_NR.jpg"
- },
+ "vieques-island-training-area": null,
  "lajes-azores": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Lajes_field.jpg/1920px-Lajes_field.jpg",
   "title": "Lajes field",
@@ -1074,22 +847,8 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:MK_Air_Base_during_Ramstein_Legacy_2024.jpg"
  },
- "deveselu-base": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Conac_din_Deveselu.jpg/1920px-Conac_din_Deveselu.jpg",
-  "title": "Conac din Deveselu",
-  "credit": "Anca-Raluca Majaru",
-  "license": "CC BY-SA 3.0 ro",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/ro/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Conac_din_Deveselu.jpg"
- },
- "training-centre-general-popescu": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/RO_BV_Cincu_1.jpg/1920px-RO_BV_Cincu_1.jpg",
-  "title": "RO BV Cincu 1",
-  "credit": "Radu Ana Maria",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:RO_BV_Cincu_1.jpg"
- },
+ "deveselu-base": null,
+ "training-centre-general-popescu": null,
  "mount-st-rita-naval-link-station": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/US_Navy_Mount_Santa_Rita_Naval_Link_Station%2C_Philippines_c1981.jpg/1920px-US_Navy_Mount_Santa_Rita_Naval_Link_Station%2C_Philippines_c1981.jpg",
   "title": "US Navy Mount Santa Rita Naval Link Station, Philippines c1981",
@@ -1105,23 +864,9 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/wiki/File:Prince_Sultan_Air_Base_Lightning.jpg"
  },
- "s-harnosand": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Harnosand-Storgatan.JPG",
-  "title": "Harnosand-Storgatan",
-  "credit": "Fredrik Malmquist",
-  "license": "CC BY-SA 2.5",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-  "page": "https://commons.wikimedia.org/wiki/File:Harnosand-Storgatan.JPG"
- },
+ "s-harnosand": null,
  "s-kiruna": null,
- "s-kristinehamm": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Kristinehamn_Montage.jpg/1920px-Kristinehamn_Montage.jpg",
-  "title": "Kristinehamn Montage",
-  "credit": "Janee (image 1, 2, 3, 4 &amp; 5)",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:Kristinehamn_Montage.jpg"
- },
+ "s-kristinehamm": null,
  "paya-lebar-air-base": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Singapore_International_Airport_control_tower_and_terminal_building%2C_photographed_February_1969_%C3%97_July_1971.jpg",
   "title": "Singapore International Airport control tower and terminal building, photographed February 1969 × July 1971",
@@ -1275,13 +1020,7 @@
   "license": "Public domain",
   "page": "https://commons.wikimedia.org/wiki/File:1065519_Panzer_Kaserne_in_Germany_with_the_new_construction_of_Panzer_High_School_2013.jpg"
  },
- "wilhelmsburg-barracks-ulm": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Festung_Ulm.jpg",
-  "title": "Festung Ulm",
-  "credit": "Unknown authorUnknown author",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Festung_Ulm.jpg"
- },
+ "wilhelmsburg-barracks-ulm": null,
  "gracias-a-dios-honduras": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Amerikanische_Milit%C3%A4rst%C3%BCtzpunkte_in_S%C3%BCdamerika.png",
   "title": "Amerikanische Militärstützpunkte in Südamerika",
@@ -1298,21 +1037,8 @@
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
   "page": "https://commons.wikimedia.org/wiki/File:01.09_%E5%AE%8F%E5%9C%8B%E7%A6%AE%E5%85%B5%E5%90%91%E7%B8%BD%E7%B5%B1%E8%87%B4%E6%95%AC_(32104130041).jpg"
  },
- "jpn-yonaguni": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Yonaguni_Island_ISS039.jpg",
-  "title": "Yonaguni Island ISS039",
-  "credit": "Image Science and Analysis Laboratory, NASA-Johnson Space Center. \"The Gateway to Astronaut Photography of Earth.\"",
-  "license": "Public domain",
-  "page": "https://commons.wikimedia.org/wiki/File:Yonaguni_Island_ISS039.jpg"
- },
- "rudninkai-litauen": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0_%D0%B2_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B5_-_panoramio_-_%D0%98%D0%B2%D0%B0%D0%BD_%D0%91%D0%B0%D0%B9_%282%29.jpg/1920px-%D0%A3%D0%BB%D0%B8%D1%86%D0%B0_%D0%B2_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B5_-_panoramio_-_%D0%98%D0%B2%D0%B0%D0%BD_%D0%91%D0%B0%D0%B9_%282%29.jpg",
-  "title": "Улица в деревне - panoramio - Иван Бай (2)",
-  "credit": "Иван Бай",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/wiki/File:%D0%A3%D0%BB%D0%B8%D1%86%D0%B0_%D0%B2_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BD%D0%B5_-_panoramio_-_%D0%98%D0%B2%D0%B0%D0%BD_%D0%91%D0%B0%D0%B9_(2).jpg"
- },
+ "jpn-yonaguni": null,
+ "rudninkai-litauen": null,
  "maria-argana-paraguay": {
   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Amerikanische_Milit%C3%A4rst%C3%BCtzpunkte_in_S%C3%BCdamerika.png",
   "title": "Amerikanische Militärstützpunkte in Südamerika",
@@ -1321,12 +1047,5 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
   "page": "https://commons.wikimedia.org/wiki/File:Amerikanische_Milit%C3%A4rst%C3%BCtzpunkte_in_S%C3%BCdamerika.png"
  },
- "dakar-senegal": {
-  "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Senegal_baie_de_Dakar_800x600.jpg",
-  "title": "Senegal baie de Dakar 800x600",
-  "credit": "jbdodane",
-  "license": "CC BY-SA 2.0 fr",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
-  "page": "https://commons.wikimedia.org/wiki/File:Senegal_baie_de_Dakar_800x600.jpg"
- }
+ "dakar-senegal": null
 }
