@@ -71,6 +71,9 @@ async function main() {
 
   const jobs = new Map();
   for (const b of bases) for (const img of b.images ?? []) jobs.set(img.url, { caption: img.caption, ...classify(decodeURIComponent(img.url.split('/').pop()), img.caption) });
+  let movement = {};
+  try { movement = JSON.parse(await fs.readFile(path.join(ROOT, 'data/movement.json'), 'utf8')); } catch { /* optional */ }
+  for (const s of movement.congress?.speakers ?? []) if (s.photo) jobs.set(`https://visualbases.org/wp-content/uploads/${s.photo}`, { caption: s.name, type: 'portrait', credit: 'visualbases.org' });
   for (const w of Object.values(wiki)) if (w?.url) jobs.set(w.url, { caption: w.title ?? '', type: 'photo', credit: w.credit, license: w.license, licenseUrl: w.licenseUrl, sourceUrl: w.page });
 
   let done = 0, skipped = 0;
@@ -88,7 +91,9 @@ async function main() {
       if (!m.width || m.width < 120) continue;
       const q = meta.type === 'logo' || meta.type === 'map' ? 86 : 78;
       const f = await img.clone().resize({ width: 1400, withoutEnlargement: true }).webp({ quality: q }).toFile(full);
-      const t = await img.clone().resize({ width: 480, withoutEnlargement: true }).webp({ quality: 72 }).toFile(thumb);
+      const t = meta.type === 'portrait'
+        ? await img.clone().resize({ width: 320, height: 320, fit: 'cover', position: 'attention' }).webp({ quality: 78 }).toFile(thumb)
+        : await img.clone().resize({ width: 480, withoutEnlargement: true }).webp({ quality: 72 }).toFile(thumb);
       media[url] = {
         src: `media/${name}.webp`, thumb: `media/${name}-480.webp`,
         w: f.width, h: f.height, tw: t.width, th: t.height,

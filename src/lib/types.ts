@@ -89,6 +89,13 @@ export interface NewsItem {
   bases?: string[];
 }
 
+export interface Initiative { name: string; url: string; region: string; de: string; en: string }
+export interface Speaker { name: string; from: string; role: string; topic: string; photo?: string; link?: string; video?: boolean; base?: string }
+export interface Movement {
+  initiatives: Initiative[];
+  congress?: { title: string; date: string; subtitle: string; next?: { title: string; url: string }; speakers: Speaker[] };
+}
+
 export interface Filters {
   q: string;
   kinds: Kind[];

@@ -9,6 +9,7 @@
   import Stats from './routes/Stats.svelte';
   import About from './routes/About.svelte';
   import News from './routes/News.svelte';
+  import Act from './routes/Act.svelte';
 
   initRouter();
   onMount(loadData);
@@ -30,6 +31,7 @@
     { path: '/near', key: 'nav.near', match: 'near' },
     { path: '/news', key: 'nav.news', match: 'news' },
     { path: '/stats', key: 'nav.stats', match: 'stats' },
+    { path: '/act', key: 'nav.act', match: 'act' },
     { path: '/about', key: 'nav.about', match: 'about' },
   ] as const;
 
@@ -91,6 +93,8 @@
     <Stats />
   {:else if section === 'news'}
     <News />
+  {:else if section === 'act'}
+    <Act />
   {:else if section === 'about'}
     <About />
   {:else}
@@ -130,7 +134,7 @@
   .lang { border-color: transparent; }
   .menu-btn { display: none; border-color: transparent; }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1100px) {
     .menu-btn { display: inline-flex; }
     .tools { margin-left: auto; }
     .main-nav {

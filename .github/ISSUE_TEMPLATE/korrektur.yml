@@ -1,0 +1,24 @@
+name: "✏️ Korrektur zu einem Eintrag"
+description: "Fehler in einem bestehenden Standort melden"
+title: "Korrektur: "
+labels: ["korrektur"]
+body:
+  - type: input
+    id: base
+    attributes:
+      label: Eintrag (ID oder Link)
+      placeholder: "ramstein-air-base"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Was ist falsch, was ist richtig?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Quellen
+    validations:
+      required: false

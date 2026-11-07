@@ -1533,5 +1533,115 @@
   "year": 2021,
   "credit": "Google Earth",
   "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Johnston-Atoll.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07-09_Vine_photo.png": {
+  "src": "media/2021-07-09-vine-photo.webp",
+  "thumb": "media/2021-07-09-vine-photo-480.webp",
+  "w": 685,
+  "h": 556,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Vine_photo.png"
+ },
+ "https://visualbases.org/wp-content/uploads/AnnWright.png": {
+  "src": "media/annwright.webp",
+  "thumb": "media/annwright-480.webp",
+  "w": 1147,
+  "h": 635,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/AnnWright.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07_A-Young_Screenshot2.png": {
+  "src": "media/2021-07-a-young-screenshot2.webp",
+  "thumb": "media/2021-07-a-young-screenshot2-480.webp",
+  "w": 568,
+  "h": 412,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_A-Young_Screenshot2.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07_Okinawa_Screenshot.png": {
+  "src": "media/2021-07-okinawa-screenshot.webp",
+  "thumb": "media/2021-07-okinawa-screenshot-480.webp",
+  "w": 1400,
+  "h": 744,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Okinawa_Screenshot.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07-09_Philippines-photo.png": {
+  "src": "media/2021-07-09-philippines-photo.webp",
+  "thumb": "media/2021-07-09-philippines-photo-480.webp",
+  "w": 1017,
+  "h": 590,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Philippines-photo.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07_Julieta_Screenshot.png": {
+  "src": "media/2021-07-julieta-screenshot.webp",
+  "thumb": "media/2021-07-julieta-screenshot-480.webp",
+  "w": 1400,
+  "h": 826,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Julieta_Screenshot.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07-09_Lannon_photo.png": {
+  "src": "media/2021-07-09-lannon-photo.webp",
+  "thumb": "media/2021-07-09-lannon-photo-480.webp",
+  "w": 785,
+  "h": 556,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Lannon_photo.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-04-05_Alain_Rouy.jpg": {
+  "src": "media/2021-04-05-alain-rouy.webp",
+  "thumb": "media/2021-04-05-alain-rouy-480.webp",
+  "w": 542,
+  "h": 348,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-04-05_Alain_Rouy.jpg"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07-09_Webb_photo.png": {
+  "src": "media/2021-07-09-webb-photo.webp",
+  "thumb": "media/2021-07-09-webb-photo-480.webp",
+  "w": 776,
+  "h": 586,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Webb_photo.png"
+ },
+ "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-photo.png": {
+  "src": "media/2021-07-09-guantanomo-photo.webp",
+  "thumb": "media/2021-07-09-guantanomo-photo-480.webp",
+  "w": 814,
+  "h": 572,
+  "tw": 320,
+  "th": 320,
+  "type": "portrait",
+  "credit": "visualbases.org",
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-photo.png"
  }
 }

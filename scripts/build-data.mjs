@@ -34,6 +34,12 @@ await fs.mkdir(out, { recursive: true });
 
 await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(bases));
 await fs.writeFile(path.join(out, 'stories.json'), JSON.stringify(stories));
+const movement = await readOpt('data/movement.json');
+for (const s of movement.congress?.speakers ?? []) {
+  const m = media[`https://visualbases.org/wp-content/uploads/${s.photo}`];
+  s.photo = m ? m.thumb : undefined;
+}
+await fs.writeFile(path.join(out, 'movement.json'), JSON.stringify(movement));
 const news = await readOpt('data/news.json');
 await fs.writeFile(path.join(out, 'news.json'), JSON.stringify(Array.isArray(news) ? news : []));
 
