@@ -109,6 +109,8 @@ export interface MapHandle {
   highlight(ids: Set<string> | null): void;
   focus(ids: string[]): void;
   setSatellite(on: boolean): void;
+  /** swap in more detailed country shapes (e.g. small islands) once they are loaded */
+  upgradeDetail(): Promise<void>;
   destroy(): void;
 }
 
@@ -202,6 +204,10 @@ export async function createMap(
         }
       };
       if (ready) apply(); else loaded.then(apply);
+    },
+    async upgradeDetail() {
+      const fine = await loadCountries('50m');
+      (map.getSource('countries') as GeoJSONSource | undefined)?.setData(fine);
     },
     destroy() { map.remove(); },
   };

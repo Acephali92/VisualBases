@@ -17,7 +17,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const UA = 'VisualBases-OpenData/0.1 (https://github.com/Acephali92/VisualBases)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export const SKIP_FILE = /map|karte|locator|location|lage|logo|emblem|insignia|seal|flag|flagge|wappen|coat[_ ]of|patch|badge|crest|diagram|chart|\.svg$|\.gif$|\.tif/i;
+export const SKIP_FILE = /map|karte|locator|location|lage|logo|emblem|insignia|insigne|seal|flag|flagge|wappen|coat[_ ]of|patch|badge|crest|diagram|chart|\.svg$|\.gif$|\.tif/i;
 export const FREE = /^(cc0|cc[- ]by(-sa)?([- ]\d\.\d)?.*|public domain|pd.*|attribution.*)$/i;
 
 async function api(host, params) {
@@ -36,6 +36,14 @@ async function api(host, params) {
   }
   throw new Error(`rate limited: ${url}`);
 }
+
+/**
+ * Several Wikipedia links of the source data point to the surrounding town, whose lead image is a
+ * church or a town hall. Keep a photo only if the article is about a military installation – or the
+ * file is an official US military photo (DoD naming scheme "YYMMDD-X-…").
+ */
+const MILITARY = /air ?base|airbase|\bbase\b|camp|station|airport|aerodrome|airfield|barracks|kaserne|caserma|fort\b|garrison|naval|field|range|depot|facility|military|milit[äa]r|\braf\b|\bnas\b|\bab\b|training|fliegerhorst|stützpunkt|flugplatz|truppenübungsplatz|command|centre|center|headquarters|port|harbou?r|army|navy|marine|joint|radar|defen[cs]e|pipeline|shoal|globus|sinjajevina|pine gap|menwith|diego garcia|guant[aá]namo|lemonnier|installation|complex|test site|proving ground/i;
+export const relevant = (article, file = '') => MILITARY.test(article) || /^\d{6}-[A-Z]-/.test(file);
 
 const titleOf = (u) => decodeURIComponent(u.split('/wiki/')[1] ?? '').split('#')[0].replace(/_/g, ' ');
 const plain = (html = '') => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -66,7 +74,7 @@ async function main() {
         while (norm.has(tt)) tt = norm.get(tt);
         const img = byTitle.get(tt);
         cached.done[`${lang}:${b.id}`] = true;
-        if (img && !SKIP_FILE.test(img)) { candidates.set(b.id, img); cached.done[b.id] = img; }
+        if (img && !SKIP_FILE.test(img) && relevant(titles[k], img)) { candidates.set(b.id, img); cached.done[b.id] = img; }
       });
       await saveCand();
       console.log(`  ${lang}: ${Math.min(i + 50, todo.length)}/${todo.length} articles, ${candidates.size} candidates`);

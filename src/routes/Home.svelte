@@ -115,6 +115,8 @@
     import('../lib/map').then(({ createMap }) => createMap(mapEl, { detail: '110m', interactive: false, center: [25, 28], zoom: 1.5 + zoomAdj() })).then((h) => {
       if (destroyed) return h.destroy();
       h.map.setPadding(camPadding());
+      // the coarse world shapes load fast; small islands (Okinawa, Diego Garcia …) follow
+      h.map.once('idle', () => h.upgradeDetail());
       handle = h;
       // slow spin while the hero is visible
       if (!prefersReducedMotion()) {

@@ -128,6 +128,14 @@ async function main() {
       console.warn(`  ! ${file}: ${e.message}`);
     }
   }
+  if (process.argv.includes('--prune')) {
+    // drop entries and files that no base, speaker or Wikimedia record refers to any more
+    for (const url of Object.keys(media)) if (!jobs.has(url)) delete media[url];
+    const keep = new Set(Object.values(media).flatMap((m) => [path.basename(m.src), path.basename(m.thumb)]));
+    let removed = 0;
+    for (const f of await fs.readdir(OUT)) if (!keep.has(f)) { await fs.unlink(path.join(OUT, f)); removed++; }
+    console.log(`  pruned ${removed} unused files`);
+  }
   await fs.writeFile(path.join(ROOT, 'data/media.json'), JSON.stringify(media, null, 1) + '\n');
   console.log(`✔ media: ${done} processed, ${skipped} cached, ${Object.keys(media).length} total`);
 }
