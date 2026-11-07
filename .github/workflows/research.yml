@@ -1,28 +1,69 @@
 name: Recherche
 
-# Sammelt Quellen-Kandidaten und Lage-/Statusprüfungen (Wikipedia, Wikidata, OpenStreetMap,
-# Base Structure Report) von GitHub-Servern aus – die Cloud-Entwicklungsumgebung wird von
-# Wikimedia und Overpass gedrosselt. Ergebnisse landen auf dem Branch "research-data";
-# sie werden erst nach Durchsicht in die Anwendung übernommen (docs/research/SOURCE-RESEARCH.md).
+# Sammelt Quellen-Kandidaten und Lage-/Statusprüfungen (Base Structure Report, Wikidata,
+# Wikipedia-Einzelnachweise, OpenStreetMap) von GitHub-Servern aus – die Cloud-Entwicklungsumgebung
+# wird von Wikimedia und Overpass gedrosselt.
+#
+# Das ist Datensammlung, kein Codetest: Der Workflow läuft monatlich und auf Knopfdruck, immer vom
+# Stand "main". Die Recherche-Skripte selbst prüft "CI & Deploy" (Unit-Tests, Laden in Node).
+# Ergebnisse landen nach erfolgreicher Validierung auf dem Daten-Branch "research-data"
+# (= main + ein Commit mit data/research/); sie werden erst nach Durchsicht in die Anwendung
+# übernommen (docs/research/SOURCE-RESEARCH.md).
 on:
   workflow_dispatch:
-  push:
-    branches: ['claude/**']
-    paths:
-      - 'scripts/research/**'
-      - '.github/workflows/research.yml'
+  schedule:
+    - cron: '23 3 2 * *' # am 2. jedes Monats, 03:23 UTC
 
 permissions:
-  contents: write
+  contents: read
 
+# laufende Sammlungen nicht abbrechen (die OSM-Prüfung arbeitet mit Zeitbudget), sondern einreihen
 concurrency:
   group: research
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  collect:
+  # Ausgangsstand: data/research aus main plus die bisher gesammelten Prüfungen von research-data
+  prepare:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Frühere Ergebnisse übernehmen (OSM läuft inkrementell)
+        run: |
+          git fetch --depth=1 origin research-data \
+            && git checkout FETCH_HEAD -- data/research/checks.json data/research/candidates.json \
+            || echo "noch kein Branch research-data"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: research-base
+          path: data/research
+          retention-days: 3
+
+  collect:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - collector: bsr
+            run: node scripts/research/bsr.mjs
+            minutes: 15
+          - collector: wikidata
+            run: node scripts/research/wikidata.mjs
+            minutes: 20
+          - collector: wiki-refs
+            run: node scripts/research/wiki-refs.mjs
+            minutes: 60
+          - collector: osm
+            run: node scripts/research/osm-check.mjs
+            minutes: 50
+    name: collect (${{ matrix.collector }})
+    timeout-minutes: ${{ matrix.minutes }}
+    env:
+      OSM_BUDGET_MIN: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -30,35 +71,63 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Frühere Ergebnisse übernehmen (OSM läuft inkrementell)
-        run: |
-          git fetch --depth=1 origin research-data && git checkout origin/research-data -- data/research/checks.json data/research/candidates.json || echo "noch kein Branch research-data"
-          git checkout HEAD -- data/research/sources.json data/research/manual.json data/research/bsr-review.json 2>/dev/null || true
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-base
+          path: data/research
+      # Downloads (BSR), Wikipedia-Antworten: nur Geändertes wird neu geladen
       - uses: actions/cache@v4
         with:
           path: .cache/research
-          key: research-cache-${{ github.run_id }}
-          restore-keys: research-cache-
+          key: research-${{ matrix.collector }}-${{ github.run_id }}
+          restore-keys: research-${{ matrix.collector }}-
+      - name: ${{ matrix.collector }}
+        run: ${{ matrix.run }}
+      # OSM speichert Zwischenstände – auch ein abgebrochener Lauf bringt Fortschritt
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() && (success() || matrix.collector == 'osm') }}
+        with:
+          name: research-${{ matrix.collector }}
+          path: data/research
+          retention-days: 3
 
-      - name: Base Structure Report (FY2023/FY2019)
-        run: node scripts/research/bsr.mjs
-      - name: Wikidata
-        run: node scripts/research/wikidata.mjs
-      - name: Wikipedia-Einzelnachweise
-        run: node scripts/research/wiki-refs.mjs
-      - name: OpenStreetMap-Lageprüfung (inkrementell, Zeitbudget)
-        run: node scripts/research/osm-check.mjs
-        env:
-          OSM_BUDGET_MIN: 40
-        timeout-minutes: 50
-        continue-on-error: true
-
+  publish:
+    needs: [prepare, collect]
+    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-base
+          path: data/research
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: research-*
+          path: results
+      - name: Ergebnisse zusammenführen
+        run: |
+          node scripts/research/merge.mjs \
+            bsr=results/research-bsr wikidata=results/research-wikidata \
+            wiki-refs=results/research-wiki-refs osm=results/research-osm
+      - name: Validierung (bricht bei Fehlern ab)
+        run: npm run validate
+      - name: Bericht aktualisieren
+        run: node scripts/research/summarize.mjs
       - name: Ergebnisse auf Branch research-data
-        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B research-data
-          git add data/research
+          git add data/research docs/research
           git commit -m "Recherche-Daten vom ${GITHUB_SHA::7} ($(date -u +%Y-%m-%d))" || echo "keine Änderungen"
+          # Daten-Branch: wird bei jedem Lauf neu auf main aufgesetzt
           git push -f origin research-data

@@ -110,3 +110,36 @@ describe('research schema validation', () => {
     expect(ok.errors).toEqual([]);
   });
 });
+
+// @ts-expect-error – plain ESM build script without type declarations
+import { collectorResults, OUTPUTS } from '../../scripts/research/merge.mjs';
+// @ts-expect-error – see above
+import { externalLinks } from '../../scripts/research/wiki-refs.mjs';
+
+describe('workflow "Recherche": merging the parallel jobs', () => {
+  it('takes only the collector’s own entries from a job’s copy', async () => {
+    // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+    const fs = await import('node:fs/promises');
+    // @ts-expect-error – see above
+    const os = await import('node:os');
+    const dir = await fs.mkdtemp(`${os.tmpdir()}/vb-merge-`);
+    await fs.writeFile(`${dir}/candidates.json`, JSON.stringify([{ base: 'a', url: 'u1', collector: 'wiki-refs' }, { base: 'a', url: 'u2', collector: 'wikidata' }]));
+    await fs.writeFile(`${dir}/checks.json`, JSON.stringify({ a: { osm: { verdict: 'none' }, bsr: { x: 1 } }, b: { bsr: { x: 2 } } }));
+    expect(await collectorResults('wiki-refs', dir)).toEqual({ sources: [{ base: 'a', url: 'u1' }] });
+    expect(await collectorResults('osm', dir)).toEqual({ checks: { a: { verdict: 'none' } } });
+    expect((await collectorResults('wikidata', dir)).checks).toEqual({});
+    expect(await collectorResults('bsr', `${dir}/missing`)).toEqual({});
+    expect(Object.keys(OUTPUTS)).toEqual(['bsr', 'wikidata', 'wiki-refs', 'osm']);
+    await fs.rm(dir, { recursive: true });
+  });
+  it('caches Wikipedia article links and asks again only when the cache is stale', async () => {
+    let calls = 0;
+    const fetcher = async () => { calls++; return { status: 200, body: JSON.stringify({ parse: { externallinks: ['https://www.army.mil/x'] } }) }; };
+    const page = `Test_${Math.random()}`;
+    const first = await externalLinks('xx', page, { fetcher, pause: 0, now: 1_000 });
+    const second = await externalLinks('xx', page, { fetcher, pause: 0, now: 2_000 });
+    const stale = await externalLinks('xx', page, { fetcher, pause: 0, now: 1_000 + 26 * 86_400_000 });
+    expect([first?.cached, second?.cached, stale?.cached, calls]).toEqual([false, true, false, 2]);
+    expect(await externalLinks('xx', `${page}-x`, { fetcher: async () => ({ status: 429, body: '' }), pause: 0 })).toBeNull();
+  });
+});
