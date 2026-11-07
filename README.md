@@ -27,11 +27,17 @@ VisualBases macht sichtbar, was selten sichtbar ist: **365 Standorte in über 80
 | 📍 **Deine Basis** | Entfernung zur nächsten Basis (wird im Browser berechnet) und ein **Story-Bild 1080×1920** zum Teilen |
 | 📰 **Aktuelles** | Kuratierte Presseschau (DE/EN), Meldungen sind automatisch mit den Basen verknüpft |
 | ✊ **Mitmachen** | Orte mit Widerstand und ihre Kampagnen, internationale Netzwerke, Kongress 2021 mit Rednerinnen und Rednern, Hinweis-Formular |
+| 🛰 **Zeitreisen aus dem All** | 15 Basen mit historischen Satellitenbildern als Vorher/Nachher-Regler, z. B. Ramstein 2000→2021, Agadez 2017→2021 |
+| 🗺 **Länderansicht** | Filter nach Gastland mit Übersicht (Standorte, Stationierungsstaaten, Arten, Bilder) |
+| 🖼 **Teilbare Bilder** | Story-Bild „Deine Basis“ (1080×1920) und Karte für jede Basis (1080×1350) mit echtem Foto |
+| 📅 **Basis des Tages** | Täglich wechselnde Basis mit Bild auf der Startseite |
 | ❓ **Quiz** | 8 Fragen, Zahlen live aus dem Datensatz, Ergebnis zum Teilen |
+| 🎓 **Für Schulen** | 5 druckbare Unterrichtsbausteine (ab Klasse 9) nach dem Beutelsbacher Konsens |
 | 📊 **Zahlen** | Statistiken mit Tabellenansicht |
 | `</>` **Einbetten** | Karte (auch gefiltert) per iframe auf Partnerseiten zeigen |
 | ⬇ **Offene Daten** | `data/bases.csv`, `bases.geojson`, `bases.json` |
-| 🔗 **Teilen & Suche** | Statische Seite pro Basis mit Vorschaubild (Open Graph), Sitemap, strukturierte Daten |
+| 🔗 **Teilen & Suche** | Statische Seiten pro Basis (365) und pro Land (83) mit Vorschaubild (Open Graph), Sitemap, strukturierte Daten |
+| ✉ **Hinweise** | Über GitHub-Formulare oder per E-Mail, ohne Konto |
 | 🌐 **DE / EN** · 📱 **PWA** · ♿ **Barrierearm** · 🔒 **Kein Tracking** | |
 
 ## Datenschutz
@@ -62,7 +68,7 @@ scripts/
   prerender.mjs           statische Seiten pro Basis, sitemap.xml, robots.txt
 src/
   lib/                    Daten, Filter, i18n, Router, Karte, Quiz, Share-Bild
-  routes/                 Home, Atlas, Near, News, Stats, Act, Quiz, About, Embed
+  routes/                 Home, Atlas, Near, Space, News, Stats, Act, Quiz, School, About, Embed
   components/             BaseProfile, Gallery, Compare, NewsList, BarChart, Legend
 tests/smoke.cjs           Browser-Test aller Seiten
 ```
