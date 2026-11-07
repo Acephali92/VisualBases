@@ -13,6 +13,7 @@
   import Embed from './routes/Embed.svelte';
   import Quiz from './routes/Quiz.svelte';
   import Space from './routes/Space.svelte';
+  import School from './routes/School.svelte';
 
   initRouter();
   onMount(loadData);
@@ -44,7 +45,7 @@
     const base = id ? db.byId.get(id) : null;
     const titles: Record<string, string> = {
       atlas: t('nav.atlas'), near: t('nav.near'), news: t('nav.news'), stats: t('nav.stats'),
-      act: t('nav.act'), about: t('nav.about'), quiz: t('quiz.title'), space: t('space.title'),
+      act: t('nav.act'), about: t('nav.about'), quiz: t('quiz.title'), space: t('space.title'), school: t('nav.school'),
     };
     const head = base ? base.name : titles[section];
     document.title = head ? `${head} – VisualBases` : `VisualBases – ${t('hero.kicker')}`;
@@ -111,6 +112,8 @@
     <Stats />
   {:else if section === 'news'}
     <News />
+  {:else if section === 'school'}
+    <School />
   {:else if section === 'space'}
     <Space />
   {:else if section === 'quiz'}
@@ -133,6 +136,7 @@
         <a href={href('/space')}>{t('nav.space')}</a>
         <a href={href('/stats')}>{t('nav.stats')}</a>
         <a href={href('/quiz')}>{t('quiz.kicker')}</a>
+        <a href={href('/school')}>{t('nav.school')}</a>
         <a href={href('/act')}>{t('nav.act')}</a>
         <a href={href('/about')}>{t('nav.about')}</a>
         <a href="./data/bases.csv" download>CSV</a>

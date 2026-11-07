@@ -48,6 +48,9 @@
       <a class="action card" href={href('/about')}>
         <span class="ai">⬇</span><b>{t('act.dataTitle')}</b><span>{t('act.dataText')}</span>
       </a>
+      <a class="action card" href={href('/school')}>
+        <span class="ai">🎓</span><b>{t('nav.school')}</b><span>{t('act.schoolText')}</span>
+      </a>
       <a class="action card" href={href('/quiz')}>
         <span class="ai">❓</span><b>{t('quiz.teaserTitle')}</b><span>{t('quiz.teaserText')}</span>
       </a>

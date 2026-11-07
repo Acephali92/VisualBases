@@ -20,6 +20,7 @@ const ROUTES = [
   ['#/act', '.camps li'],
   ['#/quiz', '.opt'],
   ['#/space', '.compare'],
+  ['#/school', '.task'],
   ['#/about', '.kinds'],
   ['#/embed?themes=resistance', '.badge'],
   ['b/ramstein-air-base.html', '.profile h2'],
