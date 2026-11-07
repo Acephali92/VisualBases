@@ -4,6 +4,8 @@ import { classifyUrl, unwrapArchive, matchScore, countryCode, placeOnlyName, tok
 // @ts-expect-error – see above
 import { bestMatch, applyReview } from '../../scripts/research/bsr.mjs';
 // @ts-expect-error – see above
+import { summarize } from '../../scripts/research/summarize.mjs';
+// @ts-expect-error – see above
 import { rankLinks } from '../../scripts/research/wiki-refs.mjs';
 // @ts-expect-error – see above
 import { evaluate } from '../../scripts/research/osm-check.mjs';
@@ -71,6 +73,17 @@ describe('BSR review', () => {
     expect(applyReview(null, { site: 'NAVSUPPFAC Romania', verdict: 'supports' }, rows, 'RO').row).toMatchObject({ site: 'NAVSUPPFAC Romania', match: 'manual' });
     expect(applyReview(m, { verdict: 'reject' }, rows, 'RO').row).toBeNull();
     expect(applyReview(m, { site: 'Gone', verdict: 'supports' }, rows, 'RO')).toMatchObject({ row: m, review: null, stale: true });
+  });
+});
+
+describe('research summary', () => {
+  it('assigns evidence levels and collects contradictions', () => {
+    const bases = [base({ id: 'a' }), base({ id: 'b' }), base({ id: 'c' }), base({ id: 'd' })];
+    const src = (b: string, verdict: string, method = 'manual') => ({ base: b, url: 'https://x.org', type: 'media', verdict, method, supports: ['presence'], accessed: '2026-11-07', summary: 's', note: '' });
+    const rows = summarize(bases, { sources: [src('a', 'supports'), src('b', 'contradicts'), src('c', 'unreviewed', 'auto')], candidates: [], checks: { a: { bsr: { fy2019: { site: 'X' }, fy2023: null } } } });
+    expect(rows.map((r: { level: string }) => r.level)).toEqual(['verified', 'context', 'candidates', 'none']);
+    expect(rows[1].issues[0]).toMatch(/^contradicts/);
+    expect(rows[0].issues).toContain('BSR: listed FY2019, not FY2023');
   });
 });
 

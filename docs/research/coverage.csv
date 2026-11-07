@@ -262,7 +262,7 @@ pabrades-poligonas-lithuania,Pabrades Poligonas,LT,US,0,yes,verified,presence na
 rudninkai-litauen,Rudninkai,LT,DE,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
 gaiziunu-poligonas-rukla-lithuania,Rukla: Gaižiūnų poligonas,LT,DE,1,yes,none,,0,0,0,0,0,,,,,,,,
 siauliai-lithuania,Šiauliai,LT,,0,yes,none,,0,0,0,0,0,,,,,,,,
-guelmim-airport,Aéroport de Guelmim,MA,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
+guelmim-airport,Aéroport de Guelmim,MA,US,0,yes,verified,presence nation activity,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
 inezgane-airport,Inezgane Military Airport (Morocco),MA,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
 sinjajevina-montenegro,Sinjajevina,ME,,1,yes,none,,0,0,0,0,0,,,,,,,,
 marshall-islands,Ballistic Missile Defense Test Site,MH,US,1,yes,none,,0,0,0,0,0,,,,,,,,
@@ -298,7 +298,7 @@ makran-pakistan,Naval Station Makran,PK,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked f
 khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
 shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
 pasni-base-port,"Pasni Base, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
-shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
+shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,context,,1,1,0,0,0,,,,,,,,contradicts (presence/nation/status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing). | marked for review on visualbases.org
 bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,GB US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
 deblin-irena-air-base,Deblin-Irena Air Base,PL,US,0,no,none,,0,0,0,0,0,,,,,,,,
 training-center-drawsko,Drawsko: Land Forces Training Center,PL,US,0,yes,verified,presence nation,1,0,0,0,0,Drawsko Pomorskie Training Area,,,,,,,

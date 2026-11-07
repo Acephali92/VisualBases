@@ -1589,5 +1589,45 @@
   "bases": [
    "trondheim"
   ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate",
+  "title": "US vacates Pakistan base amid drone debate",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2011-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The US vacated Shamsi air base in Balochistan in December 2011 after a 15-day ultimatum from Islamabad following a NATO strike that killed 24 Pakistani soldiers.",
+  "note": "Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).",
+  "bases": [
+   "shamsi-airfield-pakistan"
+  ]
+ },
+ {
+  "url": "https://www.middleeasteye.net/fr/reportages/affaire-des-drones-ou-se-cachent-les-bases-americaines-en-afrique-du-nord",
+  "title": "Affaire des drones : où se cachent les bases américaines en Afrique du Nord ?",
+  "publisher": "Middle East Eye (édition française)",
+  "type": "media",
+  "published": "2016-10-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "According to the report, AFRICOM has for several years used part of the Guelmim air base in southern Morocco for aerial surveillance.",
+  "note": "Single media report (2016); not officially confirmed. Inezgane and Boufarik are not mentioned.",
+  "bases": [
+   "guelmim-airport"
+  ]
  }
 ]

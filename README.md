@@ -99,6 +99,17 @@ npm run data:media       # Bilder laden und optimieren
 
 Jeder Build und jedes Daten-Update wird mit `npm run validate` geprüft (Koordinaten, Duplikate, Länder, Kategorien, Bildreferenzen, Lizenzen). Fehler verhindern das Deployment. Zweifelhafte Positionen stehen in `data/corrections.json` und werden in der App als „Position ungeprüft“ gekennzeichnet. Details: [docs/DATA-QUALITY.md](docs/DATA-QUALITY.md) · aktueller [Bericht](docs/data-quality-report.md) · [Roadmap](docs/IMPROVEMENT-ROADMAP.md) · [Changelog](docs/CHANGELOG.md).
 
+## Quellenrecherche
+
+Zu den 291 Standorten ohne eigene Quelle gibt es einen Recherche-Datensatz in `data/research/` (Quellen mit Herausgeber, Datum, Abrufdatum und Prüfurteil; BSR-, Wikidata- und OSM-Prüfungen). Er wird erst nach Durchsicht in die App übernommen. Methode, Kennzahlen und Befunde: [docs/research/SOURCE-RESEARCH.md](docs/research/SOURCE-RESEARCH.md) · alle Datenquellen und Dienste: [docs/DATA-SOURCES.md](docs/DATA-SOURCES.md).
+
+```bash
+node scripts/research/inspect.mjs <url> [stichwort …]   # Quelle abrufen und prüfen
+node scripts/research/manual.mjs                        # data/research/manual.json übernehmen
+node scripts/research/bsr.mjs                           # Base-Structure-Report-Abgleich (+ bsr-review.json)
+node scripts/research/summarize.mjs                     # Bericht und coverage.csv neu erzeugen
+```
+
 ## Automatische Aktualisierung
 
 Der Workflow `.github/workflows/update-data.yml` läuft jeden Montag (und auf Knopfdruck unter *Actions*). Er lädt nur geänderte Beiträge von visualbases.org neu, aktualisiert die Presseschau und die freien Fotos und öffnet einen Pull Request mit den Änderungen.
