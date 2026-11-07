@@ -42,13 +42,19 @@
     resistance: stats.resistance,
   });
 
-  type Chapter = { key: 'story.1' | 'story.2' | 'story.3' | 'story.4' | 'story.5' | 'story.6'; n?: number; center: [number, number]; zoom: number; pick?: (b: Base) => boolean };
+  type Chapter = { key: 'story.1' | 'story.2' | 'story.3' | 'story.4' | 'story.5' | 'story.6'; n?: number; center: [number, number]; zoom: number; pick?: (b: Base) => boolean; img?: [string, string] };
+  /** authentic image for a chapter: [base id, part of the file name] */
+  const chapterImage = (ref?: [string, string]) => {
+    if (!ref) return null;
+    const img = db.byId.get(ref[0])?.images?.find((i) => i.src.includes(ref[1]));
+    return img ? { img, base: db.byId.get(ref[0])! } : null;
+  };
   const chapters: Chapter[] = $derived([
     { key: 'story.1', center: [25, 28], zoom: 1.5 },
-    { key: 'story.2', n: counts.de, center: [9.5, 50.2], zoom: 4.7, pick: (b) => b.country === 'DE' },
-    { key: 'story.3', n: counts.okinawa, center: [127.85, 26.45], zoom: 7.2, pick: (b) => b.subregion === 'Okinawa' },
-    { key: 'story.4', n: counts.africa, center: [18, 4], zoom: 2.5, pick: (b) => b.continent === 'africa' },
-    { key: 'story.5', n: counts.resistance, center: [40, 30], zoom: 1.5, pick: (b) => b.themes.includes('resistance') },
+    { key: 'story.2', n: counts.de, center: [9.5, 50.2], zoom: 4.7, pick: (b) => b.country === 'DE', img: ['ramstein-air-base', '2015-sabr1'] },
+    { key: 'story.3', n: counts.okinawa, center: [127.85, 26.45], zoom: 7.2, pick: (b) => b.subregion === 'Okinawa', img: ['henoko-camp-schwab', 'ge-henoko-11-2020'] },
+    { key: 'story.4', n: counts.africa, center: [18, 4], zoom: 2.5, pick: (b) => b.continent === 'africa', img: ['us-air-base-201', 'niger201-2021'] },
+    { key: 'story.5', n: counts.resistance, center: [40, 30], zoom: 1.5, pick: (b) => b.themes.includes('resistance'), img: ['naval-station-rota', 'marcha-contra'] },
     { key: 'story.6', center: [10, 40], zoom: 1.6 },
   ]);
 
@@ -180,6 +186,13 @@
     {#each chapters.slice(1) as ch, i}
       <div class="step" id="step-{i + 1}" data-step={i + 1}>
         <article class="panel" class:current={active === i + 1}>
+          {#if chapterImage(ch.img)}
+            {@const ci = chapterImage(ch.img)!}
+            <figure class="ch-img">
+              <img src={ci.img.thumb} width={ci.img.tw} height={ci.img.th} alt="{ci.base.name}{ci.img.year ? ` ${ci.img.year}` : ''}" loading="lazy" />
+              <figcaption>{ci.base.name}{ci.img.year ? ` · ${ci.img.year}` : ''} · © {ci.img.credit}</figcaption>
+            </figure>
+          {/if}
           <span class="num">{String(i + 1).padStart(2, '0')}</span>
           <h2>{t(`${ch.key}.title`)}</h2>
           <p>{t(`${ch.key}.text`, { n: ch.n ?? 0 })}</p>
@@ -306,6 +319,9 @@
     border: 1px solid var(--line); box-shadow: var(--shadow); transition: border-color 0.4s, transform 0.4s;
   }
   .panel.current { border-color: rgb(255 90 60 / 0.55); }
+  .ch-img { margin: -24px -26px 18px; position: relative; }
+  .ch-img img { width: 100%; height: 170px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; display: block; }
+  .ch-img figcaption { position: absolute; left: 10px; bottom: 6px; font-size: 0.7rem; color: #fff; text-shadow: 0 1px 3px rgb(0 0 0 / 0.9); }
   .panel h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
   .panel p { color: var(--text-2); }
   .panel .ctas { margin: 1em 0 0; }
@@ -323,7 +339,12 @@
     .scroll-hint { display: none; }
     .stats { grid-template-columns: repeat(2, auto); }
     .step:not(.hero) { align-items: flex-end; padding-bottom: 48px; }
-    .legend-wrap { top: calc(var(--header-h) + 8px); bottom: auto; right: 8px; }
+    .legend-wrap { display: none; }
+    .panel { padding: 16px 18px; }
+    .panel h2 { font-size: 1.3rem; }
+    .panel p { font-size: 0.95rem; margin-bottom: 0.6em; }
+    .ch-img { margin: -16px -18px 12px; }
+    .ch-img img { height: 110px; }
   }
 
   .faces, .change { padding: 88px 0 8px; }
