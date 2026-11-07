@@ -1103,6 +1103,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://netzpolitik.org/2014/dagger-complex-luftaufnahmen-und-drohnen-video-von-us-stuetzpunkt/",
+  "title": "Dagger Complex: Luftaufnahmen und Drohnen-Video von US-Stützpunkt",
+  "publisher": "netzpolitik.org",
+  "type": "media",
+  "published": "2014-07-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Describes the Dagger Complex in Griesheim near Darmstadt as a US base and the largest and most important NSA outpost in Europe, with aerial images.",
+  "note": "2014; the NSA role is reported, not officially confirmed.",
+  "base": "darmstadt-griesheim-dagger-complex",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "darmstadt-training-center",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Darmstadt Training Center (Army Active, Darmstadt)",
@@ -1732,6 +1752,27 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.stripes.com/theaters/europe/2024-04-22/rhine-ordnance-barracks-medical-center-construction-cost-13623428.html",
+  "title": "Cost for new US military hospital near Ramstein surges to $1.6 billion, German officials say",
+  "publisher": "Stars and Stripes",
+  "type": "media",
+  "published": "2024-04-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "The Rhine Ordnance Barracks Medical Center under construction in Weilerbach next to Ramstein will be the largest US military hospital abroad; completion is expected in 2027, costs have risen to about 1.6 billion dollars according to German officials.",
+  "note": "Under construction (completion planned 2027).",
+  "base": "hospital-weilerbach",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "husterhoeh-polygone",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Husterhoeh Communication Site (Air Force Active, Pirmasens)",
@@ -2035,6 +2076,25 @@
   "collector": "manual"
  },
  {
+  "url": "https://www.longwarjournal.org/archives/2020/09/us-forces-targeted-by-shabaab-suicide-bombing.php",
+  "title": "US forces targeted by Shabaab suicide bombing",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2020-09-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A US service member was wounded in an al-Shabaab suicide attack outside a military base near Kismayo, where US troops worked alongside the US-trained Danab special forces (September 2020).",
+  "base": "kismayo-airport-somalia",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "kleber-kaserne-kaiserslautern",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Kleber Kaserne (Army Active, Kaiserlautern)",
@@ -2303,6 +2363,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "martinique-france",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases",
   "title": "Syria says it reached deal with Moscow on future of Russian bases",
   "publisher": "Al Jazeera",
@@ -2359,6 +2439,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"McCully Barracks\", Army Active, nearest city Wackernheim, Germany.",
   "note": "(only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne",
+  "title": "USAMMCE says farewell to Husterhoeh Kaserne",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2021-10-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status",
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "A farewell ceremony in October 2021 marked the move of the US Army Medical Materiel Center–Europe from Husterhoeh Kaserne, Pirmasens (its home since 1975) to Kaiserslautern Army Depot.",
+  "note": "Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.",
+  "base": "medical-material-center-europe",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "menwith-hill-air-force-harrogate",
@@ -2550,6 +2649,26 @@
   "note": "The article is marked as written with AI assistance (\"rédacteur IA\") – an official source would be better.",
   "base": "naval-base-fort-saint-louis",
   "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "naval-base-fort-saint-louis",
+  "method": "manual",
+  "note": "",
   "collector": "manual"
  },
  {
@@ -2874,6 +2993,26 @@
   "collector": "manual"
  },
  {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "context",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "note": "The ministry page places the PAE at Le Lamentin in Martinique; a PAE at Lamentin in Guadeloupe is not mentioned – the entry may confuse the two Lamentin communes.",
+  "base": "pae-du-lamentin-guadeloupe",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
   "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
   "publisher": "BioBioChile",
@@ -3006,6 +3145,26 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Paya Lebar Air Base\", Navy Active, nearest city Singapore, Singapore.",
   "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "pole-aeronautique-etatique",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "url": "https://www.unionesarda.it/news-sardegna/esercitazioni-nato-in-sardegna-i-generali-straordinarie-opportunita-per-turismo-e-lavanderie-jfl52ohm",
@@ -3424,6 +3583,46 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Ramstein AB\", Air Force Active, nearest city Ramstein, Germany.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "note": "Air Base 181 is at Saint-Denis (Roland Garros airport); the page confirms the French forces on Réunion in general.",
+  "base": "reunion",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "base": "reunion-ab",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "url": "https://www.troupesdemarine-ancredor.org/wp-content/uploads/2020/03/2-RPIMa_A3.pdf",
@@ -4053,6 +4252,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.defense.gouv.fr/en/node/111",
+  "title": "Forces armées en Polynésie française (FAPF)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
+  "note": "The page lists the French forces on Tahiti (naval base, GAM Faa'a, RSMA) – supports the general entry \"Tahiti\".",
+  "base": "tahiti-french-polynesia",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia",
   "title": "United States Military units in Estonia",
   "publisher": "Ministry of Defence of Estonia",
@@ -4316,6 +4534,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206",
+  "title": "Rückverlegung aus Mali: Bundeswehr übergibt Feldlager Camp Castor",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The Bundeswehr handed over its field camp Camp Castor in Gao, Mali, on 12 December 2023 at the end of the UN mission MINUSMA.",
+  "note": "Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it \"US Camp Castor\"), and it has been closed since December 2023.",
+  "base": "us-camp-castor",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "us-camp-lemonnier",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Camp Lemonier Djibouti (Navy Active, Djibouti)",
@@ -4506,6 +4743,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Wiesbaden Army Airfield\", Army Active, nearest city Wiesbaden, Germany.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.bmvg.de/de/aktuelles/neues-unterstuetzungskommando-der-nato-jsec-in-ulm-25332",
+  "title": "Neues Unterstützungskommando der NATO (JSEC) in Ulm",
+  "publisher": "Bundesministerium der Verteidigung",
+  "type": "official",
+  "published": "2018-06-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The new NATO Joint Support and Enabling Command (JSEC) is set up in Ulm; its staff is to be housed in the Wilhelmsburg-Kaserne.",
+  "note": "NATO headquarters with German lead; JSEC reached full operational capability in 2021 (per NATO).",
+  "base": "wilhelmsburg-barracks-ulm",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "yokosuka-fleet",

@@ -144,8 +144,14 @@
   "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
   "note": "Name outdated: Base aérienne 190 was dissolved in 2012; the air component at Faa'a is now listed as „Groupement aéronautique militaire (GAM Faa'a)“.",
   "bases": [
-   "base-aerienne190"
-  ]
+   "base-aerienne190",
+   "tahiti-french-polynesia"
+  ],
+  "perBase": {
+   "tahiti-french-polynesia": {
+    "note": "The page lists the French forces on Tahiti (naval base, GAM Faa'a, RSMA) – supports the general entry \"Tahiti\"."
+   }
+  }
  },
  {
   "url": "https://outremers360.com/bassin-atlantique-appli/guadeloupe-les-forces-armees-aux-antilles-et-le-rsma-signent-une-convention-formalisant-leur-cooperation",
@@ -1146,6 +1152,175 @@
   "bases": [
    "hm-naval-base-gibraltar",
    "raf-gibraltar"
+  ]
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "bases": [
+   "martinique-france",
+   "pole-aeronautique-etatique",
+   "naval-base-fort-saint-louis",
+   "pae-du-lamentin-guadeloupe"
+  ],
+  "perBase": {
+   "pae-du-lamentin-guadeloupe": {
+    "verdict": "context",
+    "note": "The ministry page places the PAE at Le Lamentin in Martinique; a PAE at Lamentin in Guadeloupe is not mentioned – the entry may confuse the two Lamentin communes."
+   }
+  }
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "bases": [
+   "reunion",
+   "reunion-ab"
+  ],
+  "perBase": {
+   "reunion": {
+    "note": "Air Base 181 is at Saint-Denis (Roland Garros airport); the page confirms the French forces on Réunion in general."
+   }
+  }
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206",
+  "title": "Rückverlegung aus Mali: Bundeswehr übergibt Feldlager Camp Castor",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The Bundeswehr handed over its field camp Camp Castor in Gao, Mali, on 12 December 2023 at the end of the UN mission MINUSMA.",
+  "note": "Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it \"US Camp Castor\"), and it has been closed since December 2023.",
+  "bases": [
+   "us-camp-castor"
+  ]
+ },
+ {
+  "url": "https://www.longwarjournal.org/archives/2020/09/us-forces-targeted-by-shabaab-suicide-bombing.php",
+  "title": "US forces targeted by Shabaab suicide bombing",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2020-09-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A US service member was wounded in an al-Shabaab suicide attack outside a military base near Kismayo, where US troops worked alongside the US-trained Danab special forces (September 2020).",
+  "bases": [
+   "kismayo-airport-somalia"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne",
+  "title": "USAMMCE says farewell to Husterhoeh Kaserne",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2021-10-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status",
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "A farewell ceremony in October 2021 marked the move of the US Army Medical Materiel Center–Europe from Husterhoeh Kaserne, Pirmasens (its home since 1975) to Kaiserslautern Army Depot.",
+  "note": "Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.",
+  "bases": [
+   "medical-material-center-europe"
+  ]
+ },
+ {
+  "url": "https://www.stripes.com/theaters/europe/2024-04-22/rhine-ordnance-barracks-medical-center-construction-cost-13623428.html",
+  "title": "Cost for new US military hospital near Ramstein surges to $1.6 billion, German officials say",
+  "publisher": "Stars and Stripes",
+  "type": "media",
+  "published": "2024-04-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "The Rhine Ordnance Barracks Medical Center under construction in Weilerbach next to Ramstein will be the largest US military hospital abroad; completion is expected in 2027, costs have risen to about 1.6 billion dollars according to German officials.",
+  "note": "Under construction (completion planned 2027).",
+  "bases": [
+   "hospital-weilerbach"
+  ]
+ },
+ {
+  "url": "https://www.bmvg.de/de/aktuelles/neues-unterstuetzungskommando-der-nato-jsec-in-ulm-25332",
+  "title": "Neues Unterstützungskommando der NATO (JSEC) in Ulm",
+  "publisher": "Bundesministerium der Verteidigung",
+  "type": "official",
+  "published": "2018-06-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The new NATO Joint Support and Enabling Command (JSEC) is set up in Ulm; its staff is to be housed in the Wilhelmsburg-Kaserne.",
+  "note": "NATO headquarters with German lead; JSEC reached full operational capability in 2021 (per NATO).",
+  "bases": [
+   "wilhelmsburg-barracks-ulm"
+  ]
+ },
+ {
+  "url": "https://netzpolitik.org/2014/dagger-complex-luftaufnahmen-und-drohnen-video-von-us-stuetzpunkt/",
+  "title": "Dagger Complex: Luftaufnahmen und Drohnen-Video von US-Stützpunkt",
+  "publisher": "netzpolitik.org",
+  "type": "media",
+  "published": "2014-07-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Describes the Dagger Complex in Griesheim near Darmstadt as a US base and the largest and most important NSA outpost in Europe, with aerial images.",
+  "note": "2014; the NSA role is reported, not officially confirmed.",
+  "bases": [
+   "darmstadt-griesheim-dagger-complex"
   ]
  }
 ]
