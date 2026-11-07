@@ -2,6 +2,14 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Workflow „Recherche“
+
+### Geändert
+- Läuft nur noch monatlich (2. des Monats) und auf Knopfdruck, immer vom Stand `main` – nicht mehr bei jedem Push auf `claude/**`. Er ist Datensammlung, kein Codetest, und blockierte Pull Requests bis zu 90 Minuten; jeder Push brach den laufenden Lauf samt OSM-Zeitbudget ab.
+- Sammler als parallele Jobs (BSR, Wikidata, Wikipedia, OSM); `scripts/research/merge.mjs` übernimmt aus jedem Job nur dessen eigene Einträge. Ein fehlgeschlagener Sammler lässt seine bisherigen Ergebnisse stehen.
+- `research-data` wird immer auf `main` aufgesetzt (vorher auf den jeweils gepushten Feature-Branch) und erst nach `npm run validate` gepusht; der Bericht wird mit aktualisiert.
+- `wiki-refs.mjs` speichert die Links je Artikel 25 Tage zwischen; Wiederholungsläufe fragen nur Neues ab.
+
 ## [Unreleased] – Quellenrecherche
 
 ### Hinzugefügt
