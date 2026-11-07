@@ -551,6 +551,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.army.mil/article/193970/us_army_led_nato_battle_group_on_deterrence_mission_in_poland",
+  "title": "U.S. Army-led NATO Battle Group on deterrence mission in Poland",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-10-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army-led NATO enhanced Forward Presence battle group in Poland (about 1,200 soldiers, mainly 2nd Squadron, 2nd Cavalry Regiment) is based at Bemowo Piskie Training Area near Orzysz since April 2017.",
+  "note": "US-led multinational battle group (with UK, Romanian and Croatian contingents) on six-month rotations.",
+  "base": "bemowo-piskie",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://bundeswehr.de/resource/blob/5487564/9d5ff6629e39e83cff51434605eaee04/datenblatt-bergen-zum-download-data.pdf",
   "title": "Truppenübungsplatz Bergen – Datenblatt",
   "publisher": "Bundeswehr",
@@ -3125,6 +3144,26 @@
   "collector": "manual"
  },
  {
+  "url": "https://www.dvidshub.net/image/9650853/eucom-senior-enlisted-leader-visits-us-rotational-forces-lithuania",
+  "title": "EUCOM senior enlisted leader visits U.S. rotational forces in Lithuania",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "US Army photo (April 2026): visit to the US rotational forces at Camp Herkus, Pabradė Training Area, Lithuania, including newly built Lithuanian-funded barracks for US troops.",
+  "note": "Rotational US presence.",
+  "base": "pabrades-poligonas-lithuania",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.defense.gouv.fr/en/node/97",
   "title": "Forces armées aux Antilles (FAA)",
   "publisher": "Ministère des Armées (France)",
@@ -3929,6 +3968,25 @@
   "collector": "manual"
  },
  {
+  "url": "https://notesfrompoland.com/2025/04/08/us-to-withdraw-military-from-ukraine-aid-hub-in-poland/",
+  "title": "US to withdraw military from Ukraine aid hub in Poland",
+  "publisher": "Notes From Poland",
+  "type": "media",
+  "published": "2025-04-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "US Army Europe and Africa announced in April 2025 that it would move US military personnel and equipment from Rzeszów-Jasionka, the main aid hub for Ukraine since 2022, to other sites in Poland; protection passes to Poland and NATO allies.",
+  "note": "Status: the US presence at Rzeszów was reduced in 2025; the hub itself remains active under Polish/NATO lead.",
+  "base": "rzeszow",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
   "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
   "publisher": "Government of Sweden (government.se)",
@@ -4648,6 +4706,26 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Drawsko Pomorskie Training Area\", Army Active, nearest city Unknown, Poland.",
   "note": "(row assigned by hand)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.marinecorpstimes.com/news/your-marine-corps/2014/08/12/marines-to-load-new-prepositioning-gear-into-norway-caves/",
+  "title": "Marines to load new prepositioning gear into Norway caves",
+  "publisher": "Marine Corps Times",
+  "type": "media",
+  "published": "2014-08-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "context",
+  "summary": "The US Marine Corps modernises the equipment stored in caves in central Norway under its prepositioning programme (2014).",
+  "note": "Marine Corps Prepositioning Program-Norway: storage sites in Trøndelag (not in Trondheim city itself); the article does not name the dataset location.",
+  "base": "trondheim",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "u-s-army-garrison-stuttgart",
