@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 // @ts-expect-error – plain ESM build scripts without type declarations
 import { classifyUrl, unwrapArchive, matchScore, countryCode, placeOnlyName, tokens } from '../../scripts/research/lib.mjs';
 // @ts-expect-error – see above
-import { bestMatch } from '../../scripts/research/bsr.mjs';
+import { bestMatch, applyReview } from '../../scripts/research/bsr.mjs';
 // @ts-expect-error – see above
 import { rankLinks } from '../../scripts/research/wiki-refs.mjs';
 // @ts-expect-error – see above
@@ -51,6 +51,26 @@ describe('name matching', () => {
   });
   it('does not match on the host country demonym', () => {
     expect(bestMatch(base({ name: 'Mombasa: Kenyan Naval Base Mtongwe', country: 'KE' }), [{ country: 'Kenya', site: 'NSA Bahrain Kenya', component: 'Navy', city: 'Kenya' }])).toBeNull();
+  });
+  it('prefers rows in the named place, expands abbreviations and breaks ties by exact wording', () => {
+    const r = (site: string, city: string, country = 'Germany') => ({ country, site, component: 'Army Active', city });
+    expect(bestMatch(base({ name: 'Landstuhl: US-Hospital' }), [r('Baumholder Hospital', 'Baumholder'), r('Landstuhl Hospital', 'Landstuhl')])).toMatchObject({ site: 'Landstuhl Hospital' });
+    expect(bestMatch(base({ name: 'Yokosuka: COMFLEACT', country: 'JP' }), [r('COMFLEACT Sasebo', 'Sasebo', 'Japan'), r('COMFLEACT Yokosuka', 'Yokosuka', 'Japan')])).toMatchObject({ site: 'COMFLEACT Yokosuka' });
+    expect(bestMatch(base({ name: 'Okinawa: Kadena Ammunition Storage Area', country: 'JP' }), [r('Awase', 'Kadena Air Base Okinawa', 'Japan'), r('Kadena Ammo Storage Annex', 'Kadena Air Base Okinawa', 'Japan')])).toMatchObject({ site: 'Kadena Ammo Storage Annex' });
+    expect(bestMatch(base({ name: 'Kaiserslautern Army Depot' }), [r('Kaiserslautern', 'Kaiserlautern'), r('Kaiserslautern Army Depot', 'Kaiserlautern')])).toMatchObject({ site: 'Kaiserslautern Army Depot' });
+    expect(bestMatch(base({ name: 'Landstuhl: Bann Communications Station 2' }), [r('Bann Communications Station', 'Bann'), r('Bann Communications Station  2', 'Bann')])).toMatchObject({ site: 'Bann Communications Station  2' });
+  });
+});
+
+describe('BSR review', () => {
+  const rows = [{ country: 'Romania', site: 'NAVSUPPFAC Romania', component: 'Navy Active', city: 'Unknown' }];
+  it('confirms, reassigns, rejects or flags a stale review', () => {
+    const m = { ...rows[0], match: 'site', score: 1 };
+    expect(applyReview(m, null, rows, 'RO')).toEqual({ row: m, review: null });
+    expect(applyReview(m, { site: 'NAVSUPPFAC Romania', verdict: 'supports' }, rows, 'RO').review).toMatchObject({ verdict: 'supports' });
+    expect(applyReview(null, { site: 'NAVSUPPFAC Romania', verdict: 'supports' }, rows, 'RO').row).toMatchObject({ site: 'NAVSUPPFAC Romania', match: 'manual' });
+    expect(applyReview(m, { verdict: 'reject' }, rows, 'RO').row).toBeNull();
+    expect(applyReview(m, { site: 'Gone', verdict: 'supports' }, rows, 'RO')).toMatchObject({ row: m, review: null, stale: true });
   });
 });
 

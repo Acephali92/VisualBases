@@ -153,6 +153,11 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     }
   }
   for (const id of Object.keys(research.checks ?? {})) if (!byId.has(id)) err('research-base', `checks.json refers to unknown base "${id}"`);
+  for (const [id, r] of Object.entries(research.bsrReview ?? {})) {
+    if (!byId.has(id)) err('research-base', `bsr-review.json refers to unknown base "${id}"`);
+    if (![...VERDICTS.filter((v) => v !== 'unreviewed'), 'reject'].includes(r.verdict)) err('research-verdict', `bsr-review.json: unknown verdict "${r.verdict}" for ${id}`);
+    if (r.verdict !== 'reject' && !r.site) err('research-review', `bsr-review.json: ${id} names no BSR row`);
+  }
 
   const stats = {
     bases: bases.length,
@@ -223,6 +228,7 @@ async function main() {
       sources: await read('data/research/sources.json', []),
       candidates: await read('data/research/candidates.json', []),
       checks: await read('data/research/checks.json', {}),
+      bsrReview: await read('data/research/bsr-review.json', {}),
     },
     fileExists: (rel) => existsSync(path.join(ROOT, 'public', rel)),
   });

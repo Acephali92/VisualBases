@@ -83,11 +83,23 @@ export function fold(s) {
 }
 
 /** distinctive words of a site name (place names, unit names), generic military vocabulary removed */
+/** abbreviations used in the Base Structure Report */
+const ALIAS = { ammo: 'ammunition', tng: 'training', ord: 'ordnance', ordinance: 'ordnance', hosp: 'hospital' };
+
 export function tokens(s) {
   return fold(s)
     .replace(/\(.*?\)/g, ' ')
     .split(/[^a-z0-9]+/)
+    .map((w) => ALIAS[w] ?? w)
     .filter((w) => w.length >= 3 && !GENERIC.has(w) && !/^\d+$/.test(w));
+}
+
+/** Jaccard similarity of all words incl. generic ones and numbers – tie-breaker between equally good matches */
+export function exactness(a, b) {
+  const words = (s) => new Set(fold(s).replace(/\ba[fb]?b\b|\bafb\b/g, 'air base').split(/[^a-z0-9]+/).filter(Boolean).map((w) => ALIAS[w] ?? w));
+  const A = words(a), B = words(b);
+  const inter = [...A].filter((w) => B.has(w)).length;
+  return inter / (A.size + B.size - inter || 1);
 }
 
 /** share of the base's distinctive words found in the candidate text (0..1) */

@@ -50,10 +50,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Al Udeid Air Base\", Air Force Active, nearest city Al Udeid Air Base, Qatar.",
-  "note": "site name match 100 %",
+  "note": "The dataset lists only GB; the BSR shows Al Udeid as a US Air Force site – the stationing nations look incomplete. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -69,10 +69,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Andersen AFB\", Navy Active, nearest city Andersen Air Force Base, Guam.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "(only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -88,10 +88,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Artillery Kaserne\", Army Active, nearest city Garmisch, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -107,10 +107,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Aviano AB\", Air Force Active, nearest city Aviano, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -126,16 +126,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station\", Air Force Active, nearest city Bann, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "bann-communications-station-2",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Bann Communications Station (Air Force Active, Bann)",
+  "title": "Base Structure Report FY2023 – Bann Communications Station  2 (Air Force Active, Bann)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -145,10 +145,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station\", Air Force Active, nearest city Bann, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station  2\", Air Force Active, nearest city Bann, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -164,10 +164,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Barton Barracks\", Army Active, nearest city Ansbach, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -202,16 +202,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Airfield\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "note": "The BSR lists several US Army sites in Baumholder (Smith Barracks, airfield, hospital, QM area, family housing); the community as a whole is not one row. (site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "baumholder-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Baumholder Airfield (Army Active, Baumholder)",
+  "title": "Base Structure Report FY2023 – Baumholder Qm Area (Army Active, Baumholder)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -223,7 +223,7 @@
   ],
   "verdict": "unreviewed",
   "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Airfield\", Army Active, nearest city Baumholder, Germany.",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Qm Area\", Army Active, nearest city Baumholder, Germany.",
   "note": "site name match 100 %",
   "collector": "bsr"
  },
@@ -297,10 +297,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Carroll\", Army Active, nearest city Waegwan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -316,10 +316,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Casey\", Army Active, nearest city Tongdu-ch'on, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -335,10 +335,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Darby\", Army Active, nearest city Tirrenia, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -373,10 +373,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Ederle\", Army Active, nearest city Vicenza, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -392,10 +392,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Foster\", Marine Corps Active, nearest city Camp Foster Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -411,10 +411,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Hansen\", Marine Corps Active, nearest city Onna Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -430,10 +430,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Henry\", Army Active, nearest city Taegu, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -449,10 +449,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Kinser\", Marine Corps Active, nearest city Makiminato Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -468,10 +468,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Lester\", Marine Corps Active, nearest city Chatan, Japan.",
-  "note": "site name match 100 %",
+  "note": "Listed as of 30 Sep 2022; parts of Camp Lester have since been returned to Japan – extent to be checked. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -487,16 +487,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Walker\", Army Active, nearest city Taegu, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "chievres-ab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Chievres (Army Active, Chievres)",
+  "title": "Base Structure Report FY2023 – Chievres AB (Army Active, Chievres Ab)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -506,10 +506,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Chievres\", Army Active, nearest city Chievres, Belgium.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Chievres AB\", Army Active, nearest city Chievres Ab, Belgium.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -544,10 +544,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Daenner Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -582,10 +582,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Davis-Monthan AFB\", Air Force Active, nearest city Willemstad, Curacao.",
-  "note": "site name match 67 %",
+  "note": "The BSR lists the Curaçao site (Willemstad) under its parent installation Davis-Monthan AFB; it is the US Forward Operating Location at Hato airport, not a separate air force base. (site name match 67 %)",
   "collector": "bsr"
  },
  {
@@ -601,10 +601,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Del Din\", Army Active, nearest city Vicenza, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -624,6 +624,25 @@
   "method": "auto",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Mainz-Kastel Station\", Army Active, nearest city Wiesbaden, Germany.",
   "note": "site name match 67 %",
+  "collector": "bsr"
+ },
+ {
+  "base": "deveselu-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NAVSUPPFAC Romania (Navy Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVSUPPFAC Romania\", Navy Active, nearest city Unknown, Romania.",
+  "note": "FY2023 lists Naval Support Facility Romania without a city; FY2019 names Deveselu. (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -697,10 +716,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Echterdingen Airfield\", Army Active, nearest city Stuttgart, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -716,10 +735,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Egelsbach Transmitter Fac\", Army Active, nearest city Langen, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -735,10 +754,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Eygelshoven Army Depot\", Army Active, nearest city Eygelshoven, Netherlands.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -754,10 +773,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Freihoelser Tng Area\", Army Active, nearest city Amberg, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -811,10 +830,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Ghedi Radio Relay Site\", Air Force Active, nearest city Brescia, Italy.",
-  "note": "site name match 100 %",
+  "note": "The BSR lists a US Air Force \"Ghedi Radio Relay Site\" near Brescia – US presence at Ghedi, but not the air base itself as a US installation. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -830,10 +849,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NS Guantanamo Bay\", Navy Active, nearest city Guantanamo Bay, Guantanamo Bay Naval Base.",
-  "note": "site name match 67 %",
+  "note": "The dataset has no stationing nation; the BSR shows a US Navy installation. (site name match 67 %)",
   "collector": "bsr"
  },
  {
@@ -877,7 +896,7 @@
  {
   "base": "grafenwoehr-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – East Camp Grafenwoehr (Army Active, Grafenwohr)",
+  "title": "Base Structure Report FY2023 – Grafenwoehr Training Area (Army Active, Grafenwohr)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -889,7 +908,7 @@
   ],
   "verdict": "unreviewed",
   "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"East Camp Grafenwoehr\", Army Active, nearest city Grafenwohr, Germany.",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Grafenwoehr Training Area\", Army Active, nearest city Grafenwohr, Germany.",
   "note": "only the nearest city matches (100 %) – a US site in this place, not necessarily this facility",
   "collector": "bsr"
  },
@@ -906,10 +925,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Gruenstadt AAFES Fac\", Army Active, nearest city Gruenstadt, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -953,7 +972,7 @@
  {
   "base": "hohenfels-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Hohenfels (Army Active, Hohenfels)",
+  "title": "Base Structure Report FY2023 – Hohenfels Training Area (Army Active, Hohenfels)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -963,10 +982,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Hohenfels\", Army Active, nearest city Hohenfels, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Hohenfels Training Area\", Army Active, nearest city Hohenfels, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -982,10 +1001,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Husterhoeh Communication Site\", Air Force Active, nearest city Pirmasens, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1020,10 +1039,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Naha Port\", Army Active, nearest city Okinawa Island, Japan.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Naha Port is a US Army facility in Naha. JASDF Naha Air Base itself is a Japanese base and not in the BSR – the stationing nation US in the dataset needs checking. (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1039,10 +1058,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Johnston Atoll Airfield\", Air Force Active, nearest city Unknown, Johnston Atoll.",
-  "note": "site name match 100 %",
+  "note": "Still listed as Air Force property; the airfield was closed in 2005, so the listing is not evidence of active use. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1058,16 +1077,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kadena AB\", Air Force Active, nearest city Kadena Air Base Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "kadena-ammunition-okinawa",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Awase (Navy Active, Kadena Air Base Okinawa)",
+  "title": "Base Structure Report FY2023 – Kadena Ammo Storage Annex (Air Force Active, Kadena Air Base Okinawa)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -1077,16 +1096,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Awase\", Navy Active, nearest city Kadena Air Base Okinawa, Japan.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kadena Ammo Storage Annex\", Air Force Active, nearest city Kadena Air Base Okinawa, Japan.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "kaiserslautern-army-depot",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Kaiserslautern (Army Active, Kaiserlautern)",
+  "title": "Base Structure Report FY2023 – Kaiserslautern Army Depot (Army Active, Kaiserlautern)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -1096,10 +1115,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kaiserslautern\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kaiserslautern Army Depot\", Army Active, nearest city Kaiserlautern, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1115,10 +1134,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kapaun Administration Annex\", Air Force Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "Listed as \"Kapaun Administration Annex\". (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1172,10 +1191,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kleber Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1191,10 +1210,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kleine Brogel AB\", Air Force Active, nearest city Kleine-brogel, Belgium.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1210,10 +1229,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kunsan AB\", Air Force Active, nearest city Kunsan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1238,7 +1257,7 @@
  {
   "base": "landstuhl-us-hospital",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Baumholder Hospital (Army Active, Baumholder)",
+  "title": "Base Structure Report FY2023 – Landstuhl Hospital (Army Active, Landstuhl)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -1248,10 +1267,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Hospital\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Landstuhl Hospital\", Army Active, nearest city Landstuhl, Germany.",
+  "note": "Listed as \"Landstuhl Hospital\" (Landstuhl Regional Medical Center). (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1267,10 +1286,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Lask Air Base\", Air Force Active, nearest city Unknown, Poland.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1286,10 +1305,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Longare Communications Site\", Army Active, nearest city Vicenza, Italy.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Listed as \"Longare Communications Site\" (the \"Site Pluto\" name is not in the BSR). (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1305,10 +1324,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"MCAS Futenma\", Marine Corps Active, nearest city Futenma Marine Corps Air Stati, Japan.",
-  "note": "only the nearest city matches (75 %) – a US site in this place, not necessarily this facility",
+  "note": "(only the nearest city matches (75 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1324,10 +1343,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"McCully Barracks\", Army Active, nearest city Wackernheim, Germany.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "(only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1362,10 +1381,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Mihail Kogalniceanu Airfield\", Army Active, nearest city Unknown, Romania.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1381,10 +1400,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Muwaffaq Salti Air Base\", Air Force Active, nearest city Al Mafraq, Jordan.",
-  "note": "site name match 67 %",
+  "note": "The dataset has no stationing nation; the BSR shows a US Air Force site (city given as Al Mafraq). (site name match 67 %)",
   "collector": "bsr"
  },
  {
@@ -1419,10 +1438,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Argentia Newfoundland\", Navy Active, nearest city Placentia, Newfoundland, Canada.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1438,10 +1457,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVCOMMSTA H E Holt Exmouth\", Navy Active, nearest city Northwest Cape, Australia.",
-  "note": "site name match 100 %",
+  "note": "Listed as US Navy site \"NAVCOMMSTA H E Holt\"; the station is operated jointly with Australia. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1457,10 +1476,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NS Rota\", Navy Active, nearest city Rota, Spain.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1476,10 +1495,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Low Frequency Transmitter Site Aguada\", Navy Active, nearest city Unknown, Puerto Rico.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1552,10 +1571,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Oberdachstetten Training Area\", Army Active, nearest city Unknown, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1590,10 +1609,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Osan AFB\", Air Force Active, nearest city Osan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1647,10 +1666,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Panzer Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1685,10 +1704,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Paya Lebar Air Base\", Navy Active, nearest city Singapore, Singapore.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1704,10 +1723,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Pulaski Barracks\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1723,10 +1742,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Raf Akrotiri\", Air Force Active, nearest city Limassol, Cyprus.",
-  "note": "site name match 100 %",
+  "note": "The dataset lists only GB; the BSR additionally shows a US Air Force site at RAF Akrotiri. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1742,10 +1761,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Alconbury\", Air Force Active, nearest city Cambridge, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1761,10 +1780,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Ascension Auxiliary Airfield\", Air Force Active, nearest city Ascension Island, Saint Helena, Ascension, And Tristan Da Cunha.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Ascension Auxiliary Airfield (Wideawake) is listed as a US Air Force site. (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1799,10 +1818,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Bicester\", Air Force Active, nearest city Bicester Afb, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1818,10 +1837,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Blenheim Crescent\", Air Force Active, nearest city Croughton, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1875,10 +1894,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Feltwell\", Air Force Active, nearest city Feltwell, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1894,10 +1913,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Lakenheath\", Air Force Active, nearest city Lakenheath, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1913,10 +1932,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Mildenhall\", Air Force Active, nearest city Mildenhall, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1932,10 +1951,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Molesworth\", Air Force Active, nearest city Cambridge, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1951,10 +1970,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Oakhanger\", Air Force Active, nearest city Unknown, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1970,10 +1989,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Welford Ammo Storage Area\", Air Force Active, nearest city Welford, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2008,10 +2027,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Rhine Ordnance Barracks\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 67 %",
+  "note": "(site name match 67 %)",
   "collector": "bsr"
  },
  {
@@ -2027,10 +2046,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Robinson Barracks\", Army Active, nearest city Stuttgart, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2216,10 +2235,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Sasebo\", Navy Active, nearest city Sasebo, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2235,10 +2254,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Sembach Admin Annex\", Army Active, nearest city Sembach, Germany.",
-  "note": "site name match 100 %",
+  "note": "Listed as \"Sembach Admin Annex\". (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2254,10 +2273,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Shipton Kaserne\", Army Active, nearest city Ansbach, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2273,10 +2292,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAS Sigonella\", Navy Active, nearest city Sigonella, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2292,10 +2311,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Smith Barracks\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2311,10 +2330,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Soto Cano\", Army Active, nearest city Comayagua, Honduras.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2349,10 +2368,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Suwon AB\", Air Force Active, nearest city Suwon, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "thumrait",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy_2019.xlsx",
+  "title": "Base Structure Report FY2019 – Thumrait MAP (Air Force Active, Muscat)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2018-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2019 (as of 2018-09-30) as \"Thumrait MAP\", Air Force Active, nearest city Muscat, Oman.",
+  "note": "Only in FY2019 (as of 30 Sep 2018), no longer in FY2023 – current status open. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2387,10 +2425,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Csl Agadez\", Air Force Active, nearest city Unknown, Niger.",
-  "note": "site name match 100 %",
+  "note": "Listed as Cooperative Security Location Agadez as of 30 Sep 2022. US forces left Niger in 2024 – status needs updating. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2406,10 +2444,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Yongsan Garrison\", Army Active, nearest city Seoul, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2463,10 +2501,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Volkel AB\", Air Force Active, nearest city Volkel, Netherlands.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2482,10 +2520,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Wetzel Kaserne\", Army Active, nearest city Baumholder, Germany.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Listed as \"Wetzel Kaserne\". (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -2529,7 +2567,7 @@
  {
   "base": "yokosuka-fleet",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – COMFLEACT Sasebo (Navy Active, Sasebo)",
+  "title": "Base Structure Report FY2023 – COMFLEACT Yokosuka (Navy Active, Yokosuka)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -2539,10 +2577,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Sasebo\", Navy Active, nearest city Sasebo, Japan.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Yokosuka\", Navy Active, nearest city Yokosuka, Japan.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2558,10 +2596,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Yokota AB\", Air Force Active, nearest city Yokota Air Base, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2577,10 +2615,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Zutendaal\", Army Active, nearest city Zutendaal, Belgium.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  }
 ]

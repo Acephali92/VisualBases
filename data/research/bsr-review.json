@@ -1,0 +1,428 @@
+{
+ "naval-comm-station-exmouth": {
+  "site": "NAVCOMMSTA H E Holt Exmouth",
+  "verdict": "supports",
+  "note": "Listed as US Navy site \"NAVCOMMSTA H E Holt\"; the station is operated jointly with Australia."
+ },
+ "chievres-ab": {
+  "site": "Chievres AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kleine-brogel-air-base": {
+  "site": "Kleine Brogel AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "zutendaal-ab-belgium": {
+  "site": "Zutendaal",
+  "verdict": "supports",
+  "note": ""
+ },
+ "nas-argentia-newfoundland": {
+  "site": "Argentia Newfoundland",
+  "verdict": "supports",
+  "note": ""
+ },
+ "gitmo-guantanamo-bay": {
+  "site": "NS Guantanamo Bay",
+  "verdict": "supports",
+  "note": "The dataset has no stationing nation; the BSR shows a US Navy installation."
+ },
+ "raf-akrotiri": {
+  "site": "Raf Akrotiri",
+  "verdict": "supports",
+  "note": "The dataset lists only GB; the BSR additionally shows a US Air Force site at RAF Akrotiri."
+ },
+ "freihoelser-training-area-amberg": {
+  "site": "Freihoelser Tng Area",
+  "verdict": "supports",
+  "note": ""
+ },
+ "barton-barracks-ansbach": {
+  "site": "Barton Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "shipton-kaserne-ansbach": {
+  "site": "Shipton Kaserne",
+  "verdict": "supports",
+  "note": ""
+ },
+ "baumholder-community": {
+  "site": "Baumholder Airfield",
+  "verdict": "supports",
+  "note": "The BSR lists several US Army sites in Baumholder (Smith Barracks, airfield, hospital, QM area, family housing); the community as a whole is not one row."
+ },
+ "smith-barracks-baumholder": {
+  "site": "Smith Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "walter-wetzel-kaserne-baumholder": {
+  "site": "Wetzel Kaserne",
+  "verdict": "supports",
+  "note": "Listed as \"Wetzel Kaserne\"."
+ },
+ "artillery-kaserne-garmisch-partenkirchen": {
+  "site": "Artillery Kaserne",
+  "verdict": "supports",
+  "note": ""
+ },
+ "gruenstadt-aafes-fac": {
+  "site": "Gruenstadt AAFES Fac",
+  "verdict": "supports",
+  "note": ""
+ },
+ "hohenfels-training-area": {
+  "site": "Hohenfels Training Area",
+  "verdict": "supports",
+  "note": ""
+ },
+ "oberdachstetten-training-area": {
+  "site": "Oberdachstetten Training Area",
+  "verdict": "supports",
+  "note": ""
+ },
+ "mccully-barracks-wackernheim": {
+  "site": "McCully Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kaiserslautern-army-depot": {
+  "site": "Kaiserslautern Army Depot",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kapaun-air-station-kaiserslautern": {
+  "site": "Kapaun Administration Annex",
+  "verdict": "supports",
+  "note": "Listed as \"Kapaun Administration Annex\"."
+ },
+ "daenner-kaserne": {
+  "site": "Daenner Kaserne",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kleber-kaserne-kaiserslautern": {
+  "site": "Kleber Kaserne",
+  "verdict": "supports",
+  "note": ""
+ },
+ "panzer-kaserne-kaiserslautern": {
+  "site": "Panzer Kaserne",
+  "verdict": "supports",
+  "note": ""
+ },
+ "pulaski-barracks-kaiserslautern": {
+  "site": "Pulaski Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "rhine-ordnance-barracks-vogelweh": {
+  "site": "Rhine Ordnance Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "bann-communications-station": {
+  "site": "Bann Communications Station",
+  "verdict": "supports",
+  "note": ""
+ },
+ "bann-communications-station-2": {
+  "site": "Bann Communications Station  2",
+  "verdict": "supports",
+  "note": ""
+ },
+ "landstuhl-us-hospital": {
+  "site": "Landstuhl Hospital",
+  "verdict": "supports",
+  "note": "Listed as \"Landstuhl Hospital\" (Landstuhl Regional Medical Center)."
+ },
+ "egelsbach-transmitter-fac": {
+  "site": "Egelsbach Transmitter Fac",
+  "verdict": "supports",
+  "note": ""
+ },
+ "husterhoeh-polygone": {
+  "site": "Husterhoeh Communication Site",
+  "verdict": "supports",
+  "note": ""
+ },
+ "sembach-kaserne": {
+  "site": "Sembach Admin Annex",
+  "verdict": "supports",
+  "note": "Listed as \"Sembach Admin Annex\"."
+ },
+ "echterdingen-airfield": {
+  "site": "Echterdingen Airfield",
+  "verdict": "supports",
+  "note": ""
+ },
+ "robinson-barracks-stuttgart": {
+  "site": "Robinson Barracks",
+  "verdict": "supports",
+  "note": ""
+ },
+ "naval-station-rota": {
+  "site": "NS Rota",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-bicester": {
+  "site": "RAF Bicester",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-alconbury": {
+  "site": "RAF Alconbury",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-blenheim-crescent": {
+  "site": "Blenheim Crescent",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-feltwell": {
+  "site": "RAF Feltwell",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-lakenheath": {
+  "site": "RAF Lakenheath",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-mildenhall": {
+  "site": "RAF Mildenhall",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-molesworth": {
+  "site": "RAF Molesworth",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-oakhanger": {
+  "site": "RAF Oakhanger",
+  "verdict": "supports",
+  "note": ""
+ },
+ "raf-ascension-island-st-helena": {
+  "site": "Ascension Auxiliary Airfield",
+  "verdict": "supports",
+  "note": "Ascension Auxiliary Airfield (Wideawake) is listed as a US Air Force site."
+ },
+ "raf-welford-ammo-storage-area": {
+  "site": "RAF Welford Ammo Storage Area",
+  "verdict": "supports",
+  "note": ""
+ },
+ "soto-cano-honduras": {
+  "site": "Soto Cano",
+  "verdict": "supports",
+  "note": ""
+ },
+ "aviano-air-base": {
+  "site": "Aviano AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "ghedi-ab": {
+  "site": "Ghedi Radio Relay Site",
+  "verdict": "context",
+  "note": "The BSR lists a US Air Force \"Ghedi Radio Relay Site\" near Brescia – US presence at Ghedi, but not the air base itself as a US installation."
+ },
+ "sigonalla-air-base": {
+  "site": "NAS Sigonella",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-darby-tirrenia-livorno": {
+  "site": "Camp Darby",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-ederle-vicenza": {
+  "site": "Camp Ederle",
+  "verdict": "supports",
+  "note": ""
+ },
+ "del-din-barracks-vicenza": {
+  "site": "Del Din",
+  "verdict": "supports",
+  "note": ""
+ },
+ "longare-communications-site-pluto-vicenza": {
+  "site": "Longare Communications Site",
+  "verdict": "supports",
+  "note": "Listed as \"Longare Communications Site\" (the \"Site Pluto\" name is not in the BSR)."
+ },
+ "muwaffaq-salti-air-base-al-azraq-jordan": {
+  "site": "Muwaffaq Salti Air Base",
+  "verdict": "supports",
+  "note": "The dataset has no stationing nation; the BSR shows a US Air Force site (city given as Al Mafraq)."
+ },
+ "sasebo-naval-base-nagasaki": {
+  "site": "COMFLEACT Sasebo",
+  "verdict": "supports",
+  "note": ""
+ },
+ "mcas-futenma": {
+  "site": "MCAS Futenma",
+  "verdict": "supports",
+  "note": ""
+ },
+ "jasdf-naha-air-base": {
+  "site": "Naha Port",
+  "verdict": "context",
+  "note": "Naha Port is a US Army facility in Naha. JASDF Naha Air Base itself is a Japanese base and not in the BSR – the stationing nation US in the dataset needs checking."
+ },
+ "camp-hansen-okinawa": {
+  "site": "Camp Hansen",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-kinser-okinawa": {
+  "site": "Camp Kinser",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-foster-zukeran": {
+  "site": "Camp Foster",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-lester-okinawa": {
+  "site": "Camp Lester",
+  "verdict": "supports",
+  "note": "Listed as of 30 Sep 2022; parts of Camp Lester have since been returned to Japan – extent to be checked."
+ },
+ "kadena-air-base": {
+  "site": "Kadena AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kadena-ammunition-okinawa": {
+  "site": "Kadena Ammo Storage Annex",
+  "verdict": "supports",
+  "note": ""
+ },
+ "yokota-air-base-tokyo": {
+  "site": "Yokota AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "yokosuka-fleet": {
+  "site": "COMFLEACT Yokosuka",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-henry-daegu": {
+  "site": "Camp Henry",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-walker-taeku": {
+  "site": "Camp Walker",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-casy-dongducheon": {
+  "site": "Camp Casey",
+  "verdict": "supports",
+  "note": ""
+ },
+ "kunsan-ab-gunsan": {
+  "site": "Kunsan AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "osan-ab-pyeongtaek": {
+  "site": "Osan AFB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "suwon-ab": {
+  "site": "Suwon AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "camp-carroll-waegwan": {
+  "site": "Camp Carroll",
+  "verdict": "supports",
+  "note": ""
+ },
+ "us-army-garrison-yongsan": {
+  "site": "Yongsan Garrison",
+  "verdict": "supports",
+  "note": ""
+ },
+ "us-air-base-201": {
+  "site": "Csl Agadez",
+  "verdict": "supports",
+  "note": "Listed as Cooperative Security Location Agadez as of 30 Sep 2022. US forces left Niger in 2024 – status needs updating."
+ },
+ "davis-monthan-ab-curacao": {
+  "site": "Davis-Monthan AFB",
+  "verdict": "supports",
+  "note": "The BSR lists the Curaçao site (Willemstad) under its parent installation Davis-Monthan AFB; it is the US Forward Operating Location at Hato airport, not a separate air force base."
+ },
+ "eygelshoven-army-depot": {
+  "site": "Eygelshoven Army Depot",
+  "verdict": "supports",
+  "note": ""
+ },
+ "volkel-ab": {
+  "site": "Volkel AB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "thumrait": {
+  "site": "Thumrait MAP",
+  "edition": 2019,
+  "verdict": "supports",
+  "note": "Only in FY2019 (as of 30 Sep 2018), no longer in FY2023 – current status open."
+ },
+ "lask-air-base": {
+  "site": "Lask Air Base",
+  "verdict": "supports",
+  "note": ""
+ },
+ "naval-transmitter-site-aguada": {
+  "site": "Low Frequency Transmitter Site Aguada",
+  "verdict": "supports",
+  "note": ""
+ },
+ "al-udeid-doha": {
+  "site": "Al Udeid Air Base",
+  "verdict": "supports",
+  "note": "The dataset lists only GB; the BSR shows Al Udeid as a US Air Force site – the stationing nations look incomplete."
+ },
+ "mihail-kogalniceanu-constanta": {
+  "site": "Mihail Kogalniceanu Airfield",
+  "verdict": "supports",
+  "note": ""
+ },
+ "deveselu-base": {
+  "site": "NAVSUPPFAC Romania",
+  "verdict": "supports",
+  "note": "FY2023 lists Naval Support Facility Romania without a city; FY2019 names Deveselu."
+ },
+ "paya-lebar-air-base": {
+  "site": "Paya Lebar Air Base",
+  "verdict": "supports",
+  "note": ""
+ },
+ "andersen-afb-guam": {
+  "site": "Andersen AFB",
+  "verdict": "supports",
+  "note": ""
+ },
+ "johnston-atoll": {
+  "site": "Johnston Atoll Airfield",
+  "verdict": "context",
+  "note": "Still listed as Air Force property; the airfield was closed in 2005, so the listing is not evidence of active use."
+ }
+}
