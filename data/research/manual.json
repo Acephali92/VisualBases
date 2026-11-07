@@ -926,5 +926,226 @@
   "bases": [
    "keflavik-base"
   ]
+ },
+ {
+  "url": "https://www.army.mil/article/277657/first_batch_of_armored_vehicles_arrives_at_powidz_aps_2_worksite",
+  "title": "First batch of armored vehicles arrives at Powidz APS-2 worksite",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2024-06-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army's Army Prepositioned Stocks-2 worksite at Powidz, Poland, received its first armoured vehicles (Abrams tanks) by rail in June 2024.",
+  "bases": [
+   "33rd-air-base-powidz"
+  ]
+ },
+ {
+  "url": "https://www.twz.com/australian-airbase-gets-upgrades-for-american-bomber-deployments",
+  "title": "Australian Airbase Gets Upgrades For American Bomber Deployments",
+  "publisher": "The War Zone (TWZ)",
+  "type": "media",
+  "published": "2022-10-31",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Details of US-funded upgrades at RAAF Base Tindal (apron for up to six B-52s, squadron operations and maintenance facilities) to support rotational US bomber deployments.",
+  "note": "Rotational use and US-funded infrastructure, not a permanent US unit.",
+  "bases": [
+   "tindal-raaf-base"
+  ]
+ },
+ {
+  "url": "https://info.fr/fort-de-france-martial-heraud-commandement-base-navale/",
+  "title": "Fort-de-France : Martial Héraud prend le commandement de la base navale",
+  "publisher": "INFO.FR",
+  "type": "media",
+  "published": "2026-07-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command of the French naval base at Fort-de-France on 16 July 2026 in a ceremony at Fort Saint-Louis.",
+  "note": "The article is marked as written with AI assistance (\"rédacteur IA\") – an official source would be better.",
+  "bases": [
+   "naval-base-fort-saint-louis"
+  ]
+ },
+ {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "bases": [
+   "shahbaz-ab",
+   "jacobabad-dalbandin-ab",
+   "pasni-base-port",
+   "khalid-ab"
+  ]
+ },
+ {
+  "url": "https://ukdefencejournal.org.uk/the-uk-in-cyprus-the-importance-of-the-sovereign-bases-of-akrotiri-and-dhekelia/",
+  "title": "The UK in Cyprus – The Importance of the Sovereign Bases of Akrotiri and Dhekelia",
+  "publisher": "UK Defence Journal",
+  "type": "media",
+  "published": "2018-06-16",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the British Sovereign Base Areas of Akrotiri and Dhekelia; the UK also controls retained sites around the island, most visibly Mount Olympus Station in the Troodos Mountains.",
+  "bases": [
+   "dhekelia-military-camp",
+   "raf-troodos"
+  ],
+  "perBase": {
+   "raf-troodos": {
+    "note": "Mentioned as a retained site (Mount Olympus station in the Troodos Mountains); RAF Troodos is not described in detail."
+   }
+  }
+ },
+ {
+  "url": "https://www.gov.uk/government/news/runway-repairs-completed-ahead-of-schedule-in-falkland-islands",
+  "title": "Runway repairs completed ahead of schedule in Falkland Islands",
+  "publisher": "GOV.UK (Defence Infrastructure Organisation)",
+  "type": "official",
+  "published": "2025-02-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "A 20 million pound project to resurface part of the airfield at Mount Pleasant Complex, the RAF airfield in the Falkland Islands, was completed in 2025.",
+  "bases": [
+   "raf-mount-pleasant-falkland"
+  ]
+ },
+ {
+  "url": "https://www.lrt.lt/en/news-in-english/19/2779098/construction-at-german-brigade-s-training-area-in-rudninkai-advances-ahead-of-schedule",
+  "title": "Construction at German brigade's training area in Rūdninkai advances ahead of schedule",
+  "publisher": "LRT (Lithuanian National Radio and Television)",
+  "type": "media",
+  "published": "2025-12-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The training area and base in Rūdninkai for the German Bundeswehr brigade in Lithuania is being built ahead of schedule (December 2025).",
+  "note": "Under construction; permanent German stationing planned (Panzerbrigade 45).",
+  "bases": [
+   "rudninkai-litauen"
+  ]
+ },
+ {
+  "url": "https://www.army.mod.uk/media/1578/lo-brunei-june-16.pdf",
+  "title": "HIVE Location Overview – Brunei",
+  "publisher": "British Army (army.mod.uk)",
+  "type": "official",
+  "published": "2016-06-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The British Army's location guide for families describes the Brunei garrison at Seria (Tuker Lines, Mumong), about 90 minutes from the capital.",
+  "note": "Date from the PDF metadata (2016); current state not checked.",
+  "bases": [
+   "bfb-garrison-seria"
+  ]
+ },
+ {
+  "url": "https://sbsstar.net/article/N1008619032/exclusive-thaad-returns-to-seongju-full-battery-of-6-launchers-redeployed",
+  "title": "Exclusive: THAAD Returns to Seongju; Full Battery of 6 Launchers Redeployed",
+  "publisher": "SBS Star (SBS, South Korea)",
+  "type": "media",
+  "published": "2026-06-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "After the launchers were temporarily moved out in March 2026, a full US THAAD battery (six launchers, radar, fire control) has been redeployed to the base in Soseong-ri, Seongju.",
+  "bases": [
+   "thadd-deployment-base"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/news/428233/noble-partner-opening-ceremony",
+  "title": "Noble Partner Opening Ceremony",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2022-08-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Opening ceremony of the US–Georgian multinational exercise Noble Partner at Vaziani Training Area, Georgia (August 2022).",
+  "note": "Recurring exercises, not permanent US stationing.",
+  "bases": [
+   "vaziani-military-base-georgia"
+  ]
+ },
+ {
+  "url": "https://cyberandspecialistoperationscommand.blog.gov.uk/2024/07/10/vip-visit/",
+  "title": "Commander UKStratCom and DirOb visit",
+  "publisher": "GOV.UK blog – Cyber & Specialist Operations Command (UK Ministry of Defence)",
+  "type": "official",
+  "published": "2024-07-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The commander of UK Strategic Command visited British Forces Gibraltar in 2024, including His Majesty's Naval Base, the Royal Navy Gibraltar Squadron and RAF Gibraltar.",
+  "bases": [
+   "hm-naval-base-gibraltar",
+   "raf-gibraltar"
+  ]
  }
 ]
