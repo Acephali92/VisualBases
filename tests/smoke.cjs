@@ -22,6 +22,7 @@ const ROUTES = [
   ['#/about', '.kinds'],
   ['#/embed?themes=resistance', '.badge'],
   ['b/ramstein-air-base.html', '.profile h2'],
+  ['c/DE.html', '.country h2'],
 ];
 
 (async () => {

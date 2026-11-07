@@ -78,13 +78,59 @@ ${(b.notes ?? []).slice(0, 4).map((n) => `<p>${esc(n)}</p>`).join('\n')}
 `;
 }
 
+export function countryPage(cc, list) {
+  const sites = list.filter((b) => !b.group);
+  const name = country(cc) || cc;
+  const url = `${SITE}c/${cc}.html`;
+  const app = `../#/atlas?countries=${cc}`;
+  const nations = [...new Set(sites.flatMap((b) => b.nations))].map(country).filter(Boolean);
+  const img = list.flatMap((b) => b.images ?? []).find((i) => i.type === 'photo') ?? list.flatMap((b) => b.images ?? []).find((i) => i.type === 'satellite');
+  const title = `Fremde Militärbasen in ${name} – ${sites.length} Standorte | VisualBases`;
+  const desc = `${sites.length} ausländische Militärstandorte in ${name}${nations.length ? ` (stationiert: ${nations.join(', ')})` : ''} – mit Karte, Satellitenbildern, Quellen und Widerstand vor Ort.`;
+  return `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}">
+<link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VisualBases">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${esc(url)}">
+<meta property="og:image" content="${esc(img ? SITE + img.src : SITE + 'og.png')}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07090f">
+<link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+<script>location.replace(${JSON.stringify(app)});</script>
+<style>body{background:#07090f;color:#eef1f7;font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:10vh auto;padding:0 16px}a{color:#ff5a3c}</style>
+</head>
+<body>
+<h1>Fremde Militärbasen in ${esc(name)}</h1>
+<p>${esc(desc)}</p>
+<ul>
+${sites.map((b) => `<li><a href="../b/${esc(b.id)}.html">${esc(b.name)}</a></li>`).join('\n')}
+</ul>
+<p><a href="${esc(app)}">Auf der Karte ansehen →</a></p>
+</body>
+</html>
+`;
+}
+
 async function main() {
   const bases = JSON.parse(await fs.readFile(path.join(DIST, 'data/bases.json'), 'utf8'));
   await fs.mkdir(path.join(DIST, 'b'), { recursive: true });
   for (const b of bases) await fs.writeFile(path.join(DIST, 'b', `${b.id}.html`), page(b));
 
+  const byCountry = new Map();
+  for (const b of bases) if (b.country) byCountry.set(b.country, [...(byCountry.get(b.country) ?? []), b]);
+  await fs.mkdir(path.join(DIST, 'c'), { recursive: true });
+  for (const [cc, list] of byCountry) await fs.writeFile(path.join(DIST, 'c', `${cc}.html`), countryPage(cc, list));
+
   const today = new Date().toISOString().slice(0, 10);
-  const urls = [`${SITE}`, ...bases.map((b) => `${SITE}b/${b.id}.html`)];
+  const urls = [`${SITE}`, ...[...byCountry.keys()].map((cc) => `${SITE}c/${cc}.html`), ...bases.map((b) => `${SITE}b/${b.id}.html`)];
   const lastmod = new Map(bases.map((b) => [`${SITE}b/${b.id}.html`, b.lastmod ?? today]));
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -93,7 +139,7 @@ ${urls.map((u) => `  <url><loc>${esc(u)}</loc><lastmod>${lastmod.get(u) ?? today
 `;
   await fs.writeFile(path.join(DIST, 'sitemap.xml'), sitemap);
   await fs.writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-  console.log(`✔ prerendered ${bases.length} base pages, sitemap.xml, robots.txt (${SITE})`);
+  console.log(`✔ prerendered ${bases.length} base pages, ${byCountry.size} country pages, sitemap.xml, robots.txt (${SITE})`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main().catch((e) => { console.error(e); process.exit(1); });
