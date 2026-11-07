@@ -34,6 +34,8 @@ await fs.mkdir(out, { recursive: true });
 
 await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(bases));
 await fs.writeFile(path.join(out, 'stories.json'), JSON.stringify(stories));
+const news = await readOpt('data/news.json');
+await fs.writeFile(path.join(out, 'news.json'), JSON.stringify(Array.isArray(news) ? news : []));
 
 const geojson = {
   type: 'FeatureCollection',

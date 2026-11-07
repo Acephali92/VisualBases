@@ -78,6 +78,17 @@ export interface Story {
   lastmod?: string;
 }
 
+export interface NewsItem {
+  lang: 'de' | 'en';
+  title: string;
+  teaser?: string;
+  source?: string;
+  /** YYYY-MM-DD, YYYY-MM or YYYY */
+  date: string | null;
+  url: string;
+  bases?: string[];
+}
+
 export interface Filters {
   q: string;
   kinds: Kind[];

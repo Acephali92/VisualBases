@@ -8,6 +8,7 @@
   import type { Base } from '../lib/types';
   import Compare from './Compare.svelte';
   import Gallery from './Gallery.svelte';
+  import NewsList from './NewsList.svelte';
 
   let { base, nearby, onClose, onSelect }: { base: Base; nearby: Ranked[]; onClose: () => void; onSelect: (id: string) => void } = $props();
 
@@ -16,6 +17,7 @@
 
   const group = $derived(KIND_GROUP[base.kind]);
   const images = $derived(base.images ?? []);
+  const news = $derived(db.news.filter((n) => n.bases?.includes(base.id) || (base.related ?? []).some((r) => n.bases?.includes(r))).slice(0, 6));
   const sats = $derived(images.filter((i) => i.type === 'satellite' && i.year).sort((a, b) => a.year! - b.year!));
   const pair = $derived(sats.length >= 2 && sats[0].year !== sats.at(-1)!.year ? ([sats[0], sats.at(-1)!] as const) : null);
   const cover = $derived(images.find((i) => i.type === 'photo') ?? sats.at(-1) ?? images.find((i) => i.type === 'map'));
@@ -126,6 +128,13 @@
     <section>
       <h3>{t('img.photos')} · {images.length}</h3>
       <Gallery {images} title={base.name} />
+    </section>
+  {/if}
+
+  {#if news.length}
+    <section>
+      <h3>{t('news.inProfile')}</h3>
+      <NewsList items={news} compact />
     </section>
   {/if}
 

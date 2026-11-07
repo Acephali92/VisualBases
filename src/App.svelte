@@ -8,6 +8,7 @@
   import Near from './routes/Near.svelte';
   import Stats from './routes/Stats.svelte';
   import About from './routes/About.svelte';
+  import News from './routes/News.svelte';
 
   initRouter();
   onMount(loadData);
@@ -27,6 +28,7 @@
     { path: '/', key: 'nav.home', match: '' },
     { path: '/atlas', key: 'nav.atlas', match: 'atlas' },
     { path: '/near', key: 'nav.near', match: 'near' },
+    { path: '/news', key: 'nav.news', match: 'news' },
     { path: '/stats', key: 'nav.stats', match: 'stats' },
     { path: '/about', key: 'nav.about', match: 'about' },
   ] as const;
@@ -87,6 +89,8 @@
     <Near />
   {:else if section === 'stats'}
     <Stats />
+  {:else if section === 'news'}
+    <News />
   {:else if section === 'about'}
     <About />
   {:else}
@@ -126,7 +130,7 @@
   .lang { border-color: transparent; }
   .menu-btn { display: none; border-color: transparent; }
 
-  @media (max-width: 820px) {
+  @media (max-width: 960px) {
     .menu-btn { display: inline-flex; }
     .tools { margin-left: auto; }
     .main-nav {

@@ -9,6 +9,7 @@
   import type { Base, Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
   import Compare from '../components/Compare.svelte';
+  import NewsList from '../components/NewsList.svelte';
   import type { Image } from '../lib/types';
 
   // protest photos from the archive, each linked to its base
@@ -62,6 +63,7 @@
   const topicCount = (f: Partial<Filters>) =>
     db.bases.filter((b) => (f.themes ?? []).every((x) => b.themes.includes(x)) && (f.facilities ?? []).every((x) => b.facilities.includes(x))).length;
 
+  const latestNews = $derived(db.news.slice(0, 5));
   const latestStories = $derived(
     [...db.stories].filter((s) => s.lang === i18n.lang).sort((a, b) => (b.lastmod ?? '').localeCompare(a.lastmod ?? '')).slice(0, 3),
   );
@@ -224,6 +226,16 @@
   </section>
 {/if}
 
+{#if latestNews.length}
+  <section class="latest container" aria-labelledby="latest-h">
+    <div class="latest-head">
+      <h2 id="latest-h">{t('news.latest')}</h2>
+      <a class="btn btn-sm" href={href('/news')}>{t('news.allLink')} →</a>
+    </div>
+    <NewsList items={latestNews} />
+  </section>
+{/if}
+
 <section class="topics container" aria-labelledby="topics-h">
   <h2 id="topics-h">{t('filters.theme')}</h2>
   <div class="topic-grid">
@@ -320,6 +332,9 @@
   .change { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: center; }
   @media (max-width: 820px) { .change { grid-template-columns: 1fr; } }
   .topics, .stories { padding: 72px 0 24px; }
+  .latest { padding: 88px 0 8px; max-width: 900px; }
+  .latest-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .latest h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
   .topics h2, .stories h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
   .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
   .topic { display: flex; flex-direction: column; gap: 4px; padding: 18px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
