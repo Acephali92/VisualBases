@@ -49,8 +49,8 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-07._
 | --- | ---: | ---: |
 | Präsenz von Hand belegt | 199 (68 %) | 55 (75 %) |
 | nur Kontext oder Widerspruch | 29 (10 %) | 11 (15 %) |
-| nur ungeprüfte Hinweise | 0 (0 %) | 0 (0 %) |
-| nichts gefunden | 63 (22 %) | 7 (10 %) |
+| nur ungeprüfte Hinweise | 56 (19 %) | 0 (0 %) |
+| nichts gefunden | 7 (2 %) | 7 (10 %) |
 
 ### Belegte Aussagen (Standorte ohne eigene Quelle)
 
@@ -77,26 +77,26 @@ Sammler: manual 117, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 
 | Land | Standorte | belegt | nur Kontext | nur Hinweise | nichts |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| DE | 50 | 41 | 3 | 0 | 6 |
-| JP | 16 | 12 | 1 | 0 | 3 |
+| DE | 50 | 41 | 3 | 4 | 2 |
+| JP | 16 | 12 | 1 | 3 | 0 |
 | GB | 13 | 13 | 0 | 0 | 0 |
-| IT | 13 | 7 | 3 | 0 | 3 |
+| IT | 13 | 7 | 3 | 2 | 1 |
 | FR | 12 | 10 | 2 | 0 | 0 |
-| KR | 11 | 9 | 1 | 0 | 1 |
-| SE | 11 | 9 | 0 | 0 | 2 |
-| PL | 10 | 6 | 1 | 0 | 3 |
-| US | 10 | 7 | 2 | 0 | 1 |
-| CO | 8 | 7 | 0 | 0 | 1 |
-| AF | 7 | 0 | 3 | 0 | 4 |
+| KR | 11 | 9 | 1 | 1 | 0 |
+| SE | 11 | 9 | 0 | 2 | 0 |
+| PL | 10 | 6 | 1 | 1 | 2 |
+| US | 10 | 7 | 2 | 1 | 0 |
+| CO | 8 | 7 | 0 | 1 | 0 |
+| AF | 7 | 0 | 3 | 4 | 0 |
 | AU | 7 | 7 | 0 | 0 | 0 |
-| NL | 6 | 3 | 0 | 0 | 3 |
+| NL | 6 | 3 | 0 | 3 | 0 |
 | BE | 5 | 5 | 0 | 0 | 0 |
-| DJ | 5 | 3 | 1 | 0 | 1 |
-| PK | 5 | 4 | 0 | 0 | 1 |
+| DJ | 5 | 3 | 1 | 1 | 0 |
+| PK | 5 | 4 | 0 | 1 | 0 |
 | SY | 5 | 3 | 1 | 0 | 1 |
 | BG | 4 | 4 | 0 | 0 | 0 |
-| EE | 4 | 3 | 0 | 0 | 1 |
-| RO | 4 | 3 | 0 | 0 | 1 |
+| EE | 4 | 3 | 0 | 1 | 0 |
+| RO | 4 | 3 | 0 | 1 | 0 |
 
 Weitere 54 Länder mit weniger als 4 solchen Standorten: 85 Standorte, davon 43 belegt.
 
@@ -106,12 +106,12 @@ Weitere 54 Länder mit weniger als 4 solchen Standorten: 85 Standorte, davon 43 
 | --- | ---: |
 | BSR-FY2023-Treffer | 153 |
 | BSR nur FY2019 (Statusfrage) | 2 |
-| Wikidata-Objekt gefunden | 0 |
-| Wikidata-Position > 2 km entfernt | 0 |
-| Wikidata: Schließungs-/Auflösungsdatum | 0 |
-| OSM: militärisches Objekt ≤ 1 km | 0 |
-| OSM: militärisches Objekt 1–3 km | 0 |
-| OSM: nichts im Umkreis von 3 km | 0 |
+| Wikidata-Objekt gefunden | 265 |
+| Wikidata-Position > 2 km entfernt | 102 |
+| Wikidata: Schließungs-/Auflösungsdatum | 10 |
+| OSM: militärisches Objekt ≤ 1 km | 110 |
+| OSM: militärisches Objekt 1–3 km | 17 |
+| OSM: nichts im Umkreis von 3 km | 14 |
 
 ### Gefundene Widersprüche (14 Standorte)
 
@@ -185,6 +185,36 @@ Viele Standorte sind **keine Basen im engeren Sinn**: Zugangsrechte aus Abkommen
 - **Gut belegbar:** US-Standorte in Europa, Japan, Korea (BSR, army.mil/DVIDS); britische und französische Überseestandorte (gov.uk, defense.gouv.fr); Abkommensorte (Vertragstexte).
 - **Schwer belegbar:** Afrika (Ouagadougou, Bamako, Windhoek, Pemba, Bujumbura, Gabun, Kap Verde), Südamerika (Arauca, Iquitos, Paraguay), Südchinesisches Meer (Pratas, Second Thomas Shoal) und Fernmeldeanlagen in Deutschland (Rummelsberg, Eichbuck, Oberauerbach). Hier gibt es oft nur Einzelberichte oder gar nichts Abrufbares.
 - **Bewegungsquellen:** frieden-und-zukunft.de und der AK gegen bewaffnete Drohnen (drohnen.frieden-und-zukunft.de) liefern für die gesuchten deutschen Fernmeldeanlagen keine zusätzlichen Belege; sie verweisen meist auf visualbases.org selbst. Als eigenständiger Beleg eignen sie sich daher hier nicht.
+
+### 3.5 Hinweise aus den automatischen Prüfungen (Wikidata, OSM)
+
+Diese Hinweise sind **keine Belege**, sondern Prüfaufträge. Geodaten belegen höchstens die Lage oder den Status, nie die Stationierungsnation.
+
+**Wikidata nennt ein Schließungs- oder Auflösungsdatum** (Statusfrage, noch nicht von Hand geprüft):
+
+| Standort | Wikidata | Einordnung |
+|---|---|---|
+| Naval Air Station Argentia | 1994 | NAS geschlossen; der BSR FY2023 führt aber noch eine Navy-Liegenschaft „Argentia Newfoundland“ → Restliegenschaft prüfen |
+| Inezgane (Marokko) | 1991 | als Flughafen aufgelöst → ob es noch militärisch genutzt wird, ist offen |
+| Nurmsi (Estland) | 1990 | sowjetischer Flugplatz aufgelöst → heutige Nutzung (Übungen der NATO?) offen |
+| Bizerte-Sidi Ahmed (Tunesien) | 1963 | Ende der französischen Nutzung; die im Datensatz genannte US-Präsenz ist unbelegt |
+| RAF Bicester | 1976 | RAF-Station geschlossen; der BSR FY2023 führt noch „RAF Bicester“ als US-Liegenschaft |
+| Johnston Atoll | 2005 | bestätigt den Befund aus 3.2 (nur noch Liegenschaft) |
+| Del Din (Vicenza), Baumholder, Kiel, RAF Digby | – | Datum gehört zu einem anderen Objekt (früherer Flughafen Dal Molin, Einheit, Flugfeld) – kein Statusproblem |
+
+**Positionsabweichung zu Wikidata über 10 km:** 29 Standorte. Die meisten sind falsche Zuordnungen des Wikipedia-Links: Der Link führt zu einem Land, einer Stadt oder Insel, nicht zur Anlage (z. B. Niamey → Niger, Camp Castor → Mali, Kiruna → Stadt). Bei Anlagen-Objekten deuten fünf Fälle auf eine **falsche Position im Datensatz** hin. Sie sind zur Prüfung vorgemerkt, Korrekturvorschläge kommen erst nach Entscheidung 6 der Roadmap:
+
+| Standort | Abweichung | Hinweis |
+|---|---|---|
+| Creech AFB (Nevada) | 26 km | Datensatz liegt östlich von Indian Springs; Wikidata am Flugfeld |
+| Muwaffaq Salti AB (Jordanien) | 17 km | Datensatz östlich von Azraq; Wikidata am Flugfeld |
+| USAG Humphreys (Korea) | 16 km | Datensatz nahe Osan; Wikidata in Pyeongtaek |
+| Jungle Warfare Training Center (Okinawa) | 18 km | Datensatz an der Ostküste; Wikidata im Norden bei Kunigami/Higashi |
+| NavComm Station Harold E. Holt (Exmouth) | 14 km | Datensatz im Exmouth Gulf; OSM findet im Umkreis von 3 km nichts |
+
+**OpenStreetMap:** Bisher sind 72 Standorte geprüft (51 mit militärischem Objekt im Umkreis von 1 km, 13 im Umkreis von 1–3 km, 8 ohne Fund). Overpass erlaubt pro Lauf nur rund 70 Abfragen. Der Workflow arbeitet deshalb inkrementell, und monatliche Läufe ergänzen den Rest (Roadmap P1-11).
+
+**Ungeprüfte Hinweise:** 4416 Links aus den Einzelnachweisen der Wikipedia-Artikel und den offiziellen Websites aus Wikidata, zu 279 Standorten (`candidates.json`, nach Quellenart sortiert). Sie sind der Ausgangspunkt für die weitere Handprüfung der 63 offenen Fälle.
 
 ## 4. Empfehlungen
 

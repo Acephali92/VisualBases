@@ -6,6 +6,9 @@ name: Recherche
 # sie werden erst nach Durchsicht in die Anwendung übernommen (docs/research/SOURCE-RESEARCH.md).
 on:
   workflow_dispatch:
+  # monatlich: neue BSR-/Wikidata-Stände, OSM-Prüfung wird schrittweise vollständig (Roadmap P1-11)
+  schedule:
+    - cron: '17 3 3 * *'
   push:
     branches: ['claude/**']
     paths:

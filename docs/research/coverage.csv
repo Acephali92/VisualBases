@@ -1,366 +1,366 @@
 id,name,country,nations,dataset_sources,wikipedia,level,verified_claims,manual_sources,contradicts,context,unreviewed_sources,candidates,bsr_fy2023,bsr_fy2019,wikidata,wikidata_km,wikidata_dissolved,osm,osm_km,issues
-abu-dhabi-uae-2,Abu Dhabi,AE,FR GB US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-al-dhafra-air-base,Abu Dhabi: Al Dhafra Air Base,AE,FR US,1,yes,candidates,,0,0,0,1,0,Al Dhafra Air Base,,,,,,,
-al-minhad-ab,Dubai: Al Minhad Air Base,AE,GB,0,yes,none,,0,0,0,0,0,,,,,,,,
-bagram-air-base,Bagram Air Base,AF,US,0,yes,context,,1,1,0,0,0,,,,,,,,contradicts (status): Status: Bagram has not been a US base since July 2021 (historical).
-camp-marmal-john-pratt,"Camp Marmal / John Pratt, Masar-i Sharif",AF,US,0,yes,context,,1,1,0,0,0,,,,,,,,contradicts (status): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.
-camp-shaheen-camp-mike-spann,"Camp Shaheen / Camp Mike Spann, Masar-i Sharif",AF,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-herat-unnamed,Herat Unnamed,AF,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-kabul-isaf-headquarters,Kabul ISAF,AF,US,0,no,context,,1,1,0,0,0,,,,,,,,contradicts (status): Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).
-kandahar-airfield,Kandahar Airfield,AF,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-masar-i-sharif-communnity,Masar-i Sharif Communnity,AF,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-durres-albania,Durres,AL,US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,,,
-kucova-albania,Kucova,AL,,0,yes,verified,presence facility,1,0,0,0,0,,,,,,,,
-ushuaia,Isla Grande de Tierra del Fuego: Ushuaia Base Naval,AR,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-darwin-raaf-base,Darwin RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,Royal Australian Air Force Base Darwin,,,,,,,
-east-chapman-satellite-station,East Chapman Australian Defence Satellite Comm. Station,AU,US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-ghan-joint-defence-pine-gap,"Ghan Joint Defence Facility, Pine Gap",AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-learmonth-raaf-base,Learmonth RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,US,0,yes,verified,presence nation,1,0,0,0,0,NAVCOMMSTA H E Holt Exmouth,NAVCOMMSTA H E Holt Exmouth,,,,,,
-robertson-barracks,"Robertson Barracks, Northern Territory",AU,US,0,yes,verified,presence nation activity,1,0,0,0,0,,,,,,,,
-tindal-raaf-base,Tindal RAAF Base,AU,US,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-chievres-ab,Chievres Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,0,Chievres AB,Chievres AB,,,,,,
-kleine-brogel-air-base,Kleine Brogel Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,0,Kleine Brogel AB,Kleine Brogel AB,,,,,,
-kleine-brogel-nuclear,Kleine Brogel Nuclear Weapons Depot,BE,,0,no,verified,presence nation facility,2,0,1,0,0,Kleine Brogel AB,,,,,,,
-shape-mons,"Supreme HQ Allied Powers Europe, Mons",BE,US,0,yes,verified,presence nation,1,0,0,0,0,Shape Headquarters,,,,,,,
-zutendaal-ab-belgium,Zutendaal Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,0,Zutendaal,Zutendaal,,,,,,
-ouagadougou,Ouagadougou,BF,US,0,no,none,,0,0,0,0,0,,,,,,,,
-aitos-bulgaria,Aitos Logistic Center,BG,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-bezmer-air-base,Bezmer Air Base,BG,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-graf-ignatievo-ab-bulgaria,Graf Ignatievo Air Base,BG,US,0,yes,verified,presence nation,1,0,0,1,0,Graf Ignatievo Air Base,,,,,,,
-novo-selo,Novo Selo,BG,US,0,no,verified,presence nation,1,0,0,1,0,Novo Selo Training Area,Novo Selo Training Area,,,,,,
-bahrain,Bahrain,BH,US,2,yes,none,,0,0,0,0,0,,,,,,,,
-nsa-coast-guard-bahrain,"Naval Support Activity, US Coast Guard",BH,US,0,yes,verified,presence nation,1,0,0,0,0,NSA Bahrain,,,,,,,
-shaikh-isa-air-base-bahrain,Shaikh Isa Air Base,BH,US,0,yes,verified,presence nation,1,0,0,0,0,Sheik Isa,,,,,,,
-bujumbura-burundi,Bujumbura (Burundi),BI,FR US,0,yes,none,,0,0,0,0,0,,,,,,,,
-bfb-garrison-seria,Seria: BFB Garrison,BN,GB,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-autec-bahamas,AUTEC Laboratory,BS,US,0,yes,verified,presence nation,1,0,0,0,0,AUTEC Main Base,,,,,,,
-bdf-glen-valley-botswana,Glen Valley Gaborone (Botswana),BW,,0,yes,none,,0,0,0,0,0,,,,,,,,
-nas-argentia-newfoundland,Naval Air Station Argentia Newfoundland,CA,US,0,yes,verified,presence nation,1,0,0,0,0,Argentia Newfoundland,Argentia Newfoundland,,,,,,marked for review on visualbases.org
-air-force-301-cameroon,Air Force Base 301,CM,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-salak-cameroon,Salak,CM,FR US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,,,
-pratas-islands-south-china-sea,"South China Sea, Pratas-Islands",CN,CN,0,yes,none,,0,0,0,0,0,,,,,,,,
-money-island-south-chinese-sea,"South Chinese Sea, Money Island",CN,CN,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-pattle-island,"South Chinese Sea, Pattle Island",CN,CN,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-apiay-ab,Apiay Air Base,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-arauca,Arauca,CO,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-cartagena,Cartagena,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
-bahia-malaga,Ladriller: Base militar Bahía Málaga,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-fuerte-militar-larandia,Larandia: Fuerte Militar,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-malambo-ab,Malambo: Comando Aereo de Combate No. 3,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-palanquero-ab,Palanquero Air Base,CO,US,0,yes,verified,presence nation,2,0,0,0,0,,,,,,,,
-fuerte-militar-tolemaida,Tolemaida: Fuerte Militar,CO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-guantanamo-bay-naval-base,Guantanamo Bay Naval Base,CU,US,1,yes,candidates,,0,0,0,1,0,NS Guantanamo Bay,NS Guantanamo Bay,,,,,,
-gitmo-guantanamo-bay,The U.S. Military Base in Cuba: „GITMO“ Guantánamo Bay,CU,,0,no,verified,presence nation,1,0,0,0,0,NS Guantanamo Bay,NS Guantanamo Bay,,,,,,
-telecom-cape-verde,Cap Verde: Unnamed Telecommunications Station,CV,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-ayios-nikolaos-station,Ayios Nikolaos Station,CY,GB,1,yes,none,,0,0,0,0,0,,,,,,,,
-dhekelia-military-camp,Dhekelia Military Camp,CY,GB,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-raf-akrotiri,RAF Akrotiri,CY,GB,0,yes,verified,presence nation,1,0,0,0,0,Raf Akrotiri,,,,,,,
-raf-troodos,RAF Troodos,CY,GB,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-altmark-training-area,Altmark: Truppenübungsplatz,DE,,1,yes,none,,0,0,0,0,0,,,,,,,,
-freihoelser-training-area-amberg,Amberg: Freihoelser Training Area,DE,US,0,no,verified,presence nation,1,0,0,0,0,Freihoelser Tng Area,Freihoelser Tng Area,,,,,,
-barton-barracks-ansbach,Ansbach: Barton Barracks,DE,US,0,no,verified,presence nation,1,0,0,0,0,Barton Barracks,Barton Barracks,,,,,,
-bismarck-kaserne-ansbach,Ansbach: Bismarck-Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-katterbach-kaserne-ansbach,Ansbach: Katterbach Kaserne,DE,US,1,yes,candidates,,0,0,0,1,0,Katterbach Kaserne,Katterbach Kaserne,,,,,,
-shipton-kaserne-ansbach,Ansbach: Shipton Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Shipton Kaserne,Shipton Kaserne,,,,,,
-baumholder-army-health-clinic,Baumholder Army Health Clinic,DE,US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-baumholder-community,Baumholder Military Community,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Baumholder Airfield,Baumholder Qm Area,,,,,,
-baumholder-training-area,Baumholder Training Area,DE,US,1,yes,candidates,,0,0,0,1,0,Baumholder Qm Area,Baumholder Qm Area,,,,,,
-ausenfeuerstellung-205-baumholder,Baumholder: Außenfeuerstellung 205,DE,US,0,no,context,,1,0,1,0,0,Pfeffelbach Works,,,,,,,
-smith-barracks-baumholder,Baumholder: Smith Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Smith Barracks,Smith Barracks,,,,,,
-walter-wetzel-kaserne-baumholder,Baumholder: Walter Wetzel Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Wetzel Kaserne,Wetzel Kaserne,,,,,,
-deu-bellheim,Bellheim: NATO fuel depot,DE,,1,yes,none,,0,0,0,0,0,,,,,,,,
-bergen-training-area,Bergen Training Area,DE,,0,yes,verified,presence facility,1,0,0,0,0,,,,,,,,
-conversion-area-bitburg,Bitburg: Conversion area / former Air Base,DE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-nato-pipeline-station-bitburg,Bitburg: NATO-Pipeline Fuel Depot,DE,,0,yes,verified,presence activity,1,0,0,0,0,,,,,,,,
-bremerhaven,Bremerhaven: Transport Company,DE,US,1,no,none,,0,0,0,0,0,,,,,,,,
-bruchmuhlbach-miesau-us-army-depot,Bruchmühlbach-Miesau US Army Depot,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Miesau Ammo Depot,,,,,,,
-buechel-nato-air-base,Büchel NATO Air Base,DE,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-darmstadt-training-center,Darmstadt Training Center,DE,US,1,no,candidates,,0,0,0,1,0,Darmstadt Training Center,Darmstadt Training Center,,,,,,
-darmstadt-griesheim-dagger-complex,Darmstadt-Griesheim: Dagger Complex,DE,US,0,yes,verified,presence nation activity,1,0,0,0,0,,,,,,,,
-dulmen-tower-barracks,Dülmen: Tower Barracks,DE,US,1,yes,candidates,,0,0,0,1,0,Duelmen Tower Barracks,Duelmen Tower Barracks,,,,,,
-artillery-kaserne-garmisch-partenkirchen,Garmisch-Partenkirchen: Artillery Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Artillery Kaserne,Artillery Kaserne,,,,,,
-geilenkirchen-nato-air-base,Geilenkirchen NATO Air Base,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Geilenkirchen AB,,,,,,,
-germersheim-us-army-depot,Germersheim US Army Depot,DE,US,1,no,candidates,,0,0,0,1,0,Germersheim Army Depot,Germersheim Army Depot,,,,,,
-grafenwoehr-training-area,Grafenwöhr Training Area,DE,US,1,yes,candidates,,0,0,0,1,0,Grafenwoehr Training Area,Grafenwoehr Training Area,,,,,,
-gruenstadt-aafes-fac,Gruenstadt AAFES Fac,DE,US,0,no,verified,presence nation,1,0,0,0,0,Gruenstadt AAFES Fac,Gruenstadt AAFES Fac,,,,,,
-frankfurt-hahn,"Hahn Airport, Hunsrück",DE,US,2,yes,none,,0,0,0,0,0,,,,,,,,
-hohenfels-training-area,Hohenfels Training Area,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Hohenfels Training Area,Hohenfels Training Area,,,,,,
-oberdachstetten-training-area,Illesheim: Oberdachstetten Training Area,DE,US,0,no,verified,presence nation,1,0,0,0,0,Oberdachstetten Training Area,Oberdachstetten Training Area,,,,,,
-stock-barracks-illesheim,Illesheim: Stock Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Storck Barracks,,,,,,,
-eichbuck-illesheim,Illesheim: Unnamed Telecommunication Eichbuck,DE,US,0,no,none,,0,0,0,0,0,,,,,,,,
-mccully-barracks-wackernheim,Ingelheim: McCully Barracks Wackernheim,DE,US,0,no,verified,presence nation,1,0,0,0,0,McCully Barracks,McCully Barracks,,,,,,
-kaiserslautern-army-depot,Kaiserslautern Army Depot,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kaiserslautern Army Depot,Kaiserslautern Army Depot,,,,,,
-de-kl-warrior-preparation-center,Kaiserslautern-Einsiedlehof: Warrior Preparation Center,DE,US,0,no,verified,presence nation status,1,0,0,0,0,,,,,,,,
-warrior-preparation-center-einsiedlerhof,Kaiserslautern-Einsiedlerhof: Warrior Preparation Center,DE,US,0,no,verified,presence nation status,1,0,0,0,0,,,,,,,,
-kapaun-air-station-kaiserslautern,Kaiserslautern-Vogelweh: Kapaun Air Station,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kapaun Administration Annex,Kapaun Administration Annex,,,,,,
-daenner-kaserne,Kaiserslautern: Daenner Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Daenner Kaserne,Daenner Kaserne,,,,,,
-kleber-kaserne-kaiserslautern,Kaiserslautern: Kleber Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kleber Kaserne,Kleber Kaserne,,,,,,
-panzer-kaserne-kaiserslautern,Kaiserslautern: Panzer Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Panzer Kaserne,Panzer Kaserne,,,,,,
-pulaski-barracks-kaiserslautern,Kaiserslautern: Pulaski Barracks,DE,US,0,no,verified,presence nation,1,0,0,0,0,Pulaski Barracks,Pulaski Barracks,,,,,,
-rhine-ordnance-barracks-vogelweh,Kaiserslautern: Rhine Ordnance Barracks Vogelweh,DE,US,0,no,verified,presence nation,1,0,0,0,0,Rhine Ordnance Barracks,Rhine Ordnance Barracks,,,,,,
-kalkar-von-seydlitz-kaserne,Kalkar: von-Seydlitz-Kaserne,DE,,3,no,none,,0,0,0,0,0,,,,,,,,
-tirpitzhafen-kiel,Kiel – Eckernförde,DE,,0,yes,none,,0,0,0,0,0,,,,,,,,
-bann-communications-station,Landstuhl: Bann Communications Station,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Bann Communications Station,Bann Communications Station,,,,,,
-bann-communications-station-2,Landstuhl: Bann Communications Station 2,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Bann Communications Station  2,Bann Communications Station 2,,,,,,
-satcom-landstuhl,Landstuhl: Enterprise SATCOM Gateway,DE,US,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-landstuhl-us-hospital,Landstuhl: US-Hospital,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Landstuhl Hospital,Landstuhl Hospital,,,,,,
-egelsbach-transmitter-fac,Langen: Egelsbach Transmitter Fac,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Egelsbach Transmitter Fac,Egelsbach Transmitter Fac,,,,,,
-airport-leipzig-halle,Leipzig / Halle Airport,DE,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-coleman-barracks-mannheim,Mannheim: Coleman Worksite,DE,US,1,yes,candidates,,0,0,0,1,0,Coleman Barracks,Coleman Barracks,,,,,,
-munster-training-area,Munster training area,DE,,0,yes,verified,presence facility,1,0,0,0,0,,,,,,,,
-oberauerbach-polygone,Oberauerbach: Communication Site Polygone,DE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-oberlausitz-training-area,Oberlausitz Training Area,DE,,0,yes,verified,presence activity,1,0,0,0,0,,,,,,,,
-husterhoeh-polygone,Pirmasens: Husterhoeh Communication Site,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Husterhoeh Communication Site,Husterhoeh Communication Site,,,,,,
-medical-material-center-europe,Pirmasens: US Army Medical Material Center Europe,DE,US,0,yes,context,,1,1,0,0,0,,,,,,,,contradicts (status/position): Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.
-hospital-weilerbach,Ramstein / Weilerbach Rhine Ordnance Medical Center,DE,US,0,yes,verified,presence nation facility status,1,0,0,0,0,,,,,,,,
-ramstein-air-base,Ramstein Air Base,DE,US,3,yes,candidates,,0,0,0,1,0,Ramstein AB,Ramstein AB,,,,,,
-satellite-ground-system-ramstein,Ramstein: Distributed Command Ground System,DE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-aircom,Ramstein: EIAMDC European Integrated Air and Missile Defence Center,DE,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-marinestutzpunkt-hohe-dune-rostock,Rostock: Marinestützpunkt Hohe Düne,DE,,0,yes,context,,1,0,1,0,0,,,,,,,,marked for review on visualbases.org
-radio-relay-site-rummelsberg,Rummelsberg: Radio Relay Site,DE,US,0,no,none,,0,0,0,0,0,,,,,,,,
-sembach-kaserne,Sembach Kaserne,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Sembach Admin Annex,Sembach Admin Annex,,,,,,
-spangdahlem-air-base,Spangdahlem Air Base,DE,US,1,yes,candidates,,0,0,0,1,0,Spangdahlem AB,Spangdahlem AB,,,,,,
-echterdingen-airfield,Stuttgart: Echterdingen Airfield,DE,US,0,no,verified,presence nation,1,0,0,0,0,Echterdingen Airfield,Echterdingen Airfield,,,,,,
-kelley-barracks-stuttgart,Stuttgart: Kelley Barracks,DE,US,3,yes,candidates,,0,0,0,1,0,Kelley Barracks,Kelley Barracks,,,,,,
-boblingen-panzerkaserne,Stuttgart: Panzerkaserne Böblingen,DE,US,1,yes,candidates,,0,0,0,1,0,Panzer Kaserne,Panzer Kaserne,,,,,,
-patch-barracks-stuttgart,Stuttgart: Patch Barracks,DE,US,1,yes,candidates,,0,0,0,1,0,Patch Barracks,Patch Barracks,,,,,,
-robinson-barracks-stuttgart,Stuttgart: Robinson Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,0,Robinson Barracks,Robinson Barracks,,,,,,
-usag-ansbach,U.S. Army Garrison Ansbach,DE,US,1,no,candidates,,0,0,0,1,0,Barton Barracks,Oberdachstetten Training Area,,,,,,
-kaiserslautern-ramstein-community,U.S. Army Garrison Rheinland-Pfalz Kaiserslautern,DE,US,4,yes,none,,0,0,0,0,0,,,,,,,,
-u-s-army-garrison-stuttgart,U.S. Army Garrison Stuttgart,DE,US,4,no,candidates,,0,0,0,1,0,Stuttgart Admin Facility,Stuttgart Dependent School,,,,,,
-wiesbaden-military-community,U.S. Army Garrison Wiesbaden,DE,US,1,no,candidates,,0,0,0,1,0,Wiesbaden Army Airfield,Wiesbaden Army Airfield,,,,,,
-wilhelmsburg-barracks-ulm,Ulm: Wilhelmsburg Barracks,DE,,0,yes,verified,presence facility,1,0,0,0,0,,,,,,,,
-usag-bavaria,USAG Bavaria – Grafenwoehr/Vilseck Community,DE,US,2,no,none,,0,0,0,0,0,,,,,,,,
-sennelager,"Westfalen Garrison / Training Area, Paderborn-Sennelager",DE,GB,1,yes,none,,0,0,0,0,0,,,,,,,,
-deu-wiesbaden-mainz-kastel,Wiesbaden Mainz-Kastel Storage Station,DE,US,1,yes,candidates,,0,0,0,1,0,Mainz-Kastel Station,Mainz-Kastel Station,,,,,,
-wiesbaden-erbenheim-army-airfield,Wiesbaden: Lucius D. Clay Kaserne (Army Airfield Erbenheim),DE,US,2,yes,none,,0,0,0,0,0,,,,,,,,
-base-aerienne-188-djibouti,Base aérienne 188 Colonel Émile Massart,DJ,US,0,no,context,,1,1,0,0,0,,,,,,,,"contradicts (presence/nation): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier."
-base-aerienne-de-chabelley,Base Aerienne de Chabelley,DJ,FR US,0,yes,verified,presence nation,1,0,0,0,0,Csl Chabelley,,,,,,,
-us-camp-lemonnier,Camp Lemonnier,DJ,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Lemonier Djibouti,,,,,,,
-chinese-naval-base,Chinese Naval Base,DJ,CN,0,yes,verified,presence nation facility status,1,0,0,0,0,,,,,,,,
-armed-forces-djibouti,Djibouti / Dschibuti,DJ,CN FR JP US,1,yes,none,,0,0,0,0,0,,,,,,,,
-jsdf-base-djibouti,Japan Self-Defense Force Base,DJ,JP,0,yes,none,,0,0,0,0,0,,,,,,,,
-boufarik-base,Boufarik Military Base (Algeria),DZ,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-amari-air-base,Ämari Air Base,EE,US,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-nurmsi-airfield-estonia,Nurmsi Airfield (Estonia / Estland),EE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-taara-estonia,Taara / Võru (Estonia / Estland),EE,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-tapa-army-base,Tapa Army Base,EE,GB US,0,yes,verified,presence nation,2,0,1,0,0,,,,,,,,
-tapa-training-area,Tapa Training Area,EE,GB US,0,yes,verified,presence nation,2,0,1,0,0,,,,,,,,
-cairo-west-ab,Cairo West Air Base,EG,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-moron-air-base-spain,"Moron Air Base, Andalusia",ES,US,0,yes,verified,presence nation,1,0,0,0,0,Moron AB,,,,,,,
-naval-station-rota,Naval Station Rota,ES,US,0,yes,verified,presence nation,1,0,0,0,0,NS Rota,NS Rota,,,,,,
+abu-dhabi-uae-2,Abu Dhabi,AE,FR GB US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,none,,OSM: no military feature within 3 km
+al-dhafra-air-base,Abu Dhabi: Al Dhafra Air Base,AE,FR US,1,yes,candidates,,0,0,0,1,21,Al Dhafra Air Base,,Q2886453,0.5,,confirmed,0.81,
+al-minhad-ab,Dubai: Al Minhad Air Base,AE,GB,0,yes,candidates,,0,0,0,0,11,,,Q1934988,3.4,,confirmed,0,Wikidata position 3.4 km away
+bagram-air-base,Bagram Air Base,AF,US,0,yes,context,,1,1,0,0,20,,,Q800126,1,,confirmed,0,contradicts (status): Status: Bagram has not been a US base since July 2021 (historical).
+camp-marmal-john-pratt,"Camp Marmal / John Pratt, Masar-i Sharif",AF,US,0,yes,context,,1,1,0,0,10,,,Q470684,2.8,,confirmed,0.53,contradicts (status): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation. | Wikidata position 2.8 km away
+camp-shaheen-camp-mike-spann,"Camp Shaheen / Camp Mike Spann, Masar-i Sharif",AF,US,0,yes,candidates,,0,0,0,0,14,,,Q29546985,12.3,,near,1.99,Wikidata position 12.3 km away
+herat-unnamed,Herat Unnamed,AF,US,0,yes,candidates,,0,0,0,0,14,,,,,,near,1.38,
+kabul-isaf-headquarters,Kabul ISAF,AF,US,0,no,context,,1,1,0,0,0,,,,,,confirmed,0.3,contradicts (status): Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).
+kandahar-airfield,Kandahar Airfield,AF,US,0,yes,candidates,,0,0,0,0,21,,,Q33156,1.7,,confirmed,0.16,
+masar-i-sharif-communnity,Masar-i Sharif Communnity,AF,US,0,yes,candidates,,0,0,0,0,20,,,Q130469,4.8,,none,,Wikidata position 4.8 km away | OSM: no military feature within 3 km
+durres-albania,Durres,AL,US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,confirmed,0.77,
+kucova-albania,Kucova,AL,,0,yes,verified,presence facility,1,0,0,0,16,,,Q18774,3.1,,confirmed,0.46,Wikidata position 3.1 km away
+ushuaia,Isla Grande de Tierra del Fuego: Ushuaia Base Naval,AR,US,0,yes,candidates,,0,0,0,0,21,,,Q44254,1.7,,confirmed,0.65,
+darwin-raaf-base,Darwin RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,Royal Australian Air Force Base Darwin,,,,,near,5.22,
+east-chapman-satellite-station,East Chapman Australian Defence Satellite Comm. Station,AU,US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,confirmed,0.42,
+ghan-joint-defence-pine-gap,"Ghan Joint Defence Facility, Pine Gap",AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.38,
+learmonth-raaf-base,Learmonth RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,near,1.76,
+naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,US,0,yes,verified,presence nation,1,0,0,0,20,NAVCOMMSTA H E Holt Exmouth,NAVCOMMSTA H E Holt Exmouth,Q1898404,14.2,,none,,Wikidata position 14.2 km away | OSM: no military feature within 3 km
+robertson-barracks,"Robertson Barracks, Northern Territory",AU,US,0,yes,verified,presence nation activity,1,0,0,0,10,,,Q7352085,9.5,,near,5.78,Wikidata position 9.5 km away
+tindal-raaf-base,Tindal RAAF Base,AU,US,0,yes,verified,presence nation facility,1,0,0,0,7,,,Q1551495,0.5,,confirmed,0.63,
+chievres-ab,Chievres Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,16,Chievres AB,Chievres AB,Q43363,0.6,,confirmed,0.76,
+kleine-brogel-air-base,Kleine Brogel Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,21,Kleine Brogel AB,Kleine Brogel AB,Q1857706,0.9,,confirmed,0.79,
+kleine-brogel-nuclear,Kleine Brogel Nuclear Weapons Depot,BE,,0,no,verified,presence nation facility,2,0,1,0,0,Kleine Brogel AB,,,,,confirmed,0.06,
+shape-mons,"Supreme HQ Allied Powers Europe, Mons",BE,US,0,yes,verified,presence nation,1,0,0,0,21,Shape Headquarters,,Q1432908,0.8,,confirmed,0.21,
+zutendaal-ab-belgium,Zutendaal Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,8,Zutendaal,Zutendaal,Q8075444,0.3,,confirmed,0.2,
+ouagadougou,Ouagadougou,BF,US,0,no,none,,0,0,0,0,0,,,,,,none,,OSM: no military feature within 3 km
+aitos-bulgaria,Aitos Logistic Center,BG,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.93,
+bezmer-air-base,Bezmer Air Base,BG,US,0,yes,verified,presence nation,1,0,0,0,10,,,Q4900372,6.1,,none,,Wikidata position 6.1 km away | OSM: no military feature within 3 km
+graf-ignatievo-ab-bulgaria,Graf Ignatievo Air Base,BG,US,0,yes,verified,presence nation,1,0,0,1,12,Graf Ignatievo Air Base,,Q3914569,0.3,,confirmed,0,
+novo-selo,Novo Selo,BG,US,0,no,verified,presence nation,1,0,0,1,0,Novo Selo Training Area,Novo Selo Training Area,,,,confirmed,0.5,
+bahrain,Bahrain,BH,US,2,yes,candidates,,0,0,0,0,20,,,Q788615,,,none,,OSM: no military feature within 3 km
+nsa-coast-guard-bahrain,"Naval Support Activity, US Coast Guard",BH,US,0,yes,verified,presence nation,1,0,0,0,20,NSA Bahrain,,Q6981953,1.9,,confirmed,0.61,
+shaikh-isa-air-base-bahrain,Shaikh Isa Air Base,BH,US,0,yes,verified,presence nation,1,0,0,0,4,Sheik Isa,,Q82928,4.6,,near,4.54,Wikidata position 4.6 km away
+bujumbura-burundi,Bujumbura (Burundi),BI,FR US,0,yes,candidates,,0,0,0,0,21,,,Q3854,7.1,,near,2.68,Wikidata position 7.1 km away
+bfb-garrison-seria,Seria: BFB Garrison,BN,GB,0,yes,verified,presence nation,1,0,0,0,17,,,Q2925738,0.3,,confirmed,0.27,
+autec-bahamas,AUTEC Laboratory,BS,US,0,yes,verified,presence nation,1,0,0,0,10,AUTEC Main Base,,Q4816578,,,confirmed,0.51,
+bdf-glen-valley-botswana,Glen Valley Gaborone (Botswana),BW,,0,yes,candidates,,0,0,0,0,21,,,Q3919,9.7,,confirmed,0.79,Wikidata position 9.7 km away
+nas-argentia-newfoundland,Naval Air Station Argentia Newfoundland,CA,US,0,yes,verified,presence nation,1,0,0,0,16,Argentia Newfoundland,Argentia Newfoundland,Q3017610,0.9,1994,confirmed,0.66,Wikidata: closed/dissolved 1994 | marked for review on visualbases.org
+air-force-301-cameroon,Air Force Base 301,CM,US,0,yes,candidates,,0,0,0,0,5,,,Q55606491,,,confirmed,0.72,
+salak-cameroon,Salak,CM,FR US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,near,2.32,
+pratas-islands-south-china-sea,"South China Sea, Pratas-Islands",CN,CN,0,yes,candidates,,0,0,0,0,20,,,Q11103595,0.2,,confirmed,0.55,
+money-island-south-chinese-sea,"South Chinese Sea, Money Island",CN,CN,0,yes,verified,presence nation facility,1,0,0,0,5,,,Q1098039,7.4,,none,,Wikidata position 7.4 km away | OSM: no military feature within 3 km
+pattle-island,"South Chinese Sea, Pattle Island",CN,CN,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,confirmed,0.23,
+apiay-ab,Apiay Air Base,CO,US,0,yes,verified,presence nation,1,0,0,0,10,,,Q5036722,0.4,,confirmed,0.42,
+arauca,Arauca,CO,US,0,yes,candidates,,0,0,0,0,21,,,Q626543,2.1,,confirmed,0.97,Wikidata position 2.1 km away
+cartagena,Cartagena,CO,US,0,yes,verified,presence nation,1,0,0,0,21,,,Q657461,18,,none,,Wikidata position 18 km away | OSM: no military feature within 3 km | marked for review on visualbases.org
+bahia-malaga,Ladriller: Base militar Bahía Málaga,CO,US,0,yes,verified,presence nation,1,0,0,0,20,,,Q1935172,,,near,2.53,
+fuerte-militar-larandia,Larandia: Fuerte Militar,CO,US,0,yes,verified,presence nation,1,0,0,0,8,,,Q5507213,1.2,,confirmed,0.28,
+malambo-ab,Malambo: Comando Aereo de Combate No. 3,CO,US,0,yes,verified,presence nation,1,0,0,0,10,,,Q568597,2.9,,confirmed,0.34,Wikidata position 2.9 km away
+palanquero-ab,Palanquero Air Base,CO,US,0,yes,verified,presence nation,2,0,0,0,20,,,Q1935172,,,confirmed,0.18,
+fuerte-militar-tolemaida,Tolemaida: Fuerte Militar,CO,US,0,yes,verified,presence nation,1,0,0,0,14,,,Q5309000,2.1,,near,1.55,Wikidata position 2.1 km away
+guantanamo-bay-naval-base,Guantanamo Bay Naval Base,CU,US,1,yes,candidates,,0,0,0,1,21,NS Guantanamo Bay,NS Guantanamo Bay,Q762570,1.7,,near,2.1,
+gitmo-guantanamo-bay,The U.S. Military Base in Cuba: „GITMO“ Guantánamo Bay,CU,,0,no,verified,presence nation,1,0,0,0,0,NS Guantanamo Bay,NS Guantanamo Bay,,,,confirmed,0.69,
+telecom-cape-verde,Cap Verde: Unnamed Telecommunications Station,CV,US,0,yes,candidates,,0,0,0,0,21,,,Q1011,218.7,,confirmed,0.16,Wikidata position 218.7 km away | marked for review on visualbases.org
+ayios-nikolaos-station,Ayios Nikolaos Station,CY,GB,1,yes,candidates,,0,0,0,0,16,,,Q81522,0.8,,confirmed,0.25,
+dhekelia-military-camp,Dhekelia Military Camp,CY,GB,0,yes,verified,presence nation,1,0,0,0,21,,,Q37362,82.2,,confirmed,0.33,Wikidata position 82.2 km away
+raf-akrotiri,RAF Akrotiri,CY,GB,0,yes,verified,presence nation,1,0,0,0,21,Raf Akrotiri,,Q60509,0,,confirmed,0.44,
+raf-troodos,RAF Troodos,CY,GB,0,yes,verified,presence nation,1,0,0,0,6,,,,,,confirmed,0.27,
+altmark-training-area,Altmark: Truppenübungsplatz,DE,,1,yes,candidates,,0,0,0,0,20,,,Q2456533,7.2,,near,1.62,Wikidata position 7.2 km away
+freihoelser-training-area-amberg,Amberg: Freihoelser Training Area,DE,US,0,no,verified,presence nation,1,0,0,0,0,Freihoelser Tng Area,Freihoelser Tng Area,,,,confirmed,0.74,
+barton-barracks-ansbach,Ansbach: Barton Barracks,DE,US,0,no,verified,presence nation,1,0,0,0,0,Barton Barracks,Barton Barracks,,,,confirmed,0.23,
+bismarck-kaserne-ansbach,Ansbach: Bismarck-Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.29,
+katterbach-kaserne-ansbach,Ansbach: Katterbach Kaserne,DE,US,1,yes,candidates,,0,0,0,1,12,Katterbach Kaserne,Katterbach Kaserne,Q1433462,0.6,,confirmed,0.37,
+shipton-kaserne-ansbach,Ansbach: Shipton Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Shipton Kaserne,Shipton Kaserne,,,,confirmed,0.16,
+baumholder-army-health-clinic,Baumholder Army Health Clinic,DE,US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,confirmed,0.09,
+baumholder-community,Baumholder Military Community,DE,US,0,yes,verified,presence nation,1,0,0,0,21,Baumholder Airfield,Baumholder Qm Area,Q541832,6,,confirmed,0.29,Wikidata position 6 km away
+baumholder-training-area,Baumholder Training Area,DE,US,1,yes,candidates,,0,0,0,1,20,Baumholder Qm Area,Baumholder Qm Area,Q811581,5.9,2020,confirmed,0.6,Wikidata: closed/dissolved 2020 | Wikidata position 5.9 km away
+ausenfeuerstellung-205-baumholder,Baumholder: Außenfeuerstellung 205,DE,US,0,no,context,,1,0,1,0,0,Pfeffelbach Works,,,,,confirmed,0.2,
+smith-barracks-baumholder,Baumholder: Smith Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,21,Smith Barracks,Smith Barracks,Q541832,1.3,,confirmed,0.27,
+walter-wetzel-kaserne-baumholder,Baumholder: Walter Wetzel Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Wetzel Kaserne,Wetzel Kaserne,,,,confirmed,0.21,
+deu-bellheim,Bellheim: NATO fuel depot,DE,,1,yes,candidates,,0,0,0,0,21,,,Q872940,,,confirmed,0.52,
+bergen-training-area,Bergen Training Area,DE,,0,yes,verified,presence facility,1,0,0,0,20,,,Q881967,4.3,,near,1.64,Wikidata position 4.3 km away
+conversion-area-bitburg,Bitburg: Conversion area / former Air Base,DE,US,0,yes,candidates,,0,0,0,0,21,,,Q323983,0.7,,confirmed,0.75,
+nato-pipeline-station-bitburg,Bitburg: NATO-Pipeline Fuel Depot,DE,,0,yes,verified,presence activity,1,0,0,0,2,,,Q2392845,0.3,,confirmed,0.39,
+bremerhaven,Bremerhaven: Transport Company,DE,US,1,no,none,,0,0,0,0,0,,,,,,confirmed,0.14,
+bruchmuhlbach-miesau-us-army-depot,Bruchmühlbach-Miesau US Army Depot,DE,US,0,yes,verified,presence nation,1,0,0,0,2,Miesau Ammo Depot,,Q1932177,0.4,,confirmed,0.59,
+buechel-nato-air-base,Büchel NATO Air Base,DE,US,1,yes,candidates,,0,0,0,0,20,,,Q320257,0.6,,confirmed,0.28,
+darmstadt-training-center,Darmstadt Training Center,DE,US,1,no,candidates,,0,0,0,1,0,Darmstadt Training Center,Darmstadt Training Center,,,,none,,OSM: no military feature within 3 km
+darmstadt-griesheim-dagger-complex,Darmstadt-Griesheim: Dagger Complex,DE,US,0,yes,verified,presence nation activity,1,0,0,0,20,,,Q14537410,0.6,,confirmed,0.35,
+dulmen-tower-barracks,Dülmen: Tower Barracks,DE,US,1,yes,candidates,,0,0,0,1,21,Duelmen Tower Barracks,Duelmen Tower Barracks,Q6910,2,,confirmed,0.21,
+artillery-kaserne-garmisch-partenkirchen,Garmisch-Partenkirchen: Artillery Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Artillery Kaserne,Artillery Kaserne,,,,confirmed,0.02,
+geilenkirchen-nato-air-base,Geilenkirchen NATO Air Base,DE,US,0,yes,verified,presence nation,1,0,0,0,20,Geilenkirchen AB,,Q329095,0.8,,confirmed,0.58,
+germersheim-us-army-depot,Germersheim US Army Depot,DE,US,1,no,candidates,,0,0,0,1,0,Germersheim Army Depot,Germersheim Army Depot,,,,confirmed,0.32,
+grafenwoehr-training-area,Grafenwöhr Training Area,DE,US,1,yes,candidates,,0,0,0,1,20,Grafenwoehr Training Area,Grafenwoehr Training Area,Q2456565,6.7,,none,,Wikidata position 6.7 km away | OSM: no military feature within 3 km
+gruenstadt-aafes-fac,Gruenstadt AAFES Fac,DE,US,0,no,verified,presence nation,1,0,0,0,0,Gruenstadt AAFES Fac,Gruenstadt AAFES Fac,,,,none,,OSM: no military feature within 3 km
+frankfurt-hahn,"Hahn Airport, Hunsrück",DE,US,2,yes,candidates,,0,0,0,0,21,,,Q158211,1,,confirmed,0.19,
+hohenfels-training-area,Hohenfels Training Area,DE,US,0,yes,verified,presence nation,1,0,0,0,21,Hohenfels Training Area,Hohenfels Training Area,Q524364,7.9,,near,1.43,Wikidata position 7.9 km away
+oberdachstetten-training-area,Illesheim: Oberdachstetten Training Area,DE,US,0,no,verified,presence nation,1,0,0,0,0,Oberdachstetten Training Area,Oberdachstetten Training Area,,,,near,2.18,
+stock-barracks-illesheim,Illesheim: Stock Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,10,Storck Barracks,,Q108337154,,,confirmed,0.32,
+eichbuck-illesheim,Illesheim: Unnamed Telecommunication Eichbuck,DE,US,0,no,none,,0,0,0,0,0,,,,,,confirmed,0.74,
+mccully-barracks-wackernheim,Ingelheim: McCully Barracks Wackernheim,DE,US,0,no,verified,presence nation,1,0,0,0,0,McCully Barracks,McCully Barracks,,,,confirmed,0.23,
+kaiserslautern-army-depot,Kaiserslautern Army Depot,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kaiserslautern Army Depot,Kaiserslautern Army Depot,,,,confirmed,0.36,
+de-kl-warrior-preparation-center,Kaiserslautern-Einsiedlehof: Warrior Preparation Center,DE,US,0,no,verified,presence nation status,1,0,0,0,0,,,,,,confirmed,0.22,
+warrior-preparation-center-einsiedlerhof,Kaiserslautern-Einsiedlerhof: Warrior Preparation Center,DE,US,0,no,verified,presence nation status,1,0,0,0,0,,,,,,confirmed,0.02,
+kapaun-air-station-kaiserslautern,Kaiserslautern-Vogelweh: Kapaun Air Station,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kapaun Administration Annex,Kapaun Administration Annex,,,,confirmed,0.2,
+daenner-kaserne,Kaiserslautern: Daenner Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Daenner Kaserne,Daenner Kaserne,,,,confirmed,0.22,
+kleber-kaserne-kaiserslautern,Kaiserslautern: Kleber Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Kleber Kaserne,Kleber Kaserne,,,,confirmed,0.5,
+panzer-kaserne-kaiserslautern,Kaiserslautern: Panzer Kaserne,DE,US,0,no,verified,presence nation,1,0,0,0,0,Panzer Kaserne,Panzer Kaserne,,,,confirmed,0.49,
+pulaski-barracks-kaiserslautern,Kaiserslautern: Pulaski Barracks,DE,US,0,no,verified,presence nation,1,0,0,0,0,Pulaski Barracks,Pulaski Barracks,,,,confirmed,0.43,
+rhine-ordnance-barracks-vogelweh,Kaiserslautern: Rhine Ordnance Barracks Vogelweh,DE,US,0,no,verified,presence nation,1,0,0,0,0,Rhine Ordnance Barracks,Rhine Ordnance Barracks,,,,confirmed,0.09,
+kalkar-von-seydlitz-kaserne,Kalkar: von-Seydlitz-Kaserne,DE,,3,no,none,,0,0,0,0,0,,,,,,confirmed,0.16,
+tirpitzhafen-kiel,Kiel – Eckernförde,DE,,0,yes,candidates,,0,0,0,0,10,,,Q2649176,,2002,confirmed,0.3,Wikidata: closed/dissolved 2002
+bann-communications-station,Landstuhl: Bann Communications Station,DE,US,0,yes,verified,presence nation,1,0,0,0,10,Bann Communications Station,Bann Communications Station,Q22691269,2.6,,confirmed,0.78,Wikidata position 2.6 km away
+bann-communications-station-2,Landstuhl: Bann Communications Station 2,DE,US,0,yes,verified,presence nation,1,0,0,0,10,Bann Communications Station  2,Bann Communications Station 2,Q22691269,0.1,,confirmed,0.12,
+satcom-landstuhl,Landstuhl: Enterprise SATCOM Gateway,DE,US,0,yes,verified,presence nation facility,1,0,0,0,20,,,Q2567808,,,confirmed,0.09,
+landstuhl-us-hospital,Landstuhl: US-Hospital,DE,US,0,yes,verified,presence nation,1,0,0,0,21,Landstuhl Hospital,Landstuhl Hospital,Q778782,0.3,,confirmed,0.24,
+egelsbach-transmitter-fac,Langen: Egelsbach Transmitter Fac,DE,US,0,yes,verified,presence nation,1,0,0,0,7,Egelsbach Transmitter Fac,Egelsbach Transmitter Fac,Q622212,4.9,,confirmed,0.84,Wikidata position 4.9 km away
+airport-leipzig-halle,Leipzig / Halle Airport,DE,US,1,yes,candidates,,0,0,0,0,22,,,Q668382,1.2,,confirmed,0.87,
+coleman-barracks-mannheim,Mannheim: Coleman Worksite,DE,US,1,yes,candidates,,0,0,0,1,20,Coleman Barracks,Coleman Barracks,Q872084,0.1,,confirmed,0.12,
+munster-training-area,Munster training area,DE,,0,yes,verified,presence facility,1,0,0,0,20,,,Q830816,4.3,,confirmed,0.82,Wikidata position 4.3 km away
+oberauerbach-polygone,Oberauerbach: Communication Site Polygone,DE,US,0,yes,candidates,,0,0,0,0,2,,,Q1952423,,,confirmed,0.01,
+oberlausitz-training-area,Oberlausitz Training Area,DE,,0,yes,verified,presence activity,1,0,0,0,9,,,Q160945,2.8,,confirmed,0.92,Wikidata position 2.8 km away
+husterhoeh-polygone,Pirmasens: Husterhoeh Communication Site,DE,US,0,yes,verified,presence nation,1,0,0,0,2,Husterhoeh Communication Site,Husterhoeh Communication Site,Q1952423,,,confirmed,0.5,
+medical-material-center-europe,Pirmasens: US Army Medical Material Center Europe,DE,US,0,yes,context,,1,1,0,0,4,,,,,,confirmed,0.56,contradicts (status/position): Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.
+hospital-weilerbach,Ramstein / Weilerbach Rhine Ordnance Medical Center,DE,US,0,yes,verified,presence nation facility status,1,0,0,0,20,,,Q553992,3.2,,confirmed,0.21,Wikidata position 3.2 km away
+ramstein-air-base,Ramstein Air Base,DE,US,3,yes,candidates,,0,0,0,1,21,Ramstein AB,Ramstein AB,Q161348,0.3,,confirmed,0.22,
+satellite-ground-system-ramstein,Ramstein: Distributed Command Ground System,DE,US,0,yes,candidates,,0,0,0,0,15,,,Q6597311,,,confirmed,0.11,
+aircom,Ramstein: EIAMDC European Integrated Air and Missile Defence Center,DE,US,1,yes,candidates,,0,0,0,0,19,,,Q1421943,,,confirmed,0.78,
+marinestutzpunkt-hohe-dune-rostock,Rostock: Marinestützpunkt Hohe Düne,DE,,0,yes,context,,1,0,1,0,6,,,Q15833978,1,,confirmed,0.33,marked for review on visualbases.org
+radio-relay-site-rummelsberg,Rummelsberg: Radio Relay Site,DE,US,0,no,none,,0,0,0,0,0,,,,,,confirmed,0,
+sembach-kaserne,Sembach Kaserne,DE,US,0,yes,verified,presence nation,1,0,0,0,13,Sembach Admin Annex,Sembach Admin Annex,Q820540,0.9,,confirmed,0.59,
+spangdahlem-air-base,Spangdahlem Air Base,DE,US,1,yes,candidates,,0,0,0,1,21,Spangdahlem AB,Spangdahlem AB,Q656939,0.5,,confirmed,0.44,
+echterdingen-airfield,Stuttgart: Echterdingen Airfield,DE,US,0,no,verified,presence nation,1,0,0,0,0,Echterdingen Airfield,Echterdingen Airfield,,,,confirmed,0.54,
+kelley-barracks-stuttgart,Stuttgart: Kelley Barracks,DE,US,3,yes,candidates,,0,0,0,1,20,Kelley Barracks,Kelley Barracks,Q835307,0.7,,confirmed,0.63,
+boblingen-panzerkaserne,Stuttgart: Panzerkaserne Böblingen,DE,US,1,yes,candidates,,0,0,0,1,20,Panzer Kaserne,Panzer Kaserne,Q7132028,2,,confirmed,0,
+patch-barracks-stuttgart,Stuttgart: Patch Barracks,DE,US,1,yes,candidates,,0,0,0,1,20,Patch Barracks,Patch Barracks,Q2056645,0.6,,confirmed,0.18,
+robinson-barracks-stuttgart,Stuttgart: Robinson Barracks,DE,US,0,yes,verified,presence nation,1,0,0,0,20,Robinson Barracks,Robinson Barracks,Q1471920,0.5,,confirmed,0.31,
+usag-ansbach,U.S. Army Garrison Ansbach,DE,US,1,no,candidates,,0,0,0,1,0,Barton Barracks,Oberdachstetten Training Area,,,,confirmed,0.93,
+kaiserslautern-ramstein-community,U.S. Army Garrison Rheinland-Pfalz Kaiserslautern,DE,US,4,yes,candidates,,0,0,0,0,20,,,Q1721740,,,confirmed,0.44,
+u-s-army-garrison-stuttgart,U.S. Army Garrison Stuttgart,DE,US,4,no,candidates,,0,0,0,1,0,Stuttgart Admin Facility,Stuttgart Dependent School,,,,near,1.98,
+wiesbaden-military-community,U.S. Army Garrison Wiesbaden,DE,US,1,no,candidates,,0,0,0,1,0,Wiesbaden Army Airfield,Wiesbaden Army Airfield,,,,none,,OSM: no military feature within 3 km
+wilhelmsburg-barracks-ulm,Ulm: Wilhelmsburg Barracks,DE,,0,yes,verified,presence facility,1,0,0,0,20,,,Q50709,0.5,,confirmed,0.22,
+usag-bavaria,USAG Bavaria – Grafenwoehr/Vilseck Community,DE,US,2,no,none,,0,0,0,0,0,,,,,,none,,OSM: no military feature within 3 km
+sennelager,"Westfalen Garrison / Training Area, Paderborn-Sennelager",DE,GB,1,yes,candidates,,0,0,0,0,20,,,Q24996973,8.1,,near,2.14,Wikidata position 8.1 km away
+deu-wiesbaden-mainz-kastel,Wiesbaden Mainz-Kastel Storage Station,DE,US,1,yes,candidates,,0,0,0,1,10,Mainz-Kastel Station,Mainz-Kastel Station,Q18149928,0.3,,confirmed,0.17,
+wiesbaden-erbenheim-army-airfield,Wiesbaden: Lucius D. Clay Kaserne (Army Airfield Erbenheim),DE,US,2,yes,candidates,,0,0,0,0,21,,,Q327689,0.7,,confirmed,0.36,
+base-aerienne-188-djibouti,Base aérienne 188 Colonel Émile Massart,DJ,US,0,no,context,,1,1,0,0,0,,,,,,confirmed,0.3,"contradicts (presence/nation): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier."
+base-aerienne-de-chabelley,Base Aerienne de Chabelley,DJ,FR US,0,yes,verified,presence nation,1,0,0,0,16,Csl Chabelley,,Q5066007,0.4,,confirmed,0.17,
+us-camp-lemonnier,Camp Lemonnier,DJ,US,0,yes,verified,presence nation,1,0,0,0,21,Camp Lemonier Djibouti,,Q2935221,25.6,,,,Wikidata position 25.6 km away
+chinese-naval-base,Chinese Naval Base,DJ,CN,0,yes,verified,presence nation facility status,1,0,0,0,20,,,,,,,,
+armed-forces-djibouti,Djibouti / Dschibuti,DJ,CN FR JP US,1,yes,candidates,,0,0,0,0,19,,,Q620706,2.4,,,,Wikidata position 2.4 km away
+jsdf-base-djibouti,Japan Self-Defense Force Base,DJ,JP,0,yes,candidates,,0,0,0,0,20,,,Q28154454,1.2,,,,
+boufarik-base,Boufarik Military Base (Algeria),DZ,US,0,yes,candidates,,0,0,0,0,4,,,Q3813457,2.4,,,,Wikidata position 2.4 km away | marked for review on visualbases.org
+amari-air-base,Ämari Air Base,EE,US,0,yes,verified,presence nation facility,1,0,0,0,20,,,Q938047,2.3,,,,Wikidata position 2.3 km away
+nurmsi-airfield-estonia,Nurmsi Airfield (Estonia / Estland),EE,US,0,yes,candidates,,0,0,0,0,7,,,Q3017118,2.1,1990,,,Wikidata: closed/dissolved 1990 | Wikidata position 2.1 km away
+taara-estonia,Taara / Võru (Estonia / Estland),EE,US,1,yes,candidates,,0,0,0,0,3,,,Q7672819,1.4,,,,
+tapa-army-base,Tapa Army Base,EE,GB US,0,yes,verified,presence nation,2,0,1,0,9,,,Q1432999,1.8,,,,
+tapa-training-area,Tapa Training Area,EE,GB US,0,yes,verified,presence nation,2,0,1,0,20,,,Q650577,12.9,,,,Wikidata position 12.9 km away
+cairo-west-ab,Cairo West Air Base,EG,US,1,yes,candidates,,0,0,0,0,12,,,Q18205754,3.4,,,,Wikidata position 3.4 km away
+moron-air-base-spain,"Moron Air Base, Andalusia",ES,US,0,yes,verified,presence nation,1,0,0,0,19,Moron AB,,Q924498,1.5,,,,
+naval-station-rota,Naval Station Rota,ES,US,0,yes,verified,presence nation,1,0,0,0,20,NS Rota,NS Rota,Q729530,2.8,,,,Wikidata position 2.8 km away
 base-aerienne190,Base aèrienne190 (Tahiti),FR,FR,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 reunion-ab,Caserne Dupuis Reunion,FR,FR,0,no,verified,presence nation facility position,2,0,0,0,0,,,,,,,,
 camp-dugommier-rsma,Guadeloupe: Camp Dugommier / RSMA,FR,FR,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 base-nautique-de-stoupan,Guayana: Base nautique de Stoupan,FR,FR,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 camp-ayanganna,Guayana: Camp Ayanganna,FR,FR,0,no,context,,1,1,0,0,0,,,,,,,,"contradicts (position/nation): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base."
-martinique-france,Martinique,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-naval-base-fort-saint-louis,"Martinique, Naval Base Fort Saint Louis",FR,FR,0,yes,verified,presence nation status facility,2,0,0,0,0,,,,,,,,
-pole-aeronautique-etatique,Martinique: Pôle Aéronautique Etatique du Lamentin,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
+martinique-france,Martinique,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,17,,,Q16008972,,,,,
+naval-base-fort-saint-louis,"Martinique, Naval Base Fort Saint Louis",FR,FR,0,yes,verified,presence nation status facility,2,0,0,0,15,,,Q3078054,2.7,,,,Wikidata position 2.7 km away
+pole-aeronautique-etatique,Martinique: Pôle Aéronautique Etatique du Lamentin,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,17,,,Q16008972,,,,,
 rsma-nc,"New Caledonia, Koumac: RSMA-NC Adapted Military Service Regiment,",FR,FR,0,no,verified,presence,1,0,0,0,0,,,,,,,,
-pae-du-lamentin-guadeloupe,"PAE du Lamentin, Guadeloupe",FR,FR,0,yes,context,,1,0,1,0,0,,,,,,,,
-reunion,Reunion / Saint Denis,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-tahiti-french-polynesia,Tahiti,FR,FR,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
+pae-du-lamentin-guadeloupe,"PAE du Lamentin, Guadeloupe",FR,FR,0,yes,context,,1,0,1,0,17,,,Q16008972,,,,,
+reunion,Reunion / Saint Denis,FR,FR,0,yes,verified,presence nation facility,1,0,0,0,21,,,Q17070,9.1,,,,Wikidata position 9.1 km away
+tahiti-french-polynesia,Tahiti,FR,FR,0,yes,verified,presence nation,1,0,0,0,20,,,Q42000,16.5,,,,Wikidata position 16.5 km away
 port-gentil-gabon,Port Gentil (Gabon),GA,US,0,no,context,,1,0,1,0,0,,,,,,,,
-raf-bicester,Bicester Airfield,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Bicester,RAF Bicester,,,,,,
-diego-garcia-airport,Diego Garcia: NAVSUPPFAC,GB,US,2,yes,candidates,,0,0,0,1,0,NAVSUPPFAC Diego Garcia,NAVSUPPFAC Diego Garcia,,,,,,
-gchq-bude,GCHQ Bude,GB,US,1,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-hm-naval-base-gibraltar,Gibraltar HM Naval Base,GB,GB,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-raf-gibraltar,Gibraltar RAF,GB,GB,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-menwith-hill-air-force-harrogate,Menwith Hill Air Force Harrogate,GB,US,1,yes,candidates,,0,0,0,1,0,RAF Menwith Hill,RAF Menwith Hill,,,,,,
-raf-alconbury,RAF Alconbury,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Alconbury,RAF Alconbury,,,,,,
-raf-barford-st-john,RAF Barford St. John,GB,US,1,yes,candidates,,0,0,0,1,0,RAF Barford St John Transmitter Annex,RAF Barford St John Transmitter Annex,,,,,,
-raf-blenheim-crescent,RAF Blenheim Crescent,GB,US,0,yes,verified,presence nation,1,0,0,0,0,Blenheim Crescent,Blenheim Crescent,,,,,,
-raf-croughton,RAF Croughton,GB,US,1,yes,candidates,,0,0,0,1,0,RAF Croughton,RAF Croughton,,,,,,
+raf-bicester,Bicester Airfield,GB,US,0,yes,verified,presence nation,1,0,0,0,20,RAF Bicester,RAF Bicester,Q619674,0.3,1976-01-01,,,Wikidata: closed/dissolved 1976-01-01
+diego-garcia-airport,Diego Garcia: NAVSUPPFAC,GB,US,2,yes,candidates,,0,0,0,1,20,NAVSUPPFAC Diego Garcia,NAVSUPPFAC Diego Garcia,Q184851,0.3,,,,
+gchq-bude,GCHQ Bude,GB,US,1,yes,candidates,,0,0,0,0,21,,,Q5512985,0.1,,,,marked for review on visualbases.org
+hm-naval-base-gibraltar,Gibraltar HM Naval Base,GB,GB,0,yes,verified,presence nation,1,0,0,0,21,,,Q1410,1,,,,
+raf-gibraltar,Gibraltar RAF,GB,GB,0,yes,verified,presence nation,1,0,0,0,22,,,Q48374,0.1,,,,
+menwith-hill-air-force-harrogate,Menwith Hill Air Force Harrogate,GB,US,1,yes,candidates,,0,0,0,1,20,RAF Menwith Hill,RAF Menwith Hill,Q3928142,0.4,,,,
+raf-alconbury,RAF Alconbury,GB,US,0,yes,verified,presence nation,1,0,0,0,10,RAF Alconbury,RAF Alconbury,Q564876,1.2,,,,
+raf-barford-st-john,RAF Barford St. John,GB,US,1,yes,candidates,,0,0,0,1,5,RAF Barford St John Transmitter Annex,RAF Barford St John Transmitter Annex,Q7275155,0.4,,,,
+raf-blenheim-crescent,RAF Blenheim Crescent,GB,US,0,yes,verified,presence nation,1,0,0,0,4,Blenheim Crescent,Blenheim Crescent,Q7275181,0.3,,,,
+raf-croughton,RAF Croughton,GB,US,1,yes,candidates,,0,0,0,1,18,RAF Croughton,RAF Croughton,Q7275260,0.3,,,,
 croughton-fairford,RAF Croughton – RAF Fairford,GB,US,1,no,none,,0,0,0,0,0,,,,,,,,
-raf-digby,RAF Digby,GB,,1,yes,none,,0,0,0,0,0,,,,,,,,
-raf-fairford,RAF Fairford,GB,US,1,yes,candidates,,0,0,0,1,0,RAF Fairford,RAF Fairford,,,,,,
-raf-feltwell,RAF Feltwell,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Feltwell,RAF Feltwell,,,,,,
-raf-fylingdales,RAF Fylingdales,GB,US,2,yes,none,,0,0,0,0,0,,,,,,,,
-raf-lakenheath,RAF Lakenheath,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Lakenheath,RAF Lakenheath,,,,,,
-raf-mildenhall,RAF Mildenhall,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Mildenhall,RAF Mildenhall,,,,,,
-raf-molesworth,RAF Molesworth,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Molesworth,RAF Molesworth,,,,,,
-raf-mount-pleasant-falkland,"RAF Mount Pleasant, Falkland Islands",GB,GB,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-raf-oakhanger,RAF Oakhanger,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Oakhanger,RAF Oakhanger,,,,,,marked for review on visualbases.org
-raf-ascension-island-st-helena,RAF St. Helena: Ascension Island,GB,GB US,0,yes,verified,presence nation,1,0,0,0,0,Ascension Auxiliary Airfield,Ascension Auxiliary Airfield,,,,,,
-raf-welford-ammo-storage-area,RAF Welford Ammo Storage Area,GB,US,0,yes,verified,presence nation,1,0,0,0,0,RAF Welford Ammo Storage Area,RAF Welford Ammo Storage Area,,,,,,
-lugar-research-center-georgia,Lugar Research Center,GE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-vaziani-military-base-georgia,Vaziani Military Base,GE,US,0,yes,verified,presence nation activity,1,0,0,0,0,,,,,,,,
-librevillegabon,Libreville,GH,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-camp-century-greenland,Camp Century (Greenland),GL,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-thule-air-base,Pituffik Air Base,GL,US,0,yes,verified,presence nation,1,0,0,0,0,Thule AB,,,,,,,
+raf-digby,RAF Digby,GB,,1,yes,candidates,,0,0,0,0,21,,,Q7275277,0,1953-01-01,,,Wikidata: closed/dissolved 1953-01-01
+raf-fairford,RAF Fairford,GB,US,1,yes,candidates,,0,0,0,1,20,RAF Fairford,RAF Fairford,Q1427413,0.4,,,,
+raf-feltwell,RAF Feltwell,GB,US,0,yes,verified,presence nation,1,0,0,0,11,RAF Feltwell,RAF Feltwell,Q7275312,0.5,,,,
+raf-fylingdales,RAF Fylingdales,GB,US,2,yes,candidates,,0,0,0,0,21,,,Q1126073,0.7,,,,
+raf-lakenheath,RAF Lakenheath,GB,US,0,yes,verified,presence nation,1,0,0,0,21,RAF Lakenheath,RAF Lakenheath,Q285198,1.8,,,,
+raf-mildenhall,RAF Mildenhall,GB,US,0,yes,verified,presence nation,1,0,0,0,21,RAF Mildenhall,RAF Mildenhall,Q772162,3.8,,,,Wikidata position 3.8 km away
+raf-molesworth,RAF Molesworth,GB,US,0,yes,verified,presence nation,1,0,0,0,20,RAF Molesworth,RAF Molesworth,Q7275484,1.1,,,,
+raf-mount-pleasant-falkland,"RAF Mount Pleasant, Falkland Islands",GB,GB,0,yes,verified,presence nation facility,1,0,0,0,21,,,Q2071294,0.9,,,,
+raf-oakhanger,RAF Oakhanger,GB,US,0,yes,verified,presence nation,1,0,0,0,15,RAF Oakhanger,RAF Oakhanger,,,,,,marked for review on visualbases.org
+raf-ascension-island-st-helena,RAF St. Helena: Ascension Island,GB,GB US,0,yes,verified,presence nation,1,0,0,0,20,Ascension Auxiliary Airfield,Ascension Auxiliary Airfield,Q46197,4.2,,,,Wikidata position 4.2 km away
+raf-welford-ammo-storage-area,RAF Welford Ammo Storage Area,GB,US,0,yes,verified,presence nation,1,0,0,0,20,RAF Welford Ammo Storage Area,RAF Welford Ammo Storage Area,Q7275663,0.5,,,,
+lugar-research-center-georgia,Lugar Research Center,GE,US,0,yes,candidates,,0,0,0,0,11,,,Q60584157,0.3,,,,
+vaziani-military-base-georgia,Vaziani Military Base,GE,US,0,yes,verified,presence nation activity,1,0,0,0,20,,,Q269194,3.2,,,,Wikidata position 3.2 km away
+librevillegabon,Libreville,GH,US,0,yes,candidates,,0,0,0,0,21,,,Q3825,2.6,,,,Wikidata position 2.6 km away
+camp-century-greenland,Camp Century (Greenland),GL,US,0,yes,candidates,,0,0,0,0,20,,,Q2512856,1.6,,,,
+thule-air-base,Pituffik Air Base,GL,US,0,yes,verified,presence nation,1,0,0,0,21,Thule AB,,Q131520504,0.2,,,,
 namfi-souda-bay,Crete: NAMFI Radar Station Souda Bay,GR,,1,no,candidates,,0,0,0,1,0,NSA Souda Bay NAMFI Compound,NSA Souda Bay NAMFI Compound,,,,,,
-namfi-souda,Crete: NATO Missile Firing Installation,GR,US,0,yes,verified,presence nation,1,0,0,0,0,NSA Souda Bay NAMFI Compound,,,,,,,
-nsa-souda-bay,Crete: Naval Support Activity Souda Bay,GR,US,1,yes,candidates,,0,0,0,1,0,NSA Souda Bay,NSA Souda Bay,,,,,,
+namfi-souda,Crete: NATO Missile Firing Installation,GR,US,0,yes,verified,presence nation,1,0,0,0,16,NSA Souda Bay NAMFI Compound,,Q1441847,0.5,,,,
+nsa-souda-bay,Crete: Naval Support Activity Souda Bay,GR,US,1,yes,candidates,,0,0,0,1,20,NSA Souda Bay,NSA Souda Bay,Q23302630,4.6,,,,Wikidata position 4.6 km away
 puerto-castilla-honduras,Base Aérea Coronel Enrique Soto Cano,HN,US,1,no,none,,0,0,0,0,0,,,,,,,,
-gracias-a-dios-honduras,Gracias a Dios,HN,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-soto-cano-honduras,Soto Cano Air Base,HN,US,0,yes,verified,presence nation,1,0,0,0,0,Soto Cano,Soto Cano,,,,,,
+gracias-a-dios-honduras,Gracias a Dios,HN,US,0,yes,candidates,,0,0,0,0,20,,,Q1935172,,,,,
+soto-cano-honduras,Soto Cano Air Base,HN,US,0,yes,verified,presence nation,1,0,0,0,20,Soto Cano,Soto Cano,Q747620,0.5,,,,
 karlovac-croatia-2,Karlovac,HR,US,1,no,none,,0,0,0,0,0,,,,,,,,
-training-area-eugen-kvaternik,Military Training Area „Eugen Kvaternik“,HR,US,0,yes,none,,0,0,0,0,0,,,,,,,,
+training-area-eugen-kvaternik,Military Training Area „Eugen Kvaternik“,HR,US,0,yes,candidates,,0,0,0,0,7,,,Q2456541,3.6,,,,Wikidata position 3.6 km away
 sarajevo-military-airport,Sarajevo Military Airport,HR,US,0,no,verified,presence nation,2,0,1,0,0,,,,,,,,marked for review on visualbases.org
 zadar-gazenica-croatia,Zadar Gazenica (Croatia),HR,US,0,no,context,,1,0,1,0,0,,,,,,,,
-papa-ab-hungary,Pápa Air Base,HU,,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-shannon-airport,Shannon Airport,IE,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-dimona-radar-facility,Dimona Radar Facility,IL,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-al-asad-ab,Ain al-Asad Airbase,IQ,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-camp-speicher,Camp Speicher,IQ,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-keflavik-base,Keflavik Base (Iceland),IS,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-naval-radio-transmitter-grindavik,Naval Radio Transmitter Facility Grindavik,IS,US,0,yes,verified,presence nation,1,0,0,0,0,"Grindavik, Iceland","Grindavik, Iceland",,,,,,
-aviano-air-base,Aviano Air Base,IT,US,0,yes,verified,presence nation,1,0,0,0,0,Aviano AB,Aviano AB,,,,,,
-ghedi-ab,Ghedi Air Base,IT,US,0,yes,context,,1,0,1,0,0,Ghedi Radio Relay Site,Ghedi Radio Relay Site,,,,,,
-i-solbiate-olona,"Lombardei, Solbiate Olona: NATO-Kaserne Ugo Mara",IT,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-maritime-component-command-naples,Naples: Maritime Component Command,IT,,0,yes,context,,1,0,1,0,0,Lago Patria,,,,,,,
-salto-di-quirra-sardinia,"Sardinia, Salto di Quirra: Training Area",IT,,0,yes,none,,0,0,0,0,0,,,,,,,,
-decimomannu-ab-sardinia,Sardinia: Decimomannu Air Base,IT,,0,yes,none,,0,0,0,0,0,,,,,,,,
+papa-ab-hungary,Pápa Air Base,HU,,0,yes,verified,presence nation,1,0,0,0,9,,,Q681570,0.2,,,,
+shannon-airport,Shannon Airport,IE,US,1,yes,candidates,,0,0,0,0,21,,,Q584102,4.5,,,,Wikidata position 4.5 km away
+dimona-radar-facility,Dimona Radar Facility,IL,US,0,yes,candidates,,0,0,0,0,4,,,Q1814794,0.4,,,,
+al-asad-ab,Ain al-Asad Airbase,IQ,US,1,yes,candidates,,0,0,0,0,20,,,,,,,,
+camp-speicher,Camp Speicher,IQ,US,0,yes,candidates,,0,0,0,0,20,,,Q5013269,0.8,,,,
+keflavik-base,Keflavik Base (Iceland),IS,US,0,yes,verified,presence nation,1,0,0,0,20,,,Q3481748,1.3,,,,
+naval-radio-transmitter-grindavik,Naval Radio Transmitter Facility Grindavik,IS,US,0,yes,verified,presence nation,1,0,0,0,13,"Grindavik, Iceland","Grindavik, Iceland",Q6981898,1.2,,,,
+aviano-air-base,Aviano Air Base,IT,US,0,yes,verified,presence nation,1,0,0,0,21,Aviano AB,Aviano AB,Q790794,0.3,,,,
+ghedi-ab,Ghedi Air Base,IT,US,0,yes,context,,1,0,1,0,13,Ghedi Radio Relay Site,Ghedi Radio Relay Site,Q1934972,2.4,,,,Wikidata position 2.4 km away
+i-solbiate-olona,"Lombardei, Solbiate Olona: NATO-Kaserne Ugo Mara",IT,US,1,yes,candidates,,0,0,0,0,8,,,Q1435234,,,,,
+maritime-component-command-naples,Naples: Maritime Component Command,IT,,0,yes,context,,1,0,1,0,21,Lago Patria,,Q1476257,17.7,,,,Wikidata position 17.7 km away
+salto-di-quirra-sardinia,"Sardinia, Salto di Quirra: Training Area",IT,,0,yes,candidates,,0,0,0,0,20,,,Q428283,11.5,,,,Wikidata position 11.5 km away
+decimomannu-ab-sardinia,Sardinia: Decimomannu Air Base,IT,,0,yes,candidates,,0,0,0,0,20,,,Q320196,0.6,,,,
 poligono-militare-nato-sardinia-italy,Sardinia: Poligono Militare NATO,IT,,0,no,verified,presence activity,1,0,0,0,0,,,,,,,,
 command-ground-system-sigonella,"Sicilia, Sigonella: Distributed Command Ground System",IT,US,0,no,context,,1,0,1,0,0,NAS Sigonella,,,,,,,
-niscemi-radar-station-muos,Sicilia: Niscemi Radar Station,IT,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-sigonalla-air-base,Sicilia: Sigonella Air Base,IT,US,0,yes,verified,presence nation,1,0,0,0,0,NAS Sigonella,NAS Sigonella,,,,,,
-camp-darby-tirrenia-livorno,Tirrenia / Livorno: Camp Darby,IT,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Darby,Camp Darby,,,,,,
+niscemi-radar-station-muos,Sicilia: Niscemi Radar Station,IT,US,1,yes,candidates,,0,0,0,0,20,,,Q3936878,0.9,,,,
+sigonalla-air-base,Sicilia: Sigonella Air Base,IT,US,0,yes,verified,presence nation,1,0,0,0,21,NAS Sigonella,NAS Sigonella,Q938394,1.4,,,,
+camp-darby-tirrenia-livorno,Tirrenia / Livorno: Camp Darby,IT,US,0,yes,verified,presence nation,1,0,0,0,5,Camp Darby,Camp Darby,Q1029796,2.5,,,,Wikidata position 2.5 km away
 vicenza-padova,Vicenza – Padova,IT,US,0,no,none,,0,0,0,0,0,,,,,,,,
-camp-ederle-vicenza,Vicenza: Camp Ederle,IT,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Ederle,Camp Ederle,,,,,,
-del-din-barracks-vicenza,Vicenza: Del Din Barracks,IT,US,0,yes,verified,presence nation,1,0,0,0,0,Del Din,Del Din,,,,,,
+camp-ederle-vicenza,Vicenza: Camp Ederle,IT,US,0,yes,verified,presence nation,1,0,0,0,20,Camp Ederle,Camp Ederle,Q3661698,0.7,,,,
+del-din-barracks-vicenza,Vicenza: Del Din Barracks,IT,US,0,yes,verified,presence nation,1,0,0,0,10,Del Din,Del Din,Q1313587,0,2005-12-23,,,Wikidata: closed/dissolved 2005-12-23
 longare-communications-site-pluto-vicenza,Vicenza: Longare Communications Site Pluto,IT,US,0,no,verified,presence nation,1,0,0,0,0,Longare Communications Site,Longare Communications Site,,,,,,
-muwaffaq-salti-air-base-al-azraq-jordan,"Muwaffaq Salti Air Base, Al Azraq",JO,,0,yes,verified,presence nation,1,0,0,0,0,Muwaffaq Salti Air Base,,,,,,,
-naval-air-facility-atsugi-kanagawa,"Kanagawa, Atsugi: Naval Air Facility",JP,US,0,yes,verified,presence nation,1,0,0,0,0,NAF Atsugi,,,,,,,
-sasebo-naval-base-nagasaki,Nagasaki: Sasebo Naval Base,JP,US,0,yes,verified,presence nation,1,0,0,0,0,COMFLEACT Sasebo,COMFLEACT Sasebo,,,,,,
-okinawa,Okinawa,JP,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-mcas-futenma,"Okinawa, Futenma: Marine Corps Air Station",JP,US,0,yes,verified,presence nation,1,0,0,0,0,MCAS Futenma,,,,,,,
-henoko-camp-schwab,"Okinawa, Henoko: Camp Schwab",JP,US,1,yes,candidates,,0,0,0,1,0,Camp Schwab,Camp Schwab,,,,,,
-jasdf-naha-air-base,"Okinawa, Naha: JASDF Air Base",JP,US,0,yes,context,,1,0,1,0,0,Naha Port,Naha Port,,,,,,
-camp-hansen-okinawa,"Okinawa, Onna: Camp Hansen",JP,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Hansen,Camp Hansen,,,,,,
-jungle-warfare-training-center,"Okinawa, Takae: Jungle Warfare Training Center",JP,US,2,yes,none,,0,0,0,0,0,,,,,,,,
-tengan-pier-camp-courtney,"Okinawa, Tengan Pier – Camp Courtney",JP,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Courtney,,,,,,,
-camp-kinser-okinawa,"Okinawa, Urasoe: Camp Kinser",JP,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Kinser,Camp Kinser,,,,,,
-camp-foster-zukeran,"Okinawa, Zukeran: Camp Foster",JP,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Foster,Camp Foster,,,,,,
+muwaffaq-salti-air-base-al-azraq-jordan,"Muwaffaq Salti Air Base, Al Azraq",JO,,0,yes,verified,presence nation,1,0,0,0,20,Muwaffaq Salti Air Base,,Q2886524,17.1,,,,Wikidata position 17.1 km away
+naval-air-facility-atsugi-kanagawa,"Kanagawa, Atsugi: Naval Air Facility",JP,US,0,yes,verified,presence nation,1,0,0,0,21,NAF Atsugi,,Q3016710,3.9,,,,Wikidata position 3.9 km away
+sasebo-naval-base-nagasaki,Nagasaki: Sasebo Naval Base,JP,US,0,yes,verified,presence nation,1,0,0,0,9,COMFLEACT Sasebo,COMFLEACT Sasebo,Q4420953,1.1,,,,
+okinawa,Okinawa,JP,US,0,yes,candidates,,0,0,0,0,21,,,Q766445,31.4,,,,Wikidata position 31.4 km away
+mcas-futenma,"Okinawa, Futenma: Marine Corps Air Station",JP,US,0,yes,verified,presence nation,1,0,0,0,21,MCAS Futenma,,Q1031547,2,,,,
+henoko-camp-schwab,"Okinawa, Henoko: Camp Schwab",JP,US,1,yes,candidates,,0,0,0,1,11,Camp Schwab,Camp Schwab,Q4419959,0.8,,,,
+jasdf-naha-air-base,"Okinawa, Naha: JASDF Air Base",JP,US,0,yes,context,,1,0,1,0,9,Naha Port,Naha Port,Q1529149,2.5,,,,Wikidata position 2.5 km away
+camp-hansen-okinawa,"Okinawa, Onna: Camp Hansen",JP,US,0,yes,verified,presence nation,1,0,0,0,12,Camp Hansen,Camp Hansen,Q4419980,0.5,,,,
+jungle-warfare-training-center,"Okinawa, Takae: Jungle Warfare Training Center",JP,US,2,yes,candidates,,0,0,0,0,20,,,Q5027202,17.5,,,,Wikidata position 17.5 km away
+tengan-pier-camp-courtney,"Okinawa, Tengan Pier – Camp Courtney",JP,US,0,yes,verified,presence nation,1,0,0,0,5,Camp Courtney,,Q4381152,3.4,,,,Wikidata position 3.4 km away
+camp-kinser-okinawa,"Okinawa, Urasoe: Camp Kinser",JP,US,0,yes,verified,presence nation,1,0,0,0,9,Camp Kinser,Camp Kinser,Q5027315,0.7,,,,
+camp-foster-zukeran,"Okinawa, Zukeran: Camp Foster",JP,US,0,yes,verified,presence nation,1,0,0,0,13,Camp Foster,Camp Foster,Q4419750,0.6,,,,
 camp-lester-okinawa,Okinawa: Camp Lester,JP,US,0,no,verified,presence nation,1,0,0,0,0,Camp Lester,Camp Lester,,,,,,
-kadena-air-base,Okinawa: Kadena Air Base,JP,US,0,yes,verified,presence nation,1,0,0,0,0,Kadena AB,Kadena AB,,,,,,
-kadena-ammunition-okinawa,"Okinawa: Kadena Ammunition Storage Area,",JP,US,0,yes,verified,presence nation,1,0,0,0,0,Kadena Ammo Storage Annex,Kadena Ammo Storage Annex,,,,,,
-white-beach-okinawa,Okinawa: White Beach Naval Facility,JP,US,1,yes,candidates,,0,0,0,1,0,White Beach,White Beach,,,,,,
-tachikawa-air-base-tokyo,Tokyo: Tachikawa Air Base,JP,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-yokota-air-base-tokyo,Tokyo: Yokota Air Base,JP,US,0,yes,verified,presence nation,1,0,0,0,0,Yokota AB,Yokota AB,,,,,,
-yokosuka-fleet,Yokosuka: COMFLEACT,JP,US,0,yes,verified,presence nation,1,0,0,0,0,COMFLEACT Yokosuka,COMFLEACT Yokosuka,,,,,,
-jpn-yonaguni,Yonaguni,JP,,0,yes,none,,0,0,0,0,0,,,,,,,,
+kadena-air-base,Okinawa: Kadena Air Base,JP,US,0,yes,verified,presence nation,1,0,0,0,21,Kadena AB,Kadena AB,Q608289,1.4,,,,
+kadena-ammunition-okinawa,"Okinawa: Kadena Ammunition Storage Area,",JP,US,0,yes,verified,presence nation,1,0,0,0,21,Kadena Ammo Storage Annex,Kadena Ammo Storage Annex,Q694313,5.2,,,,Wikidata position 5.2 km away
+white-beach-okinawa,Okinawa: White Beach Naval Facility,JP,US,1,yes,candidates,,0,0,0,1,21,White Beach,White Beach,Q694313,9.6,,,,Wikidata position 9.6 km away
+tachikawa-air-base-tokyo,Tokyo: Tachikawa Air Base,JP,US,0,yes,candidates,,0,0,0,0,16,,,Q3275968,1,,,,
+yokota-air-base-tokyo,Tokyo: Yokota Air Base,JP,US,0,yes,verified,presence nation,1,0,0,0,21,Yokota AB,Yokota AB,Q1806489,0.4,,,,
+yokosuka-fleet,Yokosuka: COMFLEACT,JP,US,0,yes,verified,presence nation,1,0,0,0,17,COMFLEACT Yokosuka,COMFLEACT Yokosuka,Q2886663,0.5,,,,
+jpn-yonaguni,Yonaguni,JP,,0,yes,candidates,,0,0,0,0,20,,,Q220701,2.1,,,,Wikidata position 2.1 km away
 kenyan-naval-base,Mombasa: Kenyan Naval Base Mtongwe,KE,US,0,no,context,,1,0,1,0,0,Kenya,,,,,,,
-camp-henry-daegu,Daegu: Camp Henry,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Henry,Camp Henry,,,,,,
-camp-walker-taeku,Daegu: Camp Walker,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Walker,Camp Walker,,,,,,
-camp-casy-dongducheon,Dongducheon: Camp Casey,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Casey,Camp Casey,,,,,,
-jeju-island-naval-base-gangjeong,"Gangjeong, Jeju Island: Naval Base",KR,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-kunsan-ab-gunsan,Gunsan: Kunsan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Kunsan AB,Kunsan AB,,,,,,
-osan-ab-pyeongtaek,Pyeongtaek / Gyeonggi-do: Osan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Osan AFB,Osan AFB,,,,,,
-usag-humphreys,Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys,KR,US,1,yes,candidates,,0,0,0,1,0,Camp Humphreys,Camp Humphreys,,,,,,
-suwon-ab,Suwon Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Suwon AB,Suwon AB,,,,,,
+camp-henry-daegu,Daegu: Camp Henry,KR,US,0,yes,verified,presence nation,1,0,0,0,3,Camp Henry,Camp Henry,Q12620466,0.4,,,,
+camp-walker-taeku,Daegu: Camp Walker,KR,US,0,yes,verified,presence nation,1,0,0,0,7,Camp Walker,Camp Walker,Q15206997,0.5,,,,
+camp-casy-dongducheon,Dongducheon: Camp Casey,KR,US,0,yes,verified,presence nation,1,0,0,0,7,Camp Casey,Camp Casey,Q483988,0.1,,,,
+jeju-island-naval-base-gangjeong,"Gangjeong, Jeju Island: Naval Base",KR,US,1,yes,candidates,,0,0,0,0,21,,,Q41164,4.8,,,,Wikidata position 4.8 km away
+kunsan-ab-gunsan,Gunsan: Kunsan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,8,Kunsan AB,Kunsan AB,Q491258,2.3,,,,Wikidata position 2.3 km away
+osan-ab-pyeongtaek,Pyeongtaek / Gyeonggi-do: Osan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,21,Osan AFB,Osan AFB,Q492965,1.3,,,,
+usag-humphreys,Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys,KR,US,1,yes,candidates,,0,0,0,1,21,Camp Humphreys,Camp Humphreys,Q626752,15.9,,,,Wikidata position 15.9 km away
+suwon-ab,Suwon Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,9,Suwon AB,Suwon AB,Q11252889,0.6,,,,
 taegu-region,Taegu Region,KR,US,0,no,context,,1,0,1,0,0,Taegu AB,,,,,,,
-thadd-deployment-base,THADD Deployment Base,KR,US,0,yes,verified,presence nation status,1,0,0,0,0,,,,,,,,
-camp-carroll-waegwan,Waegwan: Camp Carroll,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Camp Carroll,Camp Carroll,,,,,,
-camp-kim-yongsan,Yongsan: Camp Kim,KR,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-us-army-garrison-yongsan,Yongsan: US Army / Navy Garrison,KR,US,0,yes,verified,presence nation,1,0,0,0,0,Yongsan Garrison,Yongsan Garrison,,,,,,
-abdullah-al-mubarak-ab,Abdullah Al-Mubarak Air Base,KW,US,0,yes,verified,presence nation,1,0,0,0,0,Al Mubarak Air Base,,,,,,,marked for review on visualbases.org
+thadd-deployment-base,THADD Deployment Base,KR,US,0,yes,verified,presence nation status,1,0,0,0,21,,,Q523156,,,,,
+camp-carroll-waegwan,Waegwan: Camp Carroll,KR,US,0,yes,verified,presence nation,1,0,0,0,10,Camp Carroll,Camp Carroll,Q498272,0.2,,,,
+camp-kim-yongsan,Yongsan: Camp Kim,KR,US,0,yes,candidates,,0,0,0,0,2,,,Q5027310,0.3,,,,
+us-army-garrison-yongsan,Yongsan: US Army / Navy Garrison,KR,US,0,yes,verified,presence nation,1,0,0,0,21,Yongsan Garrison,Yongsan Garrison,Q483832,2.9,,,,Wikidata position 2.9 km away
+abdullah-al-mubarak-ab,Abdullah Al-Mubarak Air Base,KW,US,0,yes,verified,presence nation,1,0,0,0,21,Al Mubarak Air Base,,Q527157,2.4,,,,Wikidata position 2.4 km away | marked for review on visualbases.org
 camp-buehring,"Camp Buehring, Udairi Air Field",KW,US,0,no,verified,presence nation,1,0,0,0,0,Camp Buehring,,,,,,,
-pabrades-poligonas-lithuania,Pabrades Poligonas,LT,US,0,yes,verified,presence nation status,1,0,0,0,0,,,,,,,,
-rudninkai-litauen,Rudninkai,LT,DE,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-gaiziunu-poligonas-rukla-lithuania,Rukla: Gaižiūnų poligonas,LT,DE,1,yes,none,,0,0,0,0,0,,,,,,,,
-siauliai-lithuania,Šiauliai,LT,,0,yes,none,,0,0,0,0,0,,,,,,,,
-guelmim-airport,Aéroport de Guelmim,MA,US,0,yes,verified,presence nation activity,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
-inezgane-airport,Inezgane Military Airport (Morocco),MA,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-sinjajevina-montenegro,Sinjajevina,ME,,1,yes,none,,0,0,0,0,0,,,,,,,,
-marshall-islands,Ballistic Missile Defense Test Site,MH,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-krivolak-training-area,Krivolak Training Center / Training Area KTA,MK,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-bamako-mali,Bamako (Mali),ML,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-us-camp-castor,US Camp Castor,ML,US,0,yes,context,,1,1,0,0,0,,,,,,,,"contradicts (nation/status): Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it ""US Camp Castor""), and it has been closed since December 2023."
-pemba-naval-base,Pemba Naval Base (Mozambique),MZ,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-windhoek-namibia,Windhoek,NA,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-us-air-base-201,"Air Base 201, Agadez",NE,US,0,yes,verified,presence nation,2,1,0,0,0,Csl Agadez,,,,,,,"contradicts (status): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)"
-dirkou-ab-niger,"Dirkou Air Base, Agadez",NE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-niamey-air-base,Niamey Air Base,NE,FR US,0,yes,context,,1,1,0,0,0,,,,,,,,"contradicts (status): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)"
-savaneta-kamp,"Antilles, Aruba: Korps Mariniers / Savaneta Kamp",NL,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-aruba,"Antilles, Aruba: Queen Beatrix International Airport",NL,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-davis-monthan-ab-curacao,"Antilles, Curacao: Davis-Monthan Air Force Base",NL,US,0,yes,verified,presence nation,1,0,0,0,0,Davis-Monthan AFB,Davis-Monthan AFB,,,,,,
-ajf-brunssum,Brunssum: Allied Joint Force Command,NL,US,0,yes,none,,0,0,0,0,0,,,,,,,,
+pabrades-poligonas-lithuania,Pabrades Poligonas,LT,US,0,yes,verified,presence nation status,1,0,0,0,21,,,Q1004328,19.7,,,,Wikidata position 19.7 km away
+rudninkai-litauen,Rudninkai,LT,DE,0,yes,verified,presence nation facility,1,0,0,0,18,,,Q9323735,0.6,,,,
+gaiziunu-poligonas-rukla-lithuania,Rukla: Gaižiūnų poligonas,LT,DE,1,yes,candidates,,0,0,0,0,20,,,Q1010331,4.9,,,,Wikidata position 4.9 km away
+siauliai-lithuania,Šiauliai,LT,,0,yes,candidates,,0,0,0,0,21,,,Q134712,6.5,,,,Wikidata position 6.5 km away
+guelmim-airport,Aéroport de Guelmim,MA,US,0,yes,verified,presence nation activity,1,0,0,0,4,,,Q11824510,0.2,,,,marked for review on visualbases.org
+inezgane-airport,Inezgane Military Airport (Morocco),MA,US,0,yes,candidates,,0,0,0,0,7,,,Q2112559,0.4,1991,,,Wikidata: closed/dissolved 1991 | marked for review on visualbases.org
+sinjajevina-montenegro,Sinjajevina,ME,,1,yes,candidates,,0,0,0,0,1,,,Q3047008,9.2,,,,Wikidata position 9.2 km away
+marshall-islands,Ballistic Missile Defense Test Site,MH,US,1,yes,candidates,,0,0,0,0,21,,,Q709,209.7,,,,Wikidata position 209.7 km away
+krivolak-training-area,Krivolak Training Center / Training Area KTA,MK,US,0,yes,candidates,,0,0,0,0,8,,,Q47456389,3.2,,,,Wikidata position 3.2 km away
+bamako-mali,Bamako (Mali),ML,US,0,yes,candidates,,0,0,0,0,21,,,Q3703,6.6,,,,Wikidata position 6.6 km away
+us-camp-castor,US Camp Castor,ML,US,0,yes,context,,1,1,0,0,21,,,Q912,432.8,,,,"contradicts (nation/status): Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it ""US Camp Castor""), and it has been closed since December 2023. | Wikidata position 432.8 km away"
+pemba-naval-base,Pemba Naval Base (Mozambique),MZ,US,0,yes,candidates,,0,0,0,0,11,,,Q498048,7.6,,,,Wikidata position 7.6 km away
+windhoek-namibia,Windhoek,NA,US,0,yes,candidates,,0,0,0,0,21,,,Q3935,6.1,,,,Wikidata position 6.1 km away | marked for review on visualbases.org
+us-air-base-201,"Air Base 201, Agadez",NE,US,0,yes,verified,presence nation,2,1,0,0,20,Csl Agadez,,Q389944,3.5,,,,"contradicts (status): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.) | Wikidata position 3.5 km away"
+dirkou-ab-niger,"Dirkou Air Base, Agadez",NE,US,0,yes,candidates,,0,0,0,0,12,,,Q1654561,1.6,,,,
+niamey-air-base,Niamey Air Base,NE,FR US,0,yes,context,,1,1,0,0,21,,,Q1032,925.3,,,,"contradicts (status): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.) | Wikidata position 925.3 km away"
+savaneta-kamp,"Antilles, Aruba: Korps Mariniers / Savaneta Kamp",NL,US,0,yes,candidates,,0,0,0,0,21,,,Q1311437,,,confirmed,0.16,
+aruba,"Antilles, Aruba: Queen Beatrix International Airport",NL,US,0,yes,candidates,,0,0,0,0,11,,,Q6857712,,,none,,OSM: no military feature within 3 km
+davis-monthan-ab-curacao,"Antilles, Curacao: Davis-Monthan Air Force Base",NL,US,0,yes,verified,presence nation,1,0,0,0,21,Davis-Monthan AFB,Davis-Monthan AFB,Q25279,4.9,,confirmed,0.33,Wikidata position 4.9 km away
+ajf-brunssum,Brunssum: Allied Joint Force Command,NL,US,0,yes,candidates,,0,0,0,0,21,,,Q1453496,1.7,,,,
 eygelshoven-army-depot,Eygelshoven Army Depot,NL,US,0,no,verified,presence nation,1,0,0,0,0,Eygelshoven Army Depot,Eygelshoven Army Depot,,,,,,
-volkel-ab,Volkel Air Base,NL,US,0,yes,verified,presence nation,1,0,0,0,0,Volkel AB,Volkel AB,,,,,,
-evenes-military-air-station,Evenes Military Air Station and Airfield,NO,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-globus-ii-norway,"Globus II, Vardø",NO,US,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
+volkel-ab,Volkel Air Base,NL,US,0,yes,verified,presence nation,1,0,0,0,20,Volkel AB,Volkel AB,Q2271372,0.4,,,,
+evenes-military-air-station,Evenes Military Air Station and Airfield,NO,US,1,yes,candidates,,0,0,0,0,20,,,,,,,,
+globus-ii-norway,"Globus II, Vardø",NO,US,0,yes,verified,presence nation facility,1,0,0,0,20,,,Q15134584,0.8,,,,
 orland-militaerbase,Ørland Militærbase,NO,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-ramsund-naval-station,Ramsund Naval Station,NO,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-rygge-military-air-station,Rygge Military Air Station and Airfield,NO,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-sola-military-air-station,Sola Military Air Station and Airfield,NO,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-trondheim,Trondheim,NO,,0,yes,context,,1,0,1,0,0,,,,,,,,marked for review on visualbases.org
-masirah-ab,Masirah Air Base / RAFO Masirah,OM,US,0,yes,none,,0,0,0,0,0,,,,,,,,
+ramsund-naval-station,Ramsund Naval Station,NO,US,1,yes,candidates,,0,0,0,0,7,,,Q2081841,3.6,,,,Wikidata position 3.6 km away
+rygge-military-air-station,Rygge Military Air Station and Airfield,NO,US,1,yes,candidates,,0,0,0,0,8,,,,,,,,
+sola-military-air-station,Sola Military Air Station and Airfield,NO,US,1,yes,candidates,,0,0,0,0,2,,,Q3271063,0.8,,,,
+trondheim,Trondheim,NO,,0,yes,context,,1,0,1,0,20,,,,,,,,marked for review on visualbases.org
+masirah-ab,Masirah Air Base / RAFO Masirah,OM,US,0,yes,candidates,,0,0,0,0,6,,,Q650099,0.1,,,,
 opc-1-muscat,"Muscat: Overseas Processing Centre 1, Seeb",OM,GB,2,no,none,,0,0,0,0,0,,,,,,,,
-thumrait,Thumrait MAP,OM,US,0,yes,verified,presence nation,1,0,0,0,0,,Thumrait MAP,,,,,,"BSR: listed FY2019, not FY2023"
-iquitos-airport,Iquitos International Airport,PE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-mount-st-rita-naval-link-station,Mount Santa Rita Naval Link Station,PH,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-secon-thomas-shoal,Spratly Islands: Second Thomas Shoal,PH,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-jacobabad-dalbandin-ab,"Dalbandin Airport, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-makran-pakistan,Naval Station Makran,PK,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
-pasni-base-port,"Pasni Base, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,marked for review on visualbases.org
-shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,context,,1,1,0,0,0,,,,,,,,contradicts (presence/nation/status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing). | marked for review on visualbases.org
-bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,GB US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
+thumrait,Thumrait MAP,OM,US,0,yes,verified,presence nation,1,0,0,0,6,,Thumrait MAP,Q1001917,1.9,,,,"BSR: listed FY2019, not FY2023"
+iquitos-airport,Iquitos International Airport,PE,US,0,yes,candidates,,0,0,0,0,17,,,Q1431540,0.2,,,,
+mount-st-rita-naval-link-station,Mount Santa Rita Naval Link Station,PH,US,0,yes,candidates,,0,0,0,0,1,,,Q6923467,0.1,,,,
+secon-thomas-shoal,Spratly Islands: Second Thomas Shoal,PH,US,0,yes,candidates,,0,0,0,0,20,,,Q6855008,43.9,,,,Wikidata position 43.9 km away
+jacobabad-dalbandin-ab,"Dalbandin Airport, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,19,,,Q1658016,1,,,,
+makran-pakistan,Naval Station Makran,PK,US,0,yes,candidates,,0,0,0,0,8,,,Q123089623,1.7,,,,marked for review on visualbases.org
+khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q3696008,9.6,,,,Wikidata position 9.6 km away
+shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,US,0,yes,verified,presence nation,1,0,0,0,12,,,Q3694521,1,,,,marked for review on visualbases.org
+pasni-base-port,"Pasni Base, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q7231225,0.5,,,,marked for review on visualbases.org
+shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,context,,1,1,0,0,20,,,Q775164,0.7,,,,contradicts (presence/nation/status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing). | marked for review on visualbases.org
+bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,GB US,0,yes,verified,presence nation,1,0,0,0,9,,,Q4885135,14.8,,,,Wikidata position 14.8 km away
 deblin-irena-air-base,Deblin-Irena Air Base,PL,US,0,no,none,,0,0,0,0,0,,,,,,,,
-training-center-drawsko,Drawsko: Land Forces Training Center,PL,US,0,yes,verified,presence nation,1,0,0,0,0,Drawsko Pomorskie Training Area,,,,,,,
+training-center-drawsko,Drawsko: Land Forces Training Center,PL,US,0,yes,verified,presence nation,1,0,0,0,15,Drawsko Pomorskie Training Area,,,,,,,
 lask-air-base,Lask Air Base,PL,US,0,no,verified,presence nation,1,0,0,0,0,Lask Air Base,,,,,,,
-21-centralny-poligon-lotniczy,Lotniczy: 21 Centralny Poligon,PL,,0,yes,none,,0,0,0,0,0,,,,,,,,
+21-centralny-poligon-lotniczy,Lotniczy: 21 Centralny Poligon,PL,,0,yes,candidates,,0,0,0,0,6,,,Q11683320,,,,,
 lotnisko-miroslawiec-ab,Lotnisko Miroslawiec Air Base,PL,US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,,,
 nadarzyce-air-base,Nadarzyce Air Base,PL,US,0,no,none,,0,0,0,0,0,,,,,,,,
-33rd-air-base-powidz,Powidz: 33rd Air Base,PL,US,0,yes,verified,presence nation facility,1,0,0,0,0,,,,,,,,
-redzikowo,Redzikowo: Naval Support Facility,PL,US,1,yes,none,,0,0,0,0,0,,Varloc Poland,,,,,,"BSR: listed FY2019, not FY2023"
-rzeszow,Rzeszów,PL,,0,yes,context,,1,0,1,0,0,,,,,,,,
+33rd-air-base-powidz,Powidz: 33rd Air Base,PL,US,0,yes,verified,presence nation facility,1,0,0,0,2,,,Q4635247,1.7,,,,
+redzikowo,Redzikowo: Naval Support Facility,PL,US,1,yes,candidates,,0,0,0,0,20,,Varloc Poland,Q4064211,32.7,,,,"Wikidata position 32.7 km away | BSR: listed FY2019, not FY2023"
+rzeszow,Rzeszów,PL,,0,yes,context,,1,0,1,0,21,,,Q598,1,,,,
 zagan-training-area,Zagan Training Area,PL,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-naval-transmitter-site-aguada,Aguada: Naval Transmitter Site (Puerto Rico),PR,US,0,yes,verified,presence nation,1,0,0,0,0,Low Frequency Transmitter Site Aguada,Low Frequency Transmitter Site Aguada,,,,,,
-vieques-island-training-area,Vieques Island Training Area,PR,US,0,yes,context,,1,0,1,0,0,Vieques West,,,,,,,
-lajes-azores,"Azores: Air Base No 4, Lajes Field",PT,US,1,yes,candidates,,0,0,0,1,0,Lajes Field,Lajes Field,,,,,,
-palau,Palau,PW,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-maria-argana-paraguay,Dr. Luis María Argaña International Airport,PY,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-camp-as-sayliayah,Camp As Sayliayah,QA,US,0,yes,verified,presence nation,1,0,0,0,0,Camp As Sayliyah,,,,,,,
-al-udeid-doha,Doha: Al Udeid Air Base,QA,GB,0,yes,verified,presence nation,1,0,0,0,0,Al Udeid Air Base,,,,,,,
-campia-turzii-air-base,Câmpia Turzii Air Base,RO,US,1,yes,none,,0,0,0,0,0,,,,,,,,
-mihail-kogalniceanu-constanta,Constanţa: Mihail Kogălniceanu,RO,US,0,yes,verified,presence nation,1,0,0,0,0,Mihail Kogalniceanu Airfield,Mihail Kogalniceanu Airfield,,,,,,
-deveselu-base,Deveselu Base,RO,US,0,yes,verified,presence nation,1,0,0,0,0,NAVSUPPFAC Romania,NAVSUPPFAC Romania,,,,,,marked for review on visualbases.org
+naval-transmitter-site-aguada,Aguada: Naval Transmitter Site (Puerto Rico),PR,US,0,yes,verified,presence nation,1,0,0,0,7,Low Frequency Transmitter Site Aguada,Low Frequency Transmitter Site Aguada,,,,,,
+vieques-island-training-area,Vieques Island Training Area,PR,US,0,yes,context,,1,0,1,0,20,Vieques West,,Q737624,13.8,,,,Wikidata position 13.8 km away
+lajes-azores,"Azores: Air Base No 4, Lajes Field",PT,US,1,yes,candidates,,0,0,0,1,21,Lajes Field,Lajes Field,Q1800787,1.1,,,,
+palau,Palau,PW,US,1,yes,candidates,,0,0,0,0,21,,,Q695,5.9,,,,Wikidata position 5.9 km away
+maria-argana-paraguay,Dr. Luis María Argaña International Airport,PY,US,0,yes,candidates,,0,0,0,0,20,,,Q1655907,0.6,,,,
+camp-as-sayliayah,Camp As Sayliayah,QA,US,0,yes,verified,presence nation,1,0,0,0,10,Camp As Sayliyah,,Q4802969,2.3,,,,Wikidata position 2.3 km away
+al-udeid-doha,Doha: Al Udeid Air Base,QA,GB,0,yes,verified,presence nation,1,0,0,0,20,Al Udeid Air Base,,Q542588,0.3,,,,
+campia-turzii-air-base,Câmpia Turzii Air Base,RO,US,1,yes,candidates,,0,0,0,0,21,,,Q5733880,3.8,,,,Wikidata position 3.8 km away
+mihail-kogalniceanu-constanta,Constanţa: Mihail Kogălniceanu,RO,US,0,yes,verified,presence nation,1,0,0,0,21,Mihail Kogalniceanu Airfield,Mihail Kogalniceanu Airfield,Q5753943,1,,,,
+deveselu-base,Deveselu Base,RO,US,0,yes,verified,presence nation,1,0,0,0,17,NAVSUPPFAC Romania,NAVSUPPFAC Romania,Q12724722,1.9,,,,marked for review on visualbases.org
 sibiu-nato,Sibiu: NATO Multinational Corps South-East,RO,US,0,no,verified,presence,1,0,0,0,0,,,,,,,,
-training-centre-general-popescu,Training Centre General Gheorghe Popescu / Poligonul Cincu,RO,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-prince-sultan-air-base,Prince Sultan Air Base,SA,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
+training-centre-general-popescu,Training Centre General Gheorghe Popescu / Poligonul Cincu,RO,US,0,yes,candidates,,0,0,0,0,8,,,Q1094268,11.7,,,,Wikidata position 11.7 km away
+prince-sultan-air-base,Prince Sultan Air Base,SA,US,0,yes,verified,presence nation,1,0,0,0,21,,,Q4116941,0.9,,,,
 s-berga,Berga: regimental area and military training area,SE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 s-boden-regimental-area-and-military-training-area,Boden: regimental area and military training area,SE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-five-eyes-station-lerkil,Five Eyes Station Lerkil,SE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
+five-eyes-station-lerkil,Five Eyes Station Lerkil,SE,US,0,yes,candidates,,0,0,0,0,20,,,Q15978258,,,,,
 s-halmstad-regimental-area-and-flotilla-area,Halmstad: regimental area and flotilla area,SE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-s-harnosand,Härnösand: military training area and harbour,SE,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-s-kiruna,Kiruna: Military camp and training area,SE,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
-s-kristinehamm,Kristinehamn: Regimental area and training area,SE,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
+s-harnosand,Härnösand: military training area and harbour,SE,US,0,yes,verified,presence nation,1,0,0,0,15,,,Q3240427,0,,,,
+s-kiruna,Kiruna: Military camp and training area,SE,US,0,yes,verified,presence nation,1,0,0,0,20,,,Q83232,81.8,,,,Wikidata position 81.8 km away
+s-kristinehamm,Kristinehamn: Regimental area and training area,SE,US,0,yes,verified,presence nation,1,0,0,0,7,,,Q215832,40.9,,,,Wikidata position 40.9 km away
 s-kvarn,Kvarn: Military camp and military training area,SE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-forsvarets-radioanstalt-lovon,Lovön: National Defence Radio Establishment,SE,US,0,yes,none,,0,0,0,0,0,,,,,,,,
+forsvarets-radioanstalt-lovon,Lovön: National Defence Radio Establishment,SE,US,0,yes,candidates,,0,0,0,0,21,,,Q1480245,,,,,
 overview-new-us-access-in-sweden,Overview new US access in Sweden,SE,,0,no,verified,presence nation,2,0,1,0,0,,,,,,,,
 s-ravlunda-military-camp-and-training-area,Ravlunda: Military camp and training area,SE,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
-paya-lebar-air-base,Paya Lebar Air Base (Singapore),SG,US,0,yes,verified,presence nation,1,0,0,0,0,Paya Lebar Air Base,Paya Lebar AB,,,,,,
+paya-lebar-air-base,Paya Lebar Air Base (Singapore),SG,US,0,yes,verified,presence nation,1,0,0,0,20,Paya Lebar Air Base,Paya Lebar AB,Q3504948,0.3,,,,
 singapore,Singapore,SG,,0,no,context,,1,0,1,0,0,Singapore Area Coordinator,,,,,,,
-dakar-senegal,Dakar,SN,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-base-aerienne-dakar,Dakar-Quakam: Base aérienne 160,SN,FR,0,yes,context,,1,1,0,0,0,,,,,,,,"contradicts (status): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking."
-kismayo-airport-somalia,Kismayo Airport,SO,US,0,yes,verified,presence nation,1,0,0,0,0,,,,,,,,
+dakar-senegal,Dakar,SN,US,0,yes,candidates,,0,0,0,0,21,,,Q3718,5.9,,,,Wikidata position 5.9 km away
+base-aerienne-dakar,Dakar-Quakam: Base aérienne 160,SN,FR,0,yes,context,,1,1,0,0,21,,,Q117464905,,,,,"contradicts (status): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking."
+kismayo-airport-somalia,Kismayo Airport,SO,US,0,yes,verified,presence nation,1,0,0,0,8,,,Q10853735,4.8,,,,Wikidata position 4.8 km away
 ocean-side-mogadishu,Mogadishu: Ocean Side Int. Campus,SO,US,0,no,context,,1,0,1,0,0,,,,,,,,marked for review on visualbases.org
-principe-island-sao-tome,Príncipe Island (São Tomé),ST,US,0,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-ab-comalpa-el-salvador,Las Flores: Base Aérea Militar de Comalapa,SV,US,0,yes,verified,presence nation,1,0,0,0,0,CSL El Salvador,,,,,,,
-al-tanf-syria,Al-Tanf,SY,US,0,yes,context,,1,1,0,0,0,,,,,,,,"contradicts (status): Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active."
-khmeimim-ab,Khmeimim Air Base,SY,RU,0,yes,verified,presence nation status,1,0,0,0,0,,,,,,,,
-material-technical-support-point-tartus-syria,"Material-Technical Support Point, Tartus",SY,RU,0,yes,verified,presence nation status,1,0,0,0,0,,,,,,,,
+principe-island-sao-tome,Príncipe Island (São Tomé),ST,US,0,yes,candidates,,0,0,0,0,21,,,Q1039,175.5,,,,Wikidata position 175.5 km away | marked for review on visualbases.org
+ab-comalpa-el-salvador,Las Flores: Base Aérea Militar de Comalapa,SV,US,0,yes,verified,presence nation,1,0,0,0,21,CSL El Salvador,,Q587675,1.1,,,,
+al-tanf-syria,Al-Tanf,SY,US,0,yes,context,,1,1,0,0,20,,,,,,,,"contradicts (status): Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active."
+khmeimim-ab,Khmeimim Air Base,SY,RU,0,yes,verified,presence nation status,1,0,0,0,20,,,Q21582584,1.2,,,,
+material-technical-support-point-tartus-syria,"Material-Technical Support Point, Tartus",SY,RU,0,yes,verified,presence nation status,1,0,0,0,20,,,Q574818,1.4,,,,
 rumeilan-air-base,Rumeilan Air Base,SY,US,0,no,verified,presence nation,2,1,0,0,0,,,,,,,,"contradicts (status): Status: the dataset still shows the base as active. Single source relaying the Syrian Observatory for Human Rights; Kharab al-Jir and Rmeilan/Abu Hajar airfield are named inconsistently in reports – check the position."
 unnamed-syria-airfield,Unnamed Airfield,SY,US,0,no,none,,0,0,0,0,0,,,,,,,,
-fort-lamy-ab-djamena,"Fort-Lamy Air Base, N’Djamena (Chad)",TD,FR,0,yes,context,,1,1,0,0,0,,,,,,,,"contradicts (status): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking."
-bizerte-sidi-ahmed-air-base,Bizerte-Sidi Ahmed Air Base (Tunesia),TN,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-incirlik-air-base,Incirlik Air Base,TR,US,1,yes,candidates,,0,0,0,1,0,Incirlik AB,Incirlik AB,,,,,,
-kurecik-radar-station,Kürecik Radar Station,TR,US,0,yes,verified,presence nation,1,0,0,0,0,Kurecik,,,,,,,
-taiwan,Taiwan,TW,US,1,yes,none,,0,0,0,0,0,,,,,,,,marked for review on visualbases.org
-beale-air-force-base-california,"Beale Air Force Base, California",US,,0,yes,verified,presence nation,1,0,0,0,0,Beale AFB,Beale AFB,,,,,,
-cape-cod-air-force-station,"Cape Cod Air Force Station, Massachusetts",US,,0,yes,verified,presence nation,1,0,0,0,0,Cape Cod AS,Cape Cod AS,,,,,,
-clear-air-force-station-alaska,"Clear Air Force Station, Alaska",US,,0,yes,verified,presence nation,1,0,0,0,0,Clear AB,Clear AB,,,,,,
-creech-air-force-base,"Creech Air Force Base, Nevada",US,US,0,yes,verified,presence nation,1,0,0,0,0,Creech AFB,Creech AFB,,,,,,
-fort-greely-alaska,"Fort Greely, Alaska",US,,0,yes,verified,presence nation,1,0,0,0,0,Fort Greely,Fort Greely,,,,,,
-guam-naval-base,Guam,US,US,0,yes,none,,0,0,0,0,0,,,,,,,,
-andersen-afb-guam,Guam: Andersen Air Force Base,US,US,0,yes,verified,presence nation,1,0,0,0,0,Andersen AFB,Andersen AFB,,,,,,
-naval-base-guam,Guam: Naval Base,US,US,0,yes,verified,presence nation,1,0,0,0,0,NAVBASE Guam,,,,,,,
-naval-radio-transmitter-lualualei,Hawaii: Naval Radio Transmitter Facility Lualualei,US,,0,yes,context,,1,0,1,0,0,Waianae,Waianae,,,,,,
-johnston-atoll,Johnston Atoll Airfield,US,,0,yes,context,,1,0,1,0,0,Johnston Atoll Airfield,Johnston Atoll Airfield,,,,,,
-vandenberg-space-force-base,"Vandenberg Space Force Base, California",US,,1,yes,none,,0,0,0,0,0,,,,,,,,
-us-camp-bondsteel,Camp Bondsteel (Kosovo),XK,US,1,yes,none,,0,0,0,0,0,,,,,,,,
+fort-lamy-ab-djamena,"Fort-Lamy Air Base, N’Djamena (Chad)",TD,FR,0,yes,context,,1,1,0,0,21,,,Q979272,1,,,,"contradicts (status): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking."
+bizerte-sidi-ahmed-air-base,Bizerte-Sidi Ahmed Air Base (Tunesia),TN,US,0,yes,candidates,,0,0,0,0,6,,,Q4919399,2.4,1963,,,Wikidata: closed/dissolved 1963 | Wikidata position 2.4 km away
+incirlik-air-base,Incirlik Air Base,TR,US,1,yes,candidates,,0,0,0,1,21,Incirlik AB,Incirlik AB,Q1083424,0.4,,,,
+kurecik-radar-station,Kürecik Radar Station,TR,US,0,yes,verified,presence nation,1,0,0,0,13,Kurecik,,Q6028444,0,,,,
+taiwan,Taiwan,TW,US,1,yes,candidates,,0,0,0,0,21,,,Q865,149.4,,,,Wikidata position 149.4 km away | marked for review on visualbases.org
+beale-air-force-base-california,"Beale Air Force Base, California",US,,0,yes,verified,presence nation,1,0,0,0,21,Beale AFB,Beale AFB,Q812921,5.7,,,,Wikidata position 5.7 km away
+cape-cod-air-force-station,"Cape Cod Air Force Station, Massachusetts",US,,0,yes,verified,presence nation,1,0,0,0,6,Cape Cod AS,Cape Cod AS,,,,,,
+clear-air-force-station-alaska,"Clear Air Force Station, Alaska",US,,0,yes,verified,presence nation,1,0,0,0,20,Clear AB,Clear AB,,,,,,
+creech-air-force-base,"Creech Air Force Base, Nevada",US,US,0,yes,verified,presence nation,1,0,0,0,21,Creech AFB,Creech AFB,Q1658047,26.4,,,,Wikidata position 26.4 km away
+fort-greely-alaska,"Fort Greely, Alaska",US,,0,yes,verified,presence nation,1,0,0,0,9,Fort Greely,Fort Greely,Q5471246,29.7,,,,Wikidata position 29.7 km away
+guam-naval-base,Guam,US,US,0,yes,candidates,,0,0,0,0,21,,,Q16635,6.7,,,,Wikidata position 6.7 km away
+andersen-afb-guam,Guam: Andersen Air Force Base,US,US,0,yes,verified,presence nation,1,0,0,0,21,Andersen AFB,Andersen AFB,Q491372,2.3,,,,Wikidata position 2.3 km away
+naval-base-guam,Guam: Naval Base,US,US,0,yes,verified,presence nation,1,0,0,0,13,NAVBASE Guam,,Q6981760,1.9,,,,
+naval-radio-transmitter-lualualei,Hawaii: Naval Radio Transmitter Facility Lualualei,US,,0,yes,context,,1,0,1,0,12,Waianae,Waianae,Q984166,1,,,,
+johnston-atoll,Johnston Atoll Airfield,US,,0,yes,context,,1,0,1,0,13,Johnston Atoll Airfield,Johnston Atoll Airfield,Q2900983,0.4,2005,,,Wikidata: closed/dissolved 2005
+vandenberg-space-force-base,"Vandenberg Space Force Base, California",US,,1,yes,candidates,,0,0,0,0,22,,,Q461492,2.2,,,,Wikidata position 2.2 km away
+us-camp-bondsteel,Camp Bondsteel (Kosovo),XK,US,1,yes,candidates,,0,0,0,0,15,,,Q138525,0.1,,,,
