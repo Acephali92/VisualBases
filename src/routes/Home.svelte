@@ -173,12 +173,14 @@
           <a class="btn btn-primary" href={href('/near')}>📍 {t('hero.ctaNear')}</a>
           <a class="btn" href={href('/atlas')}>{t('hero.ctaAtlas')} →</a>
         </div>
+        <a class="stats-link" href={href('/stats')} aria-label={t('nav.stats')}>
         <dl class="stats" aria-live="polite">
           <div><dt>{t('stat.locations')}</dt><dd>{formatNumber(shown.locations)}</dd></div>
           <div><dt>{t('stat.countries')}</dt><dd>{formatNumber(shown.countries)}</dd></div>
           <div><dt>{t('stat.us')}</dt><dd>{formatNumber(shown.us)}</dd></div>
           <div><dt>{t('stat.resistance')}</dt><dd>{formatNumber(shown.resistance)}</dd></div>
         </dl>
+        </a>
       </div>
       <a class="scroll-hint" href="#step-1">{t('hero.scroll')} ↓</a>
     </div>
@@ -309,6 +311,8 @@
   .lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--text-2); max-width: 36em; }
   .cite { color: var(--muted); font-size: 0.8em; }
   .ctas { display: flex; flex-wrap: wrap; gap: 10px; margin: 1.6em 0 2em; }
+  .stats-link { display: inline-block; text-decoration: none; border-radius: 10px; }
+  .stats-link:hover dd { color: var(--c-shared); }
   .stats { display: grid; grid-template-columns: repeat(4, auto); gap: 8px 28px; margin: 0; justify-content: start; }
   .stats div { display: flex; flex-direction: column-reverse; }
   .stats dd { margin: 0; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }

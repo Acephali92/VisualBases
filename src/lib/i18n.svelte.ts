@@ -185,6 +185,7 @@ const de = {
 
   'nav.news': 'Aktuelles',
   'nav.act': 'Mitmachen',
+  'nav.space': 'Zeitreisen',
   'act.title': 'Basen sind kein Naturgesetz.',
   'act.lead': 'Überall auf der Welt wehren sich Menschen gegen fremde Militärbasen – mit Recherchen, Klagen, Demonstrationen und langem Atem. Hier findest du Initiativen, Kampagnen vor Ort und Wege, selbst beizutragen.',
   'act.reportTitle': 'Hinweis melden',
@@ -430,6 +431,7 @@ const en: Dict = {
 
   'nav.news': 'News',
   'nav.act': 'Take part',
+  'nav.space': 'Time travel',
   'act.title': 'Bases are not a law of nature.',
   'act.lead': 'All over the world, people resist foreign military bases – with research, lawsuits, demonstrations and staying power. Here you find initiatives, local campaigns and ways to contribute yourself.',
   'act.reportTitle': 'Report a tip',

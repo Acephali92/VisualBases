@@ -32,8 +32,8 @@
     { path: '/', key: 'nav.home', match: '' },
     { path: '/atlas', key: 'nav.atlas', match: 'atlas' },
     { path: '/near', key: 'nav.near', match: 'near' },
+    { path: '/space', key: 'nav.space', match: 'space' },
     { path: '/news', key: 'nav.news', match: 'news' },
-    { path: '/stats', key: 'nav.stats', match: 'stats' },
     { path: '/act', key: 'nav.act', match: 'act' },
     { path: '/about', key: 'nav.about', match: 'about' },
   ] as const;
@@ -129,6 +129,11 @@
     <div class="container foot">
       <span>Visual<b>Bases</b> · {t('common.openSource')}</span>
       <nav aria-label="Footer">
+        <a href={href('/atlas')}>{t('nav.atlas')}</a>
+        <a href={href('/space')}>{t('nav.space')}</a>
+        <a href={href('/stats')}>{t('nav.stats')}</a>
+        <a href={href('/quiz')}>{t('quiz.kicker')}</a>
+        <a href={href('/act')}>{t('nav.act')}</a>
         <a href={href('/about')}>{t('nav.about')}</a>
         <a href="./data/bases.csv" download>CSV</a>
         <a href="./data/bases.geojson" download>GeoJSON</a>
