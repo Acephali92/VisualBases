@@ -3,7 +3,7 @@
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
   import { flag } from '../lib/taxonomy';
-  import { issueUrl, REPO_URL } from '../lib/github';
+  import { issueUrl, mailUrl, REPO_URL } from '../lib/github';
   import type { Base } from '../lib/types';
 
   const campaigns = $derived(
@@ -35,9 +35,13 @@
     <h1>{t('act.title')}</h1>
     <p class="lead">{t('act.lead')}</p>
     <div class="actions">
-      <a class="action card" href={issueUrl('hinweis')} target="_blank" rel="noopener">
+      <div class="action card">
         <span class="ai">📍</span><b>{t('act.reportTitle')}</b><span>{t('act.reportText')}</span>
-      </a>
+        <span class="alt">
+          <a href={issueUrl('hinweis')} target="_blank" rel="noopener">GitHub ↗</a>
+          <a href={mailUrl(t('act.mailSubject'), t('act.mailBody'))}>✉ {t('act.mail')}</a>
+        </span>
+      </div>
       <a class="action card" href={href('/near')}>
         <span class="ai">📲</span><b>{t('act.shareTitle')}</b><span>{t('act.shareText')}</span>
       </a>
@@ -129,6 +133,8 @@
   .action b { font-size: 1.05rem; }
   .action span:last-child { color: var(--text-2); font-size: 0.9rem; }
   .ai { font-size: 1.6rem; }
+  .action .alt { display: flex; gap: 14px; margin-top: 6px; color: var(--text) !important; font-weight: 600; }
+  .action .alt a { color: var(--text); }
 
   .camps { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
   .camp { display: flex; gap: 12px; padding: 10px; align-items: center; }

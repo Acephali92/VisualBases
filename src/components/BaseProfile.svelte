@@ -10,7 +10,7 @@
   import Compare from './Compare.svelte';
   import Gallery from './Gallery.svelte';
   import NewsList from './NewsList.svelte';
-  import { issueUrl } from '../lib/github';
+  import { issueUrl, mailUrl } from '../lib/github';
 
   let { base, nearby, onClose, onSelect }: { base: Base; nearby: Ranked[]; onClose: () => void; onSelect: (id: string) => void } = $props();
 
@@ -247,7 +247,10 @@
 
   <footer>
     <a href={base.origin} target="_blank" rel="noopener">{t('base.origin')} ↗</a>
-    <a href={issueUrl('korrektur', { title: `Korrektur: ${base.name}`, base: base.id })} target="_blank" rel="noopener">✏️ {t('base.report')}</a>
+    <span class="report">✏️ {t('base.report')}:
+      <a href={issueUrl('korrektur', { title: `Korrektur: ${base.name}`, base: base.id })} target="_blank" rel="noopener">GitHub</a> ·
+      <a href={mailUrl(`VisualBases: ${base.name}`, `${t('act.mailBody')}\n\n${location.href}`)}>{t('act.mail')}</a>
+    </span>
     {#if base.lastmod}<span>{t('base.updated')}: {base.lastmod}</span>{/if}
   </footer>
 </div>

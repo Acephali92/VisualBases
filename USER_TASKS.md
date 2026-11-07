@@ -26,9 +26,6 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 - [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur` (werden von den Issue-Formularen gesetzt).
 - [ ] **Branch-Schutz** für `main` aktivieren (Settings → Branches), damit Änderungen immer über Pull Requests mit grüner CI laufen.
 
-## Was ich selbstständig weiterentwickle
-
-Siehe offene Pull Requests und die Liste „Nächste Schritte“ im README.
 
 ## 4. Automatische Daten-Aktualisierung einschalten
 
@@ -36,3 +33,8 @@ Siehe offene Pull Requests und die Liste „Nächste Schritte“ im README.
   Danach erstellt der Workflow **„Daten aktualisieren“** jeden Montag automatisch einen Pull Request mit neuen Standorten, Presseschau und Fotos.
 - [ ] Einmal manuell starten: **Actions → „Daten aktualisieren“ → „Run workflow“.** Dabei werden auch die restlichen Wikimedia-Fotos geladen (aus meiner Cloud-Umgebung wurde der Download von Wikimedia gedrosselt).
 - [ ] Label **`daten`** im Repo anlegen (optional; der Workflow setzt es an den Pull Request).
+
+## 5. Kontakt und Kanäle
+
+- [ ] **E-Mail-Adresse bestätigen:** Hinweise „per E-Mail“ gehen an **info@visualbases.org** (laut Impressum der Originalseite). Falls eine andere Adresse gewünscht ist, sag Bescheid. Sie steht zentral in `src/lib/github.ts`.
+- [ ] **Newsletter / Messenger-Kanal** (optional): Wenn es einen Signal-, Telegram- oder Mastodon-Kanal oder einen Newsletter gibt bzw. geben soll, nenn mir die Links. Ich binde sie auf „Mitmachen“ und im Fußbereich ein.
