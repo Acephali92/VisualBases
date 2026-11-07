@@ -636,5 +636,295 @@
   "bases": [
    "zadar-gazenica-croatia"
   ]
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "bases": [
+   "palanquero-ab",
+   "malambo-ab",
+   "apiay-ab",
+   "fuerte-militar-larandia",
+   "fuerte-militar-tolemaida",
+   "cartagena",
+   "bahia-malaga"
+  ]
+ },
+ {
+  "url": "https://www.csmonitor.com/World/Americas/2009/1030/p06s10-woam.html",
+  "title": "US and Colombia sign accord for US to access military bases",
+  "publisher": "The Christian Science Monitor",
+  "type": "media",
+  "published": "2009-10-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the signing of the US–Colombia agreement (30 Oct 2009); most of the 46 million dollars already appropriated was to refurbish Palanquero air base.",
+  "bases": [
+   "palanquero-ab"
+  ]
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/",
+  "title": "US completes withdrawal from AB 201",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2024-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces completed their withdrawal from Air Base 201 in Agadez in August 2024, two months after the first C-17 left Air Base 101 in Niamey on 7 June; the Niamey withdrawal took one month.",
+  "note": "Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)",
+  "bases": [
+   "us-air-base-201",
+   "niamey-air-base"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal",
+  "title": "Former colonial ruler France hands over its last military bases in Senegal",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2025-07-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "On 17 July 2025 France returned Camp Geille, its largest base in Senegal, and its airfield at Dakar airport; the month before it had handed over the Kossei base in Chad, its last foothold in the Sahel.",
+  "note": "Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.",
+  "bases": [
+   "base-aerienne-dakar",
+   "fort-lamy-ab-djamena"
+  ]
+ },
+ {
+  "url": "https://aa.com.tr/en/asia-pacific/us-forces-transfer-their-main-bagram-airfield-to-afghans/2292072",
+  "title": "US forces transfer their main Bagram Airfield to Afghans",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2021-07-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces handed Bagram Airfield over to the Afghan security forces in early July 2021.",
+  "note": "Status: Bagram has not been a US base since July 2021 (historical).",
+  "bases": [
+   "bagram-air-base"
+  ]
+ },
+ {
+  "url": "https://www.airandspaceforces.com/usafe-new-reaper-detachment-in-poland-focuses-on-indications-and-warnings-in-the-baltics",
+  "title": "USAFE: New Reaper Detachment in Poland Focuses on “Indications and Warnings” in the Baltics",
+  "publisher": "Air & Space Forces Magazine",
+  "type": "media",
+  "published": "2019-03-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force MQ-9 Reaper detachment at Miroslawiec Air Base, Poland, was declared fully operational with a ribbon-cutting on 1 March 2019.",
+  "bases": [
+   "lotnisko-miroslawiec-ab"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases",
+  "title": "Syria says it reached deal with Moscow on future of Russian bases",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2026-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Syria and Russia agreed in August 2026 on the future of Hmeimim air base and Tartus naval base: both are to become joint training and capacity-building centres, with civilian parts handed to Syria.",
+  "note": "Russian presence continues in a changed form; the final intergovernmental agreement was still pending in autumn 2026.",
+  "bases": [
+   "khmeimim-ab",
+   "material-technical-support-point-tartus-syria"
+  ]
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254",
+  "title": "Deutscher Beitrag Resolute Support beendet – Rückverlegung abgeschlossen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2021-06-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The last Bundeswehr aircraft left Camp Marmal, the former German field camp in Mazar-i-Sharif, on 29 June 2021; the German contribution to Resolute Support has ended.",
+  "note": "Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.",
+  "bases": [
+   "camp-marmal-john-pratt"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/news/357168/378th-aew-officially-activates-psab",
+  "title": "378th AEW officially activates at PSAB",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2019-12-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force's 378th Air Expeditionary Wing was activated at Prince Sultan Air Base, Saudi Arabia, on 17 December 2019, with about 1,800 deployed personnel.",
+  "bases": [
+   "prince-sultan-air-base"
+  ]
+ },
+ {
+  "url": "https://maritime-executive.com/article/china-upgrades-djibouti-naval-base-as-an-intelligence-site",
+  "title": "China Upgrades Djibouti Naval Base as an Intelligence Site",
+  "publisher": "The Maritime Executive",
+  "type": "media",
+  "published": "2026-09-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS satellite analysis, the article reports a recently enhanced signals array at the PLA Navy's overseas support base at Doraleh, Djibouti – China's only acknowledged foreign base.",
+  "bases": [
+   "chinese-naval-base"
+  ]
+ },
+ {
+  "url": "https://www.aa.com.tr/en/middle-east/us-completes-withdrawal-from-al-tanf-base-in-syria-centcom/3828375",
+  "title": "US completes withdrawal from al-Tanf base in Syria: CENTCOM",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2026-02-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "According to US Central Command, US forces completed their withdrawal from the al-Tanf garrison in Syria in February 2026; the base was handed over to the Syrian government.",
+  "note": "Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active.",
+  "bases": [
+   "al-tanf-syria"
+  ]
+ },
+ {
+  "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia",
+  "title": "United States Military units in Estonia",
+  "publisher": "Ministry of Defence of Estonia",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The Estonian ministry of defence states that US units serve in Estonia under a bilateral agreement on a rotational basis, with locations in Tapa and Reedo near Võru.",
+  "note": "Rotational presence; undated page. For the 2026 drawdown see the Militarnyi report.",
+  "bases": [
+   "tapa-army-base",
+   "tapa-training-area"
+  ]
+ },
+ {
+  "url": "https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/",
+  "title": "U.S. Pulls Most Troops Out of Estonia, No Military Presence Planned Beyond 2027",
+  "publisher": "Militarnyi",
+  "type": "media",
+  "published": "2026-07-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "Citing Estonian broadcaster ETV, the US contingent in Estonia (previously 500–700 troops, mainly at Tapa) has fallen to fewer than 100; a further rotation and the presence beyond 2026 are open.",
+  "note": "Status question: the US presence at Tapa has been strongly reduced in 2026.",
+  "bases": [
+   "tapa-army-base",
+   "tapa-training-area"
+  ]
+ },
+ {
+  "url": "https://news.err.ee/1122683/us-air-force-completes-us-10-8-million-amari-investment",
+  "title": "US Air Force completes US$10.8-million Ämari investment",
+  "publisher": "ERR (Estonian Public Broadcasting)",
+  "type": "media",
+  "published": "2020-08-11",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force completed infrastructure investments worth 10.8 million dollars at Ämari Air Base, Estonia (2020).",
+  "note": "US-funded infrastructure and recurring rotational deployments, not a permanent US unit.",
+  "bases": [
+   "amari-air-base"
+  ]
+ },
+ {
+  "url": "https://en.highnorthnews.com/home/waking-up-the-keflavik-air-base-us-navy-returns-after-10-years-of-absence/104589",
+  "title": "Waking up the Keflavik air base; US Navy returns after 10 years of absence",
+  "publisher": "High North News",
+  "type": "media",
+  "published": "2016-02-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Navy budget request included 21.4 million dollars to upgrade hangars at Keflavik for P-8 Poseidon aircraft, to be stationed there on a rotational basis – ten years after the US left in 2006.",
+  "note": "Rotational use since 2016; no permanent US base.",
+  "bases": [
+   "keflavik-base"
+  ]
  }
 ]

@@ -149,6 +149,7 @@ export function placeOnlyName(name) {
 export async function loadResearch() {
   return {
     sources: await readJson(path.join(RESEARCH, 'sources.json'), []),
+    candidates: await readJson(path.join(RESEARCH, 'candidates.json'), []),
     checks: await readJson(path.join(RESEARCH, 'checks.json'), {}),
   };
 }
