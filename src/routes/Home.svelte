@@ -10,6 +10,7 @@
   import type { Base, Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
   import MapNotice from '../components/MapNotice.svelte';
+  import { handleMapError, type MapFailure } from '../lib/update';
   import Compare from '../components/Compare.svelte';
   import NewsList from '../components/NewsList.svelte';
   import type { Image } from '../lib/types';
@@ -43,7 +44,7 @@
 
   let mapEl: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
-  let mapFailed = $state(false);
+  let mapFailed = $state<MapFailure | null>(null);
   let active = $state(0);
   let shown = $state({ locations: 0, countries: 0, us: 0, resistance: 0 });
 
@@ -149,8 +150,7 @@
         h.map.once('idle', () => (raf = requestAnimationFrame(spin)));
       }
     }).catch((e) => {
-      console.warn(e);
-      mapFailed = true;
+      mapFailed = handleMapError(e);
     });
 
     const io = new IntersectionObserver(
@@ -173,7 +173,7 @@
 <section class="scrolly" aria-label="Story">
   <div class="sticky">
     <div class="globe" bind:this={mapEl} aria-hidden="true"></div>
-    {#if mapFailed}<div class="globe-fallback"><MapNotice /></div>{/if}
+    {#if mapFailed}<div class="globe-fallback"><MapNotice kind={mapFailed} /></div>{/if}
     <div class="vignette"></div>
     <div class="legend-wrap" class:visible={active > 0 && active < 5}>
       <Legend compact />
