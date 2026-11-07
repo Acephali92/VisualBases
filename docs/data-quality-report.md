@@ -11,12 +11,15 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-07. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 29 / 8 |
+| Einträge mit Prüfhinweis | 81 |
+| Kontext-Standorte (eigenes Staatsgebiet) | 9 |
 | Position ungeprüft (corrections.json) | 2 |
 | Position ungefähr | 5 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
-| Warnungen | 370 |
+| Warnungen | 404 |
 
 ## Fehler
 
@@ -38,6 +41,8 @@ Keine.
 - `naval-comm-station-exmouth`: only Wikipedia as source
 - `robertson-barracks`: only Wikipedia as source
 - `tindal-raaf-base`: only Wikipedia as source
+- `savaneta-kamp`: only Wikipedia as source
+- `aruba`: only Wikipedia as source
 - `chievres-ab`: only Wikipedia as source
 - `kleine-brogel-air-base`: only Wikipedia as source
 - `shape-mons`: only Wikipedia as source
@@ -63,9 +68,7 @@ Keine.
 - `palanquero-ab`: only Wikipedia as source
 - `fuerte-militar-tolemaida`: only Wikipedia as source
 - `telecom-cape-verde`: only Wikipedia as source
-- `dhekelia-military-camp`: only Wikipedia as source
-- `raf-akrotiri`: only Wikipedia as source
-- `raf-troodos`: only Wikipedia as source
+- `davis-monthan-ab-curacao`: only Wikipedia as source
 - … und 178 weitere
 
 ### `sources-none` (73)
@@ -108,71 +111,89 @@ Keine.
 - `radio-relay-site-rummelsberg`: no source at all
 - `echterdingen-airfield`: no source at all
 - `base-aerienne-188-djibouti`: no source at all
-- `base-aerienne190`: no source at all
-- `reunion-ab`: no source at all
+- `port-gentil-gabon`: no source at all
+- `base-nautique-de-stoupan`: no source at all
 - … und 33 weitere
 
-### `nation-missing` (35)
+### `issue-site-type-from-status` (26)
 
-- `kucova-albania`: no stationing nation
-- `kleine-brogel-nuclear`: no stationing nation
-- `bdf-glen-valley-botswana`: no stationing nation
-- `gitmo-guantanamo-bay`: no stationing nation
-- `altmark-training-area`: no stationing nation
-- `deu-bellheim`: no stationing nation
-- `bergen-training-area`: no stationing nation
-- `nato-pipeline-station-bitburg`: no stationing nation
-- `kalkar-von-seydlitz-kaserne`: no stationing nation
-- `munster-training-area`: no stationing nation
-- `oberlausitz-training-area`: no stationing nation
-- `marinestutzpunkt-hohe-dune-rostock`: no stationing nation
-- `wilhelmsburg-barracks-ulm`: no stationing nation
-- `raf-digby`: no stationing nation
-- `namfi-souda-bay`: no stationing nation
-- `papa-ab-hungary`: no stationing nation
-- `maritime-component-command-naples`: no stationing nation
-- `salto-di-quirra-sardinia`: no stationing nation
-- `decimomannu-ab-sardinia`: no stationing nation
-- `poligono-militare-nato-sardinia-italy`: no stationing nation
-- `muwaffaq-salti-air-base-al-azraq-jordan`: no stationing nation
-- `jpn-yonaguni`: no stationing nation
-- `siauliai-lithuania`: no stationing nation
-- `sinjajevina-montenegro`: no stationing nation
-- `trondheim`: no stationing nation
-- `21-centralny-poligon-lotniczy`: no stationing nation
-- `rzeszow`: no stationing nation
-- `overview-new-us-access-in-sweden`: no stationing nation
-- `beale-air-force-base-california`: no stationing nation
-- `cape-cod-air-force-station`: no stationing nation
-- `clear-air-force-station-alaska`: no stationing nation
-- `fort-greely-alaska`: no stationing nation
-- `naval-radio-transmitter-lualualei`: no stationing nation
-- `johnston-atoll`: no stationing nation
-- `vandenberg-space-force-base`: no stationing nation
+- `bagram-air-base`: site-type-from-status
+- `camp-marmal-john-pratt`: site-type-from-status
+- `camp-shaheen-camp-mike-spann`: site-type-from-status
+- `herat-unnamed`: site-type-from-status
+- `kandahar-airfield`: site-type-from-status
+- `masar-i-sharif-communnity`: site-type-from-status
+- `nas-argentia-newfoundland`: site-type-from-status
+- `conversion-area-bitburg`: site-type-from-status
+- `darmstadt-training-center`: site-type-from-status
+- `raf-bicester`: site-type-from-status
+- `camp-century-greenland`: site-type-from-status
+- `camp-speicher`: site-type-from-status
+- `camp-walker-taeku`: site-type-from-status
+- `us-camp-castor`: site-type-from-status
+- `us-air-base-201`: site-type-from-status
+- `dirkou-ab-niger`: site-type-from-status
+- `niamey-air-base`: site-type-from-status
+- `mount-st-rita-naval-link-station`: site-type-from-status
+- `vieques-island-training-area`: site-type-from-status
+- `al-tanf-syria`: site-type-from-status
+- `khmeimim-ab`: site-type-from-status
+- `material-technical-support-point-tartus-syria`: site-type-from-status
+- `rumeilan-air-base`: site-type-from-status
+- `unnamed-syria-airfield`: site-type-from-status
+- `fort-lamy-ab-djamena`: site-type-from-status
+- `johnston-atoll`: site-type-from-status
 
-### `review` (21)
+### `issue-nation-missing` (24)
 
-- `nas-argentia-newfoundland`: marked for review on visualbases.org
-- `cartagena`: marked for review on visualbases.org
-- `telecom-cape-verde`: marked for review on visualbases.org
-- `marinestutzpunkt-hohe-dune-rostock`: marked for review on visualbases.org
-- `boufarik-base`: marked for review on visualbases.org
-- `gchq-bude`: marked for review on visualbases.org
-- `raf-oakhanger`: marked for review on visualbases.org
-- `sarajevo-military-airport`: marked for review on visualbases.org
-- `abdullah-al-mubarak-ab`: marked for review on visualbases.org
-- `guelmim-airport`: marked for review on visualbases.org
-- `inezgane-airport`: marked for review on visualbases.org
-- `windhoek-namibia`: marked for review on visualbases.org
-- `trondheim`: marked for review on visualbases.org
-- `makran-pakistan`: marked for review on visualbases.org
-- `shahbaz-ab`: marked for review on visualbases.org
-- `pasni-base-port`: marked for review on visualbases.org
-- `shamsi-airfield-pakistan`: marked for review on visualbases.org
-- `deveselu-base`: marked for review on visualbases.org
-- `ocean-side-mogadishu`: marked for review on visualbases.org
-- `principe-island-sao-tome`: marked for review on visualbases.org
-- `taiwan`: marked for review on visualbases.org
+- `kucova-albania`: nation-missing
+- `bdf-glen-valley-botswana`: nation-missing
+- `altmark-training-area`: nation-missing
+- `deu-bellheim`: nation-missing
+- `bergen-training-area`: nation-missing
+- `nato-pipeline-station-bitburg`: nation-missing
+- `kalkar-von-seydlitz-kaserne`: nation-missing
+- `munster-training-area`: nation-missing
+- `oberlausitz-training-area`: nation-missing
+- `marinestutzpunkt-hohe-dune-rostock`: nation-missing
+- `wilhelmsburg-barracks-ulm`: nation-missing
+- `raf-digby`: nation-missing
+- `camp-ayanganna`: nation-missing
+- `namfi-souda-bay`: nation-missing
+- `maritime-component-command-naples`: nation-missing
+- `salto-di-quirra-sardinia`: nation-missing
+- `decimomannu-ab-sardinia`: nation-missing
+- `poligono-militare-nato-sardinia-italy`: nation-missing
+- `jpn-yonaguni`: nation-missing
+- `siauliai-lithuania`: nation-missing
+- `sinjajevina-montenegro`: nation-missing
+- `trondheim`: nation-missing
+- `21-centralny-poligon-lotniczy`: nation-missing
+- `johnston-atoll`: nation-missing
+
+### `issue-review-on-origin` (21)
+
+- `nas-argentia-newfoundland`: review-on-origin
+- `cartagena`: review-on-origin
+- `telecom-cape-verde`: review-on-origin
+- `marinestutzpunkt-hohe-dune-rostock`: review-on-origin
+- `boufarik-base`: review-on-origin
+- `gchq-bude`: review-on-origin
+- `raf-oakhanger`: review-on-origin
+- `sarajevo-military-airport`: review-on-origin
+- `abdullah-al-mubarak-ab`: review-on-origin
+- `guelmim-airport`: review-on-origin
+- `inezgane-airport`: review-on-origin
+- `windhoek-namibia`: review-on-origin
+- `trondheim`: review-on-origin
+- `makran-pakistan`: review-on-origin
+- `shahbaz-ab`: review-on-origin
+- `pasni-base-port`: review-on-origin
+- `shamsi-airfield-pakistan`: review-on-origin
+- `deveselu-base`: review-on-origin
+- `ocean-side-mogadishu`: review-on-origin
+- `principe-island-sao-tome`: review-on-origin
+- `taiwan`: review-on-origin
 
 ### `coords-precision` (9)
 
@@ -185,6 +206,15 @@ Keine.
 - `camp-kinser-okinawa`: low precision (26.2586, 127.7)
 - `kadena-ammunition-okinawa`: low precision (26.3989, 127.81)
 - `ramsund-naval-station`: low precision (68.46, 16.5371)
+
+### `issue-multiple-site-types` (6)
+
+- `deu-bellheim`: multiple-site-types
+- `satcom-landstuhl`: multiple-site-types
+- `sennelager`: multiple-site-types
+- `i-solbiate-olona`: multiple-site-types
+- `sinjajevina-montenegro`: multiple-site-types
+- `rzeszow`: multiple-site-types
 
 ### `news-date-vague` (6)
 
@@ -203,10 +233,35 @@ Keine.
 - `white-beach-okinawa`: approximate position (geocoded by hand)
 - `inezgane-airport`: approximate position (geocoded by hand)
 
+### `issue-continent-check` (5)
+
+- `guam-naval-base`: continent-check
+- `andersen-afb-guam`: continent-check
+- `naval-base-guam`: continent-check
+- `johnston-atoll`: continent-check
+- `naval-radio-transmitter-lualualei`: continent-check
+
+### `issue-no-site-type` (4)
+
+- `gitmo-guantanamo-bay`: no-site-type
+- `white-beach-okinawa`: no-site-type
+- `jpn-yonaguni`: no-site-type
+- `marshall-islands`: no-site-type
+
+### `issue-foreign-without-foreign-presence` (3)
+
+- `pratas-islands-south-china-sea`: foreign-without-foreign-presence
+- `money-island-south-chinese-sea`: foreign-without-foreign-presence
+- `pattle-island`: foreign-without-foreign-presence
+
 ### `duplicate-position-reviewed` (2)
 
 - `puerto-castilla-honduras`: same position as soto-cano-honduras (0 m) – listed in corrections.json
 - `karlovac-croatia-2`: same position as zadar-gazenica-croatia (0 m) – listed in corrections.json
+
+### `issue-out-of-scope-candidate` (1)
+
+- `camp-ayanganna`: out-of-scope-candidate
 
 ### `duplicate-position-linked` (1)
 

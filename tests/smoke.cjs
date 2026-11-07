@@ -13,6 +13,11 @@ const ROUTES = [
   ['#/', 'h1'],
   ['#/atlas', '.results li a'],
   ['#/atlas?themes=drones', '.results li a'],
+  ['#/atlas?kinds=closed&themes=drones', '.results li a'],
+  ['#/atlas?status=closed&activities=defender-europe', '.meta-row'],
+  ['#/base/naval-radio-transmitter-lualualei', '.profile h2'],
+  ['#/base/base-aerienne-188-djibouti', '.profile .box'],
+  ['#/base/buechel-nato-air-base', '.profile .chips'],
   ['#/base/ramstein-air-base', '.profile h2'],
   ['#/near', 'form.finder'],
   ['#/news', '.news li'],
@@ -25,6 +30,7 @@ const ROUTES = [
   ['#/embed?themes=resistance', '.badge'],
   ['b/ramstein-air-base.html', '.profile h2'],
   ['c/DE.html', '.country h2'],
+  ['c/GL.html', '.country h2'],
 ];
 
 (async () => {

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { untrack } from 'svelte';
   import { t, tl, ti, i18n, countryName, formatNumber } from '../lib/i18n.svelte';
-  import { db } from '../lib/store.svelte';
+  import { db, loadResearch } from '../lib/store.svelte';
   import { href, route } from '../lib/router.svelte';
   import { GROUP_COLOR, FEATURE, FEATURE_KINDS, ACTIVITY, CLAIM_TYPES, colorGroup, flag } from '../lib/taxonomy';
   import { foreignNations } from '../lib/data';
@@ -64,8 +64,10 @@
   ].filter((g) => g.list.length));
   const featureGroups = $derived(FEATURE_KINDS.map((k) => ({ kind: k.id, items: base.features.filter((f) => FEATURE[f].kind === k.id) })).filter((g) => g.items.length));
   const issues = $derived((base.issues ?? []).filter((i) => i !== 'position-unverified'));
-  const checkedSources = $derived((base.research ?? []).filter((s) => s.method === 'manual'));
-  const leads = $derived((base.research ?? []).filter((s) => s.method !== 'manual'));
+  $effect(() => { loadResearch(); });
+  const research = $derived(base.research ?? db.research?.[base.id] ?? []);
+  const checkedSources = $derived(research.filter((s) => s.method === 'manual'));
+  const leads = $derived(research.filter((s) => s.method !== 'manual'));
   /** readable form of a corrected value */
   function fmt(field: string, v: unknown): string {
     if (v == null || (Array.isArray(v) && !v.length)) return t('base.none');
@@ -76,7 +78,7 @@
     if (field === 'period') { const p = v as { from?: string; to?: string }; return [p.from && `${t('base.since')} ${p.from}`, p.to && `${t('base.until')} ${p.to}`].filter(Boolean).join(' '); }
     return Array.isArray(v) ? v.join(', ') : String(v);
   }
-  const sourceTitle = (url: string) => base.research?.find((s) => s.url === url)?.publisher ?? host(url);
+  const sourceTitle = (url: string) => research.find((s) => s.url === url)?.publisher ?? host(url);
   const images = $derived(base.images ?? []);
   const news = $derived(db.news.filter((n) => n.bases?.includes(base.id) || (base.relations ?? []).some((r) => n.bases?.includes(r.id))).slice(0, 6));
   const sats = $derived(images.filter((i) => i.type === 'satellite' && i.year).sort((a, b) => a.year! - b.year!));
@@ -136,7 +138,7 @@
     <h2>{base.name}</h2>
     <p class="where">{#if base.host.country}<a class="cc" href={href('/atlas', `countries=${base.host.territory ?? base.host.country}`)}>{flag(base.host.territory ?? base.host.country)} {countryName(base.host.territory ?? base.host.country)}</a>{#if base.host.territory}{' '}<span class="muted">({countryName(base.host.country)})</span>{/if}{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
     <p class="kind-info">{ti('siteType', base.siteType)}</p>
-    {#if base.scope === 'domestic'}<p class="kind-info">ℹ {t('base.context')}</p>{:else if base.scope === 'overseas'}<p class="kind-info">ℹ {t('base.overseas')}</p>{/if}
+    {#if base.scope === 'domestic' && base.siteType !== 'domestic-global'}<p class="kind-info">ℹ {t('base.context')}</p>{:else if base.scope === 'overseas'}<p class="kind-info">ℹ {t('base.overseas')}</p>{/if}
     {#if base.positionCheck?.status === 'proposed'}
       {@const dup = base.positionCheck.duplicateOf ? db.byId.get(base.positionCheck.duplicateOf) : undefined}
       <p class="pos-warn" role="note">
@@ -312,7 +314,9 @@
           <li><a href={s.url} target="_blank" rel="noopener"><span class="lk v-{s.verdict}">{s.verdict === 'supports' ? '✓' : s.verdict === 'contradicts' ? '✗' : s.verdict === 'context' ? '·' : '?'}</span><span>{s.publisher}{#if s.published}{' · '}{s.published}{/if}<small>{t(`base.verdict.${s.verdict}` as never)} · {s.supports.map((c) => tl('claimType', c)).join(', ')} – {s.summary}</small></span></a></li>
         {/each}
       </ul>
-      <p class="small muted">{t('base.evidenceNote', { date: base.lastChecked ?? (base.research?.[0]?.accessed ?? '') })}</p>
+      <p class="small muted">{t('base.evidenceNote', { date: base.lastChecked ?? (research[0]?.accessed ?? '') })}</p>
+    {:else if db.research === null && base.evidence}
+      <p class="small muted">{t('common.loading')}</p>
     {:else}
       <p class="small muted">{t('base.evidenceNone')}</p>
     {/if}

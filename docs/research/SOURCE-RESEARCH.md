@@ -2,7 +2,7 @@
 
 Stand: 2026-11-07 · Auftrag: ausführliche Recherche zur Datenlage der Standorte, die auf visualbases.org keine eigene Quelle haben (291 von 365: 218 nur mit Wikipedia, 73 ganz ohne Quelle).
 
-> **Status: Recherche-Datensatz, noch nicht in der Anwendung.** Die Ergebnisse liegen in `data/research/` und werden erst nach Durchsicht durch die Projektverantwortlichen in die App übernommen (Entscheidung vom 2026-11-07). An `data/bases.json` wurde nichts geändert.
+> **Status (aktualisiert 2026-11-07, Taxonomie v2):** Die geprüften Quellen erscheinen in den Standortprofilen als Belege je Aussage, gekennzeichnet als „redaktionell noch nicht bestätigt“. Die Widersprüche aus Abschnitt 3 sind nach Entscheidung der Projektverantwortlichen als Korrekturen in `data/claims.json` umgesetzt (mit Originalwert und Quelle); unsichere Befunde stehen dort als offene Vorschläge. `data/bases.json` bleibt unverändert der Import von visualbases.org. Hinweis: Die Notizen „dataset still shows it as active“ zu al-Tanf, Rmeilan, Niger und Camp Castor treffen nicht zu – diese Einträge waren bereits als geschlossen geführt; die Quellen belegen den vorhandenen Status.
 
 ## 1. Methode
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Build the public open-data files from data/*.json:
- *   public/data/bases.json     (minified, used by the app)
+ *   public/data/bases.json     (minified, used by the app; without research sources and raw terms)
+ *   public/data/research.json  (checked sources per record, loaded with a profile)
  *   public/data/bases.geojson  (GeoJSON FeatureCollection)
  *   public/data/bases.csv      (spreadsheet friendly)
  *   public/data/taxonomy.json  (vocabulary: IDs, labels de/en, definitions)
@@ -32,7 +33,11 @@ const { bases, problems } = resolveBases(sourceBases, { claims, research, correc
 for (const p of problems) console.warn(`! [${p.rule}] ${p.id}: ${p.msg}`);
 await fs.mkdir(out, { recursive: true });
 
-await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(bases));
+// the app loads a lean file; research sources are loaded only when a profile is opened, and the raw
+// source terms are only needed for the open-data exports (GeoJSON keeps everything)
+const lean = bases.map(({ research, origin, ...b }) => ({ ...b, origin: { ...origin, terms: undefined } }));
+await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(lean));
+await fs.writeFile(path.join(out, 'research.json'), JSON.stringify(Object.fromEntries(bases.filter((b) => b.research).map((b) => [b.id, b.research]))));
 await fs.writeFile(path.join(out, 'stories.json'), JSON.stringify(stories));
 const movement = await readOpt('data/movement.json');
 for (const s of movement.congress?.speakers ?? []) {

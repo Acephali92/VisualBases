@@ -1,6 +1,6 @@
 # Migrationsbericht Taxonomie v1 → v2
 
-Erzeugt mit `scripts/migration-report.mjs` am 2026-11-07. Einzelwerte je Standort: [migration-v1-v2.csv](migration-v1-v2.csv). Regeln: [TAXONOMY.md](../TAXONOMY.md#9-migrationsregeln).
+Erzeugt mit `scripts/migration-report.mjs` am 2026-11-07. Einzelwerte je Standort: [migration-v1-v2.csv](migration-v1-v2.csv). Regeln: [TAXONOMY.md](../TAXONOMY.md#12-migrationsregeln).
 
 ## Vollständigkeit
 
