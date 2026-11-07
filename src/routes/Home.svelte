@@ -9,6 +9,7 @@
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
   import type { Base, Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
+  import MapNotice from '../components/MapNotice.svelte';
   import Compare from '../components/Compare.svelte';
   import NewsList from '../components/NewsList.svelte';
   import type { Image } from '../lib/types';
@@ -42,6 +43,7 @@
 
   let mapEl: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
+  let mapFailed = $state(false);
   let active = $state(0);
   let shown = $state({ locations: 0, countries: 0, us: 0, resistance: 0 });
 
@@ -146,6 +148,9 @@
         };
         h.map.once('idle', () => (raf = requestAnimationFrame(spin)));
       }
+    }).catch((e) => {
+      console.warn(e);
+      mapFailed = true;
     });
 
     const io = new IntersectionObserver(
@@ -168,6 +173,7 @@
 <section class="scrolly" aria-label="Story">
   <div class="sticky">
     <div class="globe" bind:this={mapEl} aria-hidden="true"></div>
+    {#if mapFailed}<div class="globe-fallback"><MapNotice /></div>{/if}
     <div class="vignette"></div>
     <div class="legend-wrap" class:visible={active > 0 && active < 5}>
       <Legend compact />
@@ -326,6 +332,8 @@
   .scrolly { position: relative; }
   .sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; z-index: 0; }
   .globe { position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, #101a33 0%, var(--bg) 65%); }
+  .globe-fallback { position: absolute; inset: 0; opacity: 0.6; }
+  .globe-fallback :global(.notice) { place-content: end center; padding-bottom: 12vh; font-size: 0.85rem; }
   .vignette { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgb(7 9 15 / 0.85) 0%, rgb(7 9 15 / 0.35) 45%, transparent 70%); }
   .legend-wrap { position: absolute; right: 16px; bottom: 16px; opacity: 0; transition: opacity 0.4s; }
   .legend-wrap.visible { opacity: 1; }

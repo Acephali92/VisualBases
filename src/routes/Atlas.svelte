@@ -11,9 +11,11 @@
   import type { Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
   import BaseProfile from '../components/BaseProfile.svelte';
+  import MapNotice from '../components/MapNotice.svelte';
 
   let mapEl: HTMLDivElement;
   let handle: MapHandle | null = $state(null);
+  let mapFailed = $state(false);
   let tip = $state<{ name: string; x: number; y: number } | null>(null);
   let filterOpen = $state(false);
   let sheetOpen = $state(false);
@@ -148,6 +150,10 @@
     })).then((h) => {
       if (destroyed) return h.destroy();
       handle = h;
+    }).catch((e) => {
+      console.warn(e);
+      mapFailed = true;
+      sheetOpen = true;
     });
     return () => {
       destroyed = true;
@@ -159,12 +165,14 @@
 </script>
 
 <div class="atlas">
-  <div class="map" bind:this={mapEl} role="application" aria-label={t('nav.atlas')}></div>
+  <div class="map" bind:this={mapEl} role="application" aria-label={t('nav.atlas')}>
+    {#if mapFailed}<MapNotice hint={t('map.listHint')} />{/if}
+  </div>
   {#if tip}
     <div class="tip" style:left="{tip.x}px" style:top="{tip.y}px">{tip.name}</div>
   {/if}
 
-  <div class="map-tools">
+  <div class="map-tools" hidden={mapFailed}>
     <button class="btn btn-sm" aria-pressed={settings.satellite} title={t('map.satelliteHint')} onclick={() => setSatellite(!settings.satellite)}>
       🛰 {t('map.satellite')}
     </button>
@@ -174,7 +182,7 @@
   {#if selected && !settings.satellite}
     <button class="sat-cta" onclick={() => setSatellite(true)} title={t('map.satelliteHint')}>🛰 {t('map.satellite')}: {selected.name}</button>
   {/if}
-  {#if showLegend}
+  {#if showLegend && !mapFailed}
     <div class="legend-pos"><Legend /></div>
   {/if}
 
@@ -302,6 +310,8 @@
     background: var(--text); color: var(--bg); font-size: 0.82rem; font-weight: 600; padding: 4px 9px; border-radius: 6px; white-space: nowrap; }
 
   .map-tools { position: absolute; z-index: 4; top: calc(var(--header-h) + 12px); right: 56px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .map :global(.notice) { padding-left: 440px; }
+  .map-tools[hidden] { display: none; }
   .map-tools .btn { background: rgb(18 26 43 / 0.9); backdrop-filter: blur(8px); }
   .map-tools .btn[aria-pressed='true'] { background: var(--text); color: var(--bg); }
   .legend-pos { position: absolute; z-index: 3; right: 12px; bottom: 34px; }
@@ -372,6 +382,7 @@
     .map-tools { right: 52px; top: calc(var(--header-h) + 10px); }
     .map-tools .btn { min-height: 34px; padding: 0 10px; font-size: 0.8rem; }
     .legend-pos { bottom: auto; top: calc(var(--header-h) + 56px); right: 8px; }
+    .map :global(.notice) { padding: 24px 24px 200px; place-content: start center; padding-top: 30px; }
     .sat-cta { left: 50%; bottom: auto; top: calc(var(--header-h) + 56px); }
   }
 </style>

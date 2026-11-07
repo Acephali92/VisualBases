@@ -172,8 +172,13 @@ export function parsePost(html, slug) {
   const bodyMain = body.split(/<footer|class="entry-tags/)[0];
 
   let lat = null, lon = null, zoom = null, approx = false;
-  let m = bodyMain.match(/openstreetbrowser\.org\/#map=(\d+)\/(-?[\d.]+)\/(-?[\d.]+)/);
-  if (m) { zoom = +m[1]; lat = +m[2]; lon = +m[3]; }
+  // every distinct map link of the post – the first one is not always the post's own location
+  const candidates = [];
+  for (const c of bodyMain.matchAll(/openstreetbrowser\.org\/#map=(\d+)\/(-?[\d.]+)\/(-?[\d.]+)/g)) {
+    if (!candidates.some((x) => x.lat === +c[2] && x.lon === +c[3])) candidates.push({ zoom: +c[1], lat: +c[2], lon: +c[3] });
+  }
+  let m;
+  if (candidates.length) ({ zoom, lat, lon } = candidates[0]);
   else if ((m = bodyMain.match(/earth\.google\.com\/web\/search\/(-?[\d.]+)[,+ ]+(-?[\d.]+)/))) { lat = +m[1]; lon = +m[2]; }
   else {
     const key = Object.keys(MANUAL_COORDS).find((k) => title.startsWith(k));
@@ -218,7 +223,7 @@ export function parsePost(html, slug) {
   }
 
   const images = parseImages(bodyMain);
-  return { slug, title, cats, tags, lat, lon, zoom, approx, wikipedia, related, sources, notes, images };
+  return { slug, title, cats, tags, lat, lon, zoom, approx, candidates, wikipedia, related, sources, notes, images };
 }
 
 /** images inside a post: full-size URL (link target or src without -WxH suffix) + caption */
@@ -238,12 +243,40 @@ export function parseImages(body) {
   return out;
 }
 
+const coordKey = (lat, lon) => `${lat.toFixed(3)},${lon.toFixed(3)}`;
+
+/**
+ * Some posts first link to another site's map view (e.g. "Ghedi" starts with the link of Aviano).
+ * If a post's first coordinate is also the first coordinate of another post and the post has a
+ * further map link that is not used as another post's location, take that one instead.
+ * Returns the slugs that were changed.
+ */
+export function resolveCopiedCoordinates(posts) {
+  const owners = new Map();
+  for (const p of posts) if (p.lat != null) {
+    const k = coordKey(p.lat, p.lon);
+    owners.set(k, [...(owners.get(k) ?? []), p.slug]);
+  }
+  const changed = [];
+  for (const p of posts) {
+    if (p.lat == null || !p.candidates || p.candidates.length < 2) continue;
+    if ((owners.get(coordKey(p.lat, p.lon)) ?? []).length < 2) continue;
+    const own = p.candidates.slice(1).find((c) => !owners.has(coordKey(c.lat, c.lon)));
+    if (!own) continue;
+    p.lat = own.lat; p.lon = own.lon; p.zoom = own.zoom;
+    changed.push(p.slug);
+  }
+  return changed;
+}
+
+/** outdated or non-ISO country codes used in post titles on the original site */
+const COUNTRY_ALIASES = { UK: 'GB', RKS: 'XK', RP: 'PH' };
+
 export function toBase(p, lastmod) {
   const tm = p.title.match(/^([A-Z]{2,3})\s*\|\s*(.+)$/);
   let country = tm ? tm[1] : null;
   let name = (tm ? tm[2] : p.title).replace(/\s+/g, ' ').trim();
-  if (country === 'UK') country = 'GB';
-  if (country === 'RKS') country = 'XK';
+  if (country && COUNTRY_ALIASES[country]) country = COUNTRY_ALIASES[country];
   const isGroup = /\(Σ\)/.test(name);
   name = name.replace(/\s*\(Σ\)\s*/g, ' ').trim();
 
@@ -304,6 +337,7 @@ async function main() {
 
   const bases = [];
   const stories = [];
+  const parsed = [];
   let n = 0;
   for (const e of entries) {
     const slug = e.url.replace(ORIGIN, '').replace(/^\/|\/$/g, '');
@@ -323,8 +357,11 @@ async function main() {
       continue;
     }
     if (p.lat == null) { console.warn(`  – no coordinates: ${p.title}`); continue; }
-    bases.push(toBase(p, e.lastmod));
+    parsed.push({ p, lastmod: e.lastmod });
   }
+  const fixed = resolveCopiedCoordinates(parsed.map((x) => x.p));
+  if (fixed.length) console.log(`  coordinates taken from the post's own map link: ${fixed.join(', ')}`);
+  for (const { p, lastmod } of parsed) bases.push(toBase(p, lastmod));
   bases.sort((a, b) => (a.country ?? '').localeCompare(b.country ?? '') || a.name.localeCompare(b.name));
   // drop "related" links pointing to non-location pages
   const ids = new Set(bases.map((b) => b.id));

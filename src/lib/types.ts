@@ -45,6 +45,13 @@ export interface Base {
   lon: number;
   zoom: number;
   approx?: boolean;
+  /** set from data/corrections.json when the position is known to be doubtful */
+  positionCheck?: {
+    status: 'proposed' | 'applied';
+    issue: 'duplicate-in-source' | string;
+    duplicateOf?: string;
+    proposal?: { lat: number; lon: number; precision: string; source: string; url: string; retrieved: string };
+  };
   kind: Kind;
   /** aggregated "military community" (Σ) */
   group?: boolean;

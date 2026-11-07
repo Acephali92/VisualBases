@@ -26,8 +26,24 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,json,woff2}'],
+        // keep the first visit light: map engine, country shapes, share preview and non-Latin font
+        // subsets are cached on first use instead of being downloaded up front
+        globIgnores: [
+          '**/og.png',
+          '**/assets/map-*',
+          '**/assets/maplibre-gl-worker-*',
+          '**/assets/countries-*',
+          '**/assets/shareImage-*',
+          '**/assets/inter-{cyrillic,cyrillic-ext,greek,greek-ext,vietnamese}-*',
+        ],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         runtimeCaching: [
+          {
+            // hashed build files never change under the same name
+            urlPattern: /\/assets\/.+\.(js|css|woff2)$/,
+            handler: 'CacheFirst',
+            options: { cacheName: 'assets', expiration: { maxEntries: 60, maxAgeSeconds: 60 * 60 * 24 * 180 } },
+          },
           {
             urlPattern: /\/media\/.+\.webp$/,
             handler: 'CacheFirst',

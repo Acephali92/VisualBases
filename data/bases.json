@@ -4925,9 +4925,9 @@
   "id": "taara-estonia",
   "name": "Taara / Võru (Estonia / Estland)",
   "country": "EE",
-  "lat": 59.3738,
-  "lon": 26.0379,
-  "zoom": 11,
+  "lat": 57.8379,
+  "lon": 27.024,
+  "zoom": 13,
   "kind": "shared",
   "facilities": [
    "training"
@@ -7074,8 +7074,8 @@
   "id": "ghedi-ab",
   "name": "Ghedi Air Base",
   "country": "IT",
-  "lat": 46.0348,
-  "lon": 12.5963,
+  "lat": 45.431,
+  "lon": 10.2981,
   "zoom": 13,
   "kind": "shared",
   "facilities": [
@@ -9814,6 +9814,33 @@
   "lastmod": "2026-09-27"
  },
  {
+  "id": "mount-st-rita-naval-link-station",
+  "name": "Mount Santa Rita Naval Link Station",
+  "country": "PH",
+  "lat": 14.8221,
+  "lon": 120.36446,
+  "zoom": 19,
+  "kind": "closed",
+  "facilities": [
+   "telecom"
+  ],
+  "continent": "asia",
+  "region": "pacific",
+  "nations": [
+   "US"
+  ],
+  "sharedWith": [],
+  "themes": [],
+  "sourceType": [],
+  "wikipedia": {
+   "en": "https://en.wikipedia.org/wiki/Mount_Santa_Rita_Naval_Link_Station"
+  },
+  "sources": [],
+  "notes": [],
+  "origin": "https://visualbases.org/mount-st-rita-naval-link-station/",
+  "lastmod": "2024-04-05"
+ },
+ {
   "id": "secon-thomas-shoal",
   "name": "Spratly Islands: Second Thomas Shoal",
   "country": "PH",
@@ -10815,33 +10842,6 @@
   ],
   "origin": "https://visualbases.org/training-centre-general-popescu/",
   "lastmod": "2026-10-02"
- },
- {
-  "id": "mount-st-rita-naval-link-station",
-  "name": "Mount Santa Rita Naval Link Station",
-  "country": "RP",
-  "lat": 14.8221,
-  "lon": 120.36446,
-  "zoom": 19,
-  "kind": "closed",
-  "facilities": [
-   "telecom"
-  ],
-  "continent": "asia",
-  "region": "pacific",
-  "nations": [
-   "US"
-  ],
-  "sharedWith": [],
-  "themes": [],
-  "sourceType": [],
-  "wikipedia": {
-   "en": "https://en.wikipedia.org/wiki/Mount_Santa_Rita_Naval_Link_Station"
-  },
-  "sources": [],
-  "notes": [],
-  "origin": "https://visualbases.org/mount-st-rita-naval-link-station/",
-  "lastmod": "2024-04-05"
  },
  {
   "id": "prince-sultan-air-base",

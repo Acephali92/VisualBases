@@ -13,7 +13,7 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 ## 2. Bald: Inhalte und Rechte
 
-- [ ] **Datenlizenz festlegen** (mit Karl-Heinz Peil): Unter welcher Lizenz dürfen andere die Daten nutzen? Vorschlag: **CC BY 4.0** (Namensnennung „VisualBases“).
+- [x] **Datenlizenz festlegen** – entschieden: CC BY 4.0 (umgesetzt, siehe `data/LICENSE.md`).
   Danach ersetze ich den Hinweis „Lizenz noch abzustimmen“ in README und „Über & Daten“.
 - [ ] **Bildrechte der eigenen Fotos bestätigen:** Die Protestfotos stammen aus dem Archiv von visualbases.org. Bei Fotos Dritter (z. B. Kampagnen, Flickr-Bild von Menwith Hill, „Marcha a Rota“) bitte mit Karl-Heinz Peil klären, ob Urheber genannt werden sollen. Ich trage sie dann ein (`data/media.json` → `credit`).
 - [ ] **Google-Earth-Bilder:** Google erlaubt die nicht-kommerzielle Nutzung mit Namensnennung. Die Bilder müssen die eingebaute Google-Kennzeichnung behalten; das tun sie. Nichts weiter zu tun, solange das Projekt nicht kommerziell wird.
@@ -38,3 +38,11 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 - [ ] **E-Mail-Adresse bestätigen:** Hinweise „per E-Mail“ gehen an **info@visualbases.org** (laut Impressum der Originalseite). Falls eine andere Adresse gewünscht ist, sag Bescheid. Sie steht zentral in `src/lib/github.ts`.
 - [ ] **Newsletter / Messenger-Kanal** (optional): Wenn es einen Signal-, Telegram- oder Mastodon-Kanal oder einen Newsletter gibt bzw. geben soll, nenn mir die Links. Ich binde sie auf „Mitmachen“ und im Fußbereich ein.
+
+## 6. Datenprüfung (neu)
+
+- [ ] **Korrekturvorschläge bestätigen** (`data/corrections.json`, in der App als „Position ungeprüft“ markiert):
+  - *Puerto Castilla (Honduras):* Auf visualbases.org hat dieser Beitrag Titel und Koordinate von Soto Cano. Ist es ein Duplikat (löschen/zusammenführen) oder ein eigener Ort Puerto Castilla (Vorschlag: OSM-Position 16.0096, −85.9494)?
+  - *Karlovac (Kroatien):* Koordinate identisch mit Zadar Gazenica. Wo genau liegt der Hubschrauberlandeplatz/Übungsplatz in Karlovac?
+- [ ] **Offene Rechtsfragen** aus `docs/IMPROVEMENT-ROADMAP.md`, Abschnitt 4 (Datenlizenz, Bilder Dritter, Anrisstexte der Presseschau, Impressum).
+- [ ] Die **Roadmap freigeben** oder Prioritäten ändern; danach setze ich P1 um.

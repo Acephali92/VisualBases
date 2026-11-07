@@ -114,21 +114,45 @@ export interface MapHandle {
   destroy(): void;
 }
 
+/** thrown when the browser cannot render the map (no WebGL, blocked GPU, very old device) */
+export class MapUnavailableError extends Error {
+  constructor(cause?: unknown) {
+    super('Interactive map unavailable (WebGL)');
+    this.name = 'MapUnavailableError';
+    this.cause = cause;
+  }
+}
+
+export function webglSupported(): boolean {
+  try {
+    const c = document.createElement('canvas');
+    return !!(c.getContext('webgl2') || c.getContext('webgl'));
+  } catch {
+    return false;
+  }
+}
+
 export async function createMap(
   container: HTMLElement,
   opts: { detail?: Detail; interactive?: boolean; center?: [number, number]; zoom?: number; onSelect?: (id: string) => void; onHover?: (b: { id: string; name: string } | null, x: number, y: number) => void; onMove?: (bounds: [number, number, number, number], zoom: number) => void } = {},
 ): Promise<MapHandle> {
+  if (!webglSupported()) throw new MapUnavailableError();
   const countries = await loadCountries(opts.detail ?? '50m');
-  const map = new MLMap({
-    container,
-    style: style(countries),
-    center: opts.center ?? [10, 30],
-    zoom: opts.zoom ?? 1.4,
-    interactive: opts.interactive ?? true,
-    attributionControl: { compact: true },
-    maxPitch: 60,
-    renderWorldCopies: false,
-  });
+  let map: MLMap;
+  try {
+    map = new MLMap({
+      container,
+      style: style(countries),
+      center: opts.center ?? [10, 30],
+      zoom: opts.zoom ?? 1.4,
+      interactive: opts.interactive ?? true,
+      attributionControl: { compact: true },
+      maxPitch: 60,
+      renderWorldCopies: false,
+    });
+  } catch (e) {
+    throw new MapUnavailableError(e);
+  }
   map.touchZoomRotate.disableRotation();
   if (opts.interactive !== false) map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
 

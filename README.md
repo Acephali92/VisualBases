@@ -80,6 +80,8 @@ npm install
 npm run dev          # http://localhost:5173
 npm test             # Unit-Tests
 npm run check        # Typprüfung
+npm run validate     # Datenprüfung (läuft auch vor jedem Build)
+npm run data:report  # Datenqualitätsbericht nach docs/data-quality-report.md
 npm run build        # Produktions-Build nach dist/
 npm run test:smoke   # Browser-Test (nach dem Build)
 ```
@@ -92,6 +94,10 @@ npm run data:news        # Presseschau
 NODE_USE_ENV_PROXY=1 node scripts/import-wikimedia.mjs   # nur nötig hinter einem Proxy
 npm run data:media       # Bilder laden und optimieren
 ```
+
+## Datenqualität
+
+Jeder Build und jedes Daten-Update wird mit `npm run validate` geprüft (Koordinaten, Duplikate, Länder, Kategorien, Bildreferenzen, Lizenzen). Fehler verhindern das Deployment. Zweifelhafte Positionen stehen in `data/corrections.json` und werden in der App als „Position ungeprüft“ gekennzeichnet. Details: [docs/DATA-QUALITY.md](docs/DATA-QUALITY.md) · aktueller [Bericht](docs/data-quality-report.md) · [Roadmap](docs/IMPROVEMENT-ROADMAP.md) · [Changelog](docs/CHANGELOG.md).
 
 ## Automatische Aktualisierung
 
@@ -109,7 +115,8 @@ Jeder Push auf `main` wird über `.github/workflows/deploy.yml` geprüft (Typen,
 ## Lizenz und Quellen
 
 - **Code:** MIT (siehe `LICENSE`).
-- **Daten und eigene Bilder:** © VisualBases / visualbases.org, Nutzung mit Zustimmung des Initiators. Die Lizenz für die Weiterverwendung durch Dritte wird noch festgelegt.
+- **Daten:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de), Namensnennung „VisualBases – visualbases.org (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V.), CC BY 4.0“. Geltungsbereich und Ausnahmen: [`data/LICENSE.md`](data/LICENSE.md). Die Downloads enthalten die Lizenz als `LICENSE.txt`.
+- **Eigene Bilder aus dem Archiv von visualbases.org:** Nutzung mit Zustimmung des Initiators; nicht von CC BY 4.0 erfasst.
 - **Fotos von Wikimedia Commons:** jeweils unter der angegebenen freien Lizenz (Urheber und Link im Bild-Dialog sowie in `data/wikimedia.json`).
 - **Google-Earth-Bilder:** © Google, nicht-kommerzielle Nutzung mit Namensnennung.
 - **Kartengrundlage:** Natural Earth (gemeinfrei). **Satellitenbilder:** Sentinel-2 cloudless © EOX IT Services GmbH (enthält modifizierte Copernicus-Sentinel-Daten), CC BY-NC-SA 4.0.

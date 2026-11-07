@@ -52,6 +52,22 @@ const ROUTES = [
       }
     }
     await browser.close();
+
+    // without WebGL the map must degrade to a notice while lists and profiles keep working
+    const noGl = await chromium.launch({ args: ['--disable-webgl', '--disable-webgl2', '--disable-3d-apis'] });
+    for (const [route, selector] of [['#/', 'h1'], ['#/atlas', '.results li a'], ['#/base/ramstein-air-base', '.profile h2'], ['#/embed', '.badge']]) {
+      const page = await noGl.newPage({ viewport: { width: 1280, height: 800 } });
+      const errors = [];
+      page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+      await page.goto(BASE + route, { waitUntil: 'load' });
+      try { await page.waitForSelector(selector, { timeout: 15000 }); } catch { errors.push(`missing ${selector}`); }
+      try { await page.waitForSelector('.notice', { timeout: 15000 }); } catch { errors.push('missing map notice'); }
+      const ok = errors.length === 0;
+      if (!ok) failed++;
+      console.log(`${ok ? '✔' : '✘'} no-WebGL ${route}${ok ? '' : '\n    ' + errors.join('\n    ')}`);
+      await page.close();
+    }
+    await noGl.close();
   } finally {
     server.kill();
   }
