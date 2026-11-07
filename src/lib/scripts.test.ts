@@ -67,3 +67,17 @@ describe('coordinates', () => {
     expect(base('RKS | Camp Bondsteel').country).toBe('XK');
   });
 });
+
+describe('data licence', () => {
+  it('exports carry the CC BY 4.0 licence', async () => {
+    // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+    const { execSync } = await import('node:child_process');
+    // @ts-expect-error – see above
+    const fs = await import('node:fs');
+    execSync('node scripts/build-data.mjs', { stdio: 'ignore' });
+    const geo = JSON.parse(fs.readFileSync('public/data/bases.geojson', 'utf8'));
+    expect(geo.metadata.license).toBe('CC-BY-4.0');
+    expect(geo.metadata.attribution).toContain('visualbases.org');
+    expect(fs.readFileSync('public/data/LICENSE.txt', 'utf8')).toContain('CC BY 4.0');
+  });
+});

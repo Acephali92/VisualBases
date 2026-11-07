@@ -5,6 +5,7 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ## [Unreleased] – Durchgang 1: Audit und P0
 
 ### Hinzugefügt
+- **Datenlizenz CC BY 4.0** (`data/LICENSE.md`): gilt für Standorte, Prüfhinweise, Initiativen, Metadaten der Presseschau, Recherche und Exporte; Bilder, Anrisstexte und Code sind ausgenommen. Downloads enthalten `LICENSE.txt`, das GeoJSON nennt Lizenz und Namensnennung, „Über & Daten“ zeigt beides.
 - `docs/IMPROVEMENT-ROADMAP.md`: Audit-Befunde und priorisierte Maßnahmen (P0–P3).
 - `scripts/validate-data.mjs` und `npm run validate` / `npm run data:report`: automatische Datenprüfung als Sperre vor Deployment und Daten-Update; Bericht `docs/data-quality-report.md`.
 - `data/corrections.json`: Prüf-Schicht für zweifelhafte Positionen; Profile zeigen „Position ungeprüft“ mit Korrekturvorschlag. CSV-Spalte `position_check`, Feld `positionCheck` in JSON und GeoJSON.

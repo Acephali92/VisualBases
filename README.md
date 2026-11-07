@@ -115,7 +115,8 @@ Jeder Push auf `main` wird über `.github/workflows/deploy.yml` geprüft (Typen,
 ## Lizenz und Quellen
 
 - **Code:** MIT (siehe `LICENSE`).
-- **Daten und eigene Bilder:** © VisualBases / visualbases.org, Nutzung mit Zustimmung des Initiators. Die Lizenz für die Weiterverwendung durch Dritte wird noch festgelegt.
+- **Daten:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de), Namensnennung „VisualBases – visualbases.org (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V.), CC BY 4.0“. Geltungsbereich und Ausnahmen: [`data/LICENSE.md`](data/LICENSE.md). Die Downloads enthalten die Lizenz als `LICENSE.txt`.
+- **Eigene Bilder aus dem Archiv von visualbases.org:** Nutzung mit Zustimmung des Initiators; nicht von CC BY 4.0 erfasst.
 - **Fotos von Wikimedia Commons:** jeweils unter der angegebenen freien Lizenz (Urheber und Link im Bild-Dialog sowie in `data/wikimedia.json`).
 - **Google-Earth-Bilder:** © Google, nicht-kommerzielle Nutzung mit Namensnennung.
 - **Kartengrundlage:** Natural Earth (gemeinfrei). **Satellitenbilder:** Sentinel-2 cloudless © EOX IT Services GmbH (enthält modifizierte Copernicus-Sentinel-Daten), CC BY-NC-SA 4.0.

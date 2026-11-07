@@ -38,7 +38,11 @@
         <a class="btn btn-sm" href="./data/bases.geojson" download>⬇ GeoJSON</a>
         <a class="btn btn-sm" href="./data/bases.json" download>⬇ JSON</a>
       </div>
-      <p class="small">{db.bases.length} · Quelle / source: visualbases.org</p>
+      <p class="small">
+        {db.bases.length} · {t('about.license')}: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> ·
+        <a href="./data/LICENSE.txt" target="_blank" rel="noopener">{t('about.licenseDetails')}</a>
+      </p>
+      <p class="small">{t('about.attribution')}: „VisualBases – visualbases.org (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V.), CC BY 4.0“</p>
     </section>
 
     <section class="card block">

@@ -13,7 +13,7 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 ## 2. Bald: Inhalte und Rechte
 
-- [ ] **Datenlizenz festlegen** (mit Karl-Heinz Peil): Unter welcher Lizenz dürfen andere die Daten nutzen? Vorschlag: **CC BY 4.0** (Namensnennung „VisualBases“).
+- [x] **Datenlizenz festlegen** – entschieden: CC BY 4.0 (umgesetzt, siehe `data/LICENSE.md`).
   Danach ersetze ich den Hinweis „Lizenz noch abzustimmen“ in README und „Über & Daten“.
 - [ ] **Bildrechte der eigenen Fotos bestätigen:** Die Protestfotos stammen aus dem Archiv von visualbases.org. Bei Fotos Dritter (z. B. Kampagnen, Flickr-Bild von Menwith Hill, „Marcha a Rota“) bitte mit Karl-Heinz Peil klären, ob Urheber genannt werden sollen. Ich trage sie dann ein (`data/media.json` → `credit`).
 - [ ] **Google-Earth-Bilder:** Google erlaubt die nicht-kommerzielle Nutzung mit Namensnennung. Die Bilder müssen die eingebaute Google-Kennzeichnung behalten; das tun sie. Nichts weiter zu tun, solange das Projekt nicht kommerziell wird.

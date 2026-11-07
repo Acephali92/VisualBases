@@ -27,7 +27,7 @@ Stand: 2026-11-07 · Grundlage: vollständiges Audit von Repository, Daten (`dat
 | F13 | A11y | Beim Öffnen eines Standort-Profils wird der Fokus nicht verschoben. Die Liste als Tastatur-Alternative zur Karte ist nirgends erklärt. axe läuft nur lokal, nicht in der CI. | Tastatur-Test, `tests/smoke.cjs` |
 | F14 | i18n | `School.svelte` nutzt Inline-Übersetzungen statt `t()`. Statische Seiten (`prerender.mjs`) gibt es nur auf Deutsch, mit duplizierten Taxonomie-Labels. | Code |
 | F15 | Datenschutz | Ergebnisse der Ortssuche (Nominatim) ohne OSM-Hinweis. Die externen Dienste sind nicht an einer Stelle dokumentiert. | `src/routes/Near.svelte` |
-| F16 | Rechte | 145 von 164 Bildern ohne Lizenzfeld. Dritte mit ungeklärter Lizenz: Flickr-Foto Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner. Datenlizenz nicht festgelegt. Status der Anrisstexte der Presseschau ungeklärt. | `data/media.json` |
+| F16 | Rechte | 145 von 164 Bildern ohne Lizenzfeld. Dritte mit ungeklärter Lizenz: Flickr-Foto Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner. Datenlizenz inzwischen festgelegt (CC BY 4.0). Status der Anrisstexte der Presseschau ungeklärt. | `data/media.json` |
 | F17 | Daten | Nur 19 von 132 ausgewählten Wikimedia-Fotos heruntergeladen (die Cloud-IP wird gedrosselt). Sechs Meldungen ohne genaues Datum. Die automatische Verknüpfung von Meldungen und Basen über Ortsnamen ist ungenau. | `data/wikimedia.json`, `data/news.json` |
 | F18 | Performance | Haupt-Bundle 184 KB, weil alle Routen sofort geladen werden. Die Startseite lädt die 50m-Länderformen (243 KB gz) auch dann, wenn das Okinawa-Kapitel nie erreicht wird. | `dist/assets` |
 | F19 | Betrieb | Die Live-Seite ist aus der Entwicklungsumgebung nicht erreichbar (github.io nicht freigegeben). Laut GitHub Actions war das Deployment erfolgreich. | Netzwerk-Proxy |
@@ -93,7 +93,7 @@ Stand: 2026-11-07 · Grundlage: vollständiges Audit von Repository, Daten (`dat
 
 ## 4. Entscheidungen der Projektverantwortlichen ❓
 
-1. **Datenlizenz** für `bases.json` und Exporte (Vorschlag: CC BY 4.0).
+1. ~~**Datenlizenz**~~ – entschieden: **CC BY 4.0** (umgesetzt, `data/LICENSE.md`).
 2. **Bilder Dritter:** Freigabe oder Urhebernennung für Flickr (Menwith Hill), „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner.
 3. **Anrisstexte der Presseschau:** Sind es eigene Zusammenfassungen von visualbases.org oder Zitate?
 4. **Korrekturvorschläge in `data/corrections.json`:** Puerto Castilla (Duplikat von Soto Cano oder eigener Ort?), Karlovac (genauer Standort).

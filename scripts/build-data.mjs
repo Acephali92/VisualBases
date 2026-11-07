@@ -10,6 +10,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+/** attribution required by the CC BY 4.0 data licence (data/LICENSE.md) */
+export const ATTRIBUTION = 'VisualBases – visualbases.org (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V.), CC BY 4.0';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(ROOT, 'public/data');
 const bases = JSON.parse(await fs.readFile(path.join(ROOT, 'data/bases.json'), 'utf8'));
@@ -49,6 +51,8 @@ for (const s of movement.congress?.speakers ?? []) {
   s.photo = m ? m.thumb : undefined;
 }
 await fs.writeFile(path.join(out, 'movement.json'), JSON.stringify(movement));
+// the data licence travels with every download
+await fs.copyFile(path.join(ROOT, 'data/LICENSE.md'), path.join(out, 'LICENSE.txt'));
 const news = await readOpt('data/news.json');
 await fs.writeFile(path.join(out, 'news.json'), JSON.stringify(Array.isArray(news) ? news : []));
 
@@ -56,7 +60,10 @@ const geojson = {
   type: 'FeatureCollection',
   metadata: {
     title: 'VisualBases – foreign military bases worldwide',
-    license: 'Data compiled by VisualBases (visualbases.org). See README for attribution.',
+    license: 'CC-BY-4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
+    attribution: ATTRIBUTION,
+    note: 'Images are not covered by this licence; see LICENSE.txt.',
     generated: new Date().toISOString().slice(0, 10),
     count: bases.length,
   },
