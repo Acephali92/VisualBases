@@ -2,6 +2,12 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Ergebnisse der automatischen Recherche übernommen
+
+### Hinzugefügt
+- `data/research/checks.json` und `candidates.json` vom Daten-Branch `research-data`: 265 Wikidata-Objekte, 141 OSM-Lageprüfungen, 4416 ungeprüfte Hinweise zu 279 Standorten. Damit stehen bei 56 der 63 noch offenen Standorte jetzt zumindest Hinweise zur Prüfung bereit.
+- Bericht, Abschnitt 3.5: Statusfragen aus Wikidata (Argentia, Inezgane, Nurmsi, Bizerte, Bicester) und fünf vermutlich falsche Positionen (Creech, Muwaffaq Salti, Humphreys, Jungle Warfare Training Center, Exmouth) als Prüfaufträge; `coverage.csv` neu erzeugt.
+
 ## [Unreleased] – „Deine Basis“: Ortssuche und Rangliste korrigiert
 
 ### Behoben
