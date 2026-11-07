@@ -28,7 +28,7 @@
   {#each images as img, i}
     <li class:logo={img.type === 'logo'}>
       <button onclick={() => show(i)} aria-label="{label(img)} – {t('img.enlarge')}">
-        <img src={img.thumb} width={img.tw} height={img.th} alt={label(img)} loading="lazy" decoding="async" />
+        <img src={img.thumb} width={img.tw} height={img.th} alt="" loading="lazy" decoding="async" />
         {#if img.type === 'satellite' && img.year}<span class="badge">{img.year}</span>{/if}
         {#if img.type === 'map'}<span class="badge">{t('img.map')}</span>{/if}
       </button>
