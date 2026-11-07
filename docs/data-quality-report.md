@@ -11,10 +11,10 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-07. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
-| angewandte Korrekturen (claims.json) / offene Vorschläge | 29 / 8 |
-| Einträge mit Prüfhinweis | 81 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 46 / 1 |
+| Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
-| Position ungeprüft (corrections.json) | 2 |
+| Position ungeprüft (corrections.json) | 0 |
 | Position ungefähr | 5 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
@@ -144,7 +144,7 @@ Keine.
 - `fort-lamy-ab-djamena`: site-type-from-status
 - `johnston-atoll`: site-type-from-status
 
-### `issue-nation-missing` (24)
+### `issue-nation-missing` (25)
 
 - `kucova-albania`: nation-missing
 - `bdf-glen-valley-botswana`: nation-missing
@@ -164,6 +164,7 @@ Keine.
 - `salto-di-quirra-sardinia`: nation-missing
 - `decimomannu-ab-sardinia`: nation-missing
 - `poligono-militare-nato-sardinia-italy`: nation-missing
+- `jasdf-naha-air-base`: nation-missing
 - `jpn-yonaguni`: nation-missing
 - `siauliai-lithuania`: nation-missing
 - `sinjajevina-montenegro`: nation-missing
@@ -254,10 +255,9 @@ Keine.
 - `money-island-south-chinese-sea`: foreign-without-foreign-presence
 - `pattle-island`: foreign-without-foreign-presence
 
-### `duplicate-position-reviewed` (2)
+### `issue-duplicate-entry` (1)
 
-- `puerto-castilla-honduras`: same position as soto-cano-honduras (0 m) – listed in corrections.json
-- `karlovac-croatia-2`: same position as zadar-gazenica-croatia (0 m) – listed in corrections.json
+- `de-kl-warrior-preparation-center`: duplicate-entry
 
 ### `issue-out-of-scope-candidate` (1)
 

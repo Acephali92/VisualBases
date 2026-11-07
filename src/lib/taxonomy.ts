@@ -359,7 +359,7 @@ export const CLAIM_TYPES: Term<ClaimType>[] = [
 /** codes of review notes attached to a record (computed by scripts/lib/resolve.mjs) */
 export type IssueCode =
   | 'multiple-site-types' | 'no-site-type' | 'site-type-from-status' | 'foreign-without-foreign-presence'
-  | 'nation-missing' | 'continent-check' | 'review-on-origin' | 'position-unverified' | 'out-of-scope-candidate';
+  | 'nation-missing' | 'continent-check' | 'review-on-origin' | 'position-unverified' | 'out-of-scope-candidate' | 'duplicate-entry';
 
 export const ISSUES: Term<IssueCode>[] = [
   { id: 'multiple-site-types', label: { de: 'Mehrere Standorttypen in der Quelle', en: 'Several site types in the source' }, info: { de: 'Auf visualbases.org trägt der Beitrag mehrere sich ausschließende Standortarten; übernommen wurde eine.', en: 'On visualbases.org the post carries several mutually exclusive kinds; one was used.' } },
@@ -371,6 +371,7 @@ export const ISSUES: Term<IssueCode>[] = [
   { id: 'review-on-origin', label: { de: 'Auf visualbases.org zur Prüfung markiert', en: 'Marked for review on visualbases.org' } },
   { id: 'position-unverified', label: { de: 'Position ungeprüft', en: 'Position unverified' } },
   { id: 'out-of-scope-candidate', label: { de: 'Gehört möglicherweise nicht in den Atlas', en: 'Possibly outside the atlas’ scope' } },
+  { id: 'duplicate-entry', label: { de: 'Doppelter Eintrag', en: 'Duplicate entry' }, info: { de: 'Dieselbe Einrichtung ist auf visualbases.org ein zweites Mal erfasst; siehe Korrektur.', en: 'The same facility is listed a second time on visualbases.org; see correction.' } },
 ];
 
 /* ------------------------------------------------------------------ helpers */

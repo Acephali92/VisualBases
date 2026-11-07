@@ -2,6 +2,17 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Korrekturen aus der Quellenrecherche angewandt
+
+### Geändert
+- **Entscheidung der Projektverantwortlichen (2026-11-07): alle belegten Befunde direkt korrigieren.** Die bisher offenen Vorschläge sind angewandt: Khmeimim, Tartus, Tapa, Rzeszów und Thumrait mit Status „unklar“, JASDF Naha ohne US-Präsenz, Fort-Lamy/Kossei bis 2025-06. Geschlossene Standorte bleiben grau sichtbar.
+- **Neue Korrekturarten `position` und `name`** in `data/claims.json` (`scripts/lib/resolve.mjs`, Validierung, Profil). Positionen nach OpenStreetMap korrigiert: Creech AFB (27 km), Muwaffaq Salti (17 km), Camp Humphreys (16 km), Jungle Warfare Training Center (15 km), Harold E. Holt/Exmouth (14 km), Puerto Castilla und Karlovac (vorher Koordinaten von Soto Cano bzw. Zadar; jetzt Ortsmitte, „ungefähr“). Namen: Storck Barracks, USAFE-AFAFRICA Warfare Center (ehem. Warrior Preparation Center), Puerto Castilla.
+- Neuer Prüfhinweis `duplicate-entry` (doppelter Warrior-Preparation-Center-Eintrag).
+- Die Dublettenprüfung der Validierung prüft die korrigierten Positionen.
+
+### Offen
+- PAE du Lamentin bleibt Vorschlag: Das PAE liegt laut Ministerium auf Martinique, die Koordinaten des Eintrags aber in Guadeloupe.
+
 ## [Unreleased] – Ergebnisse der automatischen Recherche übernommen
 
 ### Hinzugefügt

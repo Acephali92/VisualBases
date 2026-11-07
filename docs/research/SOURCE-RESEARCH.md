@@ -70,8 +70,9 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-07._
 | official | 175 | 175 | 154 | 6 | 15 |
 | academic | 2 | 2 | 2 | 0 | 0 |
 | media | 62 | 60 | 46 | 8 | 8 |
+| geodata | 7 | 7 | 0 | 7 | 0 |
 
-Sammler: manual 117, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
+Sammler: manual 124, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 
 ### Nach Gastland (Standorte ohne eigene Quelle)
 
@@ -111,14 +112,20 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 | OSM: militärisches Objekt 1–3 km | 17 |
 | OSM: nichts im Umkreis von 3 km | 14 |
 
-### Gefundene Widersprüche (14 Standorte)
+### Gefundene Widersprüche (21 Standorte)
 
 - **Bagram Air Base** (`bagram-air-base`, AF): Status: Bagram has not been a US base since July 2021 (historical).
 - **Camp Marmal / John Pratt, Masar-i Sharif** (`camp-marmal-john-pratt`, AF): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.
 - **Kabul ISAF** (`kabul-isaf-headquarters`, AF): Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).
+- **Northwest Cape Exmouth: Naval Comm. Station Holt** (`naval-comm-station-exmouth`, AU): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Pirmasens: US Army Medical Material Center Europe** (`medical-material-center-europe`, DE): Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.
 - **Base aérienne 188 Colonel Émile Massart** (`base-aerienne-188-djibouti`, DJ): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.
 - **Guayana: Camp Ayanganna** (`camp-ayanganna`, GF): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.
+- **Base Aérea Coronel Enrique Soto Cano** (`puerto-castilla-honduras`, HN): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Karlovac** (`karlovac-croatia-2`, HR): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Muwaffaq Salti Air Base, Al Azraq** (`muwaffaq-salti-air-base-al-azraq-jordan`, JO): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Okinawa, Takae: Jungle Warfare Training Center** (`jungle-warfare-training-center`, JP): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys** (`usag-humphreys`, KR): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **US Camp Castor** (`us-camp-castor`, ML): Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it "US Camp Castor"), and it has been closed since December 2023.
 - **Air Base 201, Agadez** (`us-air-base-201`, NE): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)
 - **Niamey Air Base** (`niamey-air-base`, NE): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)
@@ -127,6 +134,7 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Al-Tanf** (`al-tanf-syria`, SY): Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active.
 - **Rumeilan Air Base** (`rumeilan-air-base`, SY): Status: the dataset still shows the base as active. Single source relaying the Syrian Observatory for Human Rights; Kharab al-Jir and Rmeilan/Abu Hajar airfield are named inconsistently in reports – check the position.
 - **Fort-Lamy Air Base, N’Djamena (Chad)** (`fort-lamy-ab-djamena`, TD): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.
+- **Creech Air Force Base, Nevada** (`creech-air-force-base`, US): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 
 ### Weiterhin ohne geprüften Beleg (63 Standorte)
 
@@ -200,7 +208,7 @@ Diese Hinweise sind **keine Belege**, sondern Prüfaufträge. Geodaten belegen h
 | Johnston Atoll | 2005 | bestätigt den Befund aus 3.2 (nur noch Liegenschaft) |
 | Del Din (Vicenza), Baumholder, Kiel, RAF Digby | – | Datum gehört zu einem anderen Objekt (früherer Flughafen Dal Molin, Einheit, Flugfeld) – kein Statusproblem |
 
-**Positionsabweichung zu Wikidata über 10 km:** 29 Standorte. Die meisten sind falsche Zuordnungen des Wikipedia-Links: Der Link führt zu einem Land, einer Stadt oder Insel, nicht zur Anlage (z. B. Niamey → Niger, Camp Castor → Mali, Kiruna → Stadt). Bei Anlagen-Objekten deuten fünf Fälle auf eine **falsche Position im Datensatz** hin. Sie sind zur Prüfung vorgemerkt, Korrekturvorschläge kommen erst nach Entscheidung 6 der Roadmap:
+**Positionsabweichung zu Wikidata über 10 km:** 29 Standorte. Die meisten sind falsche Zuordnungen des Wikipedia-Links: Der Link führt zu einem Land, einer Stadt oder Insel, nicht zur Anlage (z. B. Niamey → Niger, Camp Castor → Mali, Kiruna → Stadt). Bei Anlagen-Objekten deuten fünf Fälle auf eine **falsche Position im Datensatz** hin. Sie wurden mit OpenStreetMap (Abfrage über Nominatim) bestätigt und am 2026-11-07 in `data/claims.json` **korrigiert** (Originalwert bleibt im Profil sichtbar):
 
 | Standort | Abweichung | Hinweis |
 |---|---|---|

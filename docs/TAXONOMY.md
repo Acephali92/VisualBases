@@ -158,8 +158,8 @@ Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossen
 | Schicht | Datei | Inhalt | Pflege |
 |---|---|---|---|
 | Import | `data/bases.json` | normalisierte Einordnung von visualbases.org, Rohbegriffe, Quellenlinks, Notizen, Bilder | nur der Importer |
-| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, Status, Quellen, Entscheidungsdatum | von Hand |
-| Positionen | `data/corrections.json` | zweifelhafte Koordinaten | von Hand |
+| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, Status, Quellen, Entscheidungsdatum. Felder: `presences`, `host`, `region`, `position` (`{ lat, lon, approx? }`, nur `set`), `name` (nur `set`), `status`, `period`, `siteType`, `features`, `activities`, `issues` | von Hand |
+| Positionen | `data/corrections.json` | zweifelhafte Koordinaten ohne belegte Korrektur (belegte Korrekturen stehen als `position` in `claims.json`) | von Hand |
 | Belege | `data/research/sources.json` | geprüfte Quellen je Standort: Herausgeber, Art (`official`, `academic`, `media`, `movement`, `dataset`, `geodata`), Veröffentlichungs- und Abrufdatum, Urteil, gestützte Aussagegruppen | Recherche-Skripte und von Hand |
 
 `scripts/lib/resolve.mjs` führt die Schichten zusammen:
@@ -223,13 +223,11 @@ Diese Fälle bleiben sichtbar (Prüfhinweis oder offener Vorschlag im Profil) un
 | `gitmo-guantanamo-bay` | Artikel über Guantánamo, als Standort neben `guantanamo-bay-naval-base` geführt. | Als Übersicht kennzeichnen oder zusammenführen. |
 | `overview-new-us-access-in-sweden` | Übersicht über das Abkommen, kein Ort. | Als `region-cluster` geführt; prüfen, ob als Standort gewünscht. |
 | `camp-ayanganna` | Nach Korrektur: HQ der Streitkräfte Guyanas, keine ausländische Präsenz. | Aus dem Atlas entfernen? (`out-of-scope-candidate`) |
-| Khmeimim, Tartus | Laut Quelle: russische Präsenz in veränderter Form. | Status `unknown` (offener Vorschlag). |
-| Tapa, Rzeszów, Thumrait | US-Präsenz stark reduziert/verlagert bzw. nur noch in BSR FY2019. | Status `unknown` (offener Vorschlag). |
-| JASDF Naha | US-Präsenz an der japanischen Luftwaffenbasis nicht belegt. | US entfernen (offener Vorschlag). |
-| PAE du Lamentin | Vermutlich Martinique statt Guadeloupe. | Gebiet `MQ` (offener Vorschlag). |
-| Fort-Lamy / Kossei | Gleichsetzung ist eigene Annahme. | Zeitraum bis 2025-06 (offener Vorschlag). |
-| Namen | „Stock Barracks“ (richtig Storck), „Davis-Monthan AFB“ auf Curaçao (Forward Operating Location Hato), „Maritime Component Command“ Neapel (MARCOM sitzt in Northwood), doppelter Warrior Preparation Center. | Auf visualbases.org korrigieren; das Modell sieht `altNames` vor. |
-| Präsenzform | Abkommen (Schweden, Norwegen), Rotation (Polen, Baltikum) und dauerhafte Stationierung sind nicht unterschieden. | Eigene Dimension `presence.form` erst einführen, wenn Quellen je Standort vorliegen (Recherchebericht, Empfehlung 2). |
+| Khmeimim, Tartus, Tapa, Rzeszów, Thumrait, JASDF Naha, Fort-Lamy | Bisher offene Vorschläge. | **Korrigiert 2026-11-07** (Entscheidung „alle belegten Befunde direkt korrigieren“). |
+| PAE du Lamentin | Laut Ministerium liegt das PAE auf Martinique; die Koordinaten des Eintrags liegen aber am Flughafen Pointe-à-Pitre (Guadeloupe). | Gebiet `MQ` bleibt **offener Vorschlag**, bis geklärt ist, ob es in Guadeloupe ebenfalls eine solche Stelle gibt. |
+| Namen | „Stock Barracks“ → Storck Barracks, Warrior Preparation Center → USAFE-AFAFRICA Warfare Center, Puerto Castilla (Titel von Soto Cano) – **korrigiert** (Feld `name`); der doppelte WPC-Eintrag trägt den Hinweis `duplicate-entry`. Offen: „Davis-Monthan AFB“ auf Curaçao (Forward Operating Location Hato) und „Maritime Component Command“ Neapel – dafür liegt noch keine geprüfte Quelle vor. | Auch auf visualbases.org korrigieren. |
+| Positionen | Creech, Muwaffaq Salti, Humphreys, Jungle Warfare Training Center, Harold E. Holt, Puerto Castilla, Karlovac lagen 14–160 km daneben. | **Korrigiert** nach OpenStreetMap (Feld `position`, Originalwert im Profil). |
+| Präsenzform | Abkommen (Schweden, Norwegen), Rotation (Polen, Baltikum) und dauerhafte Stationierung sind nicht unterschieden. | **Kategorien entschieden 2026-11-07:** `permanent`, `rotational`, `access`, `exercise`, `joint`, `historical`, `planned`. Umsetzung als Feld je Präsenz mit Quelle (Roadmap P1-1, P1-10). |
 
 ## 15. Datenpflege
 

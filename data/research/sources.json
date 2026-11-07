@@ -1122,6 +1122,23 @@
   "collector": "bsr"
  },
  {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W274446470&format=jsonv2",
+  "title": "Creech Air Force Base (OSM way 274446470, aerodrome)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object of Creech AFB (aerodrome, Indian Springs, Nevada) lies about 27 km west of the dataset position. OSM coordinates: 36.58875, -115.67146.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "creech-air-force-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "daenner-kaserne",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Daenner Kaserne (Army Active, Kaiserlautern)",
@@ -1946,6 +1963,23 @@
   "collector": "bsr"
  },
  {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W344072528&format=jsonv2",
+  "title": "Northern Training Area, Kunigami (OSM way 344072528, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM military area of the Northern Training Area (Kunigami/Higashi), where the Jungle Warfare Training Center (Camp Gonsalves) lies, is about 15 km west of the dataset position. OSM coordinates: 26.71425, 128.25174.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "jungle-warfare-training-center",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.nato.int/cps/en/natohq/topics_8189.htm",
   "title": "NATO and Afghanistan",
   "publisher": "NATO",
@@ -2037,6 +2071,23 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kapaun Administration Annex\", Air Force Active, nearest city Kaiserlautern, Germany.",
   "note": "Listed as \"Kapaun Administration Annex\". (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R11227312&format=jsonv2",
+  "title": "Karlovac (OSM relation 11227312, town)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "Location of Karlovac, Croatia; the dataset entry carries the coordinates of Zadar Gazenica, about 160 km away. OSM coordinates: 45.48925, 15.54863.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "karlovac-croatia-2",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "katterbach-kaserne-ansbach",
@@ -2689,6 +2740,23 @@
   "collector": "bsr"
  },
  {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R19125716&format=jsonv2",
+  "title": "Azraq military airport / Muwaffaq Salti AB (OSM relation 19125716, aerodrome)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object of the air base near Azraq lies about 17 km west of the dataset position. OSM coordinates: 31.82051, 36.77942.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "muwaffaq-salti-air-base-al-azraq-jordan",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "namfi-souda",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – NSA Souda Bay NAMFI Compound (Navy Active, Ormos Soudas)",
@@ -2860,6 +2928,23 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVCOMMSTA H E Holt Exmouth\", Navy Active, nearest city Northwest Cape, Australia.",
   "note": "Listed as US Navy site \"NAVCOMMSTA H E Holt\"; the station is operated jointly with Australia. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W187097879&format=jsonv2",
+  "title": "Naval Communication Station Harold E. Holt (OSM way 187097879, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM military area of the Harold E. Holt station on North West Cape lies about 14 km west of the dataset position, which is in Exmouth Gulf. OSM coordinates: -21.81870, 114.16469.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "naval-comm-station-exmouth",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "naval-radio-transmitter-grindavik",
@@ -3430,6 +3515,23 @@
   "base": "prince-sultan-air-base",
   "method": "manual",
   "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=N830322610&format=jsonv2",
+  "title": "Puerto Castilla (OSM node 830322610, village)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "Location of Puerto Castilla, Colón, Honduras; the dataset entry carries the coordinates of Soto Cano Air Base. OSM coordinates: 16.00960, -85.94942.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "puerto-castilla-honduras",
+  "method": "manual",
   "collector": "manual"
  },
  {
@@ -4917,6 +5019,23 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Humphreys\", Army Active, nearest city Pyeongtaek, South Korea.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W245548245&format=jsonv2",
+  "title": "Camp Humphreys (OSM way 245548245, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM military area of Camp Humphreys (Pyeongtaek) lies about 16 km south of the dataset position, which is near Osan. OSM coordinates: 36.96647, 127.01257.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "usag-humphreys",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "url": "https://www.dvidshub.net/news/428233/noble-partner-opening-ceremony",
