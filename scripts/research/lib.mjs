@@ -27,8 +27,14 @@ export async function readJson(file, fallback) {
   try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch { return fallback; }
 }
 
+/**
+ * Records of data/bases.json with two convenience fields for the matching code:
+ * `country` – the territory code if there is one (GU, PR, GL …), otherwise the host country –
+ * and `nations` – all states with a presence.
+ */
 export async function loadBases() {
-  return readJson(path.join(ROOT, 'data/bases.json'), []);
+  const bases = await readJson(path.join(ROOT, 'data/bases.json'), []);
+  return bases.map((b) => ({ ...b, country: b.host?.territory ?? b.host?.country ?? null, nations: (b.presences ?? []).map((p) => p.nation) }));
 }
 
 /** bases without an own source besides Wikipedia – the focus of the research */

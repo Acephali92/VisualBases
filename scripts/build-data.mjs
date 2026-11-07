@@ -4,43 +4,32 @@
  *   public/data/bases.json     (minified, used by the app)
  *   public/data/bases.geojson  (GeoJSON FeatureCollection)
  *   public/data/bases.csv      (spreadsheet friendly)
+ *   public/data/taxonomy.json  (vocabulary: IDs, labels de/en, definitions)
  *   public/data/stories.json
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { resolveBases } from './lib/resolve.mjs';
+import { toCsv, toGeoJSON } from './lib/export.mjs';
+import { VOCABULARIES, TERRITORY_SOVEREIGN } from '../src/lib/taxonomy.ts';
 
 /** attribution required by the CC BY 4.0 data licence (data/LICENSE.md) */
 export const ATTRIBUTION = 'VisualBases – visualbases.org (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V.), CC BY 4.0';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(ROOT, 'public/data');
-const bases = JSON.parse(await fs.readFile(path.join(ROOT, 'data/bases.json'), 'utf8'));
+const sourceBases = JSON.parse(await fs.readFile(path.join(ROOT, 'data/bases.json'), 'utf8'));
 const stories = JSON.parse(await fs.readFile(path.join(ROOT, 'data/stories.json'), 'utf8'));
 const readOpt = async (f) => { try { return JSON.parse(await fs.readFile(path.join(ROOT, f), 'utf8')); } catch { return {}; } };
 const media = await readOpt('data/media.json');
 const wikimedia = await readOpt('data/wikimedia.json');
 const corrections = await readOpt('data/corrections.json');
+const claims = (await readOpt('data/claims.json')).claims ?? [];
+const researchFile = await readOpt('data/research/sources.json');
+const research = Array.isArray(researchFile) ? researchFile : [];
 
-// manual review layer: proposed position fixes are shown as "unverified", never applied silently
-for (const c of corrections.positions ?? []) {
-  const b = bases.find((x) => x.id === c.id);
-  if (!b) continue;
-  b.positionCheck = { status: c.status, issue: c.issue, duplicateOf: c.duplicateOf, proposal: c.proposal };
-}
-
-// resolve image references to optimised files; satellites chronologically, photos first
-const ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
-for (const b of bases) {
-  const refs = [...(b.images ?? [])];
-  const w = wikimedia[b.id];
-  // the project's own photos (protests, campaigns) come before the generic Wikimedia photo
-  if (w?.url) refs.push({ url: w.url, caption: w.title ?? '' });
-  const imgs = refs
-    .map((r) => (media[r.url] ? { ...media[r.url], caption: r.caption || undefined } : null))
-    .filter(Boolean)
-    .sort((x, y) => ORDER[x.type] - ORDER[y.type] || (x.year ?? 0) - (y.year ?? 0));
-  if (imgs.length) b.images = imgs; else delete b.images;
-}
+const { bases, problems } = resolveBases(sourceBases, { claims, research, corrections, media, wikimedia });
+for (const p of problems) console.warn(`! [${p.rule}] ${p.id}: ${p.msg}`);
 await fs.mkdir(out, { recursive: true });
 
 await fs.writeFile(path.join(out, 'bases.json'), JSON.stringify(bases));
@@ -56,32 +45,9 @@ await fs.copyFile(path.join(ROOT, 'data/LICENSE.md'), path.join(out, 'LICENSE.tx
 const news = await readOpt('data/news.json');
 await fs.writeFile(path.join(out, 'news.json'), JSON.stringify(Array.isArray(news) ? news : []));
 
-const geojson = {
-  type: 'FeatureCollection',
-  metadata: {
-    title: 'VisualBases – foreign military bases worldwide',
-    license: 'CC-BY-4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
-    attribution: ATTRIBUTION,
-    note: 'Images are not covered by this licence; see LICENSE.txt.',
-    generated: new Date().toISOString().slice(0, 10),
-    count: bases.length,
-  },
-  features: bases.map(({ lat, lon, images, ...props }) => ({
-    type: 'Feature',
-    id: props.id,
-    geometry: { type: 'Point', coordinates: [lon, lat] },
-    properties: props,
-  })),
-};
-await fs.writeFile(path.join(out, 'bases.geojson'), JSON.stringify(geojson));
+await fs.writeFile(path.join(out, 'bases.geojson'), JSON.stringify(toGeoJSON(bases, ATTRIBUTION)));
+// vocabulary export: every ID with its German and English label and definition
+await fs.writeFile(path.join(out, 'taxonomy.json'), JSON.stringify({ schema: 'visualbases-taxonomy-v2', territories: TERRITORY_SOVEREIGN, ...VOCABULARIES }));
+await fs.writeFile(path.join(out, 'bases.csv'), toCsv(bases));
 
-const cols = ['id', 'name', 'country', 'lat', 'lon', 'kind', 'nations', 'sharedWith', 'facilities', 'themes', 'usType', 'continent', 'region', 'subregion', 'wikipedia_en', 'position_check', 'origin', 'lastmod'];
-const esc = (v) => {
-  const s = v == null ? '' : Array.isArray(v) ? v.join(';') : String(v);
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-};
-const csv = [cols.join(','), ...bases.map((b) => cols.map((c) => esc(c === 'wikipedia_en' ? b.wikipedia?.en : c === 'position_check' ? (b.positionCheck ? `unverified:${b.positionCheck.issue}` : b.approx ? 'approximate' : '') : b[c])).join(','))].join('\n');
-await fs.writeFile(path.join(out, 'bases.csv'), '﻿' + csv + '\n');
-
-console.log(`✔ public/data: ${bases.length} bases (json, geojson, csv), ${stories.length} stories`);
+console.log(`✔ public/data: ${bases.length} bases (json, geojson, csv, taxonomy), ${stories.length} stories`);

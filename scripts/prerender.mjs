@@ -10,24 +10,24 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { label } from '../src/lib/taxonomy.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const SITE = (process.env.SITE_URL ?? 'https://acephali92.github.io/VisualBases/').replace(/\/?$/, '/');
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const KIND_DE = {
-  foreign: 'Fremde Militärbasis', shared: 'Geteilte Militärbasis', national: 'Nationale Basis mit fremder Nutzung', usglobal: 'US-Basis mit globaler Funktion',
-  civilian: 'Ziviler Ort mit Militärnutzung', facility: 'Militärische Sondereinrichtung', closed: 'Geschlossene Militärbasis', hotspot: 'Militär-Community / Garnison', unspecific: 'Militärischer Standort',
-};
-const FAC_DE = { airfield: 'Flugplatz', naval: 'Marinehafen', command: 'Kommandozentrale', missile: 'Raketenabwehr', nuclear: 'Nukleare Teilhabe', telecom: 'Fernmelde-/Abhörstation', training: 'Übungsplatz', depot: 'Depot', helipad: 'Hubschrauberlandeplatz', laboratory: 'Labor', civilairport: 'Nutzung ziviler Flughafen', civilport: 'Nutzung ziviler Hafen' };
 const dn = new Intl.DisplayNames(['de'], { type: 'region' });
 const country = (cc) => { try { return cc ? dn.of(cc) : ''; } catch { return cc ?? ''; } };
 
+/** short description for search engines and link previews; labels from src/lib/taxonomy.ts */
 export function describe(b) {
-  const parts = [`${KIND_DE[b.kind] ?? 'Militärstandort'} in ${country(b.country) || 'unbekanntem Land'}`];
-  if (b.nations?.length) parts.push(`stationiert: ${b.nations.map(country).join(', ')}`);
-  if (b.facilities?.length) parts.push(b.facilities.map((f) => FAC_DE[f]).filter(Boolean).join(', '));
+  const where = b.host.territory ? `${country(b.host.territory)} (${country(b.host.country)})` : country(b.host.country);
+  const parts = [`${label('siteType', b.siteType, 'de')} in ${where || 'unbekanntem Land'}`];
+  if (b.status !== 'active') parts.push(label('status', b.status, 'de') + (b.period?.to ? ` (bis ${b.period.to})` : ''));
+  const nations = b.presences.filter((p) => p.relation !== 'domestic').map((p) => country(p.nation));
+  if (nations.length) parts.push(`stationiert: ${nations.join(', ')}`);
+  if (b.features?.length) parts.push(b.features.map((f) => label('feature', f, 'de')).join(', '));
   return `${parts.join(' · ')}. Karte, Satellitenbilder, Quellen und Widerstand vor Ort auf VisualBases.`;
 }
 
@@ -36,12 +36,12 @@ export function page(b) {
   const app = `../#/base/${b.id}`;
   const img = b.images?.find((i) => i.type === 'photo') ?? b.images?.find((i) => i.type === 'satellite') ?? b.images?.[0];
   const ogImage = img ? `${SITE}${img.src}` : `${SITE}og.png`;
-  const title = `${b.name}${b.country ? ` (${country(b.country)})` : ''} – VisualBases`;
+  const title = `${b.name}${b.host.country ? ` (${country(b.host.territory ?? b.host.country)})` : ''} – VisualBases`;
   const desc = describe(b);
   const ld = {
     '@context': 'https://schema.org', '@type': 'Place', name: b.name, description: desc, url,
     geo: { '@type': 'GeoCoordinates', latitude: b.lat, longitude: b.lon },
-    ...(b.country ? { address: { '@type': 'PostalAddress', addressCountry: b.country } } : {}),
+    ...(b.host.country ? { address: { '@type': 'PostalAddress', addressCountry: b.host.territory ?? b.host.country } } : {}),
     ...(img ? { image: ogImage } : {}),
   };
   return `<!doctype html>
@@ -79,11 +79,15 @@ ${(b.notes ?? []).slice(0, 4).map((n) => `<p>${esc(n)}</p>`).join('\n')}
 }
 
 export function countryPage(cc, list) {
-  const sites = list.filter((b) => !b.group);
+  const isAgg = (b) => b.siteType === 'garrison' || b.siteType === 'region-cluster';
+  const all = list.filter((b) => !isAgg(b));
+  // context sites (a state's own sites on its own territory) are listed separately, not counted as foreign
+  const sites = all.filter((b) => b.scope !== 'domestic');
+  const context = all.filter((b) => b.scope === 'domestic');
   const name = country(cc) || cc;
   const url = `${SITE}c/${cc}.html`;
   const app = `../#/atlas?countries=${cc}`;
-  const nations = [...new Set(sites.flatMap((b) => b.nations))].map(country).filter(Boolean);
+  const nations = [...new Set(sites.flatMap((b) => b.presences.filter((p) => p.relation !== 'domestic').map((p) => p.nation)))].map(country).filter(Boolean);
   const img = list.flatMap((b) => b.images ?? []).find((i) => i.type === 'photo') ?? list.flatMap((b) => b.images ?? []).find((i) => i.type === 'satellite');
   const title = `Fremde Militärbasen in ${name} – ${sites.length} Standorte | VisualBases`;
   const desc = `${sites.length} ausländische Militärstandorte in ${name}${nations.length ? ` (stationiert: ${nations.join(', ')})` : ''} – mit Karte, Satellitenbildern, Quellen und Widerstand vor Ort.`;
@@ -111,8 +115,9 @@ export function countryPage(cc, list) {
 <h1>Fremde Militärbasen in ${esc(name)}</h1>
 <p>${esc(desc)}</p>
 <ul>
-${sites.map((b) => `<li><a href="../b/${esc(b.id)}.html">${esc(b.name)}</a></li>`).join('\n')}
+${sites.map((b) => `<li><a href="../b/${esc(b.id)}.html">${esc(b.name)}</a> – ${esc(label('siteType', b.siteType, 'de'))}${b.status === 'closed' ? ' (geschlossen)' : ''}</li>`).join('\n')}
 </ul>
+${context.length ? `<h2>Kontext-Standorte auf eigenem Staatsgebiet</h2>\n<ul>\n${context.map((b) => `<li><a href="../b/${esc(b.id)}.html">${esc(b.name)}</a> – ${esc(label('siteType', b.siteType, 'de'))}</li>`).join('\n')}\n</ul>` : ''}
 <p><a href="${esc(app)}">Auf der Karte ansehen →</a></p>
 </body>
 </html>
@@ -124,14 +129,15 @@ async function main() {
   await fs.mkdir(path.join(DIST, 'b'), { recursive: true });
   for (const b of bases) await fs.writeFile(path.join(DIST, 'b', `${b.id}.html`), page(b));
 
+  // one page per host country and per territory (keeps c/GL.html, c/PR.html … of earlier versions)
   const byCountry = new Map();
-  for (const b of bases) if (b.country) byCountry.set(b.country, [...(byCountry.get(b.country) ?? []), b]);
+  for (const b of bases) for (const cc of new Set([b.host.country, b.host.territory].filter(Boolean))) byCountry.set(cc, [...(byCountry.get(cc) ?? []), b]);
   await fs.mkdir(path.join(DIST, 'c'), { recursive: true });
   for (const [cc, list] of byCountry) await fs.writeFile(path.join(DIST, 'c', `${cc}.html`), countryPage(cc, list));
 
   const today = new Date().toISOString().slice(0, 10);
   const urls = [`${SITE}`, ...[...byCountry.keys()].map((cc) => `${SITE}c/${cc}.html`), ...bases.map((b) => `${SITE}b/${b.id}.html`)];
-  const lastmod = new Map(bases.map((b) => [`${SITE}b/${b.id}.html`, b.lastmod ?? today]));
+  const lastmod = new Map(bases.map((b) => [`${SITE}b/${b.id}.html`, b.origin.lastmod ?? today]));
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${esc(u)}</loc><lastmod>${lastmod.get(u) ?? today}</lastmod></url>`).join('\n')}

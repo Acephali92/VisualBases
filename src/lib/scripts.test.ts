@@ -4,7 +4,7 @@ import { parseDate, parseNewsPage } from '../../scripts/import-news.mjs';
 // @ts-expect-error – plain ESM build scripts without type declarations
 import { classify } from '../../scripts/build-media.mjs';
 // @ts-expect-error – plain ESM build scripts without type declarations
-import { parseImages, toBase, parsePost, resolveCopiedCoordinates } from '../../scripts/import-visualbases.mjs';
+import { parseImages, toBase, parsePost, resolveCopiedCoordinates, typeRelations } from '../../scripts/import-visualbases.mjs';
 
 describe('news import', () => {
   it('parses German and English date formats', () => {
@@ -37,9 +37,52 @@ describe('media import', () => {
 });
 
 describe('base import', () => {
-  it('derives country, kind and US presence', () => {
-    const b = toBase({ slug: 'x', title: 'UK | RAF Lakenheath', cats: ['foreign-bases', 'airfield', 'uk'], tags: ['bsr'], lat: 52.4, lon: 0.56, zoom: 14, approx: false, wikipedia: {}, related: [], sources: [], notes: [], images: [] }, '2026-01-01T00:00:00');
-    expect(b).toMatchObject({ country: 'GB', name: 'RAF Lakenheath', kind: 'foreign', facilities: ['airfield'], nations: ['US'], region: 'united-kingdom', lastmod: '2026-01-01' });
+  const post = (title: string, cats: string[], tags: string[] = []) =>
+    toBase({ slug: 'x', title, cats, tags, lat: 52.4, lon: 0.56, zoom: 14, approx: false, wikipedia: {}, related: [], sources: [], notes: [], images: [] }, '2026-01-01T00:00:00');
+  it('derives host, site type, status, presences and features and keeps the raw terms', () => {
+    const b = post('UK | RAF Lakenheath', ['foreign-bases', 'airfield', 'uk'], ['bsr']);
+    expect(b).toMatchObject({
+      host: { country: 'GB' }, name: 'RAF Lakenheath', siteType: 'foreign-base', status: 'active', features: ['airfield'],
+      presences: [{ nation: 'US', role: 'stationing', via: 'bsr' }], region: 'united-kingdom', listedIn: ['bsr'],
+      origin: { lastmod: '2026-01-01', terms: { categories: ['foreign-bases', 'airfield', 'uk'], tags: ['bsr'] } },
+    });
+  });
+  it('treats "Closed Base" as a status, not as a site type', () => {
+    expect(post('CA | Argentia', ['closed', 'airfield'], ['us'])).toMatchObject({ siteType: 'military-base', status: 'closed' });
+    expect(post('IQ | Al Asad', ['closed', 'foreign-bases'], ['us'])).toMatchObject({ siteType: 'foreign-base', status: 'closed' });
+  });
+  it('separates host country and territory and recognises own overseas territories', () => {
+    expect(post('PR | Aguada', ['foreign-bases'], ['us'])).toMatchObject({ host: { country: 'US', territory: 'PR' }, siteType: 'overseas-base' });
+    expect(post('US | Guam: Naval Base', ['foreign-bases'], ['us'])).toMatchObject({ host: { country: 'US', territory: 'GU' }, siteType: 'overseas-base' });
+    expect(post('GL | Pituffik Air Base', ['foreign-bases'], ['us'])).toMatchObject({ host: { country: 'DK', territory: 'GL' }, siteType: 'foreign-base' });
+    expect(post('FR | Martinique: Pôle', ['foreign-bases'], ['fr'])).toMatchObject({ host: { country: 'FR', territory: 'MQ' }, siteType: 'overseas-base' });
+  });
+  it('maps "Use:" tags to functions and infrastructure, "Active:" tags to activities', () => {
+    const b = post('DE | X', ['shared-bases', 'telecommunications'], ['listening', 'fac_radar', 'defender-2020', 'defender-2021', 'atlantic-resolve', 'campaign', 'nato', 'de']);
+    expect(b.features).toEqual(['telecom-station', 'signals-intelligence', 'radar-station']);
+    expect(b.activities).toEqual(['defender-europe-20', 'defender-europe-21', 'atlantic-resolve']);
+    expect(b.themes).toEqual(['resistance']);
+    expect(b.organisations).toEqual(['nato']);
+    expect(b.presences).toEqual([{ nation: 'DE', role: 'co-user', via: 'tag' }]);
+  });
+  it('derives the US presence of "USA Global Base" and summary entries', () => {
+    expect(post('US | Hawaii: Lualualei', ['us-global', 'telecommunications'], ['fac_radar'])).toMatchObject({ siteType: 'domestic-global', presences: [{ nation: 'US', via: 'site-type' }] });
+    expect(post('DE | U.S. Army Garrison Ansbach (Σ)', ['meta-site'], ['us']).siteType).toBe('garrison');
+    expect(post('JP | Okinawa (Σ)', ['meta-site'], ['us']).siteType).toBe('region-cluster');
+    expect(post('SE | Overview new US access in Sweden', ['shared-bases']).siteType).toBe('region-cluster');
+  });
+  it('types the untyped "related" links', () => {
+    const list = [
+      { id: 'g', siteType: 'garrison', related: [{ slug: 'm' }] },
+      { id: 'm', siteType: 'foreign-base' },
+      { id: 'f', siteType: 'special-facility', related: ['m'] },
+      { id: 'n', siteType: 'foreign-base', related: ['m'] },
+    ];
+    const out = typeRelations(list);
+    expect(out.find((b: { id: string }) => b.id === 'm').relations).toEqual([{ type: 'member-of', id: 'g' }]);
+    expect(out.find((b: { id: string }) => b.id === 'f').relations).toEqual([{ type: 'part-of', id: 'm' }]);
+    expect(out.find((b: { id: string }) => b.id === 'n').relations).toEqual([{ type: 'related', id: 'm' }]);
+    expect(out.find((b: { id: string }) => b.id === 'g').relations).toBeUndefined();
   });
 });
 
@@ -62,14 +105,14 @@ describe('coordinates', () => {
   });
   it('normalises outdated country codes', () => {
     const base = (title: string) => toBase({ slug: 'x', title, cats: [], tags: [], lat: 1, lon: 1, zoom: 14, approx: false, wikipedia: {}, related: [], sources: [], notes: [], images: [] }, undefined);
-    expect(base('RP | Mount Santa Rita').country).toBe('PH');
-    expect(base('UK | RAF Fairford').country).toBe('GB');
-    expect(base('RKS | Camp Bondsteel').country).toBe('XK');
+    expect(base('RP | Mount Santa Rita').host.country).toBe('PH');
+    expect(base('UK | RAF Fairford').host.country).toBe('GB');
+    expect(base('RKS | Camp Bondsteel').host.country).toBe('XK');
   });
 });
 
-describe('data licence', () => {
-  it('exports carry the CC BY 4.0 licence', async () => {
+describe('exports', () => {
+  it('carry the CC BY 4.0 licence and the new classification', async () => {
     // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
     const { execSync } = await import('node:child_process');
     // @ts-expect-error – see above
@@ -77,7 +120,23 @@ describe('data licence', () => {
     execSync('node scripts/build-data.mjs', { stdio: 'ignore' });
     const geo = JSON.parse(fs.readFileSync('public/data/bases.geojson', 'utf8'));
     expect(geo.metadata.license).toBe('CC-BY-4.0');
+    expect(geo.metadata.schema).toBe('visualbases-taxonomy-v2');
     expect(geo.metadata.attribution).toContain('visualbases.org');
+    expect(geo.features).toHaveLength(geo.metadata.count);
+    const f = geo.features.find((x: { id: string }) => x.id === 'buechel-nato-air-base');
+    expect(f.properties).toMatchObject({ siteType: 'shared-base', status: 'active', host: { country: 'DE' }, features: ['airfield', 'nuclear-sharing'] });
+    expect(f.properties.lat).toBeUndefined();
     expect(fs.readFileSync('public/data/LICENSE.txt', 'utf8')).toContain('CC BY 4.0');
+
+    const csv: string[] = fs.readFileSync('public/data/bases.csv', 'utf8').replace(/^\ufeff/, '').trim().split('\n');
+    const head = csv[0].split(',');
+    expect(head).toEqual(expect.arrayContaining(['id', 'host_country', 'host_territory', 'site_type', 'status', 'stationing_nations', 'co_users', 'infrastructure', 'civil_use', 'functions', 'arrangements', 'themes', 'activities', 'evidence', 'corrections', 'issues']));
+    expect(csv.length - 1).toBe(geo.metadata.count);
+    const row = csv.find((l) => l.startsWith('buechel-nato-air-base,'))!.split(',');
+    expect(row[head.indexOf('infrastructure')]).toBe('airfield');
+    expect(row[head.indexOf('arrangements')]).toBe('nuclear-sharing');
+
+    const tax = JSON.parse(fs.readFileSync('public/data/taxonomy.json', 'utf8'));
+    expect(tax.siteType.map((t: { id: string }) => t.id)).toContain('shared-base');
   });
 });

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { t, formatNumber, i18n, countryName } from '../lib/i18n.svelte';
-  import { flag } from '../lib/taxonomy';
+  import { t, tl, formatNumber, i18n, countryName } from '../lib/i18n.svelte';
+  import { flag, type Dimension } from '../lib/taxonomy';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
-  import { summary, filtersToQuery, EMPTY_FILTERS } from '../lib/data';
+  import { summary, filtersToQuery, matches, isAggregate, EMPTY_FILTERS } from '../lib/data';
   import type { MapHandle } from '../lib/map';
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
   import type { Base, Filters } from '../lib/types';
@@ -49,9 +49,9 @@
 
   const stats = $derived(summary(db.bases));
   const counts = $derived({
-    de: db.bases.filter((b) => b.country === 'DE' && !b.group).length,
-    okinawa: db.bases.filter((b) => b.subregion === 'Okinawa' && !b.group).length,
-    africa: db.bases.filter((b) => b.continent === 'africa' && !b.group).length,
+    de: db.bases.filter((b) => b.host.country === 'DE' && !isAggregate(b)).length,
+    okinawa: db.bases.filter((b) => b.subregion === 'Okinawa' && !isAggregate(b)).length,
+    africa: db.bases.filter((b) => b.continent === 'africa' && !isAggregate(b)).length,
     resistance: stats.resistance,
   });
 
@@ -64,23 +64,23 @@
   };
   const chapters: Chapter[] = $derived([
     { key: 'story.1', center: [25, 28], zoom: 1.5 },
-    { key: 'story.2', n: counts.de, center: [9.5, 50.2], zoom: 4.7, pick: (b) => b.country === 'DE', img: ['ramstein-air-base', '2015-sabr1'] },
+    { key: 'story.2', n: counts.de, center: [9.5, 50.2], zoom: 4.7, pick: (b) => b.host.country === 'DE', img: ['ramstein-air-base', '2015-sabr1'] },
     { key: 'story.3', n: counts.okinawa, center: [127.85, 26.45], zoom: 7.2, pick: (b) => b.subregion === 'Okinawa', img: ['henoko-camp-schwab', 'ge-henoko-11-2020'] },
     { key: 'story.4', n: counts.africa, center: [18, 4], zoom: 2.5, pick: (b) => b.continent === 'africa', img: ['us-air-base-201', 'niger201-2021'] },
     { key: 'story.5', n: counts.resistance, center: [40, 30], zoom: 1.5, pick: (b) => b.themes.includes('resistance'), img: ['naval-station-rota', 'marcha-contra'] },
     { key: 'story.6', center: [10, 40], zoom: 1.6 },
   ]);
 
-  const topics: { key: Parameters<typeof t>[0]; icon: string; filters: Partial<Filters> }[] = [
-    { key: 'theme.drones', icon: '🛩', filters: { themes: ['drones'] } },
-    { key: 'fac.nuclear', icon: '☢', filters: { facilities: ['nuclear'] } },
-    { key: 'theme.environment', icon: '🌱', filters: { themes: ['environment'] } },
-    { key: 'theme.surveillance', icon: '📡', filters: { themes: ['surveillance'] } },
-    { key: 'fac.missile', icon: '⇡', filters: { facilities: ['missile'] } },
-    { key: 'theme.resistance', icon: '✊', filters: { themes: ['resistance'] } },
+  /** quick entries into the atlas: topics, functions and arrangements (labels from the taxonomy) */
+  const topics: { dim: Dimension; id: string; icon: string; filters: Partial<Filters> }[] = [
+    { dim: 'theme', id: 'drone-warfare', icon: '🛩', filters: { themes: ['drone-warfare'] } },
+    { dim: 'feature', id: 'nuclear-sharing', icon: '☢', filters: { facilities: ['nuclear-sharing'] } },
+    { dim: 'theme', id: 'environment', icon: '🌱', filters: { themes: ['environment'] } },
+    { dim: 'feature', id: 'signals-intelligence', icon: '📡', filters: { facilities: ['signals-intelligence'] } },
+    { dim: 'feature', id: 'missile-defence', icon: '⇡', filters: { facilities: ['missile-defence'] } },
+    { dim: 'theme', id: 'resistance', icon: '✊', filters: { themes: ['resistance'] } },
   ];
-  const topicCount = (f: Partial<Filters>) =>
-    db.bases.filter((b) => (f.themes ?? []).every((x) => b.themes.includes(x)) && (f.facilities ?? []).every((x) => b.facilities.includes(x))).length;
+  const topicCount = (f: Partial<Filters>) => db.bases.filter((b) => matches(b, { ...EMPTY_FILTERS, ...f })).length;
 
   const latestNews = $derived(db.news.slice(0, 5));
   const latestStories = $derived(
@@ -220,9 +220,9 @@
           {:else if ch.key === 'story.3'}
             <a class="link" href={href('/atlas', 'q=Okinawa')}>{t('nav.atlas')}: Okinawa →</a>
           {:else if ch.key === 'story.4'}
-            <a class="link" href={href('/atlas', filtersToQuery({ ...EMPTY_FILTERS, continents: ['africa'] }))}>{t('nav.atlas')}: {t('cont.africa')} →</a>
+            <a class="link" href={href('/atlas', filtersToQuery({ ...EMPTY_FILTERS, continents: ['africa'] }))}>{t('nav.atlas')}: {tl('continent', 'africa')} →</a>
           {:else if ch.key === 'story.5'}
-            <a class="link" href={href('/atlas', filtersToQuery({ ...EMPTY_FILTERS, themes: ['resistance'] }))}>{t('theme.resistance')} →</a>
+            <a class="link" href={href('/atlas', filtersToQuery({ ...EMPTY_FILTERS, themes: ['resistance'] }))}>{tl('theme', 'resistance')} →</a>
           {:else if ch.key === 'story.6'}
             <div class="ctas"><a class="btn btn-primary" href={href('/near')}>📍 {t('nav.near')}</a><a class="btn" href={href('/atlas')}>{t('hero.ctaAtlas')}</a></div>
           {/if}
@@ -242,7 +242,7 @@
       <div class="daily-text">
         <p class="kicker">{t('home.dailyKicker')}</p>
         <h2 id="daily-h">{daily.b.name}</h2>
-        <p class="dsub">{flag(daily.b.country)} {countryName(daily.b.country)} · {t(`kind.${daily.b.kind}`)}</p>
+        <p class="dsub">{flag(daily.b.host.country)} {countryName(daily.b.host.country)} · {tl('siteType', daily.b.siteType)}</p>
         {#if daily.note}<p class="dnote">{daily.note}</p>{/if}
         <span class="btn btn-sm">{t('home.dailyCta')} →</span>
       </div>
@@ -305,7 +305,7 @@
     {#each topics as tp}
       <a class="topic card" href={href('/atlas', filtersToQuery({ ...EMPTY_FILTERS, ...tp.filters }))}>
         <span class="ti" aria-hidden="true">{tp.icon}</span>
-        <span class="tl">{t(tp.key)}</span>
+        <span class="tl">{tl(tp.dim, tp.id)}</span>
         <span class="tc">{t('filters.results', { n: topicCount(tp.filters) })}</span>
       </a>
     {/each}

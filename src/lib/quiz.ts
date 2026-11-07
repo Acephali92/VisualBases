@@ -1,4 +1,5 @@
 import type { Base } from './types';
+import { isAggregate } from './data';
 
 type L = { de: string; en: string };
 export interface Question {
@@ -15,9 +16,10 @@ const L = (de: string, en: string): L => ({ de, en });
 
 /** questions; numbers are taken from the dataset where possible */
 export function buildQuiz(bases: Base[]): Question[] {
-  const sites = bases.filter((b) => !b.group);
-  const de = sites.filter((b) => b.country === 'DE').length;
-  const nuclear = sites.filter((b) => b.facilities.includes('nuclear')).length;
+  const sites = bases.filter((b) => !isAggregate(b));
+  const de = sites.filter((b) => b.host.country === 'DE' && b.scope !== 'domestic').length;
+  // sites, not the separate depot entry at Kleine Brogel (part of the air base)
+  const nuclear = sites.filter((b) => b.features.includes('nuclear-sharing') && !b.relations?.some((r) => r.type === 'part-of')).length;
   const okinawa = sites.filter((b) => b.subregion === 'Okinawa').length;
   const round = (n: number) => Math.max(5, Math.round(n / 5) * 5);
 

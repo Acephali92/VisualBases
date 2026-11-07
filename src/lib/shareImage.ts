@@ -1,6 +1,6 @@
 import type { FeatureCollection, Geometry, Position } from 'geojson';
 import type { Base } from './types';
-import { GROUP_COLOR, KIND_GROUP } from './taxonomy';
+import { GROUP_COLOR, colorGroup } from './taxonomy';
 
 interface ShareOpts {
   bases: Base[];
@@ -70,9 +70,9 @@ export async function renderShareImage(o: ShareOpts): Promise<Blob> {
   for (const b of o.bases) {
     const p = proj(b.lon, b.lat);
     if (!p) continue;
-    const g = KIND_GROUP[b.kind];
+    const g = colorGroup(b);
     ctx.beginPath(); ctx.arc(p[0], p[1], 5, 0, Math.PI * 2);
-    if (g === 'hotspot') { ctx.strokeStyle = GROUP_COLOR.hotspot; ctx.lineWidth = 2; ctx.stroke(); }
+    if (g === 'aggregate') { ctx.strokeStyle = GROUP_COLOR.aggregate; ctx.lineWidth = 2; ctx.stroke(); }
     else { ctx.fillStyle = GROUP_COLOR[g]; ctx.fill(); }
   }
   // connection

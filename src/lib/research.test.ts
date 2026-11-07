@@ -12,7 +12,12 @@ import { evaluate } from '../../scripts/research/osm-check.mjs';
 // @ts-expect-error – see above
 import { validate } from '../../scripts/validate-data.mjs';
 
-const base = (p: Record<string, unknown>) => ({ id: 'x', name: 'X', country: 'DE', lat: 49.44, lon: 7.6, kind: 'foreign', facilities: [], themes: [], nations: ['US'], sources: [], notes: [], continent: 'europe', ...p });
+import { sourceRecord } from './fixtures';
+/** import record plus the `country` convenience field of scripts/research/lib.mjs loadBases() */
+const base = (p: Record<string, unknown>) => {
+  const country = (p.country as string) ?? 'DE';
+  return { ...sourceRecord({ id: 'x', name: 'X', lat: 49.44, lon: 7.6, sources: [], host: { country }, ...p }), country };
+};
 
 describe('source classification', () => {
   it('classifies hosts', () => {

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { t, countryName, formatNumber, i18n } from '../lib/i18n.svelte';
+  import { t, tl, countryName, formatNumber, i18n } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
   import { nearest } from '../lib/data';
-  import { GROUP_COLOR, KIND_GROUP, flag } from '../lib/taxonomy';
+  import { GROUP_COLOR, colorGroup, flag } from '../lib/taxonomy';
 
   let query = $state('');
   let place = $state<{ lat: number; lon: number; label: string } | null>(null);
@@ -67,7 +67,7 @@
         target: first.base,
         km: `${kmText(first.km)} km`,
         headline: t('near.result'),
-        subline: `${t('near.from', { place: place.label })} · ${countryName(first.base.country)} · ${t(`kind.${first.base.kind}`)}`,
+        subline: `${t('near.from', { place: place.label })} · ${countryName(first.base.host.country)} · ${tl('siteType', first.base.siteType)}`,
         footer: t('share.caption'),
       });
       imgBlob = blob;
@@ -113,8 +113,8 @@
         <p class="km"><span>{kmText(first.km)}</span> km</p>
         <p class="pre">{t('near.from', { place: place.label })}:</p>
         <a class="target" href={href(`/base/${first.base.id}`)}>
-          <span class="dot" class:ring={KIND_GROUP[first.base.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[first.base.kind]]}></span>
-          <span><b>{first.base.name}</b><small>{flag(first.base.country)} {countryName(first.base.country)} · {t(`kind.${first.base.kind}`)}</small></span>
+          <span class="dot" class:ring={colorGroup(first.base) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(first.base)]}></span>
+          <span><b>{first.base.name}</b><small>{flag(first.base.host.country)} {countryName(first.base.host.country)} · {tl('siteType', first.base.siteType)}</small></span>
           <span class="arrow">→</span>
         </a>
         <p class="within">{t('near.within', { n: within })}</p>
@@ -129,8 +129,8 @@
           {#each ranked.slice(1) as r (r.base.id)}
             <li>
               <a href={href(`/base/${r.base.id}`)}>
-                <span class="dot" class:ring={KIND_GROUP[r.base.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[r.base.kind]]}></span>
-                <span class="nm"><b>{r.base.name}</b><small>{flag(r.base.country)} {countryName(r.base.country)}</small></span>
+                <span class="dot" class:ring={colorGroup(r.base) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(r.base)]}></span>
+                <span class="nm"><b>{r.base.name}</b><small>{flag(r.base.host.country)} {countryName(r.base.host.country)}</small></span>
                 <span class="d">{kmText(r.km)} km</span>
               </a>
             </li>

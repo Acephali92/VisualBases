@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
-  import { t, countryName, formatNumber } from '../lib/i18n.svelte';
+  import { t, tl, ti, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { route, go, href } from '../lib/router.svelte';
-  import { matches, queryToFilters, filtersToQuery, nearest, countBy, EMPTY_FILTERS } from '../lib/data';
+  import { matches, queryToFilters, filtersToQuery, nearest, countBy, facetCounts, facetValues, foreignNations, isAggregate, FILTER_KEYS, type FilterKey } from '../lib/data';
   import type { MapHandle } from '../lib/map';
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
-  import { GROUP_COLOR, KIND_GROUP, KINDS, FACILITIES, THEMES, NATIONS, CONTINENTS, flag } from '../lib/taxonomy';
+  import { GROUP_COLOR, SITE_TYPES, STATUSES, FEATURES, FEATURE_KINDS, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, CONTINENTS, SITE_TYPE, colorGroup, flag, ids, type Dimension } from '../lib/taxonomy';
   import { settings, setSatellite } from '../lib/settings.svelte';
   import type { Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
@@ -43,37 +43,48 @@
   const selected = $derived(selectedId ? db.byId.get(selectedId) ?? null : null);
   const matching = $derived(db.bases.filter((b) => matches(b, filters, countryName)));
   const results = $derived(inView ? matching.filter(visible) : matching);
-  const activeCount = $derived(filters.kinds.length + filters.nations.length + filters.facilities.length + filters.themes.length + filters.continents.length + filters.countries.length);
+  const activeCount = $derived(FILTER_KEYS.reduce((n, k) => n + filters[k].length, 0));
   /** summary when exactly one host country is selected */
   const country = $derived.by(() => {
     if (filters.countries.length !== 1) return null;
     const cc = filters.countries[0];
-    const all = db.bases.filter((b) => b.country === cc);
-    const sites = all.filter((b) => !b.group);
+    const all = db.bases.filter((b) => facetValues(b, 'countries').includes(cc));
+    const sites = all.filter((b) => !isAggregate(b));
     return {
       cc,
       sites: sites.length,
-      nations: countBy(sites, (b) => b.nations),
-      kinds: countBy(sites, (b) => b.kind),
+      nations: countBy(sites, foreignNations),
+      kinds: countBy(sites, (b) => b.siteType),
+      closed: sites.filter((b) => b.status === 'closed').length,
       resistance: all.filter((b) => b.themes.includes('resistance')).length,
       images: all.flatMap((b) => (b.images ?? []).filter((i) => i.type === 'photo' || i.type === 'satellite').slice(0, 1).map((i) => ({ i, b }))).slice(0, 6),
     };
   });
-  const countryOptions = $derived(countBy(db.bases.filter((b) => !b.group), (b) => b.country));
+  const countryOptions = $derived(countBy(db.bases.filter((b) => !isAggregate(b)), (b) => facetValues(b, 'countries')));
   const nearby = $derived(selected ? nearest(db.bases.filter((b) => b.id !== selected.id), selected.lat, selected.lon, 6, true) : []);
 
-  const facet = (key: (b: (typeof db.bases)[number]) => string | string[] | null | undefined) => new Map(countBy(db.bases, key));
-  const kindCounts = $derived(facet((b) => b.kind));
-  const nationCounts = $derived(facet((b) => b.nations));
-  const facCounts = $derived(facet((b) => b.facilities));
-  const themeCounts = $derived(facet((b) => b.themes));
-  const contCounts = $derived(facet((b) => b.continent));
+  /** counts per chip: records matching all other active filters (so a count is what a click adds) */
+  const counts = $derived(Object.fromEntries(FILTER_KEYS.map((k) => [k, facetCounts(db.bases, filters, k, countryName)])) as Record<FilterKey, Map<string, number>>);
+  /** stationing nations present in the data, most frequent first (not a fixed list) */
+  const nationOptions = $derived(countBy(db.bases, foreignNations).map(([n]) => n));
+  type Group = { title: string; key: FilterKey; dim?: Dimension; items: string[]; label?: (v: string) => string; dot?: boolean; sub?: { title: string; items: string[] }[]; hint?: string };
+  const groups = $derived<Group[]>([
+    { title: t('filters.kind'), key: 'kinds', dim: 'siteType', items: ids(SITE_TYPES), dot: true, hint: t('filters.context') },
+    { title: t('filters.status'), key: 'status', dim: 'status', items: ids(STATUSES) },
+    { title: t('filters.nation'), key: 'nations', items: nationOptions, label: (v) => `${flag(v)} ${countryName(v)}` },
+    { title: t('filters.theme'), key: 'themes', dim: 'theme', items: ids(THEMES) },
+    { title: t('filters.facility'), key: 'facilities', dim: 'feature', items: [], sub: FEATURE_KINDS.map((k) => ({ title: tl('featureKind', k.id), items: FEATURES.filter((f) => f.kind === k.id).map((f) => f.id) })) },
+    { title: t('filters.activity'), key: 'activities', items: [...ids(ACTIVITY_GROUPS), ...ids(ORGANISATIONS)], label: (v) => tl(ACTIVITY_GROUPS.some((a) => a.id === v) ? 'activityGroup' : 'organisation', v) },
+    { title: t('filters.continent'), key: 'continents', dim: 'continent', items: ids(CONTINENTS) },
+  ]);
+  const chipLabel = (g: Group, v: string) => (g.label ? g.label(v) : tl(g.dim!, v));
+  const visibleItems = (g: Group, items: string[]) => items.filter((v) => counts[g.key].get(v) || (filters[g.key] as string[]).includes(v));
 
   function update(patch: Partial<Filters>) {
     const next = { ...filters, ...patch };
     go('/atlas', filtersToQuery(next), true);
   }
-  function toggle<K extends 'kinds' | 'nations' | 'facilities' | 'themes' | 'continents'>(key: K, value: Filters[K][number]) {
+  function toggle(key: FilterKey, value: string) {
     const list = filters[key] as string[];
     update({ [key]: list.includes(value) ? list.filter((v) => v !== value) : [...list, value] } as Partial<Filters>);
   }
@@ -107,7 +118,7 @@
       h.map.flyTo({
         center: [selected.lon, selected.lat],
         // without satellite imagery a close zoom shows nothing – keep regional context instead
-        zoom: settings.satellite ? Math.max(selected.group ? 10 : 12, Math.min(selected.zoom, 14)) : selected.group ? 6.5 : 7,
+        zoom: settings.satellite ? Math.max(isAggregate(selected) ? 10 : 12, Math.min(selected.zoom, 14)) : isAggregate(selected) ? 6.5 : 7,
         padding: narrow ? { bottom: innerHeight * 0.55, top: 40, left: 0, right: 0 } : { left: 420, top: 0, right: 0, bottom: 0 },
         duration: prefersReducedMotion() ? 0 : 2400,
         essential: true,
@@ -161,7 +172,6 @@
     };
   });
 
-  const groupOf = (k: keyof typeof KIND_GROUP) => KIND_GROUP[k];
 </script>
 
 <div class="atlas">
@@ -227,7 +237,7 @@
           <h2>{flag(country.cc)} {countryName(country.cc)} <button class="linkish" onclick={() => update({ countries: [] })} aria-label={t('filters.reset')}>✕</button></h2>
           <p class="cstats"><b>{country.sites}</b> {t('stat.locations')}{#if country.resistance} · <b>{country.resistance}</b> {t('stat.resistance')}{/if}</p>
           <p class="cline">{t('base.nations')}: {country.nations.map(([n, c]) => `${flag(n)} ${countryName(n)} (${c})`).join(' · ') || '–'}</p>
-          <p class="cline">{country.kinds.map(([k, c]) => `${t(`kind.${k}` as never)} (${c})`).join(' · ')}</p>
+          <p class="cline">{country.kinds.map(([k, c]) => `${tl('siteType', k)} (${c})`).join(' · ')}{#if country.closed} · {tl('status', 'closed')}: {country.closed}{/if}</p>
           {#if country.images.length}
             <div class="cimgs">
               {#each country.images as { i, b } (b.id)}
@@ -248,24 +258,32 @@
 
       {#if filterOpen}
         <div class="filters">
-          {#snippet group(title: string, items: readonly string[], key: 'kinds' | 'nations' | 'facilities' | 'themes' | 'continents', label: (v: string) => string, counts: Map<string, number>, dot?: (v: string) => string)}
-            <fieldset>
-              <legend>{title}</legend>
-              <div class="chips">
-                {#each items.filter((v) => counts.get(v)) as v}
-                  <button class="chip" aria-pressed={(filters[key] as string[]).includes(v)} onclick={() => toggle(key, v as never)}>
-                    {#if dot}<span class="dot" class:ring={dot(v) === 'hotspot'} style:background={GROUP_COLOR[dot(v) as keyof typeof GROUP_COLOR]}></span>{/if}
-                    {label(v)} <span class="count">{counts.get(v)}</span>
-                  </button>
-                {/each}
-              </div>
-            </fieldset>
+          {#snippet chips(g: Group, items: string[])}
+            <div class="chips">
+              {#each visibleItems(g, items) as v (v)}
+                <button class="chip" aria-pressed={(filters[g.key] as string[]).includes(v)} onclick={() => toggle(g.key, v)} title={g.dim ? ti(g.dim, v) : ''}>
+                  {#if g.dot}<span class="dot" class:ring={SITE_TYPE[v as keyof typeof SITE_TYPE]?.color === 'aggregate'} style:background={GROUP_COLOR[SITE_TYPE[v as keyof typeof SITE_TYPE]?.color ?? 'other']}></span>{/if}
+                  {chipLabel(g, v)} <span class="count">{counts[g.key].get(v) ?? 0}</span>
+                </button>
+              {/each}
+            </div>
           {/snippet}
-          {@render group(t('filters.kind'), KINDS, 'kinds', (v) => t(`kind.${v}` as never), kindCounts, (v) => groupOf(v as never))}
-          {@render group(t('filters.nation'), NATIONS, 'nations', (v) => `${flag(v)} ${countryName(v)}`, nationCounts)}
-          {@render group(t('filters.theme'), THEMES, 'themes', (v) => t(`theme.${v}` as never), themeCounts)}
-          {@render group(t('filters.facility'), FACILITIES, 'facilities', (v) => t(`fac.${v}` as never), facCounts)}
-          {@render group(t('filters.continent'), CONTINENTS, 'continents', (v) => t(`cont.${v}` as never), contCounts)}
+          {#each groups as g (g.key)}
+            {#if g.sub ? g.sub.some((s) => visibleItems(g, s.items).length) : visibleItems(g, g.items).length}
+              <fieldset>
+                <legend>{g.title}</legend>
+                {#if g.sub}
+                  {#each g.sub.filter((s) => visibleItems(g, s.items).length) as s (s.title)}
+                    <p class="sub">{s.title}</p>
+                    {@render chips(g, s.items)}
+                  {/each}
+                {:else}
+                  {@render chips(g, g.items)}
+                {/if}
+                {#if g.hint && (filters.kinds.includes('domestic-global') || counts.kinds.get('domestic-global'))}<p class="hint">{g.hint}</p>{/if}
+              </fieldset>
+            {/if}
+          {/each}
           <fieldset>
             <legend>{t('filters.country')}</legend>
             <select class="csel" onchange={(e) => { const v = (e.target as HTMLSelectElement).value; update({ countries: v ? [v] : [] }); }}>
@@ -286,13 +304,13 @@
               {#if b.images?.length}
                 <img class="r-thumb" src={b.images[0].thumb} alt="" loading="lazy" decoding="async" />
               {:else}
-                <span class="r-thumb ph"><span class="dot" class:ring={KIND_GROUP[b.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[b.kind]]}></span></span>
+                <span class="r-thumb ph"><span class="dot" class:ring={colorGroup(b) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(b)]}></span></span>
               {/if}
               <span class="r-main">
                 <span class="r-name">{b.name}</span>
-                <span class="r-sub">{#if b.country}{flag(b.country)} {countryName(b.country)}{' · '}{/if}{t(`kind.${b.kind}`)}</span>
+                <span class="r-sub">{#if b.host.country}{flag(b.host.territory ?? b.host.country)} {countryName(b.host.territory ?? b.host.country)}{' · '}{/if}{tl('siteType', b.siteType)}{#if b.status !== 'active'}{' · '}{tl('status', b.status)}{/if}</span>
               </span>
-              {#if b.nations.length}<span class="r-nat" title={b.nations.map(countryName).join(', ')}>{b.nations.map(flag).join('')}</span>{/if}
+              {#if foreignNations(b).length}<span class="r-nat" title={foreignNations(b).map(countryName).join(', ')}>{foreignNations(b).map(flag).join('')}</span>{/if}
             </a>
           </li>
         {:else}
@@ -357,6 +375,8 @@
   fieldset { border: 0; margin: 0 0 12px; padding: 0; }
   legend { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; margin-bottom: 8px; padding: 0; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sub { font-size: 0.75rem; color: var(--text-2); margin: 8px 0 5px; }
+  .hint { font-size: 0.75rem; color: var(--muted); margin: 6px 0 0; }
   .done { width: 100%; margin-top: 4px; }
 
   .results { list-style: none; margin: 0; padding: 6px; overflow-y: auto; flex: 1; overscroll-behavior: contain; }

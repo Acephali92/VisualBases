@@ -15,7 +15,7 @@
         photo: b.images?.find((i) => i.type === 'photo'),
         link: campaignLink(b),
       }))
-      .sort((a, b) => Number(!!b.photo || !!b.logo) - Number(!!a.photo || !!a.logo) || (a.base.country ?? '').localeCompare(b.base.country ?? '')),
+      .sort((a, b) => Number(!!b.photo || !!b.logo) - Number(!!a.photo || !!a.logo) || (a.base.host.country ?? '').localeCompare(b.base.host.country ?? '')),
   );
   /** pick the campaign's own website – never official military or media hosting sites */
   const NOT_CAMPAIGN = /\.mil\b|militaryonesource|army\.|af\.mil|navy|africom|eucom|wikipedia|wikimedia|youtube|visualbases\.org|google\./i;
@@ -71,7 +71,7 @@
           </a>
           <div class="cbody">
             <a class="cname" href={href(`/base/${c.base.id}`)}>{c.base.name}</a>
-            <span class="cwhere">{flag(c.base.country)} {countryName(c.base.country)}</span>
+            <span class="cwhere">{flag(c.base.host.country)} {countryName(c.base.host.country)}</span>
             {#if c.link}<a class="clink" href={c.link.url} target="_blank" rel="noopener">{c.link.label} ↗</a>{/if}
           </div>
         </li>

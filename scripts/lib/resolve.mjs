@@ -1,0 +1,184 @@
+/**
+ * Resolve the layered data into the published records (public/data/bases.json):
+ *
+ *   data/bases.json            import layer (normalised source classification, raw terms)
+ *   data/claims.json           curated corrections ('accepted' are applied, 'proposed' are shown)
+ *   data/corrections.json      doubtful positions
+ *   data/research/sources.json checked sources per record → evidence per statement group
+ *   data/media.json, data/wikimedia.json   images
+ *
+ * Pure functions without I/O, used by scripts/build-data.mjs, the validator and the tests.
+ * The model is documented in docs/TAXONOMY.md.
+ */
+
+/** kind categories of visualbases.org (one per post expected) */
+export const KIND_CATEGORIES = ['foreign-bases', 'shared-bases', 'national-base', 'us-global', 'civilian-location', 'extra-facility', 'meta-site'];
+const AGGREGATE = new Set(['garrison', 'region-cluster']);
+
+/** claim field → statement group whose evidence it changes */
+export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'] };
+export const CLAIM_FIELDS = ['presences', 'host', 'region', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
+
+const clone = (x) => (x === undefined ? undefined : JSON.parse(JSON.stringify(x)));
+const sameItem = (a, b) => (a && typeof a === 'object' ? (a.nation ?? JSON.stringify(a)) === (b.nation ?? JSON.stringify(b)) : a === b);
+
+/**
+ * Apply one claim to a record (mutates it). Returns { from, to } or throws if the claim no longer fits
+ * the data (e.g. the value to remove is gone because the source was corrected) – the validator reports that.
+ */
+export function applyClaim(b, c) {
+  if (!CLAIM_FIELDS.includes(c.field)) throw new Error(`unknown field "${c.field}"`);
+  const from = clone(b[c.field]);
+  if (c.op === 'set') {
+    if (JSON.stringify(stripVia(from)) === JSON.stringify(stripVia(c.value))) throw new Error('value is already set (claim obsolete?)');
+    b[c.field] = c.field === 'presences' ? c.value.map((p) => ({ ...p, via: 'claim' })) : clone(c.value);
+  } else if (c.op === 'add') {
+    const list = (b[c.field] ??= []);
+    if (list.some((x) => sameItem(x, c.value))) throw new Error('value is already present (claim obsolete?)');
+    list.push(c.field === 'presences' ? { ...c.value, via: 'claim' } : c.value);
+  } else if (c.op === 'remove') {
+    const list = b[c.field] ?? [];
+    if (!list.some((x) => sameItem(x, c.value))) throw new Error('value to remove is not present (claim obsolete?)');
+    b[c.field] = list.filter((x) => !sameItem(x, c.value));
+  } else throw new Error(`unknown op "${c.op}"`);
+  return { from, to: clone(b[c.field]) };
+}
+const stripVia = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === 'object' ? { nation: x.nation, role: x.role } : x)) : v);
+
+/** relation of a present state to the territory of the site */
+export function relation(nation, host) {
+  if (!host?.country || nation !== host.country) return 'foreign';
+  return host.territory ? 'own-territory' : 'domestic';
+}
+
+export function scopeOf(presences) {
+  if (presences.some((p) => p.relation === 'foreign')) return 'foreign';
+  if (presences.some((p) => p.relation === 'own-territory')) return 'overseas';
+  if (presences.some((p) => p.relation === 'domestic')) return 'domestic';
+  return 'unknown';
+}
+
+/** review notes derived from the record itself (documented in docs/TAXONOMY.md, "Prüfhinweise") */
+export function issuesOf(b) {
+  const cats = b.origin?.terms?.categories ?? [];
+  const kinds = cats.filter((c) => KIND_CATEGORIES.includes(c));
+  const out = [];
+  if (kinds.length > 1) out.push('multiple-site-types');
+  if (!kinds.length && !cats.includes('unspecific') && !cats.includes('closed') && !AGGREGATE.has(b.siteType)) out.push('no-site-type');
+  if (b.siteType === 'military-base') out.push('site-type-from-status');
+  if (b.siteType === 'foreign-base' && b.presences.length && !b.presences.some((p) => relation(p.nation, b.host) === 'foreign')) out.push('foreign-without-foreign-presence');
+  if (!AGGREGATE.has(b.siteType) && !b.presences.length) out.push('nation-missing');
+  if (b.host?.country === 'US' && b.continent === 'asia') out.push('continent-check');
+  if (b.origin?.review) out.push('review-on-origin');
+  return out;
+}
+
+function siteTypeBasis(b) {
+  const cats = b.origin?.terms?.categories ?? [];
+  if (b.siteType === 'military-base' || /^overview\b/i.test(b.name)) return 'derived';
+  if (b.siteType === 'unspecified' && !cats.includes('unspecific')) return 'derived';
+  return 'source';
+}
+
+/** state of evidence per statement group (no scores – see EVIDENCE_STATES in src/lib/taxonomy.ts) */
+export function evidenceOf(research, { corrected = [], disputed = [], cited = new Set() } = {}) {
+  const out = {};
+  const types = new Set([...research.flatMap((s) => s.supports ?? []), ...corrected, ...disputed]);
+  for (const t of types) {
+    const manual = research.filter((s) => s.method === 'manual' && (s.supports ?? []).includes(t) && !cited.has(s.url));
+    if (corrected.includes(t)) out[t] = 'corrected';
+    else if (disputed.includes(t) || manual.some((s) => s.verdict === 'contradicts')) out[t] = 'disputed';
+    else if (manual.some((s) => s.verdict === 'supports')) out[t] = 'confirmed';
+    else if (manual.some((s) => s.verdict === 'context')) out[t] = 'context';
+  }
+  return out;
+}
+
+const IMAGE_ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
+
+/**
+ * @returns {{ bases: object[], problems: { rule: string, id: string, msg: string }[] }}
+ */
+export function resolveBases(input, { claims = [], research = [], corrections = {}, media = {}, wikimedia = {} } = {}) {
+  const problems = [];
+  const byBase = (list) => { const m = new Map(); for (const x of list) m.set(x.base, [...(m.get(x.base) ?? []), x]); return m; };
+  const claimsOf = byBase(claims);
+  const researchOf = byBase(research);
+  const positionOf = new Map((corrections.positions ?? []).map((c) => [c.id, c]));
+
+  const bases = input.map((src) => {
+    const b = clone(src);
+    b.basis = { siteType: siteTypeBasis(b), status: b.origin?.terms?.categories?.includes('closed') ? 'source' : 'implicit' };
+    const corrected = new Set();
+    const disputed = new Set();
+    const cited = new Set();
+    const extraIssues = [];
+    for (const c of claimsOf.get(b.id) ?? []) {
+      if (c.status === 'proposed') {
+        (b.proposals ??= []).push({ id: c.id, field: c.field, op: c.op, value: c.value, statement: c.statement, sources: c.sources });
+        for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) disputed.add(t);
+        continue;
+      }
+      if (c.status !== 'accepted') continue;
+      if (c.field === 'issues') { extraIssues.push(c.value); continue; }
+      try {
+        const { from, to } = applyClaim(b, c);
+        (b.corrections ??= []).push({ id: c.id, field: c.field, op: c.op, from, to, statement: c.statement, sources: c.sources, decided: c.decided });
+        for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) corrected.add(t);
+        for (const s of c.sources) cited.add(s);
+        if (c.field === 'siteType') b.basis.siteType = 'claim';
+        if (c.field === 'status') b.basis.status = 'claim';
+      } catch (e) {
+        problems.push({ rule: 'claim-apply', id: b.id, msg: `claim "${c.id}" cannot be applied: ${e.message}` });
+      }
+    }
+
+    b.presences = b.presences.map((p) => ({ ...p, relation: relation(p.nation, b.host) }));
+    b.scope = scopeOf(b.presences);
+    const issues = [...issuesOf(b), ...extraIssues];
+    const pc = positionOf.get(b.id);
+    if (pc) {
+      b.positionCheck = { status: pc.status, issue: pc.issue, duplicateOf: pc.duplicateOf, proposal: pc.proposal };
+      if (pc.status === 'proposed') issues.push('position-unverified');
+    }
+    if (issues.length) b.issues = [...new Set(issues)];
+
+    const rs = researchOf.get(b.id) ?? [];
+    if (rs.length) {
+      b.research = rs.map(({ base, collector, httpStatus, ...s }) => s);
+      const ev = evidenceOf(rs, { corrected: [...corrected], disputed: [...disputed], cited });
+      if (Object.keys(ev).length) b.evidence = ev;
+      const checked = rs.filter((s) => s.method === 'manual').map((s) => s.accessed).sort().at(-1);
+      if (checked) b.lastChecked = checked;
+    } else if (corrected.size || disputed.size) {
+      b.evidence = evidenceOf([], { corrected: [...corrected], disputed: [...disputed] });
+    }
+    for (const c of [...(b.corrections ?? []), ...(b.proposals ?? [])]) {
+      for (const url of c.sources) if (!rs.some((s) => s.url === url) && !research.some((s) => s.url === url)) problems.push({ rule: 'claim-source', id: b.id, msg: `claim "${c.id}": source not in data/research/sources.json: ${url}` });
+    }
+
+    // images: the project's own photos first, then the Wikimedia photo; satellites chronologically
+    const refs = [...(b.images ?? [])];
+    const w = wikimedia[b.id];
+    if (w?.url) refs.push({ url: w.url, caption: w.title ?? '' });
+    const imgs = refs
+      .map((r) => (media[r.url] ? { ...media[r.url], caption: r.caption || undefined } : null))
+      .filter(Boolean)
+      .sort((x, y) => IMAGE_ORDER[x.type] - IMAGE_ORDER[y.type] || (x.year ?? 0) - (y.year ?? 0));
+    if (imgs.length) b.images = imgs; else delete b.images;
+    return b;
+  });
+
+  // inverse relations
+  const byId = new Map(bases.map((b) => [b.id, b]));
+  for (const b of bases) {
+    for (const r of b.relations ?? []) {
+      const t = byId.get(r.id);
+      if (!t) { problems.push({ rule: 'relation', id: b.id, msg: `relation to unknown id "${r.id}"` }); continue; }
+      if (r.type === 'member-of') (t.includes ??= []).push(b.id);
+      if (r.type === 'part-of') (t.hasParts ??= []).push(b.id);
+    }
+  }
+  for (const c of claims) if (!byId.has(c.base)) problems.push({ rule: 'claim-base', id: c.base, msg: `claim "${c.id}" refers to unknown base` });
+  return { bases, problems };
+}
