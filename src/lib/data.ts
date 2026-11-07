@@ -1,6 +1,6 @@
 import type { Base, Filters, Story } from './types';
 
-export const EMPTY_FILTERS: Filters = { q: '', kinds: [], nations: [], facilities: [], themes: [], continents: [] };
+export const EMPTY_FILTERS: Filters = { q: '', kinds: [], nations: [], facilities: [], themes: [], continents: [], countries: [] };
 
 const EARTH_RADIUS_KM = 6371;
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -35,6 +35,7 @@ export function matches(b: Base, f: Filters, countryLabel: (cc: string | null) =
   if (f.facilities.length && !f.facilities.some((x) => b.facilities.includes(x))) return false;
   if (f.themes.length && !f.themes.some((x) => b.themes.includes(x))) return false;
   if (f.continents.length && !(b.continent && f.continents.includes(b.continent))) return false;
+  if (f.countries.length && !(b.country && f.countries.includes(b.country))) return false;
   const q = fold(f.q.trim());
   if (q) {
     const hay = fold([b.name, b.country ?? '', countryLabel(b.country), b.subregion ?? '', b.usType ?? ''].join(' '));
@@ -66,7 +67,7 @@ export function summary(bases: Base[]) {
 export function filtersToQuery(f: Filters): string {
   const p = new URLSearchParams();
   if (f.q) p.set('q', f.q);
-  for (const k of ['kinds', 'nations', 'facilities', 'themes', 'continents'] as const) if (f[k].length) p.set(k, f[k].join(','));
+  for (const k of ['kinds', 'nations', 'facilities', 'themes', 'continents', 'countries'] as const) if (f[k].length) p.set(k, f[k].join(','));
   return p.toString();
 }
 
@@ -80,6 +81,7 @@ export function queryToFilters(q: string): Filters {
     facilities: list('facilities') as Filters['facilities'],
     themes: list('themes') as Filters['themes'],
     continents: list('continents'),
+    countries: list('countries'),
   };
 }
 

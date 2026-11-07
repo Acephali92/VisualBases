@@ -111,7 +111,7 @@
   <header>
     <span class="tag kind"><span class="dot" class:ring={group === 'hotspot'} style:background={GROUP_COLOR[group]}></span>{t(`kind.${base.kind}`)}</span>
     <h2>{base.name}</h2>
-    <p class="where">{#if base.country}{flag(base.country)} {countryName(base.country)}{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
+    <p class="where">{#if base.country}<a class="cc" href={href('/atlas', `countries=${base.country}`)}>{flag(base.country)} {countryName(base.country)}</a>{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
     <p class="kind-info">{t(`kindInfo.${base.kind}`)}</p>
     <div class="flags">
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
@@ -268,6 +268,8 @@
   .card-actions { display: flex; flex-direction: column; gap: 8px; }
   h2 { font-size: 1.6rem; margin: 0.45em 0 0.2em; }
   .where { color: var(--text-2); margin: 0 0 0.6em; }
+  .cc { color: inherit; text-decoration: none; }
+  .cc:hover { text-decoration: underline; }
   .kind-info { color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6em; }
   .kind { background: transparent; }
   .flags { display: flex; flex-wrap: wrap; gap: 6px; }

@@ -103,4 +103,6 @@ export interface Filters {
   facilities: Facility[];
   themes: Theme[];
   continents: string[];
+  /** host countries (ISO alpha-2) */
+  countries: string[];
 }

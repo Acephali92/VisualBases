@@ -37,7 +37,7 @@ describe('filters', () => {
     expect(matches(b, { ...EMPTY_FILTERS, themes: ['drones'], nations: ['FR'] })).toBe(false);
   });
   it('round-trips through the URL', () => {
-    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign', 'shared'] as Base['kind'][], themes: ['drones' as const] };
+    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign', 'shared'] as Base['kind'][], themes: ['drones' as const], countries: ['DE'] };
     expect(queryToFilters(filtersToQuery(f))).toEqual(f);
     expect(filtersToQuery(EMPTY_FILTERS)).toBe('');
   });

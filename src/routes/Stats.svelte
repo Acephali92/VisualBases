@@ -9,7 +9,7 @@
   const sites = $derived(db.bases.filter((b) => !b.group));
   const s = $derived(summary(db.bases));
 
-  const byCountry = $derived(countBy(sites, (b) => b.country).map(([k, v]) => ({ label: `${flag(k)} ${countryName(k)}`, value: v, href: href('/atlas', `q=${encodeURIComponent(countryName(k))}`) })));
+  const byCountry = $derived(countBy(sites, (b) => b.country).map(([k, v]) => ({ label: `${flag(k)} ${countryName(k)}`, value: v, href: href('/atlas', `countries=${k}`) })));
   const byNation = $derived(countBy(sites, (b) => b.nations).map(([k, v]) => ({ label: `${flag(k)} ${countryName(k)}`, value: v, href: href('/atlas', `nations=${k}`) })));
   const byKind = $derived(countBy(sites, (b) => b.kind).map(([k, v]) => ({ label: t(`kind.${k}` as never), value: v, href: href('/atlas', `kinds=${k}`) })));
   const byFac = $derived(countBy(sites, (b) => b.facilities).map(([k, v]) => ({ label: t(`fac.${k}` as never), value: v, href: href('/atlas', `facilities=${k}`) })));

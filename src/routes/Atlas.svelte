@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import { t, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { route, go, href } from '../lib/router.svelte';
@@ -41,7 +41,23 @@
   const selected = $derived(selectedId ? db.byId.get(selectedId) ?? null : null);
   const matching = $derived(db.bases.filter((b) => matches(b, filters, countryName)));
   const results = $derived(inView ? matching.filter(visible) : matching);
-  const activeCount = $derived(filters.kinds.length + filters.nations.length + filters.facilities.length + filters.themes.length + filters.continents.length);
+  const activeCount = $derived(filters.kinds.length + filters.nations.length + filters.facilities.length + filters.themes.length + filters.continents.length + filters.countries.length);
+  /** summary when exactly one host country is selected */
+  const country = $derived.by(() => {
+    if (filters.countries.length !== 1) return null;
+    const cc = filters.countries[0];
+    const all = db.bases.filter((b) => b.country === cc);
+    const sites = all.filter((b) => !b.group);
+    return {
+      cc,
+      sites: sites.length,
+      nations: countBy(sites, (b) => b.nations),
+      kinds: countBy(sites, (b) => b.kind),
+      resistance: all.filter((b) => b.themes.includes('resistance')).length,
+      images: all.flatMap((b) => (b.images ?? []).filter((i) => i.type === 'photo' || i.type === 'satellite').slice(0, 1).map((i) => ({ i, b }))).slice(0, 6),
+    };
+  });
+  const countryOptions = $derived(countBy(db.bases.filter((b) => !b.group), (b) => b.country));
   const nearby = $derived(selected ? nearest(db.bases.filter((b) => b.id !== selected.id), selected.lat, selected.lon, 6, true) : []);
 
   const facet = (key: (b: (typeof db.bases)[number]) => string | string[] | null | undefined) => new Map(countBy(db.bases, key));
@@ -100,6 +116,12 @@
   });
   $effect(() => {
     handle?.setSatellite(settings.satellite);
+  });
+  // zoom to the selected countries / continents when they change (also when arriving via a link)
+  $effect(() => {
+    const key = [...filters.countries, ...filters.continents].join(',');
+    if (!handle || db.status !== 'ready' || !key || selectedId) return;
+    untrack(() => fitResults());
   });
 
   function fitResults() {
@@ -192,6 +214,22 @@
         </span>
       </div>
 
+      {#if country}
+        <section class="country">
+          <h2>{flag(country.cc)} {countryName(country.cc)} <button class="linkish" onclick={() => update({ countries: [] })} aria-label={t('filters.reset')}>✕</button></h2>
+          <p class="cstats"><b>{country.sites}</b> {t('stat.locations')}{#if country.resistance} · <b>{country.resistance}</b> {t('stat.resistance')}{/if}</p>
+          <p class="cline">{t('base.nations')}: {country.nations.map(([n, c]) => `${flag(n)} ${countryName(n)} (${c})`).join(' · ') || '–'}</p>
+          <p class="cline">{country.kinds.map(([k, c]) => `${t(`kind.${k}` as never)} (${c})`).join(' · ')}</p>
+          {#if country.images.length}
+            <div class="cimgs">
+              {#each country.images as { i, b } (b.id)}
+                <a href={href(`/base/${b.id}`, route.query)} title={b.name}><img src={i.thumb} alt={b.name} loading="lazy" /></a>
+              {/each}
+            </div>
+          {/if}
+        </section>
+      {/if}
+
       {#if embedOpen}
         <div class="embed-box">
           <p>{t('embed.text')}</p>
@@ -220,6 +258,15 @@
           {@render group(t('filters.theme'), THEMES, 'themes', (v) => t(`theme.${v}` as never), themeCounts)}
           {@render group(t('filters.facility'), FACILITIES, 'facilities', (v) => t(`fac.${v}` as never), facCounts)}
           {@render group(t('filters.continent'), CONTINENTS, 'continents', (v) => t(`cont.${v}` as never), contCounts)}
+          <fieldset>
+            <legend>{t('filters.country')}</legend>
+            <select class="csel" onchange={(e) => { const v = (e.target as HTMLSelectElement).value; update({ countries: v ? [v] : [] }); }}>
+              <option value="">{t('common.all')}</option>
+              {#each [...countryOptions].sort((a, b) => countryName(a[0]).localeCompare(countryName(b[0]))) as [cc, n]}
+                <option value={cc} selected={filters.countries[0] === cc}>{countryName(cc)} ({n})</option>
+              {/each}
+            </select>
+          </fieldset>
           <button class="btn btn-primary btn-sm done" onclick={() => { filterOpen = false; fitResults(); }}>{t('filters.show')} ({results.length})</button>
         </div>
       {/if}
@@ -235,7 +282,7 @@
               {/if}
               <span class="r-main">
                 <span class="r-name">{b.name}</span>
-                <span class="r-sub">{#if b.country}{flag(b.country)} {countryName(b.country)} · {/if}{t(`kind.${b.kind}`)}</span>
+                <span class="r-sub">{#if b.country}{flag(b.country)} {countryName(b.country)}{' · '}{/if}{t(`kind.${b.kind}`)}</span>
               </span>
               {#if b.nations.length}<span class="r-nat" title={b.nations.map(countryName).join(', ')}>{b.nations.map(flag).join('')}</span>{/if}
             </a>
@@ -279,10 +326,20 @@
   .filter-btn { min-height: 40px; }
   .badge { background: var(--accent-strong); color: #fff; border-radius: 999px; font-size: 0.72rem; padding: 0 6px; line-height: 1.5; }
 
-  .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 16px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--line); }
-  .row-actions { display: flex; gap: 12px; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; padding: 4px 16px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--line); }
+  .meta-row strong { white-space: nowrap; }
+  .row-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 14px; }
+  .row-actions .linkish { white-space: nowrap; }
   .linkish { background: none; border: 0; padding: 0; color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; font-size: 0.85rem; }
 
+  .country { padding: 12px 16px 14px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, rgb(57 135 229 / 0.08), transparent); }
+  .country h2 { font-size: 1.25rem; margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+  .country h2 .linkish { margin-left: auto; text-decoration: none; font-size: 1rem; }
+  .cstats { margin: 0 0 4px; font-size: 0.92rem; }
+  .cline { margin: 0 0 4px; font-size: 0.8rem; color: var(--text-2); }
+  .cimgs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 8px; }
+  .cimgs img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+  .csel { width: 100%; min-height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg-2); padding: 0 8px; }
   .embed-box { padding: 10px 16px 14px; border-bottom: 1px solid var(--line); font-size: 0.85rem; color: var(--text-2); }
   .embed-box p { margin-bottom: 8px; }
   .embed-box textarea { width: 100%; resize: none; font: 0.75rem/1.4 ui-monospace, monospace; background: var(--bg-2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 8px; margin-bottom: 8px; }
