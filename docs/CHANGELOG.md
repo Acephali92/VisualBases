@@ -2,6 +2,22 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – „Deine Basis“: Ortssuche und Rangliste korrigiert
+
+### Behoben
+- **Falsche PLZ-Zuordnung:** Die Ortssuche übernahm ungeprüft den ersten Nominatim-Treffer (`limit=1`, ohne Länderkontext). `56068` landete so in Minnesota Lake (USA) statt in Koblenz, angezeigt wurde nur „56068“. Jetzt: strukturierte PLZ-Suche, Länderhinweise und Länderauswahl, Auswahlliste bei mehrdeutigen Treffern, „zu ungenau“ bei ganzen Ländern, und Entfernungen erst nach eindeutiger Position.
+- **Nationale Standorte in der Rangliste:** `nearest()` filterte nur Sammeleinträge. US-Inlandsstandorte (Lualualei, Cape Cod, Beale …), chinesische Standorte auf chinesischem Gebiet (Pratas …), Überseegebiete und geschlossene Standorte belegten Plätze vor den tatsächlichen ausländischen Standorten. Neue Regel in `src/lib/proximity.ts` (TAXONOMY, Abschnitt 10).
+- Fehler der Ortssuche (Netzwerk, Ratenbegrenzung, Zeitüberschreitung, unbrauchbare Antwort) werden einzeln erklärt statt pauschal „nicht gefunden“. Nach einem Fehler bleibt kein altes Ergebnis stehen.
+
+### Hinzugefügt
+- Anzeige der verwendeten Position (Ort, Region, Land, PLZ, Genauigkeit, Koordinaten, OSM-Objekt) und „Nicht der richtige Ort?“ mit Alternativen.
+- Rangliste mit Platz, Gastland, Stationierungsnation, Typ, Luftlinie; Kennzeichen für unsichere Einträge, zivile Standorte, ungefähre und ungeprüfte Positionen; Schalter „Ehemalige Standorte einbeziehen“; Karte mit Ausgangspunkt (nur Anzeige); Erklärung von Rechen- und Positionsgenauigkeit; Anzahl der berücksichtigten Einträge.
+- `public/config/geocoder.json` (Abschalter und Endpoint der Ortssuche), Cache, Drosselung und Abbruch für Nominatim. Dazu `docs/GEOCODING.md` mit Nutzungsbedingungen, Grenzen und Alternativen.
+- Tests: `geo.test.ts`, `geocode.test.ts` (aufgezeichnete Nominatim-Antworten), `proximity.test.ts` (inkl. Brute-Force-Abgleich auf dem echten Datensatz), Browser-Flow für `#/near` in `tests/smoke.cjs` (Desktop und Mobil).
+
+### Geändert
+- `distanceKm`: numerisch stabile atan2-Form, mittlerer Erdradius 6371,0088 km, `NaN` statt Scheinwert bei ungültigen Koordinaten.
+
 ## [Unreleased] – Workflow „Recherche“
 
 ### Geändert

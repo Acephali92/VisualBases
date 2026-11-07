@@ -32,6 +32,8 @@ export default defineConfig({
           '**/og.png',
           '**/data/research.json',
           '**/data/taxonomy.json',
+          // geocoder switch (Nominatim policy: must be switchable at any time) – always fetched fresh
+          '**/config/geocoder.json',
           '**/assets/map-*',
           '**/assets/maplibre-gl-worker-*',
           '**/assets/countries-*',
@@ -45,6 +47,11 @@ export default defineConfig({
             urlPattern: /\/assets\/.+\.(js|css|woff2)$/,
             handler: 'CacheFirst',
             options: { cacheName: 'assets', expiration: { maxEntries: 60, maxAgeSeconds: 60 * 60 * 24 * 180 } },
+          },
+          {
+            urlPattern: /\/config\/geocoder\.json$/,
+            handler: 'NetworkFirst',
+            options: { cacheName: 'config', networkTimeoutSeconds: 4 },
           },
           {
             urlPattern: /\/data\/research\.json$/,

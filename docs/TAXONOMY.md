@@ -145,6 +145,14 @@ Der Filter arbeitet auf Gruppen (eine Übungsserie wie DEFENDER-Europe, eine Ope
 
 **Prüfhinweise** (`issues`, Warnungen im Datenqualitätsbericht, im Profil sichtbar): `multiple-site-types`, `no-site-type`, `site-type-from-status`, `foreign-without-foreign-presence`, `nation-missing`, `continent-check`, `review-on-origin`, `position-unverified`, `out-of-scope-candidate`.
 
+**Rangliste „Deine Basis“** (`src/lib/proximity.ts`, `nearExclusion` / `certaintyOf`). Es gibt dafür keine eigene Kategorie, nur eine Auswahl über bestehende Felder:
+- ausgeschlossen: Sammeleinträge (`garrison`, `region-cluster`), `scope: domestic` (Staat auf eigenem Staatsgebiet, Kontext-Standort), `scope: overseas` (Basis im eigenen Überseegebiet), Einträge ohne gültige Koordinaten;
+- aufgenommen: `scope: foreign`, also mindestens eine Präsenz mit `relation: foreign`. Maßgeblich ist das Verhältnis Nation ↔ Gastland, nicht der Standorttyp. Deshalb ist Creech (US-Inlandsbasis, RAF-Mitnutzung) aufgenommen und Pratas (`foreign-base`, Nation = Gastland) nicht;
+- `scope: unknown` (keine Präsenz belegt): nur wenn der Typ ausländische Nutzung schon definiert (`foreign-base`, `shared-base`, `host-base-foreign-use`) und kein `out-of-scope-candidate` vorliegt. **Zivile Standorte ohne belegte ausländische Präsenz werden nie aufgenommen**;
+- `status: closed` nur auf Wunsch des Nutzers (Schalter);
+- Gewissheit: „unsicher“, wenn die Stationierungsnation nicht belegt ist (`scope: unknown`) oder die Nutzungsform nicht angegeben ist (`military-base`, `unspecified`). Zivile Standorte (`civilian-site`) tragen den Hinweis „keine Militärbasis“.
+Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossenen). Nicht aufgenommen: 22 Sammeleinträge, 9 auf eigenem Staatsgebiet, 15 im eigenen Überseegebiet, 5 ohne belegte ausländische Präsenz, 30 geschlossen.
+
 ## 11. Quellen- und Belegmodell
 
 | Schicht | Datei | Inhalt | Pflege |
