@@ -164,7 +164,7 @@ const de = {
   'about.github': 'Projekt auf GitHub',
   'about.stories': 'Hintergrundartikel',
   'about.credits': 'Credits',
-  'about.creditsText': 'Kartengrundlage: Natural Earth (gemeinfrei). Satellitenbilder: Sentinel-2 cloudless von EOX IT Services GmbH (enthält modifizierte Copernicus-Sentinel-Daten). Software: MapLibre GL, Svelte.',
+  'about.creditsText': 'Fotos, historische Satellitenbilder und Karten aus dem Archiv von visualbases.org (mit Zustimmung des Initiators). Historische Satellitenbilder © Google Earth. Weitere Fotos von Wikimedia Commons unter freien Lizenzen – Urheber und Lizenz stehen bei jedem Bild. Kartengrundlage: Natural Earth (gemeinfrei). Satellitenebene: Sentinel-2 cloudless von EOX IT Services GmbH (enthält modifizierte Copernicus-Sentinel-Daten). Schrift: Inter (OFL). Software: MapLibre GL, Svelte.',
 
   'img.compare': 'Vorher / Nachher – Regler ziehen',
   'img.satellite': 'Satellitenbild',
@@ -404,7 +404,7 @@ const en: Dict = {
   'about.github': 'Project on GitHub',
   'about.stories': 'Background articles',
   'about.credits': 'Credits',
-  'about.creditsText': 'Base map: Natural Earth (public domain). Satellite imagery: Sentinel-2 cloudless by EOX IT Services GmbH (contains modified Copernicus Sentinel data). Software: MapLibre GL, Svelte.',
+  'about.creditsText': 'Photos, historical satellite images and maps from the visualbases.org archive (with the founder’s consent). Historical satellite images © Google Earth. Further photos from Wikimedia Commons under free licences – author and licence are shown with every image. Base map: Natural Earth (public domain). Satellite layer: Sentinel-2 cloudless by EOX IT Services GmbH (contains modified Copernicus Sentinel data). Font: Inter (OFL). Software: MapLibre GL, Svelte.',
 
   'img.compare': 'Before / after – drag the slider',
   'img.satellite': 'Satellite image',
