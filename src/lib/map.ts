@@ -114,7 +114,7 @@ export interface MapHandle {
 
 export async function createMap(
   container: HTMLElement,
-  opts: { detail?: Detail; interactive?: boolean; center?: [number, number]; zoom?: number; onSelect?: (id: string) => void; onHover?: (b: { id: string; name: string } | null, x: number, y: number) => void } = {},
+  opts: { detail?: Detail; interactive?: boolean; center?: [number, number]; zoom?: number; onSelect?: (id: string) => void; onHover?: (b: { id: string; name: string } | null, x: number, y: number) => void; onMove?: (bounds: [number, number, number, number], zoom: number) => void } = {},
 ): Promise<MapHandle> {
   const countries = await loadCountries(opts.detail ?? '50m');
   const map = new MLMap({
@@ -145,6 +145,15 @@ export async function createMap(
     if (pendingBases) handle.setBases(pendingBases);
     if (pendingHighlight !== undefined) applyHighlight(pendingHighlight);
   });
+
+  if (opts.onMove) {
+    const emit = () => {
+      const b = map.getBounds();
+      opts.onMove!([b.getWest(), b.getSouth(), b.getEast(), b.getNorth()], map.getZoom());
+    };
+    map.on('moveend', emit);
+    map.once('load', emit);
+  }
 
   if (opts.onSelect || opts.onHover) {
     map.on('click', 'bases', (e: MapLayerMouseEvent) => {

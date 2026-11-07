@@ -19,6 +19,15 @@
   let sheetOpen = $state(false);
   let showLegend = $state(!isNarrow());
   let embedOpen = $state(false);
+  let inView = $state(false);
+  let view = $state<{ bounds: [number, number, number, number]; zoom: number } | null>(null);
+  /** bounds of the visible map; at very low zoom (whole globe) every base counts as visible */
+  const visible = (b: { lat: number; lon: number }) => {
+    if (!view || view.zoom < 2.2) return true;
+    const [w, s, e, n] = view.bounds;
+    const lonOk = w <= e ? b.lon >= w && b.lon <= e : b.lon >= w || b.lon <= e;
+    return lonOk && b.lat >= s && b.lat <= n;
+  };
   let embedCopied = $state(false);
   const embedCode = $derived(
     `<iframe src="${location.href.split('#')[0]}#/embed${route.query ? '?' + route.query : ''}" width="100%" height="480" style="border:0;border-radius:12px" loading="lazy" title="VisualBases" allow="fullscreen"></iframe>`,
@@ -30,7 +39,8 @@
   const filters = $derived(queryToFilters(route.query));
   const selectedId = $derived(route.path.startsWith('/base/') ? decodeURIComponent(route.path.slice(6)) : null);
   const selected = $derived(selectedId ? db.byId.get(selectedId) ?? null : null);
-  const results = $derived(db.bases.filter((b) => matches(b, filters, countryName)));
+  const matching = $derived(db.bases.filter((b) => matches(b, filters, countryName)));
+  const results = $derived(inView ? matching.filter(visible) : matching);
   const activeCount = $derived(filters.kinds.length + filters.nations.length + filters.facilities.length + filters.themes.length + filters.continents.length);
   const nearby = $derived(selected ? nearest(db.bases.filter((b) => b.id !== selected.id), selected.lat, selected.lon, 6, true) : []);
 
@@ -66,7 +76,7 @@
   // filters → dim non-matching dots
   $effect(() => {
     if (!handle || db.status !== 'ready') return;
-    handle.highlight(activeCount || filters.q ? new Set(results.map((b) => b.id)) : null);
+    handle.highlight(activeCount || filters.q ? new Set(matching.map((b) => b.id)) : null);
   });
   // selection → camera
   $effect(() => {
@@ -93,10 +103,10 @@
   });
 
   function fitResults() {
-    if (!handle || !results.length) return;
-    if (results.length === db.bases.length) return resetView();
+    if (!handle || !matching.length) return;
+    if (matching.length === db.bases.length) return resetView();
     let [w, s, e, n] = [180, 90, -180, -90];
-    for (const b of results) { w = Math.min(w, b.lon); e = Math.max(e, b.lon); s = Math.min(s, b.lat); n = Math.max(n, b.lat); }
+    for (const b of matching) { w = Math.min(w, b.lon); e = Math.max(e, b.lon); s = Math.min(s, b.lat); n = Math.max(n, b.lat); }
     const narrow = innerWidth < 820;
     handle.map.fitBounds([[w, s], [e, n]], { padding: narrow ? { top: 80, bottom: 200, left: 30, right: 30 } : { top: 80, bottom: 80, left: 460, right: 80 }, maxZoom: 9, duration: prefersReducedMotion() ? 0 : 1600 });
   }
@@ -112,6 +122,7 @@
       zoom: innerWidth < 820 ? 0.9 : 1.6,
       onSelect: openBase,
       onHover: (b, x, y) => (tip = b ? { name: b.name, x, y } : null),
+      onMove: (bounds, zoom) => (view = { bounds, zoom }),
     })).then((h) => {
       if (destroyed) return h.destroy();
       handle = h;
@@ -172,6 +183,7 @@
       <div class="meta-row">
         <strong>{t('filters.results', { n: formatNumber(results.length) })}</strong>
         <span class="row-actions">
+          <button class="linkish" aria-pressed={inView} onclick={() => (inView = !inView)}>{inView ? '☑' : '☐'} {t('filters.inView')}</button>
           <button class="linkish" aria-expanded={embedOpen} onclick={() => (embedOpen = !embedOpen)}>&lt;/&gt; {t('embed.button')}</button>
           {#if activeCount || filters.q}
             <button class="linkish" onclick={fitResults}>⤢ {t('filters.map')}</button>

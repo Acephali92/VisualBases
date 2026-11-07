@@ -46,6 +46,7 @@ const de = {
   'filters.show': 'Ergebnisse zeigen',
   'filters.list': 'Liste',
   'filters.map': 'Karte',
+  'filters.inView': 'Nur Kartenausschnitt',
 
   'map.satellite': 'Satellit',
   'map.satelliteHint': 'Lädt Satellitenbilder von EOX (Sentinel-2). Dabei wird deine IP-Adresse an diesen Dienst übertragen.',
@@ -285,6 +286,7 @@ const en: Dict = {
   'filters.show': 'Show results',
   'filters.list': 'List',
   'filters.map': 'Map',
+  'filters.inView': 'Only visible area',
 
   'map.satellite': 'Satellite',
   'map.satelliteHint': 'Loads satellite imagery from EOX (Sentinel-2). Your IP address is sent to that service.',
