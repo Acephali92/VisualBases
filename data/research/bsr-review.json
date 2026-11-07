@@ -12,7 +12,7 @@
  "al-udeid-doha": {
   "site": "Al Udeid Air Base",
   "verdict": "supports",
-  "note": "The dataset lists only GB; the BSR shows Al Udeid as a US Air Force site – the stationing nations look incomplete."
+  "note": "The dataset lists only GB; the BSR shows Al Udeid as a US Air Force site \u2013 the stationing nations look incomplete."
  },
  "andersen-afb-guam": {
   "site": "Andersen AFB",
@@ -23,6 +23,11 @@
   "site": "Artillery Kaserne",
   "verdict": "supports",
   "note": ""
+ },
+ "ausenfeuerstellung-205-baumholder": {
+  "site": "Pfeffelbach Works",
+  "verdict": "context",
+  "note": "US Army property near Pfeffelbach, which visualbases.org already associated with this site; the BSR does not say that it is an artillery firing position."
  },
  "autec-bahamas": {
   "site": "AUTEC Main Base",
@@ -122,7 +127,7 @@
  "camp-lester-okinawa": {
   "site": "Camp Lester",
   "verdict": "supports",
-  "note": "Listed as of 30 Sep 2022; parts of Camp Lester have since been returned to Japan – extent to be checked."
+  "note": "Listed as of 30 Sep 2022; parts of Camp Lester have since been returned to Japan \u2013 extent to be checked."
  },
  "camp-walker-taeku": {
   "site": "Camp Walker",
@@ -167,7 +172,7 @@
  "davis-monthan-ab-curacao": {
   "site": "Davis-Monthan AFB",
   "verdict": "supports",
-  "note": "The BSR lists the Curaçao site (Willemstad) under its parent installation Davis-Monthan AFB; it is the US Forward Operating Location at Hato airport, not a separate air force base."
+  "note": "The BSR lists the Cura\u00e7ao site (Willemstad) under its parent installation Davis-Monthan AFB; it is the US Forward Operating Location at Hato airport, not a separate air force base."
  },
  "del-din-barracks-vicenza": {
   "site": "Del Din",
@@ -212,7 +217,7 @@
  "ghedi-ab": {
   "site": "Ghedi Radio Relay Site",
   "verdict": "context",
-  "note": "The BSR lists a US Air Force \"Ghedi Radio Relay Site\" near Brescia – US presence at Ghedi, but not the air base itself as a US installation."
+  "note": "The BSR lists a US Air Force \"Ghedi Radio Relay Site\" near Brescia \u2013 US presence at Ghedi, but not the air base itself as a US installation."
  },
  "gitmo-guantanamo-bay": {
   "site": "NS Guantanamo Bay",
@@ -237,7 +242,7 @@
  "jasdf-naha-air-base": {
   "site": "Naha Port",
   "verdict": "context",
-  "note": "Naha Port is a US Army facility in Naha. JASDF Naha Air Base itself is a Japanese base and not in the BSR – the stationing nation US in the dataset needs checking."
+  "note": "Naha Port is a US Army facility in Naha. JASDF Naha Air Base itself is a Japanese base and not in the BSR \u2013 the stationing nation US in the dataset needs checking."
  },
  "johnston-atoll": {
   "site": "Johnston Atoll Airfield",
@@ -312,7 +317,7 @@
  "maritime-component-command-naples": {
   "site": "Lago Patria",
   "verdict": "context",
-  "note": "US Navy site at Lago Patria (Naples), where NATO JFC Naples sits; the maritime component command (MARCOM) itself is in Northwood, UK – entry needs checking."
+  "note": "US Navy site at Lago Patria (Naples), where NATO JFC Naples sits; the maritime component command (MARCOM) itself is in Northwood, UK \u2013 entry needs checking."
  },
  "mcas-futenma": {
   "site": "MCAS Futenma",
@@ -553,7 +558,7 @@
   "site": "Thumrait MAP",
   "edition": 2019,
   "verdict": "supports",
-  "note": "Only in FY2019 (as of 30 Sep 2018), no longer in FY2023 – current status open."
+  "note": "Only in FY2019 (as of 30 Sep 2018), no longer in FY2023 \u2013 current status open."
  },
  "training-center-drawsko": {
   "site": "Drawsko Pomorskie Training Area",
@@ -563,7 +568,7 @@
  "us-air-base-201": {
   "site": "Csl Agadez",
   "verdict": "supports",
-  "note": "Listed as Cooperative Security Location Agadez as of 30 Sep 2022. US forces left Niger in 2024 – status needs updating."
+  "note": "Listed as Cooperative Security Location Agadez as of 30 Sep 2022. US forces left Niger in 2024 \u2013 status needs updating."
  },
  "us-army-garrison-yongsan": {
   "site": "Yongsan Garrison",

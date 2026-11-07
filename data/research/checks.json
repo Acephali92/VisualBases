@@ -96,6 +96,20 @@
    "review": "supports"
   }
  },
+ "ausenfeuerstellung-205-baumholder": {
+  "bsr": {
+   "fy2023": {
+    "country": "Germany",
+    "site": "Pfeffelbach Works",
+    "component": "Army Active",
+    "city": "Pfeffelbach",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  }
+ },
  "autec-bahamas": {
   "bsr": {
    "fy2023": {
