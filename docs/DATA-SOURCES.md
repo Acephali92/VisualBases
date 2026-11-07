@@ -28,7 +28,7 @@ Bilder sind ausdrücklich **nicht** Teil der CC-BY-Datenlizenz.
 |---|---|---|---|
 | GitHub Pages (`acephali92.github.io`) | immer (Hosting) | übliche Server-Logs bei GitHub | GitHub Privacy Statement |
 | EOX Sentinel-2 cloudless (`tiles.maps.eox.at`) | nur wenn die Satellitenansicht eingeschaltet wird | Kachelanfragen (IP, Kartenausschnitt) | **CC BY-NC-SA 4.0** („Sentinel-2 cloudless by EOX IT Services GmbH, contains modified Copernicus Sentinel data“) – keine kommerzielle Nutzung; Namensnennung in der Karte |
-| Nominatim / OpenStreetMap (`nominatim.openstreetmap.org`) | nur bei der Ortssuche („In meiner Nähe“) | der eingegebene Suchbegriff, IP | ODbL; Nominatim Usage Policy (max. 1 Anfrage/s, Hinweis auf OSM nötig – Roadmap P1-6) |
+| Nominatim / OpenStreetMap (`nominatim.openstreetmap.org`) | nur bei der Ortssuche („Deine Basis“), nach Absenden | der eingegebene Suchbegriff, IP, Referer | ODbL; Nominatim Usage Policy (max. 1 Anfrage/s für die ganze App, Cache, Attribution – umgesetzt bzw. offen siehe [GEOCODING.md](GEOCODING.md)) |
 | Google Earth (`earth.google.com`) | nur beim Klick auf den Link im Profil | Koordinaten im Link | Google-Nutzungsbedingungen (externer Link, kein Einbetten) |
 
 Kein Tracking, keine Cookies, keine Analyse-Dienste. Die Standortdaten und Länderformen kommen aus dem eigenen Bundle; der Service Worker speichert sie für die Offline-Nutzung.

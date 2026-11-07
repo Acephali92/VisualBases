@@ -73,6 +73,21 @@ Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
 - **Gebiete:** Gebietscodes im Titel (`PR`, `GL`) werden zu Staat + Gebiet; Gebiete hinter Staatscodes werden am Ortsnamen erkannt (`TERRITORY_BY_NAME`).
 - **Links in der Presseschau:** Führende kodierte Leerzeichen (`%20https://…`) werden entfernt.
 
+## Positionsgenauigkeit und „Deine Basis“
+
+Die Rangliste unter `#/near` verwendet die **gespeicherte** Koordinate jedes Eintrags. Unbestätigte Korrekturvorschläge werden **nicht** angewendet. Betroffene Treffer werden gekennzeichnet, aber nicht verschoben. Die Quelldaten (`data/*.json`) wurden dafür nicht geändert.
+
+Prüfung vom 2026-11-07 (alle 365 Einträge, paarweiser Abstand):
+
+| Befund | Einträge | Wirkung auf „Deine Basis“ |
+|---|---|---|
+| Koordinate identisch mit anderem Eintrag (Abstand 0 m) | `puerto-castilla-honduras` = `soto-cano-honduras`; `karlovac-croatia-2` = `zadar-gazenica-croatia` (beide `positionCheck: proposed`) | Die Entfernung zu Puerto Castilla bzw. Karlovac ist die zu Soto Cano bzw. Zadar und damit vermutlich falsch. Treffer tragen „⚠ Position ungeprüft“. Puerto Castilla (shared-base, US) ist aufgenommen. Karlovac (`unspecified`, US) ist aufgenommen und zusätzlich als „Nutzungsform nicht angegeben“ markiert. |
+| weitere Paare unter 100 m | keine | – |
+| von Hand verortet (`approx`) | `gitmo-guantanamo-bay`, `raf-akrotiri`, `camp-century-greenland` (geschlossen), `white-beach-okinawa`, `inezgane-airport` | Treffer tragen „≈ Position ungefähr“ |
+| ungültige Koordinaten | keine (der Validator blockiert sie) | würden ausgeschlossen und unter „Wie genau ist das?“ gezählt |
+
+Allgemein steht jede Koordinate für einen Referenzpunkt aus dem Kartenlink der Quelle. Große Anlagen (Truppenübungsplätze, Flugplätze) erstrecken sich über mehrere Kilometer. Die App leitet daraus keine Fehlergrenzen ab (siehe TAXONOMY, Abschnitt 11) und erklärt Rechen- und Positionsgenauigkeit getrennt (Aufklappbereich „Wie genau sind diese Entfernungen?“).
+
 ## Kennzeichnung in der Anwendung
 
 | Kennzeichen | Bedeutung |
@@ -84,4 +99,5 @@ Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
 | ✎ Korrekturen | angewandte Aussage aus `claims.json`, mit Originalwert und Quelle |
 | ⚠ Offene Prüfhinweise | Vorschläge aus `claims.json` und Prüfhinweise der Taxonomie |
 | Belegstatus je Aussage | belegt · korrigiert · umstritten · nur Kontext · ungeprüft – aus der Quellenrecherche, gekennzeichnet als „redaktionell noch nicht bestätigt“ |
+| ⚠ Unsicher: Stationierungsnation nicht belegt / Nutzungsform nicht angegeben | nur in „Deine Basis“: Eintrag ohne belegte ausländische Präsenz bzw. vom Typ `military-base`/`unspecified` |
 | (abgeleitet), (nicht als geschlossen gemeldet) | Herkunft von Standorttyp, Status und Präsenz |

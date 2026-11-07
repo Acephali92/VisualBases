@@ -7,7 +7,13 @@
 const { spawn } = require('node:child_process');
 const { chromium } = require('playwright');
 
+const fs = require('node:fs');
+const path = require('node:path');
+
 const PORT = 4179;
+/** recorded Nominatim answers (src/lib/fixtures/nominatim) – the smoke test never calls the live service */
+const FIXTURES = path.join(__dirname, '../src/lib/fixtures/nominatim');
+const fixture = (name) => fs.readFileSync(path.join(FIXTURES, `${name}.json`), 'utf8');
 const BASE = `http://localhost:${PORT}/`;
 const ROUTES = [
   ['#/', 'h1'],
@@ -32,6 +38,104 @@ const ROUTES = [
   ['c/DE.html', '.country h2'],
   ['c/GL.html', '.country h2'],
 ];
+
+/**
+ * "Your base" (#/near) end to end, desktop and mobile, with Nominatim answered from fixtures:
+ * ambiguous postcode → choice → resolved place shown → results sorted by the computed distance;
+ * international postcode; rate limit and empty answer are explained.
+ */
+async function nearFlows() {
+  let failed = 0;
+  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+  const answer = (u) => {
+    const p = u.searchParams;
+    const pc = p.get('postalcode');
+    const cc = p.get('countrycodes');
+    if (pc === '56068') return { body: fixture(cc === 'de' ? 'postcode-56068-de' : 'postcode-56068-any') };
+    if (pc === 'SW1A 1AA') return { body: fixture('postcode-sw1a1aa-gb') };
+    if (pc === '11111') return { status: 429, body: '{}' };
+    return { body: fixture('postcode-99999x-any') };
+  };
+  for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
+    const page = await browser.newPage({ viewport });
+    const errors = [];
+    const requests = [];
+    page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
+    page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errors.push(`console: ${m.text()}`); });
+    await page.route('https://nominatim.openstreetmap.org/**', (route) => {
+      const u = new URL(route.request().url());
+      requests.push(u.search);
+      const a = answer(u);
+      return route.fulfill({ status: a.status ?? 200, contentType: 'application/json', body: a.body });
+    });
+    const step = async (name, fn) => {
+      try { await fn(); } catch (e) { errors.push(`${name}: ${e.message.split('\n')[0]}`); }
+    };
+    const searchFor = async (text) => {
+      await page.fill('form.finder input[name=place]', text);
+      await page.click('form.finder button[type=submit]');
+    };
+    await page.goto(BASE + '#/near', { waitUntil: 'load' });
+    await page.waitForSelector('form.finder');
+
+    await step('ambiguous postcode', async () => {
+      await searchFor('56068');
+      await page.waitForSelector('.choose .choice', { timeout: 10000 });
+      const choices = await page.$$eval('.choose .choice', (els) => els.map((e) => e.textContent));
+      if (!choices.some((c) => /Koblenz/.test(c)) || !choices.some((c) => /Minnesota/.test(c))) throw new Error(`choices: ${choices.join(' | ')}`);
+      if (await page.$('.ranking')) throw new Error('distances shown before a place was chosen');
+      await page.click('.choose .choice:has-text("Koblenz")');
+      await page.waitForSelector('.ranking li', { timeout: 10000 });
+    });
+    await step('resolved place shown', async () => {
+      const where = await page.textContent('.where');
+      if (!/Koblenz/.test(where) || !/Rheinland-Pfalz/.test(where) || !/56068/.test(where)) throw new Error(`position card: ${where}`);
+      await page.click('.where details.more summary');
+      const coords = await page.textContent('.where dd.num');
+      if (!/50\.3533° N, 7\.5949° (O|E)/.test(coords)) throw new Error(`coordinates: ${coords}`);
+    });
+    await step('ranking sorted, rank 1 = Büchel', async () => {
+      const rows = await page.$$eval('.ranking li', (els) => els.map((e) => ({ id: e.dataset.id, km: Number(e.dataset.km), shown: e.querySelector('.d .v').textContent })));
+      if (rows.length < 5) throw new Error(`only ${rows.length} results`);
+      for (let i = 1; i < rows.length; i++) if (rows[i].km < rows[i - 1].km) throw new Error(`order: ${rows[i - 1].id} ${rows[i - 1].km} > ${rows[i].id} ${rows[i].km}`);
+      if (rows[0].id !== 'buechel-nato-air-base') throw new Error(`rank 1 is ${rows[0].id}`);
+      if (Math.round(rows[0].km) !== Number(rows[0].shown)) throw new Error(`shown ${rows[0].shown} ≠ computed ${rows[0].km}`);
+      const big = await page.textContent('.big .km');
+      if (!big.includes(rows[0].shown)) throw new Error(`headline ${big}`);
+    });
+    await step('international postcode (GB)', async () => {
+      await page.selectOption('form.finder select[name=country]', 'GB');
+      await searchFor('SW1A 1AA');
+      await page.waitForFunction(() => /Westminster/.test(document.querySelector('.where')?.textContent ?? ''), null, { timeout: 10000 });
+      const top = await page.getAttribute('.ranking li:first-child', 'data-id');
+      if (top !== 'raf-blenheim-crescent') throw new Error(`rank 1 from London is ${top}`);
+      await page.selectOption('form.finder select[name=country]', '');
+    });
+    await step('rate limit explained, no stale result', async () => {
+      await searchFor('11111');
+      await page.waitForSelector('.error', { timeout: 10000 });
+      const msg = await page.textContent('.error');
+      if (!/ausgelastet|busy/.test(msg)) throw new Error(`message: ${msg}`);
+      if (await page.$('.ranking')) throw new Error('old result still shown after an error');
+    });
+    await step('not found explained', async () => {
+      await searchFor('99999X');
+      await page.waitForFunction(() => /nicht gefunden|kein Ort|No place/.test(document.querySelector('.error')?.textContent ?? ''), null, { timeout: 10000 });
+    });
+    await step('no horizontal overflow', async () => {
+      await searchFor('DE-56068');
+      await page.waitForSelector('.ranking li', { timeout: 10000 });
+      const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      if (over > 1) throw new Error(`page is ${over}px wider than the viewport`);
+    });
+    const ok = errors.length === 0;
+    if (!ok) failed++;
+    console.log(`${ok ? '✔' : '✘'} ${viewport.width}px #/near flow (${requests.length} geocoder requests)${ok ? '' : '\n    ' + errors.join('\n    ')}`);
+    await page.close();
+  }
+  await browser.close();
+  return failed;
+}
 
 (async () => {
   const server = spawn('npx', ['vite', 'preview', '--port', String(PORT), '--strictPort'], { stdio: 'ignore' });
@@ -74,6 +178,8 @@ const ROUTES = [
       await page.close();
     }
     await noGl.close();
+
+    failed += await nearFlows();
   } finally {
     server.kill();
   }
