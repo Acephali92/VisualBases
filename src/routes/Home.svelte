@@ -235,7 +235,10 @@
       <p class="kicker">{t('home.changeKicker')}</p>
       <h2 id="change-h">{t('home.changeTitle')}</h2>
       <p class="sub">{t('home.changeText')}</p>
-      <a class="btn" href={href(`/base/${showcase.base.id}`)}>{showcase.base.name} →</a>
+      <div class="change-ctas">
+        <a class="btn btn-primary" href={href('/space')}>🛰 {t('space.all')}</a>
+        <a class="btn" href={href(`/base/${showcase.base.id}`)}>{showcase.base.name} →</a>
+      </div>
     </div>
     <div class="change-img"><Compare before={showcase.before} after={showcase.after} /></div>
   </section>
@@ -360,6 +363,7 @@
   @media (max-width: 700px) {
     .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
   }
+  .change-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
   .change { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: center; }
   @media (max-width: 820px) { .change { grid-template-columns: 1fr; } }
   .topics, .stories { padding: 72px 0 24px; }

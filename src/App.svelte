@@ -12,6 +12,7 @@
   import Act from './routes/Act.svelte';
   import Embed from './routes/Embed.svelte';
   import Quiz from './routes/Quiz.svelte';
+  import Space from './routes/Space.svelte';
 
   initRouter();
   onMount(loadData);
@@ -43,7 +44,7 @@
     const base = id ? db.byId.get(id) : null;
     const titles: Record<string, string> = {
       atlas: t('nav.atlas'), near: t('nav.near'), news: t('nav.news'), stats: t('nav.stats'),
-      act: t('nav.act'), about: t('nav.about'), quiz: t('quiz.title'),
+      act: t('nav.act'), about: t('nav.about'), quiz: t('quiz.title'), space: t('space.title'),
     };
     const head = base ? base.name : titles[section];
     document.title = head ? `${head} – VisualBases` : `VisualBases – ${t('hero.kicker')}`;
@@ -110,6 +111,8 @@
     <Stats />
   {:else if section === 'news'}
     <News />
+  {:else if section === 'space'}
+    <Space />
   {:else if section === 'quiz'}
     <Quiz />
   {:else if section === 'act'}

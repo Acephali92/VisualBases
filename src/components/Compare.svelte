@@ -3,7 +3,8 @@
   import { t } from '../lib/i18n.svelte';
 
   /** before/after slider for two satellite images of the same site */
-  let { before, after }: { before: Image; after: Image } = $props();
+  /** aspect: width / height of the box; defaults to the newer image's ratio */
+  let { before, after, aspect }: { before: Image; after: Image; aspect?: number } = $props();
   let pos = $state(50);
   let box: HTMLDivElement;
   let dragging = false;
@@ -12,7 +13,7 @@
     const r = box.getBoundingClientRect();
     pos = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
   }
-  const ratio = $derived(after.h / after.w);
+  const ratio = $derived(aspect ? 1 / aspect : after.h / after.w);
 </script>
 
 <figure class="compare">
