@@ -1,43 +1,5 @@
 [
  {
-  "id": "overview-new-us-access-in-sweden",
-  "name": "Overview new US access in Sweden",
-  "country": null,
-  "lat": 55.6818,
-  "lon": 13.4682,
-  "zoom": 12,
-  "kind": "shared",
-  "facilities": [],
-  "continent": null,
-  "region": null,
-  "nations": [],
-  "sharedWith": [],
-  "themes": [],
-  "sourceType": [],
-  "sources": [],
-  "notes": [
-   "Berga: regimental area and military training area",
-   "Boden: regimental area and military training area",
-   "Halmstad: regimental area and flotilla area",
-   "Härnösand: military training area and harbour",
-   "Kiruna: Military camp and training area",
-   "Kristinehamn: Regimental area and training area",
-   "Kvarn: Military camp and military training area",
-   "Ravlunda: Military camp and training area",
-   "Revingehed: Regimental area",
-   "Ronneby: Flotilla area",
-   "Såtenäs: Flotilla area",
-   "Uppsala: Flotilla area",
-   "Vidsel: Airport and test and evaluation area",
-   "Visby: Regimental area and military training area",
-   "Älvdalen: Military camp and military training area",
-   "Östersund: Military camps and training areas",
-   "Luleå: Flotilla area"
-  ],
-  "origin": "https://visualbases.org/overview-new-us-access-in-sweden/",
-  "lastmod": "2024-04-05"
- },
- {
   "id": "abu-dhabi-uae-2",
   "name": "Abu Dhabi",
   "country": "AE",
@@ -414,7 +376,7 @@
   "facilities": [
    "naval"
   ],
-  "continent": null,
+  "continent": "america",
   "region": "america-latin",
   "nations": [
    "US"
@@ -1639,8 +1601,8 @@
   "approx": true,
   "kind": "unspecific",
   "facilities": [],
-  "continent": null,
-  "region": null,
+  "continent": "america",
+  "region": "caribbean",
   "nations": [],
   "sharedWith": [],
   "themes": [],
@@ -1978,7 +1940,7 @@
   "facilities": [
    "helipad"
   ],
-  "continent": null,
+  "continent": "europe",
   "region": "germany",
   "subregion": "Bayern",
   "nations": [
@@ -6724,7 +6686,7 @@
    "helipad",
    "training"
   ],
-  "continent": null,
+  "continent": "europe",
   "region": "europe-southeast",
   "nations": [
    "US"
@@ -6823,7 +6785,7 @@
   "facilities": [
    "civilport"
   ],
-  "continent": null,
+  "continent": "europe",
   "region": "europe-southeast",
   "nations": [
    "US"
@@ -7032,7 +6994,7 @@
    "civilairport"
   ],
   "continent": "europe",
-  "region": null,
+  "region": "europe-north",
   "nations": [
    "US"
   ],
@@ -9234,7 +9196,7 @@
   "facilities": [
    "civilairport"
   ],
-  "continent": null,
+  "continent": "africa",
   "region": "africa-west",
   "nations": [
    "US"
@@ -10670,7 +10632,7 @@
    "helipad"
   ],
   "continent": "europe",
-  "region": null,
+  "region": "europe-southeast",
   "nations": [
    "US"
   ],
@@ -11167,6 +11129,44 @@
   ],
   "origin": "https://visualbases.org/forsvarets-radioanstalt-lovon/",
   "lastmod": "2026-10-04"
+ },
+ {
+  "id": "overview-new-us-access-in-sweden",
+  "name": "Overview new US access in Sweden",
+  "country": "SE",
+  "lat": 55.6818,
+  "lon": 13.4682,
+  "zoom": 12,
+  "kind": "shared",
+  "facilities": [],
+  "continent": "europe",
+  "region": "europe-north",
+  "nations": [],
+  "sharedWith": [],
+  "themes": [],
+  "sourceType": [],
+  "sources": [],
+  "notes": [
+   "Berga: regimental area and military training area",
+   "Boden: regimental area and military training area",
+   "Halmstad: regimental area and flotilla area",
+   "Härnösand: military training area and harbour",
+   "Kiruna: Military camp and training area",
+   "Kristinehamn: Regimental area and training area",
+   "Kvarn: Military camp and military training area",
+   "Ravlunda: Military camp and training area",
+   "Revingehed: Regimental area",
+   "Ronneby: Flotilla area",
+   "Såtenäs: Flotilla area",
+   "Uppsala: Flotilla area",
+   "Vidsel: Airport and test and evaluation area",
+   "Visby: Regimental area and military training area",
+   "Älvdalen: Military camp and military training area",
+   "Östersund: Military camps and training areas",
+   "Luleå: Flotilla area"
+  ],
+  "origin": "https://visualbases.org/overview-new-us-access-in-sweden/",
+  "lastmod": "2024-04-05"
  },
  {
   "id": "s-ravlunda-military-camp-and-training-area",

@@ -71,6 +71,20 @@ const REGION_BY_CAT = {
 };
 const CONTINENT_BY_CAT = { europe: 'europe', asia: 'asia', africa: 'africa', america: 'america', australia: 'oceania', atlantic: 'atlantic' };
 
+const CONTINENT_BY_REGION = {
+  'europe-west': 'europe', 'europe-north': 'europe', 'europe-central-east': 'europe', 'europe-southeast': 'europe', germany: 'europe', italy: 'europe', 'united-kingdom': 'europe',
+  'asia-west': 'asia', gulf: 'asia', 'asia-south': 'asia', pacific: 'asia', japan: 'asia', 'south-korea': 'asia',
+  'africa-north': 'africa', 'africa-west': 'africa', 'africa-east': 'africa', 'africa-central-south': 'africa',
+  'america-north': 'america', caribbean: 'america', 'america-latin': 'america', oceania: 'oceania', atlantic: 'atlantic',
+};
+/** fixes for a few posts whose categories on the original site are incomplete */
+const FIXES = {
+  'overview-new-us-access-in-sweden': { country: 'SE', region: 'europe-north' },
+  'gitmo-guantanamo-bay': { region: 'caribbean' },
+  'keflavik-base': { region: 'europe-north' },
+  'campia-turzii-air-base': { region: 'europe-southeast' },
+};
+
 const NATION_BY_TAG = { us: 'US', fr: 'FR', uk: 'GB', cn: 'CN', ru: 'RU', jp: 'JP', 'base-nation-germany': 'DE' };
 const SHARED_BY_TAG = { nato: 'NATO', eu: 'EU', 'base_uk-share': 'GB', de: 'DE', use_it: 'IT', base_nl: 'NL' };
 const THEME_BY_TAG = {
@@ -235,8 +249,10 @@ export function toBase(p, lastmod) {
 
   const kinds = p.cats.map((c) => KIND_BY_CAT[c]).filter(Boolean);
   const kind = KIND_PRIORITY.find((k) => kinds.includes(k)) ?? (isGroup ? 'hotspot' : 'unspecific');
-  const region = p.cats.map((c) => REGION_BY_CAT[c]).find(Boolean) ?? null;
-  const continent = p.cats.map((c) => CONTINENT_BY_CAT[c]).find(Boolean) ?? null;
+  const fix = FIXES[p.slug] ?? {};
+  if (fix.country) country = fix.country;
+  const region = fix.region ?? p.cats.map((c) => REGION_BY_CAT[c]).find(Boolean) ?? null;
+  const continent = p.cats.map((c) => CONTINENT_BY_CAT[c]).find(Boolean) ?? CONTINENT_BY_REGION[region] ?? null;
   const updates = p.tags.map((t) => t.match(/^update[-_](\d{2,4})$/)).filter(Boolean)
     .map((m) => (m[1].length === 2 ? 2000 + +m[1] : +m[1]));
   const uniq = (a) => [...new Set(a)];

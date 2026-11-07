@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { t, formatNumber, i18n } from '../lib/i18n.svelte';
+  import { t, formatNumber, i18n, countryName } from '../lib/i18n.svelte';
+  import { flag } from '../lib/taxonomy';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
   import { summary, filtersToQuery, EMPTY_FILTERS } from '../lib/data';
@@ -23,6 +24,16 @@
       return null;
     }).filter((x): x is { base: Base; img: Image } => !!x),
   );
+  /** a different base with a real image every day (same for everyone on that day) */
+  const daily = $derived.by(() => {
+    const pool = db.bases.filter((b) => b.images?.some((i) => i.type === 'photo' || i.type === 'satellite')).sort((a, b) => a.id.localeCompare(b.id));
+    if (!pool.length) return null;
+    const day = Math.floor(Date.now() / 86_400_000);
+    const b = pool[(day * 7919) % pool.length];
+    const img = b.images!.find((i) => i.type === 'photo') ?? b.images!.filter((i) => i.type === 'satellite').at(-1)!;
+    const note = b.notes.find((n) => n.length > 30 && !/^(same content|belongs to|see also|siehe|additional facility|update)/i.test(n));
+    return { b, img, note };
+  });
   const showcase = $derived.by(() => {
     const b = db.byId.get('ramstein-air-base');
     const s = (b?.images ?? []).filter((i) => i.type === 'satellite' && i.year).sort((x, y) => x.year! - y.year!);
@@ -215,6 +226,24 @@
   </div>
 </section>
 
+{#if daily}
+  <section class="daily container" aria-labelledby="daily-h">
+    <a class="daily-card card" href={href(`/base/${daily.b.id}`)}>
+      <figure>
+        <img src={daily.img.src} width={daily.img.w} height={daily.img.h} alt={daily.img.caption ?? daily.b.name} loading="lazy" />
+        <figcaption>{daily.img.license ? t('img.by') : '©'} {daily.img.credit}{daily.img.year ? ` · ${daily.img.year}` : ''}</figcaption>
+      </figure>
+      <div class="daily-text">
+        <p class="kicker">{t('home.dailyKicker')}</p>
+        <h2 id="daily-h">{daily.b.name}</h2>
+        <p class="dsub">{flag(daily.b.country)} {countryName(daily.b.country)} · {t(`kind.${daily.b.kind}`)}</p>
+        {#if daily.note}<p class="dnote">{daily.note}</p>{/if}
+        <span class="btn btn-sm">{t('home.dailyCta')} →</span>
+      </div>
+    </a>
+  </section>
+{/if}
+
 {#if faces.length}
   <section class="faces container" aria-labelledby="faces-h">
     <p class="kicker">{t('home.facesKicker')}</p>
@@ -354,6 +383,17 @@
     .ch-img img { height: 110px; }
   }
 
+  .daily { padding-top: 88px; }
+  .daily-card { display: grid; grid-template-columns: 1.3fr 1fr; overflow: hidden; text-decoration: none; transition: border-color 0.15s; }
+  .daily-card:hover { border-color: #3a4868; }
+  .daily-card figure { margin: 0; position: relative; min-height: 260px; }
+  .daily-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .daily-card figcaption { position: absolute; right: 8px; bottom: 6px; font-size: 0.7rem; color: #fff; text-shadow: 0 1px 3px rgb(0 0 0 / 0.9); }
+  .daily-text { padding: 26px 28px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .daily-text h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0; }
+  .dsub { color: var(--text-2); margin: 0; }
+  .dnote { color: var(--muted); font-size: 0.92rem; margin: 6px 0 10px; }
+  @media (max-width: 760px) { .daily-card { grid-template-columns: 1fr; } .daily-card figure { min-height: 200px; } }
   .faces, .change { padding: 88px 0 8px; }
   .faces h2, .change h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); font-weight: 800; max-width: 18em; }
   .sub { color: var(--text-2); max-width: 40em; }
