@@ -30,6 +30,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Frühere Ergebnisse übernehmen (OSM läuft inkrementell)
+        run: |
+          git fetch --depth=1 origin research-data && git checkout origin/research-data -- data/research/checks.json data/research/candidates.json || echo "noch kein Branch research-data"
+          git checkout HEAD -- data/research/sources.json data/research/manual.json data/research/bsr-review.json 2>/dev/null || true
       - uses: actions/cache@v4
         with:
           path: .cache/research
@@ -42,11 +46,15 @@ jobs:
         run: node scripts/research/wikidata.mjs
       - name: Wikipedia-Einzelnachweise
         run: node scripts/research/wiki-refs.mjs
-      - name: OpenStreetMap-Lageprüfung
+      - name: OpenStreetMap-Lageprüfung (inkrementell, Zeitbudget)
         run: node scripts/research/osm-check.mjs
+        env:
+          OSM_BUDGET_MIN: 40
+        timeout-minutes: 50
         continue-on-error: true
 
       - name: Ergebnisse auf Branch research-data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

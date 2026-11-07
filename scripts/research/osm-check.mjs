@@ -9,7 +9,7 @@
  *   "confirmed" ≤ 1 km · "near" ≤ 3 km · "none" (nothing military within 3 km)
  * OpenStreetMap confirms the location of a military site, never who is stationed there.
  */
-import { fetchWithRetry, loadBases, saveChecks } from './lib.mjs';
+import { fetchWithRetry, loadBases, loadResearch, saveChecks } from './lib.mjs';
 import { distanceKm } from '../../src/lib/data.ts';
 
 const OVERPASS = process.env.OVERPASS_URL ?? 'https://overpass-api.de/api/interpreter';
@@ -50,16 +50,27 @@ export function evaluate(base, elements) {
   };
 }
 
+/**
+ * Overpass is slow and rate-limited, so the check runs incrementally: bases without a result (or whose
+ * position changed) come first, results are saved every 25 bases and merged with earlier runs, and the run
+ * stops after OSM_BUDGET_MIN minutes (default 40). Repeated runs complete the set.
+ */
 async function main() {
   const bases = await loadBases();
-  const checks = {};
-  let failed = 0;
-  for (const [i, b] of bases.entries()) {
+  const { checks: previous } = await loadResearch();
+  const checks = Object.fromEntries(Object.entries(previous).filter(([id, c]) => c.osm && bases.some((b) => b.id === id)).map(([id, c]) => [id, c.osm]));
+  const stale = (b) => !checks[b.id] || checks[b.id].lat !== b.lat || checks[b.id].lon !== b.lon;
+  const todo = [...bases.filter(stale), ...bases.filter((b) => !stale(b))];
+  const deadline = Date.now() + Number(process.env.OSM_BUDGET_MIN ?? 40) * 60_000;
+  let failed = 0, done = 0;
+  for (const b of todo) {
+    if (Date.now() > deadline) { console.log(`  time budget used up after ${done} bases – the next run continues`); break; }
     const r = await fetchWithRetry(`${OVERPASS}?data=${encodeURIComponent(query(b.lat, b.lon))}`, { tries: 4 });
     await sleep(1200);
+    done++;
     if (!r || r.status !== 200) { failed++; continue; }
-    try { checks[b.id] = evaluate(b, JSON.parse(r.body).elements ?? []); } catch { failed++; }
-    if ((i + 1) % 25 === 0) console.log(`  ${i + 1}/${bases.length}`);
+    try { checks[b.id] = { ...evaluate(b, JSON.parse(r.body).elements ?? []), lat: b.lat, lon: b.lon }; } catch { failed++; }
+    if (done % 25 === 0) { await saveChecks('osm', checks); console.log(`  ${done}/${todo.length}`); }
   }
   await saveChecks('osm', checks);
   const v = Object.values(checks);
