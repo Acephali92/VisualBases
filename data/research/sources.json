@@ -551,6 +551,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://bundeswehr.de/resource/blob/5487564/9d5ff6629e39e83cff51434605eaee04/datenblatt-bergen-zum-download-data.pdf",
+  "title": "Truppenübungsplatz Bergen – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Bergen training area (history, facilities), including its earlier use by Dutch forces.",
+  "note": "German-run training area used by allied forces under the NATO Status of Forces arrangements; no permanently stationed foreign force named. Date from the PDF metadata.",
+  "base": "bergen-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
   "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
   "publisher": "BTA – Bulgarian News Agency",
@@ -1600,6 +1619,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://snl.no/GLOBUS_-_radar",
+  "title": "GLOBUS – radar",
+  "publisher": "Store norske leksikon",
+  "type": "academic",
+  "published": "2025-12-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Norwegian encyclopedia describes the GLOBUS radars at the armed forces station in Vardø as Norwegian–US cooperation projects (today the Norwegian Intelligence Service and the US Space Force), operated by Norwegian personnel.",
+  "note": "Joint project operated by Norwegian staff – no permanently stationed US personnel.",
+  "base": "globus-ii-norway",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "graf-ignatievo-ab-bulgaria",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Graf Ignatievo Air Base (Air Force Active, Plovdiv)",
@@ -2172,6 +2211,24 @@
   "collector": "manual"
  },
  {
+  "url": "https://mia.gov.al/en/nato-tactical-air-base-in-kucova-strengthens-albanias-commitment-to-regional-peace-and-security/",
+  "title": "NATO tactical air base in Kuçova strengthens Albania's commitment to regional peace and security",
+  "publisher": "Media and Information Agency, Government of Albania",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Albanian government reports the inauguration of the revamped NATO tactical air base in Kuçova, upgraded to host Albania's helicopters and combat aircraft of NATO allies.",
+  "note": "Inaugurated in March 2024 (according to other reports; the page itself shows no date). A NATO-funded base, no permanently stationed foreign force named.",
+  "base": "kucova-albania",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "kunsan-ab-gunsan",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Kunsan AB (Air Force Active, Kunsan)",
@@ -2340,6 +2397,24 @@
   "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
   "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
   "base": "malambo-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/organisation/marine/aktuelles/commander-task-force-baltic-aufgestellt-5848288",
+  "title": "Bundeswehr mit Führungsrolle bei Commander Task Force Baltic",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-10-21",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "context",
+  "summary": "The German Navy set up the multinational staff Commander Task Force Baltic in Rostock in October 2024.",
+  "note": "The staff is located at the naval command in Rostock (Hanse-Kaserne), not at Hohe Düne naval base; it confirms a German-led multinational naval presence in Rostock.",
+  "base": "marinestutzpunkt-hohe-dune-rostock",
   "method": "manual",
   "collector": "manual"
  },
@@ -2537,6 +2612,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bundeswehr.de/resource/blob/5487572/e2245cf4f7765ff57372f02598fc82d8/download-datenblatt-munster-nord-data.pdf",
+  "title": "Truppenübungsplatz Munster-Nord – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Munster-Nord training area (10,200 ha, training area command Munster).",
+  "note": "German training area; date from the PDF metadata.",
+  "base": "munster-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "muwaffaq-salti-air-base-al-azraq-jordan",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Muwaffaq Salti Air Base (Air Force Active, Al Mafraq)",
@@ -2611,6 +2705,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Argentia Newfoundland\", Navy Active, nearest city Placentia, Newfoundland, Canada.",
   "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/8052833/18-cssb-tests-capabilities-brings-fuel-spangdahlem",
+  "title": "18 CSSB Tests Capabilities, Brings Fuel to Spangdahlem",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2023-09-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Army fuel specialists drew fuel at the Central Europe Pipeline System depot in Bitburg in September 2023 to supply Spangdahlem Air Base.",
+  "note": "NATO pipeline depot used by US forces; operated within the NATO pipeline system.",
+  "base": "nato-pipeline-station-bitburg",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "naval-air-facility-atsugi-kanagawa",
@@ -2899,6 +3012,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bundeswehr.de/de/meldungen/nachgefragt-truppenuebungsplaetze-bundeswehr-5784748",
+  "title": "„Nachgefragt“ zu Truppenübungsplätzen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-05-24",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The Bundeswehr explains its training areas; at Bergen, Oberlausitz and Munster the focus is live firing by armoured forces.",
+  "base": "oberlausitz-training-area",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "url": "https://www.longwarjournal.org/archives/2022/03/shabaab-attacks-international-hub-in-mogadishu-where-u-s-embassy-is-located.php",
   "title": "Shabaab attacks international hub in Mogadishu where U.S. Embassy is located",
   "publisher": "FDD's Long War Journal",
@@ -3068,6 +3200,25 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Panzer Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
   "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html",
+  "title": "Heavy Airlift Wing of Pápa Reaches Full Operational Capability",
+  "publisher": "Honvédelem (Hungarian Ministry of Defence)",
+  "type": "official",
+  "published": "2012-11-26",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The multinational Heavy Airlift Wing at Pápa (three C-17s of the Strategic Airlift Capability; participants include the United States) reached full operational capability in November 2012.",
+  "note": "Multinational unit (12 nations incl. the US) – the dataset lists no stationing nation.",
+  "base": "papa-ab-hungary",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
@@ -3664,6 +3815,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.dvidshub.net/image/9117253/us-marines-sailors-with-mrf-d-253-conduct-integration-check",
+  "title": "U.S. Marines, Sailors with MRF-D 25.3 conduct an integration check",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2025-06-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Marine Corps photo from Robertson Barracks, Northern Territory (June 2025): Marines of Marine Rotational Force – Darwin 25.3 conduct an integration check.",
+  "note": "Annual six-month rotation, not a permanent US base.",
+  "base": "robertson-barracks",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "robinson-barracks-stuttgart",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Robinson Barracks (Army Active, Stuttgart)",
@@ -3985,6 +4156,26 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Sasebo\", Navy Active, nearest city Sasebo, Japan.",
   "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.army.mil/article/187887/landstuhl_satcom_facility_cuts_ribbon_on_new_building",
+  "title": "Landstuhl SATCOM facility cuts ribbon on new building",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-05-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "New headquarters and operations building for the Enterprise SATCOM Gateway Landstuhl (2017) – the largest Army-operated satellite communications facility outside the continental US.",
+  "base": "satcom-landstuhl",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "sembach-kaserne",
