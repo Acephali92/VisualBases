@@ -1,0 +1,31 @@
+{
+ "initiatives": [
+  { "name": "Stopp Air Base Ramstein", "url": "https://ramstein-kampagne.eu/", "region": "DE", "de": "Bundesweite Kampagne gegen die Air Base Ramstein und ihre Rolle im Drohnenkrieg – mit jährlichen Aktionstagen.", "en": "German nationwide campaign against Ramstein Air Base and its role in drone warfare – with annual days of action." },
+  { "name": "No Bases Network (Stopp Ramstein)", "url": "https://www.stoppramstein.de/category/network-against-military-bases/", "region": "INT", "de": "Internationales Netzwerk gegen Militärbasen, Dokumentation der Kongresse.", "en": "International network against military bases, documentation of the congresses." },
+  { "name": "Overseas Base Realignment and Closure Coalition", "url": "https://www.overseasbases.net/", "region": "US", "de": "Überparteiliches Bündnis für die Schließung von US-Basen im Ausland – u. a. offener Brief an Präsident Biden (2021).", "en": "Transpartisan coalition for closing US bases abroad – including the open letter to President Biden (2021)." },
+  { "name": "Coalition Against U.S. Foreign Military Bases", "url": "https://noforeignbases.org/", "region": "US", "de": "„Close All U.S. Foreign Military Bases!“", "en": "“Close All U.S. Foreign Military Bases!”" },
+  { "name": "World BEYOND War – No Bases", "url": "https://worldbeyondwar.org/bases/", "region": "INT", "de": "Globale Bewegung zur Abschaffung von Krieg; Kampagne und eigene Datenbank zu Militärbasen.", "en": "Global movement to end war; campaign and database on military bases." },
+  { "name": "Australian Anti-Bases Campaign Coalition", "url": "https://www.anti-bases.org/", "region": "AU", "de": "Seit 1987 aktiv gegen ausländische Basen in Australien, u. a. Pine Gap.", "en": "Active since 1987 against foreign bases in Australia, including Pine Gap." },
+  { "name": "Global Campaign Against US/NATO Military Bases", "url": "https://nousnatobases.org/", "region": "INT", "de": "„Close All US/NATO Bases!“", "en": "“Close All US/NATO Bases!”" },
+  { "name": "Space for Peace – Global Network", "url": "http://space4peace.org/", "region": "INT", "de": "Globales Netzwerk gegen Waffen und Atomkraft im Weltraum.", "en": "The Global Network against Weapons and Nuclear Power in Space." },
+  { "name": "No to NATO", "url": "https://www.no-to-nato.org/", "region": "INT", "de": "Netzwerk auf Grundlage des Stuttgarter Appells (2008).", "en": "Network based on the Stuttgart Appeal (2008)." }
+ ],
+ "congress": {
+  "title": "5th International Congress against Military Bases",
+  "date": "2021-07-09",
+  "subtitle": "Military Bases in Asia and Africa – A Threat to World Peace",
+  "next": { "title": "6th International Congress against Military Bases and War (2023)", "url": "https://www.stoppramstein.de/no-bases-network-2023/" },
+  "speakers": [
+   { "name": "David Vine", "from": "USA", "role": "American University, Washington DC – „Base Nation“", "topic": "US Military Bases Abroad: Backbone of Endless War", "photo": "2021-07-09_Vine_photo.png" },
+   { "name": "Ann Wright", "from": "Hawaii/USA", "role": "Veterans for Peace, CODEPINK", "topic": "Pacific and Southeast Asia", "photo": "AnnWright.png" },
+   { "name": "A-Young Moon", "from": "South Korea", "role": "IPB Council, PEACEMOMO", "topic": "Korean Peninsula and China", "photo": "2021-07_A-Young_Screenshot2.png", "link": "https://visualbases.org/a-young-moon-about-south-korea/", "video": true },
+   { "name": "Toguchi Osamu", "from": "Japan", "role": "All Okinawa anti-bases coalition", "topic": "Okinawa", "photo": "2021-07_Okinawa_Screenshot.png", "link": "https://visualbases.org/toguchi-osamu-okinawa/", "video": true, "base": "okinawa" },
+   { "name": "Philippine Caucus for Peace", "from": "Philippines", "role": "Pacific Peace Network", "topic": "Nuclear-Free, Bases-Free Philippines & Pacific", "photo": "2021-07-09_Philippines-photo.png" },
+   { "name": "Julietta Daza", "from": "Colombia/Venezuela", "role": "", "topic": "Latin America", "photo": "2021-07_Julieta_Screenshot.png", "link": "https://visualbases.org/julietta-daza-about-latin-america/", "video": true },
+   { "name": "John Lannon", "from": "Ireland", "role": "Shannonwatch, PANA", "topic": "Ireland – Shannon Airport", "photo": "2021-07-09_Lannon_photo.png", "base": "shannon-airport" },
+   { "name": "Alain Rouy", "from": "France", "role": "Mouvement de la Paix", "topic": "NATO and France in Africa", "photo": "2021-04-05_Alain_Rouy.jpg", "link": "https://visualbases.org/nato-france-africa/" },
+   { "name": "Dave Webb", "from": "UK", "role": "Campaign for Nuclear Disarmament", "topic": "UK Bases in Asia & Africa", "photo": "2021-07-09_Webb_photo.png" },
+   { "name": "Edgar Göll", "from": "Germany", "role": "Netzwerk Cuba", "topic": "Guantánamo", "photo": "2021-07-09_Guantanomo-photo.png", "link": "https://visualbases.org/gitmo-guantanamo-bay/", "base": "gitmo-guantanamo-bay" }
+  ]
+ }
+}

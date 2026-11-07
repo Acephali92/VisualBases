@@ -1,0 +1,50 @@
+name: "📍 Hinweis / neue Basis"
+description: "Neue Basis, Ausbau, Schließung, Protest oder Foto melden"
+title: "Hinweis: "
+labels: ["hinweis"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke für deinen Hinweis! Bitte nenne möglichst eine **Quelle** (Link zu Artikel, Dokument, Behördenseite).
+        Persönliche Daten bitte nicht eintragen – dieses Formular ist öffentlich.
+  - type: input
+    id: base
+    attributes:
+      label: Standort
+      description: Name der Basis oder Ort (gern mit Land)
+      placeholder: "z. B. Ramstein Air Base, Deutschland"
+    validations:
+      required: true
+  - type: dropdown
+    id: art
+    attributes:
+      label: Art des Hinweises
+      options:
+        - Neue Basis / neuer Standort
+        - Ausbau / Bauarbeiten
+        - Schließung / Abzug
+        - Protest / Kampagne
+        - Umweltschaden / Unfall
+        - Foto oder Satellitenbild
+        - Sonstiges
+    validations:
+      required: true
+  - type: input
+    id: coords
+    attributes:
+      label: Koordinaten (optional)
+      placeholder: "49.4398, 7.6019"
+  - type: textarea
+    id: details
+    attributes:
+      label: Beschreibung
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Quellen
+      description: Links, je Zeile einer
+    validations:
+      required: true
