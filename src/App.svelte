@@ -37,6 +37,18 @@
     { path: '/about', key: 'nav.about', match: 'about' },
   ] as const;
 
+  // page title per view (tabs, bookmarks, screen readers)
+  $effect(() => {
+    const id = route.path.startsWith('/base/') ? decodeURIComponent(route.path.slice(6)) : null;
+    const base = id ? db.byId.get(id) : null;
+    const titles: Record<string, string> = {
+      atlas: t('nav.atlas'), near: t('nav.near'), news: t('nav.news'), stats: t('nav.stats'),
+      act: t('nav.act'), about: t('nav.about'), quiz: t('quiz.title'),
+    };
+    const head = base ? base.name : titles[section];
+    document.title = head ? `${head} – VisualBases` : `VisualBases – ${t('hero.kicker')}`;
+  });
+
   $effect(() => {
     void route.path;
     menuOpen = false;
