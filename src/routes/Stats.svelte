@@ -1,20 +1,24 @@
 <script lang="ts">
-  import { t, countryName, formatNumber } from '../lib/i18n.svelte';
+  import { t, tl, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
-  import { countBy, summary } from '../lib/data';
-  import { flag } from '../lib/taxonomy';
+  import { countBy, summary, facetValues, isAggregate, isContext, foreignNations } from '../lib/data';
+  import { flag, ACTIVITY_GROUPS } from '../lib/taxonomy';
   import BarChart from '../components/BarChart.svelte';
 
-  const sites = $derived(db.bases.filter((b) => !b.group));
+  const sites = $derived(db.bases.filter((b) => !isAggregate(b)));
   const s = $derived(summary(db.bases));
+  const row = (href_: string) => (label: string, value: number) => ({ label, value, href: href_ });
 
-  const byCountry = $derived(countBy(sites, (b) => b.country).map(([k, v]) => ({ label: `${flag(k)} ${countryName(k)}`, value: v, href: href('/atlas', `countries=${k}`) })));
-  const byNation = $derived(countBy(sites, (b) => b.nations).map(([k, v]) => ({ label: `${flag(k)} ${countryName(k)}`, value: v, href: href('/atlas', `nations=${k}`) })));
-  const byKind = $derived(countBy(sites, (b) => b.kind).map(([k, v]) => ({ label: t(`kind.${k}` as never), value: v, href: href('/atlas', `kinds=${k}`) })));
-  const byFac = $derived(countBy(sites, (b) => b.facilities).map(([k, v]) => ({ label: t(`fac.${k}` as never), value: v, href: href('/atlas', `facilities=${k}`) })));
-  const byTheme = $derived(countBy(db.bases, (b) => b.themes).map(([k, v]) => ({ label: t(`theme.${k}` as never), value: v, href: href('/atlas', `themes=${k}`) })));
-  const byCont = $derived(countBy(sites, (b) => b.continent).map(([k, v]) => ({ label: t(`cont.${k}` as never), value: v, href: href('/atlas', `continents=${k}`) })));
+  const byCountry = $derived(countBy(sites, (b) => b.host.country).map(([k, v]) => row(href('/atlas', `countries=${k}`))(`${flag(k)} ${countryName(k)}`, v)));
+  const byNation = $derived(countBy(sites, foreignNations).map(([k, v]) => row(href('/atlas', `nations=${k}`))(`${flag(k)} ${countryName(k)}`, v)));
+  const byKind = $derived(countBy(sites, (b) => b.siteType).map(([k, v]) => row(href('/atlas', `kinds=${k}`))(tl('siteType', k), v)));
+  const byStatus = $derived(countBy(sites, (b) => b.status).map(([k, v]) => row(href('/atlas', `status=${k}`))(tl('status', k), v)));
+  const byFac = $derived(countBy(sites, (b) => b.features).map(([k, v]) => row(href('/atlas', `facilities=${k}`))(tl('feature', k), v)));
+  const byTheme = $derived(countBy(db.bases, (b) => b.themes).map(([k, v]) => row(href('/atlas', `themes=${k}`))(tl('theme', k), v)));
+  const byActivity = $derived(countBy(db.bases, (b) => facetValues(b, 'activities')).map(([k, v]) => row(href('/atlas', `activities=${k}`))(tl(ACTIVITY_GROUPS.some((a) => a.id === k) ? 'activityGroup' : 'organisation', k), v)));
+  const byCont = $derived(countBy(sites, (b) => b.continent).map(([k, v]) => row(href('/atlas', `continents=${k}`))(tl('continent', k), v)));
+  const context = $derived(sites.filter(isContext).length);
 </script>
 
 <div class="stats container">
@@ -39,10 +43,12 @@
       <BarChart title={t('stats.byNation')} rows={byNation} />
       <BarChart title={t('stats.byFacility')} rows={byFac} />
       <BarChart title={t('stats.byKind')} rows={byKind} />
+      <BarChart title={t('stat.status')} rows={byStatus} />
       <BarChart title={t('stats.byTheme')} rows={byTheme} />
+      <BarChart title={t('stat.activities')} rows={byActivity} />
       <BarChart title={t('stats.byContinent')} rows={byCont} />
     </div>
-    <p class="note">ⓘ {t('stats.note')}</p>
+    <p class="note">ⓘ {t('stats.note')} {t('stat.context')}: {context} – {t('filters.context')}</p>
   {/if}
 </div>
 

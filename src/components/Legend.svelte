@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { t } from '../lib/i18n.svelte';
-  import { GROUP_COLOR, type ColorGroup } from '../lib/taxonomy';
+  import { t, i18n } from '../lib/i18n.svelte';
+  import { GROUP_COLOR, LEGEND_GROUPS } from '../lib/taxonomy';
 
   let { compact = false }: { compact?: boolean } = $props();
-  const groups: ColorGroup[] = ['foreign', 'shared', 'other', 'closed', 'hotspot'];
 </script>
 
 <ul class="legend" class:compact aria-label={t('map.legend')}>
-  {#each groups as g}
+  {#each LEGEND_GROUPS as g}
     <li>
-      <span class="dot" class:ring={g === 'hotspot'} style:background={GROUP_COLOR[g]}></span>
-      {t(`group.${g}`)}
+      <span class="dot" class:ring={g.id === 'aggregate'} style:background={GROUP_COLOR[g.id]}></span>
+      {g.label[i18n.lang]}
     </li>
   {/each}
 </ul>

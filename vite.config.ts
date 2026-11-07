@@ -30,6 +30,8 @@ export default defineConfig({
         // subsets are cached on first use instead of being downloaded up front
         globIgnores: [
           '**/og.png',
+          '**/data/research.json',
+          '**/data/taxonomy.json',
           '**/assets/map-*',
           '**/assets/maplibre-gl-worker-*',
           '**/assets/countries-*',
@@ -43,6 +45,11 @@ export default defineConfig({
             urlPattern: /\/assets\/.+\.(js|css|woff2)$/,
             handler: 'CacheFirst',
             options: { cacheName: 'assets', expiration: { maxEntries: 60, maxAgeSeconds: 60 * 60 * 24 * 180 } },
+          },
+          {
+            urlPattern: /\/data\/research\.json$/,
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'research' },
           },
           {
             urlPattern: /\/media\/.+\.webp$/,

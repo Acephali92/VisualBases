@@ -1,9 +1,10 @@
 <script lang="ts">
   import { untrack } from 'svelte';
-  import { t, countryName, formatNumber } from '../lib/i18n.svelte';
-  import { db } from '../lib/store.svelte';
+  import { t, tl, ti, i18n, countryName, formatNumber } from '../lib/i18n.svelte';
+  import { db, loadResearch } from '../lib/store.svelte';
   import { href, route } from '../lib/router.svelte';
-  import { GROUP_COLOR, KIND_GROUP, FACILITY_ICON, flag } from '../lib/taxonomy';
+  import { GROUP_COLOR, FEATURE, FEATURE_KINDS, ACTIVITY, CLAIM_TYPES, colorGroup, flag } from '../lib/taxonomy';
+  import { foreignNations } from '../lib/data';
   import { settings, setSatellite } from '../lib/settings.svelte';
   import type { Ranked } from '../lib/data';
   import type { Base } from '../lib/types';
@@ -24,15 +25,15 @@
     try {
       const { renderBaseCard } = await import('../lib/shareImage');
       const lines = [
-        base.nations.length ? `${t('base.nations')}: ${base.nations.map(countryName).join(', ')}` : '',
-        base.facilities.length ? base.facilities.slice(0, 4).map((f) => t(`fac.${f}`)).join(' · ') : '',
-        base.themes.length ? base.themes.slice(0, 3).map((th) => t(`theme.${th}`)).join(' · ') : '',
+        foreignNations(base).length ? `${t('base.nations')}: ${foreignNations(base).map(countryName).join(', ')}` : '',
+        base.features.length ? base.features.slice(0, 4).map((f) => tl('feature', f)).join(' · ') : '',
+        base.themes.length ? base.themes.slice(0, 3).map((th) => tl('theme', th)).join(' · ') : '',
       ].filter(Boolean);
       const blob = await renderBaseCard({
         base,
         image: cover ? { src: cover.src, credit: cover.credit, year: cover.year } : undefined,
-        kindLabel: t(`kind.${base.kind}`),
-        country: `${countryName(base.country)}${base.subregion ? ' · ' + base.subregion : ''}`,
+        kindLabel: tl('siteType', base.siteType) + (base.status === 'closed' ? ` · ${tl('status', 'closed')}` : ''),
+        country: `${countryName(base.host.territory ?? base.host.country)}${base.subregion ? ' · ' + base.subregion : ''}`,
         lines,
         footer: location.host + location.pathname.replace(/index\.html$/, '').replace(/\/$/, ''),
         accent: GROUP_COLOR[group],
@@ -52,14 +53,37 @@
   }
   let scroller: HTMLDivElement;
 
-  const group = $derived(KIND_GROUP[base.kind]);
+  const group = $derived(colorGroup(base));
+  const byId = (ids: string[] | undefined) => (ids ?? []).map((id) => db.byId.get(id)).filter((b): b is Base => !!b);
+  const relGroups = $derived([
+    { label: t('base.memberOf'), list: byId(base.relations?.filter((r) => r.type === 'member-of').map((r) => r.id)) },
+    { label: t('base.partOf'), list: byId(base.relations?.filter((r) => r.type === 'part-of').map((r) => r.id)) },
+    { label: t('base.includes'), list: byId(base.includes) },
+    { label: t('base.hasParts'), list: byId(base.hasParts) },
+    { label: t('base.seeAlso'), list: byId(base.relations?.filter((r) => r.type === 'related').map((r) => r.id)) },
+  ].filter((g) => g.list.length));
+  const featureGroups = $derived(FEATURE_KINDS.map((k) => ({ kind: k.id, items: base.features.filter((f) => FEATURE[f].kind === k.id) })).filter((g) => g.items.length));
+  const issues = $derived((base.issues ?? []).filter((i) => i !== 'position-unverified'));
+  $effect(() => { loadResearch(); });
+  const research = $derived(base.research ?? db.research?.[base.id] ?? []);
+  const checkedSources = $derived(research.filter((s) => s.method === 'manual'));
+  const leads = $derived(research.filter((s) => s.method !== 'manual'));
+  /** readable form of a corrected value */
+  function fmt(field: string, v: unknown): string {
+    if (v == null || (Array.isArray(v) && !v.length)) return t('base.none');
+    if (field === 'presences') return (v as { nation: string }[]).map((p) => countryName(p.nation)).join(', ');
+    if (field === 'host') { const h = v as { country: string; territory?: string }; return countryName(h.territory ?? h.country) + (h.territory ? ` (${countryName(h.country)})` : ''); }
+    if (field === 'status') return tl('status', String(v));
+    if (field === 'siteType') return tl('siteType', String(v));
+    if (field === 'period') { const p = v as { from?: string; to?: string }; return [p.from && `${t('base.since')} ${p.from}`, p.to && `${t('base.until')} ${p.to}`].filter(Boolean).join(' '); }
+    return Array.isArray(v) ? v.join(', ') : String(v);
+  }
+  const sourceTitle = (url: string) => research.find((s) => s.url === url)?.publisher ?? host(url);
   const images = $derived(base.images ?? []);
-  const news = $derived(db.news.filter((n) => n.bases?.includes(base.id) || (base.related ?? []).some((r) => n.bases?.includes(r))).slice(0, 6));
+  const news = $derived(db.news.filter((n) => n.bases?.includes(base.id) || (base.relations ?? []).some((r) => n.bases?.includes(r.id))).slice(0, 6));
   const sats = $derived(images.filter((i) => i.type === 'satellite' && i.year).sort((a, b) => a.year! - b.year!));
   const pair = $derived(sats.length >= 2 && sats[0].year !== sats.at(-1)!.year ? ([sats[0], sats.at(-1)!] as const) : null);
   const cover = $derived(images.find((i) => i.type === 'photo') ?? sats.at(-1) ?? images.find((i) => i.type === 'map'));
-  const related = $derived((base.related ?? []).map((id) => db.byId.get(id)).filter((b): b is Base => !!b));
-  const partOf = $derived(db.bases.filter((b) => b.group && b.related?.includes(base.id)));
   const z = $derived(Math.min(base.zoom ?? 14, 16));
   const explore = $derived([
     { label: t('base.osm'), url: `https://www.openstreetmap.org/#map=${z}/${base.lat}/${base.lon}` },
@@ -109,10 +133,12 @@
   {/if}
 
   <header>
-    <span class="tag kind"><span class="dot" class:ring={group === 'hotspot'} style:background={GROUP_COLOR[group]}></span>{t(`kind.${base.kind}`)}</span>
+    <span class="tag kind"><span class="dot" class:ring={group === 'aggregate'} style:background={GROUP_COLOR[group]}></span>{tl('siteType', base.siteType)}</span>
+    {#if base.status !== 'active'}<span class="tag status">{tl('status', base.status)}{#if base.period?.to}{' '}{t('base.until')} {base.period.to}{/if}</span>{/if}
     <h2>{base.name}</h2>
-    <p class="where">{#if base.country}<a class="cc" href={href('/atlas', `countries=${base.country}`)}>{flag(base.country)} {countryName(base.country)}</a>{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
-    <p class="kind-info">{t(`kindInfo.${base.kind}`)}</p>
+    <p class="where">{#if base.host.country}<a class="cc" href={href('/atlas', `countries=${base.host.territory ?? base.host.country}`)}>{flag(base.host.territory ?? base.host.country)} {countryName(base.host.territory ?? base.host.country)}</a>{#if base.host.territory}{' '}<span class="muted">({countryName(base.host.country)})</span>{/if}{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
+    <p class="kind-info">{ti('siteType', base.siteType)}</p>
+    {#if base.scope === 'domestic' && base.siteType !== 'domestic-global'}<p class="kind-info">ℹ {t('base.context')}</p>{:else if base.scope === 'overseas'}<p class="kind-info">ℹ {t('base.overseas')}</p>{/if}
     {#if base.positionCheck?.status === 'proposed'}
       {@const dup = base.positionCheck.duplicateOf ? db.byId.get(base.positionCheck.duplicateOf) : undefined}
       <p class="pos-warn" role="note">
@@ -122,9 +148,10 @@
     {/if}
     <div class="flags">
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
-      {#if base.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
+      {#if base.origin.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
       {#if base.positionCheck?.status === 'proposed'}<span class="tag warn">⚠ {t('base.positionUnverified')}</span>{/if}
-      {#if base.sourceType.includes('bsr') || base.sourceType.includes('bsr-multi')}<span class="tag">📄 {t('base.bsr')}</span>{/if}
+      {#if base.corrections?.length}<span class="tag">✎ {t('base.corrections')}: {base.corrections.length}</span>{/if}
+      {#each base.listedIn.filter((l) => l.startsWith('bsr')).slice(0, 1) as l}<span class="tag">📄 {tl('listing', l)}</span>{/each}
     </div>
   </header>
 
@@ -151,27 +178,69 @@
     </section>
   {/if}
 
-  <dl class="facts">
-    {#if base.nations.length}
-      <div><dt>{t('base.nations')}</dt><dd>{#each base.nations as n}<span class="nat">{flag(n)} {countryName(n)}</span>{/each}</dd></div>
-    {/if}
-    {#if base.sharedWith.length}
-      <div><dt>{t('base.sharedWith')}</dt><dd>{base.sharedWith.map((s) => (s.length === 2 ? `${flag(s)} ${countryName(s)}` : s)).join(', ')}</dd></div>
-    {/if}
-    {#if base.usType}
-      <div><dt>{t('base.usType')}</dt><dd><a href={href('/about')}>{base.usType}</a></dd></div>
-    {/if}
-    {#if base.updates?.length}
-      <div><dt>{t('base.updates')}</dt><dd>{base.updates.join(', ')}</dd></div>
-    {/if}
-  </dl>
+  <section>
+    <h3>{t('base.classification')}</h3>
+    <dl class="facts">
+      <div><dt>{t('base.siteType')}</dt><dd>{tl('siteType', base.siteType)}{#if base.basis.siteType !== 'source'} <small class="basis">({base.basis.siteType === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</dd></div>
+      <div><dt>{t('base.status')}</dt><dd>{tl('status', base.status)}{#if base.period}{' · '}{fmt('period', base.period)}{/if}{#if base.basis.status !== 'source'} <small class="basis">({base.basis.status === 'claim' ? t('base.basisClaim') : t('base.basisImplicit')})</small>{/if}</dd></div>
+      <div><dt>{t('base.host')}</dt><dd>{#if base.host.country}{flag(base.host.country)} {countryName(base.host.country)}{#if base.host.territory}{' · '}{t('base.territory')}: {flag(base.host.territory)} {countryName(base.host.territory)}{/if}{:else}–{/if}</dd></div>
+      <div><dt>{t('base.presences')}</dt><dd>
+        {#each base.presences as p (p.nation)}
+          <span class="nat">{flag(p.nation)} {countryName(p.nation)}{#if p.role !== 'stationing'}{' · '}{tl('presenceRole', p.role)}{/if}{#if p.relation !== 'foreign'}{' · '}{tl('relation', p.relation)}{/if}{#if p.via !== 'tag'}<small class="basis" title={tl('presenceVia', p.via)}> ({p.via === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</span>
+        {:else}<span class="muted">{t('base.none')}</span>{/each}
+      </dd></div>
+      {#if base.organisations.length}
+        <div><dt>{t('base.organisations')}</dt><dd>{#each base.organisations as o}<a class="nat" href={href('/atlas', `activities=${o}`)} title={ti('organisation', o)}>{tl('organisation', o)}</a>{/each}</dd></div>
+      {/if}
+      {#if base.usPosture}
+        <div><dt>{t('base.usPosture')}</dt><dd><a href={href('/about')} title={ti('usPosture', base.usPosture)}>{base.usPosture}</a> – {tl('usPosture', base.usPosture)}</dd></div>
+      {/if}
+      {#if base.listedIn.length}
+        <div><dt>{t('base.listedIn')}</dt><dd>{base.listedIn.map((l) => tl('listing', l)).join(' · ')}</dd></div>
+      {/if}
+      {#if base.origin.updates?.length}
+        <div><dt>{t('base.updates')}</dt><dd>{base.origin.updates.join(', ')}</dd></div>
+      {/if}
+    </dl>
+  </section>
 
-  {#if base.facilities.length}
+  {#if base.corrections?.length}
+    <section class="box">
+      <h3>✎ {t('base.corrections')}</h3>
+      <ul class="notes">
+        {#each base.corrections as c (c.id)}
+          <li>{c.statement[i18n.lang]}<br /><small>{t('base.correctionFrom')}: {fmt(c.field, c.from)} · {#each c.sources as u}<a href={u} target="_blank" rel="noopener">{sourceTitle(u)}</a>{' '}{/each}</small></li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if base.proposals?.length || issues.length}
+    <section class="box warnbox">
+      {#if base.proposals?.length}
+        <h3>⚠ {t('base.proposals')}</h3>
+        <ul class="notes">
+          {#each base.proposals as c (c.id)}
+            <li>{c.statement[i18n.lang]} <small>{#each c.sources as u}<a href={u} target="_blank" rel="noopener">{sourceTitle(u)}</a>{' '}{/each}</small></li>
+          {/each}
+        </ul>
+      {/if}
+      {#if issues.length}
+        <h3>{t('base.issues')}</h3>
+        <ul class="notes">{#each issues as i}<li>{tl('issue', i)}{#if ti('issue', i)}<small> – {ti('issue', i)}</small>{/if}</li>{/each}</ul>
+      {/if}
+    </section>
+  {/if}
+
+  {#if featureGroups.length}
     <section>
       <h3>{t('base.facilities')}</h3>
-      <div class="chips">
-        {#each base.facilities as f}<a class="chip" href={href('/atlas', `facilities=${f}`)}><span aria-hidden="true">{FACILITY_ICON[f]}</span>{t(`fac.${f}`)}</a>{/each}
-      </div>
+      {#each featureGroups as g (g.kind)}
+        <p class="sub">{tl('featureKind', g.kind)}</p>
+        <div class="chips">
+          {#each g.items as f}<a class="chip" href={href('/atlas', `facilities=${f}`)} title={ti('feature', f)}><span aria-hidden="true">{FEATURE[f].icon}</span>{tl('feature', f)}</a>{/each}
+        </div>
+      {/each}
     </section>
   {/if}
 
@@ -179,7 +248,16 @@
     <section>
       <h3>{t('base.themes')}</h3>
       <div class="chips">
-        {#each base.themes as th}<a class="chip theme-{th}" href={href('/atlas', `themes=${th}`)}>{t(`theme.${th}`)}</a>{/each}
+        {#each base.themes as th}<a class="chip theme-{th}" href={href('/atlas', `themes=${th}`)} title={ti('theme', th)}>{tl('theme', th)}</a>{/each}
+      </div>
+    </section>
+  {/if}
+
+  {#if base.activities.length}
+    <section>
+      <h3>{t('base.activities')}</h3>
+      <div class="chips">
+        {#each base.activities as a}<a class="chip" href={href('/atlas', `activities=${ACTIVITY[a].group}`)} title={tl('activityKind', ACTIVITY[a].kind)}>{tl('activity', a)}</a>{/each}
       </div>
     </section>
   {/if}
@@ -222,21 +300,47 @@
   {/if}
 
   <section>
+    <h3>{t('base.evidence')}</h3>
+    {#if base.evidence && Object.keys(base.evidence).length}
+      <div class="chips ev">
+        {#each CLAIM_TYPES.filter((c) => base.evidence?.[c.id]) as c (c.id)}
+          <span class="chip ev-{base.evidence[c.id]}" title={ti('evidence', base.evidence[c.id]!)}>{tl('claimType', c.id)}: {tl('evidence', base.evidence[c.id]!)}</span>
+        {/each}
+      </div>
+    {/if}
+    {#if checkedSources.length || leads.length}
+      <ul class="links research">
+        {#each [...checkedSources, ...leads] as s (s.url + s.summary)}
+          <li><a href={s.url} target="_blank" rel="noopener"><span class="lk v-{s.verdict}">{s.verdict === 'supports' ? '✓' : s.verdict === 'contradicts' ? '✗' : s.verdict === 'context' ? '·' : '?'}</span><span>{s.publisher}{#if s.published}{' · '}{s.published}{/if}<small>{t(`base.verdict.${s.verdict}` as never)} · {s.supports.map((c) => tl('claimType', c)).join(', ')} – {s.summary}</small></span></a></li>
+        {/each}
+      </ul>
+      <p class="small muted">{t('base.evidenceNote', { date: base.lastChecked ?? (research[0]?.accessed ?? '') })}</p>
+    {:else if db.research === null && base.evidence}
+      <p class="small muted">{t('common.loading')}</p>
+    {:else}
+      <p class="small muted">{t('base.evidenceNone')}</p>
+    {/if}
+  </section>
+
+  <section>
     <h3>{t('base.explore')}</h3>
     <ul class="links">
       {#each explore as e}<li><a href={e.url} target="_blank" rel="noopener"><span class="lk">⌖</span><span>{e.label}</span></a></li>{/each}
     </ul>
   </section>
 
-  {#if related.length || partOf.length}
+  {#if relGroups.length}
     <section>
       <h3>{t('base.related')}</h3>
-      <ul class="mini">
-        {#each [...partOf, ...related] as r (r.id)}
-          <li><a href={href(`/base/${r.id}`, route.query)} onclick={(e) => { e.preventDefault(); onSelect(r.id); }}>
-            <span class="dot" class:ring={KIND_GROUP[r.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[r.kind]]}></span>{r.name}</a></li>
-        {/each}
-      </ul>
+      {#each relGroups as g (g.label)}
+        <p class="sub">{g.label}</p>
+        <ul class="mini">
+          {#each g.list as r (r.id)}
+            <li><a href={href(`/base/${r.id}`, route.query)} onclick={(e) => { e.preventDefault(); onSelect(r.id); }}>
+              <span class="dot" class:ring={colorGroup(r) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(r)]}></span>{r.name}</a></li>
+          {/each}
+        </ul>
+      {/each}
     </section>
   {/if}
 
@@ -246,7 +350,7 @@
       <ul class="mini">
         {#each nearby as { base: r, km } (r.id)}
           <li><a href={href(`/base/${r.id}`, route.query)} onclick={(e) => { e.preventDefault(); onSelect(r.id); }}>
-            <span class="dot" class:ring={KIND_GROUP[r.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[r.kind]]}></span>
+            <span class="dot" class:ring={colorGroup(r) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(r)]}></span>
             <span class="nm">{r.name}</span><span class="km">{formatNumber(km, km < 10 ? 1 : 0)} km</span></a></li>
         {/each}
       </ul>
@@ -254,12 +358,13 @@
   {/if}
 
   <footer>
-    <a href={base.origin} target="_blank" rel="noopener">{t('base.origin')} ↗</a>
+    <a href={base.origin.url} target="_blank" rel="noopener">{t('base.origin')} ↗</a>
     <span class="report">✏️ {t('base.report')}:
       <a href={issueUrl('korrektur', { title: `Korrektur: ${base.name}`, base: base.id })} target="_blank" rel="noopener">GitHub</a> ·
       <a href={mailUrl(`VisualBases: ${base.name}`, `${t('act.mailBody')}\n\n${location.href}`)}>{t('act.mail')}</a>
     </span>
-    {#if base.lastmod}<span>{t('base.updated')}: {base.lastmod}</span>{/if}
+    {#if base.origin.lastmod}<span>{t('base.updated')}: {base.origin.lastmod}</span>{/if}
+    {#if base.lastChecked}<span>{t('base.lastChecked')}: {base.lastChecked}</span>{/if}
   </footer>
 </div>
 
@@ -306,6 +411,16 @@
   .chips { display: flex; flex-wrap: wrap; gap: 6px; }
   .chips a { text-decoration: none; }
   .theme-resistance { border-color: var(--accent); color: var(--text); }
+  .sub { font-size: 0.75rem; color: var(--muted); margin: 8px 0 5px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .basis { color: var(--muted); font-size: 0.78em; }
+  .status { margin-left: 6px; border-color: var(--c-closed, #8b93a7); }
+  .box { border: 1px solid var(--line); border-radius: var(--radius-s); padding: 4px 12px 8px; background: var(--bg-2); margin-top: 14px; }
+  .warnbox { border-color: #8a6d1f; }
+  .ev .chip { cursor: default; }
+  .ev-confirmed, .ev-corrected { border-color: #199e70; }
+  .ev-disputed { border-color: #c9a227; }
+  .research small { white-space: normal; }
+  .v-supports { color: #2bbf8a; } .v-contradicts { color: #e8692f; }
 
   .notes { margin: 0; padding-left: 1.1em; color: var(--text-2); font-size: 0.92rem; display: grid; gap: 6px; }
   .links, .mini { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }

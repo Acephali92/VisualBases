@@ -6,7 +6,7 @@
 
 ![Startseite mit 3D-Globus](docs/screenshots/home.webp)
 
-VisualBases macht sichtbar, was selten sichtbar ist: **365 Standorte in über 80 Ländern**, eingeordnet nach Art, Stationierungsnation, Einrichtungen und Themen (Drohnenkrieg, Atomwaffen, Umweltschäden, Widerstand vor Ort). Dazu gibt es Satelliten-Vergleiche, echte Fotos, Quellen und eine laufende Presseschau.
+VisualBases macht sichtbar, was selten sichtbar ist: **365 Standorte in über 80 Ländern**, eingeordnet nach Standorttyp, Status, Gastland, Stationierungsnation, Einrichtungen und Funktionen, Themen (Drohnenkrieg, Umweltfolgen, Widerstand vor Ort) sowie Einsätzen und Übungen – mit Belegen je Aussage. Das Klassifikationsmodell ist in [docs/TAXONOMY.md](docs/TAXONOMY.md) beschrieben. Dazu gibt es Satelliten-Vergleiche, echte Fotos, Quellen und eine laufende Presseschau.
 
 > Idee, Recherche und Datenbestand stammen von **[visualbases.org](https://visualbases.org)** (Karl-Heinz Peil, Friedens- und Zukunftswerkstatt e. V., in Zusammenarbeit mit World BEYOND War). Dieses Repository ist eine eigenständige Neuentwicklung als offene Web-App, mit Zustimmung des Initiators.
 
@@ -21,7 +21,7 @@ VisualBases macht sichtbar, was selten sichtbar ist: **365 Standorte in über 80
 | | |
 |---|---|
 | 🌍 **Globus-Story** | 3D-Globus, der beim Scrollen eine Geschichte erzählt: Netz → Deutschland → Okinawa → Afrika → Widerstand |
-| 🔎 **Atlas** | Filter (Art, Nation, Einrichtung, Thema, Kontinent), Suche, Liste mit Vorschaubildern, „nur Kartenausschnitt“, teilbare Links |
+| 🔎 **Atlas** | Filter (Standorttyp, Status, Nation, Thema, Einrichtungen & Funktionen, Einsätze & Bündnisse, Kontinent, Gastland), Suche, Liste mit Vorschaubildern, „nur Kartenausschnitt“, teilbare Links |
 | 🛰 **Standort-Profile** | Titelfoto, **Vorher/Nachher-Regler** mit historischen Satellitenbildern, Galerie, Quellen, Nachrichten, Orte in der Nähe, „Fehler melden“ |
 | 📷 **Authentische Bilder** | 134 Bilder aus dem visualbases.org-Archiv (Satelliten-Zeitreihen, Karten, Protestfotos) und frei lizenzierte Fotos von Wikimedia Commons, jeweils mit Urheber und Lizenz |
 | 📍 **Deine Basis** | Entfernung zur nächsten Basis (wird im Browser berechnet) und ein **Story-Bild 1080×1920** zum Teilen |
@@ -35,7 +35,7 @@ VisualBases macht sichtbar, was selten sichtbar ist: **365 Standorte in über 80
 | 🎓 **Für Schulen** | 5 druckbare Unterrichtsbausteine (ab Klasse 9) nach dem Beutelsbacher Konsens |
 | 📊 **Zahlen** | Statistiken mit Tabellenansicht |
 | `</>` **Einbetten** | Karte (auch gefiltert) per iframe auf Partnerseiten zeigen |
-| ⬇ **Offene Daten** | `data/bases.csv`, `bases.geojson`, `bases.json` |
+| ⬇ **Offene Daten** | `data/bases.csv`, `bases.geojson`, `bases.json`, `taxonomy.json` (alle Kategorien mit DE/EN-Bezeichnung) |
 | 🔗 **Teilen & Suche** | Statische Seiten pro Basis (365) und pro Land (83) mit Vorschaubild (Open Graph), Sitemap, strukturierte Daten |
 | ✉ **Hinweise** | Über GitHub-Formulare oder per E-Mail, ohne Konto |
 | 🌐 **DE / EN** · 📱 **PWA** · ♿ **Barrierearm** · 🔒 **Kein Tracking** | |
@@ -53,7 +53,9 @@ Keine Cookies, keine Analyse-Tools, keine Google-Dienste. Weltkarte (Natural Ear
 
 ```
 data/                     Quelldaten (im Repo versioniert)
-  bases.json              365 Standorte
+  bases.json              365 Standorte (Import, Taxonomie v2 + Rohbegriffe)
+  claims.json             Korrekturen und Vorschläge je Aussage, mit Quelle
+  research/               Quellenrecherche (Belege je Standort)
   media.json              optimierte Bilder (Typ, Jahr, Urheber, Lizenz)
   wikimedia.json          frei lizenzierte Fotos von Commons (Urheber, Lizenz)
   news.json               Presseschau
@@ -64,7 +66,8 @@ scripts/
   import-news.mjs         Presseschau (EN/DE)
   import-wikimedia.mjs    freie Fotos von Wikimedia Commons (nur freie Lizenzen, nur thematisch passend)
   build-media.mjs         Bilder laden, einordnen, als WebP optimieren (--prune räumt auf)
-  build-data.mjs          public/data/*.json|geojson|csv
+  build-data.mjs          public/data/*.json|geojson|csv (über lib/resolve.mjs)
+  migration-report.mjs    Migrationsbericht Taxonomie v1 → v2
   prerender.mjs           statische Seiten pro Basis, sitemap.xml, robots.txt
 src/
   lib/                    Daten, Filter, i18n, Router, Karte, Quiz, Share-Bild
@@ -98,6 +101,17 @@ npm run data:media       # Bilder laden und optimieren
 ## Datenqualität
 
 Jeder Build und jedes Daten-Update wird mit `npm run validate` geprüft (Koordinaten, Duplikate, Länder, Kategorien, Bildreferenzen, Lizenzen). Fehler verhindern das Deployment. Zweifelhafte Positionen stehen in `data/corrections.json` und werden in der App als „Position ungeprüft“ gekennzeichnet. Details: [docs/DATA-QUALITY.md](docs/DATA-QUALITY.md) · aktueller [Bericht](docs/data-quality-report.md) · [Roadmap](docs/IMPROVEMENT-ROADMAP.md) · [Changelog](docs/CHANGELOG.md).
+
+## Quellenrecherche
+
+Zu den 291 Standorten ohne eigene Quelle gibt es einen Recherche-Datensatz in `data/research/` (Quellen mit Herausgeber, Datum, Abrufdatum und Prüfurteil; BSR-, Wikidata- und OSM-Prüfungen). Er wird erst nach Durchsicht in die App übernommen. Methode, Kennzahlen und Befunde: [docs/research/SOURCE-RESEARCH.md](docs/research/SOURCE-RESEARCH.md) · alle Datenquellen und Dienste: [docs/DATA-SOURCES.md](docs/DATA-SOURCES.md).
+
+```bash
+node scripts/research/inspect.mjs <url> [stichwort …]   # Quelle abrufen und prüfen
+node scripts/research/manual.mjs                        # data/research/manual.json übernehmen
+node scripts/research/bsr.mjs                           # Base-Structure-Report-Abgleich (+ bsr-review.json)
+node scripts/research/summarize.mjs                     # Bericht und coverage.csv neu erzeugen
+```
 
 ## Automatische Aktualisierung
 

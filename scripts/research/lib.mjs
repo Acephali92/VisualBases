@@ -27,8 +27,14 @@ export async function readJson(file, fallback) {
   try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch { return fallback; }
 }
 
+/**
+ * Records of data/bases.json with two convenience fields for the matching code:
+ * `country` – the territory code if there is one (GU, PR, GL …), otherwise the host country –
+ * and `nations` – all states with a presence.
+ */
 export async function loadBases() {
-  return readJson(path.join(ROOT, 'data/bases.json'), []);
+  const bases = await readJson(path.join(ROOT, 'data/bases.json'), []);
+  return bases.map((b) => ({ ...b, country: b.host?.territory ?? b.host?.country ?? null, nations: (b.presences ?? []).map((p) => p.nation) }));
 }
 
 /** bases without an own source besides Wikipedia – the focus of the research */
@@ -74,7 +80,7 @@ const GENERIC = new Set(
     'depot training area ta range us usa u s the of de di du la le el al raf rnas field airfield airport aerodrome aeroporto ' +
     'flughafen flugplatz site sites community military garrison usag annex facility facilities fac center centre command ' +
     'joint support activity storage housing complex comp radio relay comm communications station point base militar ' +
-    'militaire militare airbase ' +
+    'militaire militare airbase force transmitter ' +
     'north south east west new upper lower').split(/\s+/),
 );
 
@@ -83,11 +89,23 @@ export function fold(s) {
 }
 
 /** distinctive words of a site name (place names, unit names), generic military vocabulary removed */
+/** abbreviations used in the Base Structure Report */
+const ALIAS = { ammo: 'ammunition', tng: 'training', ord: 'ordnance', ordinance: 'ordnance', hosp: 'hospital' };
+
 export function tokens(s) {
   return fold(s)
     .replace(/\(.*?\)/g, ' ')
     .split(/[^a-z0-9]+/)
+    .map((w) => ALIAS[w] ?? w)
     .filter((w) => w.length >= 3 && !GENERIC.has(w) && !/^\d+$/.test(w));
+}
+
+/** Jaccard similarity of all words incl. generic ones and numbers – tie-breaker between equally good matches */
+export function exactness(a, b) {
+  const words = (s) => new Set(fold(s).replace(/\ba[fb]?b\b|\bafb\b/g, 'air base').split(/[^a-z0-9]+/).filter(Boolean).map((w) => ALIAS[w] ?? w));
+  const A = words(a), B = words(b);
+  const inter = [...A].filter((w) => B.has(w)).length;
+  return inter / (A.size + B.size - inter || 1);
 }
 
 /** share of the base's distinctive words found in the candidate text (0..1) */
@@ -137,6 +155,7 @@ export function placeOnlyName(name) {
 export async function loadResearch() {
   return {
     sources: await readJson(path.join(RESEARCH, 'sources.json'), []),
+    candidates: await readJson(path.join(RESEARCH, 'candidates.json'), []),
     checks: await readJson(path.join(RESEARCH, 'checks.json'), {}),
   };
 }

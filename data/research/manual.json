@@ -1,0 +1,1633 @@
+[
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "bases": [
+   "s-berga",
+   "s-boden-regimental-area-and-military-training-area",
+   "s-halmstad-regimental-area-and-flotilla-area",
+   "s-harnosand",
+   "s-kiruna",
+   "s-kristinehamm",
+   "s-kvarn",
+   "s-ravlunda-military-camp-and-training-area",
+   "overview-new-us-access-in-sweden"
+  ],
+  "perBase": {
+   "s-halmstad-regimental-area-and-flotilla-area": {
+    "note": "Annex A names „Halmstad: Regimental Area and Air Base“; the dataset calls it „regimental area and flotilla area“. Access rights, not permanent stationing."
+   }
+  }
+ },
+ {
+  "url": "https://sverigesradio.se/artikel/sweden-and-the-us-sign-historic-defence-deal",
+  "title": "Sweden and the US sign historic defence deal",
+  "publisher": "Sveriges Radio",
+  "type": "media",
+  "published": "2023-12-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "summary": "Swedish public radio reports the signing of the DCA, giving the US military access to 17 bases in Sweden; individual sites are not named.",
+  "bases": [
+   "overview-new-us-access-in-sweden"
+  ]
+ },
+ {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "bases": [
+   "aitos-bulgaria",
+   "novo-selo",
+   "bezmer-air-base",
+   "graf-ignatievo-ab-bulgaria"
+  ]
+ },
+ {
+  "url": "https://pmtranscripts.pmc.gov.au/node/18152",
+  "title": "Parliamentary statement by the Prime Minister on the joint defence facilities (Transcript 7438)",
+  "publisher": "Australian Government, Department of the Prime Minister and Cabinet (PM Transcripts)",
+  "type": "official",
+  "published": "1988-11-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Prime Minister Hawke describes the arrangements under which the Australian and US governments cooperate in running the joint defence facilities at Pine Gap and Nurrungar.",
+  "note": "Historical source (1988); confirms the joint Australian–US character of Pine Gap, not the current state.",
+  "bases": [
+   "ghan-joint-defence-pine-gap"
+  ]
+ },
+ {
+  "url": "https://nautilus.org/publications/books/australian-forces-abroad/defence-facilities/australian-defence-satellite-communications-station-kojarena/",
+  "title": "Australian Defence Satellite Communications Station, Kojarena",
+  "publisher": "Nautilus Institute for Security and Sustainability",
+  "type": "academic",
+  "published": "2011-12-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Describes three adjacent facilities near Geraldton: the Australian interception station, the MUOS Radio Access Facility and the Satellite Ground Station – West, the latter two built by the United States for US forces' satellite communications.",
+  "note": "The dataset names the site „East Chapman“; Nautilus calls it Kojarena (east of Geraldton) – position to be checked.",
+  "bases": [
+   "east-chapman-satellite-station"
+  ]
+ },
+ {
+  "url": "https://thebarentsobserver.com/en/security/2024/02/norway-expands-defense-agreement-american-troops",
+  "title": "Norway expands defense agreement with American troops",
+  "publisher": "The Barents Observer",
+  "type": "media",
+  "published": "2024-02-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Lists the proposed new agreed facilities and areas under the US–Norway SDCA, including Ørland air station and airfield.",
+  "note": "Access and use rights under the agreement (proposal of February 2024, later approved by parliament according to other reports).",
+  "bases": [
+   "orland-militaerbase"
+  ]
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/111",
+  "title": "Forces armées en Polynésie française (FAPF)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
+  "note": "Name outdated: Base aérienne 190 was dissolved in 2012; the air component at Faa'a is now listed as „Groupement aéronautique militaire (GAM Faa'a)“.",
+  "bases": [
+   "base-aerienne190",
+   "tahiti-french-polynesia"
+  ],
+  "perBase": {
+   "tahiti-french-polynesia": {
+    "note": "The page lists the French forces on Tahiti (naval base, GAM Faa'a, RSMA) – supports the general entry \"Tahiti\"."
+   }
+  }
+ },
+ {
+  "url": "https://outremers360.com/bassin-atlantique-appli/guadeloupe-les-forces-armees-aux-antilles-et-le-rsma-signent-une-convention-formalisant-leur-cooperation",
+  "title": "Guadeloupe : Les Forces armées aux Antilles et le RSMA signent une convention formalisant leur coopération",
+  "publisher": "Outremers360",
+  "type": "media",
+  "published": "2026-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A convention governs the Jaille and Dugommier camps in Guadeloupe, which host both the RSMA and elements of the French Forces aux Antilles.",
+  "bases": [
+   "camp-dugommier-rsma"
+  ]
+ },
+ {
+  "url": "https://www.lnc.nc/article/nouvelle-caledonie/nord/koumac/cinquante-trois-stagiaires-du-rsma-ont-ete-presentes-au-drapeau-a-koumac",
+  "title": "Cinquante-trois stagiaires du RSMA ont été présentés au drapeau à Koumac",
+  "publisher": "Les Nouvelles Calédoniennes",
+  "type": "media",
+  "published": "2021-07-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "supports",
+  "summary": "Report on a flag ceremony of the adapted military service regiment (RSMA-NC) in Koumac.",
+  "bases": [
+   "rsma-nc"
+  ]
+ },
+ {
+  "url": "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/",
+  "title": "Guyana Defence Force (Camp Ayanganna)",
+  "publisher": "National Trust of Guyana",
+  "type": "official",
+  "published": "2022-09-05",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position",
+   "nation"
+  ],
+  "verdict": "contradicts",
+  "summary": "Camp Ayanganna is in Thomas Lands, Georgetown (Guyana), established 1965 as a site of the Guyana Defence Force.",
+  "note": "Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.",
+  "bases": [
+   "camp-ayanganna"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/282936/usag_ansbach_commanders_reception_highlights_armys_250th_80_year_german_american_partnership",
+  "title": "USAG Ansbach commander's reception highlights Army's 250th, 80-year German-American partnership",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2025-02-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "US Army Garrison Ansbach held its reception at the Von Steuben Community Center on Bismarck Kaserne – the site is in current US Army use.",
+  "bases": [
+   "bismarck-kaserne-ansbach"
+  ]
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/?p=106985",
+  "title": "USAFE-AFAFRICA Warfare Center welcomes new leadership",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2025-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command at the USAFE-AFAFRICA Warfare Center at Einsiedlerhof Military Complex on 18 July 2025; the article recalls that the Warrior Preparation Center was founded there in 1983.",
+  "note": "The Warrior Preparation Center now operates as the USAFE-AFAFRICA Warfare Center (renamed 2022). The dataset has two entries for it – probably a duplicate.",
+  "bases": [
+   "de-kl-warrior-preparation-center",
+   "warrior-preparation-center-einsiedlerhof"
+  ]
+ },
+ {
+  "url": "https://installations.militaryonesource.mil/military-installation/usag-rheinland-pfalz-baumholder/health/health-care",
+  "title": "USAG Rheinland-Pfalz, Baumholder – Health Care",
+  "publisher": "Military OneSource / MilitaryINSTALLATIONS (U.S. Department of Defense)",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The DoD installation directory lists the US Army Health Clinic Baumholder (Fern Street, 55774 Baumholder) with opening hours and refers specialty care to Landstuhl Regional Medical Center.",
+  "bases": [
+   "baumholder-army-health-clinic"
+  ]
+ },
+ {
+  "url": "https://www.defense.gouv.fr/operations/actualites/ffdj-formation-eor-au-profit-policiers-djiboutiens",
+  "title": "FFDj – Formation EOR au profit de policiers djiboutiens",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2024-02-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "contradicts",
+  "summary": "The French ministry of the armed forces names Air Base 188 Djibouti as a unit of the French Forces stationed in Djibouti (FFDj, 1,450 personnel under the 2011 defence treaty).",
+  "note": "Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.",
+  "bases": [
+   "base-aerienne-188-djibouti"
+  ]
+ },
+ {
+  "url": "https://www.troupesdemarine-ancredor.org/wp-content/uploads/2020/03/2-RPIMa_A3.pdf",
+  "title": "2e RPIMa – fiche régimentaire",
+  "publisher": "Troupes de marine – Ancre d'or (association)",
+  "type": "media",
+  "published": "2020-03-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "position"
+  ],
+  "verdict": "supports",
+  "summary": "The regiment sheet of the 2nd Marine Infantry Parachute Regiment gives its address as Caserne CBA Dupuis, Pierrefonds, 97457 Saint-Pierre (Réunion).",
+  "note": "Confirms the barracks at Pierrefonds/Saint-Pierre, matching the dataset position; publication date from the PDF metadata.",
+  "bases": [
+   "reunion-ab"
+  ]
+ },
+ {
+  "url": "https://theintercept.com/2017/07/20/cameroonian-troops-tortured-and-killed-prisoners-at-base-used-for-u-s-drone-surveillance/",
+  "title": "Cameroonian Troops Tortured and Killed Prisoners at Base Used for U.S. Drone Surveillance",
+  "publisher": "The Intercept",
+  "type": "media",
+  "published": "2017-07-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Based on an Amnesty International report and Forensic Architecture research, the article describes Salak (Cameroon) as a base used by US personnel and contractors for drone surveillance and training, and documents torture of detainees there by Cameroonian forces.",
+  "note": "Evidence for US presence (2017); no source found for a French presence at Salak.",
+  "bases": [
+   "salak-cameroon"
+  ]
+ },
+ {
+  "url": "https://english.mapn.ro/cpresa/5245_Establishment-of-the-HQ-Multinational-Corps-South-East",
+  "title": "Establishment of the HQ Multinational Corps South-East",
+  "publisher": "Ministry of National Defence of Romania",
+  "type": "official",
+  "published": "2020-06-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "supports",
+  "summary": "The Romanian parliament approved on 18 June 2020 the establishment of the NATO HQ Multinational Corps South-East in Sibiu garrison.",
+  "note": "Confirms a NATO multinational headquarters; it says nothing about the US as stationing nation (the dataset lists US).",
+  "bases": [
+   "sibiu-nato"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2016/1/20/us-takes-control-of-rmeilan-airfield-in-syria",
+  "title": "US 'takes control' of Rmeilan airfield in Syria",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2016-01-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Reports from the Syrian Democratic Forces that US forces took over the Rmeilan airfield in Hasakah province; at the time the Pentagon did not confirm it.",
+  "bases": [
+   "rumeilan-air-base"
+  ]
+ },
+ {
+  "url": "https://english.kurd-online.com/?p=1426",
+  "title": "U.S. Forces Withdraw from Kharab al-Jir Airbase in Rmeilan and Hand It Over to a Committee from the Ministry of Defense",
+  "publisher": "Kurd Online",
+  "type": "media",
+  "published": "2026-03-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "According to the report, US forces fully withdrew from the Kharab al-Jir air base near Rmeilan on 14 March 2026 and handed it over to the Syrian transitional government.",
+  "note": "Status: the dataset still shows the base as active. Single source relaying the Syrian Observatory for Human Rights; Kharab al-Jir and Rmeilan/Abu Hajar airfield are named inconsistently in reports – check the position.",
+  "bases": [
+   "rumeilan-air-base"
+  ]
+ },
+ {
+  "url": "https://www.nato.int/cps/en/natohq/topics_8189.htm",
+  "title": "NATO and Afghanistan",
+  "publisher": "NATO",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "NATO states that after the withdrawal of all Resolute Support forces in August 2021 the mission was terminated in early September 2021, and that NATO has suspended all support to Afghanistan.",
+  "note": "Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).",
+  "bases": [
+   "kabul-isaf-headquarters"
+  ]
+ },
+ {
+  "url": "https://theprint.in/defence/eye-on-china-us-to-increase-bomber-and-military-rotational-deployments-in-australia/2212612",
+  "title": "Eye on China, US to increase bomber and military rotational deployments in Australia",
+  "publisher": "ThePrint",
+  "type": "media",
+  "published": "2024-08-07",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Reporting on AUSMIN 2024: the US and Australia will add new locations for force posture cooperation, naming RAAF Base Learmonth, alongside continued investment at Darwin and Tindal.",
+  "note": "Planned force posture location (announced 2024), not yet evidence of a permanent US presence.",
+  "bases": [
+   "learmonth-raaf-base"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/news/395769/historical-port-offers-strategic-access-defender-europe-21",
+  "title": "Historical Port Offers Strategic Access, DEFENDER-Europe 21",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-05-04",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Army Europe and Africa used the Port of Durrës for DEFENDER-Europe 21 (2021) to bring equipment ashore; the commander called the port strategically important for access to the Balkans.",
+  "note": "Use of a commercial port during an exercise, not a permanent base; date from the article (interview of 4 May 2021).",
+  "bases": [
+   "durres-albania"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/image/6783550/1st-armored-brigade-combat-team-1st-infantry-division-assumes-authority-zagan-poland",
+  "title": "1st Armored Brigade Combat Team, 1st Infantry Division assumes authority in Żagań, Poland",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-08-13",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "US Army photo release: the 1st Armored Brigade Combat Team, 1st Infantry Division assumed authority in Żagań for its rotation under Atlantic Resolve (August 2021).",
+  "note": "Rotational presence; the current rotation was not checked.",
+  "bases": [
+   "zagan-training-area"
+  ]
+ },
+ {
+  "url": "https://www.rtbf.be/article/base-de-kleine-brogel-des-travaux-d-infrastructures-pour-le-detachement-americain-ont-ete-effectues-constatent-des-experts-11096052",
+  "title": "Base de Kleine-Brogel : des travaux d'infrastructures pour le détachement américain ont été effectués, constatent des experts",
+  "publisher": "RTBF",
+  "type": "media",
+  "published": "2022-10-31",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Citing the Federation of American Scientists, RTBF reports extension works for the US 701st Munitions Support Squadron at Kleine Brogel, the unit held responsible for the roughly fifteen B61 nuclear bombs stored there.",
+  "note": "Nuclear weapons storage is not officially confirmed – based on FAS estimates. The dataset has no stationing nation; the source names a US unit.",
+  "bases": [
+   "kleine-brogel-nuclear"
+  ]
+ },
+ {
+  "url": "https://www.everycrsreport.com/files/20060105_RS21774_2e3f9fa595dcd0ee71ab9f282f72cd9e830da29a.html",
+  "title": "Bosnia and the European Union Military Force (EUFOR): Post-NATO Peacekeeping (CRS Report RS21774)",
+  "publisher": "Congressional Research Service (copy on EveryCRSReport.com)",
+  "type": "official",
+  "published": "2006-01-05",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "About 220 US personnel remained in Bosnia, at the NATO headquarters in Camp Butmir in Sarajevo and at Eagle Base in Tuzla (as of January 2006).",
+  "note": "Historical (2006). Country error: Camp Butmir and Sarajevo airport are in Bosnia and Herzegovina, not Croatia (dataset: HR).",
+  "bases": [
+   "sarajevo-military-airport"
+  ]
+ },
+ {
+  "url": "https://fena.ba/article/1605326/eufor-marks-20-years-in-bosnia-and-herzegovina-with-a-ceremony-at-the-butmir-base",
+  "title": "EUFOR marks 20 Years in Bosnia and Herzegovina with a ceremony at the Butmir Base",
+  "publisher": "FENA – Federal News Agency (Bosnia and Herzegovina)",
+  "type": "media",
+  "published": "2024-12-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "EUFOR held a ceremony at Butmir Base in Sarajevo for 20 years of Operation Althea (December 2024).",
+  "note": "Confirms an active multinational (EU) presence at Butmir next to Sarajevo airport in Bosnia and Herzegovina; says nothing about US forces.",
+  "bases": [
+   "sarajevo-military-airport"
+  ]
+ },
+ {
+  "url": "https://www.thenationalnews.com/world/europe/an-unmistakable-symbol-of-a-growing-strategic-partnership-1.505677",
+  "title": "An unmistakable symbol of a growing strategic partnership",
+  "publisher": "The National (Abu Dhabi)",
+  "type": "media",
+  "published": "2009-05-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "On the opening of the French base in Abu Dhabi (2009): it has three parts – a naval facility at Mina Zayed port, an air component at Al Dhafra and a ground-forces training camp.",
+  "note": "Covers the French presence only (the dataset also lists GB and US). The dataset position does not match Mina Zayed – check it.",
+  "bases": [
+   "abu-dhabi-uae-2"
+  ]
+ },
+ {
+  "url": "https://www.longwarjournal.org/archives/2022/03/shabaab-attacks-international-hub-in-mogadishu-where-u-s-embassy-is-located.php",
+  "title": "Shabaab attacks international hub in Mogadishu where U.S. Embassy is located",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2022-03-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "context",
+  "summary": "The Halane camp near Aden Adde airport in Mogadishu houses the US embassy, the UN mission and other international bodies; it was attacked by al-Shabaab in March 2022.",
+  "note": "Shows a US government presence at the airport compound, but no military facility named \"Ocean Side\" – the dataset entry is not confirmed.",
+  "bases": [
+   "ocean-side-mogadishu"
+  ]
+ },
+ {
+  "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE219",
+  "title": "Question écrite n° 219 – Attaque base Stoupan",
+  "publisher": "Assemblée nationale (France)",
+  "type": "official",
+  "published": "2017-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A written parliamentary question describes the armed theft of boat engines from the Stoupan military nautical base of the 9th Marine Infantry Regiment (9e RIMA) in Roura on 14 July 2017.",
+  "note": "The question places the base in Roura; a 2024 prefectural order puts it on the Mahury in Matoury – the dataset position (Mahury) is plausible.",
+  "bases": [
+   "base-nautique-de-stoupan"
+  ]
+ },
+ {
+  "url": "https://www.unionesarda.it/news-sardegna/esercitazioni-nato-in-sardegna-i-generali-straordinarie-opportunita-per-turismo-e-lavanderie-jfl52ohm",
+  "title": "Esercitazioni Nato in Sardegna, i generali: «Opportunità per turismo e lavanderie»",
+  "publisher": "L'Unione Sarda",
+  "type": "media",
+  "published": "2023-02-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Italian commanders present the 2023 exercises Joint Stars and the NATO exercise Noble Jump on the Sardinian ranges, including Capo Teulada.",
+  "note": "Teulada is an Italian range used for NATO and allied exercises – no permanently stationed foreign force; the dataset has no stationing nation.",
+  "bases": [
+   "poligono-militare-nato-sardinia-italy"
+  ]
+ },
+ {
+  "url": "https://www.defensenews.com/naval/2017/02/09/china-upgrades-military-infrastructure-on-south-china-sea-islands-report-claims/",
+  "title": "China upgrades military infrastructure on South China Sea islands, report claims",
+  "publisher": "Defense News",
+  "type": "media",
+  "published": "2017-02-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS-AMTI satellite imagery, the article reports Chinese military infrastructure on the Paracels: Duncan Island with a helicopter base, and a single helipad each on Triton, Money and Pattle islands, besides the main base on Woody Island.",
+  "note": "Imagery as of 2016/2017; current state not checked.",
+  "bases": [
+   "pattle-island",
+   "money-island-south-chinese-sea"
+  ]
+ },
+ {
+  "url": "https://gabonmediatime.com/port-gentil-les-marins-gabonais-edifies-sur-le-systeme-sea-vision-par-lus-navy/",
+  "title": "Port-Gentil : les marins gabonais édifiés sur le système Sea Vision par l'US Navy",
+  "publisher": "Gabon Media Time",
+  "type": "media",
+  "published": "2024-08-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "activity"
+  ],
+  "verdict": "context",
+  "summary": "A US Navy delegation stayed in Port-Gentil in 2024 to train Gabonese sailors on the SeaVision maritime awareness system.",
+  "note": "Shows US Navy cooperation and visits in Port-Gentil (US-built maritime operations centre, 2019), but no permanent US base.",
+  "bases": [
+   "port-gentil-gabon"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/image/6632303/combined-seaport-operation-delivers-us-vehicles-equipment-croatia",
+  "title": "Combined seaport operation delivers U.S. vehicles, equipment to Croatia",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-05-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "activity"
+  ],
+  "verdict": "context",
+  "summary": "US Army Europe and Africa photo from Zadar (May 2021): US vehicles and equipment were landed in Croatia for DEFENDER-Europe 21.",
+  "note": "Use of the port during an exercise, not a permanent base.",
+  "bases": [
+   "zadar-gazenica-croatia"
+  ]
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "bases": [
+   "palanquero-ab",
+   "malambo-ab",
+   "apiay-ab",
+   "fuerte-militar-larandia",
+   "fuerte-militar-tolemaida",
+   "cartagena",
+   "bahia-malaga"
+  ]
+ },
+ {
+  "url": "https://www.csmonitor.com/World/Americas/2009/1030/p06s10-woam.html",
+  "title": "US and Colombia sign accord for US to access military bases",
+  "publisher": "The Christian Science Monitor",
+  "type": "media",
+  "published": "2009-10-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the signing of the US–Colombia agreement (30 Oct 2009); most of the 46 million dollars already appropriated was to refurbish Palanquero air base.",
+  "bases": [
+   "palanquero-ab"
+  ]
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/",
+  "title": "US completes withdrawal from AB 201",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2024-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces completed their withdrawal from Air Base 201 in Agadez in August 2024, two months after the first C-17 left Air Base 101 in Niamey on 7 June; the Niamey withdrawal took one month.",
+  "note": "Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)",
+  "bases": [
+   "us-air-base-201",
+   "niamey-air-base"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal",
+  "title": "Former colonial ruler France hands over its last military bases in Senegal",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2025-07-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "On 17 July 2025 France returned Camp Geille, its largest base in Senegal, and its airfield at Dakar airport; the month before it had handed over the Kossei base in Chad, its last foothold in the Sahel.",
+  "note": "Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.",
+  "bases": [
+   "base-aerienne-dakar",
+   "fort-lamy-ab-djamena"
+  ]
+ },
+ {
+  "url": "https://aa.com.tr/en/asia-pacific/us-forces-transfer-their-main-bagram-airfield-to-afghans/2292072",
+  "title": "US forces transfer their main Bagram Airfield to Afghans",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2021-07-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces handed Bagram Airfield over to the Afghan security forces in early July 2021.",
+  "note": "Status: Bagram has not been a US base since July 2021 (historical).",
+  "bases": [
+   "bagram-air-base"
+  ]
+ },
+ {
+  "url": "https://www.airandspaceforces.com/usafe-new-reaper-detachment-in-poland-focuses-on-indications-and-warnings-in-the-baltics",
+  "title": "USAFE: New Reaper Detachment in Poland Focuses on “Indications and Warnings” in the Baltics",
+  "publisher": "Air & Space Forces Magazine",
+  "type": "media",
+  "published": "2019-03-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force MQ-9 Reaper detachment at Miroslawiec Air Base, Poland, was declared fully operational with a ribbon-cutting on 1 March 2019.",
+  "bases": [
+   "lotnisko-miroslawiec-ab"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases",
+  "title": "Syria says it reached deal with Moscow on future of Russian bases",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2026-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Syria and Russia agreed in August 2026 on the future of Hmeimim air base and Tartus naval base: both are to become joint training and capacity-building centres, with civilian parts handed to Syria.",
+  "note": "Russian presence continues in a changed form; the final intergovernmental agreement was still pending in autumn 2026.",
+  "bases": [
+   "khmeimim-ab",
+   "material-technical-support-point-tartus-syria"
+  ]
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254",
+  "title": "Deutscher Beitrag Resolute Support beendet – Rückverlegung abgeschlossen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2021-06-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The last Bundeswehr aircraft left Camp Marmal, the former German field camp in Mazar-i-Sharif, on 29 June 2021; the German contribution to Resolute Support has ended.",
+  "note": "Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.",
+  "bases": [
+   "camp-marmal-john-pratt"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/news/357168/378th-aew-officially-activates-psab",
+  "title": "378th AEW officially activates at PSAB",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2019-12-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force's 378th Air Expeditionary Wing was activated at Prince Sultan Air Base, Saudi Arabia, on 17 December 2019, with about 1,800 deployed personnel.",
+  "bases": [
+   "prince-sultan-air-base"
+  ]
+ },
+ {
+  "url": "https://maritime-executive.com/article/china-upgrades-djibouti-naval-base-as-an-intelligence-site",
+  "title": "China Upgrades Djibouti Naval Base as an Intelligence Site",
+  "publisher": "The Maritime Executive",
+  "type": "media",
+  "published": "2026-09-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS satellite analysis, the article reports a recently enhanced signals array at the PLA Navy's overseas support base at Doraleh, Djibouti – China's only acknowledged foreign base.",
+  "bases": [
+   "chinese-naval-base"
+  ]
+ },
+ {
+  "url": "https://www.aa.com.tr/en/middle-east/us-completes-withdrawal-from-al-tanf-base-in-syria-centcom/3828375",
+  "title": "US completes withdrawal from al-Tanf base in Syria: CENTCOM",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2026-02-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "According to US Central Command, US forces completed their withdrawal from the al-Tanf garrison in Syria in February 2026; the base was handed over to the Syrian government.",
+  "note": "Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active.",
+  "bases": [
+   "al-tanf-syria"
+  ]
+ },
+ {
+  "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia",
+  "title": "United States Military units in Estonia",
+  "publisher": "Ministry of Defence of Estonia",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The Estonian ministry of defence states that US units serve in Estonia under a bilateral agreement on a rotational basis, with locations in Tapa and Reedo near Võru.",
+  "note": "Rotational presence; undated page. For the 2026 drawdown see the Militarnyi report.",
+  "bases": [
+   "tapa-army-base",
+   "tapa-training-area"
+  ]
+ },
+ {
+  "url": "https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/",
+  "title": "U.S. Pulls Most Troops Out of Estonia, No Military Presence Planned Beyond 2027",
+  "publisher": "Militarnyi",
+  "type": "media",
+  "published": "2026-07-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "Citing Estonian broadcaster ETV, the US contingent in Estonia (previously 500–700 troops, mainly at Tapa) has fallen to fewer than 100; a further rotation and the presence beyond 2026 are open.",
+  "note": "Status question: the US presence at Tapa has been strongly reduced in 2026.",
+  "bases": [
+   "tapa-army-base",
+   "tapa-training-area"
+  ]
+ },
+ {
+  "url": "https://news.err.ee/1122683/us-air-force-completes-us-10-8-million-amari-investment",
+  "title": "US Air Force completes US$10.8-million Ämari investment",
+  "publisher": "ERR (Estonian Public Broadcasting)",
+  "type": "media",
+  "published": "2020-08-11",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force completed infrastructure investments worth 10.8 million dollars at Ämari Air Base, Estonia (2020).",
+  "note": "US-funded infrastructure and recurring rotational deployments, not a permanent US unit.",
+  "bases": [
+   "amari-air-base"
+  ]
+ },
+ {
+  "url": "https://en.highnorthnews.com/home/waking-up-the-keflavik-air-base-us-navy-returns-after-10-years-of-absence/104589",
+  "title": "Waking up the Keflavik air base; US Navy returns after 10 years of absence",
+  "publisher": "High North News",
+  "type": "media",
+  "published": "2016-02-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Navy budget request included 21.4 million dollars to upgrade hangars at Keflavik for P-8 Poseidon aircraft, to be stationed there on a rotational basis – ten years after the US left in 2006.",
+  "note": "Rotational use since 2016; no permanent US base.",
+  "bases": [
+   "keflavik-base"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/277657/first_batch_of_armored_vehicles_arrives_at_powidz_aps_2_worksite",
+  "title": "First batch of armored vehicles arrives at Powidz APS-2 worksite",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2024-06-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army's Army Prepositioned Stocks-2 worksite at Powidz, Poland, received its first armoured vehicles (Abrams tanks) by rail in June 2024.",
+  "bases": [
+   "33rd-air-base-powidz"
+  ]
+ },
+ {
+  "url": "https://www.twz.com/australian-airbase-gets-upgrades-for-american-bomber-deployments",
+  "title": "Australian Airbase Gets Upgrades For American Bomber Deployments",
+  "publisher": "The War Zone (TWZ)",
+  "type": "media",
+  "published": "2022-10-31",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Details of US-funded upgrades at RAAF Base Tindal (apron for up to six B-52s, squadron operations and maintenance facilities) to support rotational US bomber deployments.",
+  "note": "Rotational use and US-funded infrastructure, not a permanent US unit.",
+  "bases": [
+   "tindal-raaf-base"
+  ]
+ },
+ {
+  "url": "https://info.fr/fort-de-france-martial-heraud-commandement-base-navale/",
+  "title": "Fort-de-France : Martial Héraud prend le commandement de la base navale",
+  "publisher": "INFO.FR",
+  "type": "media",
+  "published": "2026-07-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command of the French naval base at Fort-de-France on 16 July 2026 in a ceremony at Fort Saint-Louis.",
+  "note": "The article is marked as written with AI assistance (\"rédacteur IA\") – an official source would be better.",
+  "bases": [
+   "naval-base-fort-saint-louis"
+  ]
+ },
+ {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "bases": [
+   "shahbaz-ab",
+   "jacobabad-dalbandin-ab",
+   "pasni-base-port",
+   "khalid-ab"
+  ]
+ },
+ {
+  "url": "https://ukdefencejournal.org.uk/the-uk-in-cyprus-the-importance-of-the-sovereign-bases-of-akrotiri-and-dhekelia/",
+  "title": "The UK in Cyprus – The Importance of the Sovereign Bases of Akrotiri and Dhekelia",
+  "publisher": "UK Defence Journal",
+  "type": "media",
+  "published": "2018-06-16",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the British Sovereign Base Areas of Akrotiri and Dhekelia; the UK also controls retained sites around the island, most visibly Mount Olympus Station in the Troodos Mountains.",
+  "bases": [
+   "dhekelia-military-camp",
+   "raf-troodos"
+  ],
+  "perBase": {
+   "raf-troodos": {
+    "note": "Mentioned as a retained site (Mount Olympus station in the Troodos Mountains); RAF Troodos is not described in detail."
+   }
+  }
+ },
+ {
+  "url": "https://www.gov.uk/government/news/runway-repairs-completed-ahead-of-schedule-in-falkland-islands",
+  "title": "Runway repairs completed ahead of schedule in Falkland Islands",
+  "publisher": "GOV.UK (Defence Infrastructure Organisation)",
+  "type": "official",
+  "published": "2025-02-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "A 20 million pound project to resurface part of the airfield at Mount Pleasant Complex, the RAF airfield in the Falkland Islands, was completed in 2025.",
+  "bases": [
+   "raf-mount-pleasant-falkland"
+  ]
+ },
+ {
+  "url": "https://www.lrt.lt/en/news-in-english/19/2779098/construction-at-german-brigade-s-training-area-in-rudninkai-advances-ahead-of-schedule",
+  "title": "Construction at German brigade's training area in Rūdninkai advances ahead of schedule",
+  "publisher": "LRT (Lithuanian National Radio and Television)",
+  "type": "media",
+  "published": "2025-12-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The training area and base in Rūdninkai for the German Bundeswehr brigade in Lithuania is being built ahead of schedule (December 2025).",
+  "note": "Under construction; permanent German stationing planned (Panzerbrigade 45).",
+  "bases": [
+   "rudninkai-litauen"
+  ]
+ },
+ {
+  "url": "https://www.army.mod.uk/media/1578/lo-brunei-june-16.pdf",
+  "title": "HIVE Location Overview – Brunei",
+  "publisher": "British Army (army.mod.uk)",
+  "type": "official",
+  "published": "2016-06-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The British Army's location guide for families describes the Brunei garrison at Seria (Tuker Lines, Mumong), about 90 minutes from the capital.",
+  "note": "Date from the PDF metadata (2016); current state not checked.",
+  "bases": [
+   "bfb-garrison-seria"
+  ]
+ },
+ {
+  "url": "https://sbsstar.net/article/N1008619032/exclusive-thaad-returns-to-seongju-full-battery-of-6-launchers-redeployed",
+  "title": "Exclusive: THAAD Returns to Seongju; Full Battery of 6 Launchers Redeployed",
+  "publisher": "SBS Star (SBS, South Korea)",
+  "type": "media",
+  "published": "2026-06-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "After the launchers were temporarily moved out in March 2026, a full US THAAD battery (six launchers, radar, fire control) has been redeployed to the base in Soseong-ri, Seongju.",
+  "bases": [
+   "thadd-deployment-base"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/news/428233/noble-partner-opening-ceremony",
+  "title": "Noble Partner Opening Ceremony",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2022-08-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Opening ceremony of the US–Georgian multinational exercise Noble Partner at Vaziani Training Area, Georgia (August 2022).",
+  "note": "Recurring exercises, not permanent US stationing.",
+  "bases": [
+   "vaziani-military-base-georgia"
+  ]
+ },
+ {
+  "url": "https://cyberandspecialistoperationscommand.blog.gov.uk/2024/07/10/vip-visit/",
+  "title": "Commander UKStratCom and DirOb visit",
+  "publisher": "GOV.UK blog – Cyber & Specialist Operations Command (UK Ministry of Defence)",
+  "type": "official",
+  "published": "2024-07-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The commander of UK Strategic Command visited British Forces Gibraltar in 2024, including His Majesty's Naval Base, the Royal Navy Gibraltar Squadron and RAF Gibraltar.",
+  "bases": [
+   "hm-naval-base-gibraltar",
+   "raf-gibraltar"
+  ]
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "bases": [
+   "martinique-france",
+   "pole-aeronautique-etatique",
+   "naval-base-fort-saint-louis",
+   "pae-du-lamentin-guadeloupe"
+  ],
+  "perBase": {
+   "pae-du-lamentin-guadeloupe": {
+    "verdict": "context",
+    "note": "The ministry page places the PAE at Le Lamentin in Martinique; a PAE at Lamentin in Guadeloupe is not mentioned – the entry may confuse the two Lamentin communes."
+   }
+  }
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "bases": [
+   "reunion",
+   "reunion-ab"
+  ],
+  "perBase": {
+   "reunion": {
+    "note": "Air Base 181 is at Saint-Denis (Roland Garros airport); the page confirms the French forces on Réunion in general."
+   }
+  }
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206",
+  "title": "Rückverlegung aus Mali: Bundeswehr übergibt Feldlager Camp Castor",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The Bundeswehr handed over its field camp Camp Castor in Gao, Mali, on 12 December 2023 at the end of the UN mission MINUSMA.",
+  "note": "Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it \"US Camp Castor\"), and it has been closed since December 2023.",
+  "bases": [
+   "us-camp-castor"
+  ]
+ },
+ {
+  "url": "https://www.longwarjournal.org/archives/2020/09/us-forces-targeted-by-shabaab-suicide-bombing.php",
+  "title": "US forces targeted by Shabaab suicide bombing",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2020-09-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A US service member was wounded in an al-Shabaab suicide attack outside a military base near Kismayo, where US troops worked alongside the US-trained Danab special forces (September 2020).",
+  "bases": [
+   "kismayo-airport-somalia"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne",
+  "title": "USAMMCE says farewell to Husterhoeh Kaserne",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2021-10-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status",
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "A farewell ceremony in October 2021 marked the move of the US Army Medical Materiel Center–Europe from Husterhoeh Kaserne, Pirmasens (its home since 1975) to Kaiserslautern Army Depot.",
+  "note": "Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.",
+  "bases": [
+   "medical-material-center-europe"
+  ]
+ },
+ {
+  "url": "https://www.stripes.com/theaters/europe/2024-04-22/rhine-ordnance-barracks-medical-center-construction-cost-13623428.html",
+  "title": "Cost for new US military hospital near Ramstein surges to $1.6 billion, German officials say",
+  "publisher": "Stars and Stripes",
+  "type": "media",
+  "published": "2024-04-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "The Rhine Ordnance Barracks Medical Center under construction in Weilerbach next to Ramstein will be the largest US military hospital abroad; completion is expected in 2027, costs have risen to about 1.6 billion dollars according to German officials.",
+  "note": "Under construction (completion planned 2027).",
+  "bases": [
+   "hospital-weilerbach"
+  ]
+ },
+ {
+  "url": "https://www.bmvg.de/de/aktuelles/neues-unterstuetzungskommando-der-nato-jsec-in-ulm-25332",
+  "title": "Neues Unterstützungskommando der NATO (JSEC) in Ulm",
+  "publisher": "Bundesministerium der Verteidigung",
+  "type": "official",
+  "published": "2018-06-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The new NATO Joint Support and Enabling Command (JSEC) is set up in Ulm; its staff is to be housed in the Wilhelmsburg-Kaserne.",
+  "note": "NATO headquarters with German lead; JSEC reached full operational capability in 2021 (per NATO).",
+  "bases": [
+   "wilhelmsburg-barracks-ulm"
+  ]
+ },
+ {
+  "url": "https://netzpolitik.org/2014/dagger-complex-luftaufnahmen-und-drohnen-video-von-us-stuetzpunkt/",
+  "title": "Dagger Complex: Luftaufnahmen und Drohnen-Video von US-Stützpunkt",
+  "publisher": "netzpolitik.org",
+  "type": "media",
+  "published": "2014-07-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Describes the Dagger Complex in Griesheim near Darmstadt as a US base and the largest and most important NSA outpost in Europe, with aerial images.",
+  "note": "2014; the NSA role is reported, not officially confirmed.",
+  "bases": [
+   "darmstadt-griesheim-dagger-complex"
+  ]
+ },
+ {
+  "url": "https://bundeswehr.de/resource/blob/5487564/9d5ff6629e39e83cff51434605eaee04/datenblatt-bergen-zum-download-data.pdf",
+  "title": "Truppenübungsplatz Bergen – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Bergen training area (history, facilities), including its earlier use by Dutch forces.",
+  "note": "German-run training area used by allied forces under the NATO Status of Forces arrangements; no permanently stationed foreign force named. Date from the PDF metadata.",
+  "bases": [
+   "bergen-training-area"
+  ]
+ },
+ {
+  "url": "https://www.bundeswehr.de/resource/blob/5487572/e2245cf4f7765ff57372f02598fc82d8/download-datenblatt-munster-nord-data.pdf",
+  "title": "Truppenübungsplatz Munster-Nord – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Munster-Nord training area (10,200 ha, training area command Munster).",
+  "note": "German training area; date from the PDF metadata.",
+  "bases": [
+   "munster-training-area"
+  ]
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/meldungen/nachgefragt-truppenuebungsplaetze-bundeswehr-5784748",
+  "title": "„Nachgefragt“ zu Truppenübungsplätzen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-05-24",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The Bundeswehr explains its training areas; at Bergen, Oberlausitz and Munster the focus is live firing by armoured forces.",
+  "bases": [
+   "oberlausitz-training-area"
+  ]
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/organisation/marine/aktuelles/commander-task-force-baltic-aufgestellt-5848288",
+  "title": "Bundeswehr mit Führungsrolle bei Commander Task Force Baltic",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-10-21",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "context",
+  "summary": "The German Navy set up the multinational staff Commander Task Force Baltic in Rostock in October 2024.",
+  "note": "The staff is located at the naval command in Rostock (Hanse-Kaserne), not at Hohe Düne naval base; it confirms a German-led multinational naval presence in Rostock.",
+  "bases": [
+   "marinestutzpunkt-hohe-dune-rostock"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/187887/landstuhl_satcom_facility_cuts_ribbon_on_new_building",
+  "title": "Landstuhl SATCOM facility cuts ribbon on new building",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-05-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "New headquarters and operations building for the Enterprise SATCOM Gateway Landstuhl (2017) – the largest Army-operated satellite communications facility outside the continental US.",
+  "bases": [
+   "satcom-landstuhl"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/image/8052833/18-cssb-tests-capabilities-brings-fuel-spangdahlem",
+  "title": "18 CSSB Tests Capabilities, Brings Fuel to Spangdahlem",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2023-09-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Army fuel specialists drew fuel at the Central Europe Pipeline System depot in Bitburg in September 2023 to supply Spangdahlem Air Base.",
+  "note": "NATO pipeline depot used by US forces; operated within the NATO pipeline system.",
+  "bases": [
+   "nato-pipeline-station-bitburg"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/image/9117253/us-marines-sailors-with-mrf-d-253-conduct-integration-check",
+  "title": "U.S. Marines, Sailors with MRF-D 25.3 conduct an integration check",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2025-06-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Marine Corps photo from Robertson Barracks, Northern Territory (June 2025): Marines of Marine Rotational Force – Darwin 25.3 conduct an integration check.",
+  "note": "Annual six-month rotation, not a permanent US base.",
+  "bases": [
+   "robertson-barracks"
+  ]
+ },
+ {
+  "url": "https://snl.no/GLOBUS_-_radar",
+  "title": "GLOBUS – radar",
+  "publisher": "Store norske leksikon",
+  "type": "academic",
+  "published": "2025-12-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Norwegian encyclopedia describes the GLOBUS radars at the armed forces station in Vardø as Norwegian–US cooperation projects (today the Norwegian Intelligence Service and the US Space Force), operated by Norwegian personnel.",
+  "note": "Joint project operated by Norwegian staff – no permanently stationed US personnel.",
+  "bases": [
+   "globus-ii-norway"
+  ]
+ },
+ {
+  "url": "https://mia.gov.al/en/nato-tactical-air-base-in-kucova-strengthens-albanias-commitment-to-regional-peace-and-security/",
+  "title": "NATO tactical air base in Kuçova strengthens Albania's commitment to regional peace and security",
+  "publisher": "Media and Information Agency, Government of Albania",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Albanian government reports the inauguration of the revamped NATO tactical air base in Kuçova, upgraded to host Albania's helicopters and combat aircraft of NATO allies.",
+  "note": "Inaugurated in March 2024 (according to other reports; the page itself shows no date). A NATO-funded base, no permanently stationed foreign force named.",
+  "bases": [
+   "kucova-albania"
+  ]
+ },
+ {
+  "url": "https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html",
+  "title": "Heavy Airlift Wing of Pápa Reaches Full Operational Capability",
+  "publisher": "Honvédelem (Hungarian Ministry of Defence)",
+  "type": "official",
+  "published": "2012-11-26",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The multinational Heavy Airlift Wing at Pápa (three C-17s of the Strategic Airlift Capability; participants include the United States) reached full operational capability in November 2012.",
+  "note": "Multinational unit (12 nations incl. the US) – the dataset lists no stationing nation.",
+  "bases": [
+   "papa-ab-hungary"
+  ]
+ },
+ {
+  "url": "https://www.army.mil/article/193970/us_army_led_nato_battle_group_on_deterrence_mission_in_poland",
+  "title": "U.S. Army-led NATO Battle Group on deterrence mission in Poland",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-10-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army-led NATO enhanced Forward Presence battle group in Poland (about 1,200 soldiers, mainly 2nd Squadron, 2nd Cavalry Regiment) is based at Bemowo Piskie Training Area near Orzysz since April 2017.",
+  "note": "US-led multinational battle group (with UK, Romanian and Croatian contingents) on six-month rotations.",
+  "bases": [
+   "bemowo-piskie"
+  ]
+ },
+ {
+  "url": "https://notesfrompoland.com/2025/04/08/us-to-withdraw-military-from-ukraine-aid-hub-in-poland/",
+  "title": "US to withdraw military from Ukraine aid hub in Poland",
+  "publisher": "Notes From Poland",
+  "type": "media",
+  "published": "2025-04-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "US Army Europe and Africa announced in April 2025 that it would move US military personnel and equipment from Rzeszów-Jasionka, the main aid hub for Ukraine since 2022, to other sites in Poland; protection passes to Poland and NATO allies.",
+  "note": "Status: the US presence at Rzeszów was reduced in 2025; the hub itself remains active under Polish/NATO lead.",
+  "bases": [
+   "rzeszow"
+  ]
+ },
+ {
+  "url": "https://www.dvidshub.net/image/9650853/eucom-senior-enlisted-leader-visits-us-rotational-forces-lithuania",
+  "title": "EUCOM senior enlisted leader visits U.S. rotational forces in Lithuania",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "US Army photo (April 2026): visit to the US rotational forces at Camp Herkus, Pabradė Training Area, Lithuania, including newly built Lithuanian-funded barracks for US troops.",
+  "note": "Rotational US presence.",
+  "bases": [
+   "pabrades-poligonas-lithuania"
+  ]
+ },
+ {
+  "url": "https://www.marinecorpstimes.com/news/your-marine-corps/2014/08/12/marines-to-load-new-prepositioning-gear-into-norway-caves/",
+  "title": "Marines to load new prepositioning gear into Norway caves",
+  "publisher": "Marine Corps Times",
+  "type": "media",
+  "published": "2014-08-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "context",
+  "summary": "The US Marine Corps modernises the equipment stored in caves in central Norway under its prepositioning programme (2014).",
+  "note": "Marine Corps Prepositioning Program-Norway: storage sites in Trøndelag (not in Trondheim city itself); the article does not name the dataset location.",
+  "bases": [
+   "trondheim"
+  ]
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate",
+  "title": "US vacates Pakistan base amid drone debate",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2011-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The US vacated Shamsi air base in Balochistan in December 2011 after a 15-day ultimatum from Islamabad following a NATO strike that killed 24 Pakistani soldiers.",
+  "note": "Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).",
+  "bases": [
+   "shamsi-airfield-pakistan"
+  ]
+ },
+ {
+  "url": "https://www.middleeasteye.net/fr/reportages/affaire-des-drones-ou-se-cachent-les-bases-americaines-en-afrique-du-nord",
+  "title": "Affaire des drones : où se cachent les bases américaines en Afrique du Nord ?",
+  "publisher": "Middle East Eye (édition française)",
+  "type": "media",
+  "published": "2016-10-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "According to the report, AFRICOM has for several years used part of the Guelmim air base in southern Morocco for aerial surveillance.",
+  "note": "Single media report (2016); not officially confirmed. Inezgane and Boufarik are not mentioned.",
+  "bases": [
+   "guelmim-airport"
+  ]
+ }
+]

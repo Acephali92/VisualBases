@@ -1,19 +1,9 @@
-export type Kind =
-  | 'foreign'
-  | 'shared'
-  | 'national'
-  | 'usglobal'
-  | 'closed'
-  | 'civilian'
-  | 'hotspot'
-  | 'facility'
-  | 'unspecific';
+import type {
+  Activity, ClaimType, EvidenceState, Feature, IssueCode, Listing, Organisation, PresenceRole, PresenceVia,
+  Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent,
+} from './taxonomy';
 
-export type Facility =
-  | 'airfield' | 'command' | 'depot' | 'helipad' | 'laboratory' | 'missile'
-  | 'naval' | 'nuclear' | 'telecom' | 'training' | 'civilairport' | 'civilport';
-
-export type Theme = 'drones' | 'environment' | 'surveillance' | 'radar' | 'resistance' | 'un' | 'defender' | 'atlantic-resolve';
+export type { Activity, Feature, Organisation, SiteType, Status, Theme, Continent } from './taxonomy';
 
 export interface Source {
   url: string;
@@ -36,44 +26,126 @@ export interface Image {
   sourceUrl?: string;
 }
 
-export interface Base {
+/** territory of the site: sovereign state, plus the dependent territory if it has an own ISO code */
+export interface Host {
+  /** ISO 3166-1 alpha-2 of the sovereign state (plus XK for Kosovo) */
+  country: string | null;
+  /** ISO code of a dependent territory (GU, PR, GL, MQ …), see TERRITORY_SOVEREIGN */
+  territory?: string;
+}
+
+export interface Presence {
+  /** ISO alpha-2 of the state */
+  nation: string;
+  role: PresenceRole;
+  /** how the presence was derived from the source */
+  via: PresenceVia;
+}
+
+export interface Relationship {
+  type: RelationType;
+  id: string;
+}
+
+/**
+ * One record of data/bases.json – the import layer (written by scripts/import-visualbases.mjs,
+ * never edited by hand). Classification is the normalised form of the source terms in `origin.terms`.
+ */
+export interface SourceRecord {
   id: string;
   name: string;
-  /** ISO 3166 alpha-2 (plus XK for Kosovo) of the host country */
-  country: string | null;
+  altNames?: string[];
+  host: Host;
   lat: number;
   lon: number;
+  /** zoom level of the source's map link */
   zoom: number;
+  /** position geocoded by hand because the source has no map link */
   approx?: boolean;
-  /** set from data/corrections.json when the position is known to be doubtful */
+  continent: Continent | null;
+  region: string | null;
+  subregion?: string;
+  siteType: SiteType;
+  status: Status;
+  presences: Presence[];
+  organisations: Organisation[];
+  features: Feature[];
+  themes: Theme[];
+  activities: Activity[];
+  usPosture?: UsPosture;
+  listedIn: Listing[];
+  relations?: Relationship[];
+  sources: Source[];
+  wikipedia?: Record<string, string>;
+  notes: string[];
+  images?: { url: string; caption: string }[];
+  origin: {
+    url: string;
+    lastmod?: string;
+    /** marked "Review required" on visualbases.org */
+    review?: boolean;
+    /** years of update notes on visualbases.org */
+    updates?: number[];
+    /** raw WordPress categories and tags – the basis of every derived classification */
+    terms: { categories: string[]; tags: string[] };
+  };
+}
+
+/** a checked source from data/research attached to a record */
+export interface Evidence {
+  url: string;
+  title: string;
+  publisher: string;
+  type: string;
+  published?: string;
+  accessed: string;
+  supports: ClaimType[];
+  verdict: 'supports' | 'contradicts' | 'context' | 'unreviewed';
+  method: 'manual' | 'auto';
+  summary: string;
+  note?: string;
+}
+
+/** a correction from data/claims.json that was applied to the record */
+export interface Correction {
+  id: string;
+  field: string;
+  op: 'set' | 'add' | 'remove';
+  from: unknown;
+  to: unknown;
+  statement: { de: string; en: string };
+  sources: string[];
+  decided: string;
+}
+
+/** the resolved record as published in public/data/bases.json and used by the app */
+export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
+  images?: Image[];
+  presences: (Presence & { relation: Relation })[];
+  /** foreign: at least one foreign presence · overseas: only in own territories · domestic: context site */
+  scope: 'foreign' | 'overseas' | 'domestic' | 'unknown';
+  /** where each classification comes from */
+  basis: { siteType: 'source' | 'derived' | 'claim'; status: 'source' | 'implicit' | 'claim' };
+  /** period of (foreign) use, only where documented */
+  period?: { from?: string; to?: string };
   positionCheck?: {
     status: 'proposed' | 'applied';
     issue: 'duplicate-in-source' | string;
     duplicateOf?: string;
     proposal?: { lat: number; lon: number; precision: string; source: string; url: string; retrieved: string };
   };
-  kind: Kind;
-  /** aggregated "military community" (Σ) */
-  group?: boolean;
-  facilities: Facility[];
-  continent: string | null;
-  region: string | null;
-  subregion?: string;
-  /** stationing nations (ISO alpha-2) */
-  nations: string[];
-  sharedWith: string[];
-  themes: Theme[];
-  usType?: 'MOB' | 'FOB' | 'FOS' | 'CSL';
-  sourceType: string[];
-  updates?: number[];
-  review?: boolean;
-  wikipedia?: Record<string, string>;
-  related?: string[];
-  sources: Source[];
-  notes: string[];
-  images?: Image[];
-  origin: string;
-  lastmod?: string;
+  corrections?: Correction[];
+  /** proposed corrections from data/claims.json – not applied, shown as review notes */
+  proposals?: (Omit<Correction, 'from' | 'to' | 'decided'> & { value: unknown })[];
+  /** state of evidence per statement group, from the source research */
+  evidence?: Partial<Record<ClaimType, EvidenceState>>;
+  research?: Evidence[];
+  /** date of the most recent manual check of a source for this record */
+  lastChecked?: string;
+  issues?: IssueCode[];
+  /** inverse relations (computed) */
+  includes?: string[];
+  hasParts?: string[];
 }
 
 export interface Story {
@@ -105,11 +177,16 @@ export interface Movement {
 
 export interface Filters {
   q: string;
-  kinds: Kind[];
+  /** site types */
+  kinds: SiteType[];
+  status: Status[];
   nations: string[];
-  facilities: Facility[];
+  /** features: infrastructure, civilian use, functions, arrangements */
+  facilities: Feature[];
   themes: Theme[];
+  /** activity groups (atlantic-resolve, defender-europe, un-mission) and organisations (nato, eu) */
+  activities: string[];
   continents: string[];
-  /** host countries (ISO alpha-2) */
+  /** host countries or territories (ISO alpha-2) */
   countries: string[];
 }

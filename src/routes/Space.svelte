@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { t, countryName } from '../lib/i18n.svelte';
+  import { t, tl, countryName } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
-  import { flag, GROUP_COLOR, KIND_GROUP } from '../lib/taxonomy';
+  import { flag, GROUP_COLOR, colorGroup } from '../lib/taxonomy';
   import Compare from '../components/Compare.svelte';
   import type { Base, Image } from '../lib/types';
 
@@ -34,9 +34,9 @@
           <Compare {before} {after} aspect={4 / 3} />
           <div class="meta">
             <a class="name" href={href(`/base/${b.id}`)}>
-              <span class="dot" class:ring={KIND_GROUP[b.kind] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[b.kind]]}></span>{b.name}
+              <span class="dot" class:ring={colorGroup(b) === 'aggregate'} style:background={GROUP_COLOR[colorGroup(b)]}></span>{b.name}
             </a>
-            <span class="sub">{flag(b.country)} {countryName(b.country)} · {before.year} → {after.year} · {t(`kind.${b.kind}`)}</span>
+            <span class="sub">{flag(b.host.country)} {countryName(b.host.country)} · {before.year} → {after.year} · {tl('siteType', b.siteType)}</span>
           </div>
         </li>
       {/each}

@@ -1,0 +1,366 @@
+id,name,v1_country,v1_kind,v1_group,v1_nations,v1_shared_with,v1_facilities,v1_themes,v1_sources,v1_images,v1_wikipedia,v1_notes,v1_related,host_country,host_territory,site_type,status,presences,organisations,features,themes,activities,relations,sources,images,wikipedia,notes,raw_kind_terms,corrections,proposals,issues,scope
+abu-dhabi-uae-2,Abu Dhabi,AE,hotspot,yes,FR;GB;US,,,,0,1,0,1,,AE,,region-cluster,active,FR:stationing:tag;GB:stationing:tag;US:stationing:tag,,,,,,0,1,0,1,meta-site,,,,foreign
+al-dhafra-air-base,Abu Dhabi: Al Dhafra Air Base,AE,shared,,FR;US,,airfield,,1,0,2,0,,AE,,shared-base,active,FR:stationing:tag;US:stationing:tag,,airfield,,,,1,0,2,0,shared-bases,,,,foreign
+al-minhad-ab,Dubai: Al Minhad Air Base,AE,shared,,GB,,airfield;helipad;telecom,,0,0,1,0,,AE,,shared-base,active,GB:stationing:tag,,airfield;helipad;telecom-station,,,,0,0,1,0,shared-bases,,,,foreign
+bagram-air-base,Bagram Air Base,AF,closed,,US,,airfield,,0,1,2,0,,AF,,military-base,closed,US:stationing:us-posture,,airfield,,,,0,1,2,0,closed,bagram-period,,site-type-from-status,foreign
+camp-marmal-john-pratt,"Camp Marmal / John Pratt, Masar-i Sharif",AF,closed,,US,,,,0,0,1,0,,AF,,military-base,closed,US:stationing:tag,,,,,,0,0,1,0,closed,marmal-nation;marmal-period,,site-type-from-status,foreign
+camp-shaheen-camp-mike-spann,"Camp Shaheen / Camp Mike Spann, Masar-i Sharif",AF,closed,,US,,,,0,0,1,0,,AF,,military-base,closed,US:stationing:tag,,,,,,0,0,1,0,closed,,,site-type-from-status,foreign
+herat-unnamed,Herat Unnamed,AF,closed,,US,,airfield;helipad,,0,0,1,0,,AF,,military-base,closed,US:stationing:tag,,airfield;helipad,,,,0,0,1,0,closed,,,site-type-from-status,foreign
+kabul-isaf-headquarters,Kabul ISAF,AF,foreign,,US,,,,0,0,0,0,,AF,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,kabul-status;kabul-period,,,foreign
+kandahar-airfield,Kandahar Airfield,AF,closed,,US,,airfield,,0,1,2,0,,AF,,military-base,closed,US:stationing:us-posture,,airfield,,,,0,1,2,0,closed,,,site-type-from-status,foreign
+masar-i-sharif-communnity,Masar-i Sharif Communnity,AF,closed,,US,,,,0,0,1,0,,AF,,military-base,closed,US:stationing:tag,,,,,,0,0,1,0,closed,,,site-type-from-status,foreign
+durres-albania,Durres,AL,civilian,,US,,civilport,defender,0,0,0,0,,AL,,civilian-site,active,US:stationing:tag,,civil-port-use,,defender-europe-21,,0,0,0,0,civilian-location,,,,foreign
+kucova-albania,Kucova,AL,shared,,,NATO,airfield;helipad,,0,0,1,0,,AL,,shared-base,active,,nato,airfield;helipad,,,,0,0,1,0,shared-bases,,,nation-missing,unknown
+ushuaia,Isla Grande de Tierra del Fuego: Ushuaia Base Naval,AR,shared,,US,,naval,,0,0,1,1,,AR,,shared-base,active,US:stationing:tag,,naval-port,,,,0,0,1,1,shared-bases,,,,foreign
+darwin-raaf-base,Darwin RAAF Base,AU,national,,US,,airfield,surveillance,0,0,0,1,,AU,,host-base-foreign-use,active,US:stationing:tag,,airfield;signals-intelligence,,,,0,0,0,1,national-base,,,,foreign
+east-chapman-satellite-station,East Chapman Australian Defence Satellite Comm. Station,AU,shared,,US,,telecom,surveillance,0,0,0,2,,AU,,shared-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,0,2,shared-bases,,,,foreign
+ghan-joint-defence-pine-gap,"Ghan Joint Defence Facility, Pine Gap",AU,shared,,US,,telecom,surveillance,0,0,0,0,,AU,,shared-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,0,0,shared-bases,,,,foreign
+learmonth-raaf-base,Learmonth RAAF Base,AU,shared,,US,,,,0,0,0,0,,AU,,shared-base,active,US:stationing:tag,,,,,,0,0,0,0,shared-bases,,,,foreign
+naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,foreign,,US,,telecom,surveillance,0,0,1,2,,AU,,foreign-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,1,2,foreign-bases,,,,foreign
+robertson-barracks,"Robertson Barracks, Northern Territory",AU,foreign,,US,,command,,0,0,1,0,,AU,,foreign-base,active,US:stationing:tag,,command,,,,0,0,1,0,foreign-bases,,,,foreign
+tindal-raaf-base,Tindal RAAF Base,AU,national,,US,,,,0,0,1,0,,AU,,host-base-foreign-use,active,US:stationing:tag,,,,,,0,0,1,0,national-base,,,,foreign
+chievres-ab,Chievres Air Base,BE,foreign,,US,,airfield,,0,1,2,1,,BE,,foreign-base,active,US:stationing:tag,,airfield,,,,0,1,2,1,foreign-bases,,,,foreign
+kleine-brogel-air-base,Kleine Brogel Air Base,BE,foreign,,US,,airfield;nuclear,,0,1,2,1,kleine-brogel-nuclear,BE,,foreign-base,active,US:stationing:tag,,airfield;nuclear-sharing,,,,0,1,2,1,foreign-bases,,,,foreign
+kleine-brogel-nuclear,Kleine Brogel Nuclear Weapons Depot,BE,facility,,,,depot;nuclear,,0,2,0,1,kleine-brogel-air-base,BE,,special-facility,active,,,depot;nuclear-sharing,,,part-of:kleine-brogel-air-base,0,2,0,1,extra-facility,kleine-brogel-us,,,foreign
+shape-mons,"Supreme HQ Allied Powers Europe, Mons",BE,shared,,US,NATO,command;helipad,,0,1,2,1,,BE,,shared-base,active,US:stationing:bsr,nato,command;helipad,,,,0,1,2,1,shared-bases,,,,foreign
+zutendaal-ab-belgium,Zutendaal Air Base,BE,shared,,US,,airfield,,0,1,1,0,,BE,,shared-base,active,US:stationing:tag,,airfield,,,,0,1,1,0,shared-bases,,,,foreign
+ouagadougou,Ouagadougou,BF,national,,US,,civilairport,,0,0,0,0,,BF,,host-base-foreign-use,active,US:stationing:tag,,civil-airport-use,,,,0,0,0,0,national-base,,,,foreign
+aitos-bulgaria,Aitos Logistic Center,BG,shared,,US,,depot,defender,0,0,0,1,,BG,,shared-base,active,US:stationing:us-posture,,depot,,defender-europe-21,,0,0,0,1,shared-bases;unspecific,,,,foreign
+bezmer-air-base,Bezmer Air Base,BG,shared,,US,,airfield,defender,0,0,2,0,,BG,,shared-base,active,US:stationing:us-posture,,airfield,,defender-europe-21,,0,0,2,0,shared-bases,,,,foreign
+graf-ignatievo-ab-bulgaria,Graf Ignatievo Air Base,BG,shared,,US,,airfield,defender,0,0,2,0,,BG,,shared-base,active,US:stationing:us-posture,,airfield,,defender-europe-21,,0,0,2,0,shared-bases,,,,foreign
+novo-selo,Novo Selo,BG,foreign,,US,,airfield,defender,0,0,0,2,,BG,,foreign-base,active,US:stationing:bsr,,airfield,,defender-europe-21,,0,0,0,2,foreign-bases,,,,foreign
+bahrain,Bahrain,BH,hotspot,yes,US,,,,2,1,2,0,,BH,,region-cluster,active,US:stationing:tag,,,,,,2,1,2,0,meta-site,,,,foreign
+nsa-coast-guard-bahrain,"Naval Support Activity, US Coast Guard",BH,foreign,,US,,naval,,0,0,1,3,bahrain,BH,,foreign-base,active,US:stationing:tag,,naval-port,,,member-of:bahrain,0,0,1,3,foreign-bases,,,,foreign
+shaikh-isa-air-base-bahrain,Shaikh Isa Air Base,BH,foreign,,US,,airfield,,0,0,1,1,bahrain,BH,,foreign-base,active,US:stationing:tag,,airfield,,,member-of:bahrain,0,0,1,1,foreign-bases,,,,foreign
+bujumbura-burundi,Bujumbura (Burundi),BI,shared,,FR;US,,civilairport,,0,0,1,0,,BI,,shared-base,active,FR:stationing:tag;US:stationing:tag,,civil-airport-use,,,,0,0,1,0,shared-bases,,,,foreign
+bfb-garrison-seria,Seria: BFB Garrison,BN,foreign,,GB,,command,,0,0,1,0,,BN,,foreign-base,active,GB:stationing:tag,,command,,,,0,0,1,0,foreign-bases,,,,foreign
+autec-bahamas,AUTEC Laboratory,BS,foreign,,US,,helipad;laboratory;civilairport,,0,0,1,2,,BS,,foreign-base,active,US:stationing:tag,,helipad;laboratory;civil-airport-use,,,,0,0,1,2,foreign-bases,,,,foreign
+bdf-glen-valley-botswana,Glen Valley Gaborone (Botswana),BW,national,,,,,,0,0,1,0,,BW,,host-base-foreign-use,active,,,,,,,0,0,1,0,national-base,,,nation-missing,unknown
+nas-argentia-newfoundland,Naval Air Station Argentia Newfoundland,CA,closed,,US,,airfield,,0,0,1,1,,CA,,military-base,closed,US:stationing:tag,,airfield,,,,0,0,1,1,closed,,,site-type-from-status;review-on-origin,foreign
+air-force-301-cameroon,Air Force Base 301,CM,shared,,US,,airfield,,0,0,1,1,,CM,,shared-base,active,US:stationing:tag,,airfield,,,,0,0,1,1,shared-bases,,,,foreign
+salak-cameroon,Salak,CM,foreign,,FR;US,,civilairport,,0,0,0,1,,CM,,foreign-base,active,FR:stationing:tag;US:stationing:tag,,civil-airport-use,,,,0,0,0,1,foreign-bases,,,,foreign
+pratas-islands-south-china-sea,"South China Sea, Pratas-Islands",CN,foreign,,CN,,,,0,0,2,0,,CN,,foreign-base,active,CN:stationing:tag,,,,,,0,0,2,0,foreign-bases,,,foreign-without-foreign-presence,domestic
+money-island-south-chinese-sea,"South Chinese Sea, Money Island",CN,foreign,,CN,,,,0,0,1,0,,CN,,foreign-base,active,CN:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,foreign-without-foreign-presence,domestic
+pattle-island,"South Chinese Sea, Pattle Island",CN,foreign,,CN,,,,0,0,0,0,,CN,,foreign-base,active,CN:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,foreign-without-foreign-presence,domestic
+apiay-ab,Apiay Air Base,CO,shared,,US,,airfield,,0,0,1,0,,CO,,shared-base,active,US:stationing:us-posture,,airfield,,,,0,0,1,0,shared-bases,,,,foreign
+arauca,Arauca,CO,unspecific,,US,,,,0,0,2,1,,CO,,unspecified,active,US:stationing:us-posture,,,,,,0,0,2,1,unspecific,,,,foreign
+cartagena,Cartagena,CO,unspecific,,US,,,,0,0,2,1,,CO,,unspecified,active,US:stationing:us-posture,,,,,,0,0,2,1,unspecific,,,review-on-origin,foreign
+bahia-malaga,Ladriller: Base militar Bahía Málaga,CO,shared,,US,,naval,,0,0,1,0,,CO,,shared-base,active,US:stationing:us-posture,,naval-port,,,,0,0,1,0,shared-bases,,,,foreign
+fuerte-militar-larandia,Larandia: Fuerte Militar,CO,shared,,US,,airfield,,0,0,1,0,,CO,,shared-base,active,US:stationing:us-posture,,airfield,,,,0,0,1,0,shared-bases,,,,foreign
+malambo-ab,Malambo: Comando Aereo de Combate No. 3,CO,shared,,US,,airfield,,0,0,1,1,,CO,,shared-base,active,US:stationing:us-posture,,airfield,,,,0,0,1,1,shared-bases,,,,foreign
+palanquero-ab,Palanquero Air Base,CO,shared,,US,,airfield,,0,0,1,1,,CO,,shared-base,active,US:stationing:us-posture,,airfield,,,,0,0,1,1,shared-bases,,,,foreign
+fuerte-militar-tolemaida,Tolemaida: Fuerte Militar,CO,shared,,US,,airfield,,0,0,2,0,,CO,,shared-base,active,US:stationing:us-posture,,airfield,,,,0,0,2,0,shared-bases,,,,foreign
+guantanamo-bay-naval-base,Guantanamo Bay Naval Base,CU,foreign,,US,,airfield,resistance,1,1,2,1,,CU,,foreign-base,active,US:stationing:tag,,airfield,resistance,,,1,1,2,1,foreign-bases,,,,foreign
+gitmo-guantanamo-bay,The U.S. Military Base in Cuba: „GITMO“ Guantánamo Bay,CU,unspecific,,,,,,0,3,0,22,,CU,,unspecified,active,,,,,,,0,3,0,22,,gitmo-us,,no-site-type,foreign
+telecom-cape-verde,Cap Verde: Unnamed Telecommunications Station,CV,foreign,,US,,telecom,surveillance,0,0,1,1,,CV,,foreign-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,1,1,foreign-bases,,,review-on-origin,foreign
+ayios-nikolaos-station,Ayios Nikolaos Station,CY,foreign,,GB,,telecom,surveillance,1,0,1,0,,CY,,foreign-base,active,GB:stationing:tag,,telecom-station;signals-intelligence,,,,1,0,1,0,foreign-bases,,,,foreign
+dhekelia-military-camp,Dhekelia Military Camp,CY,foreign,,GB,,airfield,,0,0,1,0,,CY,,foreign-base,active,GB:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+raf-akrotiri,RAF Akrotiri,CY,foreign,,GB,,airfield,,0,0,1,0,,CY,,foreign-base,active,GB:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,akrotiri-us,,,foreign
+raf-troodos,RAF Troodos,CY,foreign,,GB,,helipad;telecom,surveillance,0,0,1,0,,CY,,foreign-base,active,GB:stationing:tag,,helipad;telecom-station;signals-intelligence,,,,0,0,1,0,foreign-bases,,,,foreign
+altmark-training-area,Altmark: Truppenübungsplatz,DE,national,,,NATO,training,resistance,1,3,1,3,,DE,,host-base-foreign-use,active,,nato,training-area,resistance,,,1,3,1,3,national-base,,,nation-missing,unknown
+freihoelser-training-area-amberg,Amberg: Freihoelser Training Area,DE,shared,,US,,training,,0,0,0,0,,DE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+barton-barracks-ansbach,Ansbach: Barton Barracks,DE,foreign,,US,,,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,1,foreign-bases,,,,foreign
+bismarck-kaserne-ansbach,Ansbach: Bismarck-Kaserne,DE,foreign,,US,,,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+katterbach-kaserne-ansbach,Ansbach: Katterbach Kaserne,DE,foreign,,US,,helipad,resistance;environment,1,2,2,1,,DE,,foreign-base,active,US:stationing:tag,,helipad,resistance;environment,,,1,2,2,1,foreign-bases,,,,foreign
+shipton-kaserne-ansbach,Ansbach: Shipton Kaserne,DE,foreign,,US,,,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+baumholder-army-health-clinic,Baumholder Army Health Clinic,DE,foreign,,US,,,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,,,,member-of:baumholder-community,0,0,0,1,foreign-bases,,,,foreign
+baumholder-community,Baumholder Military Community,DE,hotspot,yes,US,,,,0,1,2,2,baumholder-army-health-clinic;smith-barracks-baumholder;walter-wetzel-kaserne-baumholder;baumholder-training-area,DE,,garrison,active,US:stationing:tag,,,,,,0,1,2,2,meta-site,,,,foreign
+baumholder-training-area,Baumholder Training Area,DE,shared,,US,,helipad;training,,1,0,2,1,,DE,,shared-base,active,US:stationing:tag,,helipad;training-area,,,member-of:baumholder-community,1,0,2,1,shared-bases,,,,foreign
+ausenfeuerstellung-205-baumholder,Baumholder: Außenfeuerstellung 205,DE,foreign,,US,,telecom,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,0,1,foreign-bases,,,,foreign
+smith-barracks-baumholder,Baumholder: Smith Barracks,DE,foreign,,US,,,,0,0,1,0,,DE,,foreign-base,active,US:stationing:tag,,,,,member-of:baumholder-community,0,0,1,0,foreign-bases,,,,foreign
+walter-wetzel-kaserne-baumholder,Baumholder: Walter Wetzel Kaserne,DE,foreign,,US,,,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,,,,member-of:baumholder-community,0,0,0,0,foreign-bases,,,,foreign
+deu-bellheim,Bellheim: NATO fuel depot,DE,foreign,,,NATO,depot;telecom,,1,0,2,0,,DE,,foreign-base,active,,nato,depot;telecom-station,,,,1,0,2,0,foreign-bases;shared-bases,,,multiple-site-types;nation-missing,unknown
+bergen-training-area,Bergen Training Area,DE,national,,,,training,defender,0,1,2,0,,DE,,host-base-foreign-use,active,,,training-area,,defender-europe-20,,0,1,2,0,national-base,,,nation-missing,unknown
+conversion-area-bitburg,Bitburg: Conversion area / former Air Base,DE,closed,,US,,airfield,,0,0,2,0,,DE,,military-base,closed,US:stationing:tag,,airfield,,,,0,0,2,0,closed,,,site-type-from-status,foreign
+nato-pipeline-station-bitburg,Bitburg: NATO-Pipeline Fuel Depot,DE,shared,,,NATO,depot,,0,1,1,1,,DE,,shared-base,active,,nato,depot,,,,0,1,1,1,shared-bases,,,nation-missing,unknown
+bremerhaven,Bremerhaven: Transport Company,DE,foreign,,US,,naval,,1,2,0,1,,DE,,foreign-base,active,US:stationing:tag,,naval-port,,,,1,2,0,1,foreign-bases,,,,foreign
+bruchmuhlbach-miesau-us-army-depot,Bruchmühlbach-Miesau US Army Depot,DE,foreign,,US,,depot,,0,1,1,2,kaiserslautern-ramstein-community,DE,,foreign-base,active,US:stationing:tag,,depot,,,member-of:kaiserslautern-ramstein-community,0,1,1,2,foreign-bases,,,,foreign
+buechel-nato-air-base,Büchel NATO Air Base,DE,shared,,US,,airfield;nuclear,resistance,1,2,2,0,,DE,,shared-base,active,US:stationing:tag,,airfield;nuclear-sharing,resistance,,,1,2,2,0,shared-bases,,,,foreign
+darmstadt-training-center,Darmstadt Training Center,DE,closed,,US,,,,1,0,0,1,,DE,,military-base,closed,US:stationing:bsr,,,,,,1,0,0,1,closed,,,site-type-from-status,foreign
+darmstadt-griesheim-dagger-complex,Darmstadt-Griesheim: Dagger Complex,DE,foreign,,US,,telecom,surveillance,0,0,2,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,2,0,foreign-bases,,,,foreign
+dulmen-tower-barracks,Dülmen: Tower Barracks,DE,foreign,,US,,depot,resistance;environment,1,0,1,1,,DE,,foreign-base,active,US:stationing:tag,,depot,resistance;environment,,,1,0,1,1,foreign-bases,,,,foreign
+artillery-kaserne-garmisch-partenkirchen,Garmisch-Partenkirchen: Artillery Kaserne,DE,foreign,,US,,,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,1,foreign-bases,,,,foreign
+geilenkirchen-nato-air-base,Geilenkirchen NATO Air Base,DE,shared,,US,,airfield;telecom,surveillance,0,0,2,0,,DE,,shared-base,active,US:stationing:tag,,airfield;telecom-station;signals-intelligence,,,,0,0,2,0,shared-bases,,,,foreign
+germersheim-us-army-depot,Germersheim US Army Depot,DE,foreign,,US,,,resistance;environment,1,1,0,2,,DE,,foreign-base,active,US:stationing:tag,,,resistance;environment,,,1,1,0,2,foreign-bases,,,,foreign
+grafenwoehr-training-area,Grafenwöhr Training Area,DE,foreign,,US,,helipad;training,environment,1,1,2,6,,DE,,foreign-base,active,US:stationing:tag,,helipad;training-area,environment,,,1,1,2,6,foreign-bases,,,,foreign
+gruenstadt-aafes-fac,Gruenstadt AAFES Fac,DE,foreign,,US,,telecom,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,0,0,foreign-bases,,,,foreign
+frankfurt-hahn,"Hahn Airport, Hunsrück",DE,civilian,,US,,civilairport,resistance,2,1,2,8,,DE,,civilian-site,active,US:stationing:us-posture,,civil-airport-use,resistance,,,2,1,2,8,civilian-location,,,,foreign
+hohenfels-training-area,Hohenfels Training Area,DE,foreign,,US,,training,,0,1,2,0,,DE,,foreign-base,active,US:stationing:tag,,training-area,,,,0,1,2,0,foreign-bases,,,,foreign
+oberdachstetten-training-area,Illesheim: Oberdachstetten Training Area,DE,shared,,US,,training,,0,0,0,0,,DE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+stock-barracks-illesheim,Illesheim: Stock Barracks,DE,foreign,,US,,helipad,,0,0,1,0,,DE,,foreign-base,active,US:stationing:tag,,helipad,,,,0,0,1,0,foreign-bases,,,,foreign
+eichbuck-illesheim,Illesheim: Unnamed Telecommunication Eichbuck,DE,foreign,,US,,telecom,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,0,1,foreign-bases,,,,foreign
+mccully-barracks-wackernheim,Ingelheim: McCully Barracks Wackernheim,DE,foreign,,US,,training,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,training-area,,,member-of:wiesbaden-military-community,0,0,0,1,foreign-bases,,,,foreign
+kaiserslautern-army-depot,Kaiserslautern Army Depot,DE,foreign,,US,,,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+de-kl-warrior-preparation-center,Kaiserslautern-Einsiedlehof: Warrior Preparation Center,DE,facility,,US,,depot,,0,0,0,1,ramstein-air-base,DE,,special-facility,active,US:stationing:tag,,depot,,,part-of:ramstein-air-base,0,0,0,1,extra-facility,,,,foreign
+warrior-preparation-center-einsiedlerhof,Kaiserslautern-Einsiedlerhof: Warrior Preparation Center,DE,foreign,,US,,,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,1,foreign-bases,,,,foreign
+kapaun-air-station-kaiserslautern,Kaiserslautern-Vogelweh: Kapaun Air Station,DE,foreign,,US,,telecom,,0,0,0,4,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,0,4,foreign-bases,,,,foreign
+daenner-kaserne,Kaiserslautern: Daenner Kaserne,DE,foreign,,US,,,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,1,foreign-bases,,,,foreign
+kleber-kaserne-kaiserslautern,Kaiserslautern: Kleber Kaserne,DE,foreign,,US,,,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+panzer-kaserne-kaiserslautern,Kaiserslautern: Panzer Kaserne,DE,foreign,,US,,,,0,0,0,2,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,2,foreign-bases,,,,foreign
+pulaski-barracks-kaiserslautern,Kaiserslautern: Pulaski Barracks,DE,foreign,,US,,training,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,training-area,,,,0,0,0,1,foreign-bases,,,,foreign
+rhine-ordnance-barracks-vogelweh,Kaiserslautern: Rhine Ordnance Barracks Vogelweh,DE,foreign,,US,,training,,0,0,0,1,,DE,,foreign-base,active,US:stationing:tag,,training-area,,,,0,0,0,1,foreign-bases,,,,foreign
+kalkar-von-seydlitz-kaserne,Kalkar: von-Seydlitz-Kaserne,DE,shared,,,,command,resistance,3,1,0,1,,DE,,shared-base,active,,,command,resistance,,,3,1,0,1,shared-bases,,,nation-missing,unknown
+tirpitzhafen-kiel,Kiel – Eckernförde,DE,hotspot,yes,,NATO,command;naval,,0,1,2,0,,DE,,region-cluster,active,,nato,command;naval-port,,,,0,1,2,0,meta-site,,,,unknown
+bann-communications-station,Landstuhl: Bann Communications Station,DE,foreign,,US,,telecom,,0,0,2,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,2,0,foreign-bases,,,,foreign
+bann-communications-station-2,Landstuhl: Bann Communications Station 2,DE,foreign,,US,,telecom,,0,0,2,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,2,0,foreign-bases,,,,foreign
+satcom-landstuhl,Landstuhl: Enterprise SATCOM Gateway,DE,foreign,,US,,telecom,,0,1,1,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,1,1,0,foreign-bases;us-global,,,multiple-site-types,foreign
+landstuhl-us-hospital,Landstuhl: US-Hospital,DE,foreign,,US,,helipad,,0,0,2,2,kaiserslautern-ramstein-community,DE,,foreign-base,active,US:stationing:tag,,helipad,,,member-of:kaiserslautern-ramstein-community,0,0,2,2,foreign-bases,,,,foreign
+egelsbach-transmitter-fac,Langen: Egelsbach Transmitter Fac,DE,foreign,,US,,telecom,,0,1,1,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,member-of:wiesbaden-military-community,0,1,1,0,foreign-bases,,,,foreign
+airport-leipzig-halle,Leipzig / Halle Airport,DE,civilian,,US,,airfield,resistance,1,0,1,0,,DE,,civilian-site,active,US:stationing:us-posture,,airfield,resistance,,,1,0,1,0,civilian-location,,,,foreign
+coleman-barracks-mannheim,Mannheim: Coleman Worksite,DE,foreign,,US,,depot,defender,1,1,2,2,,DE,,foreign-base,active,US:stationing:tag,,depot,,defender-europe-20,,1,1,2,2,foreign-bases,,,,foreign
+munster-training-area,Munster training area,DE,national,,,,training,defender,0,1,2,0,,DE,,host-base-foreign-use,active,,,training-area,,defender-europe-20,,0,1,2,0,national-base,,,nation-missing,unknown
+oberauerbach-polygone,Oberauerbach: Communication Site Polygone,DE,shared,,US,,telecom,,0,0,1,0,,DE,,shared-base,active,US:stationing:tag,,telecom-station,,,,0,0,1,0,shared-bases,,,,foreign
+oberlausitz-training-area,Oberlausitz Training Area,DE,national,,,,training,defender,0,1,1,0,,DE,,host-base-foreign-use,active,,,training-area,,defender-europe-20,,0,1,1,0,national-base,,,nation-missing,unknown
+husterhoeh-polygone,Pirmasens: Husterhoeh Communication Site,DE,foreign,,US,,telecom,,0,0,1,0,,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,1,0,foreign-bases,,,,foreign
+medical-material-center-europe,Pirmasens: US Army Medical Material Center Europe,DE,foreign,,US,,,,0,0,1,0,,DE,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,usammce-status;usammce-period,,,foreign
+hospital-weilerbach,Ramstein / Weilerbach Rhine Ordnance Medical Center,DE,facility,,US,,,,0,1,1,1,ramstein-air-base,DE,,special-facility,active,US:stationing:tag,,,,,part-of:ramstein-air-base,0,1,1,1,extra-facility,,,,foreign
+ramstein-air-base,Ramstein Air Base,DE,foreign,,US,,airfield;command;missile;telecom,resistance;drones;environment,3,6,2,5,kaiserslautern-ramstein-community;satellite-ground-system-ramstein;aircom,DE,,foreign-base,active,US:stationing:bsr,,airfield;command;missile-defence;telecom-station,resistance;drone-warfare;environment,,member-of:kaiserslautern-ramstein-community,3,6,2,5,foreign-bases,,,,foreign
+satellite-ground-system-ramstein,Ramstein: Distributed Command Ground System,DE,facility,,US,,telecom,drones,0,2,1,1,ramstein-air-base,DE,,special-facility,active,US:stationing:tag,,telecom-station,drone-warfare,,part-of:ramstein-air-base,0,2,1,1,extra-facility,,,,foreign
+aircom,Ramstein: EIAMDC European Integrated Air and Missile Defence Center,DE,facility,,US,,missile;telecom,,1,0,2,1,ramstein-air-base,DE,,special-facility,active,US:stationing:tag,,missile-defence;telecom-station,,,part-of:ramstein-air-base,1,0,2,1,extra-facility,,,,foreign
+marinestutzpunkt-hohe-dune-rostock,Rostock: Marinestützpunkt Hohe Düne,DE,shared,,,NATO,command;naval,,0,0,1,1,,DE,,shared-base,active,,nato,command;naval-port,,,,0,0,1,1,shared-bases,,,nation-missing;review-on-origin,unknown
+radio-relay-site-rummelsberg,Rummelsberg: Radio Relay Site,DE,foreign,,US,,telecom,,0,0,0,1,kaiserslautern-ramstein-community,DE,,foreign-base,active,US:stationing:tag,,telecom-station,,,member-of:kaiserslautern-ramstein-community,0,0,0,1,foreign-bases,,,,foreign
+sembach-kaserne,Sembach Kaserne,DE,foreign,,US,,,,0,0,1,2,kaiserslautern-ramstein-community,DE,,foreign-base,active,US:stationing:tag,,,,,member-of:kaiserslautern-ramstein-community,0,0,1,2,foreign-bases,,,,foreign
+spangdahlem-air-base,Spangdahlem Air Base,DE,foreign,,US,,airfield,environment,1,0,2,3,,DE,,foreign-base,active,US:stationing:tag,,airfield,environment,,,1,0,2,3,foreign-bases,,,,foreign
+echterdingen-airfield,Stuttgart: Echterdingen Airfield,DE,foreign,,US,,civilairport,,0,0,0,0,,DE,,foreign-base,active,US:stationing:tag,,civil-airport-use,,,member-of:u-s-army-garrison-stuttgart,0,0,0,0,foreign-bases,,,,foreign
+kelley-barracks-stuttgart,Stuttgart: Kelley Barracks,DE,foreign,,US,,command,resistance,3,0,2,1,,DE,,foreign-base,active,US:stationing:tag,,command,resistance,,member-of:u-s-army-garrison-stuttgart,3,0,2,1,foreign-bases,,,,foreign
+boblingen-panzerkaserne,Stuttgart: Panzerkaserne Böblingen,DE,foreign,,US,,,resistance,1,0,2,1,,DE,,foreign-base,active,US:stationing:tag,,,resistance,,member-of:u-s-army-garrison-stuttgart,1,0,2,1,foreign-bases,,,,foreign
+patch-barracks-stuttgart,Stuttgart: Patch Barracks,DE,foreign,,US,,command,,1,0,2,1,,DE,,foreign-base,active,US:stationing:tag,,command,,,member-of:u-s-army-garrison-stuttgart,1,0,2,1,foreign-bases,,,,foreign
+robinson-barracks-stuttgart,Stuttgart: Robinson Barracks,DE,foreign,,US,,,,0,0,1,0,,DE,,foreign-base,active,US:stationing:tag,,,,,member-of:u-s-army-garrison-stuttgart,0,0,1,0,foreign-bases,,,,foreign
+usag-ansbach,U.S. Army Garrison Ansbach,DE,hotspot,yes,US,,,,1,1,0,0,,DE,,garrison,active,US:stationing:tag,,,,,,1,1,0,0,meta-site,,,,foreign
+kaiserslautern-ramstein-community,U.S. Army Garrison Rheinland-Pfalz Kaiserslautern,DE,hotspot,yes,US,,,,4,1,2,1,,DE,,garrison,active,US:stationing:tag,,,,,,4,1,2,1,meta-site,,,,foreign
+u-s-army-garrison-stuttgart,U.S. Army Garrison Stuttgart,DE,hotspot,yes,US,,,,4,1,0,2,boblingen-panzerkaserne;kelley-barracks-stuttgart;patch-barracks-stuttgart;robinson-barracks-stuttgart;echterdingen-airfield,DE,,garrison,active,US:stationing:tag,,,,,,4,1,0,2,meta-site,,,,foreign
+wiesbaden-military-community,U.S. Army Garrison Wiesbaden,DE,hotspot,yes,US,,,,1,1,0,2,wiesbaden-erbenheim-army-airfield;mccully-barracks-wackernheim;egelsbach-transmitter-fac,DE,,garrison,active,US:stationing:tag,,,,,,1,1,0,2,meta-site,,,,foreign
+wilhelmsburg-barracks-ulm,Ulm: Wilhelmsburg Barracks,DE,shared,,,NATO,command,,0,0,1,0,,DE,,shared-base,active,,nato,command,,,,0,0,1,0,shared-bases,,,nation-missing,unknown
+usag-bavaria,USAG Bavaria – Grafenwoehr/Vilseck Community,DE,hotspot,yes,US,,,,2,1,0,0,,DE,,garrison,active,US:stationing:tag,,,,,,2,1,0,0,meta-site,,,,foreign
+sennelager,"Westfalen Garrison / Training Area, Paderborn-Sennelager",DE,foreign,,GB,,training,,1,0,1,0,,DE,,foreign-base,active,GB:stationing:tag,,training-area,,,,1,0,1,0,foreign-bases;national-base,,,multiple-site-types,foreign
+deu-wiesbaden-mainz-kastel,Wiesbaden Mainz-Kastel Storage Station,DE,foreign,,US,,command,,1,0,2,1,,DE,,foreign-base,active,US:stationing:tag,,command,,,,1,0,2,1,foreign-bases,,,,foreign
+wiesbaden-erbenheim-army-airfield,Wiesbaden: Lucius D. Clay Kaserne (Army Airfield Erbenheim),DE,foreign,,US,,command;helipad,resistance;environment,2,2,2,6,,DE,,foreign-base,active,US:stationing:tag,,command;helipad,resistance;environment,,member-of:wiesbaden-military-community,2,2,2,6,foreign-bases,,,,foreign
+base-aerienne-188-djibouti,Base aérienne 188 Colonel Émile Massart,DJ,foreign,,US,,civilairport,,0,0,0,0,,DJ,,foreign-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,0,0,foreign-bases,ba188-nation,,,foreign
+base-aerienne-de-chabelley,Base Aerienne de Chabelley,DJ,foreign,,FR;US,,airfield,drones,0,1,2,0,,DJ,,foreign-base,active,FR:stationing:tag;US:stationing:tag,,airfield,drone-warfare,,,0,1,2,0,foreign-bases,,,,foreign
+us-camp-lemonnier,Camp Lemonnier,DJ,foreign,,US,,civilairport,,0,2,1,0,,DJ,,foreign-base,active,US:stationing:bsr,,civil-airport-use,,,,0,2,1,0,foreign-bases,,,,foreign
+chinese-naval-base,Chinese Naval Base,DJ,foreign,,CN,,helipad;naval,,0,0,1,0,,DJ,,foreign-base,active,CN:stationing:tag,,helipad;naval-port,,,,0,0,1,0,foreign-bases,,,,foreign
+armed-forces-djibouti,Djibouti / Dschibuti,DJ,hotspot,yes,CN;FR;JP;US,IT,civilairport;civilport,resistance,1,2,1,1,,DJ,,region-cluster,active,CN:stationing:tag;FR:stationing:tag;JP:stationing:tag;US:stationing:tag;IT:co-user:tag,,civil-airport-use;civil-port-use,resistance,,,1,2,1,1,meta-site,,,,foreign
+jsdf-base-djibouti,Japan Self-Defense Force Base,DJ,foreign,,JP,,civilairport,,0,0,1,0,,DJ,,foreign-base,active,JP:stationing:tag,,civil-airport-use,,,,0,0,1,0,foreign-bases,,,,foreign
+boufarik-base,Boufarik Military Base (Algeria),DZ,national,,US,,airfield,,0,0,1,0,,DZ,,host-base-foreign-use,active,US:stationing:us-posture,,airfield,,,,0,0,1,0,national-base,,,review-on-origin,foreign
+amari-air-base,Ämari Air Base,EE,shared,,US,NATO,airfield,,0,0,2,1,,EE,,shared-base,active,US:stationing:tag,nato,airfield,,,,0,0,2,1,shared-bases,,,,foreign
+nurmsi-airfield-estonia,Nurmsi Airfield (Estonia / Estland),EE,shared,,US,,airfield,defender,0,0,1,0,,EE,,shared-base,active,US:stationing:tag,,airfield,,defender-europe-20,,0,0,1,0,shared-bases,,,,foreign
+taara-estonia,Taara / Võru (Estonia / Estland),EE,shared,,US,,training,,1,0,1,1,,EE,,shared-base,active,US:stationing:tag,,training-area,,,,1,0,1,1,shared-bases,,,,foreign
+tapa-army-base,Tapa Army Base,EE,shared,,GB;US,,airfield,atlantic-resolve;defender,0,0,2,0,,EE,,shared-base,active,GB:stationing:tag;US:stationing:tag,,airfield,,atlantic-resolve;defender-europe-20,,0,0,2,0,shared-bases,,tapa-status,,foreign
+tapa-training-area,Tapa Training Area,EE,shared,,GB;US,,training,atlantic-resolve;defender,0,0,1,0,,EE,,shared-base,active,GB:stationing:tag;US:stationing:tag,,training-area,,atlantic-resolve;defender-europe-20,,0,0,1,0,shared-bases,,,,foreign
+cairo-west-ab,Cairo West Air Base,EG,national,,US,,airfield,,1,0,1,1,,EG,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,1,0,1,1,national-base,,,,foreign
+moron-air-base-spain,"Moron Air Base, Andalusia",ES,foreign,,US,,airfield,,0,0,1,0,,ES,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+naval-station-rota,Naval Station Rota,ES,foreign,,US,,airfield;helipad;missile;naval,resistance,0,1,2,2,,ES,,foreign-base,active,US:stationing:tag,,airfield;helipad;missile-defence;naval-port,resistance,,,0,1,2,2,foreign-bases,,,,foreign
+base-aerienne190,Base aèrienne190 (Tahiti),FR,foreign,,FR,,civilairport,,0,0,0,0,,FR,PF,overseas-base,active,FR:stationing:tag,,civil-airport-use,,,,0,0,0,0,foreign-bases,,,,overseas
+reunion-ab,Caserne Dupuis Reunion,FR,foreign,,FR,,civilairport,,0,0,0,0,,FR,RE,overseas-base,active,FR:stationing:tag,,civil-airport-use,,,,0,0,0,0,foreign-bases,,,,overseas
+camp-dugommier-rsma,Guadeloupe: Camp Dugommier / RSMA,FR,foreign,,FR,,,,0,0,0,0,,FR,GP,overseas-base,active,FR:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,overseas
+base-nautique-de-stoupan,Guayana: Base nautique de Stoupan,FR,foreign,,FR,,naval,,0,0,0,0,,FR,GF,overseas-base,active,FR:stationing:tag,,naval-port,,,,0,0,0,0,foreign-bases,,,,overseas
+camp-ayanganna,Guayana: Camp Ayanganna,FR,foreign,,FR,,,,0,0,0,0,,FR,GF,overseas-base,active,FR:stationing:tag,,,,,,0,0,0,0,foreign-bases,ayanganna-host;ayanganna-region;ayanganna-nation;ayanganna-type,,nation-missing;out-of-scope-candidate,unknown
+martinique-france,Martinique,FR,hotspot,yes,FR,,,,0,1,1,1,,FR,MQ,region-cluster,active,FR:stationing:tag,,,,,,0,1,1,1,meta-site,,,,overseas
+naval-base-fort-saint-louis,"Martinique, Naval Base Fort Saint Louis",FR,foreign,,FR,,,,0,0,2,1,,FR,MQ,overseas-base,active,FR:stationing:tag,,,,,,0,0,2,1,foreign-bases,,,,overseas
+pole-aeronautique-etatique,Martinique: Pôle Aéronautique Etatique du Lamentin,FR,foreign,,FR,,civilairport,,0,0,1,1,,FR,MQ,overseas-base,active,FR:stationing:tag,,civil-airport-use,,,,0,0,1,1,foreign-bases,,,,overseas
+rsma-nc,"New Caledonia, Koumac: RSMA-NC Adapted Military Service Regiment,",FR,foreign,,FR,,,,0,0,0,0,,FR,NC,overseas-base,active,FR:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,overseas
+pae-du-lamentin-guadeloupe,"PAE du Lamentin, Guadeloupe",FR,foreign,,FR,,helipad;civilairport,,0,0,1,0,,FR,GP,overseas-base,active,FR:stationing:tag,,helipad;civil-airport-use,,,,0,0,1,0,foreign-bases,,lamentin-territory,,overseas
+reunion,Reunion / Saint Denis,FR,hotspot,yes,FR,,,,0,2,1,0,,FR,RE,region-cluster,active,FR:stationing:tag,,,,,,0,2,1,0,meta-site,,,,overseas
+tahiti-french-polynesia,Tahiti,FR,hotspot,yes,FR,,,,0,1,1,0,,FR,PF,region-cluster,active,FR:stationing:tag,,,,,,0,1,1,0,meta-site,,,,overseas
+port-gentil-gabon,Port Gentil (Gabon),GA,national,,US,,naval;civilairport,,0,0,0,0,,GA,,host-base-foreign-use,active,US:stationing:tag,,naval-port;civil-airport-use,,,,0,0,0,0,national-base,,,,foreign
+raf-bicester,Bicester Airfield,GB,closed,,US,,airfield,,0,0,1,0,,GB,,military-base,closed,US:stationing:bsr,,airfield,,,,0,0,1,0,closed,,,site-type-from-status,foreign
+diego-garcia-airport,Diego Garcia: NAVSUPPFAC,GB,foreign,,US,,airfield;naval,resistance,2,3,2,0,,GB,IO,foreign-base,active,US:stationing:tag,,airfield;naval-port,resistance,,,2,3,2,0,foreign-bases,,,,foreign
+gchq-bude,GCHQ Bude,GB,shared,,US,,telecom,surveillance,1,0,1,1,,GB,,shared-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,1,0,1,1,shared-bases,,,review-on-origin,foreign
+hm-naval-base-gibraltar,Gibraltar HM Naval Base,GB,foreign,,GB,,helipad;naval,,0,0,1,0,,GB,GI,overseas-base,active,GB:stationing:tag,,helipad;naval-port,,,,0,0,1,0,foreign-bases,,,,overseas
+raf-gibraltar,Gibraltar RAF,GB,foreign,,GB,,civilairport,,0,0,1,0,,GB,GI,overseas-base,active,GB:stationing:tag,,civil-airport-use,,,,0,0,1,0,foreign-bases,,,,overseas
+menwith-hill-air-force-harrogate,Menwith Hill Air Force Harrogate,GB,foreign,,US,,missile;telecom,resistance;surveillance,1,4,1,2,,GB,,foreign-base,active,US:stationing:tag,,missile-defence;telecom-station;signals-intelligence,resistance,,,1,4,1,2,foreign-bases,,,,foreign
+raf-alconbury,RAF Alconbury,GB,shared,,US,,airfield,,0,1,1,0,,GB,,shared-base,active,US:stationing:tag,,airfield,,,,0,1,1,0,shared-bases,,,,foreign
+raf-barford-st-john,RAF Barford St. John,GB,foreign,,US,,telecom,resistance,1,1,1,0,,GB,,foreign-base,active,US:stationing:tag,,telecom-station,resistance,,,1,1,1,0,foreign-bases,,,,foreign
+raf-blenheim-crescent,RAF Blenheim Crescent,GB,foreign,,US,,,,0,0,1,0,,GB,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,,foreign
+raf-croughton,RAF Croughton,GB,foreign,,US,,airfield;telecom,resistance;surveillance,1,1,1,1,,GB,,foreign-base,active,US:stationing:tag,,airfield;telecom-station;signals-intelligence,resistance,,,1,1,1,1,foreign-bases,,,,foreign
+croughton-fairford,RAF Croughton – RAF Fairford,GB,hotspot,yes,US,,,,1,1,0,1,,GB,,region-cluster,active,US:stationing:tag,,,,,,1,1,0,1,meta-site,,,,foreign
+raf-digby,RAF Digby,GB,shared,,,,command,drones;surveillance,1,0,1,1,,GB,,shared-base,active,,,command;signals-intelligence,drone-warfare,,,1,0,1,1,shared-bases,,,nation-missing,unknown
+raf-fairford,RAF Fairford,GB,foreign,,US,,airfield,,1,0,1,3,,GB,,foreign-base,active,US:stationing:bsr,,airfield,,,,1,0,1,3,foreign-bases,,,,foreign
+raf-feltwell,RAF Feltwell,GB,shared,,US,,airfield,,0,0,1,0,,GB,,shared-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,shared-bases,,,,foreign
+raf-fylingdales,RAF Fylingdales,GB,shared,,US,,missile;telecom,resistance;radar,2,1,1,1,,GB,,shared-base,active,US:stationing:tag,,missile-defence;telecom-station;radar-station,resistance,,,2,1,1,1,shared-bases,,,,foreign
+raf-lakenheath,RAF Lakenheath,GB,foreign,,US,,airfield,,0,0,1,1,,GB,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,1,foreign-bases,,,,foreign
+raf-mildenhall,RAF Mildenhall,GB,foreign,,US,,airfield,,0,1,1,0,,GB,,foreign-base,active,US:stationing:tag,,airfield,,,,0,1,1,0,foreign-bases,,,,foreign
+raf-molesworth,RAF Molesworth,GB,foreign,,US,,,,0,0,1,1,,GB,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,1,foreign-bases,,,,foreign
+raf-mount-pleasant-falkland,"RAF Mount Pleasant, Falkland Islands",GB,foreign,,GB,,airfield,,0,0,1,0,,GB,FK,overseas-base,active,GB:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,overseas
+raf-oakhanger,RAF Oakhanger,GB,shared,,US,,telecom,,0,1,1,2,,GB,,shared-base,active,US:stationing:tag,,telecom-station,,,,0,1,1,2,shared-bases,,,review-on-origin,foreign
+raf-ascension-island-st-helena,RAF St. Helena: Ascension Island,GB,shared,,GB;US,,airfield;telecom,surveillance,0,0,1,1,,GB,SH,shared-base,active,GB:stationing:tag;US:stationing:tag,,airfield;telecom-station;signals-intelligence,,,,0,0,1,1,shared-bases,,,,foreign
+raf-welford-ammo-storage-area,RAF Welford Ammo Storage Area,GB,foreign,,US,,depot,,0,1,1,0,,GB,,foreign-base,active,US:stationing:tag,,depot,,,,0,1,1,0,foreign-bases,,,,foreign
+lugar-research-center-georgia,Lugar Research Center,GE,foreign,,US,,laboratory,,0,0,1,0,,GE,,foreign-base,active,US:stationing:tag,,laboratory,,,,0,0,1,0,foreign-bases,,,,foreign
+vaziani-military-base-georgia,Vaziani Military Base,GE,foreign,,US,,airfield,,0,0,1,0,,GE,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+librevillegabon,Libreville,GH,unspecific,,US,,command,,0,0,2,0,,GH,,unspecified,active,US:stationing:us-posture,,command,,,,0,0,2,0,unspecific,,,,foreign
+camp-century-greenland,Camp Century (Greenland),GL,closed,,US,,,environment,0,0,2,0,,DK,GL,military-base,closed,US:stationing:tag,,,environment,,,0,0,2,0,closed,,,site-type-from-status,foreign
+thule-air-base,Pituffik Air Base,GL,foreign,,US,,airfield;missile;telecom,surveillance,0,0,2,2,,DK,GL,foreign-base,active,US:stationing:tag,,airfield;missile-defence;telecom-station;signals-intelligence,,,,0,0,2,2,foreign-bases,,,,foreign
+namfi-souda-bay,Crete: NAMFI Radar Station Souda Bay,GR,facility,,,NATO,telecom,radar,1,2,0,2,nsa-souda-bay,GR,,special-facility,active,,nato,telecom-station;radar-station,,,part-of:nsa-souda-bay,1,2,0,2,extra-facility,,,nation-missing,unknown
+namfi-souda,Crete: NATO Missile Firing Installation,GR,facility,,US,,missile,,0,2,2,1,nsa-souda-bay,GR,,special-facility,active,US:stationing:tag,,missile-defence,,,part-of:nsa-souda-bay,0,2,2,1,extra-facility,,,,foreign
+nsa-souda-bay,Crete: Naval Support Activity Souda Bay,GR,shared,,US,,airfield;command;missile;naval;civilairport,,1,1,1,3,,GR,,shared-base,active,US:stationing:tag,,airfield;command;missile-defence;naval-port;civil-airport-use,,,,1,1,1,3,shared-bases,,,,foreign
+puerto-castilla-honduras,Base Aérea Coronel Enrique Soto Cano,HN,shared,,US,,airfield,,1,0,0,1,,HN,,shared-base,active,US:stationing:us-posture,,airfield,,,,1,0,0,1,shared-bases,,,position-unverified,foreign
+gracias-a-dios-honduras,Gracias a Dios,HN,national,,US,,airfield,,0,0,1,0,,HN,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,1,0,national-base,,,,foreign
+soto-cano-honduras,Soto Cano Air Base,HN,shared,,US,,airfield,,0,0,2,0,,HN,,shared-base,active,US:stationing:bsr,,airfield,,,,0,0,2,0,shared-bases,,,,foreign
+karlovac-croatia-2,Karlovac,HR,unspecific,,US,,helipad;training,,1,0,0,1,,HR,,unspecified,active,US:stationing:tag,,helipad;training-area,,,,1,0,0,1,unspecific,,,position-unverified,foreign
+training-area-eugen-kvaternik,Military Training Area „Eugen Kvaternik“,HR,shared,,US,,helipad;training,defender;environment,0,1,1,0,,HR,,shared-base,active,US:stationing:tag,,helipad;training-area,environment,defender-europe-21,,0,1,1,0,shared-bases,,,,foreign
+sarajevo-military-airport,Sarajevo Military Airport,HR,national,,US,,helipad;civilairport,defender,0,0,0,0,,HR,,host-base-foreign-use,active,US:stationing:tag,,helipad;civil-airport-use,,defender-europe-21,,0,0,0,0,national-base,sarajevo-host,,review-on-origin,foreign
+zadar-gazenica-croatia,Zadar Gazenica (Croatia),HR,civilian,,US,,civilport,defender,0,0,0,0,,HR,,civilian-site,active,US:stationing:tag,,civil-port-use,,defender-europe-21,,0,0,0,0,civilian-location,,,,foreign
+papa-ab-hungary,Pápa Air Base,HU,shared,,,NATO,airfield,,0,0,2,0,,HU,,shared-base,active,,nato,airfield,,,,0,0,2,0,shared-bases,papa-us,,,foreign
+shannon-airport,Shannon Airport,IE,civilian,,US,,civilairport,resistance,1,1,1,0,,IE,,civilian-site,active,US:stationing:us-posture,,civil-airport-use,resistance,,,1,1,1,0,civilian-location,,,,foreign
+dimona-radar-facility,Dimona Radar Facility,IL,shared,,US,,,surveillance;radar,0,0,1,0,,IL,,shared-base,active,US:stationing:tag,,signals-intelligence;radar-station,,,,0,0,1,0,shared-bases,,,,foreign
+al-asad-ab,Ain al-Asad Airbase,IQ,foreign,,US,,airfield;civilairport,,1,1,1,2,,IQ,,foreign-base,closed,US:stationing:tag,,airfield;civil-airport-use,,,,1,1,1,2,closed;foreign-bases,,,,foreign
+camp-speicher,Camp Speicher,IQ,closed,,US,,airfield;civilairport,,0,1,2,0,,IQ,,military-base,closed,US:stationing:tag,,airfield;civil-airport-use,,,,0,1,2,0,closed,,,site-type-from-status,foreign
+keflavik-base,Keflavik Base (Iceland),IS,foreign,,US,,civilairport,,0,0,1,1,,IS,,foreign-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,1,foreign-bases,,,,foreign
+naval-radio-transmitter-grindavik,Naval Radio Transmitter Facility Grindavik,IS,foreign,,US,,telecom,,0,0,1,0,,IS,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,1,0,foreign-bases,,,,foreign
+aviano-air-base,Aviano Air Base,IT,shared,,US,,airfield;nuclear,,0,0,2,0,,IT,,shared-base,active,US:stationing:tag,,airfield;nuclear-sharing,,,,0,0,2,0,shared-bases,,,,foreign
+ghedi-ab,Ghedi Air Base,IT,shared,,US,,airfield;nuclear,,0,0,2,0,,IT,,shared-base,active,US:stationing:tag,,airfield;nuclear-sharing,,,,0,0,2,0,shared-bases,,,,foreign
+i-solbiate-olona,"Lombardei, Solbiate Olona: NATO-Kaserne Ugo Mara",IT,foreign,,US,NATO,command,resistance,1,0,1,0,,IT,,foreign-base,active,US:stationing:tag,nato,command,resistance,,,1,0,1,0,foreign-bases;shared-bases,,,multiple-site-types,foreign
+maritime-component-command-naples,Naples: Maritime Component Command,IT,shared,,,NATO,command,,0,0,1,0,,IT,,shared-base,active,,nato,command,,,,0,0,1,0,shared-bases,,,nation-missing,unknown
+salto-di-quirra-sardinia,"Sardinia, Salto di Quirra: Training Area",IT,shared,,,NATO,training,environment,0,0,2,0,,IT,,shared-base,active,,nato,training-area,environment,,,0,0,2,0,shared-bases,,,nation-missing,unknown
+decimomannu-ab-sardinia,Sardinia: Decimomannu Air Base,IT,shared,,,NATO,airfield,,0,0,2,0,,IT,,shared-base,active,,nato,airfield,,,,0,0,2,0,shared-bases,,,nation-missing,unknown
+poligono-militare-nato-sardinia-italy,Sardinia: Poligono Militare NATO,IT,shared,,,NATO,training,,0,0,0,0,,IT,,shared-base,active,,nato,training-area,,,,0,0,0,0,shared-bases,,,nation-missing,unknown
+command-ground-system-sigonella,"Sicilia, Sigonella: Distributed Command Ground System",IT,facility,,US,,telecom,drones,0,2,0,1,sigonalla-air-base;satellite-ground-system-ramstein,IT,,special-facility,active,US:stationing:tag,,telecom-station,drone-warfare,,part-of:sigonalla-air-base;related:satellite-ground-system-ramstein,0,2,0,1,extra-facility,,,,foreign
+niscemi-radar-station-muos,Sicilia: Niscemi Radar Station,IT,foreign,,US,,telecom,resistance;environment,1,3,2,1,,IT,,foreign-base,active,US:stationing:tag,,telecom-station,resistance;environment,,,1,3,2,1,foreign-bases,,,,foreign
+sigonalla-air-base,Sicilia: Sigonella Air Base,IT,foreign,,US,,,,0,2,2,1,,IT,,foreign-base,active,US:stationing:tag,,,,,,0,2,2,1,foreign-bases,,,,foreign
+camp-darby-tirrenia-livorno,Tirrenia / Livorno: Camp Darby,IT,foreign,,US,,depot;civilport,,0,1,1,3,,IT,,foreign-base,active,US:stationing:tag,,depot;civil-port-use,,,,0,1,1,3,foreign-bases,,,,foreign
+vicenza-padova,Vicenza – Padova,IT,hotspot,yes,US,,,,0,1,0,1,,IT,,region-cluster,active,US:stationing:tag,,,,,,0,1,0,1,meta-site,,,,foreign
+camp-ederle-vicenza,Vicenza: Camp Ederle,IT,foreign,,US,,,,0,0,1,1,,IT,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,1,foreign-bases,,,,foreign
+del-din-barracks-vicenza,Vicenza: Del Din Barracks,IT,foreign,,US,,,,0,0,1,0,,IT,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,,foreign
+longare-communications-site-pluto-vicenza,Vicenza: Longare Communications Site Pluto,IT,foreign,,US,,telecom,,0,0,0,0,,IT,,foreign-base,active,US:stationing:tag,,telecom-station,,,,0,0,0,0,foreign-bases,,,,foreign
+muwaffaq-salti-air-base-al-azraq-jordan,"Muwaffaq Salti Air Base, Al Azraq",JO,shared,,,NATO,airfield,,0,0,2,0,,JO,,shared-base,active,,nato,airfield,,,,0,0,2,0,shared-bases,muwaffaq-us,,,foreign
+naval-air-facility-atsugi-kanagawa,"Kanagawa, Atsugi: Naval Air Facility",JP,foreign,,US,,airfield,,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+sasebo-naval-base-nagasaki,Nagasaki: Sasebo Naval Base,JP,foreign,,US,,naval,,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,naval-port,,,,0,0,1,0,foreign-bases,,,,foreign
+okinawa,Okinawa,JP,hotspot,yes,US,,,,0,2,2,1,,JP,,region-cluster,active,US:stationing:tag,,,,,,0,2,2,1,meta-site,,,,foreign
+mcas-futenma,"Okinawa, Futenma: Marine Corps Air Station",JP,foreign,,US,,,,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,,foreign
+henoko-camp-schwab,"Okinawa, Henoko: Camp Schwab",JP,foreign,,US,,airfield,resistance;environment,1,3,1,0,,JP,,foreign-base,active,US:stationing:tag,,airfield,resistance;environment,,,1,3,1,0,foreign-bases,,,,foreign
+jasdf-naha-air-base,"Okinawa, Naha: JASDF Air Base",JP,national,,US,,airfield,,0,0,1,1,,JP,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,1,1,national-base,,naha-nation,,foreign
+camp-hansen-okinawa,"Okinawa, Onna: Camp Hansen",JP,foreign,,US,,,,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,,foreign
+jungle-warfare-training-center,"Okinawa, Takae: Jungle Warfare Training Center",JP,foreign,,US,,training,resistance;environment,2,2,1,2,,JP,,foreign-base,active,US:stationing:tag,,training-area,resistance;environment,,,2,2,1,2,foreign-bases,,,,foreign
+tengan-pier-camp-courtney,"Okinawa, Tengan Pier – Camp Courtney",JP,foreign,,US,,naval,,0,0,1,1,,JP,,foreign-base,active,US:stationing:tag,,naval-port,,,,0,0,1,1,foreign-bases,,,,foreign
+camp-kinser-okinawa,"Okinawa, Urasoe: Camp Kinser",JP,foreign,,US,,civilport,,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,civil-port-use,,,,0,0,1,0,foreign-bases,,,,foreign
+camp-foster-zukeran,"Okinawa, Zukeran: Camp Foster",JP,foreign,,US,,,,0,0,1,1,,JP,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,1,foreign-bases,,,,foreign
+camp-lester-okinawa,Okinawa: Camp Lester,JP,foreign,,US,,,,0,0,0,0,,JP,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+kadena-air-base,Okinawa: Kadena Air Base,JP,foreign,,US,,airfield,environment,0,0,1,0,,JP,,foreign-base,active,US:stationing:tag,,airfield,environment,,,0,0,1,0,foreign-bases,,,,foreign
+kadena-ammunition-okinawa,"Okinawa: Kadena Ammunition Storage Area,",JP,facility,,US,,depot,,0,1,1,1,kadena-air-base,JP,,special-facility,active,US:stationing:tag,,depot,,,part-of:kadena-air-base,0,1,1,1,extra-facility,,,,foreign
+white-beach-okinawa,Okinawa: White Beach Naval Facility,JP,unspecific,,US,,naval,,1,0,1,0,,JP,,unspecified,active,US:stationing:tag,,naval-port,,,,1,0,1,0,,,,no-site-type,foreign
+tachikawa-air-base-tokyo,Tokyo: Tachikawa Air Base,JP,national,,US,,airfield,,0,0,1,0,,JP,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,1,0,national-base,,,,foreign
+yokota-air-base-tokyo,Tokyo: Yokota Air Base,JP,foreign,,US,,airfield,environment,0,0,1,2,,JP,,foreign-base,active,US:stationing:tag,,airfield,environment,,,0,0,1,2,foreign-bases,,,,foreign
+yokosuka-fleet,Yokosuka: COMFLEACT,JP,foreign,,US,,naval,,0,0,1,1,,JP,,foreign-base,active,US:stationing:tag,,naval-port,,,,0,0,1,1,foreign-bases,,,,foreign
+jpn-yonaguni,Yonaguni,JP,unspecific,,,,,,0,0,2,0,,JP,,unspecified,active,,,,,,,0,0,2,0,,,,no-site-type;nation-missing,unknown
+kenyan-naval-base,Mombasa: Kenyan Naval Base Mtongwe,KE,shared,,US,,naval,,0,0,0,1,,KE,,shared-base,active,US:stationing:tag,,naval-port,,,,0,0,0,1,shared-bases,,,,foreign
+camp-henry-daegu,Daegu: Camp Henry,KR,foreign,,US,,airfield;command,,0,0,1,0,,KR,,foreign-base,active,US:stationing:tag,,airfield;command,,,,0,0,1,0,foreign-bases,,,,foreign
+camp-walker-taeku,Daegu: Camp Walker,KR,closed,,US,,,,0,1,1,1,,KR,,military-base,closed,US:stationing:tag,,,,,,0,1,1,1,closed,,,site-type-from-status,foreign
+camp-casy-dongducheon,Dongducheon: Camp Casey,KR,foreign,,US,,helipad,,0,0,1,0,,KR,,foreign-base,active,US:stationing:tag,,helipad,,,,0,0,1,0,foreign-bases,,,,foreign
+jeju-island-naval-base-gangjeong,"Gangjeong, Jeju Island: Naval Base",KR,national,,US,,naval,resistance,1,1,2,0,,KR,,host-base-foreign-use,active,US:stationing:tag,,naval-port,resistance,,,1,1,2,0,national-base,,,,foreign
+kunsan-ab-gunsan,Gunsan: Kunsan Air Base,KR,shared,,US,,civilairport,,0,0,1,0,,KR,,shared-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,shared-bases,,,,foreign
+osan-ab-pyeongtaek,Pyeongtaek / Gyeonggi-do: Osan Air Base,KR,foreign,,US,,airfield,,0,0,1,0,,KR,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+usag-humphreys,Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys,KR,hotspot,yes,US,,,,1,2,2,1,,KR,,garrison,active,US:stationing:tag,,,,,,1,2,2,1,meta-site,,,,foreign
+suwon-ab,Suwon Air Base,KR,foreign,,US,,airfield,,0,0,1,0,,KR,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+taegu-region,Taegu Region,KR,hotspot,yes,US,,,,0,1,0,1,,KR,,region-cluster,active,US:stationing:tag,,,,,,0,1,0,1,meta-site,,,,foreign
+thadd-deployment-base,THADD Deployment Base,KR,foreign,,US,,missile,,0,1,1,0,,KR,,foreign-base,active,US:stationing:tag,,missile-defence,,,,0,1,1,0,foreign-bases,,,,foreign
+camp-carroll-waegwan,Waegwan: Camp Carroll,KR,foreign,,US,,,,0,1,1,0,,KR,,foreign-base,active,US:stationing:tag,,,,,,0,1,1,0,foreign-bases,,,,foreign
+camp-kim-yongsan,Yongsan: Camp Kim,KR,foreign,,US,,,,0,0,1,0,,KR,,foreign-base,active,US:stationing:tag,,,,,,0,0,1,0,foreign-bases,,,,foreign
+us-army-garrison-yongsan,Yongsan: US Army / Navy Garrison,KR,hotspot,yes,US,,command,,0,1,1,0,,KR,,garrison,active,US:stationing:tag,,command,,,,0,1,1,0,meta-site,,,,foreign
+abdullah-al-mubarak-ab,Abdullah Al-Mubarak Air Base,KW,shared,,US,,civilairport,,0,0,1,1,,KW,,shared-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,1,shared-bases,,,review-on-origin,foreign
+camp-buehring,"Camp Buehring, Udairi Air Field",KW,foreign,,US,,airfield,,0,0,0,0,,KW,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,0,0,foreign-bases,,,,foreign
+pabrades-poligonas-lithuania,Pabrades Poligonas,LT,shared,,US,,airfield,atlantic-resolve,0,0,2,1,,LT,,shared-base,active,US:stationing:tag,,airfield,,atlantic-resolve,,0,0,2,1,shared-bases,,,,foreign
+rudninkai-litauen,Rudninkai,LT,shared,,DE,,training,,0,1,2,0,,LT,,shared-base,active,DE:stationing:tag,,training-area,,,,0,1,2,0,shared-bases,,,,foreign
+gaiziunu-poligonas-rukla-lithuania,Rukla: Gaižiūnų poligonas,LT,shared,,DE,NATO,airfield;training,,1,0,3,0,,LT,,shared-base,active,DE:stationing:tag,nato,airfield;training-area,,,,1,0,3,0,shared-bases,,,,foreign
+siauliai-lithuania,Šiauliai,LT,shared,,,NATO,airfield,,0,0,1,0,,LT,,shared-base,active,,nato,airfield,,,,0,0,1,0,shared-bases,,,nation-missing,unknown
+guelmim-airport,Aéroport de Guelmim,MA,national,,US,,civilairport,,0,0,1,0,,MA,,host-base-foreign-use,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,national-base,,,review-on-origin,foreign
+inezgane-airport,Inezgane Military Airport (Morocco),MA,national,,US,,airfield,,0,0,1,0,,MA,,host-base-foreign-use,active,US:stationing:us-posture,,airfield,,,,0,0,1,0,national-base,,,review-on-origin,foreign
+sinjajevina-montenegro,Sinjajevina,ME,shared,,,NATO,training,resistance,1,1,1,0,,ME,,shared-base,active,,nato,training-area,resistance,,,1,1,1,0,civilian-location;shared-bases,,,multiple-site-types;nation-missing,unknown
+marshall-islands,Ballistic Missile Defense Test Site,MH,unspecific,,US,,airfield;missile,environment,1,0,1,1,,MH,,unspecified,active,US:stationing:tag,,airfield;missile-defence,environment,,,1,0,1,1,,,,no-site-type,foreign
+krivolak-training-area,Krivolak Training Center / Training Area KTA,MK,national,,US,,training,defender,0,0,1,0,,MK,,host-base-foreign-use,active,US:stationing:tag,,training-area,,defender-europe-21,,0,0,1,0,national-base,,,,foreign
+bamako-mali,Bamako (Mali),ML,closed,,US,EU,,,0,0,1,0,,ML,,unspecified,closed,US:stationing:us-posture,eu,,,,,0,0,1,0,closed;unspecific,,,,foreign
+us-camp-castor,US Camp Castor,ML,closed,,US,DE,,un,0,1,2,0,,ML,,military-base,closed,US:stationing:tag;DE:co-user:tag,,,,un-mission,,0,1,2,0,closed,castor-nation;castor-period,,site-type-from-status,foreign
+pemba-naval-base,Pemba Naval Base (Mozambique),MZ,national,,US,,telecom,,0,0,1,0,,MZ,,host-base-foreign-use,active,US:stationing:tag,,telecom-station,,,,0,0,1,0,national-base,,,,foreign
+windhoek-namibia,Windhoek,NA,unspecific,,US,,civilairport,,0,0,1,0,,NA,,unspecified,active,US:stationing:us-posture,,civil-airport-use,,,,0,0,1,0,unspecific,,,review-on-origin,foreign
+us-air-base-201,"Air Base 201, Agadez",NE,closed,,US,,airfield,drones,0,2,2,0,,NE,,military-base,closed,US:stationing:tag,,airfield,drone-warfare,,,0,2,2,0,closed,agadez-period,,site-type-from-status,foreign
+dirkou-ab-niger,"Dirkou Air Base, Agadez",NE,closed,,US,,civilairport,drones,0,1,2,2,,NE,,military-base,closed,US:stationing:tag,,civil-airport-use,drone-warfare,,,0,1,2,2,closed,,,site-type-from-status,foreign
+niamey-air-base,Niamey Air Base,NE,closed,,FR;US,,civilairport,drones,0,0,2,0,,NE,,military-base,closed,FR:stationing:tag;US:stationing:tag,,civil-airport-use,drone-warfare,,,0,0,2,0,closed,niamey-period,,site-type-from-status,foreign
+savaneta-kamp,"Antilles, Aruba: Korps Mariniers / Savaneta Kamp",NL,foreign,,US,NL,naval,,0,0,1,0,,NL,AW,foreign-base,active,US:stationing:tag;NL:co-user:tag,,naval-port,,,,0,0,1,0,foreign-bases,,,,foreign
+aruba,"Antilles, Aruba: Queen Beatrix International Airport",NL,civilian,,US,,civilairport,,0,0,1,0,,NL,AW,civilian-site,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,civilian-location,,,,foreign
+davis-monthan-ab-curacao,"Antilles, Curacao: Davis-Monthan Air Force Base",NL,foreign,,US,,civilairport,,0,0,1,2,,NL,CW,foreign-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,2,foreign-bases,,,,foreign
+ajf-brunssum,Brunssum: Allied Joint Force Command,NL,foreign,,US,,command,,0,0,2,1,,NL,,foreign-base,active,US:stationing:tag,,command,,,,0,0,2,1,foreign-bases,,,,foreign
+eygelshoven-army-depot,Eygelshoven Army Depot,NL,foreign,,US,,,,0,0,0,0,,NL,,foreign-base,active,US:stationing:tag,,,,,,0,0,0,0,foreign-bases,,,,foreign
+volkel-ab,Volkel Air Base,NL,shared,,US,,airfield;nuclear,,0,0,2,0,,NL,,shared-base,active,US:stationing:tag,,airfield;nuclear-sharing,,,,0,0,2,0,shared-bases,,,,foreign
+evenes-military-air-station,Evenes Military Air Station and Airfield,NO,shared,,US,,civilairport,,1,0,1,1,,NO,,shared-base,active,US:stationing:tag,,civil-airport-use,,,,1,0,1,1,shared-bases,,,,foreign
+globus-ii-norway,"Globus II, Vardø",NO,shared,,US,,missile;telecom,radar,0,0,1,0,,NO,,shared-base,active,US:stationing:tag,,missile-defence;telecom-station;radar-station,,,,0,0,1,0,shared-bases,,,,foreign
+orland-militaerbase,Ørland Militærbase,NO,national,,US,,airfield,,0,0,0,0,,NO,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,0,0,national-base,,,,foreign
+ramsund-naval-station,Ramsund Naval Station,NO,shared,,US,,naval,,1,0,1,1,,NO,,shared-base,active,US:stationing:tag,,naval-port,,,,1,0,1,1,shared-bases,,,,foreign
+rygge-military-air-station,Rygge Military Air Station and Airfield,NO,shared,,US,,airfield,,1,0,1,1,,NO,,shared-base,active,US:stationing:tag,,airfield,,,,1,0,1,1,shared-bases,,,,foreign
+sola-military-air-station,Sola Military Air Station and Airfield,NO,shared,,US,,airfield,,1,0,1,1,,NO,,shared-base,active,US:stationing:tag,,airfield,,,,1,0,1,1,shared-bases,,,,foreign
+trondheim,Trondheim,NO,unspecific,,,NATO,airfield;civilport,,0,1,1,0,,NO,,unspecified,active,,nato,airfield;civil-port-use,,,,0,1,1,0,unspecific,,,nation-missing;review-on-origin,unknown
+masirah-ab,Masirah Air Base / RAFO Masirah,OM,foreign,,US,,airfield,,0,0,1,0,,OM,,foreign-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,,,,foreign
+opc-1-muscat,"Muscat: Overseas Processing Centre 1, Seeb",OM,foreign,,GB,,telecom,surveillance,2,1,0,2,,OM,,foreign-base,active,GB:stationing:tag,,telecom-station;signals-intelligence,,,,2,1,0,2,foreign-bases,,,,foreign
+thumrait,Thumrait MAP,OM,shared,,US,GB,airfield,,0,0,1,0,,OM,,shared-base,active,US:stationing:tag;GB:co-user:tag,,airfield,,,,0,0,1,0,shared-bases,,thumrait-status,,foreign
+iquitos-airport,Iquitos International Airport,PE,civilian,,US,,airfield;civilairport,,0,0,1,1,,PE,,civilian-site,active,US:stationing:tag,,airfield;civil-airport-use,,,,0,0,1,1,civilian-location,,,,foreign
+mount-st-rita-naval-link-station,Mount Santa Rita Naval Link Station,PH,closed,,US,,telecom,,0,0,1,0,,PH,,military-base,closed,US:stationing:tag,,telecom-station,,,,0,0,1,0,closed,,,site-type-from-status,foreign
+secon-thomas-shoal,Spratly Islands: Second Thomas Shoal,PH,national,,US,,airfield,,0,0,1,0,,PH,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,1,0,national-base,,,,foreign
+jacobabad-dalbandin-ab,"Dalbandin Airport, Baloshistan",PK,shared,,US,,airfield;civilairport,,0,0,1,0,,PK,,shared-base,active,US:stationing:tag,,airfield;civil-airport-use,,,,0,0,1,0,shared-bases,,,,foreign
+makran-pakistan,Naval Station Makran,PK,shared,,US,,airfield;naval;civilport,,0,0,1,0,,PK,,shared-base,active,US:stationing:tag,,airfield;naval-port;civil-port-use,,,,0,0,1,0,shared-bases,,,review-on-origin,foreign
+khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,national,,US,,airfield,,0,0,1,1,,PK,,host-base-foreign-use,active,US:stationing:tag,,airfield,,,,0,0,1,1,national-base,,,,foreign
+shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,shared,,US,,airfield,,0,0,1,0,,PK,,shared-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,shared-bases,,,review-on-origin,foreign
+pasni-base-port,"Pasni Base, Baloshistan",PK,shared,,US,,airfield;civilport,,0,0,1,0,,PK,,shared-base,active,US:stationing:tag,,airfield;civil-port-use,,,,0,0,1,0,shared-bases,,,review-on-origin,foreign
+shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,shared,,US,,airfield,drones,1,0,2,1,,PK,,shared-base,active,US:stationing:tag,,airfield,drone-warfare,,,1,0,2,1,shared-bases,shamsi-status;shamsi-period,,review-on-origin,foreign
+bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,shared,,GB;US,,airfield;training,atlantic-resolve;defender,0,1,1,0,,PL,,shared-base,active,GB:stationing:tag;US:stationing:tag,,airfield;training-area,,atlantic-resolve;defender-europe-20,,0,1,1,0,shared-bases,,,,foreign
+deblin-irena-air-base,Deblin-Irena Air Base,PL,shared,,US,,airfield,atlantic-resolve;defender,0,0,0,0,,PL,,shared-base,active,US:stationing:tag,,airfield,,atlantic-resolve;defender-europe-20,,0,0,0,0,shared-bases,,,,foreign
+training-center-drawsko,Drawsko: Land Forces Training Center,PL,shared,,US,,training,atlantic-resolve;defender,0,1,1,0,,PL,,shared-base,active,US:stationing:tag,,training-area,,atlantic-resolve;defender-europe-20,,0,1,1,0,shared-bases,,,,foreign
+lask-air-base,Lask Air Base,PL,shared,,US,,airfield,atlantic-resolve;defender,0,0,0,0,,PL,,shared-base,active,US:stationing:tag,,airfield,,atlantic-resolve;defender-europe-20,,0,0,0,0,shared-bases,,,,foreign
+21-centralny-poligon-lotniczy,Lotniczy: 21 Centralny Poligon,PL,shared,,,NATO,,defender,0,0,1,0,,PL,,shared-base,active,,nato,,,defender-europe-20,,0,0,1,0,shared-bases,,,nation-missing,unknown
+lotnisko-miroslawiec-ab,Lotnisko Miroslawiec Air Base,PL,shared,,US,,airfield,atlantic-resolve;defender,0,0,0,0,,PL,,shared-base,active,US:stationing:tag,,airfield,,atlantic-resolve;defender-europe-20,,0,0,0,0,shared-bases,,,,foreign
+nadarzyce-air-base,Nadarzyce Air Base,PL,shared,,US,,airfield,atlantic-resolve;defender,0,0,0,0,,PL,,shared-base,active,US:stationing:tag,,airfield,,atlantic-resolve;defender-europe-20,,0,0,0,0,shared-bases,,,,foreign
+33rd-air-base-powidz,Powidz: 33rd Air Base,PL,foreign,,US,,airfield,,0,1,1,2,,PL,,foreign-base,active,US:stationing:tag,,airfield,,,,0,1,1,2,foreign-bases,,,,foreign
+redzikowo,Redzikowo: Naval Support Facility,PL,foreign,,US,,missile,environment;radar,1,2,2,0,,PL,,foreign-base,active,US:stationing:tag,,missile-defence;radar-station,environment,,,1,2,2,0,foreign-bases,,,,foreign
+rzeszow,Rzeszów,PL,foreign,,,DE;NATO,depot;missile,,0,0,2,1,,PL,,foreign-base,active,DE:co-user:tag,nato,depot;missile-defence,,,,0,0,2,1,foreign-bases;shared-bases,,rzeszow-status,multiple-site-types,foreign
+zagan-training-area,Zagan Training Area,PL,shared,,US,,training,atlantic-resolve;defender,0,1,0,0,,PL,,shared-base,active,US:stationing:tag,,training-area,,atlantic-resolve;defender-europe-20,,0,1,0,0,shared-bases,,,,foreign
+naval-transmitter-site-aguada,Aguada: Naval Transmitter Site (Puerto Rico),PR,foreign,,US,,telecom,,0,0,1,0,,US,PR,overseas-base,active,US:stationing:tag,,telecom-station,,,,0,0,1,0,foreign-bases,,,,overseas
+vieques-island-training-area,Vieques Island Training Area,PR,closed,,US,,training,environment,0,0,1,11,,US,PR,military-base,closed,US:stationing:tag,,training-area,environment,,,0,0,1,11,closed,,,site-type-from-status,overseas
+lajes-azores,"Azores: Air Base No 4, Lajes Field",PT,shared,,US,,civilairport,,1,0,1,1,,PT,,shared-base,active,US:stationing:tag,,civil-airport-use,,,,1,0,1,1,shared-bases,,,,foreign
+palau,Palau,PW,foreign,,US,,,radar,1,0,1,1,,PW,,foreign-base,active,US:stationing:tag,,radar-station,,,,1,0,1,1,foreign-bases,,,,foreign
+maria-argana-paraguay,Dr. Luis María Argaña International Airport,PY,shared,,US,,airfield,,0,0,2,0,,PY,,shared-base,active,US:stationing:tag,,airfield,,,,0,0,2,0,shared-bases,,,,foreign
+camp-as-sayliayah,Camp As Sayliayah,QA,foreign,,US,,civilairport,,0,0,1,0,,QA,,foreign-base,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,foreign-bases,,,,foreign
+al-udeid-doha,Doha: Al Udeid Air Base,QA,foreign,,GB,,airfield,,0,0,1,0,,QA,,foreign-base,active,GB:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,udeid-us,,,foreign
+campia-turzii-air-base,Câmpia Turzii Air Base,RO,shared,,US,,airfield;helipad,drones,1,0,2,0,,RO,,shared-base,active,US:stationing:tag,,airfield;helipad,drone-warfare,,,1,0,2,0,shared-bases,,,,foreign
+mihail-kogalniceanu-constanta,Constanţa: Mihail Kogălniceanu,RO,foreign,,US,,civilairport,defender,0,0,2,1,,RO,,foreign-base,active,US:stationing:us-posture,,civil-airport-use,,defender-europe-21,,0,0,2,1,foreign-bases,,,,foreign
+deveselu-base,Deveselu Base,RO,foreign,,US,,missile;telecom,radar,0,3,2,3,,RO,,foreign-base,active,US:stationing:tag,,missile-defence;telecom-station;radar-station,,,,0,3,2,3,foreign-bases,,,review-on-origin,foreign
+sibiu-nato,Sibiu: NATO Multinational Corps South-East,RO,shared,,US,NATO,command;civilairport,defender,0,0,0,0,,RO,,shared-base,active,US:stationing:us-posture,nato,command;civil-airport-use,,defender-europe-21,,0,0,0,0,shared-bases;unspecific,,,,foreign
+training-centre-general-popescu,Training Centre General Gheorghe Popescu / Poligonul Cincu,RO,shared,,US,,training,defender,0,1,1,3,,RO,,shared-base,active,US:stationing:tag,,training-area,,defender-europe-21,,0,1,1,3,shared-bases,,,,foreign
+prince-sultan-air-base,Prince Sultan Air Base,SA,shared,,US,,airfield,,0,0,1,0,,SA,,shared-base,active,US:stationing:tag,,airfield,,,,0,0,1,0,shared-bases,,,,foreign
+s-berga,Berga: regimental area and military training area,SE,shared,,US,,training,,0,0,0,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+s-boden-regimental-area-and-military-training-area,Boden: regimental area and military training area,SE,shared,,US,,training,,0,0,0,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+five-eyes-station-lerkil,Five Eyes Station Lerkil,SE,foreign,,US,,telecom,surveillance,0,0,1,0,,SE,,foreign-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,1,0,foreign-bases,,,,foreign
+s-halmstad-regimental-area-and-flotilla-area,Halmstad: regimental area and flotilla area,SE,shared,,US,,naval,,0,0,0,0,,SE,,shared-base,active,US:stationing:tag,,naval-port,,,,0,0,0,0,shared-bases,,,,foreign
+s-harnosand,Härnösand: military training area and harbour,SE,shared,,US,,naval;training,,0,0,1,0,,SE,,shared-base,active,US:stationing:tag,,naval-port;training-area,,,,0,0,1,0,shared-bases,,,,foreign
+s-kiruna,Kiruna: Military camp and training area,SE,shared,,US,,training,,0,0,1,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,1,0,shared-bases,,,,foreign
+s-kristinehamm,Kristinehamn: Regimental area and training area,SE,shared,,US,,training,,0,0,1,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,1,0,shared-bases,,,,foreign
+s-kvarn,Kvarn: Military camp and military training area,SE,shared,,US,,training,,0,0,0,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+forsvarets-radioanstalt-lovon,Lovön: National Defence Radio Establishment,SE,shared,,US,,telecom,surveillance,0,0,2,1,,SE,,shared-base,active,US:stationing:tag,,telecom-station;signals-intelligence,,,,0,0,2,1,shared-bases,,,,foreign
+overview-new-us-access-in-sweden,Overview new US access in Sweden,SE,shared,,,,,,0,0,0,17,,SE,,region-cluster,active,,,,,,,0,0,0,17,shared-bases,,,,unknown
+s-ravlunda-military-camp-and-training-area,Ravlunda: Military camp and training area,SE,shared,,US,,training,,0,0,0,0,,SE,,shared-base,active,US:stationing:tag,,training-area,,,,0,0,0,0,shared-bases,,,,foreign
+paya-lebar-air-base,Paya Lebar Air Base (Singapore),SG,shared,,US,,airfield,,0,0,1,1,,SG,,shared-base,active,US:stationing:bsr,,airfield,,,,0,0,1,1,shared-bases,,,,foreign
+singapore,Singapore,SG,hotspot,yes,,,,,0,1,0,1,,SG,,region-cluster,active,,,,,,,0,1,0,1,meta-site,,,,unknown
+dakar-senegal,Dakar,SN,unspecific,,US,,airfield;civilport,,0,1,1,0,,SN,,unspecified,active,US:stationing:us-posture,,airfield;civil-port-use,,,,0,1,1,0,unspecific,,,,foreign
+base-aerienne-dakar,Dakar-Quakam: Base aérienne 160,SN,foreign,,FR,,airfield,,0,0,1,0,,SN,,foreign-base,active,FR:stationing:tag,,airfield,,,,0,0,1,0,foreign-bases,dakar-status;dakar-period,,,foreign
+kismayo-airport-somalia,Kismayo Airport,SO,civilian,,US,,civilairport,,0,0,1,0,,SO,,civilian-site,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,civilian-location,,,,foreign
+ocean-side-mogadishu,Mogadishu: Ocean Side Int. Campus,SO,national,,US,,civilairport,,0,0,0,0,,SO,,host-base-foreign-use,active,US:stationing:tag,,civil-airport-use,,,,0,0,0,0,national-base,,,review-on-origin,foreign
+principe-island-sao-tome,Príncipe Island (São Tomé),ST,national,,US,,civilairport,,0,0,1,0,,ST,,host-base-foreign-use,active,US:stationing:tag,,civil-airport-use,,,,0,0,1,0,national-base,,,review-on-origin,foreign
+ab-comalpa-el-salvador,Las Flores: Base Aérea Militar de Comalapa,SV,national,,US,,civilairport,,0,0,2,1,,SV,,host-base-foreign-use,active,US:stationing:tag,,civil-airport-use,,,,0,0,2,1,national-base,,,,foreign
+al-tanf-syria,Al-Tanf,SY,closed,,US,,helipad,,0,0,1,0,,SY,,military-base,closed,US:stationing:tag,,helipad,,,,0,0,1,0,closed,tanf-period,,site-type-from-status,foreign
+khmeimim-ab,Khmeimim Air Base,SY,closed,,RU,,airfield,,0,0,2,0,,SY,,military-base,closed,RU:stationing:tag,,airfield,,,,0,0,2,0,closed,,khmeimim-status,site-type-from-status,foreign
+material-technical-support-point-tartus-syria,"Material-Technical Support Point, Tartus",SY,closed,,RU,,naval,,0,0,2,0,,SY,,military-base,closed,RU:stationing:tag,,naval-port,,,,0,0,2,0,closed,,tartus-status,site-type-from-status,foreign
+rumeilan-air-base,Rumeilan Air Base,SY,closed,,US,,airfield,,0,0,0,0,,SY,,military-base,closed,US:stationing:tag,,airfield,,,,0,0,0,0,closed,rumeilan-period,,site-type-from-status,foreign
+unnamed-syria-airfield,Unnamed Airfield,SY,closed,,US,,airfield,,0,0,0,0,,SY,,military-base,closed,US:stationing:tag,,airfield,,,,0,0,0,0,closed,,,site-type-from-status,foreign
+fort-lamy-ab-djamena,"Fort-Lamy Air Base, N’Djamena (Chad)",TD,closed,,FR,,civilairport,,0,0,3,0,,TD,,military-base,closed,FR:stationing:tag,,civil-airport-use,,,,0,0,3,0,closed,,fort-lamy-period,site-type-from-status,foreign
+bizerte-sidi-ahmed-air-base,Bizerte-Sidi Ahmed Air Base (Tunesia),TN,shared,,US,,airfield,drones,0,0,1,0,,TN,,shared-base,active,US:stationing:us-posture,,airfield,drone-warfare,,,0,0,1,0,shared-bases,,,,foreign
+incirlik-air-base,Incirlik Air Base,TR,shared,,US,,airfield;nuclear,,1,0,2,0,,TR,,shared-base,active,US:stationing:tag,,airfield;nuclear-sharing,,,,1,0,2,0,shared-bases,,,,foreign
+kurecik-radar-station,Kürecik Radar Station,TR,foreign,,US,,missile;telecom,radar,0,0,1,1,,TR,,foreign-base,active,US:stationing:tag,,missile-defence;telecom-station;radar-station,,,,0,0,1,1,foreign-bases,,,,foreign
+taiwan,Taiwan,TW,unspecific,,US,,,,1,1,2,2,,TW,,unspecified,active,US:stationing:tag,,,,,,1,1,2,2,unspecific,,,review-on-origin,foreign
+beale-air-force-base-california,"Beale Air Force Base, California",US,usglobal,,,,missile,radar,0,0,1,0,,US,,domestic-global,active,US:stationing:site-type,,missile-defence;radar-station,,,,0,0,1,0,us-global,,,,domestic
+cape-cod-air-force-station,"Cape Cod Air Force Station, Massachusetts",US,usglobal,,,,missile;telecom,radar,0,0,1,0,,US,,domestic-global,active,US:stationing:site-type,,missile-defence;telecom-station;radar-station,,,,0,0,1,0,us-global,,,,domestic
+clear-air-force-station-alaska,"Clear Air Force Station, Alaska",US,usglobal,,,,missile;telecom,radar,0,0,1,0,,US,,domestic-global,active,US:stationing:site-type,,missile-defence;telecom-station;radar-station,,,,0,0,1,0,us-global,,,,domestic
+creech-air-force-base,"Creech Air Force Base, Nevada",US,usglobal,,US,GB,,drones,0,1,1,1,,US,,domestic-global,active,US:stationing:tag;GB:co-user:tag,,,drone-warfare,,,0,1,1,1,us-global,,,,foreign
+fort-greely-alaska,"Fort Greely, Alaska",US,usglobal,,,,airfield;missile,,0,0,1,0,,US,,domestic-global,active,US:stationing:site-type,,airfield;missile-defence,,,,0,0,1,0,us-global,,,,domestic
+guam-naval-base,Guam,US,hotspot,yes,US,,,,0,1,1,0,,US,GU,region-cluster,active,US:stationing:tag,,,,,,0,1,1,0,meta-site,,,continent-check,overseas
+andersen-afb-guam,Guam: Andersen Air Force Base,US,foreign,,US,,airfield,,0,0,2,0,,US,GU,overseas-base,active,US:stationing:tag,,airfield,,,,0,0,2,0,foreign-bases,,,continent-check,overseas
+naval-base-guam,Guam: Naval Base,US,foreign,,US,,naval,,0,0,1,0,,US,GU,overseas-base,active,US:stationing:tag,,naval-port,,,,0,0,1,0,foreign-bases,,,continent-check,overseas
+naval-radio-transmitter-lualualei,Hawaii: Naval Radio Transmitter Facility Lualualei,US,usglobal,,,,telecom,radar,0,2,1,0,,US,,domestic-global,active,US:stationing:site-type,,telecom-station;radar-station,,,,0,2,1,0,us-global,,,continent-check,domestic
+johnston-atoll,Johnston Atoll Airfield,US,closed,,,,airfield,,0,1,1,0,,US,UM,military-base,closed,,,airfield,,,,0,1,1,0,closed,,,site-type-from-status;nation-missing;continent-check,unknown
+vandenberg-space-force-base,"Vandenberg Space Force Base, California",US,usglobal,,,,airfield;missile,,1,0,1,0,,US,,domestic-global,active,US:stationing:site-type,,airfield;missile-defence,,,,1,0,1,0,us-global,,,,domestic
+us-camp-bondsteel,Camp Bondsteel (Kosovo),XK,foreign,,US,,helipad,,1,0,2,2,,XK,,foreign-base,active,US:stationing:us-posture,,helipad,,,,1,0,2,2,foreign-bases,,,,foreign

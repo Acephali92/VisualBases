@@ -5,7 +5,7 @@ import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { feature } from 'topojson-client';
 import type { FeatureCollection, Point } from 'geojson';
 import type { Base } from './types';
-import { GROUP_COLOR, KIND_GROUP } from './taxonomy';
+import { GROUP_COLOR, colorGroup } from './taxonomy';
 
 export const COLORS = {
   space: '#07090f',
@@ -42,7 +42,7 @@ export function basesToGeoJSON(bases: Base[]): FeatureCollection<Point> {
       type: 'Feature',
       id: undefined,
       geometry: { type: 'Point', coordinates: [b.lon, b.lat] },
-      properties: { id: b.id, name: b.name, group: KIND_GROUP[b.kind], country: b.country },
+      properties: { id: b.id, name: b.name, group: colorGroup(b), country: b.host.country },
     })),
   };
 }
@@ -69,7 +69,7 @@ function style(countries: FeatureCollection): StyleSpecification {
       { id: 'borders', type: 'line', source: 'countries', paint: { 'line-color': COLORS.border, 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 0.3, 6, 1] } },
       {
         id: 'bases-glow', type: 'circle', source: 'bases',
-        filter: ['!=', ['get', 'group'], 'hotspot'],
+        filter: ['!=', ['get', 'group'], 'aggregate'],
         paint: {
           'circle-color': colorExpr,
           'circle-radius': ['interpolate', ['linear'], ['zoom'], 0, 7, 5, 12, 10, 18],
@@ -80,10 +80,10 @@ function style(countries: FeatureCollection): StyleSpecification {
       {
         id: 'bases', type: 'circle', source: 'bases',
         paint: {
-          'circle-color': ['case', ['==', ['get', 'group'], 'hotspot'], 'rgba(0,0,0,0)', colorExpr],
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 0, ['case', ['==', ['get', 'group'], 'hotspot'], 5, 2.6], 5, ['case', ['==', ['get', 'group'], 'hotspot'], 9, 4.5], 10, ['case', ['==', ['get', 'group'], 'hotspot'], 16, 8]],
-          'circle-stroke-color': ['case', ['==', ['get', 'group'], 'hotspot'], GROUP_COLOR.hotspot, COLORS.space],
-          'circle-stroke-width': ['case', ['==', ['get', 'group'], 'hotspot'], 1.5, 0.8],
+          'circle-color': ['case', ['==', ['get', 'group'], 'aggregate'], 'rgba(0,0,0,0)', colorExpr],
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 0, ['case', ['==', ['get', 'group'], 'aggregate'], 5, 2.6], 5, ['case', ['==', ['get', 'group'], 'aggregate'], 9, 4.5], 10, ['case', ['==', ['get', 'group'], 'aggregate'], 16, 8]],
+          'circle-stroke-color': ['case', ['==', ['get', 'group'], 'aggregate'], GROUP_COLOR.aggregate, COLORS.space],
+          'circle-stroke-width': ['case', ['==', ['get', 'group'], 'aggregate'], 1.5, 0.8],
           'circle-opacity': ['case', ['boolean', ['feature-state', 'dim'], false], 0.15, 1],
           'circle-stroke-opacity': ['case', ['boolean', ['feature-state', 'dim'], false], 0.15, 1],
         },

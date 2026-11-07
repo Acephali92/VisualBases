@@ -90,7 +90,8 @@ async function main() {
   const keyToBase = new Map();
   for (const k of KEYWORDS) {
     const hits = bases.filter((b) => b.name.toLowerCase().includes(k.toLowerCase()));
-    const best = hits.find((b) => b.group) ?? hits.find((b) => b.kind === 'foreign') ?? hits[0];
+    // prefer a summary entry (garrison/region), then a foreign base
+    const best = hits.find((b) => b.siteType === 'garrison' || b.siteType === 'region-cluster') ?? hits.find((b) => b.siteType === 'foreign-base' || b.siteType === 'overseas-base') ?? hits[0];
     if (best) keyToBase.set(k, best.id);
   }
 

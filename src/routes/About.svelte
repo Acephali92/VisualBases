@@ -2,23 +2,16 @@
   import { t, i18n } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
-  import { GROUP_COLOR, KIND_GROUP, KINDS } from '../lib/taxonomy';
+  import { GROUP_COLOR, SITE_TYPES, STATUSES, FEATURE_KINDS, FEATURES, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, US_POSTURES, EVIDENCE_STATES } from '../lib/taxonomy';
 
-  const usTypes = $derived(
-    i18n.lang === 'de'
-      ? [
-          ['MOB', 'Main Operating Base – dauerhaft besetzte, gut geschützte Großbasis mit Luft- oder Seezugang.'],
-          ['FOB', 'Forward Operating Base – vorgeschobene Basis zur Unterstützung von Einsätzen.'],
-          ['FOS', 'Forward Operating Site – kleine Basis mit Vorräten und wenig Stammpersonal, schnell ausbaubar.'],
-          ['CSL', 'Cooperative Security Location – „Lily Pad“ mit kaum Personal, vom Gastland betrieben, im Bedarfsfall nutzbar.'],
-        ]
-      : [
-          ['MOB', 'Main Operating Base – permanently manned, well-protected base with robust air or sea access.'],
-          ['FOB', 'Forward Operating Base – forward base supporting operations.'],
-          ['FOS', 'Forward Operating Site – small base with pre-positioned equipment and little permanent staff, expandable.'],
-          ['CSL', 'Cooperative Security Location – “lily pad” with little or no staff, run by the host nation, usable on demand.'],
-        ],
-  );
+  /** the classification model, dimension by dimension (definitions from src/lib/taxonomy.ts) */
+  const dims = $derived([
+    { title: t('filters.status'), key: 'status', terms: STATUSES },
+    { title: t('filters.theme'), key: 'themes', terms: THEMES },
+    ...FEATURE_KINDS.map((k) => ({ title: `${t('filters.facility')}: ${k.label[i18n.lang]}`, key: 'facilities', terms: FEATURES.filter((f) => f.kind === k.id) })),
+    { title: t('filters.activity'), key: 'activities', terms: [...ACTIVITY_GROUPS, ...ORGANISATIONS] },
+    { title: t('base.evidence'), key: '', terms: EVIDENCE_STATES },
+  ]);
   const stories = $derived([...db.stories].sort((a, b) => (b.lastmod ?? '').localeCompare(a.lastmod ?? '')));
 </script>
 
@@ -64,22 +57,35 @@
   </section>
 
   <section class="text">
-    <h2>{t('about.kinds')}</h2>
+    <h2>{t('about.taxonomy')}</h2>
+    <p>{t('about.taxonomyText')}</p>
+    <h3>{t('about.kinds')}</h3>
     <dl class="kinds">
-      {#each KINDS as k}
+      {#each SITE_TYPES as k (k.id)}
         <div>
-          <dt><span class="dot" class:ring={KIND_GROUP[k] === 'hotspot'} style:background={GROUP_COLOR[KIND_GROUP[k]]}></span><a href={href('/atlas', `kinds=${k}`)}>{t(`kind.${k}`)}</a></dt>
-          <dd>{t(`kindInfo.${k}`)}</dd>
+          <dt><span class="dot" class:ring={k.color === 'aggregate'} style:background={GROUP_COLOR[k.color]}></span><a href={href('/atlas', `kinds=${k.id}`)}>{k.label[i18n.lang]}</a></dt>
+          <dd>{k.info?.[i18n.lang]}</dd>
         </div>
       {/each}
     </dl>
+    {#each dims as d (d.title)}
+      <h3>{d.title}</h3>
+      <dl class="kinds">
+        {#each d.terms as k (k.id)}
+          <div>
+            <dt>{#if d.key}<a href={href('/atlas', `${d.key}=${k.id}`)}>{k.label[i18n.lang]}</a>{:else}{k.label[i18n.lang]}{/if}</dt>
+            {#if k.info}<dd>{k.info[i18n.lang]}</dd>{/if}
+          </div>
+        {/each}
+      </dl>
+    {/each}
   </section>
 
   <section class="text">
-    <h2>{t('base.usType')}</h2>
+    <h2>{t('base.usPosture')}</h2>
     <dl class="kinds">
-      {#each usTypes as [k, v]}
-        <div><dt><a href={href('/atlas', `q=${k}`)}>{k}</a></dt><dd>{v}</dd></div>
+      {#each US_POSTURES as k (k.id)}
+        <div><dt><a href={href('/atlas', `q=${k.id}`)}>{k.id}</a></dt><dd>{k.label[i18n.lang]} – {k.info?.[i18n.lang]}</dd></div>
       {/each}
     </dl>
   </section>
@@ -114,7 +120,8 @@
   .text { max-width: 760px; margin-top: 40px; }
   .text h2 { font-size: 1.4rem; }
   .text p { color: var(--text-2); }
-  .kinds { display: grid; gap: 14px; margin: 0; }
+  .kinds { display: grid; gap: 14px; margin: 0 0 18px; }
+  h3 { font-size: 1.05rem; margin: 1.4em 0 0.6em; }
   .kinds dt { display: flex; align-items: center; gap: 10px; font-weight: 700; }
   .kinds dt a { text-decoration: none; }
   .kinds dt a:hover { text-decoration: underline; }

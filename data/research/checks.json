@@ -1,4 +1,32 @@
 {
+ "ab-comalpa-el-salvador": {
+  "bsr": {
+   "fy2023": {
+    "country": "El Salvador",
+    "site": "CSL El Salvador",
+    "component": "Navy Active",
+    "city": "San Salvador",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "abdullah-al-mubarak-ab": {
+  "bsr": {
+   "fy2023": {
+    "country": "Kuwait",
+    "site": "Al Mubarak Air Base",
+    "component": "Air Force Active",
+    "city": "Kuwait",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
  "al-dhafra-air-base": {
   "bsr": {
    "fy2023": {
@@ -22,7 +50,8 @@
     "match": "site",
     "score": 1
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "andersen-afb-guam": {
@@ -32,10 +61,18 @@
     "site": "Andersen AFB",
     "component": "Navy Active",
     "city": "Andersen Air Force Base",
-    "match": "city",
-    "score": 0.67
+    "match": "site",
+    "score": 1
    },
-   "fy2019": null
+   "fy2019": {
+    "country": "Guam",
+    "site": "Andersen AFB",
+    "component": "Navy Active",
+    "city": "Andersen Ab",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "artillery-kaserne-garmisch-partenkirchen": {
@@ -55,7 +92,36 @@
     "city": "Garmisch",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "ausenfeuerstellung-205-baumholder": {
+  "bsr": {
+   "fy2023": {
+    "country": "Germany",
+    "site": "Pfeffelbach Works",
+    "component": "Army Active",
+    "city": "Pfeffelbach",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  }
+ },
+ "autec-bahamas": {
+  "bsr": {
+   "fy2023": {
+    "country": "Bahamas, The",
+    "site": "AUTEC Main Base",
+    "component": "Navy Active",
+    "city": "Andros Island",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "aviano-air-base": {
@@ -75,7 +141,8 @@
     "city": "Aviano",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "bann-communications-station": {
@@ -90,19 +157,20 @@
    },
    "fy2019": {
     "country": "Germany",
-    "site": "Bann Communications Station 2",
+    "site": "Bann Communications Station",
     "component": "Air Force Active",
     "city": "Bann",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "bann-communications-station-2": {
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "Bann Communications Station",
+    "site": "Bann Communications Station  2",
     "component": "Air Force Active",
     "city": "Bann",
     "match": "site",
@@ -115,7 +183,8 @@
     "city": "Bann",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "barton-barracks-ansbach": {
@@ -135,7 +204,22 @@
     "city": "Ansbach",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "base-aerienne-de-chabelley": {
+  "bsr": {
+   "fy2023": {
+    "country": "Djibouti",
+    "site": "Csl Chabelley",
+    "component": "Air Force Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "baumholder-community": {
@@ -155,14 +239,15 @@
     "city": "Baumholder",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "baumholder-training-area": {
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "Baumholder Airfield",
+    "site": "Baumholder Qm Area",
     "component": "Army Active",
     "city": "Baumholder",
     "match": "site",
@@ -176,6 +261,27 @@
     "match": "site",
     "score": 1
    }
+  }
+ },
+ "beale-air-force-base-california": {
+  "bsr": {
+   "fy2023": {
+    "country": "California",
+    "site": "Beale AFB",
+    "component": "Air Force Active",
+    "city": "Beale Afb",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "California",
+    "site": "Beale AFB",
+    "component": "Air Force Active",
+    "city": "Beale Afb",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "boblingen-panzerkaserne": {
@@ -198,6 +304,48 @@
    }
   }
  },
+ "bruchmuhlbach-miesau-us-army-depot": {
+  "bsr": {
+   "fy2023": {
+    "country": "Germany",
+    "site": "Miesau Ammo Depot",
+    "component": "Army Active",
+    "city": "Miesau",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "camp-as-sayliayah": {
+  "bsr": {
+   "fy2023": {
+    "country": "Qatar",
+    "site": "Camp As Sayliyah",
+    "component": "Army Active",
+    "city": "Doha",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "camp-buehring": {
+  "bsr": {
+   "fy2023": {
+    "country": "Kuwait",
+    "site": "Camp Buehring",
+    "component": "Army Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
  "camp-carroll-waegwan": {
   "bsr": {
    "fy2023": {
@@ -215,7 +363,8 @@
     "city": "Waegwan",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-casy-dongducheon": {
@@ -235,7 +384,8 @@
     "city": "Tong Du Chon",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-darby-tirrenia-livorno": {
@@ -255,7 +405,8 @@
     "city": "Tirrenia",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-ederle-vicenza": {
@@ -275,7 +426,8 @@
     "city": "Vicenza",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-foster-zukeran": {
@@ -295,7 +447,8 @@
     "city": "Zukeran",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-hansen-okinawa": {
@@ -315,7 +468,8 @@
     "city": "Onna Okinawa",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-henry-daegu": {
@@ -330,12 +484,13 @@
    },
    "fy2019": {
     "country": "Korea, Republic Of",
-    "site": "Camp Henry Pier 8",
+    "site": "Camp Henry",
     "component": "Army Active",
-    "city": "Pusan",
+    "city": "Taegu",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-kinser-okinawa": {
@@ -355,7 +510,8 @@
     "city": "Makiminato Okinawa",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-lester-okinawa": {
@@ -375,7 +531,8 @@
     "city": "Chatan Okinawa",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "camp-walker-taeku": {
@@ -395,16 +552,38 @@
     "city": "Taegu",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "cape-cod-air-force-station": {
+  "bsr": {
+   "fy2023": {
+    "country": "Massachusetts",
+    "site": "Cape Cod AS",
+    "component": "Air Force Active",
+    "city": "Bourne",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Massachusetts",
+    "site": "Cape Cod AS",
+    "component": "Air Force Active",
+    "city": "Bourne",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "chievres-ab": {
   "bsr": {
    "fy2023": {
     "country": "Belgium",
-    "site": "Chievres",
+    "site": "Chievres AB",
     "component": "Army Active",
-    "city": "Chievres",
+    "city": "Chievres Ab",
     "match": "site",
     "score": 1
    },
@@ -415,7 +594,29 @@
     "city": "Chievres Ab",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "clear-air-force-station-alaska": {
+  "bsr": {
+   "fy2023": {
+    "country": "Alaska",
+    "site": "Clear AB",
+    "component": "Air Force Active",
+    "city": "Clear Air Force Station",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Alaska",
+    "site": "Clear AB",
+    "component": "Air Force Active",
+    "city": "Clear A.F.B.",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "coleman-barracks-mannheim": {
@@ -438,6 +639,41 @@
    }
   }
  },
+ "command-ground-system-sigonella": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "NAS Sigonella",
+    "component": "Navy Active",
+    "city": "Sigonella",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  }
+ },
+ "creech-air-force-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Nevada",
+    "site": "Creech AFB",
+    "component": "Air Force Active",
+    "city": "Indian Springs",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Nevada",
+    "site": "Creech AFB",
+    "component": "Air Force Active",
+    "city": "Indian Springs",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  }
+ },
  "daenner-kaserne": {
   "bsr": {
    "fy2023": {
@@ -455,7 +691,8 @@
     "city": "Kaiserlautern",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "darmstadt-training-center": {
@@ -478,6 +715,20 @@
    }
   }
  },
+ "darwin-raaf-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Australia",
+    "site": "Royal Australian Air Force Base Darwin",
+    "component": "Air Force Active",
+    "city": "Darwin",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
  "davis-monthan-ab-curacao": {
   "bsr": {
    "fy2023": {
@@ -486,7 +737,7 @@
     "component": "Air Force Active",
     "city": "Willemstad",
     "match": "site",
-    "score": 0.67
+    "score": 1
    },
    "fy2019": {
     "country": "Netherlands Antilles",
@@ -494,8 +745,9 @@
     "component": "Air Force Active",
     "city": "Curacao",
     "match": "site",
-    "score": 0.67
-   }
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "del-din-barracks-vicenza": {
@@ -515,7 +767,8 @@
     "city": "Vicenza",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "deu-wiesbaden-mainz-kastel": {
@@ -540,7 +793,14 @@
  },
  "deveselu-base": {
   "bsr": {
-   "fy2023": null,
+   "fy2023": {
+    "country": "Romania",
+    "site": "NAVSUPPFAC Romania",
+    "component": "Navy Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
    "fy2019": {
     "country": "Romania",
     "site": "NAVSUPPFAC Romania",
@@ -548,7 +808,8 @@
     "city": "Deveselu",
     "match": "city",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "diego-garcia-airport": {
@@ -608,7 +869,8 @@
     "city": "Stuttgart",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "egelsbach-transmitter-fac": {
@@ -628,7 +890,8 @@
     "city": "Langen",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "eygelshoven-army-depot": {
@@ -648,7 +911,29 @@
     "city": "Eygelshoven",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "fort-greely-alaska": {
+  "bsr": {
+   "fy2023": {
+    "country": "Alaska",
+    "site": "Fort Greely",
+    "component": "Army Active",
+    "city": "Delta Junction",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Alaska",
+    "site": "Fort Greely",
+    "component": "Army Active",
+    "city": "Delta Junction",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "freihoelser-training-area-amberg": {
@@ -668,7 +953,22 @@
     "city": "Amberg",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "geilenkirchen-nato-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Germany",
+    "site": "Geilenkirchen AB",
+    "component": "Air Force Active",
+    "city": "Geilenkirchen",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "germersheim-us-army-depot": {
@@ -708,7 +1008,8 @@
     "city": "Brescia",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "context"
   }
  },
  "gitmo-guantanamo-bay": {
@@ -728,7 +1029,8 @@
     "city": "Guantanamo Bay",
     "match": "site",
     "score": 0.67
-   }
+   },
+   "review": "supports"
   }
  },
  "graf-ignatievo-ab-bulgaria": {
@@ -748,7 +1050,7 @@
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "East Camp Grafenwoehr",
+    "site": "Grafenwoehr Training Area",
     "component": "Army Active",
     "city": "Grafenwohr",
     "match": "city",
@@ -756,7 +1058,7 @@
    },
    "fy2019": {
     "country": "Germany",
-    "site": "Grafenwoehr",
+    "site": "Grafenwoehr Training Area",
     "component": "Army Active",
     "city": "Grafenwohr",
     "match": "city",
@@ -781,7 +1083,8 @@
     "city": "Gruenstadt",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "guantanamo-bay-naval-base": {
@@ -828,7 +1131,7 @@
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "Hohenfels",
+    "site": "Hohenfels Training Area",
     "component": "Army Active",
     "city": "Hohenfels",
     "match": "site",
@@ -841,7 +1144,8 @@
     "city": "Hohenfels",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "husterhoeh-polygone": {
@@ -861,7 +1165,8 @@
     "city": "Pirmasens",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "incirlik-air-base": {
@@ -901,7 +1206,8 @@
     "city": "Okinawa Island",
     "match": "city",
     "score": 0.67
-   }
+   },
+   "review": "context"
   }
  },
  "johnston-atoll": {
@@ -921,7 +1227,8 @@
     "city": "Johnston Atoll",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "context"
   }
  },
  "kadena-air-base": {
@@ -941,34 +1248,36 @@
     "city": "Kadena Air Base Okinawa",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "kadena-ammunition-okinawa": {
   "bsr": {
    "fy2023": {
     "country": "Japan",
-    "site": "Awase",
-    "component": "Navy Active",
+    "site": "Kadena Ammo Storage Annex",
+    "component": "Air Force Active",
     "city": "Kadena Air Base Okinawa",
-    "match": "city",
-    "score": 0.67
+    "match": "site",
+    "score": 1
    },
    "fy2019": {
     "country": "Japan",
-    "site": "COMFLEACT Kadena Okinawa",
-    "component": "Navy Active",
+    "site": "Kadena Ammo Storage Annex",
+    "component": "Air Force Active",
     "city": "Kadena Air Base Okinawa",
     "match": "site",
-    "score": 0.67
-   }
+    "score": 1
+   },
+   "review": "supports"
   }
  },
  "kaiserslautern-army-depot": {
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "Kaiserslautern",
+    "site": "Kaiserslautern Army Depot",
     "component": "Army Active",
     "city": "Kaiserlautern",
     "match": "site",
@@ -976,12 +1285,13 @@
    },
    "fy2019": {
     "country": "Germany",
-    "site": "Kaiserslautern Equip Spt Ctr",
+    "site": "Kaiserslautern Army Depot",
     "component": "Army Active",
     "city": "Kaiserlautern",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "kapaun-air-station-kaiserslautern": {
@@ -1001,7 +1311,8 @@
     "city": "Kaiserlautern",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "katterbach-kaserne-ansbach": {
@@ -1044,6 +1355,20 @@
    }
   }
  },
+ "kenyan-naval-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Kenya",
+    "site": "Kenya",
+    "component": "Navy Active",
+    "city": "Mombasa",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  }
+ },
  "kleber-kaserne-kaiserslautern": {
   "bsr": {
    "fy2023": {
@@ -1061,7 +1386,8 @@
     "city": "Kaiserlautern",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "kleine-brogel-air-base": {
@@ -1081,7 +1407,22 @@
     "city": "Kleine-Brogel",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "kleine-brogel-nuclear": {
+  "bsr": {
+   "fy2023": {
+    "country": "Belgium",
+    "site": "Kleine Brogel AB",
+    "component": "Air Force Active",
+    "city": "Kleine-brogel",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
   }
  },
  "kunsan-ab-gunsan": {
@@ -1101,7 +1442,22 @@
     "city": "Kunsan",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "kurecik-radar-station": {
+  "bsr": {
+   "fy2023": {
+    "country": "Turkey",
+    "site": "Kurecik",
+    "component": "Army Active",
+    "city": "Malatya",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "lajes-azores": {
@@ -1128,20 +1484,21 @@
   "bsr": {
    "fy2023": {
     "country": "Germany",
-    "site": "Baumholder Hospital",
+    "site": "Landstuhl Hospital",
     "component": "Army Active",
-    "city": "Baumholder",
+    "city": "Landstuhl",
     "match": "site",
     "score": 1
    },
    "fy2019": {
     "country": "Germany",
-    "site": "Baumholder Hospital",
+    "site": "Landstuhl Hospital",
     "component": "Army Active",
-    "city": "Baumholder",
+    "city": "Landstuhl",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "lask-air-base": {
@@ -1154,7 +1511,8 @@
     "match": "site",
     "score": 1
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "longare-communications-site-pluto-vicenza": {
@@ -1174,7 +1532,22 @@
     "city": "Vicenza",
     "match": "city",
     "score": 0.67
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "maritime-component-command-naples": {
+  "bsr": {
+   "fy2023": {
+    "country": "Italy",
+    "site": "Lago Patria",
+    "component": "Navy Active",
+    "city": "Naples",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
   }
  },
  "mcas-futenma": {
@@ -1187,7 +1560,8 @@
     "match": "city",
     "score": 0.75
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "mccully-barracks-wackernheim": {
@@ -1207,7 +1581,8 @@
     "city": "Wackernheim",
     "match": "city",
     "score": 0.67
-   }
+   },
+   "review": "supports"
   }
  },
  "menwith-hill-air-force-harrogate": {
@@ -1217,16 +1592,16 @@
     "site": "RAF Menwith Hill",
     "component": "Air Force Active",
     "city": "Harrogate",
-    "match": "city",
-    "score": 0.75
+    "match": "site",
+    "score": 0.67
    },
    "fy2019": {
     "country": "United Kingdom",
     "site": "RAF Menwith Hill",
     "component": "Air Force Active",
     "city": "Harrogate",
-    "match": "city",
-    "score": 0.75
+    "match": "site",
+    "score": 0.67
    }
   }
  },
@@ -1242,12 +1617,27 @@
    },
    "fy2019": {
     "country": "Romania",
-    "site": "Mihail Kogalniceanu Main Camp",
+    "site": "Mihail Kogalniceanu Airfield",
     "component": "Army Active",
     "city": "Mihail Kogălniceanu",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "moron-air-base-spain": {
+  "bsr": {
+   "fy2023": {
+    "country": "Spain",
+    "site": "Moron AB",
+    "component": "Air Force Active",
+    "city": "Moron De La Frontera",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "muwaffaq-salti-air-base-al-azraq-jordan": {
@@ -1260,7 +1650,22 @@
     "match": "site",
     "score": 0.67
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "namfi-souda": {
+  "bsr": {
+   "fy2023": {
+    "country": "Greece",
+    "site": "NSA Souda Bay NAMFI Compound",
+    "component": "Navy Active",
+    "city": "Ormos Soudas",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "namfi-souda-bay": {
@@ -1300,7 +1705,36 @@
     "city": "Placentia, Newfoundland",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "naval-air-facility-atsugi-kanagawa": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "NAF Atsugi",
+    "component": "Navy Active",
+    "city": "Atsugi",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "naval-base-guam": {
+  "bsr": {
+   "fy2023": {
+    "country": "Guam",
+    "site": "NAVBASE Guam",
+    "component": "Navy Active",
+    "city": "Agana",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "naval-comm-station-exmouth": {
@@ -1320,7 +1754,50 @@
     "city": "Northwest Cape",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "naval-radio-transmitter-grindavik": {
+  "bsr": {
+   "fy2023": {
+    "country": "Iceland",
+    "site": "Grindavik, Iceland",
+    "component": "Navy Active",
+    "city": "Grindavik",
+    "match": "site",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Iceland",
+    "site": "Grindavik, Iceland",
+    "component": "Navy Active",
+    "city": "Grindavik",
+    "match": "site",
+    "score": 1
+   },
+   "review": "supports"
+  }
+ },
+ "naval-radio-transmitter-lualualei": {
+  "bsr": {
+   "fy2023": {
+    "country": "Hawaii",
+    "site": "Waianae",
+    "component": "Navy Active",
+    "city": "Lualualei Hawaiian Home Land",
+    "match": "city",
+    "score": 1
+   },
+   "fy2019": {
+    "country": "Hawaii",
+    "site": "Waianae",
+    "component": "Navy Active",
+    "city": "Lualualei",
+    "match": "city",
+    "score": 1
+   },
+   "review": "context"
   }
  },
  "naval-station-rota": {
@@ -1340,7 +1817,8 @@
     "city": "Rota",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "naval-transmitter-site-aguada": {
@@ -1360,7 +1838,8 @@
     "city": "Aguada",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "novo-selo": {
@@ -1381,6 +1860,20 @@
     "match": "site",
     "score": 1
    }
+  }
+ },
+ "nsa-coast-guard-bahrain": {
+  "bsr": {
+   "fy2023": {
+    "country": "Bahrain",
+    "site": "NSA Bahrain",
+    "component": "Navy Active",
+    "city": "Manama",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "nsa-souda-bay": {
@@ -1420,7 +1913,8 @@
     "city": "Ansbach",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "osan-ab-pyeongtaek": {
@@ -1435,12 +1929,13 @@
    },
    "fy2019": {
     "country": "Korea, Republic Of",
-    "site": "Osan Site 2",
+    "site": "Osan AFB",
     "component": "Air Force Active",
     "city": "Osan Afb",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "panzer-kaserne-kaiserslautern": {
@@ -1460,7 +1955,8 @@
     "city": "Stuttgart",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "patch-barracks-stuttgart": {
@@ -1500,7 +1996,8 @@
     "city": "Singapore",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "pulaski-barracks-kaiserslautern": {
@@ -1520,7 +2017,8 @@
     "city": "Kaiserlautern",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-akrotiri": {
@@ -1533,7 +2031,8 @@
     "match": "site",
     "score": 1
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "raf-alconbury": {
@@ -1553,7 +2052,8 @@
     "city": "Cambridge",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-ascension-island-st-helena": {
@@ -1573,7 +2073,8 @@
     "city": "Ascension Island",
     "match": "city",
     "score": 0.67
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-barford-st-john": {
@@ -1613,7 +2114,8 @@
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-blenheim-crescent": {
@@ -1633,7 +2135,8 @@
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-croughton": {
@@ -1693,7 +2196,8 @@
     "city": "Feltwell",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-lakenheath": {
@@ -1713,7 +2217,8 @@
     "city": "Lakenheath",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-mildenhall": {
@@ -1733,7 +2238,8 @@
     "city": "Mildenhall",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-molesworth": {
@@ -1753,7 +2259,8 @@
     "city": "Cambridge",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-oakhanger": {
@@ -1773,7 +2280,8 @@
     "city": "Northamptonshire",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "raf-welford-ammo-storage-area": {
@@ -1793,7 +2301,8 @@
     "city": "Welford",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "ramstein-air-base": {
@@ -1846,7 +2355,8 @@
     "city": "Kaiserlautern",
     "match": "site",
     "score": 0.67
-   }
+   },
+   "review": "supports"
   }
  },
  "robinson-barracks-stuttgart": {
@@ -1866,7 +2376,8 @@
     "city": "Stuttgart",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "sasebo-naval-base-nagasaki": {
@@ -1886,7 +2397,8 @@
     "city": "Sasebo",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "sembach-kaserne": {
@@ -1906,7 +2418,36 @@
     "city": "Sembach",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "shaikh-isa-air-base-bahrain": {
+  "bsr": {
+   "fy2023": {
+    "country": "Bahrain",
+    "site": "Sheik Isa",
+    "component": "Navy Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "shape-mons": {
+  "bsr": {
+   "fy2023": {
+    "country": "Belgium",
+    "site": "Shape Headquarters",
+    "component": "Army Active",
+    "city": "Mons",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "shipton-kaserne-ansbach": {
@@ -1926,7 +2467,8 @@
     "city": "Ansbach",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "sigonalla-air-base": {
@@ -1946,7 +2488,22 @@
     "city": "Sigonella Sicily",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "singapore": {
+  "bsr": {
+   "fy2023": {
+    "country": "Singapore",
+    "site": "Singapore Area Coordinator",
+    "component": "Navy Active",
+    "city": "Singapore",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
   }
  },
  "smith-barracks-baumholder": {
@@ -1966,7 +2523,8 @@
     "city": "Baumholder",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "soto-cano-honduras": {
@@ -1986,7 +2544,8 @@
     "city": "Comayagua",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "spangdahlem-air-base": {
@@ -2009,6 +2568,20 @@
    }
   }
  },
+ "stock-barracks-illesheim": {
+  "bsr": {
+   "fy2023": {
+    "country": "Germany",
+    "site": "Storck Barracks",
+    "component": "Army Active",
+    "city": "Illesheim",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
  "suwon-ab": {
   "bsr": {
    "fy2023": {
@@ -2026,7 +2599,50 @@
     "city": "Suwon",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "taegu-region": {
+  "bsr": {
+   "fy2023": {
+    "country": "South Korea",
+    "site": "Taegu AB",
+    "component": "Air Force Active",
+    "city": "Taegu",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
+  }
+ },
+ "tengan-pier-camp-courtney": {
+  "bsr": {
+   "fy2023": {
+    "country": "Japan",
+    "site": "Camp Courtney",
+    "component": "Marine Corps Active",
+    "city": "Camp Courtney Okinawa",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
+  }
+ },
+ "thule-air-base": {
+  "bsr": {
+   "fy2023": {
+    "country": "Greenland",
+    "site": "Thule AB",
+    "component": "Air Force Active",
+    "city": "Thule",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "thumrait": {
@@ -2039,7 +2655,22 @@
     "city": "Muscat",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "training-center-drawsko": {
+  "bsr": {
+   "fy2023": {
+    "country": "Poland",
+    "site": "Drawsko Pomorskie Training Area",
+    "component": "Army Active",
+    "city": "Unknown",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "u-s-army-garrison-stuttgart": {
@@ -2072,7 +2703,8 @@
     "match": "site",
     "score": 1
    },
-   "fy2019": null
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "us-army-garrison-yongsan": {
@@ -2092,7 +2724,22 @@
     "city": "Seoul",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
+  }
+ },
+ "us-camp-lemonnier": {
+  "bsr": {
+   "fy2023": {
+    "country": "Djibouti",
+    "site": "Camp Lemonier Djibouti",
+    "component": "Navy Active",
+    "city": "Djibouti",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "supports"
   }
  },
  "usag-ansbach": {
@@ -2127,12 +2774,26 @@
    },
    "fy2019": {
     "country": "Korea, Republic Of",
-    "site": "Camp Humphreys (High Point)",
+    "site": "Camp Humphreys",
     "component": "Army Active",
-    "city": "Pyeongtaek",
+    "city": "Pyong Taek",
     "match": "site",
     "score": 1
    }
+  }
+ },
+ "vieques-island-training-area": {
+  "bsr": {
+   "fy2023": {
+    "country": "Puerto Rico",
+    "site": "Vieques West",
+    "component": "Navy Active",
+    "city": "Vieques",
+    "match": "manual",
+    "score": 1
+   },
+   "fy2019": null,
+   "review": "context"
   }
  },
  "volkel-ab": {
@@ -2152,7 +2813,8 @@
     "city": "Volkel",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "walter-wetzel-kaserne-baumholder": {
@@ -2172,7 +2834,8 @@
     "city": "Baumholder",
     "match": "city",
     "score": 0.67
-   }
+   },
+   "review": "supports"
   }
  },
  "white-beach-okinawa": {
@@ -2187,8 +2850,8 @@
    },
    "fy2019": {
     "country": "Japan",
-    "site": "White Beach, NEXRAD Site",
-    "component": "Air Force Active",
+    "site": "White Beach",
+    "component": "Navy Active",
     "city": "White Beach Nav Inst",
     "match": "site",
     "score": 1
@@ -2219,9 +2882,9 @@
   "bsr": {
    "fy2023": {
     "country": "Japan",
-    "site": "COMFLEACT Sasebo",
+    "site": "COMFLEACT Yokosuka",
     "component": "Navy Active",
-    "city": "Sasebo",
+    "city": "Yokosuka",
     "match": "site",
     "score": 1
    },
@@ -2232,7 +2895,8 @@
     "city": "Yokosuka",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "yokota-air-base-tokyo": {
@@ -2252,7 +2916,8 @@
     "city": "Yokota Afb",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  },
  "zutendaal-ab-belgium": {
@@ -2272,7 +2937,8 @@
     "city": "Zutendaal",
     "match": "site",
     "score": 1
-   }
+   },
+   "review": "supports"
   }
  }
 }

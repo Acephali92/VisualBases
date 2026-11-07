@@ -1,5 +1,102 @@
 [
  {
+  "url": "https://www.army.mil/article/277657/first_batch_of_armored_vehicles_arrives_at_powidz_aps_2_worksite",
+  "title": "First batch of armored vehicles arrives at Powidz APS-2 worksite",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2024-06-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army's Army Prepositioned Stocks-2 worksite at Powidz, Poland, received its first armoured vehicles (Abrams tanks) by rail in June 2024.",
+  "base": "33rd-air-base-powidz",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "base": "ab-comalpa-el-salvador",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – CSL El Salvador (Navy Active, San Salvador)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"CSL El Salvador\", Navy Active, nearest city San Salvador, El Salvador.",
+  "note": "Cooperative Security Location El Salvador (city given as San Salvador); the CSL is at Comalapa airport. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "base": "abdullah-al-mubarak-ab",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Al Mubarak Air Base (Air Force Active, Kuwait)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Al Mubarak Air Base\", Air Force Active, nearest city Kuwait, Kuwait.",
+  "note": "(row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.thenationalnews.com/world/europe/an-unmistakable-symbol-of-a-growing-strategic-partnership-1.505677",
+  "title": "An unmistakable symbol of a growing strategic partnership",
+  "publisher": "The National (Abu Dhabi)",
+  "type": "media",
+  "published": "2009-05-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "On the opening of the French base in Abu Dhabi (2009): it has three parts – a naval facility at Mina Zayed port, an air component at Al Dhafra and a ground-forces training camp.",
+  "note": "Covers the French presence only (the dataset also lists GB and US). The dataset position does not match Mina Zayed – check it.",
+  "base": "abu-dhabi-uae-2",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "aitos-bulgaria",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "al-dhafra-air-base",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Al Dhafra Air Base (Air Force Active, Al Dhafra Air Base)",
@@ -19,6 +116,24 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.aa.com.tr/en/middle-east/us-completes-withdrawal-from-al-tanf-base-in-syria-centcom/3828375",
+  "title": "US completes withdrawal from al-Tanf base in Syria: CENTCOM",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2026-02-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "According to US Central Command, US forces completed their withdrawal from the al-Tanf garrison in Syria in February 2026; the base was handed over to the Syrian government.",
+  "note": "Status: al-Tanf is a former US base since February 2026; the dataset still shows it as active.",
+  "base": "al-tanf-syria",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "al-udeid-doha",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Al Udeid Air Base (Air Force Active, Al Udeid Air Base)",
@@ -31,11 +146,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Al Udeid Air Base\", Air Force Active, nearest city Al Udeid Air Base, Qatar.",
-  "note": "site name match 100 %",
+  "note": "The dataset lists only GB; the BSR shows Al Udeid as a US Air Force site – the stationing nations look incomplete. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://news.err.ee/1122683/us-air-force-completes-us-10-8-million-amari-investment",
+  "title": "US Air Force completes US$10.8-million Ämari investment",
+  "publisher": "ERR (Estonian Public Broadcasting)",
+  "type": "media",
+  "published": "2020-08-11",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force completed infrastructure investments worth 10.8 million dollars at Ämari Air Base, Estonia (2020).",
+  "note": "US-funded infrastructure and recurring rotational deployments, not a permanent US unit.",
+  "base": "amari-air-base",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "andersen-afb-guam",
@@ -50,11 +185,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Andersen AFB\", Navy Active, nearest city Andersen Air Force Base, Guam.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "apiay-ab",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "artillery-kaserne-garmisch-partenkirchen",
@@ -69,10 +223,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Artillery Kaserne\", Army Active, nearest city Garmisch, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "ausenfeuerstellung-205-baumholder",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Pfeffelbach Works (Army Active, Pfeffelbach)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Pfeffelbach Works\", Army Active, nearest city Pfeffelbach, Germany.",
+  "note": "US Army property near Pfeffelbach, which visualbases.org already associated with this site; the BSR does not say that it is an artillery firing position. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "base": "autec-bahamas",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – AUTEC Main Base (Navy Active, Andros Island)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"AUTEC Main Base\", Navy Active, nearest city Andros Island, Bahamas, The.",
+  "note": "Five further AUTEC sites on Andros Island are listed separately. (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -88,11 +280,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Aviano AB\", Air Force Active, nearest city Aviano, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://aa.com.tr/en/asia-pacific/us-forces-transfer-their-main-bagram-airfield-to-afghans/2292072",
+  "title": "US forces transfer their main Bagram Airfield to Afghans",
+  "publisher": "Anadolu Agency",
+  "type": "media",
+  "published": "2021-07-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces handed Bagram Airfield over to the Afghan security forces in early July 2021.",
+  "note": "Status: Bagram has not been a US base since July 2021 (historical).",
+  "base": "bagram-air-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "bahia-malaga",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "bann-communications-station",
@@ -107,16 +336,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station\", Air Force Active, nearest city Bann, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "bann-communications-station-2",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Bann Communications Station (Air Force Active, Bann)",
+  "title": "Base Structure Report FY2023 – Bann Communications Station  2 (Air Force Active, Bann)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -126,10 +355,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station\", Air Force Active, nearest city Bann, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Bann Communications Station  2\", Air Force Active, nearest city Bann, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -145,11 +374,124 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Barton Barracks\", Army Active, nearest city Ansbach, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/operations/actualites/ffdj-formation-eor-au-profit-policiers-djiboutiens",
+  "title": "FFDj – Formation EOR au profit de policiers djiboutiens",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2024-02-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "contradicts",
+  "summary": "The French ministry of the armed forces names Air Base 188 Djibouti as a unit of the French Forces stationed in Djibouti (FFDj, 1,450 personnel under the 2011 defence treaty).",
+  "note": "Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.",
+  "base": "base-aerienne-188-djibouti",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal",
+  "title": "Former colonial ruler France hands over its last military bases in Senegal",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2025-07-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "On 17 July 2025 France returned Camp Geille, its largest base in Senegal, and its airfield at Dakar airport; the month before it had handed over the Kossei base in Chad, its last foothold in the Sahel.",
+  "note": "Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.",
+  "base": "base-aerienne-dakar",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "base-aerienne-de-chabelley",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Csl Chabelley (Air Force Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Csl Chabelley\", Air Force Active, nearest city Unknown, Djibouti.",
+  "note": "Listed as US Cooperative Security Location Chabelley. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/111",
+  "title": "Forces armées en Polynésie française (FAPF)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
+  "note": "Name outdated: Base aérienne 190 was dissolved in 2012; the air component at Faa'a is now listed as „Groupement aéronautique militaire (GAM Faa'a)“.",
+  "base": "base-aerienne190",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.assemblee-nationale.fr/dyn/15/questions/QANR5L15QE219",
+  "title": "Question écrite n° 219 – Attaque base Stoupan",
+  "publisher": "Assemblée nationale (France)",
+  "type": "official",
+  "published": "2017-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A written parliamentary question describes the armed theft of boat engines from the Stoupan military nautical base of the 9th Marine Infantry Regiment (9e RIMA) in Roura on 14 July 2017.",
+  "note": "The question places the base in Roura; a 2024 prefectural order puts it on the Mahury in Matoury – the dataset position (Mahury) is plausible.",
+  "base": "base-nautique-de-stoupan",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://installations.militaryonesource.mil/military-installation/usag-rheinland-pfalz-baumholder/health/health-care",
+  "title": "USAG Rheinland-Pfalz, Baumholder – Health Care",
+  "publisher": "Military OneSource / MilitaryINSTALLATIONS (U.S. Department of Defense)",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The DoD installation directory lists the US Army Health Clinic Baumholder (Fern Street, 55774 Baumholder) with opening hours and refers specialty care to Landstuhl Regional Medical Center.",
+  "base": "baumholder-army-health-clinic",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "baumholder-community",
@@ -164,16 +506,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Airfield\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "note": "The BSR lists several US Army sites in Baumholder (Smith Barracks, airfield, hospital, QM area, family housing); the community as a whole is not one row. (site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "baumholder-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Baumholder Airfield (Army Active, Baumholder)",
+  "title": "Base Structure Report FY2023 – Baumholder Qm Area (Army Active, Baumholder)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -185,9 +527,123 @@
   ],
   "verdict": "unreviewed",
   "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Airfield\", Army Active, nearest city Baumholder, Germany.",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Qm Area\", Army Active, nearest city Baumholder, Germany.",
   "note": "site name match 100 %",
   "collector": "bsr"
+ },
+ {
+  "base": "beale-air-force-base-california",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Beale AFB (Air Force Active, Beale Afb)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Beale AFB\", Air Force Active, nearest city Beale Afb, California.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.army.mil/article/193970/us_army_led_nato_battle_group_on_deterrence_mission_in_poland",
+  "title": "U.S. Army-led NATO Battle Group on deterrence mission in Poland",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-10-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Army-led NATO enhanced Forward Presence battle group in Poland (about 1,200 soldiers, mainly 2nd Squadron, 2nd Cavalry Regiment) is based at Bemowo Piskie Training Area near Orzysz since April 2017.",
+  "note": "US-led multinational battle group (with UK, Romanian and Croatian contingents) on six-month rotations.",
+  "base": "bemowo-piskie",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://bundeswehr.de/resource/blob/5487564/9d5ff6629e39e83cff51434605eaee04/datenblatt-bergen-zum-download-data.pdf",
+  "title": "Truppenübungsplatz Bergen – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Bergen training area (history, facilities), including its earlier use by Dutch forces.",
+  "note": "German-run training area used by allied forces under the NATO Status of Forces arrangements; no permanently stationed foreign force named. Date from the PDF metadata.",
+  "base": "bergen-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "bezmer-air-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.army.mod.uk/media/1578/lo-brunei-june-16.pdf",
+  "title": "HIVE Location Overview – Brunei",
+  "publisher": "British Army (army.mod.uk)",
+  "type": "official",
+  "published": "2016-06-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The British Army's location guide for families describes the Brunei garrison at Seria (Tuker Lines, Mumong), about 90 minutes from the capital.",
+  "note": "Date from the PDF metadata (2016); current state not checked.",
+  "base": "bfb-garrison-seria",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.army.mil/article/282936/usag_ansbach_commanders_reception_highlights_armys_250th_80_year_german_american_partnership",
+  "title": "USAG Ansbach commander's reception highlights Army's 250th, 80-year German-American partnership",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2025-02-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "US Army Garrison Ansbach held its reception at the Von Steuben Community Center on Bismarck Kaserne – the site is in current US Army use.",
+  "base": "bismarck-kaserne-ansbach",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "boblingen-panzerkaserne",
@@ -209,6 +665,82 @@
   "collector": "bsr"
  },
  {
+  "base": "bruchmuhlbach-miesau-us-army-depot",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Miesau Ammo Depot (Army Active, Miesau)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Miesau Ammo Depot\", Army Active, nearest city Miesau, Germany.",
+  "note": "A further row \"Miesau\" is listed. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "base": "camp-as-sayliayah",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Camp As Sayliyah (Army Active, Doha)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp As Sayliyah\", Army Active, nearest city Doha, Qatar.",
+  "note": "(row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/",
+  "title": "Guyana Defence Force (Camp Ayanganna)",
+  "publisher": "National Trust of Guyana",
+  "type": "official",
+  "published": "2022-09-05",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "position",
+   "nation"
+  ],
+  "verdict": "contradicts",
+  "summary": "Camp Ayanganna is in Thomas Lands, Georgetown (Guyana), established 1965 as a site of the Guyana Defence Force.",
+  "note": "Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.",
+  "base": "camp-ayanganna",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "camp-buehring",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Camp Buehring (Army Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Buehring\", Army Active, nearest city Unknown, Kuwait.",
+  "note": "Udairi Range is listed as a separate row. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
   "base": "camp-carroll-waegwan",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Camp Carroll (Army Active, Waegwan)",
@@ -221,10 +753,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Carroll\", Army Active, nearest city Waegwan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -240,10 +772,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Casey\", Army Active, nearest city Tongdu-ch'on, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -259,11 +791,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Darby\", Army Active, nearest city Tirrenia, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://outremers360.com/bassin-atlantique-appli/guadeloupe-les-forces-armees-aux-antilles-et-le-rsma-signent-une-convention-formalisant-leur-cooperation",
+  "title": "Guadeloupe : Les Forces armées aux Antilles et le RSMA signent une convention formalisant leur coopération",
+  "publisher": "Outremers360",
+  "type": "media",
+  "published": "2026-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A convention governs the Jaille and Dugommier camps in Guadeloupe, which host both the RSMA and elements of the French Forces aux Antilles.",
+  "base": "camp-dugommier-rsma",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "camp-ederle-vicenza",
@@ -278,10 +829,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Ederle\", Army Active, nearest city Vicenza, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -297,10 +848,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Foster\", Marine Corps Active, nearest city Camp Foster Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -316,10 +867,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Hansen\", Marine Corps Active, nearest city Onna Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -335,10 +886,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Henry\", Army Active, nearest city Taegu, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -354,10 +905,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Kinser\", Marine Corps Active, nearest city Makiminato Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -373,11 +924,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Lester\", Marine Corps Active, nearest city Chatan, Japan.",
-  "note": "site name match 100 %",
+  "note": "Listed as of 30 Sep 2022; parts of Camp Lester have since been returned to Japan – extent to be checked. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254",
+  "title": "Deutscher Beitrag Resolute Support beendet – Rückverlegung abgeschlossen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2021-06-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The last Bundeswehr aircraft left Camp Marmal, the former German field camp in Mazar-i-Sharif, on 29 June 2021; the German contribution to Resolute Support has ended.",
+  "note": "Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.",
+  "base": "camp-marmal-john-pratt",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "camp-walker-taeku",
@@ -392,16 +961,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Walker\", Army Active, nearest city Taegu, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
-  "base": "chievres-ab",
+  "base": "cape-cod-air-force-station",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Chievres (Army Active, Chievres)",
+  "title": "Base Structure Report FY2023 – Cape Cod AS (Air Force Active, Bourne)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -411,10 +980,88 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Chievres\", Army Active, nearest city Chievres, Belgium.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Cape Cod AS\", Air Force Active, nearest city Bourne, Massachusetts.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "cartagena",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "chievres-ab",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Chievres AB (Army Active, Chievres Ab)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Chievres AB\", Army Active, nearest city Chievres Ab, Belgium.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://maritime-executive.com/article/china-upgrades-djibouti-naval-base-as-an-intelligence-site",
+  "title": "China Upgrades Djibouti Naval Base as an Intelligence Site",
+  "publisher": "The Maritime Executive",
+  "type": "media",
+  "published": "2026-09-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS satellite analysis, the article reports a recently enhanced signals array at the PLA Navy's overseas support base at Doraleh, Djibouti – China's only acknowledged foreign base.",
+  "base": "chinese-naval-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "base": "clear-air-force-station-alaska",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Clear AB (Air Force Active, Clear Air Force Station)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Clear AB\", Air Force Active, nearest city Clear Air Force Station, Alaska.",
+  "note": "Listed as \"Clear AB\" (redesignated Clear Space Force Station in 2021). (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -437,6 +1084,44 @@
   "collector": "bsr"
  },
  {
+  "base": "command-ground-system-sigonella",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NAS Sigonella (Navy Active, Sigonella)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAS Sigonella\", Navy Active, nearest city Sigonella, Italy.",
+  "note": "US presence at Sigonella; the ground system is not listed separately. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "base": "creech-air-force-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Creech AFB (Air Force Active, Indian Springs)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Creech AFB\", Air Force Active, nearest city Indian Springs, Nevada.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
   "base": "daenner-kaserne",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Daenner Kaserne (Army Active, Kaiserlautern)",
@@ -449,11 +1134,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Daenner Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://netzpolitik.org/2014/dagger-complex-luftaufnahmen-und-drohnen-video-von-us-stuetzpunkt/",
+  "title": "Dagger Complex: Luftaufnahmen und Drohnen-Video von US-Stützpunkt",
+  "publisher": "netzpolitik.org",
+  "type": "media",
+  "published": "2014-07-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Describes the Dagger Complex in Griesheim near Darmstadt as a US base and the largest and most important NSA outpost in Europe, with aerial images.",
+  "note": "2014; the NSA role is reported, not officially confirmed.",
+  "base": "darmstadt-griesheim-dagger-complex",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "darmstadt-training-center",
@@ -475,6 +1180,25 @@
   "collector": "bsr"
  },
  {
+  "base": "darwin-raaf-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Royal Australian Air Force Base Darwin (Air Force Active, Darwin)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Royal Australian Air Force Base Darwin\", Air Force Active, nearest city Darwin, Australia.",
+  "note": "Listed as a US Air Force site. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
   "base": "davis-monthan-ab-curacao",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Davis-Monthan AFB (Air Force Active, Willemstad)",
@@ -487,11 +1211,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Davis-Monthan AFB\", Air Force Active, nearest city Willemstad, Curacao.",
-  "note": "site name match 67 %",
+  "note": "The BSR lists the Curaçao site (Willemstad) under its parent installation Davis-Monthan AFB; it is the US Forward Operating Location at Hato airport, not a separate air force base. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/?p=106985",
+  "title": "USAFE-AFAFRICA Warfare Center welcomes new leadership",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2025-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command at the USAFE-AFAFRICA Warfare Center at Einsiedlerhof Military Complex on 18 July 2025; the article recalls that the Warrior Preparation Center was founded there in 1983.",
+  "note": "The Warrior Preparation Center now operates as the USAFE-AFAFRICA Warfare Center (renamed 2022). The dataset has two entries for it – probably a duplicate.",
+  "base": "de-kl-warrior-preparation-center",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "del-din-barracks-vicenza",
@@ -506,10 +1250,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Del Din\", Army Active, nearest city Vicenza, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -530,6 +1274,44 @@
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Mainz-Kastel Station\", Army Active, nearest city Wiesbaden, Germany.",
   "note": "site name match 67 %",
   "collector": "bsr"
+ },
+ {
+  "base": "deveselu-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NAVSUPPFAC Romania (Navy Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVSUPPFAC Romania\", Navy Active, nearest city Unknown, Romania.",
+  "note": "FY2023 lists Naval Support Facility Romania without a city; FY2019 names Deveselu. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://ukdefencejournal.org.uk/the-uk-in-cyprus-the-importance-of-the-sovereign-bases-of-akrotiri-and-dhekelia/",
+  "title": "The UK in Cyprus – The Importance of the Sovereign Bases of Akrotiri and Dhekelia",
+  "publisher": "UK Defence Journal",
+  "type": "media",
+  "published": "2018-06-16",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the British Sovereign Base Areas of Akrotiri and Dhekelia; the UK also controls retained sites around the island, most visibly Mount Olympus Station in the Troodos Mountains.",
+  "base": "dhekelia-military-camp",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "diego-garcia-airport",
@@ -570,6 +1352,46 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.dvidshub.net/news/395769/historical-port-offers-strategic-access-defender-europe-21",
+  "title": "Historical Port Offers Strategic Access, DEFENDER-Europe 21",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-05-04",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Army Europe and Africa used the Port of Durrës for DEFENDER-Europe 21 (2021) to bring equipment ashore; the commander called the port strategically important for access to the Balkans.",
+  "note": "Use of a commercial port during an exercise, not a permanent base; date from the article (interview of 4 May 2021).",
+  "base": "durres-albania",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://nautilus.org/publications/books/australian-forces-abroad/defence-facilities/australian-defence-satellite-communications-station-kojarena/",
+  "title": "Australian Defence Satellite Communications Station, Kojarena",
+  "publisher": "Nautilus Institute for Security and Sustainability",
+  "type": "academic",
+  "published": "2011-12-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Describes three adjacent facilities near Geraldton: the Australian interception station, the MUOS Radio Access Facility and the Satellite Ground Station – West, the latter two built by the United States for US forces' satellite communications.",
+  "note": "The dataset names the site „East Chapman“; Nautilus calls it Kojarena (east of Geraldton) – position to be checked.",
+  "base": "east-chapman-satellite-station",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "echterdingen-airfield",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Echterdingen Airfield (Army Active, Stuttgart)",
@@ -582,10 +1404,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Echterdingen Airfield\", Army Active, nearest city Stuttgart, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -601,10 +1423,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Egelsbach Transmitter Fac\", Army Active, nearest city Langen, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -620,11 +1442,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Eygelshoven Army Depot\", Army Active, nearest city Eygelshoven, Netherlands.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "base": "fort-greely-alaska",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Fort Greely (Army Active, Delta Junction)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Fort Greely\", Army Active, nearest city Delta Junction, Alaska.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal",
+  "title": "Former colonial ruler France hands over its last military bases in Senegal",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2025-07-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "On 17 July 2025 France returned Camp Geille, its largest base in Senegal, and its airfield at Dakar airport; the month before it had handed over the Kossei base in Chad, its last foothold in the Sahel.",
+  "note": "Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.",
+  "base": "fort-lamy-ab-djamena",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "freihoelser-training-area-amberg",
@@ -639,10 +1498,67 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Freihoelser Tng Area\", Army Active, nearest city Amberg, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "fuerte-militar-larandia",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "fuerte-militar-tolemaida",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "geilenkirchen-nato-air-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Geilenkirchen AB (Air Force Active, Geilenkirchen)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Geilenkirchen AB\", Air Force Active, nearest city Geilenkirchen, Germany.",
+  "note": "US Air Force site at the NATO AWACS base. (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -665,6 +1581,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://pmtranscripts.pmc.gov.au/node/18152",
+  "title": "Parliamentary statement by the Prime Minister on the joint defence facilities (Transcript 7438)",
+  "publisher": "Australian Government, Department of the Prime Minister and Cabinet (PM Transcripts)",
+  "type": "official",
+  "published": "1988-11-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Prime Minister Hawke describes the arrangements under which the Australian and US governments cooperate in running the joint defence facilities at Pine Gap and Nurrungar.",
+  "note": "Historical source (1988); confirms the joint Australian–US character of Pine Gap, not the current state.",
+  "base": "ghan-joint-defence-pine-gap",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "ghedi-ab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Ghedi Radio Relay Site (Air Force Active, Brescia)",
@@ -677,10 +1612,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Ghedi Radio Relay Site\", Air Force Active, nearest city Brescia, Italy.",
-  "note": "site name match 100 %",
+  "note": "The BSR lists a US Air Force \"Ghedi Radio Relay Site\" near Brescia – US presence at Ghedi, but not the air base itself as a US installation. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -696,11 +1631,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NS Guantanamo Bay\", Navy Active, nearest city Guantanamo Bay, Guantanamo Bay Naval Base.",
-  "note": "site name match 67 %",
+  "note": "The dataset has no stationing nation; the BSR shows a US Navy installation. (site name match 67 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://snl.no/GLOBUS_-_radar",
+  "title": "GLOBUS – radar",
+  "publisher": "Store norske leksikon",
+  "type": "academic",
+  "published": "2025-12-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Norwegian encyclopedia describes the GLOBUS radars at the armed forces station in Vardø as Norwegian–US cooperation projects (today the Norwegian Intelligence Service and the US Space Force), operated by Norwegian personnel.",
+  "note": "Joint project operated by Norwegian staff – no permanently stationed US personnel.",
+  "base": "globus-ii-norway",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "graf-ignatievo-ab-bulgaria",
@@ -722,9 +1677,28 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "graf-ignatievo-ab-bulgaria",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "grafenwoehr-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – East Camp Grafenwoehr (Army Active, Grafenwohr)",
+  "title": "Base Structure Report FY2023 – Grafenwoehr Training Area (Army Active, Grafenwohr)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -736,7 +1710,7 @@
   ],
   "verdict": "unreviewed",
   "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"East Camp Grafenwoehr\", Army Active, nearest city Grafenwohr, Germany.",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Grafenwoehr Training Area\", Army Active, nearest city Grafenwohr, Germany.",
   "note": "only the nearest city matches (100 %) – a US site in this place, not necessarily this facility",
   "collector": "bsr"
  },
@@ -753,10 +1727,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Gruenstadt AAFES Fac\", Army Active, nearest city Gruenstadt, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -779,6 +1753,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.middleeasteye.net/fr/reportages/affaire-des-drones-ou-se-cachent-les-bases-americaines-en-afrique-du-nord",
+  "title": "Affaire des drones : où se cachent les bases américaines en Afrique du Nord ?",
+  "publisher": "Middle East Eye (édition française)",
+  "type": "media",
+  "published": "2016-10-27",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "According to the report, AFRICOM has for several years used part of the Guelmim air base in southern Morocco for aerial surveillance.",
+  "note": "Single media report (2016); not officially confirmed. Inezgane and Boufarik are not mentioned.",
+  "base": "guelmim-airport",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "henoko-camp-schwab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Camp Schwab (Marine Corps Active, Henoko Okinawa)",
@@ -798,9 +1792,28 @@
   "collector": "bsr"
  },
  {
+  "url": "https://cyberandspecialistoperationscommand.blog.gov.uk/2024/07/10/vip-visit/",
+  "title": "Commander UKStratCom and DirOb visit",
+  "publisher": "GOV.UK blog – Cyber & Specialist Operations Command (UK Ministry of Defence)",
+  "type": "official",
+  "published": "2024-07-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The commander of UK Strategic Command visited British Forces Gibraltar in 2024, including His Majesty's Naval Base, the Royal Navy Gibraltar Squadron and RAF Gibraltar.",
+  "base": "hm-naval-base-gibraltar",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "hohenfels-training-area",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Hohenfels (Army Active, Hohenfels)",
+  "title": "Base Structure Report FY2023 – Hohenfels Training Area (Army Active, Hohenfels)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -810,11 +1823,32 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Hohenfels\", Army Active, nearest city Hohenfels, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Hohenfels Training Area\", Army Active, nearest city Hohenfels, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.stripes.com/theaters/europe/2024-04-22/rhine-ordnance-barracks-medical-center-construction-cost-13623428.html",
+  "title": "Cost for new US military hospital near Ramstein surges to $1.6 billion, German officials say",
+  "publisher": "Stars and Stripes",
+  "type": "media",
+  "published": "2024-04-22",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "The Rhine Ordnance Barracks Medical Center under construction in Weilerbach next to Ramstein will be the largest US military hospital abroad; completion is expected in 2027, costs have risen to about 1.6 billion dollars according to German officials.",
+  "note": "Under construction (completion planned 2027).",
+  "base": "hospital-weilerbach",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "husterhoeh-polygone",
@@ -829,10 +1863,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Husterhoeh Communication Site\", Air Force Active, nearest city Pirmasens, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -855,6 +1889,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "base": "jacobabad-dalbandin-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "jasdf-naha-air-base",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Naha Port (Army Active, Okinawa Island)",
@@ -867,10 +1920,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Naha Port\", Army Active, nearest city Okinawa Island, Japan.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Naha Port is a US Army facility in Naha. JASDF Naha Air Base itself is a Japanese base and not in the BSR – the stationing nation US in the dataset needs checking. (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -886,11 +1939,28 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "context",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Johnston Atoll Airfield\", Air Force Active, nearest city Unknown, Johnston Atoll.",
-  "note": "site name match 100 %",
+  "note": "Still listed as Air Force property; the airfield was closed in 2005, so the listing is not evidence of active use. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.nato.int/cps/en/natohq/topics_8189.htm",
+  "title": "NATO and Afghanistan",
+  "publisher": "NATO",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "NATO states that after the withdrawal of all Resolute Support forces in August 2021 the mission was terminated in early September 2021, and that NATO has suspended all support to Afghanistan.",
+  "note": "Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).",
+  "base": "kabul-isaf-headquarters",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "kadena-air-base",
@@ -905,16 +1975,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kadena AB\", Air Force Active, nearest city Kadena Air Base Okinawa, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "kadena-ammunition-okinawa",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Awase (Navy Active, Kadena Air Base Okinawa)",
+  "title": "Base Structure Report FY2023 – Kadena Ammo Storage Annex (Air Force Active, Kadena Air Base Okinawa)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -924,16 +1994,16 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Awase\", Navy Active, nearest city Kadena Air Base Okinawa, Japan.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kadena Ammo Storage Annex\", Air Force Active, nearest city Kadena Air Base Okinawa, Japan.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
   "base": "kaiserslautern-army-depot",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Kaiserslautern (Army Active, Kaiserlautern)",
+  "title": "Base Structure Report FY2023 – Kaiserslautern Army Depot (Army Active, Kaiserlautern)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -943,10 +2013,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kaiserslautern\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kaiserslautern Army Depot\", Army Active, nearest city Kaiserlautern, Germany.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -962,10 +2032,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kapaun Administration Annex\", Air Force Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "Listed as \"Kapaun Administration Annex\". (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -988,6 +2058,25 @@
   "collector": "bsr"
  },
  {
+  "url": "https://en.highnorthnews.com/home/waking-up-the-keflavik-air-base-us-navy-returns-after-10-years-of-absence/104589",
+  "title": "Waking up the Keflavik air base; US Navy returns after 10 years of absence",
+  "publisher": "High North News",
+  "type": "media",
+  "published": "2016-02-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Navy budget request included 21.4 million dollars to upgrade hangars at Keflavik for P-8 Poseidon aircraft, to be stationed there on a rotational basis – ten years after the US left in 2006.",
+  "note": "Rotational use since 2016; no permanent US base.",
+  "base": "keflavik-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "kelley-barracks-stuttgart",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Kelley Barracks (Army Active, Stuttgart)",
@@ -1007,6 +2096,83 @@
   "collector": "bsr"
  },
  {
+  "base": "kenyan-naval-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Kenya (Navy Active, Mombasa)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kenya\", Navy Active, nearest city Mombasa, Kenya.",
+  "note": "A US Navy site in Mombasa (FY2019: \"NSA Bahrain Kenya\"); Mtongwe is not named. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "base": "khalid-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases",
+  "title": "Syria says it reached deal with Moscow on future of Russian bases",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2026-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Syria and Russia agreed in August 2026 on the future of Hmeimim air base and Tartus naval base: both are to become joint training and capacity-building centres, with civilian parts handed to Syria.",
+  "note": "Russian presence continues in a changed form; the final intergovernmental agreement was still pending in autumn 2026.",
+  "base": "khmeimim-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.longwarjournal.org/archives/2020/09/us-forces-targeted-by-shabaab-suicide-bombing.php",
+  "title": "US forces targeted by Shabaab suicide bombing",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2020-09-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "A US service member was wounded in an al-Shabaab suicide attack outside a military base near Kismayo, where US troops worked alongside the US-trained Danab special forces (September 2020).",
+  "base": "kismayo-airport-somalia",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
   "base": "kleber-kaserne-kaiserslautern",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Kleber Kaserne (Army Active, Kaiserlautern)",
@@ -1019,10 +2185,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kleber Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1038,11 +2204,68 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kleine Brogel AB\", Air Force Active, nearest city Kleine-brogel, Belgium.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "base": "kleine-brogel-nuclear",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Kleine Brogel AB (Air Force Active, Kleine-brogel)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kleine Brogel AB\", Air Force Active, nearest city Kleine-brogel, Belgium.",
+  "note": "US Air Force site at Kleine Brogel; the BSR says nothing about nuclear weapons storage. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.rtbf.be/article/base-de-kleine-brogel-des-travaux-d-infrastructures-pour-le-detachement-americain-ont-ete-effectues-constatent-des-experts-11096052",
+  "title": "Base de Kleine-Brogel : des travaux d'infrastructures pour le détachement américain ont été effectués, constatent des experts",
+  "publisher": "RTBF",
+  "type": "media",
+  "published": "2022-10-31",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Citing the Federation of American Scientists, RTBF reports extension works for the US 701st Munitions Support Squadron at Kleine Brogel, the unit held responsible for the roughly fifteen B61 nuclear bombs stored there.",
+  "note": "Nuclear weapons storage is not officially confirmed – based on FAS estimates. The dataset has no stationing nation; the source names a US unit.",
+  "base": "kleine-brogel-nuclear",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://mia.gov.al/en/nato-tactical-air-base-in-kucova-strengthens-albanias-commitment-to-regional-peace-and-security/",
+  "title": "NATO tactical air base in Kuçova strengthens Albania's commitment to regional peace and security",
+  "publisher": "Media and Information Agency, Government of Albania",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The Albanian government reports the inauguration of the revamped NATO tactical air base in Kuçova, upgraded to host Albania's helicopters and combat aircraft of NATO allies.",
+  "note": "Inaugurated in March 2024 (according to other reports; the page itself shows no date). A NATO-funded base, no permanently stationed foreign force named.",
+  "base": "kucova-albania",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "kunsan-ab-gunsan",
@@ -1057,10 +2280,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kunsan AB\", Air Force Active, nearest city Kunsan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "kurecik-radar-station",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Kurecik (Army Active, Malatya)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Kurecik\", Army Active, nearest city Malatya, Turkey.",
+  "note": "(row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1085,7 +2327,7 @@
  {
   "base": "landstuhl-us-hospital",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – Baumholder Hospital (Army Active, Baumholder)",
+  "title": "Base Structure Report FY2023 – Landstuhl Hospital (Army Active, Landstuhl)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -1095,10 +2337,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Baumholder Hospital\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Landstuhl Hospital\", Army Active, nearest city Landstuhl, Germany.",
+  "note": "Listed as \"Landstuhl Hospital\" (Landstuhl Regional Medical Center). (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1114,11 +2356,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Lask Air Base\", Air Force Active, nearest city Unknown, Poland.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://theprint.in/defence/eye-on-china-us-to-increase-bomber-and-military-rotational-deployments-in-australia/2212612",
+  "title": "Eye on China, US to increase bomber and military rotational deployments in Australia",
+  "publisher": "ThePrint",
+  "type": "media",
+  "published": "2024-08-07",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Reporting on AUSMIN 2024: the US and Australia will add new locations for force posture cooperation, naming RAAF Base Learmonth, alongside continued investment at Darwin and Tindal.",
+  "note": "Planned force posture location (announced 2024), not yet evidence of a permanent US presence.",
+  "base": "learmonth-raaf-base",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "longare-communications-site-pluto-vicenza",
@@ -1133,11 +2394,127 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Longare Communications Site\", Army Active, nearest city Vicenza, Italy.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Listed as \"Longare Communications Site\" (the \"Site Pluto\" name is not in the BSR). (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.airandspaceforces.com/usafe-new-reaper-detachment-in-poland-focuses-on-indications-and-warnings-in-the-baltics",
+  "title": "USAFE: New Reaper Detachment in Poland Focuses on “Indications and Warnings” in the Baltics",
+  "publisher": "Air & Space Forces Magazine",
+  "type": "media",
+  "published": "2019-03-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force MQ-9 Reaper detachment at Miroslawiec Air Base, Poland, was declared fully operational with a ribbon-cutting on 1 March 2019.",
+  "base": "lotnisko-miroslawiec-ab",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "malambo-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/organisation/marine/aktuelles/commander-task-force-baltic-aufgestellt-5848288",
+  "title": "Bundeswehr mit Führungsrolle bei Commander Task Force Baltic",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-10-21",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "context",
+  "summary": "The German Navy set up the multinational staff Commander Task Force Baltic in Rostock in October 2024.",
+  "note": "The staff is located at the naval command in Rostock (Hanse-Kaserne), not at Hohe Düne naval base; it confirms a German-led multinational naval presence in Rostock.",
+  "base": "marinestutzpunkt-hohe-dune-rostock",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "maritime-component-command-naples",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Lago Patria (Navy Active, Naples)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Lago Patria\", Navy Active, nearest city Naples, Italy.",
+  "note": "US Navy site at Lago Patria (Naples), where NATO JFC Naples sits; the maritime component command (MARCOM) itself is in Northwood, UK – entry needs checking. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "martinique-france",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases",
+  "title": "Syria says it reached deal with Moscow on future of Russian bases",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2026-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Syria and Russia agreed in August 2026 on the future of Hmeimim air base and Tartus naval base: both are to become joint training and capacity-building centres, with civilian parts handed to Syria.",
+  "note": "Russian presence continues in a changed form; the final intergovernmental agreement was still pending in autumn 2026.",
+  "base": "material-technical-support-point-tartus-syria",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "mcas-futenma",
@@ -1152,10 +2529,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"MCAS Futenma\", Marine Corps Active, nearest city Futenma Marine Corps Air Stati, Japan.",
-  "note": "only the nearest city matches (75 %) – a US site in this place, not necessarily this facility",
+  "note": "(only the nearest city matches (75 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1171,11 +2548,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"McCully Barracks\", Army Active, nearest city Wackernheim, Germany.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "(only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne",
+  "title": "USAMMCE says farewell to Husterhoeh Kaserne",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2021-10-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status",
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "A farewell ceremony in October 2021 marked the move of the US Army Medical Materiel Center–Europe from Husterhoeh Kaserne, Pirmasens (its home since 1975) to Kaiserslautern Army Depot.",
+  "note": "Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.",
+  "base": "medical-material-center-europe",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "menwith-hill-air-force-harrogate",
@@ -1193,7 +2589,7 @@
   "verdict": "unreviewed",
   "method": "auto",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Menwith Hill\", Air Force Active, nearest city Harrogate, United Kingdom.",
-  "note": "only the nearest city matches (75 %) – a US site in this place, not necessarily this facility",
+  "note": "site name match 67 %",
   "collector": "bsr"
  },
  {
@@ -1209,11 +2605,69 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Mihail Kogalniceanu Airfield\", Army Active, nearest city Unknown, Romania.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.defensenews.com/naval/2017/02/09/china-upgrades-military-infrastructure-on-south-china-sea-islands-report-claims/",
+  "title": "China upgrades military infrastructure on South China Sea islands, report claims",
+  "publisher": "Defense News",
+  "type": "media",
+  "published": "2017-02-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS-AMTI satellite imagery, the article reports Chinese military infrastructure on the Paracels: Duncan Island with a helicopter base, and a single helipad each on Triton, Money and Pattle islands, besides the main base on Woody Island.",
+  "note": "Imagery as of 2016/2017; current state not checked.",
+  "base": "money-island-south-chinese-sea",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "moron-air-base-spain",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Moron AB (Air Force Active, Moron De La Frontera)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Moron AB\", Air Force Active, nearest city Moron De La Frontera, Spain.",
+  "note": "(row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.bundeswehr.de/resource/blob/5487572/e2245cf4f7765ff57372f02598fc82d8/download-datenblatt-munster-nord-data.pdf",
+  "title": "Truppenübungsplatz Munster-Nord – Datenblatt",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-01-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Bundeswehr data sheet on the Munster-Nord training area (10,200 ha, training area command Munster).",
+  "note": "German training area; date from the PDF metadata.",
+  "base": "munster-training-area",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "muwaffaq-salti-air-base-al-azraq-jordan",
@@ -1228,10 +2682,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Muwaffaq Salti Air Base\", Air Force Active, nearest city Al Mafraq, Jordan.",
-  "note": "site name match 67 %",
+  "note": "The dataset has no stationing nation; the BSR shows a US Air Force site (city given as Al Mafraq). (site name match 67 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "namfi-souda",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NSA Souda Bay NAMFI Compound (Navy Active, Ormos Soudas)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NSA Souda Bay NAMFI Compound\", Navy Active, nearest city Ormos Soudas, Greece.",
+  "note": "(row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1266,10 +2739,107 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Argentia Newfoundland\", Navy Active, nearest city Placentia, Newfoundland, Canada.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/8052833/18-cssb-tests-capabilities-brings-fuel-spangdahlem",
+  "title": "18 CSSB Tests Capabilities, Brings Fuel to Spangdahlem",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2023-09-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Army fuel specialists drew fuel at the Central Europe Pipeline System depot in Bitburg in September 2023 to supply Spangdahlem Air Base.",
+  "note": "NATO pipeline depot used by US forces; operated within the NATO pipeline system.",
+  "base": "nato-pipeline-station-bitburg",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "naval-air-facility-atsugi-kanagawa",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NAF Atsugi (Navy Active, Atsugi)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAF Atsugi\", Navy Active, nearest city Atsugi, Japan.",
+  "note": "(row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://info.fr/fort-de-france-martial-heraud-commandement-base-navale/",
+  "title": "Fort-de-France : Martial Héraud prend le commandement de la base navale",
+  "publisher": "INFO.FR",
+  "type": "media",
+  "published": "2026-07-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command of the French naval base at Fort-de-France on 16 July 2026 in a ceremony at Fort Saint-Louis.",
+  "note": "The article is marked as written with AI assistance (\"rédacteur IA\") – an official source would be better.",
+  "base": "naval-base-fort-saint-louis",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "naval-base-fort-saint-louis",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "base": "naval-base-guam",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NAVBASE Guam (Navy Active, Agana)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVBASE Guam\", Navy Active, nearest city Agana, Guam.",
+  "note": "(row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1285,10 +2855,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAVCOMMSTA H E Holt Exmouth\", Navy Active, nearest city Northwest Cape, Australia.",
-  "note": "site name match 100 %",
+  "note": "Listed as US Navy site \"NAVCOMMSTA H E Holt\"; the station is operated jointly with Australia. (site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "naval-radio-transmitter-grindavik",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Grindavik, Iceland (Navy Active, Grindavik)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Grindavik, Iceland\", Navy Active, nearest city Grindavik, Iceland.",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "naval-radio-transmitter-lualualei",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Waianae (Navy Active, Lualualei Hawaiian Home Land)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Waianae\", Navy Active, nearest city Lualualei Hawaiian Home Land, Hawaii.",
+  "note": "US Navy site \"Waianae\" with location Lualualei; the transmitter facility is not named separately. (only the nearest city matches (100 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1304,10 +2912,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NS Rota\", Navy Active, nearest city Rota, Spain.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1323,11 +2931,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Low Frequency Transmitter Site Aguada\", Navy Active, nearest city Unknown, Puerto Rico.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/",
+  "title": "US completes withdrawal from AB 201",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2024-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces completed their withdrawal from Air Base 201 in Agadez in August 2024, two months after the first C-17 left Air Base 101 in Niamey on 7 June; the Niamey withdrawal took one month.",
+  "note": "Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)",
+  "base": "niamey-air-base",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "novo-selo",
@@ -1346,6 +2972,44 @@
   "method": "auto",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Novo Selo Training Area\", Army Active, nearest city Unknown, Bulgaria.",
   "note": "site name match 100 %",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago",
+  "title": "Bulgaria, US Ink Defence Cooperation Accord 20 Years Ago",
+  "publisher": "BTA – Bulgarian News Agency",
+  "type": "media",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The state news agency recalls that the 2006 US–Bulgaria agreement lists the Novo Selo Training Range including the Aytos storage facility, Bezmer Air Base and Graf Ignatievo Air Base as shared/joint facilities.",
+  "base": "novo-selo",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "base": "nsa-coast-guard-bahrain",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – NSA Bahrain (Navy Active, Manama)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NSA Bahrain\", Navy Active, nearest city Manama, Bahrain.",
+  "note": "Naval Support Activity Bahrain (Manama); the Coast Guard unit is not listed separately. (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1380,11 +3044,67 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Oberdachstetten Training Area\", Army Active, nearest city Unknown, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/meldungen/nachgefragt-truppenuebungsplaetze-bundeswehr-5784748",
+  "title": "„Nachgefragt“ zu Truppenübungsplätzen",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2024-05-24",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "The Bundeswehr explains its training areas; at Bergen, Oberlausitz and Munster the focus is live firing by armoured forces.",
+  "base": "oberlausitz-training-area",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.longwarjournal.org/archives/2022/03/shabaab-attacks-international-hub-in-mogadishu-where-u-s-embassy-is-located.php",
+  "title": "Shabaab attacks international hub in Mogadishu where U.S. Embassy is located",
+  "publisher": "FDD's Long War Journal",
+  "type": "media",
+  "published": "2022-03-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "context",
+  "summary": "The Halane camp near Aden Adde airport in Mogadishu houses the US embassy, the UN mission and other international bodies; it was attacked by al-Shabaab in March 2022.",
+  "note": "Shows a US government presence at the airport compound, but no military facility named \"Ocean Side\" – the dataset entry is not confirmed.",
+  "base": "ocean-side-mogadishu",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://thebarentsobserver.com/en/security/2024/02/norway-expands-defense-agreement-american-troops",
+  "title": "Norway expands defense agreement with American troops",
+  "publisher": "The Barents Observer",
+  "type": "media",
+  "published": "2024-02-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Lists the proposed new agreed facilities and areas under the US–Norway SDCA, including Ørland air station and airfield.",
+  "note": "Access and use rights under the agreement (proposal of February 2024, later approved by parliament according to other reports).",
+  "base": "orland-militaerbase",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "osan-ab-pyeongtaek",
@@ -1399,11 +3119,127 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Osan AFB\", Air Force Active, nearest city Osan, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://sverigesradio.se/artikel/sweden-and-the-us-sign-historic-defence-deal",
+  "title": "Sweden and the US sign historic defence deal",
+  "publisher": "Sveriges Radio",
+  "type": "media",
+  "published": "2023-12-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "summary": "Swedish public radio reports the signing of the DCA, giving the US military access to 17 bases in Sweden; individual sites are not named.",
+  "base": "overview-new-us-access-in-sweden",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "overview-new-us-access-in-sweden",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/9650853/eucom-senior-enlisted-leader-visits-us-rotational-forces-lithuania",
+  "title": "EUCOM senior enlisted leader visits U.S. rotational forces in Lithuania",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2026-04-28",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "US Army photo (April 2026): visit to the US rotational forces at Camp Herkus, Pabradė Training Area, Lithuania, including newly built Lithuanian-funded barracks for US troops.",
+  "note": "Rotational US presence.",
+  "base": "pabrades-poligonas-lithuania",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "context",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "note": "The ministry page places the PAE at Le Lamentin in Martinique; a PAE at Lamentin in Guadeloupe is not mentioned – the entry may confuse the two Lamentin communes.",
+  "base": "pae-du-lamentin-guadeloupe",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml",
+  "title": "Gobierno colombiano divulgó acuerdo militar firmado con Estados Unidos",
+  "publisher": "BioBioChile",
+  "type": "media",
+  "published": "2009-11-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Report on the published text of the 2009 US–Colombia defence cooperation agreement: US forces get access to and use of the air bases Palanquero, Malambo and Apiay, the army forts Larandia and Tolemaida and the naval bases Cartagena and Bahía Málaga.",
+  "note": "Access and use rights (2009), not permanent stationing. Colombia's Constitutional Court ruled in 2010 (Auto 288) that the agreement needed congressional approval – its current legal status needs checking.",
+  "base": "palanquero-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.csmonitor.com/World/Americas/2009/1030/p06s10-woam.html",
+  "title": "US and Colombia sign accord for US to access military bases",
+  "publisher": "The Christian Science Monitor",
+  "type": "media",
+  "published": "2009-10-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the signing of the US–Colombia agreement (30 Oct 2009); most of the 46 million dollars already appropriated was to refurbish Palanquero air base.",
+  "base": "palanquero-ab",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "panzer-kaserne-kaiserslautern",
@@ -1418,11 +3254,49 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Panzer Kaserne\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html",
+  "title": "Heavy Airlift Wing of Pápa Reaches Full Operational Capability",
+  "publisher": "Honvédelem (Hungarian Ministry of Defence)",
+  "type": "official",
+  "published": "2012-11-26",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The multinational Heavy Airlift Wing at Pápa (three C-17s of the Strategic Airlift Capability; participants include the United States) reached full operational capability in November 2012.",
+  "note": "Multinational unit (12 nations incl. the US) – the dataset lists no stationing nation.",
+  "base": "papa-ab-hungary",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "base": "pasni-base-port",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "patch-barracks-stuttgart",
@@ -1444,6 +3318,26 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.defensenews.com/naval/2017/02/09/china-upgrades-military-infrastructure-on-south-china-sea-islands-report-claims/",
+  "title": "China upgrades military infrastructure on South China Sea islands, report claims",
+  "publisher": "Defense News",
+  "type": "media",
+  "published": "2017-02-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Citing CSIS-AMTI satellite imagery, the article reports Chinese military infrastructure on the Paracels: Duncan Island with a helicopter base, and a single helipad each on Triton, Money and Pattle islands, besides the main base on Woody Island.",
+  "note": "Imagery as of 2016/2017; current state not checked.",
+  "base": "pattle-island",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "paya-lebar-air-base",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Paya Lebar Air Base (Navy Active, Singapore)",
@@ -1456,11 +3350,87 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Paya Lebar Air Base\", Navy Active, nearest city Singapore, Singapore.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/97",
+  "title": "Forces armées aux Antilles (FAA)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry describes the Forces armées aux Antilles in Martinique, Guadeloupe and the northern islands, including the naval base and the interministerial Pôle aéronautique étatique (PAE) at Le Lamentin.",
+  "base": "pole-aeronautique-etatique",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.unionesarda.it/news-sardegna/esercitazioni-nato-in-sardegna-i-generali-straordinarie-opportunita-per-turismo-e-lavanderie-jfl52ohm",
+  "title": "Esercitazioni Nato in Sardegna, i generali: «Opportunità per turismo e lavanderie»",
+  "publisher": "L'Unione Sarda",
+  "type": "media",
+  "published": "2023-02-03",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Italian commanders present the 2023 exercises Joint Stars and the NATO exercise Noble Jump on the Sardinian ranges, including Capo Teulada.",
+  "note": "Teulada is an Italian range used for NATO and allied exercises – no permanently stationed foreign force; the dataset has no stationing nation.",
+  "base": "poligono-militare-nato-sardinia-italy",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://gabonmediatime.com/port-gentil-les-marins-gabonais-edifies-sur-le-systeme-sea-vision-par-lus-navy/",
+  "title": "Port-Gentil : les marins gabonais édifiés sur le système Sea Vision par l'US Navy",
+  "publisher": "Gabon Media Time",
+  "type": "media",
+  "published": "2024-08-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "activity"
+  ],
+  "verdict": "context",
+  "summary": "A US Navy delegation stayed in Port-Gentil in 2024 to train Gabonese sailors on the SeaVision maritime awareness system.",
+  "note": "Shows US Navy cooperation and visits in Port-Gentil (US-built maritime operations centre, 2019), but no permanent US base.",
+  "base": "port-gentil-gabon",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.dvidshub.net/news/357168/378th-aew-officially-activates-psab",
+  "title": "378th AEW officially activates at PSAB",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2019-12-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The US Air Force's 378th Air Expeditionary Wing was activated at Prince Sultan Air Base, Saudi Arabia, on 17 December 2019, with about 1,800 deployed personnel.",
+  "base": "prince-sultan-air-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "pulaski-barracks-kaiserslautern",
@@ -1475,10 +3445,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Pulaski Barracks\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1494,10 +3464,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Raf Akrotiri\", Air Force Active, nearest city Limassol, Cyprus.",
-  "note": "site name match 100 %",
+  "note": "The dataset lists only GB; the BSR additionally shows a US Air Force site at RAF Akrotiri. (site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1513,10 +3483,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Alconbury\", Air Force Active, nearest city Cambridge, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1532,10 +3502,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Ascension Auxiliary Airfield\", Air Force Active, nearest city Ascension Island, Saint Helena, Ascension, And Tristan Da Cunha.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Ascension Auxiliary Airfield (Wideawake) is listed as a US Air Force site. (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
  },
  {
@@ -1570,10 +3540,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Bicester\", Air Force Active, nearest city Bicester Afb, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1589,10 +3559,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Blenheim Crescent\", Air Force Active, nearest city Croughton, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1646,11 +3616,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Feltwell\", Air Force Active, nearest city Feltwell, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://cyberandspecialistoperationscommand.blog.gov.uk/2024/07/10/vip-visit/",
+  "title": "Commander UKStratCom and DirOb visit",
+  "publisher": "GOV.UK blog – Cyber & Specialist Operations Command (UK Ministry of Defence)",
+  "type": "official",
+  "published": "2024-07-10",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The commander of UK Strategic Command visited British Forces Gibraltar in 2024, including His Majesty's Naval Base, the Royal Navy Gibraltar Squadron and RAF Gibraltar.",
+  "base": "raf-gibraltar",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "raf-lakenheath",
@@ -1665,10 +3654,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Lakenheath\", Air Force Active, nearest city Lakenheath, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1684,10 +3673,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Mildenhall\", Air Force Active, nearest city Mildenhall, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1703,11 +3692,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Molesworth\", Air Force Active, nearest city Cambridge, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.gov.uk/government/news/runway-repairs-completed-ahead-of-schedule-in-falkland-islands",
+  "title": "Runway repairs completed ahead of schedule in Falkland Islands",
+  "publisher": "GOV.UK (Defence Infrastructure Organisation)",
+  "type": "official",
+  "published": "2025-02-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "A 20 million pound project to resurface part of the airfield at Mount Pleasant Complex, the RAF airfield in the Falkland Islands, was completed in 2025.",
+  "base": "raf-mount-pleasant-falkland",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "raf-oakhanger",
@@ -1722,11 +3731,30 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Oakhanger\", Air Force Active, nearest city Unknown, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://ukdefencejournal.org.uk/the-uk-in-cyprus-the-importance-of-the-sovereign-bases-of-akrotiri-and-dhekelia/",
+  "title": "The UK in Cyprus – The Importance of the Sovereign Bases of Akrotiri and Dhekelia",
+  "publisher": "UK Defence Journal",
+  "type": "media",
+  "published": "2018-06-16",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "On the British Sovereign Base Areas of Akrotiri and Dhekelia; the UK also controls retained sites around the island, most visibly Mount Olympus Station in the Troodos Mountains.",
+  "note": "Mentioned as a retained site (Mount Olympus station in the Troodos Mountains); RAF Troodos is not described in detail.",
+  "base": "raf-troodos",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "raf-welford-ammo-storage-area",
@@ -1741,10 +3769,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"RAF Welford Ammo Storage Area\", Air Force Active, nearest city Welford, United Kingdom.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1767,6 +3795,66 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "note": "Air Base 181 is at Saint-Denis (Roland Garros airport); the page confirms the French forces on Réunion in general.",
+  "base": "reunion",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/99",
+  "title": "Forces armées dans la Zone-sud de l'océan Indien (FAZSOI)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry lists the FAZSOI units on Réunion and Mayotte: 2e RPIMa at Pierrefonds (Saint-Pierre), naval base Port des Galets, Air Base 181 \"Lieutenant Roland Garros\" and others.",
+  "base": "reunion-ab",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.troupesdemarine-ancredor.org/wp-content/uploads/2020/03/2-RPIMa_A3.pdf",
+  "title": "2e RPIMa – fiche régimentaire",
+  "publisher": "Troupes de marine – Ancre d'or (association)",
+  "type": "media",
+  "published": "2020-03-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "position"
+  ],
+  "verdict": "supports",
+  "summary": "The regiment sheet of the 2nd Marine Infantry Parachute Regiment gives its address as Caserne CBA Dupuis, Pierrefonds, 97457 Saint-Pierre (Réunion).",
+  "note": "Confirms the barracks at Pierrefonds/Saint-Pierre, matching the dataset position; publication date from the PDF metadata.",
+  "base": "reunion-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "rhine-ordnance-barracks-vogelweh",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Rhine Ordnance Barracks (Army Active, Kaiserlautern)",
@@ -1779,11 +3867,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Rhine Ordnance Barracks\", Army Active, nearest city Kaiserlautern, Germany.",
-  "note": "site name match 67 %",
+  "note": "(site name match 67 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/9117253/us-marines-sailors-with-mrf-d-253-conduct-integration-check",
+  "title": "U.S. Marines, Sailors with MRF-D 25.3 conduct an integration check",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2025-06-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "US Marine Corps photo from Robertson Barracks, Northern Territory (June 2025): Marines of Marine Rotational Force – Darwin 25.3 conduct an integration check.",
+  "note": "Annual six-month rotation, not a permanent US base.",
+  "base": "robertson-barracks",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "robinson-barracks-stuttgart",
@@ -1798,11 +3906,315 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Robinson Barracks\", Army Active, nearest city Stuttgart, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.lnc.nc/article/nouvelle-caledonie/nord/koumac/cinquante-trois-stagiaires-du-rsma-ont-ete-presentes-au-drapeau-a-koumac",
+  "title": "Cinquante-trois stagiaires du RSMA ont été présentés au drapeau à Koumac",
+  "publisher": "Les Nouvelles Calédoniennes",
+  "type": "media",
+  "published": "2021-07-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "supports",
+  "summary": "Report on a flag ceremony of the adapted military service regiment (RSMA-NC) in Koumac.",
+  "base": "rsma-nc",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.lrt.lt/en/news-in-english/19/2779098/construction-at-german-brigade-s-training-area-in-rudninkai-advances-ahead-of-schedule",
+  "title": "Construction at German brigade's training area in Rūdninkai advances ahead of schedule",
+  "publisher": "LRT (Lithuanian National Radio and Television)",
+  "type": "media",
+  "published": "2025-12-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The training area and base in Rūdninkai for the German Bundeswehr brigade in Lithuania is being built ahead of schedule (December 2025).",
+  "note": "Under construction; permanent German stationing planned (Panzerbrigade 45).",
+  "base": "rudninkai-litauen",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://english.kurd-online.com/?p=1426",
+  "title": "U.S. Forces Withdraw from Kharab al-Jir Airbase in Rmeilan and Hand It Over to a Committee from the Ministry of Defense",
+  "publisher": "Kurd Online",
+  "type": "media",
+  "published": "2026-03-15",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "According to the report, US forces fully withdrew from the Kharab al-Jir air base near Rmeilan on 14 March 2026 and handed it over to the Syrian transitional government.",
+  "note": "Status: the dataset still shows the base as active. Single source relaying the Syrian Observatory for Human Rights; Kharab al-Jir and Rmeilan/Abu Hajar airfield are named inconsistently in reports – check the position.",
+  "base": "rumeilan-air-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2016/1/20/us-takes-control-of-rmeilan-airfield-in-syria",
+  "title": "US 'takes control' of Rmeilan airfield in Syria",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2016-01-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Reports from the Syrian Democratic Forces that US forces took over the Rmeilan airfield in Hasakah province; at the time the Pentagon did not confirm it.",
+  "base": "rumeilan-air-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "url": "https://notesfrompoland.com/2025/04/08/us-to-withdraw-military-from-ukraine-aid-hub-in-poland/",
+  "title": "US to withdraw military from Ukraine aid hub in Poland",
+  "publisher": "Notes From Poland",
+  "type": "media",
+  "published": "2025-04-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "US Army Europe and Africa announced in April 2025 that it would move US military personnel and equipment from Rzeszów-Jasionka, the main aid hub for Ukraine since 2022, to other sites in Poland; protection passes to Poland and NATO allies.",
+  "note": "Status: the US presence at Rzeszów was reduced in 2025; the hub itself remains active under Polish/NATO lead.",
+  "base": "rzeszow",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-berga",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-boden-regimental-area-and-military-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Annex A names „Halmstad: Regimental Area and Air Base“; the dataset calls it „regimental area and flotilla area“. Access rights, not permanent stationing.",
+  "base": "s-halmstad-regimental-area-and-flotilla-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-harnosand",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kiruna",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kristinehamm",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-kvarn",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf",
+  "title": "Agreement on Defense Cooperation between the Government of the Kingdom of Sweden and the Government of the United States of America, Annex A „Agreed Facilities and Areas“",
+  "publisher": "Government of Sweden (government.se)",
+  "type": "official",
+  "published": "2023-12-01",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "Annex A of the signed US–Sweden DCA lists the agreed facilities and areas the US may access and use, including Berga, Boden, Halmstad, Härnösand, Kiruna, Kristinehamn, Kvarn and Ravlunda.",
+  "note": "Access and use rights under the agreement – not evidence of permanent stationing.",
+  "base": "s-ravlunda-military-camp-and-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://theintercept.com/2017/07/20/cameroonian-troops-tortured-and-killed-prisoners-at-base-used-for-u-s-drone-surveillance/",
+  "title": "Cameroonian Troops Tortured and Killed Prisoners at Base Used for U.S. Drone Surveillance",
+  "publisher": "The Intercept",
+  "type": "media",
+  "published": "2017-07-20",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Based on an Amnesty International report and Forensic Architecture research, the article describes Salak (Cameroon) as a base used by US personnel and contractors for drone surveillance and training, and documents torture of detainees there by Cameroonian forces.",
+  "note": "Evidence for US presence (2017); no source found for a French presence at Salak.",
+  "base": "salak-cameroon",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://fena.ba/article/1605326/eufor-marks-20-years-in-bosnia-and-herzegovina-with-a-ceremony-at-the-butmir-base",
+  "title": "EUFOR marks 20 Years in Bosnia and Herzegovina with a ceremony at the Butmir Base",
+  "publisher": "FENA – Federal News Agency (Bosnia and Herzegovina)",
+  "type": "media",
+  "published": "2024-12-02",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "EUFOR held a ceremony at Butmir Base in Sarajevo for 20 years of Operation Althea (December 2024).",
+  "note": "Confirms an active multinational (EU) presence at Butmir next to Sarajevo airport in Bosnia and Herzegovina; says nothing about US forces.",
+  "base": "sarajevo-military-airport",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.everycrsreport.com/files/20060105_RS21774_2e3f9fa595dcd0ee71ab9f282f72cd9e830da29a.html",
+  "title": "Bosnia and the European Union Military Force (EUFOR): Post-NATO Peacekeeping (CRS Report RS21774)",
+  "publisher": "Congressional Research Service (copy on EveryCRSReport.com)",
+  "type": "official",
+  "published": "2006-01-05",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "About 220 US personnel remained in Bosnia, at the NATO headquarters in Camp Butmir in Sarajevo and at Eagle Base in Tuzla (as of January 2006).",
+  "note": "Historical (2006). Country error: Camp Butmir and Sarajevo airport are in Bosnia and Herzegovina, not Croatia (dataset: HR).",
+  "base": "sarajevo-military-airport",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "sasebo-naval-base-nagasaki",
@@ -1817,11 +4229,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Sasebo\", Navy Active, nearest city Sasebo, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.army.mil/article/187887/landstuhl_satcom_facility_cuts_ribbon_on_new_building",
+  "title": "Landstuhl SATCOM facility cuts ribbon on new building",
+  "publisher": "U.S. Army (army.mil)",
+  "type": "official",
+  "published": "2017-05-17",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "New headquarters and operations building for the Enterprise SATCOM Gateway Landstuhl (2017) – the largest Army-operated satellite communications facility outside the continental US.",
+  "base": "satcom-landstuhl",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
  },
  {
   "base": "sembach-kaserne",
@@ -1836,10 +4268,87 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Sembach Admin Annex\", Army Active, nearest city Sembach, Germany.",
-  "note": "site name match 100 %",
+  "note": "Listed as \"Sembach Admin Annex\". (site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://asiatimes.com/2021/05/is-pakistan-poised-to-give-us-new-military-bases/",
+  "title": "Will Pakistan give US post-Afghanistan military bases?",
+  "publisher": "Asia Times",
+  "type": "media",
+  "published": "2021-05-23",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "After 2001 Pakistan granted the US basing rights at Jacobabad (Sindh) and at Shamsi, Dalbandin, Pasni and Samungli (Balochistan), used for logistical support of US forces in Afghanistan.",
+  "note": "Historical use (from 2001); current US use not confirmed – a status question.",
+  "base": "shahbaz-ab",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "shaikh-isa-air-base-bahrain",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Sheik Isa (Navy Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Sheik Isa\", Navy Active, nearest city Unknown, Bahrain.",
+  "note": "BSR spelling \"Sheik Isa\"; \"ISA Flightline\" is listed separately. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate",
+  "title": "US vacates Pakistan base amid drone debate",
+  "publisher": "Al Jazeera",
+  "type": "media",
+  "published": "2011-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The US vacated Shamsi air base in Balochistan in December 2011 after a 15-day ultimatum from Islamabad following a NATO strike that killed 24 Pakistani soldiers.",
+  "note": "Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).",
+  "base": "shamsi-airfield-pakistan",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "shape-mons",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Shape Headquarters (Army Active, Mons)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Shape Headquarters\", Army Active, nearest city Mons, Belgium.",
+  "note": "The BSR lists the US site at SHAPE (NATO headquarters). (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1855,11 +4364,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Shipton Kaserne\", Army Active, nearest city Ansbach, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://english.mapn.ro/cpresa/5245_Establishment-of-the-HQ-Multinational-Corps-South-East",
+  "title": "Establishment of the HQ Multinational Corps South-East",
+  "publisher": "Ministry of National Defence of Romania",
+  "type": "official",
+  "published": "2020-06-18",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence"
+  ],
+  "verdict": "supports",
+  "summary": "The Romanian parliament approved on 18 June 2020 the establishment of the NATO HQ Multinational Corps South-East in Sibiu garrison.",
+  "note": "Confirms a NATO multinational headquarters; it says nothing about the US as stationing nation (the dataset lists US).",
+  "base": "sibiu-nato",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "sigonalla-air-base",
@@ -1874,10 +4401,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"NAS Sigonella\", Navy Active, nearest city Sigonella, Italy.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "base": "singapore",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Singapore Area Coordinator (Navy Active, Singapore)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Singapore Area Coordinator\", Navy Active, nearest city Singapore, Singapore.",
+  "note": "US Navy sites in Singapore: Changi Naval Base, Paya Lebar Air Base, Singapore Area Coordinator. (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -1893,10 +4439,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Smith Barracks\", Army Active, nearest city Baumholder, Germany.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1912,10 +4458,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Soto Cano\", Army Active, nearest city Comayagua, Honduras.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -1938,6 +4484,25 @@
   "collector": "bsr"
  },
  {
+  "base": "stock-barracks-illesheim",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Storck Barracks (Army Active, Illesheim)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Storck Barracks\", Army Active, nearest city Illesheim, Germany.",
+  "note": "Correct spelling \"Storck Barracks\"; the dataset has \"Stock\". (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
   "base": "suwon-ab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Suwon AB (Air Force Active, Suwon)",
@@ -1950,11 +4515,257 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Suwon AB\", Air Force Active, nearest city Suwon, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "base": "taegu-region",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Taegu AB (Air Force Active, Taegu)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Taegu AB\", Air Force Active, nearest city Taegu, South Korea.",
+  "note": "US sites in Taegu (Daegu): Camp Henry, Camp Walker, Taegu AB, Taegu Storage Area. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.defense.gouv.fr/en/node/111",
+  "title": "Forces armées en Polynésie française (FAPF)",
+  "publisher": "Ministère des Armées (France)",
+  "type": "official",
+  "published": "2022-02-14",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The French ministry of the armed forces lists the units of the FAPF, including the military aviation group at Faa'a (GAM Faa'a).",
+  "note": "The page lists the French forces on Tahiti (naval base, GAM Faa'a, RSMA) – supports the general entry \"Tahiti\".",
+  "base": "tahiti-french-polynesia",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia",
+  "title": "United States Military units in Estonia",
+  "publisher": "Ministry of Defence of Estonia",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The Estonian ministry of defence states that US units serve in Estonia under a bilateral agreement on a rotational basis, with locations in Tapa and Reedo near Võru.",
+  "note": "Rotational presence; undated page. For the 2026 drawdown see the Militarnyi report.",
+  "base": "tapa-army-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/",
+  "title": "U.S. Pulls Most Troops Out of Estonia, No Military Presence Planned Beyond 2027",
+  "publisher": "Militarnyi",
+  "type": "media",
+  "published": "2026-07-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "Citing Estonian broadcaster ETV, the US contingent in Estonia (previously 500–700 troops, mainly at Tapa) has fallen to fewer than 100; a further rotation and the presence beyond 2026 are open.",
+  "note": "Status question: the US presence at Tapa has been strongly reduced in 2026.",
+  "base": "tapa-army-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia",
+  "title": "United States Military units in Estonia",
+  "publisher": "Ministry of Defence of Estonia",
+  "type": "official",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "The Estonian ministry of defence states that US units serve in Estonia under a bilateral agreement on a rotational basis, with locations in Tapa and Reedo near Võru.",
+  "note": "Rotational presence; undated page. For the 2026 drawdown see the Militarnyi report.",
+  "base": "tapa-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/",
+  "title": "U.S. Pulls Most Troops Out of Estonia, No Military Presence Planned Beyond 2027",
+  "publisher": "Militarnyi",
+  "type": "media",
+  "published": "2026-07-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "context",
+  "summary": "Citing Estonian broadcaster ETV, the US contingent in Estonia (previously 500–700 troops, mainly at Tapa) has fallen to fewer than 100; a further rotation and the presence beyond 2026 are open.",
+  "note": "Status question: the US presence at Tapa has been strongly reduced in 2026.",
+  "base": "tapa-training-area",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "tengan-pier-camp-courtney",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Camp Courtney (Marine Corps Active, Camp Courtney Okinawa)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Courtney\", Marine Corps Active, nearest city Camp Courtney Okinawa, Japan.",
+  "note": "\"Tengan Pier 6028\" is listed as a separate Navy row. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://sbsstar.net/article/N1008619032/exclusive-thaad-returns-to-seongju-full-battery-of-6-launchers-redeployed",
+  "title": "Exclusive: THAAD Returns to Seongju; Full Battery of 6 Launchers Redeployed",
+  "publisher": "SBS Star (SBS, South Korea)",
+  "type": "media",
+  "published": "2026-06-19",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "After the launchers were temporarily moved out in March 2026, a full US THAAD battery (six launchers, radar, fire control) has been redeployed to the base in Soseong-ri, Seongju.",
+  "base": "thadd-deployment-base",
+  "method": "manual",
+  "note": "",
+  "collector": "manual"
+ },
+ {
+  "base": "thule-air-base",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Thule AB (Air Force Active, Thule)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Thule AB\", Air Force Active, nearest city Thule, Greenland.",
+  "note": "Listed under its former name; renamed Pituffik Space Base in 2023. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "base": "thumrait",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy_2019.xlsx",
+  "title": "Base Structure Report FY2019 – Thumrait MAP (Air Force Active, Muscat)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2018-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2019 (as of 2018-09-30) as \"Thumrait MAP\", Air Force Active, nearest city Muscat, Oman.",
+  "note": "Only in FY2019 (as of 30 Sep 2018), no longer in FY2023 – current status open. (site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.twz.com/australian-airbase-gets-upgrades-for-american-bomber-deployments",
+  "title": "Australian Airbase Gets Upgrades For American Bomber Deployments",
+  "publisher": "The War Zone (TWZ)",
+  "type": "media",
+  "published": "2022-10-31",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "Details of US-funded upgrades at RAAF Base Tindal (apron for up to six B-52s, squadron operations and maintenance facilities) to support rotational US bomber deployments.",
+  "note": "Rotational use and US-funded infrastructure, not a permanent US unit.",
+  "base": "tindal-raaf-base",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "training-center-drawsko",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Drawsko Pomorskie Training Area (Army Active, Unknown)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Drawsko Pomorskie Training Area\", Army Active, nearest city Unknown, Poland.",
+  "note": "(row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.marinecorpstimes.com/news/your-marine-corps/2014/08/12/marines-to-load-new-prepositioning-gear-into-norway-caves/",
+  "title": "Marines to load new prepositioning gear into Norway caves",
+  "publisher": "Marine Corps Times",
+  "type": "media",
+  "published": "2014-08-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "facility"
+  ],
+  "verdict": "context",
+  "summary": "The US Marine Corps modernises the equipment stored in caves in central Norway under its prepositioning programme (2014).",
+  "note": "Marine Corps Prepositioning Program-Norway: storage sites in Trøndelag (not in Trondheim city itself); the article does not name the dataset location.",
+  "base": "trondheim",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "u-s-army-garrison-stuttgart",
@@ -1988,11 +4799,29 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Csl Agadez\", Air Force Active, nearest city Unknown, Niger.",
-  "note": "site name match 100 %",
+  "note": "Listed as Cooperative Security Location Agadez as of 30 Sep 2022. US forces left Niger in 2024 – status needs updating. (site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/",
+  "title": "US completes withdrawal from AB 201",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2024-08-09",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "US forces completed their withdrawal from Air Base 201 in Agadez in August 2024, two months after the first C-17 left Air Base 101 in Niamey on 7 June; the Niamey withdrawal took one month.",
+  "note": "Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)",
+  "base": "us-air-base-201",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "us-army-garrison-yongsan",
@@ -2007,10 +4836,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Yongsan Garrison\", Army Active, nearest city Seoul, South Korea.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
+  "collector": "bsr"
+ },
+ {
+  "url": "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206",
+  "title": "Rückverlegung aus Mali: Bundeswehr übergibt Feldlager Camp Castor",
+  "publisher": "Bundeswehr",
+  "type": "official",
+  "published": "2023-12-12",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "nation",
+   "status"
+  ],
+  "verdict": "contradicts",
+  "summary": "The Bundeswehr handed over its field camp Camp Castor in Gao, Mali, on 12 December 2023 at the end of the UN mission MINUSMA.",
+  "note": "Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it \"US Camp Castor\"), and it has been closed since December 2023.",
+  "base": "us-camp-castor",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "us-camp-lemonnier",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Camp Lemonier Djibouti (Navy Active, Djibouti)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Camp Lemonier Djibouti\", Navy Active, nearest city Djibouti, Djibouti.",
+  "note": "BSR spelling \"Lemonier\". (row assigned by hand)",
   "collector": "bsr"
  },
  {
@@ -2052,6 +4919,45 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.dvidshub.net/news/428233/noble-partner-opening-ceremony",
+  "title": "Noble Partner Opening Ceremony",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2022-08-29",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "activity"
+  ],
+  "verdict": "supports",
+  "summary": "Opening ceremony of the US–Georgian multinational exercise Noble Partner at Vaziani Training Area, Georgia (August 2022).",
+  "note": "Recurring exercises, not permanent US stationing.",
+  "base": "vaziani-military-base-georgia",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "base": "vieques-island-training-area",
+  "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+  "title": "Base Structure Report FY2023 – Vieques West (Navy Active, Vieques)",
+  "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
+  "type": "official",
+  "published": "2022-09-30",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "context",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Vieques West\", Navy Active, nearest city Vieques, Puerto Rico.",
+  "note": "Still listed as Navy property; training on Vieques ended in 2003, so this is not evidence of active use. (row assigned by hand)",
+  "collector": "bsr"
+ },
+ {
   "base": "volkel-ab",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Volkel AB (Air Force Active, Volkel)",
@@ -2064,10 +4970,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Volkel AB\", Air Force Active, nearest city Volkel, Netherlands.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2083,11 +4989,31 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Wetzel Kaserne\", Army Active, nearest city Baumholder, Germany.",
-  "note": "only the nearest city matches (67 %) – a US site in this place, not necessarily this facility",
+  "note": "Listed as \"Wetzel Kaserne\". (only the nearest city matches (67 %) – a US site in this place, not necessarily this facility)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.kaiserslauternamerican.com/?p=106985",
+  "title": "USAFE-AFAFRICA Warfare Center welcomes new leadership",
+  "publisher": "Kaiserslautern American",
+  "type": "media",
+  "published": "2025-07-25",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation",
+   "status"
+  ],
+  "verdict": "supports",
+  "summary": "Change of command at the USAFE-AFAFRICA Warfare Center at Einsiedlerhof Military Complex on 18 July 2025; the article recalls that the Warrior Preparation Center was founded there in 1983.",
+  "note": "The Warrior Preparation Center now operates as the USAFE-AFAFRICA Warfare Center (renamed 2022). The dataset has two entries for it – probably a duplicate.",
+  "base": "warrior-preparation-center-einsiedlerhof",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "white-beach-okinawa",
@@ -2128,9 +5054,28 @@
   "collector": "bsr"
  },
  {
+  "url": "https://www.bmvg.de/de/aktuelles/neues-unterstuetzungskommando-der-nato-jsec-in-ulm-25332",
+  "title": "Neues Unterstützungskommando der NATO (JSEC) in Ulm",
+  "publisher": "Bundesministerium der Verteidigung",
+  "type": "official",
+  "published": "2018-06-08",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "facility"
+  ],
+  "verdict": "supports",
+  "summary": "The new NATO Joint Support and Enabling Command (JSEC) is set up in Ulm; its staff is to be housed in the Wilhelmsburg-Kaserne.",
+  "note": "NATO headquarters with German lead; JSEC reached full operational capability in 2021 (per NATO).",
+  "base": "wilhelmsburg-barracks-ulm",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "yokosuka-fleet",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
-  "title": "Base Structure Report FY2023 – COMFLEACT Sasebo (Navy Active, Sasebo)",
+  "title": "Base Structure Report FY2023 – COMFLEACT Yokosuka (Navy Active, Yokosuka)",
   "publisher": "U.S. Department of Defense (archived copy on basenation.us)",
   "type": "official",
   "published": "2022-09-30",
@@ -2140,10 +5085,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
-  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Sasebo\", Navy Active, nearest city Sasebo, Japan.",
-  "note": "site name match 100 %",
+  "verdict": "supports",
+  "method": "manual",
+  "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"COMFLEACT Yokosuka\", Navy Active, nearest city Yokosuka, Japan.",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  },
  {
@@ -2159,11 +5104,48 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Yokota AB\", Air Force Active, nearest city Yokota Air Base, Japan.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/6632303/combined-seaport-operation-delivers-us-vehicles-equipment-croatia",
+  "title": "Combined seaport operation delivers U.S. vehicles, equipment to Croatia",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-05-06",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "activity"
+  ],
+  "verdict": "context",
+  "summary": "US Army Europe and Africa photo from Zadar (May 2021): US vehicles and equipment were landed in Croatia for DEFENDER-Europe 21.",
+  "note": "Use of the port during an exercise, not a permanent base.",
+  "base": "zadar-gazenica-croatia",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
+  "url": "https://www.dvidshub.net/image/6783550/1st-armored-brigade-combat-team-1st-infantry-division-assumes-authority-zagan-poland",
+  "title": "1st Armored Brigade Combat Team, 1st Infantry Division assumes authority in Żagań, Poland",
+  "publisher": "DVIDS (U.S. Department of Defense)",
+  "type": "official",
+  "published": "2021-08-13",
+  "accessed": "2026-11-07",
+  "httpStatus": 200,
+  "supports": [
+   "presence",
+   "nation"
+  ],
+  "verdict": "supports",
+  "summary": "US Army photo release: the 1st Armored Brigade Combat Team, 1st Infantry Division assumed authority in Żagań for its rotation under Atlantic Resolve (August 2021).",
+  "note": "Rotational presence; the current rotation was not checked.",
+  "base": "zagan-training-area",
+  "method": "manual",
+  "collector": "manual"
  },
  {
   "base": "zutendaal-ab-belgium",
@@ -2178,10 +5160,10 @@
    "presence",
    "nation"
   ],
-  "verdict": "unreviewed",
-  "method": "auto",
+  "verdict": "supports",
+  "method": "manual",
   "summary": "Listed in the DoD Base Structure Report FY2023 (as of 2022-09-30) as \"Zutendaal\", Army Active, nearest city Zutendaal, Belgium.",
-  "note": "site name match 100 %",
+  "note": "(site name match 100 %)",
   "collector": "bsr"
  }
 ]
