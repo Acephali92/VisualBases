@@ -38,7 +38,8 @@
   });
 
   async function share() {
-    const url = location.href;
+    // the static page carries title/description/image for link previews and forwards to the app
+    const url = `${location.href.split('#')[0].replace(/index\.html$/, '')}b/${base.id}.html`;
     const title = `${base.name} – VisualBases`;
     if (navigator.share) {
       try { await navigator.share({ title, url }); return; } catch { /* cancelled */ }

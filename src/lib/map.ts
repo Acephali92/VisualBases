@@ -196,6 +196,8 @@ export async function createMap(
     },
     destroy() { map.remove(); },
   };
+  // resolve only once the style is ready, so callers can move the camera safely
+  await loaded;
   return handle;
 }
 

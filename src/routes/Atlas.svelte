@@ -18,6 +18,14 @@
   let filterOpen = $state(false);
   let sheetOpen = $state(false);
   let showLegend = $state(!isNarrow());
+  let embedOpen = $state(false);
+  let embedCopied = $state(false);
+  const embedCode = $derived(
+    `<iframe src="${location.href.split('#')[0]}#/embed${route.query ? '?' + route.query : ''}" width="100%" height="480" style="border:0;border-radius:12px" loading="lazy" title="VisualBases" allow="fullscreen"></iframe>`,
+  );
+  async function copyEmbed() {
+    try { await navigator.clipboard.writeText(embedCode); embedCopied = true; setTimeout(() => (embedCopied = false), 2000); } catch { /* ignore */ }
+  }
 
   const filters = $derived(queryToFilters(route.query));
   const selectedId = $derived(route.path.startsWith('/base/') ? decodeURIComponent(route.path.slice(6)) : null);
@@ -164,12 +172,21 @@
       <div class="meta-row">
         <strong>{t('filters.results', { n: formatNumber(results.length) })}</strong>
         <span class="row-actions">
+          <button class="linkish" aria-expanded={embedOpen} onclick={() => (embedOpen = !embedOpen)}>&lt;/&gt; {t('embed.button')}</button>
           {#if activeCount || filters.q}
             <button class="linkish" onclick={fitResults}>⤢ {t('filters.map')}</button>
             <button class="linkish" onclick={() => go('/atlas', '', true)}>{t('filters.reset')}</button>
           {/if}
         </span>
       </div>
+
+      {#if embedOpen}
+        <div class="embed-box">
+          <p>{t('embed.text')}</p>
+          <textarea readonly rows="4" onfocus={(e) => (e.target as HTMLTextAreaElement).select()}>{embedCode}</textarea>
+          <button class="btn btn-sm" onclick={copyEmbed}>{embedCopied ? '✓ ' + t('embed.copied') : t('embed.copy')}</button>
+        </div>
+      {/if}
 
       {#if filterOpen}
         <div class="filters">
@@ -254,6 +271,9 @@
   .row-actions { display: flex; gap: 12px; }
   .linkish { background: none; border: 0; padding: 0; color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; font-size: 0.85rem; }
 
+  .embed-box { padding: 10px 16px 14px; border-bottom: 1px solid var(--line); font-size: 0.85rem; color: var(--text-2); }
+  .embed-box p { margin-bottom: 8px; }
+  .embed-box textarea { width: 100%; resize: none; font: 0.75rem/1.4 ui-monospace, monospace; background: var(--bg-2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 8px; margin-bottom: 8px; }
   .filters { padding: 8px 16px 16px; border-bottom: 1px solid var(--line); overflow-y: auto; max-height: 60%; flex: none; }
   fieldset { border: 0; margin: 0 0 12px; padding: 0; }
   legend { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 700; margin-bottom: 8px; padding: 0; }

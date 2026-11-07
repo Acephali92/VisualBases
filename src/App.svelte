@@ -10,6 +10,7 @@
   import About from './routes/About.svelte';
   import News from './routes/News.svelte';
   import Act from './routes/Act.svelte';
+  import Embed from './routes/Embed.svelte';
 
   initRouter();
   onMount(loadData);
@@ -41,6 +42,9 @@
   });
 </script>
 
+{#if section === 'embed'}
+  <Embed />
+{:else}
 <a class="skip-link" href="#main" onclick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('nav.skip')}</a>
 
 <header class="site-header" class:solid={section !== '' || scrolled || menuOpen}>
@@ -114,6 +118,7 @@
       </nav>
     </div>
   </footer>
+{/if}
 {/if}
 
 <style>
