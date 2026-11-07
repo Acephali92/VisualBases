@@ -11,7 +11,7 @@
  * candidates (verdict "unreviewed"). Wikidata itself counts as geodata (position/status only).
  */
 import { TODAY, fetchWithRetry, loadBases, saveSources, saveChecks, classifyUrl } from './lib.mjs';
-import { distanceKm } from '../../src/lib/data.ts';
+import { distanceKm } from '../../src/lib/geo.ts';
 
 const API = 'https://www.wikidata.org/w/api.php';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

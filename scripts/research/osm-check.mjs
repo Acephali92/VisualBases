@@ -10,7 +10,7 @@
  * OpenStreetMap confirms the location of a military site, never who is stationed there.
  */
 import { fetchWithRetry, loadBases, loadResearch, saveChecks } from './lib.mjs';
-import { distanceKm } from '../../src/lib/data.ts';
+import { distanceKm } from '../../src/lib/geo.ts';
 
 const OVERPASS = process.env.OVERPASS_URL ?? 'https://overpass-api.de/api/interpreter';
 const RADIUS = 3000;

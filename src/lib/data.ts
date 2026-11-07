@@ -1,20 +1,12 @@
 import type { Base, Filters, Story } from './types';
 import { ACTIVITY, LEGACY_FILTERS, SITE_TYPE } from './taxonomy';
+import { distanceKm } from './geo';
 
 export const EMPTY_FILTERS: Filters = { q: '', kinds: [], status: [], nations: [], facilities: [], themes: [], activities: [], continents: [], countries: [] };
 export const FILTER_KEYS = ['kinds', 'status', 'nations', 'facilities', 'themes', 'activities', 'continents', 'countries'] as const;
 export type FilterKey = (typeof FILTER_KEYS)[number];
 
-const EARTH_RADIUS_KM = 6371;
-const rad = (d: number) => (d * Math.PI) / 180;
-
-/** great-circle distance in km */
-export function distanceKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
-  const dLat = rad(lat2 - lat1);
-  const dLon = rad(lon2 - lon1);
-  const a = Math.sin(dLat / 2) ** 2 + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLon / 2) ** 2;
-  return 2 * EARTH_RADIUS_KM * Math.asin(Math.min(1, Math.sqrt(a)));
-}
+export { distanceKm };
 
 /** summary entries (garrison, region) stand for several sites and are not counted as a site */
 export const isAggregate = (b: Pick<Base, 'siteType'>) => SITE_TYPE[b.siteType]?.class === 'aggregate';

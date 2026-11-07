@@ -111,6 +111,16 @@ describe('coordinates', () => {
   });
 });
 
+describe('node scripts', () => {
+  it('load in plain Node (type stripping needs explicit .ts imports down the chain)', async () => {
+    // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+    const { execFileSync } = await import('node:child_process');
+    const files = ['scripts/research/wikidata.mjs', 'scripts/research/osm-check.mjs', 'scripts/research/bsr.mjs', 'scripts/research/wiki-refs.mjs', 'scripts/research/summarize.mjs', 'scripts/validate-data.mjs', 'scripts/migration-report.mjs', 'scripts/lib/resolve.mjs', 'scripts/lib/export.mjs'];
+    const code = `for (const f of ${JSON.stringify(files)}) await import('./' + f);`;
+    expect(() => execFileSync('node', ['--input-type=module', '-e', code], { stdio: 'pipe' })).not.toThrow();
+  });
+});
+
 describe('exports', () => {
   it('carry the CC BY 4.0 licence and the new classification', async () => {
     // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
