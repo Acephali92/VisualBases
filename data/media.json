@@ -1718,45 +1718,6 @@
   "license": "Public domain",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg"
  },
- "https://upload.wikimedia.org/wikipedia/commons/5/55/Nowruz_in_northern_Afghanistan-2011_%28cropped%29.jpg": {
-  "src": "media/nowruz-in-northern-afghanistan-2011-cropped.webp",
-  "thumb": "media/nowruz-in-northern-afghanistan-2011-cropped-480.webp",
-  "w": 831,
-  "h": 426,
-  "tw": 480,
-  "th": 246,
-  "type": "photo",
-  "credit": "Peretz Partensky from San Francisco, USA",
-  "license": "CC BY-SA 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nowruz_in_northern_Afghanistan-2011_(cropped).jpg"
- },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ku%C3%A7ov%C3%AB_Main_street.jpg/1920px-Ku%C3%A7ov%C3%AB_Main_street.jpg": {
-  "src": "media/1920px-ku-ov-main-street.webp",
-  "thumb": "media/1920px-ku-ov-main-street-480.webp",
-  "w": 1400,
-  "h": 930,
-  "tw": 480,
-  "th": 319,
-  "type": "photo",
-  "credit": "Albinfo",
-  "license": "CC0",
-  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ku%C3%A7ov%C3%AB_Main_street.jpg"
- },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ushuaia_aerial_panorama.jpg/1920px-Ushuaia_aerial_panorama.jpg": {
-  "src": "media/1920px-ushuaia-aerial-panorama.webp",
-  "thumb": "media/1920px-ushuaia-aerial-panorama-480.webp",
-  "w": 1400,
-  "h": 759,
-  "tw": 480,
-  "th": 260,
-  "type": "photo",
-  "credit": "Deensel",
-  "license": "CC BY 2.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ushuaia_aerial_panorama.jpg"
- },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/140411-M-SE196-011_%2813870441484%29.jpg/1920px-140411-M-SE196-011_%2813870441484%29.jpg": {
   "src": "media/1920px-140411-m-se196-011-13870441484.webp",
   "thumb": "media/1920px-140411-m-se196-011-13870441484-480.webp",
@@ -1817,19 +1778,6 @@
   "license": "Public domain",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_050816-N-9563N-006_New_chief_petty_officer_(CPO)_selectees_perform_morning_colors_on_board_Naval_Support_Activity_(NSA)_Bahrain.jpg"
  },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/BujumburaFromCathedral.jpg/1920px-BujumburaFromCathedral.jpg": {
-  "src": "media/1920px-bujumburafromcathedral.webp",
-  "thumb": "media/1920px-bujumburafromcathedral-480.webp",
-  "w": 1400,
-  "h": 1050,
-  "tw": 480,
-  "th": 360,
-  "type": "photo",
-  "credit": "SteveRwanda",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:BujumburaFromCathedral.jpg"
- },
  "https://upload.wikimedia.org/wikipedia/commons/6/69/AUTEC_from_the_air.jpg": {
   "src": "media/autec-from-the-air.webp",
   "thumb": "media/autec-from-the-air-480.webp",
@@ -1841,19 +1789,6 @@
   "credit": "Wikited (talk) (Uploads)",
   "license": "Public domain",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:AUTEC_from_the_air.jpg"
- },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/View_from_I-Tower_SE_20200712.jpg/1920px-View_from_I-Tower_SE_20200712.jpg": {
-  "src": "media/1920px-view-from-i-tower-se-20200712.webp",
-  "thumb": "media/1920px-view-from-i-tower-se-20200712-480.webp",
-  "w": 1400,
-  "h": 788,
-  "tw": 480,
-  "th": 270,
-  "type": "photo",
-  "credit": "CNJerem",
-  "license": "CC BY 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_I-Tower_SE_20200712.jpg"
  },
  "https://upload.wikimedia.org/wikipedia/commons/b/b1/Argentia_airphoto.jpg": {
   "src": "media/argentia-airphoto.webp",
@@ -1867,29 +1802,77 @@
   "license": "Public domain",
   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentia_airphoto.jpg"
  },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pratas_Island_ISS004-10210.jpg/1920px-Pratas_Island_ISS004-10210.jpg": {
-  "src": "media/1920px-pratas-island-iss004-10210.webp",
-  "thumb": "media/1920px-pratas-island-iss004-10210-480.webp",
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay%2C_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg/1920px-thumbnail.jpg": {
+  "src": "media/1920px-thumbnail.webp",
+  "thumb": "media/1920px-thumbnail-480.webp",
   "w": 1400,
-  "h": 933,
+  "h": 840,
+  "tw": 480,
+  "th": 288,
+  "type": "photo",
+  "credit": "U.S. Navy photo by Chief Mass Communication Specialist Bill Mesta",
+  "license": "Public domain",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay,_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg"
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Snowboarding_in_Troodos.jpg/1920px-Snowboarding_in_Troodos.jpg": {
+  "src": "media/1920px-snowboarding-in-troodos.webp",
+  "thumb": "media/1920px-snowboarding-in-troodos-480.webp",
+  "w": 1400,
+  "h": 1050,
+  "tw": 480,
+  "th": 360,
+  "type": "photo",
+  "credit": "Edi Weissmann from Amsterdam, Netherlands",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowboarding_in_Troodos.jpg"
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/2-227th_Aviation_Regiment%2C_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg/1920px-2-227th_Aviation_Regiment%2C_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg": {
+  "src": "media/1920px-2-227th-aviation-regiment-1st-air-cavalry-brigade-helicopters-arrive-at-k.webp",
+  "thumb": "media/1920px-2-227th-aviation-regiment-1st-air-cavalry-brigade-helicopters-arrive-at-k-480.webp",
+  "w": 1400,
+  "h": 934,
   "tw": 480,
   "th": 320,
   "type": "photo",
-  "credit": "ISS Crew Earth Observations experiment and the Image Science &amp; Analysis Laboratory, NASA - Johnson Space Center",
+  "credit": "U.S. Army photo by Charles Rosemond",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pratas_Island_ISS004-10210.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:2-227th_Aviation_Regiment,_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg"
  },
- "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG/1920px-Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG": {
-  "src": "media/1920px-alcald-a-de-arauca-y-monumento-2.webp",
-  "thumb": "media/1920px-alcald-a-de-arauca-y-monumento-2-480.webp",
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_%28BSRF%29_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg/1920px-thumbnail.jpg": {
+  "src": "media/1920px-thumbnail.webp",
+  "thumb": "media/1920px-thumbnail-480.webp",
   "w": 1400,
-  "h": 788,
+  "h": 840,
   "tw": 480,
-  "th": 270,
+  "th": 288,
   "type": "photo",
-  "credit": "Gersonparra11",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alcald%C3%ADa_de_Arauca_y_monumento_2.JPG"
+  "credit": "LCpl Michael Dye",
+  "license": "Public domain",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_(BSRF)_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg"
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/U.S._Army_Gen._David_M._Rodriguez%2C_at_the_podium%2C_the_commanding_general_of_U.S._Africa_Command%2C_addresses_the_audience_during_the_change_of_command_ceremony_of_U.S._Army_Africa_%28USARAF%29_on_the_grounds_140603-A-JM436-246.jpg/1920px-thumbnail.jpg": {
+  "src": "media/1920px-thumbnail.webp",
+  "thumb": "media/1920px-thumbnail-480.webp",
+  "w": 1400,
+  "h": 840,
+  "tw": 480,
+  "th": 288,
+  "type": "photo",
+  "credit": "Paolo Bovo",
+  "license": "Public domain",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Army_Gen._David_M._Rodriguez,_at_the_podium,_the_commanding_general_of_U.S._Africa_Command,_addresses_the_audience_during_the_change_of_command_ceremony_of_U.S._Army_Africa_(USARAF)_on_the_grounds_140603-A-JM436-246.jpg"
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base%2C_Japan%2C_Oct._7%2C_2013_131007-F-PM645-014.jpg/1920px-thumbnail.jpg": {
+  "src": "media/1920px-thumbnail.webp",
+  "thumb": "media/1920px-thumbnail-480.webp",
+  "w": 1400,
+  "h": 840,
+  "tw": 480,
+  "th": 288,
+  "type": "photo",
+  "credit": "Yasuo Osakabe",
+  "license": "Public domain",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base,_Japan,_Oct._7,_2013_131007-F-PM645-014.jpg"
  }
 }
