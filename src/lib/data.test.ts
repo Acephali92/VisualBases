@@ -49,3 +49,18 @@ describe('helpers', () => {
   });
   it('fold strips accents', () => expect(fold('Câmpia Turzii')).toBe('campia turzii'));
 });
+
+import { buildQuiz } from './quiz';
+import bases from '../../data/bases.json';
+
+describe('quiz', () => {
+  const qs = buildQuiz(bases as unknown as Base[]);
+  it('has valid answers, unique options and existing bases', () => {
+    for (const q of qs) {
+      expect(q.answer).toBeGreaterThanOrEqual(0);
+      expect(q.answer).toBeLessThan(q.options.length);
+      expect(new Set(q.options.map((o) => o.de)).size).toBe(q.options.length);
+      if (q.base) expect((bases as unknown as Base[]).some((b) => b.id === q.base)).toBe(true);
+    }
+  });
+});

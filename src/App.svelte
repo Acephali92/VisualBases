@@ -11,6 +11,7 @@
   import News from './routes/News.svelte';
   import Act from './routes/Act.svelte';
   import Embed from './routes/Embed.svelte';
+  import Quiz from './routes/Quiz.svelte';
 
   initRouter();
   onMount(loadData);
@@ -97,6 +98,8 @@
     <Stats />
   {:else if section === 'news'}
     <News />
+  {:else if section === 'quiz'}
+    <Quiz />
   {:else if section === 'act'}
     <Act />
   {:else if section === 'about'}

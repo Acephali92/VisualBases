@@ -44,6 +44,9 @@
       <a class="action card" href={href('/about')}>
         <span class="ai">⬇</span><b>{t('act.dataTitle')}</b><span>{t('act.dataText')}</span>
       </a>
+      <a class="action card" href={href('/quiz')}>
+        <span class="ai">❓</span><b>{t('quiz.teaserTitle')}</b><span>{t('quiz.teaserText')}</span>
+      </a>
       <a class="action card" href={REPO_URL} target="_blank" rel="noopener">
         <span class="ai">⌨</span><b>{t('act.codeTitle')}</b><span>{t('act.codeText')}</span>
       </a>

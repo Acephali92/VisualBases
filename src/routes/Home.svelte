@@ -226,6 +226,14 @@
   </section>
 {/if}
 
+<section class="quiz-teaser container">
+  <a class="qt card" href={href('/quiz')}>
+    <span class="qt-icon" aria-hidden="true">?</span>
+    <span><b>{t('quiz.teaserTitle')}</b><span>{t('quiz.teaserText')}</span></span>
+    <span class="qt-go">→</span>
+  </a>
+</section>
+
 {#if latestNews.length}
   <section class="latest container" aria-labelledby="latest-h">
     <div class="latest-head">
@@ -333,6 +341,13 @@
   @media (max-width: 820px) { .change { grid-template-columns: 1fr; } }
   .topics, .stories { padding: 72px 0 24px; }
   .latest { padding: 88px 0 8px; max-width: 900px; }
+  .quiz-teaser { padding-top: 72px; }
+  .qt { display: flex; align-items: center; gap: 18px; padding: 22px 24px; text-decoration: none; background: linear-gradient(120deg, #1a2c4f, var(--surface) 60%); transition: transform 0.15s, border-color 0.15s; }
+  .qt:hover { transform: translateY(-2px); border-color: var(--c-shared); }
+  .qt-icon { width: 54px; height: 54px; flex: none; border-radius: 14px; display: grid; place-items: center; background: var(--c-shared); font-size: 1.8rem; font-weight: 800; }
+  .qt b { display: block; font-size: 1.2rem; }
+  .qt span span { color: var(--text-2); }
+  .qt-go { margin-left: auto; font-size: 1.4rem; color: var(--text-2); }
   .latest-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .latest h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
   .topics h2, .stories h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
