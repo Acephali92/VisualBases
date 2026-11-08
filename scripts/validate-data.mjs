@@ -213,7 +213,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   for (const b of list) {
     const viaClaim = (b.corrections ?? []).some((c) => c.field === 'position');
     if (decimals(b.lat) < 3 || decimals(b.lon) < 3) warn('coords-precision', `low precision (${b.lat}, ${b.lon})${viaClaim ? ' – set by a claim' : ''}`, b.id);
-    if (b.approx) warn('coords-approx', viaClaim ? `approximate position (precision "${b.positionPrecision}", set by a position claim)` : 'approximate position (geocoded by hand)', b.id);
+    const viaReview = b.positionCheck?.status === 'confirmed' && b.positionCheck.precision;
+    if (b.approx) warn('coords-approx', viaClaim ? `approximate position (precision "${b.positionPrecision}", set by a position claim)` : viaReview ? `approximate position (precision "${b.positionPrecision}", confirmed in corrections.json)` : 'approximate position (geocoded by hand)', b.id);
   }
 
   // near-duplicate positions (not between an aggregate and its members, not when under review);
@@ -281,6 +282,7 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     if (c.status === 'confirmed' && (!c.source || !/^https?:\/\//.test(c.url ?? '') || !DATE.test(c.retrieved ?? ''))) err('corrections', `${where}: confirmed entries need source, url and retrieved`, c.id);
     if (c.rules !== undefined && (!Array.isArray(c.rules) || c.rules.some((r) => !GEO_RULES.includes(r)))) err('corrections', `${where}: rules must list rules of ${GEO_RULES.join(', ')}`, c.id);
     if (c.rules !== undefined && c.status !== 'confirmed') err('corrections', `${where}: rules only apply to confirmed entries`, c.id);
+    if (c.precision !== undefined && (c.status !== 'confirmed' || !POSITION_PRECISIONS.includes(c.precision))) err('corrections', `${where}: precision (${POSITION_PRECISIONS.join(' | ')}) only applies to confirmed entries`, c.id);
   }
 
   // media and licences

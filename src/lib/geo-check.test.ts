@@ -38,6 +38,7 @@ describe('coordinates against the host country', () => {
   it('tolerates coastal positions near the host and reports positions far at sea', () => {
     expect(rule({ lon: 11.05 })).toBeNull(); // ~4 km off the "coast"
     expect(rule({ lon: 13 })).toBe('coords-offshore');
+    expect(rule({ lon: 13, siteType: 'region-cluster' })).toBeNull(); // symbolic position of an aggregate
     // at sea, but next to another state
     expect(rule({ lat: 50, lon: 4.95 })).toBe('coords-country');
   });
@@ -78,8 +79,10 @@ describe('research signals', () => {
     expect(rules(b(), wd(8))).toEqual(['position-wikidata-far']);
     expect(rules(b({ features: ['training-area'] }), wd(8))).toEqual([]);
     expect(rules(b({ features: ['training-area'] }), wd(20))).toEqual(['position-wikidata-far']);
-    // items of towns locate the place, not the facility
+    // items of towns locate the place, not the facility – unless the item is also a facility
     expect(rules(b(), wd(20, ['city']))).toEqual([]);
+    expect(rules(b(), wd(20, ['urban area in Sweden']))).toEqual([]);
+    expect(rules(b(), wd(20, ['airbase', 'census-designated place in the United States']))).toEqual(['position-wikidata-far']);
   });
 
   it('skips aggregates and approximate positions', () => {
@@ -111,6 +114,15 @@ describe('geographic checks in the validator', () => {
     // …while the raw import still carries them (Libreville, Ayanganna, Sarajevo)
     const raw = validate({ bases, countries: loadCountries() });
     expect(raw.warnings.filter((w: { rule: string }) => w.rule === 'coords-country').map((w: { id: string }) => w.id).sort()).toEqual(['camp-ayanganna', 'librevillegabon', 'sarajevo-military-airport']);
+  });
+
+  it('lets a confirmed entry state the precision without moving the point', () => {
+    const r = validate({ bases: [base()], corrections: { positions: [confirmed({ issue: 'imprecise', precision: 'town' })] } });
+    expect(r.errors).toEqual([]);
+    expect(r.stats.approximate).toBe(1);
+    expect(r.stats.precision.town).toBe(1);
+    const bad = validate({ bases: [base()], corrections: { positions: [{ id: 'a', status: 'proposed', issue: 'imprecise', precision: 'town' }] } });
+    expect(bad.errors.map((e: { rule: string }) => e.rule)).toContain('corrections');
   });
 
   it('feeds the research checks into the warnings', () => {

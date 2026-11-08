@@ -1,4 +1,208 @@
 {
  "_comment": "Manual review layer on top of the imported data (bases.json is overwritten by the importer). Entries with status 'proposed' are NOT applied to the data – they mark a record as unverified and document a suggested fix for the project owner. See docs/DATA-QUALITY.md.",
- "positions": []
+ "positions": [
+  {
+   "id": "us-camp-lemonnier",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Camp Lemonnier (way 193044654)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W193044654&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position 0,7 km vom OSM-Gelände Camp Lemonnier am Flughafen Dschibuti. Die Wikidata-Koordinate (11.3237, 43.0855) liegt rund 25 km südwestlich in der Wüste und ist falsch.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "redzikowo",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Aegis Ashore Redzikowo (way 430077170)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W430077170&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position 0,1 km vom OSM-Gelände der Aegis-Ashore-Anlage. Wikidata nennt zwei Koordinaten; die zweite (54.48, 17.101) stimmt, die erste (54.55, 16.62) liegt rund 33 km westlich.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "fort-greely-alaska",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Fort Greely Missile Defense Area (relation 10747994)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R10747994&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position im Bereich Fort Greely, 3,5 km von der Missile Defense Area; die Wikidata-Koordinate (ohne Beleg) liegt rund 30 km westlich.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "beale-air-force-base-california",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Beale Air Force Base (way 44018930, aerodrome)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W44018930&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position 0,6 km vom OSM-Flugplatz Beale AFB; die Wikidata-Koordinate liegt am Westrand des weitläufigen Geländes.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "maritime-component-command-naples",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Isola di Nisida (way 437376371)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W437376371&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Das Maritime Component Command Neapel lag auf Nisida (Position 0,1 km). Das zugeordnete Wikidata-Objekt ist das Joint Force Command Naples in Lago Patria, ein anderes Hauptquartier.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "dhekelia-military-camp",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Dhekelia Station (way 4062140)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W4062140&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position 0,3 km von Dhekelia Station. Das zugeordnete Wikidata-Objekt ist das Überseegebiet Akrotiri und Dhekelia insgesamt.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "camp-shaheen-camp-mike-spann",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Camp Shaheen (way 441455363)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W441455363&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position nach OSM korrigiert (Claim shaheen-position). Das zugeordnete Wikidata-Objekt ist der Anschlag von 2017, nicht das Lager.",
+   "rules": [
+    "position-wikidata-far"
+   ]
+  },
+  {
+   "id": "grafenwoehr-training-area",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Truppenübungsplatz Grafenwöhr (relation 7651698)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R7651698&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position im Truppenübungsplatz (1,2 km von der Mitte der OSM-Fläche). Der Platz ist in OSM als Verwaltungsgrenze erfasst, nicht als Militärgelände; deshalb fand die OSM-Prüfung nichts.",
+   "rules": [
+    "position-osm-none"
+   ]
+  },
+  {
+   "id": "gruenstadt-aafes-fac",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: tower at Freinsheim (way 319534028)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W319534028&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Fernmeldeanlage: Funkturm 160 m westlich der Position, in OSM nicht als militärisch gekennzeichnet. Der Google-Earth-Link des Beitrags zeigt auf den Turm.",
+   "rules": [
+    "position-osm-none"
+   ]
+  },
+  {
+   "id": "pratas-islands-south-china-sea",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Dongsha / Pratas Island (relation 9331637)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R9331637&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Position auf der Insel (0,4 km vom OSM-Inselmittelpunkt, 0,6 km vom Flugplatz). Die Insel fehlt in den Natural-Earth-Grenzen. Hinweis: Die Insel wird von Taiwan verwaltet; das Gastland CN ist die Einordnung des Datensatzes und hier nicht geprüft.",
+   "rules": [
+    "coords-offshore"
+   ]
+  },
+  {
+   "id": "secon-thomas-shoal",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Second Thomas Shoal (way 159002400)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W159002400&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Riff im offenen Meer; Position nach OSM korrigiert (Claim second-thomas-position).",
+   "rules": [
+    "coords-offshore"
+   ]
+  },
+  {
+   "id": "money-island-south-chinese-sea",
+   "status": "confirmed",
+   "issue": "reference-mismatch",
+   "source": "OpenStreetMap: Money Island / Jinqing Dao (relation 19123019)",
+   "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R19123019&format=jsonv2",
+   "retrieved": "2026-11-08",
+   "note": "Kleine Insel der Paracel-Gruppe, fehlt in den Natural-Earth-Grenzen; Position nach OSM korrigiert (Claim money-island-position).",
+   "rules": [
+    "coords-offshore"
+   ]
+  },
+  {
+   "id": "bann-communications-station",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "Base Structure Report FY2023",
+   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
+   "retrieved": "2026-11-08",
+   "note": "Kein Doppeleintrag: Der Base Structure Report führt „Bann Communications Station“ und „Bann Communications Station 2“ als getrennte Standorte. Die Position ist der Ort Bann; die genaue Anlage ist offen (der Google-Earth-Link des Beitrags zeigt auf Station 2).",
+   "rules": [
+    "duplicate-name-near"
+   ],
+   "precision": "town"
+  },
+  {
+   "id": "masar-i-sharif-communnity",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/masar-i-sharif-communnity/",
+   "retrieved": "2026-11-08",
+   "note": "Sammeleintrag für Masar-i Scharif; der Beitrag nennt nur Stadtkoordinaten (36.7, 67.116667). Die Lager Marmal und Shaheen sind eigene Einträge.",
+   "rules": [
+    "position-osm-none"
+   ],
+   "precision": "town"
+  },
+  {
+   "id": "cartagena",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/cartagena/",
+   "retrieved": "2026-11-08",
+   "note": "Der Beitrag enthält nur einen regionalen Kartenlink (Zoomstufe 11, Turbaco südöstlich von Cartagena) und ist auf visualbases.org zur Prüfung markiert; welche Anlage gemeint ist, ist offen.",
+   "rules": [
+    "position-osm-none"
+   ],
+   "precision": "region"
+  },
+  {
+   "id": "gracias-a-dios-honduras",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/gracias-a-dios-honduras/",
+   "retrieved": "2026-11-08",
+   "note": "Der Eintrag bezeichnet nur das Departement Gracias a Dios. Kartenlink (Zoomstufe 11, beim Dorf Laka) und Textkoordinate (15.383333, -83.85, gerundet) liegen 26 km auseinander; in der Gegend gibt es mehrere Landepisten (Puerto Lempira, Mocorón, Durzuna, Cauquira). Welche gemeint ist, ist offen.",
+   "precision": "region"
+  },
+  {
+   "id": "vieques-island-training-area",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/vieques-island-training-area/",
+   "retrieved": "2026-11-08",
+   "note": "Das frühere Übungsgelände der US Navy umfasste große Teile der Insel. Die Position liegt im Osten (früheres Ziel- und Manövergebiet), die Textkoordinate des Beitrags (18.129612, -65.411158) weiter westlich bei Puerto Ferro; beide liegen auf dem Gelände.",
+   "precision": "region"
+  }
+ ]
 }

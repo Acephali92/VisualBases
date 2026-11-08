@@ -186,6 +186,8 @@ export function checkCountry(b, countries, { coastKm = COAST_KM } = {}) {
     const n = around[0];
     return { rule: 'coords-country', msg: `position lies at sea ${n.km.toFixed(1)} km off ${label(n.country)}, host country is ${where}`, country: n.country.name, km: n.km };
   }
+  // the position of an aggregate (garrison, region cluster) is symbolic
+  if (AGGREGATE_TYPES.has(b.siteType)) return null;
   return { rule: 'coords-offshore', msg: `position lies at sea, no land within ${coastKm} km (host ${where})`, country: null, km: null };
 }
 
@@ -198,7 +200,9 @@ export const WIKIDATA_KM = { site: 5, large: 15 };
 /** facilities that typically extend over several kilometres */
 const LARGE = new Set(['training-area', 'airfield']);
 /** Wikidata classes of places (not facilities) */
-const PLACE_ITEM = /\b(city|town|village|municipality|commune|human settlement|capital|administrative|country|sovereign state|province|district|metropolis)\b/i;
+const PLACE_ITEM = /\b(city|town|village|municipality|commune|human settlement|urban area|capital|administrative|country|sovereign state|province|district|metropolis)\b/i;
+/** Wikidata classes of facilities – an item that is both (e.g. an air base that is also a census place) counts as facility */
+const FACILITY_ITEM = /\b(base|barracks|camp|airfield|airport|station|installation|military|facility|command|range|depot|port)\b/i;
 /** positions closer than this count as unchanged since a check */
 const SAME_POSITION_KM = 0.01;
 
@@ -227,7 +231,8 @@ export function researchSignals(b, check = {}) {
   }
   const wd = check.wikidata;
   // an item for a town or country locates the place, not the facility
-  const placeItem = (wd?.instanceOf ?? []).some((t) => PLACE_ITEM.test(t));
+  const kinds = wd?.instanceOf ?? [];
+  const placeItem = kinds.some((t) => PLACE_ITEM.test(t)) && !kinds.some((t) => FACILITY_ITEM.test(t));
   if (wd?.coord && !coarse && !placeItem) {
     const km = distance(pos, { lat: wd.coord[0], lon: wd.coord[1] });
     const limit = (b.features ?? []).some((f) => LARGE.has(f)) ? WIKIDATA_KM.large : WIKIDATA_KM.site;

@@ -140,6 +140,8 @@ export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
     url?: string;
     retrieved?: string;
     note?: string;
+    /** precision stated by the editors for a confirmed position */
+    precision?: PositionPrecision;
   };
   corrections?: Correction[];
   /** proposed corrections from data/claims.json – not applied, shown as review notes */

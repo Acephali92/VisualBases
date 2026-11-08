@@ -1765,5 +1765,141 @@
   "bases": [
    "librevillegabon"
   ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W219723912&format=jsonv2",
+  "title": "Robertson Barracks, Holtze (OSM way 219723912, military base)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 8.9 km from the dataset position. OSM coordinates: -12.43717, 130.97547.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "robertson-barracks"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W194574301&format=jsonv2",
+  "title": "Bezmer Air Base (OSM way 194574301, aerodrome)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 5.4 km from the dataset position. OSM coordinates: 42.45422, 26.36005.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "bezmer-air-base"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=R19123019&format=jsonv2",
+  "title": "Money Island / Jinqing Dao, Paracel Islands (OSM relation 19123019, islet)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 7.3 km from the dataset position. OSM coordinates: 16.44725, 111.50758.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "money-island-south-chinese-sea"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W159002400&format=jsonv2",
+  "title": "Second Thomas Shoal / Ayungin (OSM way 159002400, atoll)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 39.8 km from the dataset position. OSM coordinates: 9.73084, 115.86234.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "secon-thomas-shoal"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W97834000&format=jsonv2",
+  "title": "Queen Beatrix International Airport, Aruba (OSM way 97834000, aerodrome)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 11.1 km from the dataset position. OSM coordinates: 12.50211, -70.01412.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "aruba"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W441455363&format=jsonv2",
+  "title": "Camp Shaheen, Dehdadi (OSM way 441455363, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 3.1 km from the dataset position. OSM coordinates: 36.64263, 66.99263.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "camp-shaheen-camp-mike-spann"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W27798095&format=jsonv2",
+  "title": "Ouagadougou International Airport (OSM way 27798095, aerodrome)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM object lies about 7.9 km from the dataset position. OSM coordinates: 12.35041, -1.51244.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "ouagadougou"
+  ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W976931953&format=jsonv2",
+  "title": "Base Naval de Pemba (OSM way 976931953, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM military area \"Base Naval de Pemba\" (Bairro Ingonane, Pemba) lies about 10.1 km from the dataset position. OSM coordinates: -12.95312, 40.49806.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "pemba-naval-base"
+  ]
  }
 ]
