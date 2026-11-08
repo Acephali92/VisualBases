@@ -4,12 +4,13 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 ## 1. Jetzt: Launch (Block A der Roadmap, ca. 1 Stunde)
 
-- [ ] **PR-Kette mergen**, in dieser Reihenfolge. Nach jedem Merge stellst du beim nächsten PR die Basis auf `main` um (im PR oben „Edit“ → base: `main`):
+- [ ] **PR-Kette mergen**, in dieser Reihenfolge (jeder PR ist für sich geprüft, CI grün). Nach jedem Merge stellst du beim nächsten PR die Basis auf `main` um (im PR oben „Edit“ → base: `main`):
   1. [Acephali92/VisualBases#11](https://github.com/Acephali92/VisualBases/pull/11) Geo-Prüfungen
   2. [Acephali92/VisualBases#12](https://github.com/Acephali92/VisualBases/pull/12) Geo-Recherche
   3. [Acephali92/VisualBases#13](https://github.com/Acephali92/VisualBases/pull/13) Importer
   4. [Acephali92/VisualBases#14](https://github.com/Acephali92/VisualBases/pull/14) Paket 4
-  5. der Roadmap-PR
+  5. [Acephali92/VisualBases#15](https://github.com/Acephali92/VisualBases/pull/15) Roadmap
+  6. [Acephali92/VisualBases#16](https://github.com/Acephali92/VisualBases/pull/16) Launch-Vorbereitung (Bildrechte, Methodik-Seite, Impressum/Datenschutz, axe, Ladezeit)
 
   Der Branch `claude/dq-audit-paket4` ist überholt und kann gelöscht werden.
 - [ ] **Impressum-Angaben schicken** oder direkt in `src/lib/legal.ts` eintragen: verantwortliche Person oder Verein (z. B. Friedens- und Zukunftswerkstatt e. V., mit Vereinsregister), Anschrift, E-Mail und die nach § 18 Abs. 2 MStV inhaltlich verantwortliche Person. Die Seiten `#/impressum` und `#/datenschutz` sind fertig; `npm run launch:check` meldet, solange etwas fehlt.

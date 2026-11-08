@@ -44,7 +44,8 @@ Stand: 2026-11-08 · Ersetzt die Fassung vom 2026-11-07; deren Audit-Befunde und
   2. [#12](https://github.com/Acephali92/VisualBases/pull/12) Geo-Recherche
   3. [#13](https://github.com/Acephali92/VisualBases/pull/13) Importer
   4. [#14](https://github.com/Acephali92/VisualBases/pull/14) Paket 4
-  5. dieser Roadmap-PR
+  5. [#15](https://github.com/Acephali92/VisualBases/pull/15) Roadmap
+  6. [#16](https://github.com/Acephali92/VisualBases/pull/16) Launch-Vorbereitung (Block B)
 
 ---
 
