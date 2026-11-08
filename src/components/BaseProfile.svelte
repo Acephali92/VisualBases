@@ -128,7 +128,7 @@
 
   {#if cover}
     <figure class="cover">
-      <img src={cover.src} width={cover.w} height={cover.h} alt={cover.caption ?? ""} />
+      <img src={cover.src} srcset="{cover.thumb} {cover.tw}w, {cover.src} {cover.w}w" sizes="(max-width: 820px) 100vw, 400px" width={cover.w} height={cover.h} alt={cover.caption ?? ""} fetchpriority="high" />
       <figcaption>{cover.license ? t('img.by') : '©'} {cover.credit}{#if cover.license}{' · '}{cover.license}{/if}{#if cover.year}{' · '}{cover.year}{/if}</figcaption>
     </figure>
   {/if}

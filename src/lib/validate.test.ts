@@ -8,7 +8,9 @@ import path from 'node:path';
 // @ts-expect-error – plain ESM build script without type declarations
 import { validate, validCountry, report, mappedTerm, snapshot } from '../../scripts/validate-data.mjs';
 // @ts-expect-error – plain ESM build script without type declarations
-import { evidenceOf } from '../../scripts/lib/resolve.mjs';
+import { evidenceOf, resolveBases } from '../../scripts/lib/resolve.mjs';
+// @ts-expect-error – plain ESM build script without type declarations
+import { rightsOf } from '../../scripts/build-media.mjs';
 // @ts-expect-error – plain ESM build script without type declarations
 import { readJson } from '../../scripts/research/lib.mjs';
 // @ts-expect-error – plain ESM build script without type declarations
@@ -279,6 +281,37 @@ describe('data validation', () => {
       expect(text).toContain('**Fehler** (blockieren das Deployment)');
       const dup = validate({ bases: [base({ name: 'Bann Station' }), base({ id: 'c', name: 'Bann Station 2', lat: 49.455 })] });
       expect(report(dup)).toContain('`duplicate-name-near` (1) – soll später blockieren');
+    });
+  });
+
+  describe('image rights', () => {
+    const img = (p: Record<string, unknown> = {}) => ({ src: 'media/x.webp', thumb: 'media/x-480.webp', credit: 'c', type: 'photo', ...p });
+    const check = (m: Record<string, unknown>) => validate({ bases: [base({ images: [{ url: 'u1', caption: '' }] })], media: { u1: m } });
+
+    it('requires a rights status and a licence name for free licences', () => {
+      expect(rules(check(img()))).toContain('media-rights');
+      expect(rules(check(img({ rights: 'maybe' })))).toContain('media-rights');
+      expect(rules(check(img({ rights: 'free-licence' })))).toContain('media-rights');
+      expect(rules(check(img({ rights: 'free-licence', license: 'CC BY 2.0' })))).not.toContain('media-rights');
+      expect(rules(check(img({ rights: 'own-archive' })))).not.toContain('media-rights');
+      const unclear = check(img({ rights: 'unclear' }));
+      expect(unclear.errors).toEqual([]);
+      expect(warnRules(unclear)).toContain('media-rights-unclear');
+      expect(unclear.stats.imageRights.unclear).toBe(1);
+    });
+
+    it('does not publish images with unsettled rights', () => {
+      const media = { u1: img({ rights: 'own-archive' }), u2: img({ rights: 'unclear', src: 'media/y.webp' }) };
+      const { bases: [b] } = resolveBases([base({ images: [{ url: 'u1', caption: '' }, { url: 'u2', caption: '' }] })], { media });
+      expect(b.images.map((i: { src: string }) => i.src)).toEqual(['media/x.webp']);
+    });
+
+    it('derives only certain rights for new images', () => {
+      expect(rightsOf({ license: 'CC BY-SA 4.0' }).rights).toBe('free-licence');
+      expect(rightsOf({ credit: '© OpenStreetMap contributors · OpenStreetBrowser' })).toMatchObject({ rights: 'free-licence', license: 'ODbL / CC BY-SA 2.0' });
+      expect(rightsOf({ credit: 'Google Earth' }).rights).toBe('google-earth');
+      expect(rightsOf({ credit: 'visualbases.org' }).rights).toBe('unclear');
+      expect(rightsOf({ credit: 'Flickr' }).rights).toBe('unclear');
     });
   });
 

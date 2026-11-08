@@ -403,6 +403,17 @@ export type PositionIssue = (typeof POSITION_ISSUES)[number];
 export const POSITION_PRECISIONS = ['site', 'reference', 'town', 'region'] as const;
 export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
 
+/* ------------------------------------------------------------------ image rights (data/media.json) */
+
+/**
+ * rights status of an image: free-licence – public domain or a free licence (licence field required) ·
+ * google-earth – Google Earth image, non-commercial use with the built-in attribution · own-archive – the
+ * project's own material from visualbases.org, used with the initiator's consent · unclear – third-party material
+ * whose licence is not settled; NOT published until it is (scripts/lib/resolve.mjs, scripts/build-data.mjs)
+ */
+export const MEDIA_RIGHTS = ['free-licence', 'google-earth', 'own-archive', 'unclear'] as const;
+export type MediaRights = (typeof MEDIA_RIGHTS)[number];
+
 /* ------------------------------------------------------------------ helpers */
 
 /** all vocabularies by dimension – used for validation and completeness tests */

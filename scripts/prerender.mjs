@@ -78,6 +78,42 @@ ${(b.notes ?? []).slice(0, 4).map((n) => `<p>${esc(n)}</p>`).join('\n')}
 `;
 }
 
+/**
+ * Branded 404 page. GitHub Pages serves it for every unknown path at any depth, so all links are absolute.
+ * A shared link to a site that no longer exists (b/<id>.html) is sent to the atlas search for that id.
+ */
+export function notFoundPage() {
+  return `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seite nicht gefunden – VisualBases</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="${SITE}icons/icon.svg" type="image/svg+xml">
+<style>body{background:#07090f;color:#eef1f7;font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:10vh auto;padding:0 16px}a{color:#ff5a3c}</style>
+</head>
+<body>
+<h1>Seite nicht gefunden <span lang="en" style="color:#8b93a7;font-weight:400">· Page not found</span></h1>
+<p>Diese Adresse gibt es bei VisualBases nicht (mehr). <span lang="en">This address does not exist (any more).</span></p>
+<p id="hint"></p>
+<p><a href="${SITE}">Startseite / Home</a> · <a href="${SITE}#/atlas">Atlas</a> · <a href="${SITE}#/quality">Methodik / Method</a></p>
+<script>
+  // a removed or renamed site: search the atlas for the id of the old link
+  var p = location.pathname, i = p.lastIndexOf('/b/');
+  if (i >= 0 && p.slice(-5) === '.html') {
+    var q = decodeURIComponent(p.slice(i + 3, -5)).split('-').join(' ');
+    var a = document.createElement('a');
+    a.href = ${JSON.stringify(SITE)} + '#/atlas?q=' + encodeURIComponent(q);
+    a.textContent = 'Im Atlas nach „' + q + '“ suchen';
+    document.getElementById('hint').appendChild(a);
+  }
+</script>
+</body>
+</html>
+`;
+}
+
 export function countryPage(cc, list) {
   const isAgg = (b) => b.siteType === 'garrison' || b.siteType === 'region-cluster';
   const all = list.filter((b) => !isAgg(b));
@@ -124,7 +160,26 @@ ${context.length ? `<h2>Kontext-Standorte auf eigenem Staatsgebiet</h2>\n<ul>\n$
 `;
 }
 
+/**
+ * Vite copies public/media completely. Images whose rights are not settled (data/media.json, rights "unclear")
+ * are not referenced by the published data and must not be reachable by URL either – remove their files from dist.
+ * Media are not in the service worker precache (vite.config.ts), so removing them breaks nothing.
+ */
+export async function pruneUnclearMedia(dist = DIST, media = null) {
+  media ??= JSON.parse(await fs.readFile(path.join(ROOT, 'data/media.json'), 'utf8'));
+  let removed = 0;
+  for (const m of Object.values(media)) {
+    if (m.rights !== 'unclear') continue;
+    for (const f of [m.src, m.thumb]) {
+      try { await fs.unlink(path.join(dist, f)); removed++; } catch (e) { if (e.code !== 'ENOENT') throw e; }
+    }
+  }
+  return removed;
+}
+
 async function main() {
+  const pruned = await pruneUnclearMedia();
+  if (pruned) console.log(`  removed ${pruned} image files with unsettled rights from dist`);
   const bases = JSON.parse(await fs.readFile(path.join(DIST, 'data/bases.json'), 'utf8'));
   await fs.mkdir(path.join(DIST, 'b'), { recursive: true });
   for (const b of bases) await fs.writeFile(path.join(DIST, 'b', `${b.id}.html`), page(b));
@@ -145,7 +200,8 @@ ${urls.map((u) => `  <url><loc>${esc(u)}</loc><lastmod>${lastmod.get(u) ?? today
 `;
   await fs.writeFile(path.join(DIST, 'sitemap.xml'), sitemap);
   await fs.writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-  console.log(`✔ prerendered ${bases.length} base pages, ${byCountry.size} country pages, sitemap.xml, robots.txt (${SITE})`);
+  await fs.writeFile(path.join(DIST, '404.html'), notFoundPage());
+  console.log(`✔ prerendered ${bases.length} base pages, ${byCountry.size} country pages, 404.html, sitemap.xml, robots.txt (${SITE})`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) main().catch((e) => { console.error(e); process.exit(1); });

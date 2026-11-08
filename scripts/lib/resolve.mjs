@@ -214,8 +214,9 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     const refs = [...(b.images ?? [])];
     const w = wikimedia[b.id];
     if (w?.url) refs.push({ url: w.url, caption: w.title ?? '' });
+    // images whose rights are not settled are not published (data/media.json, "rights")
     const imgs = refs
-      .map((r) => (media[r.url] ? { ...media[r.url], caption: r.caption || undefined } : null))
+      .map((r) => (media[r.url] && media[r.url].rights !== 'unclear' ? { ...media[r.url], caption: r.caption || undefined } : null))
       .filter(Boolean)
       .sort((x, y) => IMAGE_ORDER[x.type] - IMAGE_ORDER[y.type] || (x.year ?? 0) - (y.year ?? 0));
     if (imgs.length) b.images = imgs; else delete b.images;

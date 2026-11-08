@@ -147,11 +147,63 @@ describe('coordinates', () => {
   });
 });
 
+describe('deployment', () => {
+  it('removes image files with unsettled rights from the build output', async () => {
+    // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+    const fs = await import('node:fs/promises');
+    // @ts-expect-error – see above
+    const os = await import('node:os');
+    // @ts-expect-error – see above
+    const path = await import('node:path');
+    // @ts-expect-error – plain ESM build script without type declarations
+    const { pruneUnclearMedia } = await import('../../scripts/prerender.mjs');
+    const dist = await fs.mkdtemp(path.join(os.tmpdir(), 'vb-dist-'));
+    await fs.mkdir(path.join(dist, 'media'));
+    for (const f of ['a.webp', 'a-480.webp', 'b.webp', 'b-480.webp']) await fs.writeFile(path.join(dist, 'media', f), 'x');
+    const media = {
+      u1: { src: 'media/a.webp', thumb: 'media/a-480.webp', rights: 'own-archive' },
+      u2: { src: 'media/b.webp', thumb: 'media/b-480.webp', rights: 'unclear' },
+      u3: { src: 'media/c.webp', thumb: 'media/c-480.webp', rights: 'unclear' }, // never processed – no file
+    };
+    expect(await pruneUnclearMedia(dist, media)).toBe(2);
+    expect((await fs.readdir(path.join(dist, 'media'))).sort()).toEqual(['a-480.webp', 'a.webp']);
+    await fs.rm(dist, { recursive: true });
+  });
+});
+
+describe('404 page', () => {
+  it('uses absolute links and contains a valid script', async () => {
+    // @ts-expect-error – plain ESM build script without type declarations
+    const { notFoundPage } = await import('../../scripts/prerender.mjs');
+    const html: string = notFoundPage();
+    expect(html).toContain('href="https://acephali92.github.io/VisualBases/#/atlas"');
+    expect(html).not.toMatch(/href="\.\.?\//);
+    const script = html.split('<script>')[1].split('</script>')[0];
+    expect(() => new Function(script)).not.toThrow();
+  });
+});
+
+describe('launch check', () => {
+  it('requires the legal notice and finds leaked images and an outdated report', async () => {
+    const { missingImprintFields } = await import('./legal');
+    expect(missingImprintFields({ name: '', address: [], email: 'x', responsibleForContent: '' })).toEqual(['name', 'address', 'email', 'responsibleForContent']);
+    expect(missingImprintFields({ name: 'Verein e. V.', address: ['Str. 1', '12345 Ort'], email: 'info@example.org', responsibleForContent: 'A. B., Str. 1, 12345 Ort' })).toEqual([]);
+    // @ts-expect-error – plain ESM build script without type declarations
+    const { leakedMedia, reportAge } = await import('../../scripts/launch-check.mjs');
+    const media = { u1: { src: 'media/a.webp', thumb: 'media/a-480.webp', rights: 'unclear' }, u2: { src: 'media/b.webp', thumb: 'media/b-480.webp', rights: 'own-archive' } };
+    expect(leakedMedia(media, '{"src":"media/b.webp"}', new Set())).toEqual([]);
+    expect(leakedMedia(media, '{"thumb":"media/a-480.webp"}', new Set())).toEqual(['media/a.webp']);
+    expect(leakedMedia(media, '', new Set(['media/a.webp']))).toEqual(['media/a.webp']);
+    expect(reportAge([{ date: '2026-11-01' }], new Date('2026-11-08'))).toBe(7);
+    expect(reportAge([])).toBeNull();
+  });
+});
+
 describe('node scripts', () => {
   it('load in plain Node (type stripping needs explicit .ts imports down the chain)', async () => {
     // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
     const { execFileSync } = await import('node:child_process');
-    const files = ['scripts/research/wikidata.mjs', 'scripts/research/osm-check.mjs', 'scripts/research/bsr.mjs', 'scripts/research/wiki-refs.mjs', 'scripts/research/summarize.mjs', 'scripts/research/merge.mjs', 'scripts/validate-data.mjs', 'scripts/migration-report.mjs', 'scripts/lib/resolve.mjs', 'scripts/lib/export.mjs'];
+    const files = ['scripts/research/wikidata.mjs', 'scripts/research/osm-check.mjs', 'scripts/research/bsr.mjs', 'scripts/research/wiki-refs.mjs', 'scripts/research/summarize.mjs', 'scripts/research/merge.mjs', 'scripts/validate-data.mjs', 'scripts/migration-report.mjs', 'scripts/lib/resolve.mjs', 'scripts/lib/export.mjs', 'scripts/lib/geo-check.mjs', 'scripts/launch-check.mjs'];
     const code = `for (const f of ${JSON.stringify(files)}) await import('./' + f);`;
     expect(() => execFileSync('node', ['--input-type=module', '-e', code], { stdio: 'pipe' })).not.toThrow();
   });

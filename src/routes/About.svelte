@@ -47,12 +47,14 @@
     <section class="card block">
       <h2>{t('about.privacy')}</h2>
       <p>{t('about.privacyText')}</p>
+      <p class="small"><a href={href('/datenschutz')}>{t('nav.privacy')}</a> · <a href={href('/impressum')}>{t('nav.imprint')}</a></p>
     </section>
   </div>
 
   <section class="text">
     <h2>{t('about.method')}</h2>
     <p>{t('about.methodText')}</p>
+    <p><a href={href('/quality')}>{t('quality.title')} →</a></p>
     <p>{t('about.origin')}</p>
   </section>
 

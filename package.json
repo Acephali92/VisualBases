@@ -17,6 +17,7 @@
     "data:media": "node scripts/build-media.mjs",
     "data:news": "node scripts/import-news.mjs",
     "test:smoke": "node tests/smoke.cjs",
+    "launch:check": "node scripts/launch-check.mjs",
     "validate": "node scripts/validate-data.mjs",
     "data:report": "node scripts/validate-data.mjs --report docs/data-quality-report.md"
   },

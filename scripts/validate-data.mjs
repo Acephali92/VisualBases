@@ -11,7 +11,7 @@ import fs from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, ids } from '../src/lib/taxonomy.ts';
+import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, MEDIA_RIGHTS, ids } from '../src/lib/taxonomy.ts';
 import { distanceKm } from '../src/lib/geo.ts';
 import { resolveBases, CLAIM_FIELDS, verdictFor } from './lib/resolve.mjs';
 import { SITE_TYPE_BY_CAT, FEATURE_BY_TERM, NATION_BY_TAG, CO_USER_BY_TAG, ORGANISATION_BY_TAG, THEME_BY_TAG, ACTIVITY_BY_TAG } from './import-visualbases.mjs';
@@ -296,6 +296,10 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   for (const [url, m] of Object.entries(media)) {
     if (!fileExists(m.src) || !fileExists(m.thumb)) err('media-file', `media file missing for ${url.split('/').pop()}`);
     if (!m.credit) err('media-credit', `media without credit: ${url.split('/').pop()}`);
+    // every image needs a rights status; a free licence must be named; unsettled images are listed (not published)
+    if (!MEDIA_RIGHTS.includes(m.rights)) err('media-rights', `rights must be one of ${MEDIA_RIGHTS.join(', ')}: ${url.split('/').pop()}`);
+    else if (m.rights === 'free-licence' && !m.license) err('media-rights', `free licence without licence name: ${url.split('/').pop()}`);
+    else if (m.rights === 'unclear') warn('media-rights-unclear', `not published until the rights are settled: ${url.split('/').pop()} (${m.credit})`);
   }
   for (const [id, w] of Object.entries(wikimedia)) {
     if (!w) continue;
@@ -388,6 +392,7 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     geoSettled: settled,
     images: Object.keys(media).length,
     imagesWithLicence: Object.values(media).filter((m) => m.license).length,
+    imageRights: Object.fromEntries(MEDIA_RIGHTS.map((r) => [r, Object.values(media).filter((m) => m.rights === r).length])),
     news: news.length,
   };
   return { errors, warnings, stats };
@@ -441,7 +446,7 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     `| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | ${['site', 'reference', 'town', 'region'].map((p) => stats.precision?.[p] ?? 0).join(' / ')} |`,
     `| Korrekturen, deren Quellwert sich inzwischen geändert hat | ${stats.upstreamChanged ?? 0} |`,
     `| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | ${stats.positionConfirmed ?? 0} / ${stats.geoSettled ?? 0} |`,
-    `| Bilder / davon mit Lizenzangabe | ${stats.images} / ${stats.imagesWithLicence} |`,
+    `| Bilder: frei lizenziert / Google Earth / eigenes Archiv / ungeklärt (nicht veröffentlicht) | ${['free-licence', 'google-earth', 'own-archive', 'unclear'].map((r) => stats.imageRights?.[r] ?? 0).join(' / ')} (von ${stats.images}) |`,
     `| Meldungen | ${stats.news} |`,
     `| **Fehler** (blockieren das Deployment) | **${errors.length}** |`,
     `| Warnungen (blockieren nicht) | ${warnings.length} |`,

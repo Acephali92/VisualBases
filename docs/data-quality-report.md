@@ -21,17 +21,17 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 11 / 340 / 9 / 5 |
 | Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
 | Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 17 / 12 |
-| Bilder / davon mit Lizenzangabe | 164 / 19 |
+| Bilder: frei lizenziert / Google Earth / eigenes Archiv / ungeklärt (nicht veröffentlicht) | 61 / 65 / 8 / 30 (von 164) |
 | Meldungen | 78 |
 | **Fehler** (blockieren das Deployment) | **0** |
-| Warnungen (blockieren nicht) | 220 |
+| Warnungen (blockieren nicht) | 250 |
 
 ## Entwicklung seit 2026-11-07
 
 | Kennzahl | vorher | jetzt | Änderung |
 |---|---|---|---|
 | Fehler | 0 | 0 | ±0 |
-| Warnungen | 276 | 220 | -56 |
+| Warnungen | 276 | 250 | -26 |
 | mit eigener Quelle | 74 | 74 | ±0 |
 | nur geprüfte Recherchequelle | 199 | 200 | +1 |
 | ohne geprüfte Quelle (nur Wikipedia oder keine) | 92 | 91 | -1 |
@@ -111,6 +111,39 @@ Keine.
 - `okinawa`: only Wikipedia as source
 - `jasdf-naha-air-base`: only Wikipedia as source
 - … und 34 weitere
+
+### `media-rights-unclear` (30)
+
+- not published until the rights are settled: Camp_Delta_Guantanamo_Bay_Wikipedia.jpg (Wikimedia Commons)
+- not published until the rights are settled: campaign_Ansbach.png (Kampagne / campaign)
+- not published until the rights are settled: 2015_LBB_NATO-Pipeline-RLP.jpg (visualbases.org)
+- not published until the rights are settled: US-Army-Bremerhaven.jpg (visualbases.org)
+- not published until the rights are settled: campaign_Buchel.jpg (Kampagne / campaign)
+- not published until the rights are settled: Germersheim_Homepage.png (visualbases.org)
+- not published until the rights are settled: Hahn_Homepage_Statistic_2006-2020.png (visualbases.org)
+- not published until the rights are settled: campaign_Kalkar.png (Kampagne / campaign)
+- not published until the rights are settled: campaign_Erbenheim.png (Kampagne / campaign)
+- not published until the rights are settled: Marcha_contra_la_base_de_rota-scaled.jpg (Wikimedia Commons)
+- not published until the rights are settled: campaign_Yorkshire.jpg (Kampagne / campaign)
+- not published until the rights are settled: Menwith-Hill-Day-of-Action-2011-Flickr.jpg (Flickr)
+- not published until the rights are settled: Wikimedia_Satellite_Dish_RAF_Oakhanger_328959.jpeg (Wikimedia Commons)
+- not published until the rights are settled: campaign_noMUOS.png (Kampagne / campaign)
+- not published until the rights are settled: Military_facilities_of_the_United_States_in_Japan_2016.gif (visualbases.org)
+- not published until the rights are settled: campaign_okinawa.jpg (Kampagne / campaign)
+- not published until the rights are settled: campaign_nohelipads-okinawa.jpg (Kampagne / campaign)
+- not published until the rights are settled: campaign_jeju-island.png (Kampagne / campaign)
+- not published until the rights are settled: Wikimedia_Aegis_Ashore_Missile_Defense_Complex_Romania.jpg (Wikimedia Commons)
+- not published until the rights are settled: 2021-07-09_Vine_photo.png (visualbases.org)
+- not published until the rights are settled: AnnWright.png (visualbases.org)
+- not published until the rights are settled: 2021-07_A-Young_Screenshot2.png (visualbases.org)
+- not published until the rights are settled: 2021-07_Okinawa_Screenshot.png (visualbases.org)
+- not published until the rights are settled: 2021-07-09_Philippines-photo.png (visualbases.org)
+- not published until the rights are settled: 2021-07_Julieta_Screenshot.png (visualbases.org)
+- not published until the rights are settled: 2021-07-09_Lannon_photo.png (visualbases.org)
+- not published until the rights are settled: 2021-04-05_Alain_Rouy.jpg (visualbases.org)
+- not published until the rights are settled: 2021-07-09_Webb_photo.png (visualbases.org)
+- not published until the rights are settled: 2021-07-09_Guantanomo-photo.png (visualbases.org)
+- not published until the rights are settled: campaign_shannon-watch.jpg (Kampagne / campaign)
 
 ### `issue-site-type-from-status` (26)
 

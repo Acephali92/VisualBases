@@ -1,6 +1,7 @@
 /**
  * Browser smoke test: opens every route of the built app (vite preview) in Chromium and fails on
- * uncaught errors, console errors or missing key elements.
+ * uncaught errors, console errors or missing key elements, and checks the main pages with axe-core
+ * (WCAG 2.1 A/AA).
  *
  *   npm run build && npm run test:smoke
  */
@@ -33,11 +34,43 @@ const ROUTES = [
   ['#/space', '.compare'],
   ['#/school', '.task'],
   ['#/about', '.kinds'],
+  ['#/quality', '.log li'],
+  ['#/impressum', '.legal h1'],
+  ['#/datenschutz', '.legal h2'],
   ['#/embed?themes=resistance', '.badge'],
   ['b/ramstein-air-base.html', '.profile h2'],
   ['c/DE.html', '.country h2'],
   ['c/GL.html', '.country h2'],
+  ['404.html', 'h1'],
 ];
+
+/** pages checked with axe-core against WCAG 2.1 A/AA – any violation fails the test */
+const AXE_ROUTES = ['#/', '#/atlas', '#/base/ramstein-air-base', '#/near', '#/news', '#/stats', '#/act', '#/quiz', '#/space', '#/school', '#/about', '#/quality', '#/impressum', '#/datenschutz', 'b/ramstein-air-base.html', 'c/DE.html'];
+const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
+
+async function axeChecks(browser) {
+  const source = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+  let failed = 0;
+  // German is the main language of the site; English is checked on the desktop width
+  for (const [locale, viewport] of [['de-DE', { width: 1280, height: 800 }], ['de-DE', { width: 390, height: 844 }], ['en-US', { width: 1280, height: 800 }]]) {
+    const context = await browser.newContext({ locale, viewport });
+    for (const route of AXE_ROUTES) {
+      const page = await context.newPage();
+      await page.goto(BASE + route, { waitUntil: 'load' });
+      await page.waitForTimeout(1200);
+      await page.addScriptTag({ content: source });
+      const violations = await page.evaluate(async (tags) => {
+        const r = await window.axe.run(document, { runOnly: { type: 'tag', values: tags } });
+        return r.violations.map((v) => `${v.id} [${v.impact}] ×${v.nodes.length}: ${v.nodes.slice(0, 3).map((n) => n.target.join(' ')).join(', ')}`);
+      }, AXE_TAGS);
+      if (violations.length) failed++;
+      console.log(`${violations.length ? '✘' : '✔'} axe ${locale} ${viewport.width}px ${route}${violations.length ? '\n    ' + violations.join('\n    ') : ''}`);
+      await page.close();
+    }
+    await context.close();
+  }
+  return failed;
+}
 
 /**
  * "Your base" (#/near) end to end, desktop and mobile, with Nominatim answered from fixtures:
@@ -161,6 +194,7 @@ async function nearFlows() {
         await page.close();
       }
     }
+    failed += await axeChecks(browser);
     await browser.close();
 
     // without WebGL the map must degrade to a notice while lists and profiles keep working

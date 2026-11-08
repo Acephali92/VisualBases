@@ -27,9 +27,9 @@
     onpointerup={() => (dragging = false)}
     onpointercancel={() => (dragging = false)}
   >
-    <img src={after.src} alt="{t('img.satellite')} {after.year ?? ''}" draggable="false" loading="lazy" />
+    <img src={after.src} srcset="{after.thumb} {after.tw}w, {after.src} {after.w}w" sizes="(max-width: 820px) 100vw, 400px" alt="{t('img.satellite')} {after.year ?? ''}" draggable="false" loading="lazy" />
     <div class="clip" style:clip-path="inset(0 {100 - pos}% 0 0)">
-      <img src={before.src} alt="{t('img.satellite')} {before.year ?? ''}" draggable="false" loading="lazy" />
+      <img src={before.src} srcset="{before.thumb} {before.tw}w, {before.src} {before.w}w" sizes="(max-width: 820px) 100vw, 400px" alt="{t('img.satellite')} {before.year ?? ''}" draggable="false" loading="lazy" />
     </div>
     <span class="yr left">{before.year ?? t('img.before')}</span>
     <span class="yr right">{after.year ?? t('img.after')}</span>

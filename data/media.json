@@ -8,7 +8,10 @@
   "th": 416,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_AbuDhabi-e1621505423522.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_AbuDhabi-e1621505423522.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GA_Bagram-AB_20212009.png": {
   "src": "media/ga-bagram-ab-20212009.webp",
@@ -20,7 +23,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GA_Bagram-AB_20212009.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GA_Bagram-AB_20212009.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Kandaher_AF_20212010.png": {
   "src": "media/ge-kandaher-af-20212010.webp",
@@ -32,7 +36,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Kandaher_AF_20212010.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Kandaher_AF_20212010.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Chievres_5-2015.png": {
   "src": "media/ge-chievres-5-2015.webp",
@@ -44,7 +49,8 @@
   "type": "satellite",
   "year": 2015,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Chievres_5-2015.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Chievres_5-2015.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_KleineBrogel_1-2015.png": {
   "src": "media/ge-kleinebrogel-1-2015.webp",
@@ -56,7 +62,8 @@
   "type": "satellite",
   "year": 2015,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel_1-2015.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel_1-2015.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Brogel-nuclear.png": {
   "src": "media/ge-brogel-nuclear.webp",
@@ -68,7 +75,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Brogel-nuclear.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Brogel-nuclear.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_KleineBrogel-nuclear-8-2012.png": {
   "src": "media/ge-kleinebrogel-nuclear-8-2012.webp",
@@ -80,7 +88,8 @@
   "type": "satellite",
   "year": 2012,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel-nuclear-8-2012.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_KleineBrogel-nuclear-8-2012.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_NATO-HQ_5-2015.png": {
   "src": "media/ge-nato-hq-5-2015.webp",
@@ -92,7 +101,8 @@
   "type": "satellite",
   "year": 2015,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NATO-HQ_5-2015.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NATO-HQ_5-2015.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Zutendaal_9-2013.png": {
   "src": "media/ge-zutendaal-9-2013.webp",
@@ -104,7 +114,8 @@
   "type": "satellite",
   "year": 2013,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Zutendaal_9-2013.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Zutendaal_9-2013.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Bahrein.jpg": {
   "src": "media/osb-community-bahrein.webp",
@@ -115,7 +126,10 @@
   "th": 660,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Bahrein.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Bahrein.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/Camp_Delta_Guantanamo_Bay_Wikipedia.jpg": {
   "src": "media/camp-delta-guantanamo-bay-wikipedia.webp",
@@ -126,7 +140,8 @@
   "th": 250,
   "type": "photo",
   "credit": "Wikimedia Commons",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Camp_Delta_Guantanamo_Bay_Wikipedia.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Camp_Delta_Guantanamo_Bay_Wikipedia.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-titel.png": {
   "src": "media/2021-07-09-guantanomo-titel.webp",
@@ -137,7 +152,8 @@
   "th": 359,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-titel.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-titel.png",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-interventions.png": {
   "src": "media/2021-07-09-guantanomo-interventions.webp",
@@ -148,7 +164,8 @@
   "th": 350,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-interventions.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-interventions.png",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-final.png": {
   "src": "media/2021-07-09-guantanomo-final.webp",
@@ -159,7 +176,8 @@
   "th": 355,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-final.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-final.png",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Altmark.jpg": {
   "src": "media/osb-ta-altmark.webp",
@@ -170,7 +188,10 @@
   "th": 557,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Altmark.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Altmark.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Altmark_8-2020.png": {
   "src": "media/ge-altmark-8-2020.webp",
@@ -182,7 +203,8 @@
   "type": "satellite",
   "year": 2020,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Altmark_8-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Altmark_8-2020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Altmark_9-2011.png": {
   "src": "media/ge-altmark-9-2011.webp",
@@ -194,7 +216,8 @@
   "type": "satellite",
   "year": 2011,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Altmark_9-2011.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Altmark_9-2011.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ansbach_2018.png": {
   "src": "media/ge-ansbach-2018.webp",
@@ -206,7 +229,8 @@
   "type": "satellite",
   "year": 2018,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ansbach_2018.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ansbach_2018.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/campaign_Ansbach.png": {
   "src": "media/campaign-ansbach.webp",
@@ -217,7 +241,8 @@
   "th": 163,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Ansbach.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Ansbach.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Baumholder.jpg": {
   "src": "media/osb-community-baumholder.webp",
@@ -228,7 +253,10 @@
   "th": 360,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Baumholder.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Baumholder.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Bergen.jpg": {
   "src": "media/osb-ta-bergen.webp",
@@ -239,7 +267,10 @@
   "th": 550,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Bergen.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Bergen.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/2015_LBB_NATO-Pipeline-RLP.jpg": {
   "src": "media/2015-lbb-nato-pipeline-rlp.webp",
@@ -250,7 +281,8 @@
   "th": 440,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2015_LBB_NATO-Pipeline-RLP.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2015_LBB_NATO-Pipeline-RLP.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/US-Army-Bremerhaven.jpg": {
   "src": "media/us-army-bremerhaven.webp",
@@ -261,7 +293,8 @@
   "th": 325,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/US-Army-Bremerhaven.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/US-Army-Bremerhaven.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_Bremerhaven_Detail.jpg": {
   "src": "media/ge-bremerhaven-detail.webp",
@@ -272,7 +305,8 @@
   "th": 647,
   "type": "satellite",
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Bremerhaven_Detail.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Bremerhaven_Detail.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Miesau-Depot-KL.png": {
   "src": "media/ge-miesau-depot-kl.webp",
@@ -284,7 +318,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Miesau-Depot-KL.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Miesau-Depot-KL.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Buechel.png": {
   "src": "media/ge-buechel.webp",
@@ -296,7 +331,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Buechel.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Buechel.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/campaign_Buchel.jpg": {
   "src": "media/campaign-buchel.webp",
@@ -307,7 +343,8 @@
   "th": 146,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Buchel.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Buchel.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/Germersheim_Homepage.png": {
   "src": "media/germersheim-homepage.webp",
@@ -318,7 +355,8 @@
   "th": 268,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Germersheim_Homepage.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Germersheim_Homepage.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Grafenwohr.jpg": {
   "src": "media/osb-ta-grafenwohr.webp",
@@ -329,7 +367,10 @@
   "th": 551,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Grafenwohr.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Grafenwohr.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/Hahn_Homepage_Statistic_2006-2020.png": {
   "src": "media/hahn-homepage-statistic-2006-2020.webp",
@@ -340,7 +381,8 @@
   "th": 279,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Hahn_Homepage_Statistic_2006-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Hahn_Homepage_Statistic_2006-2020.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Hohenfels.jpg": {
   "src": "media/osb-ta-hohenfels.webp",
@@ -351,7 +393,10 @@
   "th": 559,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Hohenfels.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Hohenfels.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/campaign_Kalkar.png": {
   "src": "media/campaign-kalkar.webp",
@@ -362,7 +407,8 @@
   "th": 137,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Kalkar.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Kalkar.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Kiel-Eckernforde.jpg": {
   "src": "media/osb-kiel-eckernforde.webp",
@@ -373,7 +419,10 @@
   "th": 449,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Kiel-Eckernforde.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Kiel-Eckernforde.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ramstein-Breitenbach.jpg": {
   "src": "media/ge-ramstein-breitenbach.webp",
@@ -384,7 +433,8 @@
   "th": 304,
   "type": "satellite",
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Breitenbach.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Breitenbach.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Egelsbach_2023.jpg": {
   "src": "media/ge-egelsbach-2023.webp",
@@ -396,7 +446,8 @@
   "type": "satellite",
   "year": 2023,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Egelsbach_2023.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Egelsbach_2023.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Coleman-Barracks_2021.png": {
   "src": "media/ge-coleman-barracks-2021.webp",
@@ -408,7 +459,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Coleman-Barracks_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Coleman-Barracks_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Munster.png": {
   "src": "media/osb-munster.webp",
@@ -419,7 +471,10 @@
   "th": 547,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Munster.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Munster.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Oberlausitz.jpg": {
   "src": "media/osb-ta-oberlausitz.webp",
@@ -430,7 +485,10 @@
   "th": 277,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Oberlausitz.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Oberlausitz.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Weilerbach_20212019.png": {
   "src": "media/ge-weilerbach-20212019.webp",
@@ -442,7 +500,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Weilerbach_20212019.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Weilerbach_20212019.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Ramstein_complete_13.png": {
   "src": "media/osb-ramstein-complete-13.webp",
@@ -453,7 +512,10 @@
   "th": 234,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Ramstein_complete_13.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Ramstein_complete_13.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ramstein_10-2000.png": {
   "src": "media/ge-ramstein-10-2000.webp",
@@ -465,7 +527,8 @@
   "type": "satellite",
   "year": 2000,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein_10-2000.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein_10-2000.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ramstein_2021.png": {
   "src": "media/ge-ramstein-2021.webp",
@@ -477,7 +540,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/2021-05-30_Stopp-Ramstein_Fahrradmarathon.jpeg": {
   "src": "media/2021-05-30-stopp-ramstein-fahrradmarathon.webp",
@@ -488,7 +552,8 @@
   "th": 480,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-05-30_Stopp-Ramstein_Fahrradmarathon.jpeg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-05-30_Stopp-Ramstein_Fahrradmarathon.jpeg",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/2015_SABR1.jpg": {
   "src": "media/2015-sabr1.webp",
@@ -499,7 +564,8 @@
   "th": 288,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2015_SABR1.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2015_SABR1.jpg",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/2017_SABR-1.jpg": {
   "src": "media/2017-sabr-1.webp",
@@ -510,7 +576,8 @@
   "th": 250,
   "type": "photo",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2017_SABR-1.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2017_SABR-1.jpg",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-10-2017.png": {
   "src": "media/ge-ramstein-relaistation-10-2017.webp",
@@ -522,7 +589,8 @@
   "type": "satellite",
   "year": 2017,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-10-2017.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-10-2017.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-12-2010.png": {
   "src": "media/ge-ramstein-relaistation-12-2010.webp",
@@ -534,7 +602,8 @@
   "type": "satellite",
   "year": 2010,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-12-2010.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Ramstein-Relaistation-12-2010.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Ansbach.jpg": {
   "src": "media/osb-community-ansbach.webp",
@@ -545,7 +614,10 @@
   "th": 359,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Ansbach.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Ansbach.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Kaiserslautern_11.png": {
   "src": "media/osb-community-kaiserslautern-11.webp",
@@ -556,7 +628,10 @@
   "th": 237,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Kaiserslautern_11.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Kaiserslautern_11.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Stuttgart.jpg": {
   "src": "media/osb-community-stuttgart.webp",
@@ -567,7 +642,10 @@
   "th": 362,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Stuttgart.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Stuttgart.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Wiesbaden.jpg": {
   "src": "media/osb-community-wiesbaden.webp",
@@ -578,7 +656,10 @@
   "th": 361,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Wiesbaden.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Wiesbaden.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Wiesbaden-Erbenheim.png": {
   "src": "media/osb-wiesbaden-erbenheim.webp",
@@ -589,7 +670,10 @@
   "th": 329,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Wiesbaden-Erbenheim.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Wiesbaden-Erbenheim.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/campaign_Erbenheim.png": {
   "src": "media/campaign-erbenheim.webp",
@@ -600,7 +684,8 @@
   "th": 96,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Erbenheim.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Erbenheim.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_Arienne_Chabelley_2021.png": {
   "src": "media/ge-arienne-chabelley-2021.webp",
@@ -612,7 +697,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Arienne_Chabelley_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Arienne_Chabelley_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Djibouti_11-2020.png": {
   "src": "media/ge-djibouti-11-2020.webp",
@@ -624,7 +710,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Djibouti_11-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Djibouti_11-2020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Djibouti_10-2011.png": {
   "src": "media/ge-djibouti-10-2011.webp",
@@ -636,7 +723,8 @@
   "type": "satellite",
   "year": 2011,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Djibouti_10-2011.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Djibouti_10-2011.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Djibouti.jpg": {
   "src": "media/osb-djibouti.webp",
@@ -647,7 +735,10 @@
   "th": 408,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Djibouti.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Djibouti.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/Djibouti_Webinar_Overview.jpg": {
   "src": "media/djibouti-webinar-overview.webp",
@@ -658,7 +749,8 @@
   "th": 178,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Djibouti_Webinar_Overview.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Djibouti_Webinar_Overview.jpg",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/Marcha_contra_la_base_de_rota-scaled.jpg": {
   "src": "media/marcha-contra-la-base-de-rota-scaled.webp",
@@ -669,7 +761,8 @@
   "th": 360,
   "type": "photo",
   "credit": "Wikimedia Commons",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Marcha_contra_la_base_de_rota-scaled.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Marcha_contra_la_base_de_rota-scaled.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Martinique.jpg": {
   "src": "media/osb-martinique.webp",
@@ -680,7 +773,10 @@
   "th": 560,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Martinique.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Martinique.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Reunion-IndianOcean.png": {
   "src": "media/osb-reunion-indianocean.webp",
@@ -691,7 +787,10 @@
   "th": 444,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Reunion-IndianOcean.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Reunion-IndianOcean.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Reunion_Level11.png": {
   "src": "media/osb-reunion-level11.webp",
@@ -702,7 +801,10 @@
   "th": 445,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Reunion_Level11.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Reunion_Level11.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Taihiti.png": {
   "src": "media/osb-community-taihiti.webp",
@@ -713,7 +815,10 @@
   "th": 453,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Taihiti.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Taihiti.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_DiegoGarcia_2021.png": {
   "src": "media/ge-diegogarcia-2021.webp",
@@ -725,7 +830,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_DiegoGarcia_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_DiegoGarcia_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_DiegoGarcia.png": {
   "src": "media/osb-diegogarcia.webp",
@@ -736,7 +842,10 @@
   "th": 700,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_DiegoGarcia.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_DiegoGarcia.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_IndianOcean.png": {
   "src": "media/osb-indianocean.webp",
@@ -747,7 +856,10 @@
   "th": 404,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_IndianOcean.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_IndianOcean.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_MenwithHill_4-2020.png": {
   "src": "media/ge-menwithhill-4-2020.webp",
@@ -759,7 +871,8 @@
   "type": "satellite",
   "year": 2020,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_4-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_4-2020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_MenwithHill_12-2002.png": {
   "src": "media/ge-menwithhill-12-2002.webp",
@@ -771,7 +884,8 @@
   "type": "satellite",
   "year": 2002,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_12-2002.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_MenwithHill_12-2002.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/campaign_Yorkshire.jpg": {
   "src": "media/campaign-yorkshire.webp",
@@ -782,7 +896,8 @@
   "th": 58,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Yorkshire.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_Yorkshire.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/Menwith-Hill-Day-of-Action-2011-Flickr.jpg": {
   "src": "media/menwith-hill-day-of-action-2011-flickr.webp",
@@ -793,7 +908,8 @@
   "th": 356,
   "type": "photo",
   "credit": "Flickr",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Menwith-Hill-Day-of-Action-2011-Flickr.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Menwith-Hill-Day-of-Action-2011-Flickr.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_RAF-Alconbury_2021.png": {
   "src": "media/ge-raf-alconbury-2021.webp",
@@ -805,7 +921,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Alconbury_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Alconbury_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_RAF_Barford_St-John_2021.png": {
   "src": "media/ge-raf-barford-st-john-2021.webp",
@@ -817,7 +934,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF_Barford_St-John_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF_Barford_St-John_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_RAF-Roughton.png": {
   "src": "media/ge-raf-roughton.webp",
@@ -829,7 +947,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Roughton.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Roughton.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Croughton.jpg": {
   "src": "media/osb-community-croughton.webp",
@@ -840,7 +959,10 @@
   "th": 660,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Croughton.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Croughton.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_RAF-Mildenhall_2021.png": {
   "src": "media/ge-raf-mildenhall-2021.webp",
@@ -852,7 +974,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Mildenhall_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Mildenhall_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/Wikimedia_Satellite_Dish_RAF_Oakhanger_328959.jpeg": {
   "src": "media/wikimedia-satellite-dish-raf-oakhanger-328959.webp",
@@ -863,7 +986,8 @@
   "th": 360,
   "type": "photo",
   "credit": "Wikimedia Commons",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Wikimedia_Satellite_Dish_RAF_Oakhanger_328959.jpeg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Wikimedia_Satellite_Dish_RAF_Oakhanger_328959.jpeg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_RAF-Welford.png": {
   "src": "media/ge-raf-welford.webp",
@@ -875,7 +999,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Welford.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_RAF-Welford.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_2021.png": {
   "src": "media/ge-namfi-soudabay-2021.webp",
@@ -887,7 +1012,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_4-2017.png": {
   "src": "media/ge-namfi-soudabay-4-2017.webp",
@@ -899,7 +1025,8 @@
   "type": "satellite",
   "year": 2017,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_4-2017.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_NAMFI-SoudaBay_4-2017.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_namfi-souda_2017-06.png": {
   "src": "media/ge-namfi-souda-2017-06.webp",
@@ -911,7 +1038,8 @@
   "type": "satellite",
   "year": 2017,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_namfi-souda_2017-06.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_namfi-souda_2017-06.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_namfi-souda-2016-07.png": {
   "src": "media/ge-namfi-souda-2016-07.webp",
@@ -923,7 +1051,8 @@
   "type": "satellite",
   "year": 2016,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_namfi-souda-2016-07.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_namfi-souda-2016-07.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Hotspot_SoudaBay.png": {
   "src": "media/osb-hotspot-soudabay.webp",
@@ -934,7 +1063,10 @@
   "th": 322,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_SoudaBay.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_SoudaBay.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_EugenKvaterni-Croatia.jpg": {
   "src": "media/osb-ta-eugenkvaterni-croatia.webp",
@@ -945,7 +1077,10 @@
   "th": 518,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_EugenKvaterni-Croatia.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_EugenKvaterni-Croatia.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Al-Asad-AB_20212004.png": {
   "src": "media/ge-al-asad-ab-20212004.webp",
@@ -957,7 +1092,8 @@
   "type": "satellite",
   "year": 2004,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Al-Asad-AB_20212004.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Al-Asad-AB_20212004.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Camp-Speicher_20212005.png": {
   "src": "media/ge-camp-speicher-20212005.webp",
@@ -969,7 +1105,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Camp-Speicher_20212005.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Camp-Speicher_20212005.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_6-2020.png": {
   "src": "media/ge-sigonella-relaisstation-6-2020.webp",
@@ -981,7 +1118,8 @@
   "type": "satellite",
   "year": 2020,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_6-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_6-2020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_7-2017.png": {
   "src": "media/ge-sigonella-relaisstation-7-2017.webp",
@@ -993,7 +1131,8 @@
   "type": "satellite",
   "year": 2017,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_7-2017.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-Relaisstation_7-2017.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_6-2018.png": {
   "src": "media/ge-niscemi-radarstation-6-2018.webp",
@@ -1005,7 +1144,8 @@
   "type": "satellite",
   "year": 2018,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_6-2018.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_6-2018.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_7-2013.png": {
   "src": "media/ge-niscemi-radarstation-7-2013.webp",
@@ -1017,7 +1157,8 @@
   "type": "satellite",
   "year": 2013,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_7-2013.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Niscemi-Radarstation_7-2013.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/campaign_noMUOS.png": {
   "src": "media/campaign-nomuos.webp",
@@ -1028,7 +1169,8 @@
   "th": 117,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_noMUOS.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_noMUOS.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Sigonella_14.png": {
   "src": "media/osb-sigonella-14.webp",
@@ -1039,7 +1181,10 @@
   "th": 343,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Sigonella_14.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Sigonella_14.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Sigonella-AB_20212018.png": {
   "src": "media/ge-sigonella-ab-20212018.webp",
@@ -1051,7 +1196,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-AB_20212018.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sigonella-AB_20212018.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Livorn-Depot.png": {
   "src": "media/ge-livorn-depot.webp",
@@ -1063,7 +1209,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Livorn-Depot.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Livorn-Depot.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Vicenza-Padova.png": {
   "src": "media/osb-hotspot-vicenza-padova.webp",
@@ -1074,7 +1221,10 @@
   "th": 377,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Vicenza-Padova.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Vicenza-Padova.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Community_Okinawa.jpg": {
   "src": "media/osb-community-okinawa.webp",
@@ -1085,7 +1235,10 @@
   "th": 360,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Okinawa.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Community_Okinawa.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/Military_facilities_of_the_United_States_in_Japan_2016.gif": {
   "src": "media/military-facilities-of-the-united-states-in-japan-2016.webp",
@@ -1096,7 +1249,8 @@
   "th": 346,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Military_facilities_of_the_United_States_in_Japan_2016.gif"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Military_facilities_of_the_United_States_in_Japan_2016.gif",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_Henoko_11-2020.png": {
   "src": "media/ge-henoko-11-2020.webp",
@@ -1108,7 +1262,8 @@
   "type": "satellite",
   "year": 2020,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Henoko_11-2020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Henoko_11-2020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Henoko_2014.png": {
   "src": "media/ge-henoko-2014.webp",
@@ -1120,7 +1275,8 @@
   "type": "satellite",
   "year": 2014,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Henoko_2014.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Henoko_2014.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/campaign_okinawa.jpg": {
   "src": "media/campaign-okinawa.webp",
@@ -1131,7 +1287,8 @@
   "th": 247,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_okinawa.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_okinawa.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_JungleWarfare-Okinawa.jpg": {
   "src": "media/osb-ta-junglewarfare-okinawa.webp",
@@ -1142,7 +1299,10 @@
   "th": 551,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_JungleWarfare-Okinawa.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_JungleWarfare-Okinawa.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/campaign_nohelipads-okinawa.jpg": {
   "src": "media/campaign-nohelipads-okinawa.webp",
@@ -1153,7 +1313,8 @@
   "th": 679,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_nohelipads-okinawa.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_nohelipads-okinawa.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/GE_Kadena_Ammunition_2021.png": {
   "src": "media/ge-kadena-ammunition-2021.webp",
@@ -1165,7 +1326,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Kadena_Ammunition_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Kadena_Ammunition_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg": {
   "src": "media/sk-update-a-young.webp",
@@ -1176,7 +1338,8 @@
   "th": 567,
   "type": "document",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/SK_Update_A-Young.jpeg",
+  "rights": "own-archive"
  },
  "https://visualbases.org/wp-content/uploads/campaign_jeju-island.png": {
   "src": "media/campaign-jeju-island.webp",
@@ -1187,7 +1350,8 @@
   "th": 60,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_jeju-island.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_jeju-island.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Humphreys.png": {
   "src": "media/osb-hotspot-humphreys.webp",
@@ -1198,7 +1362,10 @@
   "th": 471,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Humphreys.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Humphreys.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Taeju-Korea.png": {
   "src": "media/osb-hotspot-taeju-korea.webp",
@@ -1209,7 +1376,10 @@
   "th": 326,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Taeju-Korea.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Taeju-Korea.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_THADD-Base-Korea.png": {
   "src": "media/ge-thadd-base-korea.webp",
@@ -1221,7 +1391,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_THADD-Base-Korea.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_THADD-Base-Korea.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Hotspot_Yongsan.png": {
   "src": "media/osb-hotspot-yongsan.webp",
@@ -1232,7 +1403,10 @@
   "th": 538,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_Yongsan.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Hotspot_Yongsan.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Rudninkai_LT_2021.jpg": {
   "src": "media/ge-rudninkai-lt-2021.webp",
@@ -1244,7 +1418,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Rudninkai_LT_2021.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Rudninkai_LT_2021.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Sinjajevina.webp": {
   "src": "media/ge-sinjajevina.webp",
@@ -1255,7 +1430,8 @@
   "th": 492,
   "type": "satellite",
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sinjajevina.webp"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Sinjajevina.webp",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Camp-Castor_2021.png": {
   "src": "media/ge-camp-castor-2021.webp",
@@ -1267,7 +1443,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Camp-Castor_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Camp-Castor_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/Niger201_6-2017.png": {
   "src": "media/niger201-6-2017.webp",
@@ -1279,7 +1456,8 @@
   "type": "satellite",
   "year": 2017,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Niger201_6-2017.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Niger201_6-2017.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/Niger201_2021.png": {
   "src": "media/niger201-2021.webp",
@@ -1291,7 +1469,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Niger201_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Niger201_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/Plant_drone_base_dirkou_niger_2021.jpg": {
   "src": "media/plant-drone-base-dirkou-niger-2021.webp",
@@ -1303,7 +1482,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Plant_drone_base_dirkou_niger_2021.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Plant_drone_base_dirkou_niger_2021.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Trondheim.png": {
   "src": "media/osb-hotspot-trondheim.webp",
@@ -1314,7 +1494,10 @@
   "th": 732,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Trondheim.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Trondheim.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_OPC1-Muscat.png": {
   "src": "media/ge-opc1-muscat.webp",
@@ -1326,7 +1509,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_OPC1-Muscat.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_OPC1-Muscat.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Orzysz-Poland.jpg": {
   "src": "media/osb-ta-orzysz-poland.webp",
@@ -1337,7 +1521,10 @@
   "th": 517,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Orzysz-Poland.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Orzysz-Poland.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Drawsko-Poland.jpg": {
   "src": "media/osb-ta-drawsko-poland.webp",
@@ -1348,7 +1535,10 @@
   "th": 424,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Drawsko-Poland.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Drawsko-Poland.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/Powidz_APS-2_web.jpg": {
   "src": "media/powidz-aps-2-web.webp",
@@ -1359,7 +1549,8 @@
   "th": 371,
   "type": "satellite",
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Powidz_APS-2_web.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Powidz_APS-2_web.jpg",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Redzikowo_20212020.png": {
   "src": "media/ge-redzikowo-20212020.webp",
@@ -1371,7 +1562,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_20212020.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_20212020.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Redzikowo_2016.png": {
   "src": "media/ge-redzikowo-2016.webp",
@@ -1383,7 +1575,8 @@
   "type": "satellite",
   "year": 2016,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_2016.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Redzikowo_2016.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Zagan.png": {
   "src": "media/osb-zagan.webp",
@@ -1394,7 +1587,10 @@
   "th": 493,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Zagan.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Zagan.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Deveslu_3-2014.png": {
   "src": "media/ge-deveslu-3-2014.webp",
@@ -1406,7 +1602,8 @@
   "type": "satellite",
   "year": 2014,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Deveslu_3-2014.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Deveslu_3-2014.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Deveslu_2021.png": {
   "src": "media/ge-deveslu-2021.webp",
@@ -1418,7 +1615,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Deveslu_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Deveslu_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/Wikimedia_Aegis_Ashore_Missile_Defense_Complex_Romania.jpg": {
   "src": "media/wikimedia-aegis-ashore-missile-defense-complex-romania.webp",
@@ -1429,7 +1627,8 @@
   "th": 270,
   "type": "photo",
   "credit": "Wikimedia Commons",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/Wikimedia_Aegis_Ashore_Missile_Defense_Complex_Romania.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/Wikimedia_Aegis_Ashore_Missile_Defense_Complex_Romania.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/OSB_TA_Popescu-Cincu-Romania.jpg": {
   "src": "media/osb-ta-popescu-cincu-romania.webp",
@@ -1440,7 +1639,10 @@
   "th": 328,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Popescu-Cincu-Romania.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_TA_Popescu-Cincu-Romania.jpg",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Singapore.png": {
   "src": "media/osb-hotspot-singapore.webp",
@@ -1451,7 +1653,10 @@
   "th": 445,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Singapore.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Singapore.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HostSpot_Dakar.png": {
   "src": "media/osb-hostspot-dakar.webp",
@@ -1462,7 +1667,10 @@
   "th": 273,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HostSpot_Dakar.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HostSpot_Dakar.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/OSB_Taiwan.png": {
   "src": "media/osb-taiwan.webp",
@@ -1473,7 +1681,10 @@
   "th": 528,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Taiwan.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_Taiwan.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Creech_AFB.png": {
   "src": "media/ge-creech-afb.webp",
@@ -1485,7 +1696,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Creech_AFB.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Creech_AFB.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Guam.png": {
   "src": "media/osb-hotspot-guam.webp",
@@ -1496,7 +1708,10 @@
   "th": 605,
   "type": "map",
   "credit": "© OpenStreetMap contributors · OpenStreetBrowser",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Guam.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/OSB_HotSpot_Guam.png",
+  "rights": "free-licence",
+  "license": "ODbL / CC BY-SA 2.0",
+  "licenseUrl": "https://www.openstreetmap.org/copyright"
  },
  "https://visualbases.org/wp-content/uploads/GE_Lualualei_2021.png": {
   "src": "media/ge-lualualei-2021.webp",
@@ -1508,7 +1723,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Lualualei_2021.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Lualualei_2021.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Lualualei_1-2011.png": {
   "src": "media/ge-lualualei-1-2011.webp",
@@ -1520,7 +1736,8 @@
   "type": "satellite",
   "year": 2011,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Lualualei_1-2011.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Lualualei_1-2011.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/GE_Johnston-Atoll.png": {
   "src": "media/ge-johnston-atoll.webp",
@@ -1532,7 +1749,8 @@
   "type": "satellite",
   "year": 2021,
   "credit": "Google Earth",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Johnston-Atoll.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/GE_Johnston-Atoll.png",
+  "rights": "google-earth"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Vine_photo.png": {
   "src": "media/2021-07-09-vine-photo.webp",
@@ -1543,7 +1761,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Vine_photo.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Vine_photo.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/AnnWright.png": {
   "src": "media/annwright.webp",
@@ -1554,7 +1773,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/AnnWright.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/AnnWright.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07_A-Young_Screenshot2.png": {
   "src": "media/2021-07-a-young-screenshot2.webp",
@@ -1565,7 +1785,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_A-Young_Screenshot2.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_A-Young_Screenshot2.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07_Okinawa_Screenshot.png": {
   "src": "media/2021-07-okinawa-screenshot.webp",
@@ -1576,7 +1797,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Okinawa_Screenshot.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Okinawa_Screenshot.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Philippines-photo.png": {
   "src": "media/2021-07-09-philippines-photo.webp",
@@ -1587,7 +1809,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Philippines-photo.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Philippines-photo.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07_Julieta_Screenshot.png": {
   "src": "media/2021-07-julieta-screenshot.webp",
@@ -1598,7 +1821,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Julieta_Screenshot.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07_Julieta_Screenshot.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Lannon_photo.png": {
   "src": "media/2021-07-09-lannon-photo.webp",
@@ -1609,7 +1833,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Lannon_photo.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Lannon_photo.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-04-05_Alain_Rouy.jpg": {
   "src": "media/2021-04-05-alain-rouy.webp",
@@ -1620,7 +1845,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-04-05_Alain_Rouy.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-04-05_Alain_Rouy.jpg",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Webb_photo.png": {
   "src": "media/2021-07-09-webb-photo.webp",
@@ -1631,7 +1857,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Webb_photo.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Webb_photo.png",
+  "rights": "unclear"
  },
  "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-photo.png": {
   "src": "media/2021-07-09-guantanomo-photo.webp",
@@ -1642,7 +1869,8 @@
   "th": 320,
   "type": "portrait",
   "credit": "visualbases.org",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-photo.png"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/2021-07-09_Guantanomo-photo.png",
+  "rights": "unclear"
  },
  "https://upload.wikimedia.org/wikipedia/commons/e/e0/F-16e_block60.jpg": {
   "src": "media/f-16e-block60.webp",
@@ -1654,7 +1882,8 @@
   "type": "photo",
   "credit": "David Raykovitz",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:F-16e_block60.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:F-16e_block60.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Emirates_-_panoramio_%2858%29.jpg/1920px-Emirates_-_panoramio_%2858%29.jpg": {
   "src": "media/1920px-emirates-panoramio-58.webp",
@@ -1667,7 +1896,8 @@
   "credit": "Андрей Бобровский",
   "license": "CC BY 3.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emirates_-_panoramio_(58).jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emirates_-_panoramio_(58).jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/F-16_takes_off_at_Bagram_150123-F-CV765-260.jpg/1920px-F-16_takes_off_at_Bagram_150123-F-CV765-260.jpg": {
   "src": "media/1920px-f-16-takes-off-at-bagram-150123-f-cv765-260.webp",
@@ -1679,7 +1909,8 @@
   "type": "photo",
   "credit": "Staff Sgt. Whitney Amstutz",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:F-16_takes_off_at_Bagram_150123-F-CV765-260.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:F-16_takes_off_at_Bagram_150123-F-CV765-260.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/C-5_Galaxy_at_Mazar-e-Sharif_Airport_in_northern_Afghanistan.jpg/1920px-C-5_Galaxy_at_Mazar-e-Sharif_Airport_in_northern_Afghanistan.jpg": {
   "src": "media/1920px-c-5-galaxy-at-mazar-e-sharif-airport-in-northern-afghanistan.webp",
@@ -1692,7 +1923,8 @@
   "credit": "Julian-G. Albert",
   "license": "CC BY 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:C-5_Galaxy_at_Mazar-e-Sharif_Airport_in_northern_Afghanistan.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:C-5_Galaxy_at_Mazar-e-Sharif_Airport_in_northern_Afghanistan.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Approximately_1%2C350_Afghan_army_trainees_stand_in_formation_at_the_start_of_the_Regional_Basic_Warrior_Training_course_graduation_ceremony_at_Camp_Shaheen%2C_Balkh_province%2C_Afghanistan%2C_July_7%2C_2011_110707-F-IN504-011.jpg/1920px-thumbnail.jpg": {
   "src": "media/1920px-thumbnail.webp",
@@ -1704,7 +1936,8 @@
   "type": "photo",
   "credit": "Tech. Sgt. Mike Andriacco",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Approximately_1,350_Afghan_army_trainees_stand_in_formation_at_the_start_of_the_Regional_Basic_Warrior_Training_course_graduation_ceremony_at_Camp_Shaheen,_Balkh_province,_Afghanistan,_July_7,_2011_110707-F-IN504-011.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Approximately_1,350_Afghan_army_trainees_stand_in_formation_at_the_start_of_the_Regional_Basic_Warrior_Training_course_graduation_ceremony_at_Camp_Shaheen,_Balkh_province,_Afghanistan,_July_7,_2011_110707-F-IN504-011.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg/1920px-Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg": {
   "src": "media/1920px-plane-of-pamir-airways-at-herat-airport-in-2010.webp",
@@ -1716,7 +1949,8 @@
   "type": "photo",
   "credit": "USAID Afghanistan",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plane_of_Pamir_Airways_at_Herat_Airport_in_2010.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/140411-M-SE196-011_%2813870441484%29.jpg/1920px-140411-M-SE196-011_%2813870441484%29.jpg": {
   "src": "media/1920px-140411-m-se196-011-13870441484.webp",
@@ -1728,7 +1962,8 @@
   "type": "photo",
   "credit": "U.S. Department of Defense Current Photos",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:140411-M-SE196-011_(13870441484).jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:140411-M-SE196-011_(13870441484).jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/General_Dynamics_F-16AM_Fighting_Falcon%2C_FA-16%2C_Kleine_Brogel%2C_Belgian_Air_Force_Days_2018_pic2.jpg/1920px-General_Dynamics_F-16AM_Fighting_Falcon%2C_FA-16%2C_Kleine_Brogel%2C_Belgian_Air_Force_Days_2018_pic2.jpg": {
   "src": "media/1920px-general-dynamics-f-16am-fighting-falcon-fa-16-kleine-brogel-belgian-air-f.webp",
@@ -1740,7 +1975,8 @@
   "type": "photo",
   "credit": "Alf van Beem",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:General_Dynamics_F-16AM_Fighting_Falcon,_FA-16,_Kleine_Brogel,_Belgian_Air_Force_Days_2018_pic2.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:General_Dynamics_F-16AM_Fighting_Falcon,_FA-16,_Kleine_Brogel,_Belgian_Air_Force_Days_2018_pic2.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Thracian_Viper_24_at_Bezmer_Air_Base.jpg/1920px-Thracian_Viper_24_at_Bezmer_Air_Base.jpg": {
   "src": "media/1920px-thracian-viper-24-at-bezmer-air-base.webp",
@@ -1752,7 +1988,8 @@
   "type": "photo",
   "credit": "Airman Synsere Howard",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thracian_Viper_24_at_Bezmer_Air_Base.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thracian_Viper_24_at_Bezmer_Air_Base.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Triple_Nickel_fly_with_Bulagarian_air_force_%286359215%29.jpg/1920px-Triple_Nickel_fly_with_Bulagarian_air_force_%286359215%29.jpg": {
   "src": "media/1920px-triple-nickel-fly-with-bulagarian-air-force-6359215.webp",
@@ -1764,7 +2001,8 @@
   "type": "photo",
   "credit": "U.S. Air Force photo by Airman 1st Class Ericka Woolever",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Triple_Nickel_fly_with_Bulagarian_air_force_(6359215).jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Triple_Nickel_fly_with_Bulagarian_air_force_(6359215).jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/US_Navy_050816-N-9563N-006_New_chief_petty_officer_%28CPO%29_selectees_perform_morning_colors_on_board_Naval_Support_Activity_%28NSA%29_Bahrain.jpg/1920px-US_Navy_050816-N-9563N-006_New_chief_petty_officer_%28CPO%29_selectees_perform_morning_colors_on_board_Naval_Support_Activity_%28NSA%29_Bahrain.jpg": {
   "src": "media/1920px-us-navy-050816-n-9563n-006-new-chief-petty-officer-cpo-selectees-perform-.webp",
@@ -1776,7 +2014,8 @@
   "type": "photo",
   "credit": "U.S. Navy photo by Photographer’s Mate Phillip A. Nickerson, Jr.",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_050816-N-9563N-006_New_chief_petty_officer_(CPO)_selectees_perform_morning_colors_on_board_Naval_Support_Activity_(NSA)_Bahrain.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_050816-N-9563N-006_New_chief_petty_officer_(CPO)_selectees_perform_morning_colors_on_board_Naval_Support_Activity_(NSA)_Bahrain.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/6/69/AUTEC_from_the_air.jpg": {
   "src": "media/autec-from-the-air.webp",
@@ -1788,7 +2027,8 @@
   "type": "photo",
   "credit": "Wikited (talk) (Uploads)",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:AUTEC_from_the_air.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:AUTEC_from_the_air.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/b/b1/Argentia_airphoto.jpg": {
   "src": "media/argentia-airphoto.webp",
@@ -1800,7 +2040,8 @@
   "type": "photo",
   "credit": "NASA World Wind",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentia_airphoto.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Argentia_airphoto.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay%2C_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg/1920px-thumbnail.jpg": {
   "src": "media/1920px-thumbnail.webp",
@@ -1812,7 +2053,8 @@
   "type": "photo",
   "credit": "U.S. Navy photo by Chief Mass Communication Specialist Bill Mesta",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay,_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:US_Navy_100506-N-8241M-191_An_aerial_view_of_Bulkeley_Hall_at_Naval_Station_Guantanamo_Bay,_Cuba._Bulkeley_Hall_is_the_naval_station_headquarters_and_administration_building.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Snowboarding_in_Troodos.jpg/1920px-Snowboarding_in_Troodos.jpg": {
   "src": "media/1920px-snowboarding-in-troodos.webp",
@@ -1825,7 +2067,8 @@
   "credit": "Edi Weissmann from Amsterdam, Netherlands",
   "license": "CC BY-SA 2.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowboarding_in_Troodos.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snowboarding_in_Troodos.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/2-227th_Aviation_Regiment%2C_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg/1920px-2-227th_Aviation_Regiment%2C_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg": {
   "src": "media/1920px-2-227th-aviation-regiment-1st-air-cavalry-brigade-helicopters-arrive-at-k.webp",
@@ -1837,7 +2080,8 @@
   "type": "photo",
   "credit": "U.S. Army photo by Charles Rosemond",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:2-227th_Aviation_Regiment,_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:2-227th_Aviation_Regiment,_1st_Air_Cavalry_Brigade_helicopters_arrive_at_Katterbach_Army_Airfield_in_Ansbach_2017.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_%28BSRF%29_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg/1920px-thumbnail.jpg": {
   "src": "media/1920px-thumbnail.webp",
@@ -1849,7 +2093,8 @@
   "type": "photo",
   "credit": "LCpl Michael Dye",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_(BSRF)_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Marines_and_Sailors_with_Black_Sea_Rotational_Force_(BSRF)_13_and_members_of_the_Georgian_Land_Forces%27_23rd_Infantry_Battalion_rehearse_for_the_opening_ceremony_of_exercise_Agile_Spirit_13_March_18_130318-M-CO304-001.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/U.S._Army_Gen._David_M._Rodriguez%2C_at_the_podium%2C_the_commanding_general_of_U.S._Africa_Command%2C_addresses_the_audience_during_the_change_of_command_ceremony_of_U.S._Army_Africa_%28USARAF%29_on_the_grounds_140603-A-JM436-246.jpg/1920px-thumbnail.jpg": {
   "src": "media/1920px-thumbnail.webp",
@@ -1861,7 +2106,8 @@
   "type": "photo",
   "credit": "Paolo Bovo",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Army_Gen._David_M._Rodriguez,_at_the_podium,_the_commanding_general_of_U.S._Africa_Command,_addresses_the_audience_during_the_change_of_command_ceremony_of_U.S._Army_Africa_(USARAF)_on_the_grounds_140603-A-JM436-246.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Army_Gen._David_M._Rodriguez,_at_the_podium,_the_commanding_general_of_U.S._Africa_Command,_addresses_the_audience_during_the_change_of_command_ceremony_of_U.S._Army_Africa_(USARAF)_on_the_grounds_140603-A-JM436-246.jpg",
+  "rights": "free-licence"
  },
  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base%2C_Japan%2C_Oct._7%2C_2013_131007-F-PM645-014.jpg/1920px-thumbnail.jpg": {
   "src": "media/1920px-thumbnail.webp",
@@ -1873,7 +2119,8 @@
   "type": "photo",
   "credit": "Yasuo Osakabe",
   "license": "Public domain",
-  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base,_Japan,_Oct._7,_2013_131007-F-PM645-014.jpg"
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:U.S._Air_Force_C-130_Hercules_aircraft_with_the_36th_Airlift_Squadron_are_parked_on_the_flightline_during_a_readiness_week_exercise_at_Yokota_Air_Base,_Japan,_Oct._7,_2013_131007-F-PM645-014.jpg",
+  "rights": "free-licence"
  },
  "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg": {
   "src": "media/campaign-shannon-watch.webp",
@@ -1884,6 +2131,7 @@
   "th": 113,
   "type": "logo",
   "credit": "Kampagne / campaign",
-  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg"
+  "sourceUrl": "https://visualbases.org/wp-content/uploads/campaign_shannon-watch.jpg",
+  "rights": "unclear"
  }
 }

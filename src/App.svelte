@@ -14,6 +14,8 @@
   import Quiz from './routes/Quiz.svelte';
   import Space from './routes/Space.svelte';
   import School from './routes/School.svelte';
+  import Quality from './routes/Quality.svelte';
+  import Legal from './routes/Legal.svelte';
 
   initRouter();
   onMount(loadData);
@@ -80,7 +82,9 @@
     </nav>
 
     <div class="tools">
-      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} aria-label={t('common.lang')}>
+      <!-- the accessible name starts with the visible label (WCAG 2.5.3), in the language it switches to -->
+      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} lang={i18n.lang === 'de' ? 'en' : 'de'}
+        aria-label="{i18n.lang === 'de' ? 'EN' : 'DE'} – {t('common.lang')}">
         {i18n.lang === 'de' ? 'EN' : 'DE'}
       </button>
       <button class="btn btn-ghost icon-btn menu-btn" aria-expanded={menuOpen} aria-label="Menü" onclick={() => (menuOpen = !menuOpen)}>
@@ -122,6 +126,10 @@
     <Act />
   {:else if section === 'about'}
     <About />
+  {:else if section === 'quality'}
+    <Quality />
+  {:else if section === 'impressum' || section === 'datenschutz'}
+    <Legal page={section} />
   {:else}
     <Home />
   {/if}
@@ -139,9 +147,12 @@
         <a href={href('/school')}>{t('nav.school')}</a>
         <a href={href('/act')}>{t('nav.act')}</a>
         <a href={href('/about')}>{t('nav.about')}</a>
+        <a href={href('/quality')}>{t('nav.quality')}</a>
         <a href="./data/bases.csv" download>CSV</a>
         <a href="./data/bases.geojson" download>GeoJSON</a>
         <a href="https://github.com/Acephali92/VisualBases" target="_blank" rel="noopener">GitHub</a>
+        <a href={href('/impressum')}>{t('nav.imprint')}</a>
+        <a href={href('/datenschutz')}>{t('nav.privacy')}</a>
       </nav>
     </div>
   </footer>
