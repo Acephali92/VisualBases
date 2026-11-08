@@ -4,7 +4,7 @@ import { parseDate, parseNewsPage } from '../../scripts/import-news.mjs';
 // @ts-expect-error – plain ESM build scripts without type declarations
 import { classify } from '../../scripts/build-media.mjs';
 // @ts-expect-error – plain ESM build scripts without type declarations
-import { parseImages, toBase, parsePost, resolveCopiedCoordinates, typeRelations } from '../../scripts/import-visualbases.mjs';
+import { parseImages, toBase, parsePost, resolveCopiedCoordinates, refineCoordinates, typeRelations } from '../../scripts/import-visualbases.mjs';
 
 describe('news import', () => {
   it('parses German and English date formats', () => {
@@ -103,6 +103,42 @@ describe('coordinates', () => {
     const b = parsePost(post('b', ['14.3820/-87.6179']), 'b');
     expect(resolveCopiedCoordinates([a, b])).toEqual([]);
   });
+  describe('coarse map links and explicit coordinates', () => {
+    /** a post with a map link at zoom `z` and further lines of the post body */
+    const rich = (slug: string, link: string, z: number, extra: string[]) =>
+      `<article class="post category-europe"><h1 class="entry-title">NL | ${slug}</h1><div class="entry-content single-content"><p><a href="https://www.openstreetbrowser.org/#map=${z}/${link}&categories=military">x</a></p>${extra.map((e) => `<p>${e}</p>`).join('')}</div></article>`;
+    const run = (...posts: ReturnType<typeof parsePost>[]) => refineCoordinates(posts);
+
+    it('takes a precise text coordinate near a coarse map link (Aruba)', () => {
+      const aruba = parsePost(rich('aruba', '12.5894/-69.9654', 11, ['12.50363, -70.01266']), 'aruba');
+      expect(run(aruba)).toEqual([{ slug: 'aruba', from: 'text', km: 10.8 }]);
+      expect([aruba.lat, aruba.lon, aruba.positionFrom]).toEqual([12.50363, -70.01266, 'text']);
+      expect(toBase(aruba, undefined).positionFrom).toBe('text');
+    });
+
+    it('reads Google Earth links, also with an encoded space', () => {
+      const p = parsePost(rich('ta', '55.0000/24.3000', 11, ['<a href="https://earth.google.com/web/search/55.0093,%2024.3921">earth</a>']), 'ta');
+      expect(run(p)[0]?.from).toBe('google-earth');
+      expect([p.lat, p.lon]).toEqual([55.0093, 24.3921]);
+    });
+
+    it('keeps the map link if it is precise, or the explicit coordinate is rounded, far away, ambiguous or another post’s', () => {
+      const precise = parsePost(rich('a', '12.5894/-69.9654', 13, ['12.50363, -70.01266']), 'a');
+      const rounded = parsePost(rich('b', '49.6863/11.8189', 11, ['<a href="https://earth.google.com/web/search/49.7,11.9">earth</a>']), 'b');
+      const typo = parsePost(rich('c', '19.9062/-75.0961', 11, ['19.93, 75.17']), 'c');
+      const ambiguous = parsePost(rich('d', '18.1491/-65.3045', 11, ['18.129612, -65.411158', '<a href="https://earth.google.com/web/search/18.1800,-65.2000">e</a>']), 'd');
+      const neighbour = parsePost(rich('e', '11.5000/43.1000', 11, ['11.5413, 43.1626']), 'e');
+      const owner = parsePost(rich('f', '11.5413/43.1626', 15, []), 'f');
+      expect(run(precise, rounded, typo, ambiguous, neighbour, owner)).toEqual([]);
+      expect([neighbour.lat, neighbour.lon]).toEqual([11.5, 43.1]);
+    });
+
+    it('ignores hand-geocoded posts', () => {
+      const p = { ...parsePost(rich('g', '10.0000/10.0000', 9, ['10.0123, 10.0123']), 'g'), approx: true };
+      expect(run(p)).toEqual([]);
+    });
+  });
+
   it('normalises outdated country codes', () => {
     const base = (title: string) => toBase({ slug: 'x', title, cats: [], tags: [], lat: 1, lon: 1, zoom: 14, approx: false, wikipedia: {}, related: [], sources: [], notes: [], images: [] }, undefined);
     expect(base('RP | Mount Santa Rita').host.country).toBe('PH');

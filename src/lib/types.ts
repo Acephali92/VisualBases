@@ -62,6 +62,8 @@ export interface SourceRecord {
   zoom: number;
   /** approximate position: geocoded by hand (import) or precision "town"/"region" (resolved) */
   approx?: boolean;
+  /** source of the coordinate if not the post's map link: an explicit coordinate in the text or a Google Earth link */
+  positionFrom?: 'text' | 'google-earth';
   continent: Continent | null;
   region: string | null;
   subregion?: string;

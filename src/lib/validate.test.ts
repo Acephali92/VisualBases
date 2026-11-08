@@ -182,8 +182,13 @@ describe('data validation', () => {
       expect(warnRules(r)).not.toContain('claim-upstream-changed');
     });
 
-    it('exports the precision level', () => {
+    it('exports the precision level and the origin of the coordinate', () => {
       expect(CSV_COLUMNS.position_precision({ positionPrecision: 'town' })).toBe('town');
+      expect(CSV_COLUMNS.position_from({})).toBe('map-link');
+      expect(CSV_COLUMNS.position_from({ positionFrom: 'text' })).toBe('text');
+      expect(CSV_COLUMNS.position_from({ corrections: [{ field: 'position' }], positionFrom: 'text' })).toBe('claim');
+      expect(CSV_COLUMNS.position_from({ approx: true })).toBe('manual');
+      expect(CSV_COLUMNS.position_from({ approx: true, positionCheck: { status: 'confirmed', precision: 'town' } })).toBe('map-link');
     });
   });
 
