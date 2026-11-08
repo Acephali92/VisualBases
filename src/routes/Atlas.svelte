@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, untrack } from 'svelte';
+  import { onMount, untrack, tick } from 'svelte';
   import { t, tl, ti, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { route, go, href } from '../lib/router.svelte';
@@ -98,6 +98,23 @@
     searchTimer = setTimeout(() => update({ q: v }), 150);
   }
 
+  /** skip link: open the sheet (mobile) and move the focus to the result list */
+  let listEl: HTMLUListElement | undefined = $state();
+  async function toList(e: MouseEvent) {
+    e.preventDefault();
+    sheetOpen = true;
+    if (selectedId) closeBase();
+    await tick();
+    listEl?.focus();
+  }
+  /** number of results for screen readers, announced once the filters have settled (not on every keystroke or map move) */
+  let announced = $state('');
+  $effect(() => {
+    const text = t('filters.results', { n: formatNumber(results.length) });
+    const timer = setTimeout(() => (announced = text), 700);
+    return () => clearTimeout(timer);
+  });
+
   const openBase = (id: string) => go(`/base/${encodeURIComponent(id)}`, route.query);
   const closeBase = () => go('/atlas', route.query);
 
@@ -177,7 +194,9 @@
 </script>
 
 <div class="atlas">
-  <div class="map" bind:this={mapEl} role="application" aria-label={t('nav.atlas')}>
+  <!-- the map is a pointer interface; keyboard and screen reader users get the result list (P1-4) -->
+  <a class="skip-link skip-map" href="#atlas-results" onclick={toList}>{t('atlas.skipToList')}</a>
+  <div class="map" bind:this={mapEl} role="application" aria-label={t('atlas.mapLabel')}>
     {#if mapFailed}<MapNotice kind={mapFailed} hint={t('map.listHint')} />{/if}
   </div>
   {#if tip}
@@ -299,7 +318,10 @@
         </div>
       {/if}
 
-      <ul class="results" aria-label={t('filters.list')}>
+      <p class="sr-only" role="status" aria-live="polite" aria-atomic="true">{announced}</p>
+      <!-- an empty list can still scroll in the small mobile sheet; a scrollable region without links must be reachable by keyboard (WCAG 2.1.1, axe scrollable-region-focusable) -->
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+      <ul class="results" id="atlas-results" tabindex={results.length ? -1 : 0} bind:this={listEl} aria-label={t('filters.list')}>
         {#each results.slice(0, 400) as b (b.id)}
           <li>
             <a href={href(`/base/${encodeURIComponent(b.id)}`, route.query)} onmouseenter={() => handle?.focus([b.id])} onmouseleave={() => handle?.focus([])}>
@@ -356,6 +378,8 @@
   .filter-btn { min-height: 40px; }
   .badge { background: var(--accent-strong); color: #fff; border-radius: 999px; font-size: 0.72rem; padding: 0 6px; line-height: 1.5; }
 
+  .skip-map:focus { top: calc(var(--header-h) + 8px); }
+  .results:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
   .meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; padding: 4px 16px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--line); }
   .meta-row strong { white-space: nowrap; }
   .row-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 14px; }

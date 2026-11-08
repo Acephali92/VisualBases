@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate && npm run data:build && vite build && node scripts/prerender.mjs",
+    "build": "npm run validate && npm run data:build && vite build && node scripts/check-precache.mjs && node scripts/prerender.mjs",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run",

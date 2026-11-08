@@ -2,6 +2,22 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Roadmap Paket C: Zugänglichkeit und Performance (F25, P1-5, P1-8, P1-4)
+
+### Behoben
+- **Precache wieder klein (F25):** Die Karten-Engine (`maplibre-gl-*`, 1,1 MB) war seit dem Build-Update nicht mehr vom Precache ausgenommen. Precache 2 MB → 0,97 MB.
+- **Globus-Rotation:** Die Pause hätte im Browser nie gegriffen (`cancelAnimationFrame` ohne Bindung warf „Illegal invocation“). Neu in `src/lib/spin.ts` mit Tests.
+
+### Geändert
+- **Rotation auf der Startseite** läuft nur bei sichtbarem Tab, sichtbarem Globus und im ersten Kapitel und endet nach 60 s; gemessen: 0 rAF-Aufrufe im Hintergrund-Tab (P1-5).
+- **Ansichten werden nachgeladen** (`import()` in `src/App.svelte`): Haupt-Bundle 261 → 124 KB (45 KB gz). Die detaillierten Länderformen (50m) lädt die Startseite erst, wenn man in die Story scrollt (P1-8).
+- Statistik-Link der Startseite ist keine Live-Region mehr (das Hochzählen wurde Bild für Bild vorgelesen); Sprachumschalter mit passendem Namen und `lang`; Einbettung als `main`-Landmark.
+
+### Hinzugefügt
+- **Build-Prüfung** `scripts/check-precache.mjs` (in `npm run build`): Precache ≤ 1280 KB, App-Shell ≤ 130 KB – eine Umbenennung von Chunks fällt sofort auf.
+- **Barrierefreiheit (P1-4):** Sprunglink „Karte überspringen: zur Ergebnisliste“ im Atlas, Kartenbeschreibung für Tastatur, Fokus auf die Profil-Überschrift beim Öffnen, Trefferzahl als Live-Region (verzögert, nicht bei jedem Tastendruck).
+- **axe-core im Smoke-Test** (CI): WCAG 2.1 A/AA und Best Practices auf allen Routen in beiden Breiten, auch statische Seiten; jeder Verstoß lässt den Test scheitern. Stand: 0 Verstöße.
+
 ## [Unreleased] – Roadmap Paket B: Belegstatus (P1-2, P1-12)
 
 ### Hinzugefügt

@@ -93,9 +93,12 @@
     { label: t('base.earth'), url: `https://earth.google.com/web/search/${base.lat},${base.lon}` },
   ]);
 
+  /** the heading takes the focus when a profile opens, so keyboard and screen reader users land in it (P1-4) */
+  let heading: HTMLHeadingElement | undefined = $state();
   $effect(() => {
     void base.id;
     scroller?.scrollTo({ top: 0 });
+    heading?.focus({ preventScroll: true });
     copied = false;
     // reset the share card only when the base changes (untracked: must not react to `card` itself)
     untrack(() => { if (card) { URL.revokeObjectURL(card.url); card = null; } });
@@ -137,7 +140,7 @@
   <header>
     <span class="tag kind"><span class="dot" class:ring={group === 'aggregate'} style:background={GROUP_COLOR[group]}></span>{tl('siteType', base.siteType)}</span>
     {#if base.status !== 'active'}<span class="tag status">{tl('status', base.status)}{#if base.period?.to}{' '}{t('base.until')} {base.period.to}{/if}</span>{/if}
-    <h2>{base.name}</h2>
+    <h2 tabindex="-1" bind:this={heading}>{base.name}</h2>
     <p class="where">{#if base.host.country}<a class="cc" href={href('/atlas', `countries=${base.host.territory ?? base.host.country}`)}>{flag(base.host.territory ?? base.host.country)} {countryName(base.host.territory ?? base.host.country)}</a>{#if base.host.territory}{' '}<span class="muted">({countryName(base.host.country)})</span>{/if}{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
     <p class="kind-info">{ti('siteType', base.siteType)}</p>
     {#if base.scope === 'domestic' && base.siteType !== 'domestic-global'}<p class="kind-info">ℹ {t('base.context')}</p>{:else if base.scope === 'overseas'}<p class="kind-info">ℹ {t('base.overseas')}</p>{/if}
