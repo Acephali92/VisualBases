@@ -410,6 +410,10 @@
    "nation"
   ],
   "verdict": "contradicts",
+  "verdicts": {
+   "presence": "supports",
+   "nation": "contradicts"
+  },
   "summary": "The French ministry of the armed forces names Air Base 188 Djibouti as a unit of the French Forces stationed in Djibouti (FFDj, 1,450 personnel under the 2011 defence treaty).",
   "note": "Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.",
   "base": "base-aerienne-188-djibouti",
@@ -4581,6 +4585,11 @@
    "status"
   ],
   "verdict": "contradicts",
+  "verdicts": {
+   "presence": "supports",
+   "nation": "supports",
+   "status": "contradicts"
+  },
   "summary": "The US vacated Shamsi air base in Balochistan in December 2011 after a 15-day ultimatum from Islamabad following a NATO strike that killed 24 Pakistani soldiers.",
   "note": "Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).",
   "base": "shamsi-airfield-pakistan",

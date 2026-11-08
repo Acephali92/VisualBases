@@ -2,6 +2,15 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 4 (Quellen und Bericht)
+
+### Hinzugefügt
+- **Urteil je Aussagegruppe** in `data/research/sources.json` (`verdicts`): Eine Quelle kann die Präsenz belegen und der Nation widersprechen. Umgestellt: BA 188 Dschibuti (Präsenz belegt, Nation widersprochen), Shamsi (Präsenz und Nation belegt, Status widersprochen). `precision` für Lagebelege.
+- **Bericht:** Abschnitt „Geografie“ (unabhängige Lagebelege, Genauigkeit, Abweichungen), Abschnitt „Entwicklung“ gegenüber dem letzten Lauf mit `docs/data-quality-history.json` (Ausgangsstand 2026-11-07 nachgerechnet), Standorte mit widersprochener Aussage, Markierung der Warnungen, die später blockieren sollen.
+
+### Geändert
+- Eine geprüfte, stützende Recherchequelle zählt als Quelle: `sources-none`/`sources-wikipedia-only` entfallen für 200 Standorte (Warnungen 420 → 220).
+
 ## [Unreleased] – Recherche der Geo-Warnungen
 
 Alle 25 geografischen Warnungen aus Paket 3 recherchiert (OSM/Nominatim, Wikidata, Base Structure Report, Originalbeiträge). Ergebnisse: [DATA-QUALITY.md](DATA-QUALITY.md), Abschnitt „Recherche der Geo-Warnungen“.

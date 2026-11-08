@@ -13,6 +13,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, loadBases, loadResearch, CLAIMS, SOURCE_TYPES } from './lib.mjs';
+import { verdictFor } from '../lib/resolve.mjs';
 
 const DOCS = path.join(ROOT, 'docs', 'research');
 const REPORT = path.join(DOCS, 'SOURCE-RESEARCH.md');
@@ -31,10 +32,12 @@ export function summarize(bases, { sources, candidates, checks }) {
     const own = (b.sources ?? []).length;
     const mine = sources.filter((s) => s.base === b.id);
     const manual = mine.filter((s) => s.method === 'manual');
-    const supports = new Set(manual.filter((s) => s.verdict === 'supports').flatMap((s) => s.supports));
+    // judged per statement group: a source may support the presence and contradict the nation
+    const supports = new Set(manual.flatMap((s) => s.supports.filter((g) => verdictFor(s, g) === 'supports')));
+    const contradicting = manual.map((s) => ({ s, groups: s.supports.filter((g) => verdictFor(s, g) === 'contradicts') })).filter((x) => x.groups.length);
     const c = checks[b.id] ?? {};
     const issues = [];
-    for (const s of manual.filter((x) => x.verdict === 'contradicts')) issues.push(`contradicts (${s.supports.join('/')}): ${s.note || s.summary}`);
+    for (const { s, groups } of contradicting) issues.push(`contradicts (${groups.join('/')}): ${s.note || s.summary}`);
     if (c.wikidata?.dissolved) issues.push(`Wikidata: closed/dissolved ${c.wikidata.dissolved}`);
     if (c.wikidata?.distanceKm > FAR_KM) issues.push(`Wikidata position ${c.wikidata.distanceKm} km away`);
     if (c.osm?.verdict === 'none') issues.push('OSM: no military feature within 3 km');
@@ -42,7 +45,7 @@ export function summarize(bases, { sources, candidates, checks }) {
     if (b.review) issues.push('marked for review on visualbases.org');
     return {
       b, own, wiki: !!b.wikipedia, manual, supports,
-      contradicts: manual.filter((s) => s.verdict === 'contradicts').length,
+      contradicts: contradicting.length, contradicting,
       context: manual.filter((s) => s.verdict === 'context').length,
       auto: mine.filter((s) => s.method !== 'manual'),
       candidates: candidates.filter((s) => s.base === b.id).length,
@@ -116,7 +119,7 @@ function markdown(rows, { sources, checks }) {
 
   const contra = rows.filter((r) => r.contradicts);
   lines.push(`### Gefundene Widersprüche (${contra.length} Standorte)`, '');
-  for (const r of contra) lines.push(`- **${r.b.name}** (\`${r.b.id}\`, ${r.b.country}): ${r.manual.filter((s) => s.verdict === 'contradicts').map((s) => s.note || s.summary).join(' – ')}`);
+  for (const r of contra) lines.push(`- **${r.b.name}** (\`${r.b.id}\`, ${r.b.country}): ${r.contradicting.map(({ s }) => s.note || s.summary).join(' – ')}`);
   lines.push('');
 
   const open = target.filter((r) => r.level === 'none' || r.level === 'candidates');

@@ -2,7 +2,7 @@
 
 Geprüft wurde der Stand `main` @ `09a6f0b`: Code, Workflows und alle 365 Datensätze, nicht nur die Dokumentation. Leitlinie: **keine parallelen Systeme.** Erweitert werden `validate-data.mjs`, `resolve.mjs`, `corrections.json`, `claims.json`, `sources.json`, die Tests, [DATA-QUALITY.md](DATA-QUALITY.md) und der [Bericht](data-quality-report.md). Automatische Prüfungen melden und schlagen vor; sie übernehmen nichts in den Datenbestand.
 
-Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P1, P3, P4, P7) · ⏳ vorgeschlagen, wartet auf Umsetzung
+Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P1, P3, P4, P7; Paket 4: P5, P6) · ⏳ vorgeschlagen, wartet auf Umsetzung
 
 ## 1. Tatsächliche Abdeckung
 
@@ -19,7 +19,7 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 | Corrections | `corrections` | ✔ | ✅ Schema (Status, `issue`, `precision`) | ✔ | ✅ |
 | Recherche-Dateien | `research-*` | ✅ (fehlte) | ✔ | ✔ | Bestandstest ✅ |
 | Recherche-Prüfungen (Wikidata, OSM) | ✅ `position-wikidata-far`, `-osm-none`, `-check-stale` | ✅ | ✅ | ✔ | ✅ |
-| Quellen | `sources-none`, `-wikipedia-only` | ✔ | ✔, ohne `sources.json` | ✔ | ✔ |
+| Quellen | `sources-none`, `-wikipedia-only` | ✔ | ✅ mit `sources.json` | ✔ | ✔ |
 | Dateien | ✅ `file-invalid`, `bases-empty` | ✅ | ✅ | ✔ | ✅ |
 
 `npm run validate` läuft in `deploy.yml` (Push auf `main` und Pull Requests), vor jedem Build, in `update-data.yml` (bei Fehlern kein PR) und in `research.yml`.
@@ -30,7 +30,7 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 1. ✅ `DATA-QUALITY.md` führte Puerto Castilla und Karlovac als `positionCheck: proposed`; beide sind aber über angenommene `position`-Claims korrigiert, und `corrections.json` ist leer.
 2. ✅ „Position ungefähr“ zeigte 5 statt 8: `approx`-Claims wurden nicht mitgezählt, `coords-precision`/`coords-approx` prüften die Rohposition.
 3. ✅ „Position ungeprüft“ zählte auch `applied`.
-4. ⏳ Die Quellenkennzahlen ignorieren `sources.json`: Von 291 Standorten „ohne eigene Quelle“ haben 199 eine manuell geprüfte, stützende Quelle.
+4. ✅ Die Quellenkennzahlen ignorierten `sources.json` (Paket 4: geprüfte Recherchequellen zählen jetzt): Von 291 Standorten „ohne eigene Quelle“ haben 199 eine manuell geprüfte, stützende Quelle.
 5. ✅ Die Dublettenprüfung nahm `special-facility` pauschal aus. Das WPC-Paar (194 m) war deshalb für die Validierung unsichtbar. Es war redaktionell zwar schon als `duplicate-entry` erfasst (Claim `wpc-duplicate`), aber ohne Verbindung zur Prüfung.
 6. ✅ Genauigkeit: `corrections.proposal.precision` und `claims.position.value.precision` nutzen dasselbe Vokabular; `positionPrecision` wird veröffentlicht.
 
@@ -44,10 +44,10 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 ### Nachvollziehbarkeit
 1. ✅ **Kritisch:** Unlesbare oder fehlerhafte JSON-Dateien wurden zu leeren Daten, sodass die Validierung trotz Fehler grün war und Korrekturen verloren gingen. Behoben in Validator, `build-data.mjs` und `scripts/research/lib.mjs`.
 2. ✅ Angenommene `set`-Claims hielten den Ausgangswert nicht fest (jetzt `expect`). Ändert visualbases.org den Wert, gewinnt der Claim, ohne dass es auffällt.
-3. ⏳ Der Bericht wird nur vom Import-Workflow erneuert und hat keine Historie.
+3. ✅ Der Bericht hatte keine Historie (Paket 4: `data-quality-history.json`, Abschnitt „Entwicklung“). Er wird weiterhin nur vom Import-Workflow erneuert (O4).
 
 ### Quellenstruktur
-⏳ `sources.json` kennt Aussagegruppen (`supports`), aber nur **ein** `verdict` je Quelle. „Belegt die Existenz, für die Lage nur Kontext“ lässt sich nicht ausdrücken, und es fehlt die Genauigkeit eines Positionsbelegs.
+✅ (Paket 4: `verdicts` je Gruppe, `precision` für Lagebelege) Befund: `sources.json` kannte Aussagegruppen (`supports`), aber nur **ein** `verdict` je Quelle. „Belegt die Existenz, für die Lage nur Kontext“ lässt sich nicht ausdrücken, und es fehlt die Genauigkeit eines Positionsbelegs.
 
 ## 3. Verbesserungsvorschlag
 
@@ -68,8 +68,8 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 | P2 | Genauigkeitsstufen `site / reference / town / region` statt `approx` (Claims, Export, App) | M | ✅ (Paket 2) |
 | P3 | Wikidata-, OSM- und veraltete Prüfungen als Warnungen; Collectors prüfen die korrigierte Position | M | ✅ (Paket 3) |
 | P4 | `corrections.json` `confirmed` in Auflösung und App nutzen, quittiert Geo-Warnungen (`rules`) | S | ✅ (Paket 3) |
-| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ⏳ |
-| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ⏳ |
+| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ✅ (Paket 4) |
+| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ✅ (Paket 4) |
 | P7 | Dubletten nach Name und Nähe (`duplicate-name-near`) | S | ✅ (Paket 3) |
 
 ### Optional

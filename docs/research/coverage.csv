@@ -138,7 +138,7 @@ usag-bavaria,USAG Bavaria – Grafenwoehr/Vilseck Community,DE,US,2,no,none,,0,0
 sennelager,"Westfalen Garrison / Training Area, Paderborn-Sennelager",DE,GB,1,yes,candidates,,0,0,0,0,20,,,Q24996973,8.1,,near,2.14,Wikidata position 8.1 km away
 deu-wiesbaden-mainz-kastel,Wiesbaden Mainz-Kastel Storage Station,DE,US,1,yes,candidates,,0,0,0,1,10,Mainz-Kastel Station,Mainz-Kastel Station,Q18149928,0.3,,confirmed,0.17,
 wiesbaden-erbenheim-army-airfield,Wiesbaden: Lucius D. Clay Kaserne (Army Airfield Erbenheim),DE,US,2,yes,candidates,,0,0,0,0,21,,,Q327689,0.7,,confirmed,0.36,
-base-aerienne-188-djibouti,Base aérienne 188 Colonel Émile Massart,DJ,FR,0,no,context,,1,1,0,0,0,,,,,,confirmed,0.3,"contradicts (presence/nation): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier."
+base-aerienne-188-djibouti,Base aérienne 188 Colonel Émile Massart,DJ,FR,0,no,verified,presence,1,1,0,0,0,,,,,,confirmed,0.3,"contradicts (nation): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier."
 base-aerienne-de-chabelley,Base Aerienne de Chabelley,DJ,FR US,0,yes,verified,presence nation,1,0,0,0,16,Csl Chabelley,,Q5066007,0.4,,confirmed,0.17,
 us-camp-lemonnier,Camp Lemonnier,DJ,US,0,yes,verified,presence nation,1,0,0,0,21,Camp Lemonier Djibouti,,Q2935221,25.6,,,,Wikidata position 25.6 km away
 chinese-naval-base,Chinese Naval Base,DJ,CN,0,yes,verified,presence nation facility status,1,0,0,0,20,,,,,,,,
@@ -298,7 +298,7 @@ makran-pakistan,Naval Station Makran,PK,US,0,yes,candidates,,0,0,0,0,8,,,Q123089
 khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q3696008,9.6,,,,Wikidata position 9.6 km away
 shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,US,0,yes,verified,presence nation,1,0,0,0,12,,,Q3694521,1,,,,
 pasni-base-port,"Pasni Base, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q7231225,0.5,,,,
-shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,context,,1,1,0,0,20,,,Q775164,0.7,,,,contradicts (presence/nation/status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).
+shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,verified,presence nation,1,1,0,0,20,,,Q775164,0.7,,,,contradicts (status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).
 bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,GB US,0,yes,verified,presence nation,1,0,0,0,9,,,Q4885135,14.8,,,,Wikidata position 14.8 km away
 deblin-irena-air-base,Deblin-Irena Air Base,PL,US,0,no,none,,0,0,0,0,0,,,,,,,,
 training-center-drawsko,Drawsko: Land Forces Training Center,PL,US,0,yes,verified,presence nation,1,0,0,0,15,Drawsko Pomorskie Training Area,,,,,,,

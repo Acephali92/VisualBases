@@ -35,6 +35,8 @@ Wikipedia dient nur als Einstieg: Die Einzelnachweise der Artikel werden als Kan
 - Jede eingetragene Quelle wurde **tatsächlich abgerufen und gelesen** (`httpStatus`, `accessed`). Seiten, die den Abruf verweigern (u. a. usafe.af.mil, mod.go.jp, nato.int-Unterseiten), wurden durch andere ersetzt oder weggelassen.
 - `summary` ist eine eigene Kurzfassung, kein Zitat. Unsicherheiten stehen in `note`.
 - Urteile: `supports` (belegt die Aussage), `contradicts` (widerspricht dem Datensatz), `context` (relevant, belegt die Aussage aber nicht). `supports` und `contradicts` gibt es nur nach Handprüfung (`method: manual`); die Validierung erzwingt das.
+- **Urteil je Aussagegruppe** (seit 2026-11-08): Eine Quelle kann die Existenz einer Anlage belegen, ohne Nation oder Lage zu bestätigen. `verdict` gilt für alle in `supports` genannten Gruppen; `verdicts` legt abweichende Urteile fest, z. B. `"verdict": "contradicts", "verdicts": { "presence": "supports", "nation": "contradicts" }` (BA 188 Dschibuti: französische Basis, nicht US). Nur für Gruppen aus `supports`.
+- **Genauigkeit eines Lagebelegs:** Quellen zur Gruppe `position` können `precision` angeben (`site` · `reference` · `town` · `region`), d. h. ob sie die Anlage selbst verorten oder nur den Ort.
 - **Belegt wird, was die Quelle sagt.** Zugangsrechte aus einem Abkommen sind keine dauerhafte Stationierung, eine Übung ist keine Basis, eine Rotation kein fester Standort. Das steht jeweils in `note`.
 - Eigene Schlussfolgerungen sind als solche markiert (z. B. „Kossei = früheres Fort-Lamy“).
 
@@ -47,8 +49,8 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-08._
 
 | Belegstand nach der Recherche | ohne eigene Quelle (291) | davon ganz ohne Quelle (73) |
 | --- | ---: | ---: |
-| Präsenz von Hand belegt | 199 (68 %) | 55 (75 %) |
-| nur Kontext oder Widerspruch | 35 (12 %) | 12 (16 %) |
+| Präsenz von Hand belegt | 200 (69 %) | 56 (77 %) |
+| nur Kontext oder Widerspruch | 34 (12 %) | 11 (15 %) |
 | nur ungeprüfte Hinweise | 51 (18 %) | 0 (0 %) |
 | nichts gefunden | 6 (2 %) | 6 (8 %) |
 
@@ -56,7 +58,7 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-08._
 
 | Aussage | Standorte mit handgeprüfter stützender Quelle |
 | --- | ---: |
-| presence | 199 (68 %) |
+| presence | 200 (69 %) |
 | nation | 190 (65 %) |
 | position | 1 (0 %) |
 | status | 9 (3 %) |
@@ -90,7 +92,7 @@ Sammler: manual 133, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 | AU | 7 | 7 | 0 | 0 | 0 |
 | US | 6 | 5 | 1 | 0 | 0 |
 | BE | 5 | 5 | 0 | 0 | 0 |
-| DJ | 5 | 3 | 1 | 1 | 0 |
+| DJ | 5 | 4 | 0 | 1 | 0 |
 | PK | 5 | 4 | 0 | 1 | 0 |
 | SY | 5 | 3 | 1 | 0 | 1 |
 | BG | 4 | 4 | 0 | 0 | 0 |
