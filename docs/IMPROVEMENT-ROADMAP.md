@@ -21,7 +21,7 @@ Stand: 2026-11-08 · Ersetzt die Fassung vom 2026-11-07; deren Audit-Befunde und
 | K3 | **Daten ohne bekannte grobe Fehler:** 0 Validierungsfehler, keine bekannten Länder- oder Positionsfehler offen | ✅ 0 Fehler; Audit-Pakete 1–4 und Geo-Recherche umgesetzt (PR #11–#14 offen) |
 | K4 | **Transparenz:** Quelle, Belegstatus und Korrekturen je Standort sichtbar; Methodik erklärt | ✅ im Profil; Seite „Methodik & Datenqualität“ mit Kennzahlen, Verlauf und Korrekturprotokoll |
 | K5 | **Belastbar bei Andrang:** Ortssuche fällt nicht aus, Seite lädt mobil schnell | 🟡 Ortssuche mit Cache, Drosselung und Not-Aus, aber ein öffentlicher Nominatim-Server für alle Nutzer |
-| K6 | **Zugänglich:** keine axe-Verstöße auf den Hauptseiten, Tastaturbedienung | ✅ axe (WCAG 2.1 A/AA) im Smoke-Test für 15 Seiten, Desktop und Mobil, 0 Verstöße |
+| K6 | **Zugänglich:** keine axe-Verstöße auf den Hauptseiten, Tastaturbedienung | ✅ axe (WCAG 2.1 A/AA) im Smoke-Test: 16 Seiten, Deutsch (Desktop, Mobil) und Englisch, 48 Prüfungen, 0 Verstöße |
 | K7 | **Daten bleiben aktuell:** wöchentlicher Import läuft und erzeugt prüfbare PRs | ❌ Workflow „Daten aktualisieren“ ist noch nie gelaufen |
 | K8 | **Rückmeldewege funktionieren:** Hinweis- und Korrekturformular, Labels, Kontaktadresse | 🟡 Formulare vorhanden; Labels `hinweis`, `korrektur`, `daten` fehlen; E-Mail unbestätigt |
 

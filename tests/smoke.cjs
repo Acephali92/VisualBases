@@ -41,6 +41,7 @@ const ROUTES = [
   ['b/ramstein-air-base.html', '.profile h2'],
   ['c/DE.html', '.country h2'],
   ['c/GL.html', '.country h2'],
+  ['404.html', 'h1'],
 ];
 
 /** pages checked with axe-core against WCAG 2.1 A/AA – any violation fails the test */
@@ -50,9 +51,11 @@ const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 async function axeChecks(browser) {
   const source = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
   let failed = 0;
-  for (const viewport of [{ width: 1280, height: 800 }, { width: 390, height: 844 }]) {
+  // German is the main language of the site; English is checked on the desktop width
+  for (const [locale, viewport] of [['de-DE', { width: 1280, height: 800 }], ['de-DE', { width: 390, height: 844 }], ['en-US', { width: 1280, height: 800 }]]) {
+    const context = await browser.newContext({ locale, viewport });
     for (const route of AXE_ROUTES) {
-      const page = await browser.newPage({ viewport });
+      const page = await context.newPage();
       await page.goto(BASE + route, { waitUntil: 'load' });
       await page.waitForTimeout(1200);
       await page.addScriptTag({ content: source });
@@ -61,9 +64,10 @@ async function axeChecks(browser) {
         return r.violations.map((v) => `${v.id} [${v.impact}] ×${v.nodes.length}: ${v.nodes.slice(0, 3).map((n) => n.target.join(' ')).join(', ')}`);
       }, AXE_TAGS);
       if (violations.length) failed++;
-      console.log(`${violations.length ? '✘' : '✔'} axe ${viewport.width}px ${route}${violations.length ? '\n    ' + violations.join('\n    ') : ''}`);
+      console.log(`${violations.length ? '✘' : '✔'} axe ${locale} ${viewport.width}px ${route}${violations.length ? '\n    ' + violations.join('\n    ') : ''}`);
       await page.close();
     }
+    await context.close();
   }
   return failed;
 }

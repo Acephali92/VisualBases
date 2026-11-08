@@ -171,6 +171,18 @@ describe('deployment', () => {
   });
 });
 
+describe('404 page', () => {
+  it('uses absolute links and contains a valid script', async () => {
+    // @ts-expect-error – plain ESM build script without type declarations
+    const { notFoundPage } = await import('../../scripts/prerender.mjs');
+    const html: string = notFoundPage();
+    expect(html).toContain('href="https://acephali92.github.io/VisualBases/#/atlas"');
+    expect(html).not.toMatch(/href="\.\.?\//);
+    const script = html.split('<script>')[1].split('</script>')[0];
+    expect(() => new Function(script)).not.toThrow();
+  });
+});
+
 describe('launch check', () => {
   it('requires the legal notice and finds leaked images and an outdated report', async () => {
     const { missingImprintFields } = await import('./legal');

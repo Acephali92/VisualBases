@@ -6,7 +6,8 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
 ### Geändert
 - **Bildrechte:** Jedes Bild hat einen Rechtestatus (`free-licence` · `google-earth` · `own-archive` · `unclear`). 30 Bilder Dritter mit ungeklärter Lizenz (Kampagnen-Logos, Redner-Porträts, Flickr- und Commons-Übernahmen ohne Lizenzangabe, Screenshots und Dokumente Dritter) werden **nicht mehr veröffentlicht** und auch nicht mit ausgeliefert, bis sie geklärt sind. Die OSM-Kartenausschnitte tragen jetzt ihre Lizenz. Liste und Freigabeweg: [DATA-SOURCES.md](DATA-SOURCES.md).
-- **Barrierefreiheit:** axe-core (WCAG 2.1 A/AA) prüft im Smoke-Test 15 Seiten auf Desktop und Mobil; behoben: Sprachumschalter und Kennzahlen-Link (Label in Name).
+- **Barrierefreiheit:** axe-core (WCAG 2.1 A/AA) prüft im Smoke-Test 16 Seiten auf Deutsch (Desktop und Mobil) und Englisch (Desktop), 48 Prüfungen; behoben: Sprachumschalter und Kennzahlen-Link (Label in Name).
+- **Eigene 404-Seite** (zweisprachig, absolute Links): Ein geteilter Link auf einen Standort, den es nicht mehr gibt, führt zur Atlas-Suche nach diesem Namen.
 
 ### Hinzugefügt
 - **Seite „Methodik & Datenqualität“** (`#/quality`): wie die Daten entstehen und geprüft werden, Kennzahlen mit Verlauf (aus `docs/data-quality-history.json`, veröffentlicht als `data/quality.json`), Genauigkeit der Positionen, **öffentliches Korrekturprotokoll** (alle angewandten Korrekturen mit Begründung, Quelle und Datum) und offene Prüfhinweise.
