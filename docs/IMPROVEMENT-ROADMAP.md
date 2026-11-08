@@ -1,10 +1,10 @@
 # VisualBases – Verbesserungs-Roadmap
 
-Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollständiges Audit von Repository, Daten (`data/*.json`), Build (`dist/`) und Anwendung im Browser (Playwright, Desktop und iPhone-Emulation, axe-core) sowie die Quellenrecherche zu den 291 Standorten ohne eigene Quelle (`docs/research/SOURCE-RESEARCH.md`).
+Stand: 2026-11-08 (Paketplan, Abgleich mit dem Code; vorher 2026-11-07 nach der Quellenrecherche) · Grundlage: vollständiges Audit von Repository, Daten (`data/*.json`), Build (`dist/`) und Anwendung im Browser (Playwright, Desktop und iPhone-Emulation, axe-core) sowie die Quellenrecherche zu den 291 Standorten ohne eigene Quelle (`docs/research/SOURCE-RESEARCH.md`).
 
 **Prioritäten:** P0 = kritische Fehler und Datenintegrität · P1 = wesentliche Verbesserungen · P2 = funktionale Erweiterungen · P3 = optional.
 **Aufwand:** XS < 1 h · S ≈ halber Tag · M ≈ 1–2 Tage · L ≈ mehrere Tage.
-**Status:** ✅ umgesetzt (Durchgang 1) · ⏳ wartet auf Freigabe · ❓ braucht Entscheidung der Projektverantwortlichen.
+**Status:** ✅ umgesetzt · 🟡 teilweise umgesetzt · ⏳ offen (Roadmap freigegeben 2026-11-08) · ❓ braucht Entscheidung der Projektverantwortlichen. Die Paketbuchstaben in Klammern verweisen auf die Arbeitspakete in Abschnitt 5; ein Paket ist ein Pull Request.
 
 ## 1. Audit-Befunde
 
@@ -53,17 +53,19 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 | P0-6 | Performance | F10 | Kartenpakete, Länderformen, `og.png` und nicht-lateinische Schriften aus dem Precache; Hash-Assets per Runtime-Cache | mobile Nutzer | `vite.config.ts` | S | Karte offline erst nach dem ersten Kartenbesuch | Precache 721 KB (vorher 3,7 MB) | ✅ |
 | P0-7 | Robustheit | F11 | WebGL-Erkennung, `MapUnavailableError`, Hinweis in Atlas, Startseite und Einbettung; Liste und Profile bleiben bedienbar | ältere Geräte, Firmen-PCs | `src/lib/map.ts`, `MapNotice.svelte`, `Atlas/Home/Embed.svelte`, `tests/smoke.cjs` | S | keins | Smoke-Test ohne WebGL grün | ✅ |
 | P1-0 | Daten | F20, F21, F23 | **Korrekturen aus der Recherche** in `data/claims.json` (Feld, alter Wert, neuer Wert, Quelle, Entscheidungsdatum): Nation, Land, Status, Zeitraum, **Position und Name** (neu), Dubletten. Profile zeigen die Korrektur mit dem Originalwert von visualbases.org. | Presse, Recherche, Glaubwürdigkeit | `data/claims.json`, `scripts/lib/resolve.mjs`, `validate-data.mjs`, `BaseProfile.svelte` | S | falsche Korrektur → nur mit geprüfter Quelle; Zweifelsfälle bleiben Vorschlag | alle belegten Befunde aus Recherche 3.1/3.2/3.5 angewandt (46 Korrekturen, 2 Prüfhinweise), 1 Vorschlag offen (PAE Lamentin) | ✅ |
-| P1-1 | Quellen | F7, F8, F22, F24 | **Aussagen-Modell `data/claims.json`** (siehe Abschnitt 3) mit **Präsenzart und Zeitraum**. Startbestand automatisch aus der Recherche: 83 handgeprüfte Quellen und 122 BSR-Urteile → Aussagen zu Präsenz, Nation und Status. Danach Story und Quiz, dann Funktionen (Drohnen, Atomwaffen …) | Presse, Bildung, Recherche | neu: `data/claims.json`, `scripts/research/to-claims.mjs`; `build-data.mjs`, `validate-data.mjs`, `BaseProfile.svelte`, `Home.svelte`, `quiz.ts` | M (vorher L: Belege liegen vor) | keine erfundenen Belege; Übernahme erst nach Durchsicht | ≥ 199 Standorte mit Quellenangabe im Profil; jede Story-/Quiz-Aussage mit Quelle | 🟡 teilweise (Taxonomie v2): Korrekturschicht `data/claims.json`, Belegstatus je Aussage im Profil; offen: Präsenzart, Story/Quiz-Belege |
-| P1-2 | Quellen | F7, F24 | **Belegstatus** je Standort aus `claims.json`: „geprüft belegt“, „nur Kontext“, „nur Wikipedia“, „ohne Beleg“, mit Herausgeber und Abrufdatum; Liste der 63 offenen Fälle mit Aufruf „Beleg melden“ (vorhandenes Mitmach-Formular) | Recherche, Mitmachen | `BaseProfile.svelte`, `Contribute.svelte`, `data.ts` | M | gering | Kennzeichnung bei allen 365 Standorten; Link „Beleg melden“ mit Standort-ID | ⏳ |
-| P1-3 | Rechte | F16 | Lizenzen der Commons- und Flickr-Bilder recherchieren und eintragen; Rest `rights: "unclear"` und Liste in `DATA-SOURCES.md` | Projekt (Rechtssicherheit) | `data/media.json`, `docs/DATA-SOURCES.md` | S | keins | Jedes Bild hat Lizenz oder `unclear` | ⏳ |
-| P1-4 | A11y | F13 | Fokus auf Profil-Überschrift, Live-Region, Hinweis „Tastatur: Liste nutzen“, axe in den Smoke-Test (CI) | Screenreader-, Tastaturnutzer | `BaseProfile.svelte`, `Atlas.svelte`, `tests/smoke.cjs` | M | gering | axe in der CI ohne Verstöße; Tastatur-Durchlauf | ⏳ |
-| P1-5 | Performance | F12 | Rotation bei verstecktem Tab und außerhalb des Sichtbereichs pausieren, nach 60 s stoppen | alle (Akku) | `Home.svelte` | XS | keins | keine rAF-Aufrufe im Hintergrund-Tab | ⏳ |
-| P1-6 | Datenschutz | F15 | OSM-Hinweis bei der Ortssuche; `docs/DATA-SOURCES.md` mit allen externen Diensten | alle | `Near.svelte`, Doku | XS | keins | Dokument vollständig, Hinweis sichtbar | ⏳ |
-| P1-7 | i18n | F14 | `School` auf `t()` umstellen; Taxonomie-Labels für `prerender.mjs` aus einer gemeinsamen Quelle | internationale Nutzer | `School.svelte`, `prerender.mjs`, `i18n.svelte.ts` | M | gering | keine Inline-Übersetzungen mehr | ⏳ |
-| P1-8 | Performance | F18 | Routen per `import()` laden; 50m-Länder erst beim Okinawa-Kapitel | mobile Nutzer | `App.svelte`, `Home.svelte` | S | gering | Haupt-Bundle < 120 KB | ⏳ |
-| P1-9 | Doku | – | `ARCHITECTURE.md` ergänzen (`DATA-SOURCES.md` erledigt) | Mitwirkende | `docs/` | S | keins | Dokument vorhanden und aktuell | ⏳ |
-| P1-10 | Atlas | F21, F22 | **Status- und Präsenzfilter** (vorgezogen aus P2-2): aktiv / geschlossen / geplant, fest / Rotation / Zugangsrecht / Übung; geschlossene Standorte grau statt entfernt | Recherche, Bildung | `data.ts`, `map.ts`, `Atlas.svelte`, `types.ts` | M | Darstellung muss „historisch“ klar machen | Filter in der URL; Kabul, Bagram, Niger als geschlossen erkennbar | 🟡 teilweise (Taxonomie v2): Statusfilter, geschlossene Standorte grau; offen: Präsenzart (fest/Rotation/Zugang/Übung) |
-| P1-11 | Betrieb | F24 | Workflow „Recherche“ monatlich (BSR, Wikidata, OSM inkrementell); Bericht neu erzeugen; neue Widersprüche (Wikidata-Auflösungsdatum, OSM ohne Fund) als Issue | Projektpflege | `.github/workflows/research.yml`, `summarize.mjs` | S | Drosselung durch Dienste → inkrementell | Lauf ohne Abbruch; Bericht aktuell | 🟡 teilweise: monatlich und auf Knopfdruck von `main`, parallele Jobs, Validierung vor dem Push, Wikipedia-Cache; offen: neue Widersprüche als Issue |
+| P1-1 | Quellen | F7, F8, F22, F24 | **Aussagen-Modell `data/claims.json`** (siehe Abschnitt 3) mit **Präsenzart und Zeitraum**. Startbestand automatisch aus der Recherche: 83 handgeprüfte Quellen und 122 BSR-Urteile → Aussagen zu Präsenz, Nation und Status. Danach Story und Quiz, dann Funktionen (Drohnen, Atomwaffen …) | Presse, Bildung, Recherche | neu: `data/claims.json`, `scripts/research/to-claims.mjs`; `build-data.mjs`, `validate-data.mjs`, `BaseProfile.svelte`, `Home.svelte`, `quiz.ts` | M (vorher L: Belege liegen vor) | keine erfundenen Belege; Übernahme erst nach Durchsicht | ≥ 199 Standorte mit Quellenangabe im Profil; jede Story-/Quiz-Aussage mit Quelle | 🟡 teilweise (Taxonomie v2): Korrekturschicht `data/claims.json`, Belegstatus je Aussage im Profil; offen: Präsenzart (Paket A), Story-/Quiz-Belege (Paket D) |
+| P1-2 | Quellen | F7, F24 | **Belegstatus** je Standort aus `claims.json`: „geprüft belegt“, „nur Kontext“, „nur Wikipedia“, „ohne Beleg“, mit Herausgeber und Abrufdatum; Liste der 63 offenen Fälle mit Aufruf „Beleg melden“ (vorhandenes Mitmach-Formular) | Recherche, Mitmachen | `BaseProfile.svelte`, `Contribute.svelte`, `data.ts` | M | gering | Kennzeichnung bei allen 365 Standorten; Link „Beleg melden“ mit Standort-ID | ⏳ (Paket B) |
+| P1-3 | Rechte | F16 | Lizenzen der Commons- und Flickr-Bilder recherchieren und eintragen; Rest `rights: "unclear"` und Liste in `DATA-SOURCES.md` | Projekt (Rechtssicherheit) | `data/media.json`, `docs/DATA-SOURCES.md` | S | keins | Jedes Bild hat Lizenz oder `unclear` | ❓ (Paket F, Entscheidung 2) |
+| P1-4 | A11y | F13 | Fokus auf Profil-Überschrift, Live-Region, Hinweis „Tastatur: Liste nutzen“, axe in den Smoke-Test (CI) | Screenreader-, Tastaturnutzer | `BaseProfile.svelte`, `Atlas.svelte`, `tests/smoke.cjs` | M | gering | axe in der CI ohne Verstöße; Tastatur-Durchlauf | ⏳ (Paket C) |
+| P1-5 | Performance | F12 | Rotation bei verstecktem Tab und außerhalb des Sichtbereichs pausieren, nach 60 s stoppen | alle (Akku) | `Home.svelte` | XS | keins | keine rAF-Aufrufe im Hintergrund-Tab | ⏳ (Paket C) |
+| P1-6 | Datenschutz | F15 | OSM-Hinweis bei der Ortssuche; `docs/DATA-SOURCES.md` mit allen externen Diensten | alle | `Near.svelte`, Doku | XS | keins | Dokument vollständig, Hinweis sichtbar | ✅ (Hinweis `near.osm` in „Deine Basis“, `docs/DATA-SOURCES.md`) |
+| P1-7 | i18n | F14 | `School` auf `t()` umstellen; Taxonomie-Labels für `prerender.mjs` aus einer gemeinsamen Quelle | internationale Nutzer | `School.svelte`, `prerender.mjs`, `i18n.svelte.ts` | M | gering | keine Inline-Übersetzungen mehr | ⏳ (Paket E) |
+| P1-8 | Performance | F18 | Routen per `import()` laden; 50m-Länder erst beim Okinawa-Kapitel | mobile Nutzer | `App.svelte`, `Home.svelte` | S | gering | Haupt-Bundle < 120 KB | ⏳ (Paket C) |
+| P1-9 | Doku | – | `ARCHITECTURE.md` ergänzen (`DATA-SOURCES.md` erledigt) | Mitwirkende | `docs/` | S | keins | Dokument vorhanden und aktuell | ⏳ (Paket E) |
+| P1-10 | Atlas | F21, F22 | **Status- und Präsenzfilter** (vorgezogen aus P2-2): aktiv / geschlossen / geplant, fest / Rotation / Zugangsrecht / Übung; geschlossene Standorte grau statt entfernt | Recherche, Bildung | `data.ts`, `map.ts`, `Atlas.svelte`, `types.ts` | M | Darstellung muss „historisch“ klar machen | Filter in der URL; Kabul, Bagram, Niger als geschlossen erkennbar | 🟡 teilweise (Taxonomie v2): Statusfilter, geschlossene Standorte grau; offen: Präsenzart (fest/Rotation/Zugang/Übung) → Paket A |
+| P1-11 | Betrieb | F24 | Workflow „Recherche“ monatlich (BSR, Wikidata, OSM inkrementell); Bericht neu erzeugen; neue Widersprüche (Wikidata-Auflösungsdatum, OSM ohne Fund) als Issue | Projektpflege | `.github/workflows/research.yml`, `summarize.mjs` | S | Drosselung durch Dienste → inkrementell | Lauf ohne Abbruch; Bericht aktuell | 🟡 teilweise: monatlich und auf Knopfdruck von `main`, parallele Jobs, Validierung vor dem Push, Wikipedia-Cache; offen: neue Widersprüche als Issue (Paket E) |
+| P1-12 | Quellen | Audit DQ P5 | **Urteile je Aussagegruppe** in `data/research/sources.json` (`verdicts` statt eines `verdict`, Genauigkeit eines Positionsbelegs); „belegt die Existenz, für die Lage nur Kontext“ wird ausdrückbar | Recherche | `sources.json`, `scripts/research/*`, `validate-data.mjs` | M | Migration der bestehenden Urteile → mechanisch, `verdict` bleibt lesbar | alle Quellen migriert, Validierung prüft `verdicts`; Kennzahlen unverändert | ⏳ (Paket B) |
+| P1-13 | QS | Audit DQ P6 | **Qualitätsbericht erweitern:** Abschnitt Geografie, Quellen einschließlich Recherche (`sources.json`), Widersprüche, Verlauf (`data/data-quality-history.json`) | Projektpflege | `validate-data.mjs`, `docs/data-quality-report.md` | M | keins | Bericht zeigt Trend über mindestens zwei Läufe | ⏳ (Paket E) |
 | P2-1 | Atlas | Idee | 2D-Karte (Mercator) als Umschalter, URL-Parameter `view=2d` | Präsentation, Druck | `map.ts`, `Atlas.svelte` | M | Darstellung der Pole | Umschalten ohne Neuladen | ⏳ |
 | P2-2 | Atlas | Idee | Clustering bei niedrigem Zoom, Filter „Belegstatus“ (Status/Präsenzart → P1-10) | Recherche | `map.ts`, `data.ts`, `Atlas.svelte` | M | Überladung der Karte vermeiden | Filter in der URL, Tests | ⏳ |
 | P2-3 | Recherche | Idee | Vergleich von Ländern und Standorten (teilbare URL) | Presse, Bildung | neue Route | M | – | Vergleich per Link reproduzierbar | ⏳ |
@@ -107,21 +109,30 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 1. ~~**Datenlizenz**~~ – entschieden: **CC BY 4.0** (umgesetzt, `data/LICENSE.md`).
 2. **Bilder Dritter:** Freigabe oder Urhebernennung für Flickr (Menwith Hill), „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner.
 3. **Anrisstexte der Presseschau:** Sind es eigene Zusammenfassungen von visualbases.org oder Zitate?
-4. **Korrekturvorschläge in `data/corrections.json`:** Puerto Castilla (Duplikat von Soto Cano oder eigener Ort?), Karlovac (genauer Standort).
+4. **Korrekturvorschläge:** ~~Puerto Castilla~~ – angewandt als eigener Ort (Ortsmitte, `town`); ~~Libreville~~ – angenommen 2026-11-08 (Gabun). Offen: **Karlovac**, genaue Anlage (derzeit Stadtmitte, `town`).
 5. **Impressum** (Pflicht für eine deutsche Website).
 6. ~~**Übernahme der Recherche**~~ – entschieden 2026-11-07: **alle belegten Befunde direkt korrigieren** (mit Quelle und Originalwert im Profil); nur nicht ausreichend belegte Fälle bleiben Vorschlag.
 7. ~~**Geschlossene Standorte**~~ – entschieden: **grau in der Karte lassen**, nicht ausblenden.
 8. ~~**Präsenzarten**~~ – entschieden: fest / Rotation / Zugangsrecht / Übung / gemeinsam betrieben / historisch / geplant **passen** (Umsetzung in P1-1 und P1-10).
+9. ~~**Roadmap**~~ – freigegeben 2026-11-08, Reihenfolge und Arbeitspakete nach Abschnitt 5.
 
-## 5. Reihenfolge
+## 5. Reihenfolge und Arbeitspakete
 
-1. ✅ **Durchgang 1 – P0** (Datenintegrität, Validierung, Precache, WebGL-Fallback)
-2. ✅ **Quellenrecherche** (Recherche-Werkzeuge, 83 geprüfte Quellen, 122 BSR-Urteile, Bericht)
-3. **Datenqualität:** ✅ P1-0 Korrekturen → P1-1 Präsenzart je Präsenz (Kategorien entschieden) → P1-10 Präsenzfilter → P1-2 Belegstatus → P1-3 Bildrechte
-4. **Zugänglichkeit und Performance:** P1-4, P1-5, P1-6, P1-8
-5. **Betrieb, Konsistenz und Doku:** P1-11, P1-7, P1-9
-6. **Atlas:** P2-1, P2-2
-7. **Dossier und Export:** P2-4, P2-5, P2-3
-8. **Rest:** P2-6 bis P2-8, P3
+Bisher erledigt: ✅ Durchgang 1 (P0) · ✅ Quellenrecherche · ✅ P1-0 Korrekturen · ✅ Audit des Datenqualitätsmanagements, Pakete 1–3 (`docs/data-quality-audit.md`) · ✅ P1-6.
+
+**Arbeitsweise:** Ein Paket ist ein Pull Request. Vor der Umsetzung steht ein kurzer Plan mit Abnahmekriterien; danach laufen `npm test`, `npm run validate`, `npm run check`, Build und Smoke-Test, und Roadmap-Status und `docs/CHANGELOG.md` werden im selben PR nachgeführt. Gemergt wird nur von den Projektverantwortlichen. Entscheidungen, die kein Paket blockieren, sammelt `USER_TASKS.md`.
+
+| Paket | Inhalt | Aufwand | Entscheidung nötig | Status |
+|---|---|---|---|---|
+| 0 | Roadmap aufräumen: Status mit dem Code abgleichen, offene Punkte des Datenqualitäts-Audits (P1-12, P1-13) übernehmen, Paketplan | XS | – | ✅ |
+| A | **Präsenzart:** P1-1 Präsenzart je Präsenz (Datenmodell, Ableitung, Korrekturen aus der Recherche, Profil) + P1-10 Präsenzfilter im Atlas | M–L | – (Kategorien entschieden, Abschnitt 4.8) | ⏳ |
+| B | **Belegstatus:** P1-2 Kennzeichnung bei allen Standorten, Aufruf „Beleg melden“ + P1-12 Urteile je Aussagegruppe | M | – | ⏳ |
+| C | **Zugänglichkeit und Performance:** P1-5 Rotation pausieren, P1-8 Routen nachladen, P1-4 Fokus, Live-Region, axe in der CI | S–M | – | ⏳ |
+| D | **Belege für Story und Quiz:** Rest von P1-1, jede Aussage mit Quelle | M | – | ⏳ |
+| E | **Betrieb, Konsistenz und Doku:** Rest von P1-11, P1-7, P1-9, P1-13 | M | – | ⏳ |
+| F | **Bildrechte:** P1-3 | S | ja (Abschnitt 4.2) | ❓ |
+| G | **Atlas:** P2-1, P2-2 | M–L | – | ⏳ |
+| H | **Dossier und Export:** P2-4, P2-5, P2-3 | L | – | ⏳ |
+| I | **Rest:** P2-6 bis P2-8, P3 | – | – | ⏳ |
 
 **Begründung der Änderung:** Die Recherche zeigt, dass das größte Risiko für die Glaubwürdigkeit nicht fehlende Quellen allein sind, sondern **falsche und veraltete Angaben** (F20, F21) und die fehlende Unterscheidung der Präsenzart (F22). Deshalb kommen Korrekturvorschläge (P1-0) und der Status-/Präsenzfilter (P1-10) nach vorn. Das Aussagen-Modell wird kleiner (M statt L), weil die Belege für zwei Drittel der Standorte schon vorliegen.

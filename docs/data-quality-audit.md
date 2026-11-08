@@ -68,8 +68,8 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 | P2 | Genauigkeitsstufen `site / reference / town / region` statt `approx` (Claims, Export, App) | M | ✅ (Paket 2) |
 | P3 | Wikidata-, OSM- und veraltete Prüfungen als Warnungen; Collectors prüfen die korrigierte Position | M | ✅ (Paket 3) |
 | P4 | `corrections.json` `confirmed` in Auflösung und App nutzen, quittiert Geo-Warnungen (`rules`) | S | ✅ (Paket 3) |
-| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ⏳ |
-| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ⏳ |
+| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ⏳ → Roadmap P1-12 (Paket B) |
+| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ⏳ → Roadmap P1-13 (Paket E) |
 | P7 | Dubletten nach Name und Nähe (`duplicate-name-near`) | S | ✅ (Paket 3) |
 
 ### Optional
