@@ -8,6 +8,10 @@
   {
    "date": "2026-11-07",
    "text": "Projektverantwortliche: alle belegten Befunde der Quellenrecherche direkt korrigieren – auch die bisher offenen Vorschläge und die Positionsfehler (Recherchebericht 3.5); geschlossene Standorte bleiben grau sichtbar; Präsenzarten wie im Bericht vorgeschlagen."
+  },
+  {
+   "date": "2026-11-08",
+   "text": "Projektverantwortliche: Vorschlag libreville-host angenommen (Gastland Gabun statt Ghana)."
   }
  ],
  "claims": [
@@ -985,10 +989,11 @@
    "expect": {
     "country": "GH"
    },
-   "status": "proposed",
+   "status": "accepted",
+   "decided": "2026-11-08",
    "statement": {
-    "de": "Libreville ist die Hauptstadt von Gabun; die Koordinaten des Eintrags liegen dort. Der Beitrag auf visualbases.org trägt aber das Kürzel „GH“ (Ghana) im Titel, die Adresse lautet „librevillegabon“. Vorschlag: Gastland Gabun (GA). Nicht angewandt, bis die Projektverantwortlichen entscheiden.",
-    "en": "Libreville is the capital of Gabon and the record’s coordinates lie there. The post on visualbases.org, however, carries the code “GH” (Ghana) in its title, while its address reads “librevillegabon”. Proposal: host country Gabon (GA). Not applied until the project owners decide."
+    "de": "Libreville ist die Hauptstadt von Gabun; die Koordinaten des Eintrags liegen dort. Der Beitrag auf visualbases.org trägt aber das Kürzel „GH“ (Ghana) im Titel, die Adresse lautet „librevillegabon“. Gastland daher Gabun (GA).",
+    "en": "Libreville is the capital of Gabon and the record’s coordinates lie there. The post on visualbases.org, however, carries the code “GH” (Ghana) in its title, while its address reads “librevillegabon”. Host country therefore Gabon (GA)."
    },
    "sources": [
     "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
