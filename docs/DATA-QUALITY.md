@@ -75,14 +75,14 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 | `related`, `relation-type`, `relation`, `news-base`, `movement-base` | Verweise zeigen auf existierende Standorte, Relationstyp ist `part-of`, `member-of` oder `related` |
 | `corrections` | Schema von `data/corrections.json` (siehe oben) |
 | `resolve` | die Datenschichten lassen sich zusammenführen |
-| `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung; `bsr-review.json` nennt die BSR-Zeile |
+| `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review`, `research-precision` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung; Urteile je Gruppe (`verdicts`) nur für abgedeckte Gruppen; `precision` nur bei Lagebelegen; `bsr-review.json` nennt die BSR-Zeile |
 | `image-file`, `media-file`, `media-credit` | Bilddateien vorhanden, Urheber angegeben |
 | `wikimedia-license`, `wikimedia-credit`, `wikimedia-page` | Wikimedia-Fotos nur mit freier Lizenz, Urheber und Dateiseite |
 | `source-url`, `news-url`, `date`, `news-date` | gültige URLs und Datumsformate (`YYYY`, `YYYY-MM`, `YYYY-MM-DD`) |
 
 ### Warnungen (im Bericht, blockieren nicht)
 
-`sources-none` (keine Quelle) · `sources-wikipedia-only` · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `rule-civilian` (zivile Anlage mit nuklearer Teilhabe) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert oder per Claim als ungefähr gesetzt) · `duplicate-position-reviewed` (in `corrections.json` oder per angenommenem Claim als `duplicate-entry` markiert) / `-linked` (Sammeleintrag oder Relation) / `-facility` (`special-facility` ohne Relation: Teil der Basis oder zweiter Beitrag zur selben Anlage? Klären über `relations` oder `corrections.json`) · `claim-upstream-changed` (der Wert in `bases.json` weicht vom `expect` eines Claims ab: visualbases.org hat das Feld seit der Entscheidung geändert; der Claim gilt weiter, die Entscheidung ist zu prüfen) · `claim-expect-missing` (angenommener `set`-Claim ohne `expect`) · `claim-precision-missing` (Positions-Claim ohne `precision`) · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
+`sources-none` (keine Quelle) · `sources-wikipedia-only` (beide nur, wenn auch keine geprüfte Recherchequelle in `sources.json` eine Aussage stützt) · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `rule-civilian` (zivile Anlage mit nuklearer Teilhabe) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert oder per Claim als ungefähr gesetzt) · `duplicate-position-reviewed` (in `corrections.json` oder per angenommenem Claim als `duplicate-entry` markiert) / `-linked` (Sammeleintrag oder Relation) / `-facility` (`special-facility` ohne Relation: Teil der Basis oder zweiter Beitrag zur selben Anlage? Klären über `relations` oder `corrections.json`) · `claim-upstream-changed` (der Wert in `bases.json` weicht vom `expect` eines Claims ab: visualbases.org hat das Feld seit der Entscheidung geändert; der Claim gilt weiter, die Entscheidung ist zu prüfen) · `claim-expect-missing` (angenommener `set`-Claim ohne `expect`) · `claim-precision-missing` (Positions-Claim ohne `precision`) · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
 
 `coords-precision`, `coords-approx` und die Dublettenprüfung laufen auf den **aufgelösten** Datensätzen, also mit den angenommenen `position`-Claims. Die Kennzahl „Position ungefähr“ zählt deshalb auch Positionen, die ein Claim als ungefähr setzt; „Position ungeprüft“ zählt nur Einträge mit `status: "proposed"`.
 
@@ -147,6 +147,15 @@ Weitere Kandidaten mit einem groben Kartenlink (Zoomstufe 11) und einer genauere
 - **Kategorien:** Fehlende Region oder Kontinent werden für vier Beiträge über `FIXES` ergänzt; der Kontinent wird aus der Region abgeleitet. Die Zuordnung aller Begriffe zur Taxonomie steht im Importer (`SITE_TYPE_BY_CAT`, `FEATURE_BY_TERM`, `*_BY_TAG`).
 - **Gebiete:** Gebietscodes im Titel (`PR`, `GL`) werden zu Staat + Gebiet; Gebiete hinter Staatscodes werden am Ortsnamen erkannt (`TERRITORY_BY_NAME`).
 - **Links in der Presseschau:** Führende kodierte Leerzeichen (`%20https://…`) werden entfernt.
+
+## Der Bericht
+
+`npm run data:report` schreibt [data-quality-report.md](data-quality-report.md) und hängt die Kennzahlen des Tages an [data-quality-history.json](data-quality-history.json) an (ein Eintrag je Tag, nur bei 0 Fehlern). Der Bericht enthält:
+
+- **Überblick:** Quellenlage (eigene Quelle · nur geprüfte Recherchequelle · nur Wikipedia · keine), Korrekturen und Vorschläge, Standorte mit widersprochener Aussage, Genauigkeit, **Fehler (blockieren)** und **Warnungen (blockieren nicht)** getrennt.
+- **Entwicklung** gegenüber dem letzten Lauf eines früheren Tages. Der erste Eintrag (2026-11-07) ist der Stand vor dem Audit, mit den heutigen Regeln nachgerechnet.
+- **Geografie:** Positionen mit unabhängigem Beleg (angenommene Positionskorrektur, geprüfte Lagequelle, redaktionelle Bestätigung, OSM-Militärgelände ≤ 1 km an der aktuellen Position) und ohne, Genauigkeit, Land-Abweichungen, Positionen auf See, ungeklärte Dubletten, Wikidata-/OSM-Abweichungen, veraltete Prüfungen, quittierte Warnungen.
+- **Fehler** und **Warnungen** je Regel; Warnungen, die nach der Bereinigung zu Fehlern werden sollen (`coords-country`, `duplicate-name-near`, `claim-upstream-changed`), sind markiert.
 
 ## Korrekturen nachvollziehbar halten: `expect` und `precision`
 

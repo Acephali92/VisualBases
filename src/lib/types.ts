@@ -103,6 +103,10 @@ export interface Evidence {
   accessed: string;
   supports: ClaimType[];
   verdict: 'supports' | 'contradicts' | 'context' | 'unreviewed';
+  /** verdict per statement group where it differs from `verdict` */
+  verdicts?: Partial<Record<ClaimType, 'supports' | 'contradicts' | 'context'>>;
+  /** for sources on the position: how precisely they locate the site */
+  precision?: PositionPrecision;
   method: 'manual' | 'auto';
   summary: string;
   note?: string;

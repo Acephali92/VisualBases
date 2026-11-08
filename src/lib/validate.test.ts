@@ -6,7 +6,9 @@ import os from 'node:os';
 // @ts-expect-error – see above
 import path from 'node:path';
 // @ts-expect-error – plain ESM build script without type declarations
-import { validate, validCountry, report, mappedTerm } from '../../scripts/validate-data.mjs';
+import { validate, validCountry, report, mappedTerm, snapshot } from '../../scripts/validate-data.mjs';
+// @ts-expect-error – plain ESM build script without type declarations
+import { evidenceOf } from '../../scripts/lib/resolve.mjs';
 // @ts-expect-error – plain ESM build script without type declarations
 import { readJson } from '../../scripts/research/lib.mjs';
 // @ts-expect-error – plain ESM build script without type declarations
@@ -236,6 +238,48 @@ describe('data validation', () => {
     expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'proposed', issue } })).toBe(`unverified:${issue}`);
     expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'confirmed', issue: 'shared-site' } })).toBe('');
     expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'applied', issue }, approx: true })).toBe('approximate');
+  });
+
+  describe('sources judged per statement group and the report', () => {
+    const src = (p: Record<string, unknown> = {}) => ({ base: 'a', url: 'https://example.org/s', type: 'official', verdict: 'contradicts', method: 'manual', summary: 's', supports: ['presence', 'nation'], accessed: '2026-11-08', ...p });
+
+    it('lets a source support one statement group and contradict another', () => {
+      expect(evidenceOf([src()])).toEqual({ presence: 'disputed', nation: 'disputed' });
+      expect(evidenceOf([src({ verdicts: { presence: 'supports' } })])).toEqual({ presence: 'confirmed', nation: 'disputed' });
+    });
+
+    it('validates verdicts per group and the precision of position sources', () => {
+      const v = (p: Record<string, unknown>) => rules(validate({ bases: [base()], research: { sources: [src(p)] } }));
+      expect(v({ verdicts: { presence: 'supports' } })).not.toContain('research-verdict');
+      expect(v({ verdicts: { status: 'supports' } })).toContain('research-verdict'); // group not covered
+      expect(v({ verdicts: { presence: 'maybe' } })).toContain('research-verdict');
+      expect(v({ method: 'auto', verdict: 'unreviewed', verdicts: { presence: 'supports' } })).toContain('research-verdict');
+      expect(v({ supports: ['position'], verdict: 'supports', precision: 'site' })).not.toContain('research-precision');
+      expect(v({ precision: 'site' })).toContain('research-precision'); // not a source on the position
+    });
+
+    it('counts a checked research source as a source', () => {
+      const r = validate({ bases: [base({ sources: [] })], research: { sources: [src({ verdicts: { presence: 'supports' } })] } });
+      expect(warnRules(r)).not.toContain('sources-none');
+      expect(r.stats.researchOnly).toBe(1);
+      // a source that only contradicts is no evidence for the record
+      expect(warnRules(validate({ bases: [base({ sources: [] })], research: { sources: [src()] } }))).toContain('sources-none');
+    });
+
+    it('reports position evidence, separates errors and warnings, and shows the development', () => {
+      const research = { sources: [], checks: { a: { osm: { verdict: 'confirmed', lat: 49.4398, lon: 7.6019 } } } };
+      const r = validate({ bases: [base(), base({ id: 'b', lat: 10 })], research });
+      expect(r.stats.positionEvidence).toMatchObject({ osm: 1, any: 1 });
+      const previous = { ...snapshot(r, '2026-11-01'), warnings: r.warnings.length + 5, positionEvidence: 0 };
+      const text = report(r, '2026-11-08', previous);
+      expect(text).toContain('## Entwicklung seit 2026-11-01');
+      expect(text).toContain('| Position unabhängig belegt | 0 | 1 | +1 |');
+      expect(text).toContain('| Warnungen | ' + (r.warnings.length + 5) + ' | ' + r.warnings.length + ' | -5 |');
+      expect(text).toContain('## Geografie');
+      expect(text).toContain('**Fehler** (blockieren das Deployment)');
+      const dup = validate({ bases: [base({ name: 'Bann Station' }), base({ id: 'c', name: 'Bann Station 2', lat: 49.455 })] });
+      expect(report(dup)).toContain('`duplicate-name-near` (1) – soll später blockieren');
+    });
   });
 
   it('warns (does not fail) on weak sourcing and on review notes', () => {

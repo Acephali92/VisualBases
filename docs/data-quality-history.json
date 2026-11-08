@@ -1,0 +1,35 @@
+[
+ {
+  "date": "2026-11-07",
+  "errors": 0,
+  "warnings": 276,
+  "bases": 365,
+  "withSources": 74,
+  "researchOnly": 199,
+  "noSource": 92,
+  "positionEvidence": 118,
+  "approximate": 8,
+  "geoWarnings": 24,
+  "unresolvedDuplicates": 1,
+  "disputed": 1,
+  "proposals": 1,
+  "corrections": 46,
+  "note": "Ausgangsstand vor dem Audit (09a6f0b), mit den Regeln vom 2026-11-08 nachgerechnet"
+ },
+ {
+  "date": "2026-11-08",
+  "errors": 0,
+  "warnings": 220,
+  "bases": 365,
+  "withSources": 74,
+  "researchOnly": 200,
+  "noSource": 91,
+  "positionEvidence": 137,
+  "approximate": 14,
+  "geoWarnings": 8,
+  "unresolvedDuplicates": 0,
+  "disputed": 1,
+  "proposals": 1,
+  "corrections": 56
+ }
+]
