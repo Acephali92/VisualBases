@@ -81,6 +81,8 @@ export function validateClaims(claims, byId, err) {
     if (c.field === 'issues' && !V.issue.has(c.value)) err('claim-value', `${where}: invalid issue "${c.value}"`, c.base);
     if (c.field === 'host' && !validCountry(c.value?.country ?? '')) err('claim-value', `${where}: invalid host country`, c.base);
     if (c.field === 'period' && Object.values(c.value ?? {}).some((d) => !DATE.test(d))) err('claim-value', `${where}: invalid period`, c.base);
+    if (c.field === 'position' && (c.op !== 'set' || !(Math.abs(c.value?.lat) <= 90) || !(Math.abs(c.value?.lon) <= 180))) err('claim-value', `${where}: position needs op "set" and valid lat/lon`, c.base);
+    if (c.field === 'name' && (c.op !== 'set' || typeof c.value !== 'string' || !c.value.trim())) err('claim-value', `${where}: name needs op "set" and a non-empty string`, c.base);
   }
 }
 
@@ -180,8 +182,9 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     for (const b of resolved) for (const i of b.issues ?? []) if (i !== 'position-unverified') warn(`issue-${i}`, i, b.id);
   } catch (e) { err('resolve', `records cannot be resolved: ${e.message}`); }
 
-  // near-duplicate positions (not between a community/facility and its members, not when under review)
-  const list = bases.filter((b) => typeof b.lat === 'number' && typeof b.lon === 'number');
+  // near-duplicate positions (not between a community/facility and its members, not when under review);
+  // checked on the resolved records, so an accepted position claim settles a duplicate
+  const list = (resolved.length ? resolved : bases).filter((b) => typeof b.lat === 'number' && typeof b.lon === 'number');
   for (let i = 0; i < list.length; i++) {
     for (let j = i + 1; j < list.length; j++) {
       const a = list[i], c = list[j];

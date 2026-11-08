@@ -75,6 +75,7 @@
     if (field === 'host') { const h = v as { country: string; territory?: string }; return countryName(h.territory ?? h.country) + (h.territory ? ` (${countryName(h.country)})` : ''); }
     if (field === 'status') return tl('status', String(v));
     if (field === 'siteType') return tl('siteType', String(v));
+    if (field === 'position') { const p = v as { lat: number; lon: number }; return `${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}`; }
     if (field === 'period') { const p = v as { from?: string; to?: string }; return [p.from && `${t('base.since')} ${p.from}`, p.to && `${t('base.until')} ${p.to}`].filter(Boolean).join(' '); }
     return Array.isArray(v) ? v.join(', ') : String(v);
   }

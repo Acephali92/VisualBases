@@ -4,6 +4,10 @@
   {
    "date": "2026-11-07",
    "text": "Projektverantwortliche: Widersprüche aus der Quellenrecherche (docs/research/SOURCE-RESEARCH.md, Abschnitt 3) direkt korrigieren, mit Quelle und Hinweis auf den Originalwert."
+  },
+  {
+   "date": "2026-11-07",
+   "text": "Projektverantwortliche: alle belegten Befunde der Quellenrecherche direkt korrigieren – auch die bisher offenen Vorschläge und die Positionsfehler (Recherchebericht 3.5); geschlossene Standorte bleiben grau sichtbar; Präsenzarten wie im Bericht vorgeschlagen."
   }
  ],
  "claims": [
@@ -12,28 +16,39 @@
    "base": "base-aerienne-188-djibouti",
    "field": "presences",
    "op": "set",
-   "value": [{ "nation": "FR", "role": "stationing" }],
+   "value": [
+    {
+     "nation": "FR",
+     "role": "stationing"
+    }
+   ],
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "BA 188 ist eine Basis der französischen Streitkräfte in Dschibuti (FFDj). Die US-Präsenz ist das benachbarte Camp Lemonnier.",
     "en": "BA 188 is a base of the French forces in Djibouti (FFDj). The US presence is the neighbouring Camp Lemonnier."
    },
-   "sources": ["https://www.defense.gouv.fr/operations/actualites/ffdj-formation-eor-au-profit-policiers-djiboutiens"]
+   "sources": [
+    "https://www.defense.gouv.fr/operations/actualites/ffdj-formation-eor-au-profit-policiers-djiboutiens"
+   ]
   },
   {
    "id": "ayanganna-host",
    "base": "camp-ayanganna",
    "field": "host",
    "op": "set",
-   "value": { "country": "GY" },
+   "value": {
+    "country": "GY"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "Camp Ayanganna liegt in Georgetown (Guyana), nicht in Französisch-Guayana.",
     "en": "Camp Ayanganna is in Georgetown (Guyana), not in French Guiana."
    },
-   "sources": ["https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"]
+   "sources": [
+    "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"
+   ]
   },
   {
    "id": "ayanganna-region",
@@ -43,8 +58,13 @@
    "value": "america-latin",
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Region folgt aus der Lage in Guyana.", "en": "Region follows from the location in Guyana." },
-   "sources": ["https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"]
+   "statement": {
+    "de": "Region folgt aus der Lage in Guyana.",
+    "en": "Region follows from the location in Guyana."
+   },
+   "sources": [
+    "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"
+   ]
   },
   {
    "id": "ayanganna-nation",
@@ -58,7 +78,9 @@
     "de": "Camp Ayanganna ist das Hauptquartier der Streitkräfte Guyanas; eine französische Präsenz ist nicht belegt.",
     "en": "Camp Ayanganna is the headquarters of Guyana’s armed forces; a French presence is not documented."
    },
-   "sources": ["https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"]
+   "sources": [
+    "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"
+   ]
   },
   {
    "id": "ayanganna-type",
@@ -72,7 +94,9 @@
     "de": "Keine ausländische Basis: Ohne belegte fremde Präsenz passt keine Standortart des Atlas. Ob der Eintrag im Atlas bleibt, entscheiden die Projektverantwortlichen.",
     "en": "Not a foreign base: without a documented foreign presence no site type of the atlas applies. The project owners decide whether the entry stays in the atlas."
    },
-   "sources": ["https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"]
+   "sources": [
+    "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"
+   ]
   },
   {
    "id": "ayanganna-scope",
@@ -82,58 +106,89 @@
    "value": "out-of-scope-candidate",
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Kandidat für die Entfernung aus dem Atlas.", "en": "Candidate for removal from the atlas." },
-   "sources": ["https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"]
+   "statement": {
+    "de": "Kandidat für die Entfernung aus dem Atlas.",
+    "en": "Candidate for removal from the atlas."
+   },
+   "sources": [
+    "https://ntg.gov.gy/monument/guyana-defence-force-camp-ayanganna/"
+   ]
   },
   {
    "id": "castor-nation",
    "base": "us-camp-castor",
    "field": "presences",
    "op": "set",
-   "value": [{ "nation": "DE", "role": "stationing" }],
+   "value": [
+    {
+     "nation": "DE",
+     "role": "stationing"
+    }
+   ],
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "Camp Castor war ein deutsches Feldlager der UN-Mission MINUSMA, kein US-Lager.",
     "en": "Camp Castor was a German field camp of the UN mission MINUSMA, not a US camp."
    },
-   "sources": ["https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206"]
+   "sources": [
+    "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206"
+   ]
   },
   {
    "id": "castor-period",
    "base": "us-camp-castor",
    "field": "period",
    "op": "set",
-   "value": { "to": "2023-12-12" },
+   "value": {
+    "to": "2023-12-12"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Am 12.12.2023 übergeben.", "en": "Handed over on 12 Dec 2023." },
-   "sources": ["https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206"]
+   "statement": {
+    "de": "Am 12.12.2023 übergeben.",
+    "en": "Handed over on 12 Dec 2023."
+   },
+   "sources": [
+    "https://www.bundeswehr.de/de/meldungen/bundeswehr-uebergibt-feldlager-camp-castor-5718206"
+   ]
   },
   {
    "id": "marmal-nation",
    "base": "camp-marmal-john-pratt",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "DE", "role": "stationing" },
+   "value": {
+    "nation": "DE",
+    "role": "stationing"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "Camp Marmal war das größte Feldlager der Bundeswehr in Afghanistan.",
     "en": "Camp Marmal was the largest Bundeswehr field camp in Afghanistan."
    },
-   "sources": ["https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254"]
+   "sources": [
+    "https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254"
+   ]
   },
   {
    "id": "marmal-period",
    "base": "camp-marmal-john-pratt",
    "field": "period",
    "op": "set",
-   "value": { "to": "2021-06-29" },
+   "value": {
+    "to": "2021-06-29"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Geräumt am 29.06.2021.", "en": "Vacated on 29 June 2021." },
-   "sources": ["https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254"]
+   "statement": {
+    "de": "Geräumt am 29.06.2021.",
+    "en": "Vacated on 29 June 2021."
+   },
+   "sources": [
+    "https://www.bundeswehr.de/de/auftrag/einsaetze/missionen/abgeschlossene-einsaetze-der-bundeswehr/afghanistan-resolute-support/resolute-support-beendet-rueckverlegung-abgeschlossen-5101254"
+   ]
   },
   {
    "id": "kabul-status",
@@ -147,18 +202,27 @@
     "de": "Die Mission Resolute Support (Nachfolgerin von ISAF) wurde Anfang September 2021 beendet.",
     "en": "The Resolute Support mission (successor of ISAF) was terminated in early September 2021."
    },
-   "sources": ["https://www.nato.int/cps/en/natohq/topics_8189.htm"]
+   "sources": [
+    "https://www.nato.int/cps/en/natohq/topics_8189.htm"
+   ]
   },
   {
    "id": "kabul-period",
    "base": "kabul-isaf-headquarters",
    "field": "period",
    "op": "set",
-   "value": { "to": "2021-09" },
+   "value": {
+    "to": "2021-09"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Beendet im September 2021.", "en": "Ended in September 2021." },
-   "sources": ["https://www.nato.int/cps/en/natohq/topics_8189.htm"]
+   "statement": {
+    "de": "Beendet im September 2021.",
+    "en": "Ended in September 2021."
+   },
+   "sources": [
+    "https://www.nato.int/cps/en/natohq/topics_8189.htm"
+   ]
   },
   {
    "id": "usammce-status",
@@ -172,18 +236,28 @@
     "de": "Das US Army Medical Materiel Center–Europe ist im Oktober 2021 von Pirmasens nach Kaiserslautern (Army Depot) umgezogen; der Standort Pirmasens ist ehemalig.",
     "en": "The US Army Medical Materiel Center–Europe moved from Pirmasens to Kaiserslautern (Army Depot) in October 2021; the Pirmasens site is former."
    },
-   "sources": ["https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne"]
+   "sources": [
+    "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne"
+   ]
   },
   {
    "id": "usammce-period",
    "base": "medical-material-center-europe",
    "field": "period",
    "op": "set",
-   "value": { "from": "1975", "to": "2021-10" },
+   "value": {
+    "from": "1975",
+    "to": "2021-10"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "In Pirmasens von 1975 bis Oktober 2021.", "en": "In Pirmasens from 1975 to October 2021." },
-   "sources": ["https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne"]
+   "statement": {
+    "de": "In Pirmasens von 1975 bis Oktober 2021.",
+    "en": "In Pirmasens from 1975 to October 2021."
+   },
+   "sources": [
+    "https://www.army.mil/article/250869/usammce_says_farewell_to_husterhoeh_kaserne"
+   ]
   },
   {
    "id": "shamsi-status",
@@ -197,18 +271,27 @@
     "de": "Die USA haben Shamsi im Dezember 2011 geräumt (u. a. Wartung von Drohnen).",
     "en": "The US vacated Shamsi in December 2011 (used among other things for drone servicing)."
    },
-   "sources": ["https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate"]
+   "sources": [
+    "https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate"
+   ]
   },
   {
    "id": "shamsi-period",
    "base": "shamsi-airfield-pakistan",
    "field": "period",
    "op": "set",
-   "value": { "to": "2011-12" },
+   "value": {
+    "to": "2011-12"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "US-Nutzung bis Dezember 2011.", "en": "US use until December 2011." },
-   "sources": ["https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate"]
+   "statement": {
+    "de": "US-Nutzung bis Dezember 2011.",
+    "en": "US use until December 2011."
+   },
+   "sources": [
+    "https://www.aljazeera.com/news/2011/12/12/us-vacates-pakistan-base-amid-drone-debate"
+   ]
   },
   {
    "id": "dakar-status",
@@ -222,156 +305,249 @@
     "de": "Frankreich hat am 17.07.2025 seine letzten Stützpunkte im Senegal übergeben, darunter den Flugplatz am Flughafen Dakar.",
     "en": "On 17 July 2025 France handed over its last bases in Senegal, including its airfield at Dakar airport."
    },
-   "sources": ["https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"]
+   "sources": [
+    "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"
+   ]
   },
   {
    "id": "dakar-period",
    "base": "base-aerienne-dakar",
    "field": "period",
    "op": "set",
-   "value": { "to": "2025-07-17" },
+   "value": {
+    "to": "2025-07-17"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Übergeben am 17.07.2025.", "en": "Handed over on 17 July 2025." },
-   "sources": ["https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"]
+   "statement": {
+    "de": "Übergeben am 17.07.2025.",
+    "en": "Handed over on 17 July 2025."
+   },
+   "sources": [
+    "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"
+   ]
   },
   {
    "id": "bagram-period",
    "base": "bagram-air-base",
    "field": "period",
    "op": "set",
-   "value": { "to": "2021-07" },
+   "value": {
+    "to": "2021-07"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Anfang Juli 2021 an die afghanischen Sicherheitskräfte übergeben.", "en": "Handed over to the Afghan security forces in early July 2021." },
-   "sources": ["https://aa.com.tr/en/asia-pacific/us-forces-transfer-their-main-bagram-airfield-to-afghans/2292072"]
+   "statement": {
+    "de": "Anfang Juli 2021 an die afghanischen Sicherheitskräfte übergeben.",
+    "en": "Handed over to the Afghan security forces in early July 2021."
+   },
+   "sources": [
+    "https://aa.com.tr/en/asia-pacific/us-forces-transfer-their-main-bagram-airfield-to-afghans/2292072"
+   ]
   },
   {
    "id": "niamey-period",
    "base": "niamey-air-base",
    "field": "period",
    "op": "set",
-   "value": { "to": "2024" },
+   "value": {
+    "to": "2024"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "US-Abzug aus Niamey im Sommer 2024 (ab 7. Juni, etwa einen Monat). Der Abzug Frankreichs Ende 2023 ist durch diese Quelle nicht belegt.",
     "en": "US withdrawal from Niamey in summer 2024 (from 7 June, about one month). France’s withdrawal at the end of 2023 is not covered by this source."
    },
-   "sources": ["https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/"]
+   "sources": [
+    "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/"
+   ]
   },
   {
    "id": "agadez-period",
    "base": "us-air-base-201",
    "field": "period",
    "op": "set",
-   "value": { "to": "2024-08" },
+   "value": {
+    "to": "2024-08"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "US-Abzug im August 2024 abgeschlossen.", "en": "US withdrawal completed in August 2024." },
-   "sources": ["https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/"]
+   "statement": {
+    "de": "US-Abzug im August 2024 abgeschlossen.",
+    "en": "US withdrawal completed in August 2024."
+   },
+   "sources": [
+    "https://www.kaiserslauternamerican.com/us-completes-withdrawal-from-ab-201/"
+   ]
   },
   {
    "id": "tanf-period",
    "base": "al-tanf-syria",
    "field": "period",
    "op": "set",
-   "value": { "to": "2026-02" },
+   "value": {
+    "to": "2026-02"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "US-Abzug laut CENTCOM im Februar 2026 abgeschlossen; an die syrische Regierung übergeben.", "en": "US withdrawal completed in February 2026 according to CENTCOM; handed over to the Syrian government." },
-   "sources": ["https://www.aa.com.tr/en/middle-east/us-completes-withdrawal-from-al-tanf-base-in-syria-centcom/3828375"]
+   "statement": {
+    "de": "US-Abzug laut CENTCOM im Februar 2026 abgeschlossen; an die syrische Regierung übergeben.",
+    "en": "US withdrawal completed in February 2026 according to CENTCOM; handed over to the Syrian government."
+   },
+   "sources": [
+    "https://www.aa.com.tr/en/middle-east/us-completes-withdrawal-from-al-tanf-base-in-syria-centcom/3828375"
+   ]
   },
   {
    "id": "rumeilan-period",
    "base": "rumeilan-air-base",
    "field": "period",
    "op": "set",
-   "value": { "to": "2026-03-14" },
+   "value": {
+    "to": "2026-03-14"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
     "de": "US-Abzug am 14.03.2026 (eine Quelle, die sich auf die Syrische Beobachtungsstelle für Menschenrechte stützt; Kharab al-Jir und Rmeilan werden uneinheitlich benannt).",
     "en": "US withdrawal on 14 March 2026 (a single source relaying the Syrian Observatory for Human Rights; Kharab al-Jir and Rmeilan are named inconsistently)."
    },
-   "sources": ["https://english.kurd-online.com/?p=1426"]
+   "sources": [
+    "https://english.kurd-online.com/?p=1426"
+   ]
   },
   {
    "id": "udeid-us",
    "base": "al-udeid-doha",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "stationing" },
+   "value": {
+    "nation": "US",
+    "role": "stationing"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Der Base Structure Report FY2023 führt Al Udeid als Standort der US Air Force.", "en": "The Base Structure Report FY2023 lists Al Udeid as a US Air Force site." },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"]
+   "statement": {
+    "de": "Der Base Structure Report FY2023 führt Al Udeid als Standort der US Air Force.",
+    "en": "The Base Structure Report FY2023 lists Al Udeid as a US Air Force site."
+   },
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ]
   },
   {
    "id": "akrotiri-us",
    "base": "raf-akrotiri",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "co-user" },
+   "value": {
+    "nation": "US",
+    "role": "co-user"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Der Base Structure Report FY2023 führt bei RAF Akrotiri zusätzlich einen Standort der US Air Force.", "en": "The Base Structure Report FY2023 additionally lists a US Air Force site at RAF Akrotiri." },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"]
+   "statement": {
+    "de": "Der Base Structure Report FY2023 führt bei RAF Akrotiri zusätzlich einen Standort der US Air Force.",
+    "en": "The Base Structure Report FY2023 additionally lists a US Air Force site at RAF Akrotiri."
+   },
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ]
   },
   {
    "id": "gitmo-us",
    "base": "gitmo-guantanamo-bay",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "stationing" },
+   "value": {
+    "nation": "US",
+    "role": "stationing"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Der Base Structure Report FY2023 führt die Naval Station Guantánamo Bay der US Navy.", "en": "The Base Structure Report FY2023 lists the US Navy’s Naval Station Guantánamo Bay." },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"]
+   "statement": {
+    "de": "Der Base Structure Report FY2023 führt die Naval Station Guantánamo Bay der US Navy.",
+    "en": "The Base Structure Report FY2023 lists the US Navy’s Naval Station Guantánamo Bay."
+   },
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ]
   },
   {
    "id": "muwaffaq-us",
    "base": "muwaffaq-salti-air-base-al-azraq-jordan",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "stationing" },
+   "value": {
+    "nation": "US",
+    "role": "stationing"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Der Base Structure Report FY2023 führt Muwaffaq Salti als Standort der US Air Force.", "en": "The Base Structure Report FY2023 lists Muwaffaq Salti as a US Air Force site." },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"]
+   "statement": {
+    "de": "Der Base Structure Report FY2023 führt Muwaffaq Salti als Standort der US Air Force.",
+    "en": "The Base Structure Report FY2023 lists Muwaffaq Salti as a US Air Force site."
+   },
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ]
   },
   {
    "id": "papa-us",
    "base": "papa-ab-hungary",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "co-user" },
+   "value": {
+    "nation": "US",
+    "role": "co-user"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Die multinationale Heavy Airlift Wing in Pápa (12 Staaten) schließt die USA ein.", "en": "The multinational Heavy Airlift Wing at Pápa (12 nations) includes the US." },
-   "sources": ["https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html"]
+   "statement": {
+    "de": "Die multinationale Heavy Airlift Wing in Pápa (12 Staaten) schließt die USA ein.",
+    "en": "The multinational Heavy Airlift Wing at Pápa (12 nations) includes the US."
+   },
+   "sources": [
+    "https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html"
+   ]
   },
   {
    "id": "kleine-brogel-us",
    "base": "kleine-brogel-nuclear",
    "field": "presences",
    "op": "add",
-   "value": { "nation": "US", "role": "stationing" },
+   "value": {
+    "nation": "US",
+    "role": "stationing"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "RTBF nennt das 701st Munitions Support Squadron der US Air Force am Lager; die Atomwaffenlagerung selbst ist offiziell nicht bestätigt (Schätzung der FAS).", "en": "RTBF names the US Air Force 701st Munitions Support Squadron at the depot; nuclear weapons storage itself is not officially confirmed (FAS estimate)." },
-   "sources": ["https://www.rtbf.be/article/base-de-kleine-brogel-des-travaux-d-infrastructures-pour-le-detachement-americain-ont-ete-effectues-constatent-des-experts-11096052"]
+   "statement": {
+    "de": "RTBF nennt das 701st Munitions Support Squadron der US Air Force am Lager; die Atomwaffenlagerung selbst ist offiziell nicht bestätigt (Schätzung der FAS).",
+    "en": "RTBF names the US Air Force 701st Munitions Support Squadron at the depot; nuclear weapons storage itself is not officially confirmed (FAS estimate)."
+   },
+   "sources": [
+    "https://www.rtbf.be/article/base-de-kleine-brogel-des-travaux-d-infrastructures-pour-le-detachement-americain-ont-ete-effectues-constatent-des-experts-11096052"
+   ]
   },
   {
    "id": "sarajevo-host",
    "base": "sarajevo-military-airport",
    "field": "host",
    "op": "set",
-   "value": { "country": "BA" },
+   "value": {
+    "country": "BA"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
-   "statement": { "de": "Sarajevo und Camp Butmir liegen in Bosnien und Herzegowina, nicht in Kroatien.", "en": "Sarajevo and Camp Butmir are in Bosnia and Herzegovina, not in Croatia." },
-   "sources": ["https://www.everycrsreport.com/files/20060105_RS21774_2e3f9fa595dcd0ee71ab9f282f72cd9e830da29a.html"]
+   "statement": {
+    "de": "Sarajevo und Camp Butmir liegen in Bosnien und Herzegowina, nicht in Kroatien.",
+    "en": "Sarajevo and Camp Butmir are in Bosnia and Herzegovina, not in Croatia."
+   },
+   "sources": [
+    "https://www.everycrsreport.com/files/20060105_RS21774_2e3f9fa595dcd0ee71ab9f282f72cd9e830da29a.html"
+   ]
   },
   {
    "id": "khmeimim-status",
@@ -379,12 +555,15 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
-   "status": "proposed",
+   "status": "accepted",
    "statement": {
     "de": "visualbases.org führt Khmeimim als geschlossen. Laut Vereinbarung vom August 2026 bleibt eine russische Präsenz in veränderter Form (gemeinsames Ausbildungszentrum); das endgültige Abkommen stand im Herbst 2026 aus.",
     "en": "visualbases.org lists Khmeimim as closed. Under an agreement of August 2026 a Russian presence continues in a changed form (joint training centre); the final agreement was pending in autumn 2026."
    },
-   "sources": ["https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases"]
+   "sources": [
+    "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "tartus-status",
@@ -392,51 +571,69 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
-   "status": "proposed",
+   "status": "accepted",
    "statement": {
     "de": "visualbases.org führt Tartus als geschlossen. Laut Vereinbarung vom August 2026 bleibt eine russische Präsenz in veränderter Form; das endgültige Abkommen stand im Herbst 2026 aus.",
     "en": "visualbases.org lists Tartus as closed. Under an agreement of August 2026 a Russian presence continues in a changed form; the final agreement was pending in autumn 2026."
    },
-   "sources": ["https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases"]
+   "sources": [
+    "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "fort-lamy-period",
    "base": "fort-lamy-ab-djamena",
    "field": "period",
    "op": "set",
-   "value": { "to": "2025-06" },
-   "status": "proposed",
+   "value": {
+    "to": "2025-06"
+   },
+   "status": "accepted",
    "statement": {
     "de": "Frankreich hat im Juni 2025 die Basis Kossei in N’Djamena übergeben. Dass Kossei der Eintrag „Fort-Lamy“ ist, ist eine eigene Annahme und muss geprüft werden.",
     "en": "France handed over the Kossei base in N’Djamena in June 2025. That Kossei is the entry “Fort-Lamy” is our own assumption and needs checking."
    },
-   "sources": ["https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"]
+   "sources": [
+    "https://www.aljazeera.com/news/2025/7/17/former-colonial-ruler-france-hands-over-its-last-military-bases-in-senegal"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "naha-nation",
    "base": "jasdf-naha-air-base",
    "field": "presences",
    "op": "remove",
-   "value": { "nation": "US" },
-   "status": "proposed",
+   "value": {
+    "nation": "US"
+   },
+   "status": "accepted",
    "statement": {
     "de": "Im Base Structure Report steht nur der US-Hafen Naha Port; die Luftwaffenbasis selbst ist japanisch. Die US-Präsenz an der Basis ist nicht belegt.",
     "en": "The Base Structure Report only lists the US Naha Port; the air base itself is Japanese. A US presence at the air base is not documented."
    },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"]
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "lamentin-territory",
    "base": "pae-du-lamentin-guadeloupe",
    "field": "host",
    "op": "set",
-   "value": { "country": "FR", "territory": "MQ" },
+   "value": {
+    "country": "FR",
+    "territory": "MQ"
+   },
    "status": "proposed",
    "statement": {
-    "de": "Das Pôle aéronautique étatique liegt laut Verteidigungsministerium in Le Lamentin auf Martinique; vermutlich Verwechslung der beiden Lamentin-Gemeinden.",
-    "en": "According to the ministry the Pôle aéronautique étatique is at Le Lamentin on Martinique; probably the two Lamentin communes were confused."
+    "de": "Das Pôle aéronautique étatique liegt laut Verteidigungsministerium in Le Lamentin auf Martinique; vermutlich Verwechslung der beiden Lamentin-Gemeinden. Offen gelassen: Die Koordinaten des Eintrags liegen am Flughafen Pointe-à-Pitre (Guadeloupe); ob es dort ebenfalls eine staatliche Luftfahrtstelle gibt, ist nicht geprüft.",
+    "en": "According to the ministry the Pôle aéronautique étatique is at Le Lamentin on Martinique; probably the two Lamentin communes were confused. Left open: the record’s coordinates are at Pointe-à-Pitre airport (Guadeloupe); whether a state aviation unit also exists there has not been checked."
    },
-   "sources": ["https://www.defense.gouv.fr/en/node/97"]
+   "sources": [
+    "https://www.defense.gouv.fr/en/node/97"
+   ]
   },
   {
    "id": "tapa-status",
@@ -444,12 +641,15 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
-   "status": "proposed",
+   "status": "accepted",
    "statement": {
     "de": "Das US-Kontingent in Estland ist 2026 auf unter 100 Soldaten gesunken; eine weitere Rotation und die Präsenz nach 2026 sind offen.",
     "en": "The US contingent in Estonia fell below 100 troops in 2026; a further rotation and the presence beyond 2026 are open."
    },
-   "sources": ["https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/"]
+   "sources": [
+    "https://militarnyi.com/en/news/u-s-pulls-most-troops-out-of-estonia-no-military-presence-planned-beyond-2027/"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "rzeszow-status",
@@ -457,12 +657,15 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
-   "status": "proposed",
+   "status": "accepted",
    "statement": {
     "de": "Die US-Präsenz in Rzeszów-Jasionka wurde 2025 an andere Orte in Polen verlagert; das Drehkreuz bleibt unter polnischer/NATO-Führung aktiv.",
     "en": "The US presence at Rzeszów-Jasionka was moved to other sites in Poland in 2025; the hub remains active under Polish/NATO lead."
    },
-   "sources": ["https://notesfrompoland.com/2025/04/08/us-to-withdraw-military-from-ukraine-aid-hub-in-poland/"]
+   "sources": [
+    "https://notesfrompoland.com/2025/04/08/us-to-withdraw-military-from-ukraine-aid-hub-in-poland/"
+   ],
+   "decided": "2026-11-07"
   },
   {
    "id": "thumrait-status",
@@ -470,12 +673,215 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
-   "status": "proposed",
+   "status": "accepted",
    "statement": {
     "de": "Thumrait steht nur im Base Structure Report FY2019, nicht mehr in FY2023 – der aktuelle Status ist offen.",
     "en": "Thumrait is only in the Base Structure Report FY2019, no longer in FY2023 – the current status is open."
    },
-   "sources": ["https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy_2019.xlsx"]
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy_2019.xlsx"
+   ],
+   "decided": "2026-11-07"
+  },
+  {
+   "id": "creech-position",
+   "base": "creech-air-force-base",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 36.58875,
+    "lon": -115.67146
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Creech AFB liegt in Indian Springs (Nevada); die bisherige Position lag rund 27 km östlich.",
+    "en": "Creech AFB is at Indian Springs (Nevada); the previous position was about 27 km to the east."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W274446470&format=jsonv2"
+   ]
+  },
+  {
+   "id": "muwaffaq-salti-position",
+   "base": "muwaffaq-salti-air-base-al-azraq-jordan",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 31.82051,
+    "lon": 36.77942
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Die Muwaffaq-Salti-Luftwaffenbasis liegt westlich von Azraq; die bisherige Position lag rund 17 km östlich.",
+    "en": "Muwaffaq Salti Air Base is west of Azraq; the previous position was about 17 km to the east."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=R19125716&format=jsonv2"
+   ]
+  },
+  {
+   "id": "humphreys-position",
+   "base": "usag-humphreys",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 36.96647,
+    "lon": 127.01257
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Camp Humphreys liegt in Pyeongtaek; die bisherige Position lag rund 16 km nördlich bei Osan.",
+    "en": "Camp Humphreys is in Pyeongtaek; the previous position was about 16 km to the north, near Osan."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W245548245&format=jsonv2"
+   ]
+  },
+  {
+   "id": "jwtc-position",
+   "base": "jungle-warfare-training-center",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 26.71425,
+    "lon": 128.25174,
+    "approx": true
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Das Jungle Warfare Training Center (Camp Gonsalves) liegt im Nördlichen Übungsgebiet bei Kunigami/Higashi; Position jetzt der Mittelpunkt dieses Gebiets (ungefähr).",
+    "en": "The Jungle Warfare Training Center (Camp Gonsalves) is in the Northern Training Area near Kunigami/Higashi; position now the centre of that area (approximate)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W344072528&format=jsonv2"
+   ]
+  },
+  {
+   "id": "holt-position",
+   "base": "naval-comm-station-exmouth",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": -21.8187,
+    "lon": 114.16469
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Die Funkstation Harold E. Holt liegt auf dem North West Cape; die bisherige Position lag rund 14 km östlich im Exmouth Gulf.",
+    "en": "Naval Communication Station Harold E. Holt is on North West Cape; the previous position was about 14 km to the east in Exmouth Gulf."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W187097879&format=jsonv2"
+   ]
+  },
+  {
+   "id": "puerto-castilla-position",
+   "base": "puerto-castilla-honduras",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 16.0096,
+    "lon": -85.94942,
+    "approx": true
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Der Beitrag heißt Puerto Castilla, trug aber Titel und Koordinaten von Soto Cano. Position jetzt Puerto Castilla (Ortsmitte, ungefähr).",
+    "en": "The post is named Puerto Castilla but carried the title and coordinates of Soto Cano. Position now Puerto Castilla (town centre, approximate)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=N830322610&format=jsonv2"
+   ]
+  },
+  {
+   "id": "karlovac-position",
+   "base": "karlovac-croatia-2",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 45.48925,
+    "lon": 15.54863,
+    "approx": true
+   },
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Der Beitrag Karlovac trug die Koordinaten von Zadar Gazenica (rund 160 km entfernt). Position jetzt Karlovac (Stadtmitte, ungefähr; genaue Anlage offen).",
+    "en": "The Karlovac post carried the coordinates of Zadar Gazenica (about 160 km away). Position now Karlovac (town centre, approximate; exact site open)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=R11227312&format=jsonv2"
+   ]
+  },
+  {
+   "id": "storck-name",
+   "base": "stock-barracks-illesheim",
+   "field": "name",
+   "op": "set",
+   "value": "Illesheim: Storck Barracks",
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Richtige Schreibweise: Storck Barracks (benannt nach Oberst Louis J. Storck).",
+    "en": "Correct spelling: Storck Barracks (named after Colonel Louis J. Storck)."
+   },
+   "sources": [
+    "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx"
+   ]
+  },
+  {
+   "id": "wpc-name",
+   "base": "warrior-preparation-center-einsiedlerhof",
+   "field": "name",
+   "op": "set",
+   "value": "Kaiserslautern-Einsiedlerhof: USAFE-AFAFRICA Warfare Center (ehem. Warrior Preparation Center)",
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Das Warrior Preparation Center heißt seit 2022 USAFE-AFAFRICA Warfare Center.",
+    "en": "The Warrior Preparation Center has been called USAFE-AFAFRICA Warfare Center since 2022."
+   },
+   "sources": [
+    "https://www.kaiserslauternamerican.com/?p=106985"
+   ]
+  },
+  {
+   "id": "wpc-duplicate",
+   "base": "de-kl-warrior-preparation-center",
+   "field": "issues",
+   "op": "add",
+   "value": "duplicate-entry",
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Doppelter Eintrag: dieselbe Einrichtung wie „USAFE-AFAFRICA Warfare Center (ehem. Warrior Preparation Center)“ (warrior-preparation-center-einsiedlerhof).",
+    "en": "Duplicate entry: the same facility as 'USAFE-AFAFRICA Warfare Center (former Warrior Preparation Center)' (warrior-preparation-center-einsiedlerhof)."
+   },
+   "sources": [
+    "https://www.kaiserslauternamerican.com/?p=106985"
+   ]
+  },
+  {
+   "id": "puerto-castilla-name",
+   "base": "puerto-castilla-honduras",
+   "field": "name",
+   "op": "set",
+   "value": "Puerto Castilla (Honduras)",
+   "status": "accepted",
+   "decided": "2026-11-07",
+   "statement": {
+    "de": "Der Beitrag puerto-castilla-honduras beschreibt Puerto Castilla; Titel und Position waren von Soto Cano übernommen.",
+    "en": "The post puerto-castilla-honduras describes Puerto Castilla; title and position had been copied from Soto Cano."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=N830322610&format=jsonv2"
+   ]
   }
  ]
 }

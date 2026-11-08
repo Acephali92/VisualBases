@@ -52,7 +52,7 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 | P0-5 | Daten | F5, F6 | URL-Bereinigung im Nachrichten-Import; Mindestbreite für Logos 80 px | Nutzer | `scripts/import-news.mjs`, `scripts/build-media.mjs` | XS | keins | Validierung grün, Shannon-Logo sichtbar | ✅ |
 | P0-6 | Performance | F10 | Kartenpakete, Länderformen, `og.png` und nicht-lateinische Schriften aus dem Precache; Hash-Assets per Runtime-Cache | mobile Nutzer | `vite.config.ts` | S | Karte offline erst nach dem ersten Kartenbesuch | Precache 721 KB (vorher 3,7 MB) | ✅ |
 | P0-7 | Robustheit | F11 | WebGL-Erkennung, `MapUnavailableError`, Hinweis in Atlas, Startseite und Einbettung; Liste und Profile bleiben bedienbar | ältere Geräte, Firmen-PCs | `src/lib/map.ts`, `MapNotice.svelte`, `Atlas/Home/Embed.svelte`, `tests/smoke.cjs` | S | keins | Smoke-Test ohne WebGL grün | ✅ |
-| P1-0 | Daten | F20, F21, F23 | **Korrekturvorschläge aus der Recherche** in `data/corrections.json` (Feld, alter Wert, Vorschlag, Quelle): Nation, Land, Status, Dubletten. Profile zeigen „Angabe umstritten/veraltet“; geändert wird erst nach Entscheidung (Abschnitt 4, Nr. 6). | Presse, Recherche, Glaubwürdigkeit | `data/corrections.json`, `build-data.mjs`, `BaseProfile.svelte`, `validate-data.mjs` | S | keins (nur Kennzeichnung) | alle Befunde aus Recherche 3.1/3.2 als Vorschlag sichtbar; Validator prüft Quelle je Vorschlag | ❓ |
+| P1-0 | Daten | F20, F21, F23 | **Korrekturen aus der Recherche** in `data/claims.json` (Feld, alter Wert, neuer Wert, Quelle, Entscheidungsdatum): Nation, Land, Status, Zeitraum, **Position und Name** (neu), Dubletten. Profile zeigen die Korrektur mit dem Originalwert von visualbases.org. | Presse, Recherche, Glaubwürdigkeit | `data/claims.json`, `scripts/lib/resolve.mjs`, `validate-data.mjs`, `BaseProfile.svelte` | S | falsche Korrektur → nur mit geprüfter Quelle; Zweifelsfälle bleiben Vorschlag | alle belegten Befunde aus Recherche 3.1/3.2/3.5 angewandt (46 Korrekturen, 2 Prüfhinweise), 1 Vorschlag offen (PAE Lamentin) | ✅ |
 | P1-1 | Quellen | F7, F8, F22, F24 | **Aussagen-Modell `data/claims.json`** (siehe Abschnitt 3) mit **Präsenzart und Zeitraum**. Startbestand automatisch aus der Recherche: 83 handgeprüfte Quellen und 122 BSR-Urteile → Aussagen zu Präsenz, Nation und Status. Danach Story und Quiz, dann Funktionen (Drohnen, Atomwaffen …) | Presse, Bildung, Recherche | neu: `data/claims.json`, `scripts/research/to-claims.mjs`; `build-data.mjs`, `validate-data.mjs`, `BaseProfile.svelte`, `Home.svelte`, `quiz.ts` | M (vorher L: Belege liegen vor) | keine erfundenen Belege; Übernahme erst nach Durchsicht | ≥ 199 Standorte mit Quellenangabe im Profil; jede Story-/Quiz-Aussage mit Quelle | 🟡 teilweise (Taxonomie v2): Korrekturschicht `data/claims.json`, Belegstatus je Aussage im Profil; offen: Präsenzart, Story/Quiz-Belege |
 | P1-2 | Quellen | F7, F24 | **Belegstatus** je Standort aus `claims.json`: „geprüft belegt“, „nur Kontext“, „nur Wikipedia“, „ohne Beleg“, mit Herausgeber und Abrufdatum; Liste der 63 offenen Fälle mit Aufruf „Beleg melden“ (vorhandenes Mitmach-Formular) | Recherche, Mitmachen | `BaseProfile.svelte`, `Contribute.svelte`, `data.ts` | M | gering | Kennzeichnung bei allen 365 Standorten; Link „Beleg melden“ mit Standort-ID | ⏳ |
 | P1-3 | Rechte | F16 | Lizenzen der Commons- und Flickr-Bilder recherchieren und eintragen; Rest `rights: "unclear"` und Liste in `DATA-SOURCES.md` | Projekt (Rechtssicherheit) | `data/media.json`, `docs/DATA-SOURCES.md` | S | keins | Jedes Bild hat Lizenz oder `unclear` | ⏳ |
@@ -102,22 +102,22 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 
 `build-data.mjs` hängt die Aussagen an die Standorte. Profile zeigen Status und Quelle je Aussage, und die Validierung prüft die Pflichtfelder. Änderungen bleiben über die Git-Historie nachvollziehbar.
 
-## 4. Entscheidungen der Projektverantwortlichen ❓
+## 4. Entscheidungen der Projektverantwortlichen
 
 1. ~~**Datenlizenz**~~ – entschieden: **CC BY 4.0** (umgesetzt, `data/LICENSE.md`).
 2. **Bilder Dritter:** Freigabe oder Urhebernennung für Flickr (Menwith Hill), „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner.
 3. **Anrisstexte der Presseschau:** Sind es eigene Zusammenfassungen von visualbases.org oder Zitate?
 4. **Korrekturvorschläge in `data/corrections.json`:** Puerto Castilla (Duplikat von Soto Cano oder eigener Ort?), Karlovac (genauer Standort).
 5. **Impressum** (Pflicht für eine deutsche Website).
-6. **Übernahme der Recherche** (`docs/research/SOURCE-RESEARCH.md`): Welche Befunde aus 3.1 (Nation/Land) und 3.2 (Status) sollen als Korrekturvorschlag erscheinen, welche direkt geändert werden?
-7. **Geschlossene Standorte:** grau als „historisch“ in der Karte lassen (Vorschlag) oder ausblenden?
-8. **Präsenzarten:** Sind die Kategorien fest / Rotation / Zugangsrecht / Übung / gemeinsam betrieben / historisch / geplant passend?
+6. ~~**Übernahme der Recherche**~~ – entschieden 2026-11-07: **alle belegten Befunde direkt korrigieren** (mit Quelle und Originalwert im Profil); nur nicht ausreichend belegte Fälle bleiben Vorschlag.
+7. ~~**Geschlossene Standorte**~~ – entschieden: **grau in der Karte lassen**, nicht ausblenden.
+8. ~~**Präsenzarten**~~ – entschieden: fest / Rotation / Zugangsrecht / Übung / gemeinsam betrieben / historisch / geplant **passen** (Umsetzung in P1-1 und P1-10).
 
 ## 5. Reihenfolge
 
 1. ✅ **Durchgang 1 – P0** (Datenintegrität, Validierung, Precache, WebGL-Fallback)
 2. ✅ **Quellenrecherche** (Recherche-Werkzeuge, 83 geprüfte Quellen, 122 BSR-Urteile, Bericht)
-3. **Datenqualität (nach Entscheidung 6–8):** P1-0 Korrekturvorschläge → P1-1 Aussagen-Modell mit Startbestand aus der Recherche → P1-2 Belegstatus → P1-10 Status- und Präsenzfilter → P1-3 Bildrechte
+3. **Datenqualität:** ✅ P1-0 Korrekturen → P1-1 Präsenzart je Präsenz (Kategorien entschieden) → P1-10 Präsenzfilter → P1-2 Belegstatus → P1-3 Bildrechte
 4. **Zugänglichkeit und Performance:** P1-4, P1-5, P1-6, P1-8
 5. **Betrieb, Konsistenz und Doku:** P1-11, P1-7, P1-9
 6. **Atlas:** P2-1, P2-2

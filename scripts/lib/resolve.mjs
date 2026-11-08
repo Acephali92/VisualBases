@@ -16,8 +16,8 @@ export const KIND_CATEGORIES = ['foreign-bases', 'shared-bases', 'national-base'
 const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
 /** claim field → statement group whose evidence it changes */
-export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'] };
-export const CLAIM_FIELDS = ['presences', 'host', 'region', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
+export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
+export const CLAIM_FIELDS = ['presences', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
 
 const clone = (x) => (x === undefined ? undefined : JSON.parse(JSON.stringify(x)));
 const sameItem = (a, b) => (a && typeof a === 'object' ? (a.nation ?? JSON.stringify(a)) === (b.nation ?? JSON.stringify(b)) : a === b);
@@ -28,6 +28,16 @@ const sameItem = (a, b) => (a && typeof a === 'object' ? (a.nation ?? JSON.strin
  */
 export function applyClaim(b, c) {
   if (!CLAIM_FIELDS.includes(c.field)) throw new Error(`unknown field "${c.field}"`);
+  // position: { lat, lon, approx? } – the coordinates live in two fields of the record
+  if (c.field === 'position') {
+    if (c.op !== 'set') throw new Error('position only supports "set"');
+    const from = { lat: b.lat, lon: b.lon };
+    if (from.lat === c.value.lat && from.lon === c.value.lon) throw new Error('value is already set (claim obsolete?)');
+    b.lat = c.value.lat;
+    b.lon = c.value.lon;
+    if (c.value.approx) b.approx = true;
+    return { from, to: { lat: b.lat, lon: b.lon } };
+  }
   const from = clone(b[c.field]);
   if (c.op === 'set') {
     if (JSON.stringify(stripVia(from)) === JSON.stringify(stripVia(c.value))) throw new Error('value is already set (claim obsolete?)');

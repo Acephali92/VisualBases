@@ -16,7 +16,7 @@ darwin-raaf-base,Darwin RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,
 east-chapman-satellite-station,East Chapman Australian Defence Satellite Comm. Station,AU,US,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,confirmed,0.42,
 ghan-joint-defence-pine-gap,"Ghan Joint Defence Facility, Pine Gap",AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.38,
 learmonth-raaf-base,Learmonth RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,near,1.76,
-naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,US,0,yes,verified,presence nation,1,0,0,0,20,NAVCOMMSTA H E Holt Exmouth,NAVCOMMSTA H E Holt Exmouth,Q1898404,14.2,,none,,Wikidata position 14.2 km away | OSM: no military feature within 3 km
+naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,US,0,yes,verified,presence nation,2,1,0,0,20,NAVCOMMSTA H E Holt Exmouth,NAVCOMMSTA H E Holt Exmouth,Q1898404,14.2,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 14.2 km away | OSM: no military feature within 3 km"
 robertson-barracks,"Robertson Barracks, Northern Territory",AU,US,0,yes,verified,presence nation activity,1,0,0,0,10,,,Q7352085,9.5,,near,5.78,Wikidata position 9.5 km away
 tindal-raaf-base,Tindal RAAF Base,AU,US,0,yes,verified,presence nation facility,1,0,0,0,7,,,Q1551495,0.5,,confirmed,0.63,
 savaneta-kamp,"Antilles, Aruba: Korps Mariniers / Savaneta Kamp",AW,US NL,0,yes,candidates,,0,0,0,0,21,,,Q1311437,,,confirmed,0.16,
@@ -189,10 +189,10 @@ nsa-souda-bay,Crete: Naval Support Activity Souda Bay,GR,US,1,yes,candidates,,0,
 guam-naval-base,Guam,GU,US,0,yes,candidates,,0,0,0,0,21,,,Q16635,6.7,,,,Wikidata position 6.7 km away
 andersen-afb-guam,Guam: Andersen Air Force Base,GU,US,0,yes,verified,presence nation,1,0,0,0,21,Andersen AFB,Andersen AFB,Q491372,2.3,,,,Wikidata position 2.3 km away
 naval-base-guam,Guam: Naval Base,GU,US,0,yes,verified,presence nation,1,0,0,0,13,NAVBASE Guam,,Q6981760,1.9,,,,
-puerto-castilla-honduras,Base Aérea Coronel Enrique Soto Cano,HN,US,1,no,none,,0,0,0,0,0,,,,,,,,
+puerto-castilla-honduras,Base Aérea Coronel Enrique Soto Cano,HN,US,1,no,context,,1,1,0,0,0,,,,,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation."
 gracias-a-dios-honduras,Gracias a Dios,HN,US,0,yes,candidates,,0,0,0,0,20,,,Q1935172,,,,,
 soto-cano-honduras,Soto Cano Air Base,HN,US,0,yes,verified,presence nation,1,0,0,0,20,Soto Cano,Soto Cano,Q747620,0.5,,,,
-karlovac-croatia-2,Karlovac,HR,US,1,no,none,,0,0,0,0,0,,,,,,,,
+karlovac-croatia-2,Karlovac,HR,US,1,no,context,,1,1,0,0,0,,,,,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation."
 training-area-eugen-kvaternik,Military Training Area „Eugen Kvaternik“,HR,US,0,yes,candidates,,0,0,0,0,7,,,Q2456541,3.6,,,,Wikidata position 3.6 km away
 sarajevo-military-airport,Sarajevo Military Airport,HR,US,0,no,verified,presence nation,2,0,1,0,0,,,,,,,,
 zadar-gazenica-croatia,Zadar Gazenica (Croatia),HR,US,0,no,context,,1,0,1,0,0,,,,,,,,
@@ -219,7 +219,7 @@ vicenza-padova,Vicenza – Padova,IT,US,0,no,none,,0,0,0,0,0,,,,,,,,
 camp-ederle-vicenza,Vicenza: Camp Ederle,IT,US,0,yes,verified,presence nation,1,0,0,0,20,Camp Ederle,Camp Ederle,Q3661698,0.7,,,,
 del-din-barracks-vicenza,Vicenza: Del Din Barracks,IT,US,0,yes,verified,presence nation,1,0,0,0,10,Del Din,Del Din,Q1313587,0,2005-12-23,,,Wikidata: closed/dissolved 2005-12-23
 longare-communications-site-pluto-vicenza,Vicenza: Longare Communications Site Pluto,IT,US,0,no,verified,presence nation,1,0,0,0,0,Longare Communications Site,Longare Communications Site,,,,,,
-muwaffaq-salti-air-base-al-azraq-jordan,"Muwaffaq Salti Air Base, Al Azraq",JO,,0,yes,verified,presence nation,1,0,0,0,20,Muwaffaq Salti Air Base,,Q2886524,17.1,,,,Wikidata position 17.1 km away
+muwaffaq-salti-air-base-al-azraq-jordan,"Muwaffaq Salti Air Base, Al Azraq",JO,,0,yes,verified,presence nation,2,1,0,0,20,Muwaffaq Salti Air Base,,Q2886524,17.1,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 17.1 km away"
 naval-air-facility-atsugi-kanagawa,"Kanagawa, Atsugi: Naval Air Facility",JP,US,0,yes,verified,presence nation,1,0,0,0,21,NAF Atsugi,,Q3016710,3.9,,,,Wikidata position 3.9 km away
 sasebo-naval-base-nagasaki,Nagasaki: Sasebo Naval Base,JP,US,0,yes,verified,presence nation,1,0,0,0,9,COMFLEACT Sasebo,COMFLEACT Sasebo,Q4420953,1.1,,,,
 okinawa,Okinawa,JP,US,0,yes,candidates,,0,0,0,0,21,,,Q766445,31.4,,,,Wikidata position 31.4 km away
@@ -227,7 +227,7 @@ mcas-futenma,"Okinawa, Futenma: Marine Corps Air Station",JP,US,0,yes,verified,p
 henoko-camp-schwab,"Okinawa, Henoko: Camp Schwab",JP,US,1,yes,candidates,,0,0,0,1,11,Camp Schwab,Camp Schwab,Q4419959,0.8,,,,
 jasdf-naha-air-base,"Okinawa, Naha: JASDF Air Base",JP,US,0,yes,context,,1,0,1,0,9,Naha Port,Naha Port,Q1529149,2.5,,,,Wikidata position 2.5 km away
 camp-hansen-okinawa,"Okinawa, Onna: Camp Hansen",JP,US,0,yes,verified,presence nation,1,0,0,0,12,Camp Hansen,Camp Hansen,Q4419980,0.5,,,,
-jungle-warfare-training-center,"Okinawa, Takae: Jungle Warfare Training Center",JP,US,2,yes,candidates,,0,0,0,0,20,,,Q5027202,17.5,,,,Wikidata position 17.5 km away
+jungle-warfare-training-center,"Okinawa, Takae: Jungle Warfare Training Center",JP,US,2,yes,context,,1,1,0,0,20,,,Q5027202,17.5,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 17.5 km away"
 tengan-pier-camp-courtney,"Okinawa, Tengan Pier – Camp Courtney",JP,US,0,yes,verified,presence nation,1,0,0,0,5,Camp Courtney,,Q4381152,3.4,,,,Wikidata position 3.4 km away
 camp-kinser-okinawa,"Okinawa, Urasoe: Camp Kinser",JP,US,0,yes,verified,presence nation,1,0,0,0,9,Camp Kinser,Camp Kinser,Q5027315,0.7,,,,
 camp-foster-zukeran,"Okinawa, Zukeran: Camp Foster",JP,US,0,yes,verified,presence nation,1,0,0,0,13,Camp Foster,Camp Foster,Q4419750,0.6,,,,
@@ -246,7 +246,7 @@ camp-casy-dongducheon,Dongducheon: Camp Casey,KR,US,0,yes,verified,presence nati
 jeju-island-naval-base-gangjeong,"Gangjeong, Jeju Island: Naval Base",KR,US,1,yes,candidates,,0,0,0,0,21,,,Q41164,4.8,,,,Wikidata position 4.8 km away
 kunsan-ab-gunsan,Gunsan: Kunsan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,8,Kunsan AB,Kunsan AB,Q491258,2.3,,,,Wikidata position 2.3 km away
 osan-ab-pyeongtaek,Pyeongtaek / Gyeonggi-do: Osan Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,21,Osan AFB,Osan AFB,Q492965,1.3,,,,
-usag-humphreys,Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys,KR,US,1,yes,candidates,,0,0,0,1,21,Camp Humphreys,Camp Humphreys,Q626752,15.9,,,,Wikidata position 15.9 km away
+usag-humphreys,Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys,KR,US,1,yes,context,,1,1,0,1,21,Camp Humphreys,Camp Humphreys,Q626752,15.9,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 15.9 km away"
 suwon-ab,Suwon Air Base,KR,US,0,yes,verified,presence nation,1,0,0,0,9,Suwon AB,Suwon AB,Q11252889,0.6,,,,
 taegu-region,Taegu Region,KR,US,0,no,context,,1,0,1,0,0,Taegu AB,,,,,,,
 thadd-deployment-base,THADD Deployment Base,KR,US,0,yes,verified,presence nation status,1,0,0,0,21,,,Q523156,,,,,
@@ -359,7 +359,7 @@ johnston-atoll,Johnston Atoll Airfield,UM,,0,yes,context,,1,0,1,0,13,Johnston At
 beale-air-force-base-california,"Beale Air Force Base, California",US,US,0,yes,verified,presence nation,1,0,0,0,21,Beale AFB,Beale AFB,Q812921,5.7,,,,Wikidata position 5.7 km away
 cape-cod-air-force-station,"Cape Cod Air Force Station, Massachusetts",US,US,0,yes,verified,presence nation,1,0,0,0,6,Cape Cod AS,Cape Cod AS,,,,,,
 clear-air-force-station-alaska,"Clear Air Force Station, Alaska",US,US,0,yes,verified,presence nation,1,0,0,0,20,Clear AB,Clear AB,,,,,,
-creech-air-force-base,"Creech Air Force Base, Nevada",US,US GB,0,yes,verified,presence nation,1,0,0,0,21,Creech AFB,Creech AFB,Q1658047,26.4,,,,Wikidata position 26.4 km away
+creech-air-force-base,"Creech Air Force Base, Nevada",US,US GB,0,yes,verified,presence nation,2,1,0,0,21,Creech AFB,Creech AFB,Q1658047,26.4,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 26.4 km away"
 fort-greely-alaska,"Fort Greely, Alaska",US,US,0,yes,verified,presence nation,1,0,0,0,9,Fort Greely,Fort Greely,Q5471246,29.7,,,,Wikidata position 29.7 km away
 naval-radio-transmitter-lualualei,Hawaii: Naval Radio Transmitter Facility Lualualei,US,US,0,yes,context,,1,0,1,0,12,Waianae,Waianae,Q984166,1,,,,
 vandenberg-space-force-base,"Vandenberg Space Force Base, California",US,US,1,yes,candidates,,0,0,0,0,22,,,Q461492,2.2,,,,Wikidata position 2.2 km away

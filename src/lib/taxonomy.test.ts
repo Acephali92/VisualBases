@@ -134,10 +134,24 @@ describe('claims layer', () => {
     expect(byId.get('kabul-isaf-headquarters')!).toMatchObject({ status: 'closed', basis: { status: 'claim' }, period: { to: '2021-09' } });
   });
   it('proposed claims change nothing but are shown and mark the statement as disputed', () => {
-    const b = byId.get('khmeimim-ab')!;
-    expect(b.status).toBe('closed');
-    expect(b.proposals?.[0]).toMatchObject({ field: 'status', value: 'unknown' });
-    expect(b.evidence?.status).toBe('disputed');
+    const b = byId.get('pae-du-lamentin-guadeloupe')!;
+    expect(b.host).toMatchObject({ country: 'FR', territory: 'GP' });
+    expect(b.proposals?.[0]).toMatchObject({ field: 'host', value: { territory: 'MQ' } });
+    expect(b.evidence?.position).toBe('disputed');
+    const rec = sourceRecord({ id: 'p', status: 'closed' });
+    const r = resolveBases([rec], { claims: [{ id: 'c', base: 'p', field: 'status', op: 'set', value: 'unknown', status: 'proposed', statement: { de: 'x', en: 'x' }, sources: ['https://x'] }], research: [{ base: 'p', url: 'https://x' }] });
+    expect(r.bases[0]).toMatchObject({ status: 'closed', evidence: { status: 'disputed' } });
+  });
+  it('position and name corrections keep the original visible', () => {
+    const c = byId.get('creech-air-force-base')!;
+    expect([c.lat, c.lon]).toEqual([36.58875, -115.67146]);
+    expect(c.corrections?.find((x) => x.field === 'position')?.from).toEqual({ lat: 36.5692, lon: -115.3722 });
+    expect(c.evidence?.position).toBe('corrected');
+    const pc = byId.get('puerto-castilla-honduras')!;
+    expect(pc).toMatchObject({ name: 'Puerto Castilla (Honduras)', approx: true });
+    expect(byId.get('stock-barracks-illesheim')!.name).toBe('Illesheim: Storck Barracks');
+    expect(byId.get('de-kl-warrior-preparation-center')!.issues).toContain('duplicate-entry');
+    expect(byId.get('khmeimim-ab')!.status).toBe('unknown');
   });
   it('an obsolete claim is reported instead of applied twice', () => {
     const rec = sourceRecord({ id: 'z', status: 'closed' });
