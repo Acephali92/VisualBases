@@ -11,6 +11,9 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 ### Hinzugefügt
 - **Seite „Methodik & Datenqualität“** (`#/quality`): wie die Daten entstehen und geprüft werden, Kennzahlen mit Verlauf (aus `docs/data-quality-history.json`, veröffentlicht als `data/quality.json`), Genauigkeit der Positionen, **öffentliches Korrekturprotokoll** (alle angewandten Korrekturen mit Begründung, Quelle und Datum) und offene Prüfhinweise.
 - **Impressum und Datenschutzerklärung** (`#/impressum`, `#/datenschutz`), verlinkt im Seitenfuß und auf „Über & Daten“. Die Datenschutzerklärung beschreibt, was die App tatsächlich tut (keine Cookies, kein Tracking; GitHub Pages, EOX nur bei Satellitenansicht, Nominatim nur bei Suche; lokale Einstellungen). Die Impressum-Angaben stehen zentral in `src/lib/legal.ts` und fehlen noch.
+- **Ladezeit und Stabilität:**
+  - **Geteilter Standort-Link:** Das Profil erscheint, bevor die Karten-Engine startet, und das Panel öffnet sich ohne Layoutverschiebung (Animation per `transform` statt Höhe). Titel- und Vergleichsbilder laden in passender Größe (`srcset`). Lighthouse mobil: Performance 17 → 44, LCP 8,6 → 5,6 s, CLS 0,34 → 0.
+  - **Startseite:** Der Globus dreht nur, solange der Startbereich sichtbar und der Tab aktiv ist, insgesamt höchstens 30 s. Danach kommt die Seite zur Ruhe (Akku; Lighthouse misst jetzt: Performance 51, Barrierefreiheit, Best Practices, SEO je 100).
 - **`npm run launch:check`:** prüft Impressum, Datenvalidierung, ausgeblendete Bilder in Daten und Build sowie das Alter des Qualitätsberichts; erinnert an die GitHub-Einstellungen.
 
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 4 (Quellen und Bericht)

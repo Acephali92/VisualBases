@@ -73,7 +73,18 @@ Reihenfolge so gewählt, dass nichts aufeinander wartet: Block A und Block B lau
 | B4 ✅ | **axe in den Smoke-Test** (Startseite, Atlas, Profil, Deine Basis, Über) und gefundene Verstöße beheben | umgesetzt; behoben: Label-in-Name bei Sprachumschalter und Kennzahlen-Link | S |
 | B5 | **Ortssuche absichern:** PLZ-Index für DE/AT/CH als statische Datei (GeoNames, CC BY 4.0) für die häufigste Eingabe; Nominatim nur noch für Ortsnamen. Not-Aus in `public/config/geocoder.json` dokumentiert | K5; „Deine Basis“ funktioniert auch bei Presseandrang für Postleitzahlen ohne externe Anfrage | S |
 | B6 | **Erster Daten-Update-PR** (nach A4) prüfen: 20 verfeinerte Positionen, `claim-upstream-changed` bei 6 Positions-Claims (dann überflüssige Claims entfernen), neue/geänderte Beiträge | K3, K7 | XS–S |
-| B7 | **Launch-Abnahme:** Smoke-Test Desktop und Mobil, Lighthouse (Performance, A11y, SEO), Vorschaubilder (Open Graph) in Messenger/Mastodon prüfen, englische Oberfläche durchklicken, 404-Verhalten, Offline-Fallback | Protokoll im PR; Go/No-Go nach Block C | S |
+| B7 🟡 | **Launch-Abnahme:** Smoke-Test Desktop und Mobil, Lighthouse (Performance, A11y, SEO), Vorschaubilder (Open Graph) in Messenger/Mastodon prüfen, englische Oberfläche durchklicken, 404-Verhalten, Offline-Fallback | erster Durchgang 2026-11-08: Smoke und axe grün, Lighthouse siehe unten; offen: Vorschaubilder in Messengern, Durchklicken auf echten Geräten | S |
+
+**Lighthouse, mobil (Moto-G-Profil, Drosselung), lokaler Build, 2026-11-08.** Die TBT-Werte sind überhöht, weil WebGL in der Testumgebung per Software (SwiftShader) rechnet.
+
+| Seite | Performance | Barrierefreiheit | Best Practices | SEO | LCP | CLS |
+|---|---|---|---|---|---|---|
+| Startseite | 51 (vorher nicht messbar: Globus drehte endlos) | 100 | 100 | 100 | 4,4 s | 0 |
+| Standort per geteiltem Link (`b/ramstein-air-base.html`) | 44 (vorher 17) | 100 | 100 | 100 | 5,6 s (vorher 8,6 s) | 0 (vorher 0,34) |
+| Atlas | 65 | 100 | 100 | 100 | 3,0 s | 0 |
+| Methodik | 93 | 100 | 100 | 100 | 3,0 s | 0 |
+
+Verbleibender Hebel für die Ladezeit: App-Bundle und Karten-Engine (L1-6).
 
 ### Block C – Go/No-Go und Launch
 
@@ -93,7 +104,7 @@ Reihenfolge so gewählt, dass nichts aufeinander wartet: Block A und Block B lau
 | L1-3 | Daten | **Präsenzart** je Präsenz (fest / Rotation / Zugangsrecht / Übung / gemeinsam / historisch / geplant, Kategorien entschieden) und Filter im Atlas | trennt „Basis“ von „Zugangsrecht“, der häufigste fachliche Einwand | M |
 | L1-4 | Betrieb | **Änderungsprotokoll im Daten-PR** (neue, geänderte, entfernte Standorte, verschobene Positionen mit km) | Updates in Minuten prüfbar | S |
 | L1-5 | Betrieb | Recherche-Workflow: neue Widersprüche und `position-check-stale` automatisch als Issue | nichts bleibt im Bericht liegen | S |
-| L1-6 | Performance | Routen per `import()` nachladen, Länderformen erst bei Bedarf; Globus-Rotation im Hintergrund-Tab stoppen | schnellerer Erstaufruf mobil | S |
+| L1-6 | Performance | Routen per `import()` nachladen, Länderformen erst bei Bedarf, Daten-Aufbereitung beim Start verschlanken (App-Bundle ≈ 3,4 s CPU auf Mittelklasse-Handys); Globus-Rotation ✅ begrenzt | schnellerer Erstaufruf mobil (LCP < 2,5 s) | S–M |
 | L1-7 | Qualität | **Warnungen zu Fehlern hochstufen**, sobald 0: `coords-country`, `duplicate-name-near`, `claim-upstream-changed` | Rückfälle blockieren das Deployment | XS |
 | L1-8 | Rechte | Bildrechte der ausgeblendeten Bilder klären, Wikimedia-Rest per Workflow laden | mehr Bilder, rechtssicher | S (👤 + 🤖) |
 

@@ -129,26 +129,47 @@
     return () => cancelAnimationFrame(raf);
   });
 
+  /**
+   * Slow spin of the globe while the hero is visible and the tab is shown. It stops for good after SPIN_BUDGET_MS
+   * of turning, so the page settles (battery, performance tools) – the globe simply stays where it is.
+   */
+  const SPIN_BUDGET_MS = 30_000;
+  let spinRaf = 0;
+  let spunMs = 0;
+  let spinLast = 0;
+  function spin(ts: number) {
+    const h = handle;
+    if (!h || active !== 0 || document.hidden || spunMs >= SPIN_BUDGET_MS) { spinRaf = 0; return; }
+    // real time while turning; a gap over 1 s (tab in the background, debugger) does not count
+    if (spinLast) { const dt = ts - spinLast; if (dt < 1000) spunMs += dt; }
+    spinLast = ts;
+    if (!h.map.isMoving()) {
+      const c = h.map.getCenter();
+      h.map.setCenter([c.lng + 0.04, c.lat]);
+    }
+    spinRaf = requestAnimationFrame(spin);
+  }
+  function startSpin() {
+    if (spinRaf || !handle || prefersReducedMotion() || spunMs >= SPIN_BUDGET_MS) return;
+    spinLast = 0;
+    spinRaf = requestAnimationFrame(spin);
+  }
+  // back to the hero → keep turning (within the budget)
+  $effect(() => {
+    if (active === 0) startSpin();
+  });
+
   onMount(() => {
     let destroyed = false;
-    let raf = 0;
+    const onVisible = () => { if (!document.hidden) startSpin(); };
+    document.addEventListener('visibilitychange', onVisible);
     import('../lib/map').then(({ createMap }) => createMap(mapEl, { detail: '110m', interactive: false, center: [25, 28], zoom: 1.5 + zoomAdj() })).then((h) => {
       if (destroyed) return h.destroy();
       h.map.setPadding(camPadding());
       // the coarse world shapes load fast; small islands (Okinawa, Diego Garcia …) follow
       h.map.once('idle', () => h.upgradeDetail());
       handle = h;
-      // slow spin while the hero is visible
-      if (!prefersReducedMotion()) {
-        const spin = () => {
-          if (active === 0 && !h.map.isMoving()) {
-            const c = h.map.getCenter();
-            h.map.setCenter([c.lng + 0.04, c.lat]);
-          }
-          raf = requestAnimationFrame(spin);
-        };
-        h.map.once('idle', () => (raf = requestAnimationFrame(spin)));
-      }
+      h.map.once('idle', startSpin);
     }).catch((e) => {
       mapFailed = handleMapError(e);
     });
@@ -163,7 +184,8 @@
 
     return () => {
       destroyed = true;
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(spinRaf);
+      document.removeEventListener('visibilitychange', onVisible);
       io.disconnect();
       handle?.destroy();
     };

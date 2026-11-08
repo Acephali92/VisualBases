@@ -108,13 +108,16 @@
     if (!handle || db.status !== 'ready') return;
     handle.highlight(activeCount || filters.q ? new Set(matching.map((b) => b.id)) : null);
   });
+  // selection → open the panel at once (the profile must not wait for the map engine)
+  $effect(() => {
+    if (selected) sheetOpen = true;
+  });
   // selection → camera
   $effect(() => {
     const h = handle;
     if (!h) return;
     if (selected) {
       h.focus([selected.id]);
-      sheetOpen = true;
       const narrow = innerWidth < 820;
       h.map.flyTo({
         center: [selected.lon, selected.lat],
@@ -150,9 +153,25 @@
     handle?.map.flyTo({ center: [10, 30], zoom: innerWidth < 820 ? 0.9 : 1.6, duration: prefersReducedMotion() ? 0 : 1600 });
   }
 
+  /**
+   * The map engine (≈1 MB, seconds of CPU on phones) starts after the first paint. When the page opens with a
+   * profile (a shared link), it waits until the cover image is shown, so the profile appears first.
+   */
+  function whenProfileShown(start: () => void) {
+    const idle = () => ('requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 1500 }) : setTimeout(start, 50));
+    requestAnimationFrame(() => {
+      const img = document.querySelector<HTMLImageElement>('.panel .cover img');
+      if (!img || img.complete) return void idle();
+      const done = () => { clearTimeout(timer); idle(); };
+      const timer = setTimeout(done, 3000);
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+    });
+  }
+
   onMount(() => {
     let destroyed = false;
-    import('../lib/map').then(({ createMap }) => createMap(mapEl, {
+    const startMap = () => import('../lib/map').then(({ createMap }) => createMap(mapEl, {
       detail: '50m',
       center: [10, 30],
       zoom: innerWidth < 820 ? 0.9 : 1.6,
@@ -166,6 +185,7 @@
       mapFailed = handleMapError(e);
       if (mapFailed) sheetOpen = true;
     });
+    whenProfileShown(() => { if (!destroyed) startMap(); });
     return () => {
       destroyed = true;
       handle?.destroy();
@@ -392,10 +412,12 @@
 
   @media (max-width: 820px) {
     .panel {
-      top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 172px; border-radius: 18px 18px 0 0; border-bottom: 0;
-      transition: height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      /* the sheet keeps its height and slides with transform: no layout shift when it opens */
+      top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 72dvh; border-radius: 18px 18px 0 0; border-bottom: 0;
+      transform: translateY(calc(72dvh - 172px));
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .panel.open { height: 72dvh; }
+    .panel.open { transform: none; }
     .grabber { display: flex; justify-content: center; align-items: center; height: 22px; width: 100%; background: none; border: 0; flex: none; padding: 0; }
     .grabber span { width: 42px; height: 5px; border-radius: 3px; background: var(--line); }
     .search-row { padding-top: 2px; }
