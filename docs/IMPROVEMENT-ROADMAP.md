@@ -1,14 +1,164 @@
-# VisualBases – Verbesserungs-Roadmap
+# VisualBases – Roadmap zum Launch und danach
 
-Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollständiges Audit von Repository, Daten (`data/*.json`), Build (`dist/`) und Anwendung im Browser (Playwright, Desktop und iPhone-Emulation, axe-core) sowie die Quellenrecherche zu den 291 Standorten ohne eigene Quelle (`docs/research/SOURCE-RESEARCH.md`).
+Stand: 2026-11-08 · Ersetzt die Fassung vom 2026-11-07; deren Audit-Befunde und Maßnahmentabelle stehen unverändert im [Anhang](#anhang-a-audit-befunde-vom-2026-11-07).
 
-**Prioritäten:** P0 = kritische Fehler und Datenintegrität · P1 = wesentliche Verbesserungen · P2 = funktionale Erweiterungen · P3 = optional.
+**Priorität:** L0 = blockiert den Launch · L1 = erste Woche nach dem Launch · L2 = Ausbau · L3 = Ideen.
 **Aufwand:** XS < 1 h · S ≈ halber Tag · M ≈ 1–2 Tage · L ≈ mehrere Tage.
-**Status:** ✅ umgesetzt (Durchgang 1) · ⏳ wartet auf Freigabe · ❓ braucht Entscheidung der Projektverantwortlichen.
+**Wer:** 👤 Projektverantwortliche (Rechte, Entscheidungen, Kontakte) · 🤖 Claude (Code, Daten, Doku).
 
-## 1. Audit-Befunde
+---
 
-### 1.1 Festgestellte Probleme (nachgewiesen)
+## 0. Ziel und Launch-Definition
+
+**Ziel:** VisualBases macht ausländische Militärstützpunkte weltweit sichtbar und **nachprüfbar**, für Presse, Bildung, Friedensbewegung und interessierte Öffentlichkeit. Der Wert des Projekts liegt nicht in der Menge der Punkte auf der Karte, sondern in der **Glaubwürdigkeit** jeder Angabe: Herkunft, Beleg, Genauigkeit und Korrekturen sind offen gelegt.
+
+**Launch-fähig heißt:** Eine Journalistin, eine Lehrerin oder ein Aktivist kann die Seite heute teilen, ohne dass sie peinlich oder angreifbar ist. Konkret:
+
+| # | Kriterium | Stand |
+|---|---|---|
+| K1 | Seite öffentlich erreichbar, Deploy automatisch und grün | ✅ https://acephali92.github.io/VisualBases/ (HTTP 200, CI & Deploy grün) |
+| K2 | **Rechtlich sauber:** Impressum, Datenschutzhinweis, Lizenzen der Daten und Bilder | ❌ Impressum fehlt · 145 von 164 Bildern ohne Lizenzangabe |
+| K3 | **Daten ohne bekannte grobe Fehler:** 0 Validierungsfehler, keine bekannten Länder- oder Positionsfehler offen | ✅ 0 Fehler; Audit-Pakete 1–4 und Geo-Recherche umgesetzt (PR #11–#14 offen) |
+| K4 | **Transparenz:** Quelle, Belegstatus und Korrekturen je Standort sichtbar; Methodik erklärt | 🟡 im Profil vorhanden; öffentliche Seite „Methodik & Datenqualität“ fehlt |
+| K5 | **Belastbar bei Andrang:** Ortssuche fällt nicht aus, Seite lädt mobil schnell | 🟡 Ortssuche mit Cache, Drosselung und Not-Aus, aber ein öffentlicher Nominatim-Server für alle Nutzer |
+| K6 | **Zugänglich:** keine axe-Verstöße auf den Hauptseiten, Tastaturbedienung | 🟡 axe nur einmalig geprüft, nicht in der CI |
+| K7 | **Daten bleiben aktuell:** wöchentlicher Import läuft und erzeugt prüfbare PRs | ❌ Workflow „Daten aktualisieren“ ist noch nie gelaufen |
+| K8 | **Rückmeldewege funktionieren:** Hinweis- und Korrekturformular, Labels, Kontaktadresse | 🟡 Formulare vorhanden; Labels `hinweis`, `korrektur`, `daten` fehlen; E-Mail unbestätigt |
+
+---
+
+## 1. Was seit dem letzten Stand erledigt ist
+
+- **Datenqualität (Audit 2026-11-08, [data-quality-audit.md](data-quality-audit.md)):**
+  - **Robustheit:** Kaputte Datendateien gehen nicht mehr unbemerkt durch.
+  - **Korrekturen:** halten ihren Ausgangswert fest (`expect`) und melden, wenn sich die Quelle ändert.
+  - **Positionen:** haben eine Genauigkeitsstufe, werden gegen das Gastland geprüft (Natural Earth) und mit Wikidata und OSM abgeglichen. Quellen haben Urteile je Aussagegruppe.
+  - **Bericht:** enthält einen Abschnitt Geografie und einen Verlauf über die Zeit.
+- **Geo-Recherche:**
+  - 25 Warnungen geklärt: 8 Positionen korrigiert, 17 bestätigt.
+  - Libreville (Ghana → Gabun) korrigiert.
+  - Ergebnis: Positionen mit unabhängigem Beleg 118 → 137, geografische Warnungen 24 → 8.
+- **Importer:** übernimmt bei groben Kartenlinks die genauere Koordinate aus dem Beitrag. Laut Probelauf ändern sich damit beim nächsten Import 20 Positionen.
+- **Offene PRs** (in dieser Reihenfolge mergen, jeweils die Basis des nächsten auf `main` umstellen):
+  1. [#11](https://github.com/Acephali92/VisualBases/pull/11) Geo-Prüfungen
+  2. [#12](https://github.com/Acephali92/VisualBases/pull/12) Geo-Recherche
+  3. [#13](https://github.com/Acephali92/VisualBases/pull/13) Importer
+  4. [#14](https://github.com/Acephali92/VisualBases/pull/14) Paket 4
+  5. dieser Roadmap-PR
+
+---
+
+## 2. Launch-Plan: die nächsten Stunden (L0)
+
+Reihenfolge so gewählt, dass nichts aufeinander wartet: Block A und Block B laufen parallel, Block C ist die Abnahme.
+
+### Block A – Projektverantwortliche (👤, ca. 1 Stunde)
+
+| # | Aufgabe | Warum | Aufwand |
+|---|---|---|---|
+| A1 | PR-Kette #11 → #14 (und diesen PR) mergen; nach jedem Merge die Basis des nächsten PR auf `main` stellen | bringt Datenkorrekturen und Prüfungen live | 20 min |
+| A2 | **Impressum-Angaben** schicken: verantwortliche Person oder Verein, Anschrift, E-Mail (§ 5 DDG, § 18 MStV) | rechtliche Pflicht, K2 | 10 min |
+| A3 | **Bildrechte entscheiden** (siehe B2): eigene Archivbilder von visualbases.org freigegeben? Bilder Dritter (Flickr Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Redner-Porträts) bis zur Klärung ausblenden? | K2 | 15 min |
+| A4 | **Settings → Actions → General:** „Read and write permissions“ und „Allow GitHub Actions to create and approve pull requests“; dann „Daten aktualisieren“ einmal manuell starten | K7, wendet die neue Importer-Regel an | 5 min |
+| A5 | **Labels** `hinweis`, `korrektur`, `daten` anlegen; **Branch-Schutz** für `main` (PR + grüne CI) | K8, Schutz vor versehentlichen Direkt-Pushes | 10 min |
+| A6 | **Kontakt-E-Mail** bestätigen (derzeit info@visualbases.org) | K8 | 2 min |
+
+### Block B – Claude (🤖, ca. 2–3 Stunden)
+
+| # | Aufgabe | Ergebnis / Abnahme | Aufwand |
+|---|---|---|---|
+| B1 | **Impressum und Datenschutzerklärung** als eigene Seiten (`#/impressum`, `#/datenschutz`), verlinkt im Fuß jeder Seite und in den statischen Seiten; Datenschutz listet alle externen Dienste (EOX-Satellitenkacheln, Nominatim, GitHub Pages) und betont: kein Tracking, keine Cookies | erscheint mit den Angaben aus A2; Smoke-Test prüft beide Seiten | S |
+| B2 | **Bildrechte absichern:** Feld `rights` in `data/media.json` (`own-archive` · `free-licence` · `google-earth` · `unclear`); `unclear` wird nicht angezeigt, bis geklärt; Validierungsregel `media-rights`; Liste der offenen Fälle in `DATA-SOURCES.md` | kein Bild ohne geklärte Rechte sichtbar; Validierung grün | S |
+| B3 | **Seite „Methodik & Datenqualität“** (`#/methodik`): wie Daten entstehen (Import, Korrekturen, Recherche), Belegstatus und Genauigkeit erklärt, Kennzahlen aus dem Bericht (unabhängig belegte Positionen, Korrekturen, offene Prüfungen) samt Verlauf, Link „Fehler melden“ | macht die Glaubwürdigkeit zum sichtbaren Merkmal (K4); Kennzahlen kommen aus `data-quality-history.json` | S |
+| B4 | **axe in den Smoke-Test** (Startseite, Atlas, Profil, Deine Basis, Über) und gefundene Verstöße beheben | K6; CI schlägt bei neuen Verstößen fehl | S |
+| B5 | **Ortssuche absichern:** PLZ-Index für DE/AT/CH als statische Datei (GeoNames, CC BY 4.0) für die häufigste Eingabe; Nominatim nur noch für Ortsnamen. Not-Aus in `public/config/geocoder.json` dokumentiert | K5; „Deine Basis“ funktioniert auch bei Presseandrang für Postleitzahlen ohne externe Anfrage | S |
+| B6 | **Erster Daten-Update-PR** (nach A4) prüfen: 20 verfeinerte Positionen, `claim-upstream-changed` bei 6 Positions-Claims (dann überflüssige Claims entfernen), neue/geänderte Beiträge | K3, K7 | XS–S |
+| B7 | **Launch-Abnahme:** Smoke-Test Desktop und Mobil, Lighthouse (Performance, A11y, SEO), Vorschaubilder (Open Graph) in Messenger/Mastodon prüfen, englische Oberfläche durchklicken, 404-Verhalten, Offline-Fallback | Protokoll im PR; Go/No-Go nach Block C | S |
+
+### Block C – Go/No-Go und Launch
+
+1. **Go**, wenn: K1–K3 ✅, K4–K8 mindestens 🟡 mit bekanntem Plan, Smoke-Test und axe grün, Bericht 0 Fehler.
+2. **Launch-Paket:** kurzer Ankündigungstext (DE/EN) mit 3 Beispielen, die das Projekt tragen: Ramstein und der Drohnenkrieg, Okinawa, „Deine Basis“. Dazu Vorschaubild und Link auf die Methodik-Seite.
+3. **Kanäle:** Partner benachrichtigen (Stopp Ramstein, World BEYOND War, CND, No to NATO), Einbett-Karte anbieten (Atlas → „Einbetten“).
+4. **Rückfallebene:** Ortssuche per `geocoder.json` abschaltbar; Fehlerseite verweist auf das Hinweisformular; jeder Merge löst ein neues Deployment aus.
+
+---
+
+## 3. Erste Woche nach dem Launch (L1)
+
+| # | Bereich | Maßnahme | Nutzen | Aufwand |
+|---|---|---|---|---|
+| L1-1 | Glaubwürdigkeit | **„Beleg melden“** direkt im Profil (vorausgefülltes Issue mit Standort, Aussagegruppe, Quelle); Liste „228 Positionen ohne unabhängigen Beleg – hilf mit“ auf der Methodik-Seite | verwandelt Leser in Prüfer | S |
+| L1-2 | Glaubwürdigkeit | **Lage im Profil erklären:** Genauigkeitsstufe und Herkunft (`positionFrom`, OSM-Beleg, Korrektur) als kurze Zeile „Position: Anlage, belegt durch OpenStreetMap“ | beantwortet die häufigste Rückfrage der Presse | XS |
+| L1-3 | Daten | **Präsenzart** je Präsenz (fest / Rotation / Zugangsrecht / Übung / gemeinsam / historisch / geplant, Kategorien entschieden) und Filter im Atlas | trennt „Basis“ von „Zugangsrecht“, der häufigste fachliche Einwand | M |
+| L1-4 | Betrieb | **Änderungsprotokoll im Daten-PR** (neue, geänderte, entfernte Standorte, verschobene Positionen mit km) | Updates in Minuten prüfbar | S |
+| L1-5 | Betrieb | Recherche-Workflow: neue Widersprüche und `position-check-stale` automatisch als Issue | nichts bleibt im Bericht liegen | S |
+| L1-6 | Performance | Routen per `import()` nachladen, Länderformen erst bei Bedarf; Globus-Rotation im Hintergrund-Tab stoppen | schnellerer Erstaufruf mobil | S |
+| L1-7 | Qualität | **Warnungen zu Fehlern hochstufen**, sobald 0: `coords-country`, `duplicate-name-near`, `claim-upstream-changed` | Rückfälle blockieren das Deployment | XS |
+| L1-8 | Rechte | Bildrechte der ausgeblendeten Bilder klären, Wikimedia-Rest per Workflow laden | mehr Bilder, rechtssicher | S (👤 + 🤖) |
+
+---
+
+## 4. Ausbau (L2)
+
+| # | Maßnahme | Nutzen | Aufwand |
+|---|---|---|---|
+| L2-1 | **Dossier-Profil** mit Sprungnavigation (Überblick, Lage, Funktionen, Geschichte, Auswirkungen, Widerstand, Bilder, Quellen), Abschnitte nur bei vorhandenen Daten | Recherche, Presse | M |
+| L2-2 | **Export:** Druck/PDF je Profil und Land, gefiltertes GeoJSON/CSV, Quellenverzeichnis, Karten-PNG mit Quellenzeile (EOX-Kacheln nur nicht-kommerziell) | Presse, Bildung | L |
+| L2-3 | **Zeitachse:** Präsenzen über die Jahre (Zeiträume aus `period`, geschlossene Standorte), z. B. Abzug aus Afghanistan 2021, Niger 2024 | Bildung, Analyse | M |
+| L2-4 | **Englische statische Seiten** mit `hreflang`, weitere Sprachen bei Bedarf (ES/FR für Lateinamerika und Afrika) | internationale Reichweite | S–M |
+| L2-5 | **2D-Karte** und Clustering bei niedrigem Zoom | Präsentation, Druck | M |
+| L2-6 | **Vergleich** von Ländern und Standorten per teilbarer URL | Presse, Bildung | M |
+| L2-7 | Restliche Geo-Kandidaten aus dem Beitragsabgleich (Übungsplätze) und das Darmstadt Training Center klären | Datenqualität | S |
+
+---
+
+## 5. Neue Ideen und Ansätze (L3, frei gedacht, vom Ziel her)
+
+Leitfrage: *Was macht VisualBases zur Referenz, die man zitiert, statt zu einer Karte, die man einmal ansieht?*
+
+### Glaubwürdigkeit als Produkt
+- **Öffentliches Korrekturprotokoll:** jede angewandte Korrektur mit Originalwert, Quelle und Datum als Liste und RSS-Feed. Fehler offen zu legen schafft mehr Vertrauen als Fehlerfreiheit zu behaupten.
+- **Versionierte Datenreleases mit DOI** (GitHub Release → Zenodo): monatlich, mit Changelog, CSV/GeoJSON und Lizenz. Forschende können eine feste Version zitieren.
+- **Zitierhilfe** im Profil („So zitieren Sie diesen Eintrag“, mit Datenversion und Abrufdatum).
+- **Abgleich mit amtlichen Listen** als eigene Ansicht: „Der Pentagon-Bericht (BSR) nennt in Land X n Standorte, VisualBases m, davon k nicht im BSR“. Macht Lücken der offiziellen Darstellung sichtbar, sachlich und belegt.
+
+### Mitmachen, ohne die Qualität zu gefährden
+- **Prüf-Warteschlange:** Die Warnungen des Berichts (ohne Beleg, Wikidata-Abweichung, ungefähr) werden zu kleinen Aufgaben („Liegt diese Basis hier? Quelle?“), die man ohne GitHub-Konto per Formular beantworten kann. Übernommen wird weiter nur nach redaktioneller Prüfung.
+- **Lokale Paten:** Initiativen vor Ort übernehmen „ihre“ Standorte (Ramstein, Büchel, Okinawa) und halten Status und Bilder aktuell.
+
+### Reichweite und Bildung
+- **„Deine Basis“ als Einstieg** ausbauen: Teilbild mit Entfernung (vorhanden) plus Link auf das Dossier und eine Handlungsoption (Initiative in der Nähe, Abgeordnete).
+- **Unterrichtsmaterial:** Quiz und Schule mit belegten Aussagen, druckbare Arbeitsblätter je Thema (Atomwaffen, Drohnen, Raketenabwehr), CC BY.
+- **Themenpfade** statt nur Karte: kuratierte Geschichten (Ramstein und Drohnen, nukleare Teilhabe, Pazifik), jede Aussage mit Quelle.
+- **Einbett-Widgets je Land/Region** für Partnerseiten und Lokalpresse.
+
+### Nachhaltiger Betrieb
+- **Öffentliche JSON-API dokumentieren** (die statischen Dateien sind schon eine API): JSON-Schema, Beispiele, Lizenz. Ermöglicht Nachnutzung durch Datenjournalismus.
+- **Änderungsbenachrichtigung** je Standort oder Land (RSS aus dem Daten-Changelog), ohne Konten und ohne Tracking.
+- **Eigene Domain** (`app.visualbases.org`) und ein gespiegelter Geocoder bzw. Fallback-Anbieter für Lastspitzen.
+
+---
+
+## 6. Offene Entscheidungen (👤)
+
+1. **Impressum:** verantwortliche Stelle (A2).
+2. **Bilder:** Freigabe der eigenen Archivbilder; Umgang mit Bildern Dritter bis zur Klärung (A3).
+3. **Anrisstexte der Presseschau:** eigene Zusammenfassungen oder Zitate? (rechtlich relevant bei Zitaten)
+4. **PLZ-Index** für „Deine Basis“ ins Repository aufnehmen (B5): empfohlen.
+5. **Eigene Domain** ja/nein (beeinflusst `SITE_URL`, Vorschaubilder, Sitemap).
+6. **Datenreleases mit DOI** (Zenodo) ja/nein.
+
+Entschieden: Datenlizenz CC BY 4.0 · belegte Befunde direkt korrigieren, Zweifelsfälle als Vorschlag · geschlossene Standorte grau · Präsenzarten fest/Rotation/Zugangsrecht/Übung/gemeinsam/historisch/geplant · Libreville und Ouagadougou korrigiert (2026-11-08).
+
+---
+
+## Anhang A: Audit-Befunde vom 2026-11-07
+
+Unverändert übernommen. Viele Punkte sind inzwischen erledigt; den aktuellen Datenstand zeigen [data-quality-report.md](data-quality-report.md) und [data-quality-audit.md](data-quality-audit.md).
+
+
+### A.1 Festgestellte Probleme (nachgewiesen)
 
 | # | Bereich | Befund | Nachweis |
 |---|---|---|---|
@@ -37,11 +187,10 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 | F23 | Daten | Doppelte oder falsch benannte Einträge: Warrior Preparation Center (2×), „Stock“ statt Storck Barracks, PAE Lamentin Guadeloupe (vermutlich Martinique), „Davis-Monthan AFB“ auf Curaçao, Maritime Component Command Neapel. | Recherche 3.1 |
 | F24 | Quellen | Nach der Recherche haben **199 der 291** Standorte ohne eigene Quelle mindestens einen handgeprüften Beleg für die Präsenz (68 %), 29 nur Kontext oder Widerspruch, **63 weiterhin keinen** – vor allem in Afrika, Südamerika, im Südchinesischen Meer und bei deutschen Fernmeldeanlagen. Die Belege liegen in `data/research/`, noch nicht in der App. | `docs/research/coverage.csv` |
 
-### 1.2 Verbesserungsideen (keine Fehler)
 
-2D-Kartenmodus · Clustering und Heatmap · Zeit- und Qualitätsfilter · Länder- und Standortvergleich · Profile als Dossier mit Sprungnavigation · PDF/PNG-Export · englische statische Seiten mit `hreflang` · Meta-CSP · Lazy-Loading der Routen · Designsystem-Komponenten · Änderungsprotokoll der Daten im Update-PR.
+## Anhang B: Maßnahmentabelle vom 2026-11-07
 
-## 2. Maßnahmen
+Statusspalte auf dem Stand vom 2026-11-07. Die aktuelle Priorisierung steht oben (Abschnitte 2–4).
 
 | Priorität | Bereich | Problem | Verbesserung | Nutzen für | Dateien | Aufwand | Risiko | Abnahmekriterium | Status |
 |---|---|---|---|---|---|---|---|---|---|
@@ -75,53 +224,3 @@ Stand: 2026-11-07 (überarbeitet nach der Quellenrecherche) · Grundlage: vollst
 | P3-1 | Atlas | Idee | Heatmap-Ebene für Konzentrationen | Präsentation | `map.ts` | S | Fehldeutung als „Anzahl Soldaten“ | Legende erklärt die Bedeutung | ⏳ |
 | P3-2 | Sicherheit | Idee | Meta-CSP (GitHub Pages erlaubt keine Header) | – | `index.html` | S | bricht ggf. Worker oder Tiles | Smoke-Test grün | ⏳ |
 | P3-3 | i18n | Idee | Weitere Sprachen, Übersetzungen nachladen | international | `i18n` | M | – | – | ⏳ |
-
-## 3. Datenmodell für Phase II (entschieden: eigene Aussagen-Datei)
-
-`data/bases.json` bleibt das Ziel des automatischen Imports. Handgepflegte Belege liegen getrennt, damit kein Import sie überschreibt:
-
-```jsonc
-// data/claims.json
-[
-  {
-    "id": "ramstein-drone-relay",
-    "base": "ramstein-air-base",            // oder null für allgemeine Aussagen (Story, Quiz)
-    "field": "themes.drones",               // worauf sich die Aussage bezieht
-    "statement": { "de": "…", "en": "…" },
-    "status": "confirmed",                  // confirmed | unconfirmed | disputed | outdated
-    "presence": "permanent",                // permanent | rotational | access | exercise | joint | historical | planned
-    "validFrom": "2013", "validTo": null,   // zeitlicher Bezug
-    "sources": [
-      { "url": "…", "publisher": "…", "published": "2015-04-17", "accessed": "2026-11-07", "type": "media" }
-    ]
-  }
-]
-```
-
-**Startbestand aus der Recherche:** Jede Quelle in `data/research/sources.json` mit `method: manual` wird zu einer Aussage je belegtem Merkmal (`supports` → `confirmed`, `contradicts` → `disputed`/`outdated`, `context` bleibt Anhang). Die Präsenzart wird von Hand ergänzt (Hinweise stehen in `note`). Ein Hilfsskript (`scripts/research/to-claims.mjs`) erzeugt einen Entwurf, die Übernahme erfolgt nach Durchsicht.
-
-`build-data.mjs` hängt die Aussagen an die Standorte. Profile zeigen Status und Quelle je Aussage, und die Validierung prüft die Pflichtfelder. Änderungen bleiben über die Git-Historie nachvollziehbar.
-
-## 4. Entscheidungen der Projektverantwortlichen
-
-1. ~~**Datenlizenz**~~ – entschieden: **CC BY 4.0** (umgesetzt, `data/LICENSE.md`).
-2. **Bilder Dritter:** Freigabe oder Urhebernennung für Flickr (Menwith Hill), „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts der Kongress-Redner.
-3. **Anrisstexte der Presseschau:** Sind es eigene Zusammenfassungen von visualbases.org oder Zitate?
-4. **Korrekturvorschläge in `data/corrections.json`:** Puerto Castilla (Duplikat von Soto Cano oder eigener Ort?), Karlovac (genauer Standort).
-5. **Impressum** (Pflicht für eine deutsche Website).
-6. ~~**Übernahme der Recherche**~~ – entschieden 2026-11-07: **alle belegten Befunde direkt korrigieren** (mit Quelle und Originalwert im Profil); nur nicht ausreichend belegte Fälle bleiben Vorschlag.
-7. ~~**Geschlossene Standorte**~~ – entschieden: **grau in der Karte lassen**, nicht ausblenden.
-8. ~~**Präsenzarten**~~ – entschieden: fest / Rotation / Zugangsrecht / Übung / gemeinsam betrieben / historisch / geplant **passen** (Umsetzung in P1-1 und P1-10).
-
-## 5. Reihenfolge
-
-1. ✅ **Durchgang 1 – P0** (Datenintegrität, Validierung, Precache, WebGL-Fallback)
-2. ✅ **Quellenrecherche** (Recherche-Werkzeuge, 83 geprüfte Quellen, 122 BSR-Urteile, Bericht)
-3. **Datenqualität:** ✅ P1-0 Korrekturen → P1-1 Präsenzart je Präsenz (Kategorien entschieden) → P1-10 Präsenzfilter → P1-2 Belegstatus → P1-3 Bildrechte
-4. **Zugänglichkeit und Performance:** P1-4, P1-5, P1-6, P1-8
-5. **Betrieb, Konsistenz und Doku:** P1-11, P1-7, P1-9
-6. **Atlas:** P2-1, P2-2
-7. **Dossier und Export:** P2-4, P2-5, P2-3
-8. **Rest:** P2-6 bis P2-8, P3
-
-**Begründung der Änderung:** Die Recherche zeigt, dass das größte Risiko für die Glaubwürdigkeit nicht fehlende Quellen allein sind, sondern **falsche und veraltete Angaben** (F20, F21) und die fehlende Unterscheidung der Präsenzart (F22). Deshalb kommen Korrekturvorschläge (P1-0) und der Status-/Präsenzfilter (P1-10) nach vorn. Das Aussagen-Modell wird kleiner (M statt L), weil die Belege für zwei Drittel der Standorte schon vorliegen.
