@@ -178,6 +178,8 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     const pc = positionOf.get(b.id);
     if (pc) {
       b.positionCheck = { status: pc.status, issue: pc.issue, duplicateOf: pc.duplicateOf, proposal: pc.proposal };
+      // a confirmed position carries the evidence of the editorial decision
+      if (pc.status === 'confirmed') Object.assign(b.positionCheck, { source: pc.source, url: pc.url, retrieved: pc.retrieved, note: pc.note });
       if (pc.status === 'proposed') issues.push('position-unverified');
     }
     if (issues.length) b.issues = [...new Set(issues)];

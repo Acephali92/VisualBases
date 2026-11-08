@@ -10,6 +10,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { resolveBases } from '../lib/resolve.mjs';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const RESEARCH = path.join(ROOT, 'data/research');
@@ -39,12 +40,15 @@ export async function readJson(file, fallback) {
 }
 
 /**
- * Records of data/bases.json with two convenience fields for the matching code:
- * `country` – the territory code if there is one (GU, PR, GL …), otherwise the host country –
- * and `nations` – all states with a presence.
+ * Records of data/bases.json with the accepted claims of data/claims.json applied – the checks look at the
+ * published position, name and host (a corrected position must not be checked at its old place) – plus two
+ * convenience fields for the matching code: `country` – the territory code if there is one (GU, PR, GL …),
+ * otherwise the host country – and `nations` – all states with a presence.
  */
 export async function loadBases() {
-  const bases = await readJson(path.join(ROOT, 'data/bases.json'), []);
+  const raw = await readJson(path.join(ROOT, 'data/bases.json'), []);
+  const claims = (await readJson(path.join(ROOT, 'data/claims.json'), {})).claims ?? [];
+  const { bases } = resolveBases(raw.filter((b) => b.host && Array.isArray(b.presences)), { claims: claims.filter((c) => c.status === 'accepted') });
   return bases.map((b) => ({ ...b, country: b.host?.territory ?? b.host?.country ?? null, nations: (b.presences ?? []).map((p) => p.nation) }));
 }
 

@@ -2,6 +2,19 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 3 (Geo-Prüfungen)
+
+### Geändert
+- **Libreville:** Vorschlag `libreville-host` angenommen (Entscheidung 2026-11-08): Gastland Gabun statt Ghana.
+- Die Recherche-Skripte prüfen die **korrigierte** Position, Namen und Gastland (angenommene Claims angewandt); vorher galten die Prüfungen bei korrigierten Positionen der alten Stelle. `docs/research/coverage.csv` zeigt entsprechend die korrigierten Werte.
+
+### Hinzugefügt
+- **Koordinate ↔ Gastland** (`scripts/lib/geo-check.mjs`): Ländergrenzen Natural Earth 1:10m (`world-atlas`), Küsten- und Grenztoleranz, umstrittene Gebiete getrennt, Datumsgrenze berücksichtigt. Neue Warnungen `coords-country`, `coords-country-disputed`, `coords-offshore`. Auf den aufgelösten Daten: kein Länderwiderspruch, 3 Positionen auf See (Bahrain-Sammeleintrag, Pratas-Inseln, Second Thomas Shoal).
+- **Recherche-Signale in der Validierung:** `position-wikidata-far` (11), `position-osm-none` (9), `position-check-stale` (1: Exmouth, OSM-Prüfung galt der alten Position).
+- **`duplicate-name-near`:** gleicher kennzeichnender Name, 200 m–3 km. Treffer: Bann Communications Station / Station 2 (2,6 km).
+- **Redaktionell bestätigte Positionen:** `corrections.json` mit `status: "confirmed"` quittiert Geo-Warnungen (alle oder die in `rules` genannten) und erscheint im Profil als „✓ Position redaktionell geprüft“ mit Link zum Beleg.
+- Alle neuen Regeln sind Warnungen: 0 Fehler, 431 Warnungen (vorher 406).
+
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 2 (redaktionelle Schicht)
 
 Freigegeben von den Projektverantwortlichen am 2026-11-08. `data/bases.json` ist unverändert; kein angewandter Wert ändert sich.

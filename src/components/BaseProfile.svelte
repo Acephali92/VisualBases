@@ -151,6 +151,7 @@
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
       {#if base.origin.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
       {#if base.positionCheck?.status === 'proposed'}<span class="tag warn">⚠ {t('base.positionUnverified')}</span>{/if}
+      {#if base.positionCheck?.status === 'confirmed'}<a class="tag" href={base.positionCheck.url} target="_blank" rel="noopener" title={[base.positionCheck.source, base.positionCheck.note].filter(Boolean).join(' – ')}>✓ {t('base.positionConfirmed')}</a>{/if}
       {#if base.corrections?.length}<span class="tag">✎ {t('base.corrections')}: {base.corrections.length}</span>{/if}
       {#each base.listedIn.filter((l) => l.startsWith('bsr')).slice(0, 1) as l}<span class="tag">📄 {tl('listing', l)}</span>{/each}
     </div>

@@ -15,12 +15,17 @@ import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_IS
 import { distanceKm } from '../src/lib/geo.ts';
 import { resolveBases, CLAIM_FIELDS } from './lib/resolve.mjs';
 import { SITE_TYPE_BY_CAT, FEATURE_BY_TERM, NATION_BY_TAG, CO_USER_BY_TAG, ORGANISATION_BY_TAG, THEME_BY_TAG, ACTIVITY_BY_TAG } from './import-visualbases.mjs';
-import { SOURCE_TYPES, CLAIMS, VERDICTS, readJson } from './research/lib.mjs';
+import { SOURCE_TYPES, CLAIMS, VERDICTS, readJson, tokens, placeOnlyName } from './research/lib.mjs';
+import { checkCountry, researchSignals, loadCountries } from './lib/geo-check.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 /** distance below which two different records count as the same place */
 export const DUPLICATE_METERS = 200;
+/** two records with the same distinctive name closer than this are reported as possible duplicates */
+export const NAME_DUPLICATE_KM = 3;
+/** geographic warnings an editor can settle with a "confirmed" entry in data/corrections.json */
+export const GEO_RULES = ['coords-country', 'coords-country-disputed', 'coords-offshore', 'position-osm-none', 'position-wikidata-far', 'duplicate-name-near'];
 /** site types that stand for several facilities, so sharing a position with a member is expected */
 const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
@@ -94,7 +99,10 @@ export function validateClaims(claims, byId, err, warn = () => {}) {
 /**
  * @returns {{ errors: {rule:string, id?:string, msg:string}[], warnings: {rule:string, id?:string, msg:string}[], stats: Record<string, number> }}
  */
-export function validate({ bases, media = {}, wikimedia = {}, news = [], movement = {}, corrections = {}, claims = [], research = {}, fileExists = () => true }) {
+/**
+ * countries: polygons from scripts/lib/geo-check.mjs (loadCountries); without them the country check is skipped
+ */
+export function validate({ bases, media = {}, wikimedia = {}, news = [], movement = {}, corrections = {}, claims = [], research = {}, countries = null, fileExists = () => true }) {
   const errors = [];
   const warnings = [];
   const err = (rule, msg, id) => errors.push({ rule, id, msg });
@@ -111,6 +119,10 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   const byId = new Map(bases.map((b) => [b.id, b]));
   const reviewed = new Set((corrections.positions ?? []).map((c) => c.id));
   const unverified = new Set((corrections.positions ?? []).filter((c) => c.status === 'proposed').map((c) => c.id));
+  // editorially confirmed positions settle geographic warnings (all of them, or the listed rules)
+  const confirmed = new Map((corrections.positions ?? []).filter((c) => c.status === 'confirmed').map((c) => [c.id, c.rules ?? GEO_RULES]));
+  let settled = 0;
+  const geoWarn = (rule, msg, id) => { if (confirmed.get(id)?.includes(rule)) settled++; else warn(rule, msg, id); };
   const inVocab = (dim, value, rule, id) => { if (!V[dim].has(value)) err(rule, `unknown ${dim} "${value}"`, id); };
 
   for (const b of bases) {
@@ -226,6 +238,32 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     }
   }
 
+  // same distinctive name close by (beyond the 200 m duplicate check): possibly one facility posted twice
+  const nameKey = (b) => [...new Set(tokens(b.name))].sort().join(' ');
+  for (let i = 0; i < list.length; i++) {
+    for (let j = i + 1; j < list.length; j++) {
+      const a = list[i], c = list[j];
+      if (Math.abs(a.lat - c.lat) > 0.05 || Math.abs(a.lon - c.lon) > 0.08) continue;
+      const d = meters(a, c);
+      if (d < DUPLICATE_METERS || d > NAME_DUPLICATE_KM * 1000) continue;
+      const key = nameKey(a);
+      if (!key || key !== nameKey(c) || placeOnlyName(a.name) || placeOnlyName(c.name)) continue;
+      const rel = (x, y) => (x.relations ?? []).some((r) => r.id === y.id);
+      if (AGGREGATE.has(a.siteType) || AGGREGATE.has(c.siteType) || rel(a, c) || rel(c, a) || reviewed.has(a.id) || reviewed.has(c.id)) continue;
+      if ([a, c].some((x) => (x.issues ?? []).includes('duplicate-entry'))) continue;
+      if (confirmed.get(c.id)?.includes('duplicate-name-near')) { settled++; continue; }
+      geoWarn('duplicate-name-near', `same name as ${c.id} ("${c.name}"), ${(d / 1000).toFixed(1)} km apart – one facility posted twice?`, a.id);
+    }
+  }
+
+  // coordinates against the host country, and the automatic research checks (data/research/checks.json)
+  for (const b of list) {
+    if (countries) { const r = checkCountry(b, countries); if (r) geoWarn(r.rule, r.msg, b.id); }
+    for (const s of researchSignals(b, research.checks?.[b.id])) {
+      if (s.rule === 'position-check-stale') warn(s.rule, s.msg, b.id); else geoWarn(s.rule, s.msg, b.id);
+    }
+  }
+
   // corrections layer (schema: docs/DATA-QUALITY.md)
   for (const c of corrections.positions ?? []) {
     const where = `corrections.json "${c.id}"`;
@@ -241,6 +279,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     }
     // a confirmed position is an editorial decision and needs its own evidence
     if (c.status === 'confirmed' && (!c.source || !/^https?:\/\//.test(c.url ?? '') || !DATE.test(c.retrieved ?? ''))) err('corrections', `${where}: confirmed entries need source, url and retrieved`, c.id);
+    if (c.rules !== undefined && (!Array.isArray(c.rules) || c.rules.some((r) => !GEO_RULES.includes(r)))) err('corrections', `${where}: rules must list rules of ${GEO_RULES.join(', ')}`, c.id);
+    if (c.rules !== undefined && c.status !== 'confirmed') err('corrections', `${where}: rules only apply to confirmed entries`, c.id);
   }
 
   // media and licences
@@ -305,6 +345,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     approximate: list.filter((b) => b.approx).length,
     precision: Object.fromEntries(POSITION_PRECISIONS.map((p) => [p, list.filter((b) => (b.positionPrecision ?? (b.approx ? 'town' : 'reference')) === p).length])),
     upstreamChanged: warnings.filter((w) => w.rule === 'claim-upstream-changed').length,
+    positionConfirmed: [...confirmed.keys()].filter((id) => byId.has(id)).length,
+    geoSettled: settled,
     images: Object.keys(media).length,
     imagesWithLicence: Object.values(media).filter((m) => m.license).length,
     news: news.length,
@@ -339,6 +381,7 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     `| Position ungefähr | ${stats.approximate} |`,
     `| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | ${['site', 'reference', 'town', 'region'].map((p) => stats.precision?.[p] ?? 0).join(' / ')} |`,
     `| Korrekturen, deren Quellwert sich inzwischen geändert hat | ${stats.upstreamChanged ?? 0} |`,
+    `| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | ${stats.positionConfirmed ?? 0} / ${stats.geoSettled ?? 0} |`,
     `| Bilder / davon mit Lizenzangabe | ${stats.images} / ${stats.imagesWithLicence} |`,
     `| Meldungen | ${stats.news} |`,
     `| **Fehler** | **${errors.length}** |`,
@@ -378,6 +421,7 @@ async function main() {
       checks: await read('data/research/checks.json', {}),
       bsrReview: await read('data/research/bsr-review.json', {}),
     },
+    countries: loadCountries(),
     fileExists: (rel) => existsSync(path.join(ROOT, 'public', rel)),
   });
   result.errors.unshift(...fileErrors);

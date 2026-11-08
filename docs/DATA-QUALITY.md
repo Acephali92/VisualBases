@@ -41,7 +41,9 @@ Stand 2026-11-07: Die Datei enthält keine offenen Einträge. Die beiden früher
 | `issue` | ja | `duplicate-in-source` · `copied-coordinates` · `wrong-country` · `off-site` (Referenzpunkt neben der Anlage) · `imprecise` (nur Ort/Region bekannt) · `shared-site` (mehrere Einträge teilen sich legitim einen Standort) |
 | `duplicateOf` | nein | existierender Standort |
 | `proposal` | nein | `lat`/`lon` gültig, `source`, `url` (http/https), optional `precision` (`site` · `reference` · `town` · `region`) und `retrieved` (Datum) |
-| `source`, `url`, `retrieved` | bei `confirmed` | Beleg für die redaktionelle Entscheidung |
+| `source`, `url`, `retrieved` | bei `confirmed` | Beleg für die redaktionelle Entscheidung; das Profil zeigt „✓ Position redaktionell geprüft“ mit Link |
+| `note` | nein | Begründung (z. B. „Riff, Position korrekt“) |
+| `rules` | nein, nur bei `confirmed` | welche Geo-Warnungen der Eintrag quittiert (`coords-country`, `coords-country-disputed`, `coords-offshore`, `position-osm-none`, `position-wikidata-far`, `duplicate-name-near`); ohne `rules` alle |
 
 Die Vokabulare stehen in `src/lib/taxonomy.ts` (`POSITION_CHECK_STATUSES`, `POSITION_ISSUES`, `POSITION_PRECISIONS`). Jeder Eintrag, unabhängig vom Status, nimmt den Standort aus der Dublettenprüfung heraus (`duplicate-position-reviewed`).
 
@@ -84,6 +86,24 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 `coords-precision`, `coords-approx` und die Dublettenprüfung laufen auf den **aufgelösten** Datensätzen, also mit den angenommenen `position`-Claims. Die Kennzahl „Position ungefähr“ zählt deshalb auch Positionen, die ein Claim als ungefähr setzt; „Position ungeprüft“ zählt nur Einträge mit `status: "proposed"`.
 
 Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
+
+### Geografische Plausibilität (Warnungen)
+
+Läuft in `npm run validate` auf den aufgelösten Datensätzen (`scripts/lib/geo-check.mjs`, offline):
+
+| Regel | Prüfung | Grundlage |
+|---|---|---|
+| `coords-country` | Koordinate liegt in einem anderen Staat als dem Gastland bzw. Gebiet (Grenzen und Küsten mit 5–10 km Toleranz) | Ländergrenzen Natural Earth 1:10m (`world-atlas`, ohnehin Abhängigkeit der App) |
+| `coords-country-disputed` | Koordinate liegt in einem umstrittenen Gebiet, das auch das Gastland beansprucht (Spratly-Inseln, Scarborough-Riff, Taiwan, Westsahara …): politische Frage, kein Datenfehler | wie oben |
+| `coords-offshore` | auf See, kein Land im Umkreis von 10 km (Riffe, Kleinstinseln, Sammeleinträge) | wie oben |
+| `position-osm-none` | OpenStreetMap zeigt im Umkreis von 3 km weder Militärgelände noch Flugplatz | `data/research/checks.json` (`osm-check.mjs`) |
+| `position-wikidata-far` | Koordinate des zugeordneten Wikidata-Objekts liegt mehr als 5 km (Flugplätze, Übungsplätze: 15 km) entfernt; Objekte für Orte und Staaten zählen nicht | `checks.json` (`wikidata.mjs`) |
+| `position-check-stale` | die OSM-Prüfung gilt einer anderen Position (z. B. vor einer Korrektur) und wird nicht ausgewertet | `checks.json` |
+| `duplicate-name-near` | gleicher kennzeichnender Name (ohne reine Ortsnamen), 200 m bis 3 km auseinander, ohne Relation: eine Anlage zweimal erfasst? | `bases.json` |
+
+Sammeleinträge (`garrison`, `region-cluster`) und ungefähre Positionen (`town`, `region`) werden nicht mit OSM und Wikidata abgeglichen. Geprüfte Fehlalarme quittiert ein Eintrag `status: "confirmed"` in `data/corrections.json` (mit Quelle, optional `rules`); der Bericht zählt die quittierten Warnungen. Die Recherche-Skripte (`scripts/research/*`) prüfen seit 2026-11-08 die **korrigierte** Position und das korrigierte Gastland (angenommene Claims angewandt).
+
+Gegenprobe beim Einführen: Auf den Rohdaten findet `coords-country` genau die drei schon über Claims korrigierten Fälle (`librevillegabon`, `camp-ayanganna`, `sarajevo-military-airport`), auf den aufgelösten Daten keinen.
 
 ## Importer-Regeln, die Fehler der Quelle abfangen
 
@@ -128,6 +148,7 @@ Allgemein steht jede Koordinate für einen Referenzpunkt aus dem Kartenlink der 
 | Kennzeichen | Bedeutung |
 |---|---|
 | ⚠ Position ungeprüft | Eintrag in `corrections.json` mit `status: "proposed"`, mit Grund und Vorschlag |
+| ✓ Position redaktionell geprüft | Eintrag in `corrections.json` mit `status: "confirmed"`, verlinkt auf den Beleg |
 | ≈ Position ungefähr | von Hand geokodiert, weil die Quelle keine Koordinate enthält |
 | ⚠ Eintrag wird geprüft | auf visualbases.org als „Review required“ markiert |
 | 📄 Im Pentagon-Bericht gelistet | Quelle: Base Structure Report (BSR) |

@@ -97,7 +97,7 @@ Sammler: manual 125, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 | EE | 4 | 3 | 0 | 1 | 0 |
 | RO | 4 | 3 | 0 | 1 | 0 |
 
-Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62 belegt.
+Weitere 69 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62 belegt.
 
 ### Automatische Prüfungen (alle Standorte)
 
@@ -120,9 +120,9 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Northwest Cape Exmouth: Naval Comm. Station Holt** (`naval-comm-station-exmouth`, AU): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Pirmasens: US Army Medical Material Center Europe** (`medical-material-center-europe`, DE): Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.
 - **Base aérienne 188 Colonel Émile Massart** (`base-aerienne-188-djibouti`, DJ): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.
-- **Guayana: Camp Ayanganna** (`camp-ayanganna`, GF): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.
-- **Libreville** (`librevillegabon`, GH): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
-- **Base Aérea Coronel Enrique Soto Cano** (`puerto-castilla-honduras`, HN): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Guayana: Camp Ayanganna** (`camp-ayanganna`, GY): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.
+- **Libreville** (`librevillegabon`, GA): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
+- **Puerto Castilla (Honduras)** (`puerto-castilla-honduras`, HN): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Karlovac** (`karlovac-croatia-2`, HR): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Muwaffaq Salti Air Base, Al Azraq** (`muwaffaq-salti-air-base-al-azraq-jordan`, JO): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Okinawa, Takae: Jungle Warfare Training Center** (`jungle-warfare-training-center`, JP): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.

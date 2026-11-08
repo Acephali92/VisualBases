@@ -135,6 +135,11 @@ export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
     issue: PositionIssue;
     duplicateOf?: string;
     proposal?: { lat: number; lon: number; precision: PositionPrecision; source: string; url: string; retrieved: string };
+    /** evidence of a confirmed position (status "confirmed") */
+    source?: string;
+    url?: string;
+    retrieved?: string;
+    note?: string;
   };
   corrections?: Correction[];
   /** proposed corrections from data/claims.json – not applied, shown as review notes */
