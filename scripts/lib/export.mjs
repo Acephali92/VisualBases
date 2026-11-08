@@ -55,7 +55,7 @@ export const CSV_COLUMNS = {
   corrections: (b) => (b.corrections ?? []).map((c) => c.id),
   issues: (b) => b.issues,
   wikipedia_en: (b) => b.wikipedia?.en,
-  position_check: (b) => (b.positionCheck ? `unverified:${b.positionCheck.issue}` : b.approx ? 'approximate' : ''),
+  position_check: (b) => (b.positionCheck?.status === 'proposed' ? `unverified:${b.positionCheck.issue}` : b.approx ? 'approximate' : ''),
   origin: (b) => b.origin.url,
   lastmod: (b) => b.origin.lastmod,
   last_checked: (b) => b.lastChecked,

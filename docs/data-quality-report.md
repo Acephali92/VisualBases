@@ -1,6 +1,6 @@
 # Datenqualitätsbericht
 
-Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-07. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
+Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
 
 ## Überblick
 
@@ -15,11 +15,11 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-07. Regeln: [DATA
 | Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
 | Position ungeprüft (corrections.json) | 0 |
-| Position ungefähr | 5 |
+| Position ungefähr | 8 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
-| Warnungen | 404 |
+| Warnungen | 406 |
 
 ## Fehler
 
@@ -196,10 +196,9 @@ Keine.
 - `principe-island-sao-tome`: review-on-origin
 - `taiwan`: review-on-origin
 
-### `coords-precision` (9)
+### `coords-precision` (8)
 
 - `herat-unnamed`: low precision (34.2034, 62.25)
-- `naval-comm-station-exmouth`: low precision (-21.8456, 114.3)
 - `eichbuck-illesheim`: low precision (49.44, 10.4089)
 - `kapaun-air-station-kaiserslautern`: low precision (49.43, 7.7127)
 - `raf-gibraltar`: low precision (36.15, -5.3496)
@@ -207,6 +206,17 @@ Keine.
 - `camp-kinser-okinawa`: low precision (26.2586, 127.7)
 - `kadena-ammunition-okinawa`: low precision (26.3989, 127.81)
 - `ramsund-naval-station`: low precision (68.46, 16.5371)
+
+### `coords-approx` (8)
+
+- `gitmo-guantanamo-bay`: approximate position (geocoded by hand)
+- `raf-akrotiri`: approximate position (geocoded by hand)
+- `camp-century-greenland`: approximate position (geocoded by hand)
+- `puerto-castilla-honduras`: approximate position (set by a position claim)
+- `karlovac-croatia-2`: approximate position (set by a position claim)
+- `jungle-warfare-training-center`: approximate position (set by a position claim)
+- `white-beach-okinawa`: approximate position (geocoded by hand)
+- `inezgane-airport`: approximate position (geocoded by hand)
 
 ### `issue-multiple-site-types` (6)
 
@@ -225,14 +235,6 @@ Keine.
 - news item without exact date: "Korea war bases: U.S. in Pyeongtaek tops the charts"
 - news item without exact date: "US bases on Guam"
 - news item without exact date: "Was haben US-Biolaboratorien in der Ukraine zu suchen?"
-
-### `coords-approx` (5)
-
-- `gitmo-guantanamo-bay`: approximate position (geocoded by hand)
-- `raf-akrotiri`: approximate position (geocoded by hand)
-- `camp-century-greenland`: approximate position (geocoded by hand)
-- `white-beach-okinawa`: approximate position (geocoded by hand)
-- `inezgane-airport`: approximate position (geocoded by hand)
 
 ### `issue-continent-check` (5)
 
@@ -263,7 +265,7 @@ Keine.
 
 - `camp-ayanganna`: out-of-scope-candidate
 
-### `duplicate-position-linked` (1)
+### `duplicate-position-reviewed` (1)
 
-- `de-kl-warrior-preparation-center`: same position as warrior-preparation-center-einsiedlerhof (194 m)
+- `de-kl-warrior-preparation-center`: same position as warrior-preparation-center-einsiedlerhof (194 m) – de-kl-warrior-preparation-center is marked as duplicate entry in claims.json
 

@@ -23,8 +23,19 @@ export const VERDICTS = ['supports', 'contradicts', 'context', 'unreviewed'];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/**
+ * Read a JSON file. Only a missing file falls back to `fallback`; an unreadable or malformed file throws,
+ * so that a broken data file can never be mistaken for an empty one (and overwritten or skipped silently).
+ */
 export async function readJson(file, fallback) {
-  try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch { return fallback; }
+  let text;
+  try { text = await fs.readFile(file, 'utf8'); } catch (e) {
+    if (e.code === 'ENOENT') return fallback;
+    throw e;
+  }
+  try { return JSON.parse(text); } catch (e) {
+    throw new Error(`${path.relative(ROOT, file) || file}: invalid JSON (${e.message})`);
+  }
 }
 
 /**

@@ -11,22 +11,21 @@ import fs from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { VOCABULARIES, TERRITORY_SOVEREIGN, ids } from '../src/lib/taxonomy.ts';
+import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, ids } from '../src/lib/taxonomy.ts';
+import { distanceKm } from '../src/lib/geo.ts';
 import { resolveBases, CLAIM_FIELDS } from './lib/resolve.mjs';
 import { SITE_TYPE_BY_CAT, FEATURE_BY_TERM, NATION_BY_TAG, CO_USER_BY_TAG, ORGANISATION_BY_TAG, THEME_BY_TAG, ACTIVITY_BY_TAG } from './import-visualbases.mjs';
-import { SOURCE_TYPES, CLAIMS, VERDICTS } from './research/lib.mjs';
+import { SOURCE_TYPES, CLAIMS, VERDICTS, readJson } from './research/lib.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 /** distance below which two different records count as the same place */
 export const DUPLICATE_METERS = 200;
+/** site types that stand for several facilities, so sharing a position with a member is expected */
+const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
-const R = 6371000;
-const rad = (d) => (d * Math.PI) / 180;
-function meters(a, b) {
-  const h = Math.sin(rad(b.lat - a.lat) / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(rad(b.lon - a.lon) / 2) ** 2;
-  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
-}
+const meters = (a, b) => distanceKm(a.lat, a.lon, b.lat, b.lon) * 1000;
+const decimals = (x) => String(x).split('.')[1]?.length ?? 0;
 
 const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 /** ISO 3166-1 alpha-2 plus XK (Kosovo, user-assigned but widely used) */
@@ -94,9 +93,18 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   const warnings = [];
   const err = (rule, msg, id) => errors.push({ rule, id, msg });
   const warn = (rule, msg, id) => warnings.push({ rule, id, msg });
+
+  // file structure: a wrong shape must not pass as "nothing to check"
+  if (!Array.isArray(bases)) { err('file-invalid', 'data/bases.json must be a list of records'); bases = []; }
+  else if (!bases.length) err('bases-empty', 'data/bases.json contains no records');
+  if (!Array.isArray(claims)) { err('file-invalid', 'data/claims.json: "claims" must be a list'); claims = []; }
+  if (corrections.positions !== undefined && !Array.isArray(corrections.positions)) { err('file-invalid', 'data/corrections.json: "positions" must be a list'); corrections = {}; }
+  for (const k of ['sources', 'candidates']) if (research[k] !== undefined && !Array.isArray(research[k])) { err('file-invalid', `data/research/${k}.json must be a list`); research = { ...research, [k]: [] }; }
+
   const ids = new Set();
   const byId = new Map(bases.map((b) => [b.id, b]));
   const reviewed = new Set((corrections.positions ?? []).map((c) => c.id));
+  const unverified = new Set((corrections.positions ?? []).filter((c) => c.status === 'proposed').map((c) => c.id));
   const inVocab = (dim, value, rule, id) => { if (!V[dim].has(value)) err(rule, `unknown ${dim} "${value}"`, id); };
 
   for (const b of bases) {
@@ -109,8 +117,7 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     if (typeof b.lat !== 'number' || typeof b.lon !== 'number' || Number.isNaN(b.lat) || Number.isNaN(b.lon)) err('coords-missing', 'missing coordinates', b.id);
     else if (Math.abs(b.lat) > 90 || Math.abs(b.lon) > 180) err('coords-range', `coordinates out of range (${b.lat}, ${b.lon})`, b.id);
     else if (b.lat === 0 && b.lon === 0) err('coords-null-island', 'coordinates are 0,0', b.id);
-    else if ((String(b.lat).split('.')[1]?.length ?? 0) < 3 || (String(b.lon).split('.')[1]?.length ?? 0) < 3) warn('coords-precision', `low precision (${b.lat}, ${b.lon})`, b.id);
-    if (b.approx) warn('coords-approx', 'approximate position (geocoded by hand)', b.id);
+    // precision and approximate positions are checked on the resolved records (below)
 
     // host: sovereign state + optional dependent territory
     const host = b.host ?? {};
@@ -182,29 +189,51 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     for (const b of resolved) for (const i of b.issues ?? []) if (i !== 'position-unverified') warn(`issue-${i}`, i, b.id);
   } catch (e) { err('resolve', `records cannot be resolved: ${e.message}`); }
 
-  // near-duplicate positions (not between a community/facility and its members, not when under review);
-  // checked on the resolved records, so an accepted position claim settles a duplicate
+  // the published position: checked after the claims are applied, so a corrected position is checked too
   const list = (resolved.length ? resolved : bases).filter((b) => typeof b.lat === 'number' && typeof b.lon === 'number');
+  for (const b of list) {
+    const viaClaim = (b.corrections ?? []).some((c) => c.field === 'position');
+    if (decimals(b.lat) < 3 || decimals(b.lon) < 3) warn('coords-precision', `low precision (${b.lat}, ${b.lon})${viaClaim ? ' – set by a claim' : ''}`, b.id);
+    if (b.approx) warn('coords-approx', viaClaim ? 'approximate position (set by a position claim)' : 'approximate position (geocoded by hand)', b.id);
+  }
+
+  // near-duplicate positions (not between an aggregate and its members, not when under review);
+  // checked on the resolved records, so an accepted position claim settles a duplicate
   for (let i = 0; i < list.length; i++) {
     for (let j = i + 1; j < list.length; j++) {
       const a = list[i], c = list[j];
       if (Math.abs(a.lat - c.lat) > 0.01 || Math.abs(a.lon - c.lon) > 0.01) continue;
       const d = meters(a, c);
       if (d >= DUPLICATE_METERS) continue;
-      const agg = (x) => x.siteType === 'garrison' || x.siteType === 'region-cluster' || x.siteType === 'special-facility';
       const rel = (x, y) => (x.relations ?? []).some((r) => r.id === y.id);
-      const linked = agg(a) || agg(c) || rel(a, c) || rel(c, a);
+      const linked = AGGREGATE.has(a.siteType) || AGGREGATE.has(c.siteType) || rel(a, c) || rel(c, a);
+      const facility = a.siteType === 'special-facility' || c.siteType === 'special-facility';
+      // a record marked as duplicate entry by an accepted claim is settled editorially as well
+      const duplicateEntry = [a, c].find((x) => (x.issues ?? []).includes('duplicate-entry'));
       if (reviewed.has(a.id) || reviewed.has(c.id)) warn('duplicate-position-reviewed', `same position as ${c.id} (${Math.round(d)} m) – listed in corrections.json`, a.id);
+      else if (duplicateEntry) warn('duplicate-position-reviewed', `same position as ${c.id} (${Math.round(d)} m) – ${duplicateEntry.id} is marked as duplicate entry in claims.json`, a.id);
       else if (linked) warn('duplicate-position-linked', `same position as ${c.id} (${Math.round(d)} m)`, a.id);
+      // a special facility often lies inside a base – but without a relation it may also be a second post on the same site
+      else if (facility) warn('duplicate-position-facility', `same position as ${c.id} (${Math.round(d)} m) – add a relation or an entry in data/corrections.json`, a.id);
       else err('duplicate-position', `same position as ${c.id} (${Math.round(d)} m) – check source or add to data/corrections.json`, a.id);
     }
   }
 
-  // corrections layer
+  // corrections layer (schema: docs/DATA-QUALITY.md)
   for (const c of corrections.positions ?? []) {
+    const where = `corrections.json "${c.id}"`;
     if (!byId.has(c.id)) err('corrections', `corrections.json refers to unknown id "${c.id}"`, c.id);
+    if (!POSITION_CHECK_STATUSES.includes(c.status)) err('corrections', `${where}: status must be one of ${POSITION_CHECK_STATUSES.join(', ')}`, c.id);
+    if (!POSITION_ISSUES.includes(c.issue)) err('corrections', `${where}: issue must be one of ${POSITION_ISSUES.join(', ')}`, c.id);
     if (c.duplicateOf && !byId.has(c.duplicateOf)) err('corrections', `duplicateOf "${c.duplicateOf}" does not exist`, c.id);
-    if (c.proposal && (Math.abs(c.proposal.lat) > 90 || Math.abs(c.proposal.lon) > 180 || !c.proposal.source || !c.proposal.url)) err('corrections', 'proposal needs valid lat/lon, source and url', c.id);
+    if (c.proposal) {
+      const p = c.proposal;
+      if (!(Math.abs(p.lat) <= 90) || !(Math.abs(p.lon) <= 180) || !p.source || !/^https?:\/\//.test(p.url ?? '')) err('corrections', `${where}: proposal needs valid lat/lon, source and url`, c.id);
+      if (p.precision !== undefined && !POSITION_PRECISIONS.includes(p.precision)) err('corrections', `${where}: precision must be one of ${POSITION_PRECISIONS.join(', ')}`, c.id);
+      if (p.retrieved !== undefined && !DATE.test(p.retrieved)) err('corrections', `${where}: invalid retrieval date "${p.retrieved}"`, c.id);
+    }
+    // a confirmed position is an editorial decision and needs its own evidence
+    if (c.status === 'confirmed' && (!c.source || !/^https?:\/\//.test(c.url ?? '') || !DATE.test(c.retrieved ?? ''))) err('corrections', `${where}: confirmed entries need source, url and retrieved`, c.id);
   }
 
   // media and licences
@@ -265,8 +294,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     proposals: resolved.reduce((n, b) => n + (b.proposals?.length ?? 0), 0),
     withIssues: resolved.filter((b) => (b.issues ?? []).some((i) => i !== 'position-unverified')).length,
     contextSites: resolved.filter((b) => b.scope === 'domestic').length,
-    positionUnverified: reviewed.size,
-    approximate: bases.filter((b) => b.approx).length,
+    positionUnverified: [...unverified].filter((id) => byId.has(id)).length,
+    approximate: list.filter((b) => b.approx).length,
     images: Object.keys(media).length,
     imagesWithLicence: Object.values(media).filter((m) => m.license).length,
     news: news.length,
@@ -319,7 +348,11 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
 }
 
 async function main() {
-  const read = async (f, fallback) => { try { return JSON.parse(await fs.readFile(path.join(ROOT, f), 'utf8')); } catch { return fallback; } };
+  // a missing optional file is fine, an unreadable or malformed one is an error (never "empty")
+  const fileErrors = [];
+  const read = async (f, fallback) => {
+    try { return await readJson(path.join(ROOT, f), fallback); } catch (e) { fileErrors.push({ rule: 'file-invalid', msg: e.message }); return fallback; }
+  };
   const result = validate({
     bases: await read('data/bases.json', []),
     media: await read('data/media.json', {}),
@@ -336,6 +369,7 @@ async function main() {
     },
     fileExists: (rel) => existsSync(path.join(ROOT, 'public', rel)),
   });
+  result.errors.unshift(...fileErrors);
   const args = process.argv.slice(2);
   const out = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
   if (out) await fs.writeFile(path.resolve(ROOT, out), report(result) + '\n');

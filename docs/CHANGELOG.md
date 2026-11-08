@@ -2,6 +2,20 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 1
+
+Audit und priorisierter Verbesserungsvorschlag: [docs/data-quality-audit.md](data-quality-audit.md). Umgesetzt sind die notwendigen Punkte ohne Datenänderung; `data/*.json` ist unverändert.
+
+### Behoben
+- **Kaputte Datendateien gehen nicht mehr unbemerkt durch:** Bisher machten Validierung, `data:build` und die Recherche-Skripte aus einer unlesbaren oder fehlerhaften JSON-Datei stillschweigend eine leere. Ein Syntaxfehler in `claims.json` hätte so alle Korrekturen verworfen, ohne dass ein Fehler gemeldet wurde. Jetzt gilt nur eine *fehlende* optionale Datei als leer; alles andere ist ein Fehler (`file-invalid`, `bases-empty`). Die Recherche-Zusammenführung behält bei unlesbaren Ergebnissen eines Collectors die bisherigen Daten.
+- `coords-precision` und `coords-approx` prüfen die veröffentlichte Position, also nach Anwendung der Claims. Die Kennzahl „Position ungefähr“ steigt dadurch von 5 auf 8 (Puerto Castilla, Karlovac und JWTC sind per Claim als ungefähr gesetzt). „Position ungeprüft“ zählt nur noch `proposed`.
+- CSV-Spalte `position_check`: `unverified:…` nur noch bei `status: "proposed"`.
+
+### Geändert
+- Die Dublettenprüfung nimmt `special-facility` nicht mehr pauschal aus. Ohne Relation gibt es jetzt die Warnung `duplicate-position-facility`; ein angenommener Prüfhinweis `duplicate-entry` gilt als geklärt (`duplicate-position-reviewed`).
+- Das Schema von `data/corrections.json` wird geprüft: Status `proposed | applied | confirmed`, Vokabular für `issue` und `proposal.precision`, Belege für `confirmed` (Vokabulare in `src/lib/taxonomy.ts`).
+- `docs/DATA-QUALITY.md` an den tatsächlichen Stand angeglichen: veraltete Positionstabelle, bisher undokumentierte Regeln (`research-*`, `schema`, `relation-type`, `rule-civilian`, `resolve`), vollständiges Schema von `corrections.json`.
+
 ## [Unreleased] – Korrekturen aus der Quellenrecherche angewandt
 
 ### Geändert

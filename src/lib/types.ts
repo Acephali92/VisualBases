@@ -1,6 +1,6 @@
 import type {
   Activity, ClaimType, EvidenceState, Feature, IssueCode, Listing, Organisation, PresenceRole, PresenceVia,
-  Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent,
+  Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent, PositionCheckStatus, PositionIssue, PositionPrecision,
 } from './taxonomy';
 
 export type { Activity, Feature, Organisation, SiteType, Status, Theme, Continent } from './taxonomy';
@@ -129,10 +129,10 @@ export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
   /** period of (foreign) use, only where documented */
   period?: { from?: string; to?: string };
   positionCheck?: {
-    status: 'proposed' | 'applied';
-    issue: 'duplicate-in-source' | string;
+    status: PositionCheckStatus;
+    issue: PositionIssue;
     duplicateOf?: string;
-    proposal?: { lat: number; lon: number; precision: string; source: string; url: string; retrieved: string };
+    proposal?: { lat: number; lon: number; precision: PositionPrecision; source: string; url: string; retrieved: string };
   };
   corrections?: Correction[];
   /** proposed corrections from data/claims.json – not applied, shown as review notes */
