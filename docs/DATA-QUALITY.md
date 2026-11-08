@@ -113,16 +113,31 @@ Alle 25 geografischen Warnungen der Einführung wurden mit OpenStreetMap (Nomina
 | Ergebnis | Standorte | Umsetzung |
 |---|---|---|
 | Position falsch, OSM-Objekt der Anlage belegt | Robertson Barracks (8,9 km), Bezmer (5,4 km), Money Island (7,3 km, offene See), Second Thomas Shoal (40 km), Aruba (11 km; der Beitrag nennt die Flughafenkoordinate selbst im Text), Camp Shaheen (3,1 km) | angenommene `position`-Claims |
-| Position fraglich, Ermessensfall | Ouagadougou (Wohngebiet 7,9 km östlich des Flughafens) | Vorschlag `ouagadougou-position` |
+| Position fraglich, Ermessensfall | Ouagadougou (Wohngebiet 7,9 km östlich des Flughafens) | Vorschlag `ouagadougou-position`, am 2026-11-08 angenommen (Flughafen) |
 | Position stimmt, Wikidata-Objekt oder -Koordinate falsch | Camp Lemonnier, Redzikowo, Fort Greely, Beale, Maritime Component Command Neapel (Nisida), Dhekelia, Camp Shaheen | `confirmed`, `reference-mismatch` |
 | Position stimmt, OSM erfasst die Anlage nicht als militärisch | Grafenwöhr (Verwaltungsgrenze), Grünstadt (Funkturm) | `confirmed`, `reference-mismatch` |
 | Position stimmt, Insel/Riff fehlt in den Grenzdaten | Pratas, Second Thomas Shoal, Money Island | `confirmed`, `reference-mismatch` |
 | nur Ort oder Region bekannt | Masar-i Scharif (Sammeleintrag), Cartagena (regionaler Kartenlink), Bann Communications Station (laut BSR eigener Standort neben „Station 2“, Position = Ort Bann) | `confirmed`, `imprecise`, mit `precision` |
 | Wikidata-Treffer ist die Stadt | Kristinehamn | Regel angepasst (Objekte vom Typ „urban area“ zählen als Ort) |
 | Sammeleintrag auf See | Bahrain | Regel angepasst (Sammeleinträge werden nicht als „auf See“ gemeldet) |
-| offen | Darmstadt Training Center (geschlossen 2008, Lage nicht belegt) | – |
+| offen | Darmstadt Training Center (geschlossen 2008, Lage nicht belegt; auch den Projektverantwortlichen keine Hinweise bekannt) | – |
 
-Die OSM-Prüfung der korrigierten Positionen (6× `position-check-stale`) erneuert der monatliche Recherche-Workflow.
+Die OSM-Prüfung der korrigierten Positionen (`position-check-stale`) erneuert der monatliche Recherche-Workflow.
+
+### Abgleich mit den Koordinaten in den Originalbeiträgen (2026-11-08)
+
+Der Importer übernimmt den ersten OpenStreetBrowser-Link eines Beitrags (bei kopierten Links den eigenen, `resolveCopiedCoordinates`). Viele Beiträge nennen zusätzlich eine Koordinate im Text oder einen Google-Earth-Link. Ein einmaliger Abgleich aller 365 Beiträge ergab: 297 Beiträge mit weiteren Koordinaten, bei 126 Standorten liegt eine davon mehr als 1 km von der veröffentlichten Position entfernt. Meist sind das andere Anlagen im selben Beitrag (Übersichten, mehrere Standorte), gerundete Google-Earth-Links, Tippfehler im Text (z. B. Guantánamo 75.17 statt -75.17) oder ein anderer Referenzpunkt auf derselben großen Anlage.
+
+Geprüft wurden die vier deutlichsten Fälle:
+
+| Standort | Befund | Umsetzung |
+|---|---|---|
+| Rudninkai | Fehlalarm: Der erste Link ist von Gaižiūnai kopiert, der Importer hat bereits den eigenen genommen | – |
+| Pemba | Position 10 km neben der Marinebasis (OSM „Base Naval de Pemba“) | angenommener Claim `pemba-position` |
+| Gracias a Dios | nur das Departement bekannt, mehrere Landepisten möglich | `confirmed`, `imprecise`, `precision: region` |
+| Vieques | großes früheres Übungsgelände, beide Koordinaten liegen darauf | `confirmed`, `imprecise`, `precision: region` |
+
+Weitere Kandidaten mit einem groben Kartenlink (Zoomstufe 11) und einer genaueren Koordinate im Beitrag, meist Übungsplätze mit 5–15 km Abweichung: Pabradė, Bemowo Piskie, Tapa, Sennelager, Żagań, Popescu, Hohenfels, Munster. Offen ist, ob der Importer bei groben Kartenlinks eine nahe gelegene Text- oder Google-Earth-Koordinate bevorzugen soll (das würde Positionen in `bases.json` beim nächsten Import ändern).
 
 ## Importer-Regeln, die Fehler der Quelle abfangen
 

@@ -11,18 +11,18 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
-| angewandte Korrekturen (claims.json) / offene Vorschläge | 54 / 2 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 56 / 1 |
 | Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
 | Position ungeprüft (corrections.json) | 0 |
-| Position ungefähr | 12 |
-| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 9 / 344 / 9 / 3 |
+| Position ungefähr | 14 |
+| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 11 / 340 / 9 / 5 |
 | Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
-| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 15 / 12 |
+| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 17 / 12 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
-| Warnungen | 418 |
+| Warnungen | 420 |
 
 ## Fehler
 
@@ -199,7 +199,7 @@ Keine.
 - `principe-island-sao-tome`: review-on-origin
 - `taiwan`: review-on-origin
 
-### `coords-approx` (12)
+### `coords-approx` (14)
 
 - `masar-i-sharif-communnity`: approximate position (precision "town", confirmed in corrections.json)
 - `cartagena`: approximate position (precision "region", confirmed in corrections.json)
@@ -208,11 +208,13 @@ Keine.
 - `bann-communications-station`: approximate position (precision "town", confirmed in corrections.json)
 - `camp-century-greenland`: approximate position (geocoded by hand)
 - `puerto-castilla-honduras`: approximate position (precision "town", set by a position claim)
+- `gracias-a-dios-honduras`: approximate position (precision "region", confirmed in corrections.json)
 - `karlovac-croatia-2`: approximate position (precision "town", set by a position claim)
 - `jungle-warfare-training-center`: approximate position (precision "region", set by a position claim)
 - `white-beach-okinawa`: approximate position (geocoded by hand)
 - `inezgane-airport`: approximate position (geocoded by hand)
 - `secon-thomas-shoal`: approximate position (precision "region", set by a position claim)
+- `vieques-island-training-area`: approximate position (precision "region", confirmed in corrections.json)
 
 ### `coords-precision` (8)
 
@@ -225,6 +227,16 @@ Keine.
 - `kadena-ammunition-okinawa`: low precision (26.3989, 127.81)
 - `ramsund-naval-station`: low precision (68.46, 16.5371)
 
+### `position-check-stale` (7)
+
+- `camp-shaheen-camp-mike-spann`: OSM check refers to a position 3.1 km away – run scripts/research/osm-check.mjs again
+- `naval-comm-station-exmouth`: OSM check refers to a position 14.3 km away – run scripts/research/osm-check.mjs again
+- `robertson-barracks`: OSM check refers to a position 8.9 km away – run scripts/research/osm-check.mjs again
+- `aruba`: OSM check refers to a position 11.1 km away – run scripts/research/osm-check.mjs again
+- `ouagadougou`: OSM check refers to a position 7.9 km away – run scripts/research/osm-check.mjs again
+- `bezmer-air-base`: OSM check refers to a position 5.4 km away – run scripts/research/osm-check.mjs again
+- `money-island-south-chinese-sea`: OSM check refers to a position 7.3 km away – run scripts/research/osm-check.mjs again
+
 ### `issue-multiple-site-types` (6)
 
 - `deu-bellheim`: multiple-site-types
@@ -233,15 +245,6 @@ Keine.
 - `i-solbiate-olona`: multiple-site-types
 - `sinjajevina-montenegro`: multiple-site-types
 - `rzeszow`: multiple-site-types
-
-### `position-check-stale` (6)
-
-- `camp-shaheen-camp-mike-spann`: OSM check refers to a position 3.1 km away – run scripts/research/osm-check.mjs again
-- `naval-comm-station-exmouth`: OSM check refers to a position 14.3 km away – run scripts/research/osm-check.mjs again
-- `robertson-barracks`: OSM check refers to a position 8.9 km away – run scripts/research/osm-check.mjs again
-- `aruba`: OSM check refers to a position 11.1 km away – run scripts/research/osm-check.mjs again
-- `bezmer-air-base`: OSM check refers to a position 5.4 km away – run scripts/research/osm-check.mjs again
-- `money-island-south-chinese-sea`: OSM check refers to a position 7.3 km away – run scripts/research/osm-check.mjs again
 
 ### `news-date-vague` (6)
 
@@ -273,11 +276,6 @@ Keine.
 - `money-island-south-chinese-sea`: foreign-without-foreign-presence
 - `pattle-island`: foreign-without-foreign-presence
 
-### `position-osm-none` (2)
-
-- `ouagadougou`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `darmstadt-training-center`: OpenStreetMap shows no military area or aerodrome within 3 km
-
 ### `issue-duplicate-entry` (1)
 
 - `de-kl-warrior-preparation-center`: duplicate-entry
@@ -289,4 +287,8 @@ Keine.
 ### `duplicate-position-reviewed` (1)
 
 - `de-kl-warrior-preparation-center`: same position as warrior-preparation-center-einsiedlerhof (194 m) – de-kl-warrior-preparation-center is marked as duplicate entry in claims.json
+
+### `position-osm-none` (1)
+
+- `darmstadt-training-center`: OpenStreetMap shows no military area or aerodrome within 3 km
 

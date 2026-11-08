@@ -269,7 +269,7 @@ us-camp-castor,US Camp Castor,ML,DE,0,yes,context,,1,1,0,0,21,,,Q912,432.8,,,,"c
 martinique-france,Martinique,MQ,FR,0,yes,verified,presence nation facility,1,0,0,0,17,,,Q16008972,,,,,
 naval-base-fort-saint-louis,"Martinique, Naval Base Fort Saint Louis",MQ,FR,0,yes,verified,presence nation status facility,2,0,0,0,15,,,Q3078054,2.7,,,,Wikidata position 2.7 km away
 pole-aeronautique-etatique,Martinique: Pôle Aéronautique Etatique du Lamentin,MQ,FR,0,yes,verified,presence nation facility,1,0,0,0,17,,,Q16008972,,,,,
-pemba-naval-base,Pemba Naval Base (Mozambique),MZ,US,0,yes,candidates,,0,0,0,0,11,,,Q498048,7.6,,,,Wikidata position 7.6 km away
+pemba-naval-base,Pemba Naval Base (Mozambique),MZ,US,0,yes,context,,1,1,0,0,11,,,Q498048,7.6,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 7.6 km away"
 windhoek-namibia,Windhoek,NA,US,0,yes,candidates,,0,0,0,0,21,,,Q3935,6.1,,,,Wikidata position 6.1 km away
 rsma-nc,"New Caledonia, Koumac: RSMA-NC Adapted Military Service Regiment,",NC,FR,0,no,verified,presence,1,0,0,0,0,,,,,,,,
 us-air-base-201,"Air Base 201, Agadez",NE,US,0,yes,verified,presence nation,2,1,0,0,20,Csl Agadez,,Q389944,3.5,,,,"contradicts (status): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.) | Wikidata position 3.5 km away"

@@ -7,17 +7,21 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 Alle 25 geografischen Warnungen aus Paket 3 recherchiert (OSM/Nominatim, Wikidata, Base Structure Report, Originalbeiträge). Ergebnisse: [DATA-QUALITY.md](DATA-QUALITY.md), Abschnitt „Recherche der Geo-Warnungen“.
 
 ### Geändert
-- **Positionen korrigiert** (angenommene Claims mit OSM-Beleg): Robertson Barracks, Bezmer, Money Island, Second Thomas Shoal, Aruba (Flughafen Reina Beatrix), Camp Shaheen.
+- **Positionen korrigiert** (angenommene Claims mit OSM-Beleg): Robertson Barracks, Bezmer, Money Island, Second Thomas Shoal, Aruba (Flughafen Reina Beatrix), Camp Shaheen, Ouagadougou, Pemba.
 - **Libreville:** Region Zentralafrika statt Westafrika (`libreville-region`).
-- 15 Positionen redaktionell bestätigt (`corrections.json`, `confirmed`): falsches Wikidata-Objekt oder -Koordinate, in OSM nicht als militärisch erfasst, Insel fehlt in den Grenzdaten; drei Einträge, zu denen nur Ort oder Region bekannt ist, sind jetzt als ungefähr gekennzeichnet.
+- 17 Positionen redaktionell bestätigt (`corrections.json`, `confirmed`): falsches Wikidata-Objekt oder -Koordinate, in OSM nicht als militärisch erfasst, Insel fehlt in den Grenzdaten; fünf Einträge, zu denen nur Ort oder Region bekannt ist, sind jetzt als ungefähr gekennzeichnet.
 - Wikidata-Objekte vom Typ „urban area“ zählen als Ort; Objekte, die zugleich Anlage sind, bleiben Anlage. Sammeleinträge werden nicht als „auf See“ gemeldet.
 
 ### Hinzugefügt
 - `corrections.json`: Grund `reference-mismatch` und `precision` für bestätigte Positionen (Genauigkeit festhalten, ohne den Punkt zu verschieben).
 
-### Vorgeschlagen / offen
-- Ouagadougou: Vorschlag, die Position auf den Flughafen zu setzen (`ouagadougou-position`).
+- **Ouagadougou** auf den Flughafen gesetzt (Vorschlag angenommen am 2026-11-08), **Pemba** auf die Marinebasis (10 km).
+- Gracias a Dios und Vieques als regional ungefähr gekennzeichnet.
+- Abgleich aller 365 Originalbeiträge mit den darin genannten Koordinaten (Ergebnis in DATA-QUALITY.md).
+
+### Offen
 - Darmstadt Training Center: Lage nicht belegt.
+- Ob der Importer bei groben Kartenlinks eine genauere Koordinate aus dem Beitrag bevorzugen soll.
 
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 3 (Geo-Prüfungen)
 

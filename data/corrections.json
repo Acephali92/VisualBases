@@ -183,6 +183,26 @@
     "position-osm-none"
    ],
    "precision": "region"
+  },
+  {
+   "id": "gracias-a-dios-honduras",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/gracias-a-dios-honduras/",
+   "retrieved": "2026-11-08",
+   "note": "Der Eintrag bezeichnet nur das Departement Gracias a Dios. Kartenlink (Zoomstufe 11, beim Dorf Laka) und Textkoordinate (15.383333, -83.85, gerundet) liegen 26 km auseinander; in der Gegend gibt es mehrere Landepisten (Puerto Lempira, Mocorón, Durzuna, Cauquira). Welche gemeint ist, ist offen.",
+   "precision": "region"
+  },
+  {
+   "id": "vieques-island-training-area",
+   "status": "confirmed",
+   "issue": "imprecise",
+   "source": "visualbases.org (Beitrag)",
+   "url": "https://visualbases.org/vieques-island-training-area/",
+   "retrieved": "2026-11-08",
+   "note": "Das frühere Übungsgelände der US Navy umfasste große Teile der Insel. Die Position liegt im Osten (früheres Ziel- und Manövergebiet), die Textkoordinate des Beitrags (18.129612, -65.411158) weiter westlich bei Puerto Ferro; beide liegen auf dem Gelände.",
+   "precision": "region"
   }
  ]
 }

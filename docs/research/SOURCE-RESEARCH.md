@@ -48,8 +48,8 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-08._
 | Belegstand nach der Recherche | ohne eigene Quelle (291) | davon ganz ohne Quelle (73) |
 | --- | ---: | ---: |
 | Präsenz von Hand belegt | 199 (68 %) | 55 (75 %) |
-| nur Kontext oder Widerspruch | 34 (12 %) | 12 (16 %) |
-| nur ungeprüfte Hinweise | 52 (18 %) | 0 (0 %) |
+| nur Kontext oder Widerspruch | 35 (12 %) | 12 (16 %) |
+| nur ungeprüfte Hinweise | 51 (18 %) | 0 (0 %) |
 | nichts gefunden | 6 (2 %) | 6 (8 %) |
 
 ### Belegte Aussagen (Standorte ohne eigene Quelle)
@@ -70,9 +70,9 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-08._
 | official | 175 | 175 | 154 | 6 | 15 |
 | academic | 2 | 2 | 2 | 0 | 0 |
 | media | 62 | 60 | 46 | 8 | 8 |
-| geodata | 15 | 15 | 0 | 15 | 0 |
+| geodata | 16 | 16 | 0 | 16 | 0 |
 
-Sammler: manual 132, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
+Sammler: manual 133, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 
 ### Nach Gastland (Standorte ohne eigene Quelle)
 
@@ -112,7 +112,7 @@ Weitere 69 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 | OSM: militärisches Objekt 1–3 km | 17 |
 | OSM: nichts im Umkreis von 3 km | 14 |
 
-### Gefundene Widersprüche (29 Standorte)
+### Gefundene Widersprüche (30 Standorte)
 
 - **Bagram Air Base** (`bagram-air-base`, AF): Status: Bagram has not been a US base since July 2021 (historical).
 - **Camp Marmal / John Pratt, Masar-i Sharif** (`camp-marmal-john-pratt`, AF): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.
@@ -134,6 +134,7 @@ Weitere 69 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Okinawa, Takae: Jungle Warfare Training Center** (`jungle-warfare-training-center`, JP): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Pyeongtaek / Gyeonggi-do: U.S. Army Garrison Humphreys** (`usag-humphreys`, KR): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **US Camp Castor** (`us-camp-castor`, ML): Contradicts nation and status: Camp Castor was a German (UN) camp, not a US camp (the dataset calls it "US Camp Castor"), and it has been closed since December 2023.
+- **Pemba Naval Base (Mozambique)** (`pemba-naval-base`, MZ): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Air Base 201, Agadez** (`us-air-base-201`, NE): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)
 - **Niamey Air Base** (`niamey-air-base`, NE): Status: both US bases in Niger are closed since summer 2024; the dataset still shows them as active. (French forces had already left Niamey at the end of 2023 – not covered by this source.)
 - **Spratly Islands: Second Thomas Shoal** (`secon-thomas-shoal`, PH): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
@@ -144,9 +145,9 @@ Weitere 69 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Fort-Lamy Air Base, N’Djamena (Chad)** (`fort-lamy-ab-djamena`, TD): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.
 - **Creech Air Force Base, Nevada** (`creech-air-force-base`, US): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 
-### Weiterhin ohne geprüften Beleg (58 Standorte)
+### Weiterhin ohne geprüften Beleg (57 Standorte)
 
-`al-minhad-ab`, `herat-unnamed`, `kandahar-airfield`, `masar-i-sharif-communnity`, `ushuaia`, `savaneta-kamp`, `bujumbura-burundi`, `bdf-glen-valley-botswana`, `air-force-301-cameroon`, `pratas-islands-south-china-sea`, `arauca`, `telecom-cape-verde`, `conversion-area-bitburg`, `eichbuck-illesheim`, `tirpitzhafen-kiel`, `oberauerbach-polygone`, `satellite-ground-system-ramstein`, `radio-relay-site-rummelsberg`, `jsdf-base-djibouti`, `boufarik-base`, `nurmsi-airfield-estonia`, `lugar-research-center-georgia`, `camp-century-greenland`, `guam-naval-base`, `gracias-a-dios-honduras`, `training-area-eugen-kvaternik`, `dimona-radar-facility`, `camp-speicher`, `salto-di-quirra-sardinia`, `decimomannu-ab-sardinia`, `vicenza-padova`, `okinawa`, `tachikawa-air-base-tokyo`, `jpn-yonaguni`, `camp-kim-yongsan`, `siauliai-lithuania`, `inezgane-airport`, `krivolak-training-area`, `bamako-mali`, `pemba-naval-base`, `windhoek-namibia`, `dirkou-ab-niger`, `ajf-brunssum`, `masirah-ab`, `iquitos-airport`, `mount-st-rita-naval-link-station`, `makran-pakistan`, `deblin-irena-air-base`, `21-centralny-poligon-lotniczy`, `nadarzyce-air-base`, `maria-argana-paraguay`, `training-centre-general-popescu`, `five-eyes-station-lerkil`, `forsvarets-radioanstalt-lovon`, `dakar-senegal`, `principe-island-sao-tome`, `unnamed-syria-airfield`, `bizerte-sidi-ahmed-air-base`
+`al-minhad-ab`, `herat-unnamed`, `kandahar-airfield`, `masar-i-sharif-communnity`, `ushuaia`, `savaneta-kamp`, `bujumbura-burundi`, `bdf-glen-valley-botswana`, `air-force-301-cameroon`, `pratas-islands-south-china-sea`, `arauca`, `telecom-cape-verde`, `conversion-area-bitburg`, `eichbuck-illesheim`, `tirpitzhafen-kiel`, `oberauerbach-polygone`, `satellite-ground-system-ramstein`, `radio-relay-site-rummelsberg`, `jsdf-base-djibouti`, `boufarik-base`, `nurmsi-airfield-estonia`, `lugar-research-center-georgia`, `camp-century-greenland`, `guam-naval-base`, `gracias-a-dios-honduras`, `training-area-eugen-kvaternik`, `dimona-radar-facility`, `camp-speicher`, `salto-di-quirra-sardinia`, `decimomannu-ab-sardinia`, `vicenza-padova`, `okinawa`, `tachikawa-air-base-tokyo`, `jpn-yonaguni`, `camp-kim-yongsan`, `siauliai-lithuania`, `inezgane-airport`, `krivolak-training-area`, `bamako-mali`, `windhoek-namibia`, `dirkou-ab-niger`, `ajf-brunssum`, `masirah-ab`, `iquitos-airport`, `mount-st-rita-naval-link-station`, `makran-pakistan`, `deblin-irena-air-base`, `21-centralny-poligon-lotniczy`, `nadarzyce-air-base`, `maria-argana-paraguay`, `training-centre-general-popescu`, `five-eyes-station-lerkil`, `forsvarets-radioanstalt-lovon`, `dakar-senegal`, `principe-island-sao-tome`, `unnamed-syria-airfield`, `bizerte-sidi-ahmed-air-base`
 
 <!-- summary:end -->
 

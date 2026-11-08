@@ -1884,5 +1884,22 @@
   "bases": [
    "ouagadougou"
   ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/lookup?osm_ids=W976931953&format=jsonv2",
+  "title": "Base Naval de Pemba (OSM way 976931953, military area)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The OSM military area \"Base Naval de Pemba\" (Bairro Ingonane, Pemba) lies about 10.1 km from the dataset position. OSM coordinates: -12.95312, 40.49806.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "pemba-naval-base"
+  ]
  }
 ]

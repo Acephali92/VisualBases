@@ -16,6 +16,10 @@
   {
    "date": "2026-11-08",
    "text": "Projektverantwortliche: Libreville auch in der Region korrigieren; die geografischen Prüfhinweise recherchieren, belegte Positionsfehler direkt korrigieren, Ermessensfälle als Vorschlag."
+  },
+  {
+   "date": "2026-11-08",
+   "text": "Projektverantwortliche: Vorschlag ouagadougou-position angenommen (Flughafen). Darmstadt Training Center bleibt offen (keine Hinweise zur Lage)."
   }
  ],
  "claims": [
@@ -1161,10 +1165,11 @@
     "lat": 12.3489,
     "lon": -1.4396
    },
-   "status": "proposed",
+   "status": "accepted",
+   "decided": "2026-11-08",
    "statement": {
-    "de": "Der Eintrag ist als Nutzung eines zivilen Flughafens eingeordnet; die Position liegt aber in einem Wohngebiet rund 7,9 km östlich des Flughafens (mit der Base aérienne 511). Vorschlag: Flughafen. Offen, ob eine andere Anlage gemeint ist; die Textkoordinate des Beitrags (12.330854, -1.497857) liegt an einer Straße in Silmissin.",
-    "en": "The record is classified as use of a civilian airport, but its position lies in a residential area about 7.9 km east of the airport (with Base aérienne 511). Proposal: the airport. Open whether another site is meant; the post’s text coordinate (12.330854, -1.497857) lies on a road in Silmissin."
+    "de": "Der Eintrag ist als Nutzung eines zivilen Flughafens eingeordnet; die Position lag aber in einem Wohngebiet rund 7,9 km östlich des Flughafens (mit der Base aérienne 511). Position jetzt der Flughafen.",
+    "en": "The record is classified as use of a civilian airport, but its position lay in a residential area about 7.9 km east of the airport (with Base aérienne 511). Position now the airport."
    },
    "sources": [
     "https://nominatim.openstreetmap.org/lookup?osm_ids=W27798095&format=jsonv2"
@@ -1185,6 +1190,30 @@
    },
    "sources": [
     "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
+   ]
+  },
+  {
+   "id": "pemba-position",
+   "base": "pemba-naval-base",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": -12.95312,
+    "lon": 40.49806,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": -12.9975,
+    "lon": 40.5794
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Die Marinebasis Pemba liegt im Viertel Ingonane am Hafen; die bisherige Position lag rund 10 km südöstlich in einem Wohngebiet.",
+    "en": "Pemba naval base lies in the Ingonane quarter by the port; the previous position was about 10 km to the south-east in a residential area."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W976931953&format=jsonv2"
    ]
   }
  ]
