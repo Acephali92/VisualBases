@@ -137,7 +137,7 @@ Geprüft wurden die vier deutlichsten Fälle:
 | Gracias a Dios | nur das Departement bekannt, mehrere Landepisten möglich | `confirmed`, `imprecise`, `precision: region` |
 | Vieques | großes früheres Übungsgelände, beide Koordinaten liegen darauf | `confirmed`, `imprecise`, `precision: region` |
 
-Weitere Kandidaten mit einem groben Kartenlink (Zoomstufe 11) und einer genaueren Koordinate im Beitrag, meist Übungsplätze mit 5–15 km Abweichung: Pabradė, Bemowo Piskie, Tapa, Sennelager, Żagań, Popescu, Hohenfels, Munster. Offen ist, ob der Importer bei groben Kartenlinks eine nahe gelegene Text- oder Google-Earth-Koordinate bevorzugen soll (das würde Positionen in `bases.json` beim nächsten Import ändern).
+Weitere Kandidaten mit einem groben Kartenlink (Zoomstufe 11) und einer genaueren Koordinate im Beitrag, meist Übungsplätze mit 5–15 km Abweichung: Pabradė, Bemowo Piskie, Tapa, Sennelager, Żagań, Popescu, Hohenfels, Munster. Daraus entstand die Importer-Regel für grobe Kartenlinks (siehe „Importer-Regeln“ unten); sie wirkt beim nächsten Import.
 
 ## Importer-Regeln, die Fehler der Quelle abfangen
 
