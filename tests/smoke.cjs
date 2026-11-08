@@ -34,6 +34,9 @@ const ROUTES = [
   ['#/space', '.compare'],
   ['#/school', '.task'],
   ['#/about', '.kinds'],
+  ['#/quality', '.log li'],
+  ['#/impressum', '.legal h1'],
+  ['#/datenschutz', '.legal h2'],
   ['#/embed?themes=resistance', '.badge'],
   ['b/ramstein-air-base.html', '.profile h2'],
   ['c/DE.html', '.country h2'],
@@ -41,7 +44,7 @@ const ROUTES = [
 ];
 
 /** pages checked with axe-core against WCAG 2.1 A/AA – any violation fails the test */
-const AXE_ROUTES = ['#/', '#/atlas', '#/base/ramstein-air-base', '#/near', '#/news', '#/stats', '#/act', '#/quiz', '#/space', '#/school', '#/about', 'b/ramstein-air-base.html', 'c/DE.html'];
+const AXE_ROUTES = ['#/', '#/atlas', '#/base/ramstein-air-base', '#/near', '#/news', '#/stats', '#/act', '#/quiz', '#/space', '#/school', '#/about', '#/quality', '#/impressum', '#/datenschutz', 'b/ramstein-air-base.html', 'c/DE.html'];
 const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 
 async function axeChecks(browser) {

@@ -12,10 +12,9 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
   5. der Roadmap-PR
 
   Der Branch `claude/dq-audit-paket4` ist überholt und kann gelöscht werden.
-- [ ] **Impressum-Angaben schicken:** verantwortliche Person oder Verein (z. B. Friedens- und Zukunftswerkstatt e. V.), Anschrift, E-Mail. Für eine öffentliche deutsche Seite ist das Pflicht. Ich baue dann Impressum und Datenschutzerklärung.
-- [ ] **Bildrechte entscheiden:**
-  - Sind die eigenen Archivbilder von visualbases.org freigegeben?
-  - Sollen Bilder Dritter bis zur Klärung ausgeblendet werden? Betroffen sind das Flickr-Foto von Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, die Kampagnen-Logos und die Redner-Porträts.
+- [ ] **Impressum-Angaben schicken** oder direkt in `src/lib/legal.ts` eintragen: verantwortliche Person oder Verein (z. B. Friedens- und Zukunftswerkstatt e. V., mit Vereinsregister), Anschrift, E-Mail und die nach § 18 Abs. 2 MStV inhaltlich verantwortliche Person. Die Seiten `#/impressum` und `#/datenschutz` sind fertig; `npm run launch:check` meldet, solange etwas fehlt.
+- [ ] **Datenschutzerklärung juristisch gegenlesen lassen** (`src/routes/Legal.svelte`). Sie beschreibt, was die App tatsächlich tut, ersetzt aber keine Rechtsberatung.
+- [ ] **Bildrechte klären:** 30 Bilder Dritter sind vorerst ausgeblendet und werden nicht mit ausgeliefert (Liste in `docs/DATA-SOURCES.md`, Abschnitt „Bilder“). Freigaben (z. B. Kampagnen für ihre Logos, Redner für ihre Porträts) oder Urheber- und Lizenzangaben bitte melden, dann schalte ich die Bilder frei. Bitte auch bestätigen, dass die 8 eigenen Archivbilder (Kongressfolien, Fotos von Stopp Ramstein) veröffentlicht werden dürfen.
 - [ ] **Automatische Daten-Aktualisierung einschalten:**
   - Unter **Settings → Actions → General → Workflow permissions** „Read and write permissions“ wählen **und** „Allow GitHub Actions to create and approve pull requests“ anhaken.
   - Danach **Actions → „Daten aktualisieren“ → „Run workflow“** starten. Der erste Lauf übernimmt auch die neue Importer-Regel (20 genauere Positionen) und lädt die restlichen Wikimedia-Fotos.

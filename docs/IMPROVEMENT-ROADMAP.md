@@ -17,11 +17,11 @@ Stand: 2026-11-08 · Ersetzt die Fassung vom 2026-11-07; deren Audit-Befunde und
 | # | Kriterium | Stand |
 |---|---|---|
 | K1 | Seite öffentlich erreichbar, Deploy automatisch und grün | ✅ https://acephali92.github.io/VisualBases/ (HTTP 200, CI & Deploy grün) |
-| K2 | **Rechtlich sauber:** Impressum, Datenschutzhinweis, Lizenzen der Daten und Bilder | ❌ Impressum fehlt · 145 von 164 Bildern ohne Lizenzangabe |
+| K2 | **Rechtlich sauber:** Impressum, Datenschutzhinweis, Lizenzen der Daten und Bilder | 🟡 Datenschutzerklärung ✅ · Bildrechte ✅ (30 ungeklärte Bilder ausgeblendet) · **Impressum: Angaben fehlen** (`npm run launch:check`) |
 | K3 | **Daten ohne bekannte grobe Fehler:** 0 Validierungsfehler, keine bekannten Länder- oder Positionsfehler offen | ✅ 0 Fehler; Audit-Pakete 1–4 und Geo-Recherche umgesetzt (PR #11–#14 offen) |
-| K4 | **Transparenz:** Quelle, Belegstatus und Korrekturen je Standort sichtbar; Methodik erklärt | 🟡 im Profil vorhanden; öffentliche Seite „Methodik & Datenqualität“ fehlt |
+| K4 | **Transparenz:** Quelle, Belegstatus und Korrekturen je Standort sichtbar; Methodik erklärt | ✅ im Profil; Seite „Methodik & Datenqualität“ mit Kennzahlen, Verlauf und Korrekturprotokoll |
 | K5 | **Belastbar bei Andrang:** Ortssuche fällt nicht aus, Seite lädt mobil schnell | 🟡 Ortssuche mit Cache, Drosselung und Not-Aus, aber ein öffentlicher Nominatim-Server für alle Nutzer |
-| K6 | **Zugänglich:** keine axe-Verstöße auf den Hauptseiten, Tastaturbedienung | 🟡 axe nur einmalig geprüft, nicht in der CI |
+| K6 | **Zugänglich:** keine axe-Verstöße auf den Hauptseiten, Tastaturbedienung | ✅ axe (WCAG 2.1 A/AA) im Smoke-Test für 15 Seiten, Desktop und Mobil, 0 Verstöße |
 | K7 | **Daten bleiben aktuell:** wöchentlicher Import läuft und erzeugt prüfbare PRs | ❌ Workflow „Daten aktualisieren“ ist noch nie gelaufen |
 | K8 | **Rückmeldewege funktionieren:** Hinweis- und Korrekturformular, Labels, Kontaktadresse | 🟡 Formulare vorhanden; Labels `hinweis`, `korrektur`, `daten` fehlen; E-Mail unbestätigt |
 
@@ -67,17 +67,17 @@ Reihenfolge so gewählt, dass nichts aufeinander wartet: Block A und Block B lau
 
 | # | Aufgabe | Ergebnis / Abnahme | Aufwand |
 |---|---|---|---|
-| B1 | **Impressum und Datenschutzerklärung** als eigene Seiten (`#/impressum`, `#/datenschutz`), verlinkt im Fuß jeder Seite und in den statischen Seiten; Datenschutz listet alle externen Dienste (EOX-Satellitenkacheln, Nominatim, GitHub Pages) und betont: kein Tracking, keine Cookies | erscheint mit den Angaben aus A2; Smoke-Test prüft beide Seiten | S |
-| B2 | **Bildrechte absichern:** Feld `rights` in `data/media.json` (`own-archive` · `free-licence` · `google-earth` · `unclear`); `unclear` wird nicht angezeigt, bis geklärt; Validierungsregel `media-rights`; Liste der offenen Fälle in `DATA-SOURCES.md` | kein Bild ohne geklärte Rechte sichtbar; Validierung grün | S |
-| B3 | **Seite „Methodik & Datenqualität“** (`#/methodik`): wie Daten entstehen (Import, Korrekturen, Recherche), Belegstatus und Genauigkeit erklärt, Kennzahlen aus dem Bericht (unabhängig belegte Positionen, Korrekturen, offene Prüfungen) samt Verlauf, Link „Fehler melden“ | macht die Glaubwürdigkeit zum sichtbaren Merkmal (K4); Kennzahlen kommen aus `data-quality-history.json` | S |
-| B4 | **axe in den Smoke-Test** (Startseite, Atlas, Profil, Deine Basis, Über) und gefundene Verstöße beheben | K6; CI schlägt bei neuen Verstößen fehl | S |
+| B1 ✅ | **Impressum und Datenschutzerklärung** als eigene Seiten (`#/impressum`, `#/datenschutz`), verlinkt im Fuß jeder Seite und in den statischen Seiten; Datenschutz listet alle externen Dienste (EOX-Satellitenkacheln, Nominatim, GitHub Pages) und betont: kein Tracking, keine Cookies | umgesetzt; Impressum-Angaben in `src/lib/legal.ts` eintragen (A2), `npm run launch:check` prüft sie | S |
+| B2 ✅ | **Bildrechte absichern:** Feld `rights` in `data/media.json` (`own-archive` · `free-licence` · `google-earth` · `unclear`); `unclear` wird nicht angezeigt, bis geklärt; Validierungsregel `media-rights`; Liste der offenen Fälle in `DATA-SOURCES.md` | umgesetzt: 30 Bilder ausgeblendet und nicht mit ausgeliefert, Liste in `DATA-SOURCES.md` | S |
+| B3 ✅ | **Seite „Methodik & Datenqualität“** (`#/quality`): wie Daten entstehen (Import, Korrekturen, Recherche), Belegstatus und Genauigkeit erklärt, Kennzahlen aus dem Bericht (unabhängig belegte Positionen, Korrekturen, offene Prüfungen) samt Verlauf, Link „Fehler melden“ | umgesetzt, dazu das öffentliche Korrekturprotokoll (Idee aus Abschnitt 5) | S |
+| B4 ✅ | **axe in den Smoke-Test** (Startseite, Atlas, Profil, Deine Basis, Über) und gefundene Verstöße beheben | umgesetzt; behoben: Label-in-Name bei Sprachumschalter und Kennzahlen-Link | S |
 | B5 | **Ortssuche absichern:** PLZ-Index für DE/AT/CH als statische Datei (GeoNames, CC BY 4.0) für die häufigste Eingabe; Nominatim nur noch für Ortsnamen. Not-Aus in `public/config/geocoder.json` dokumentiert | K5; „Deine Basis“ funktioniert auch bei Presseandrang für Postleitzahlen ohne externe Anfrage | S |
 | B6 | **Erster Daten-Update-PR** (nach A4) prüfen: 20 verfeinerte Positionen, `claim-upstream-changed` bei 6 Positions-Claims (dann überflüssige Claims entfernen), neue/geänderte Beiträge | K3, K7 | XS–S |
 | B7 | **Launch-Abnahme:** Smoke-Test Desktop und Mobil, Lighthouse (Performance, A11y, SEO), Vorschaubilder (Open Graph) in Messenger/Mastodon prüfen, englische Oberfläche durchklicken, 404-Verhalten, Offline-Fallback | Protokoll im PR; Go/No-Go nach Block C | S |
 
 ### Block C – Go/No-Go und Launch
 
-1. **Go**, wenn: K1–K3 ✅, K4–K8 mindestens 🟡 mit bekanntem Plan, Smoke-Test und axe grün, Bericht 0 Fehler.
+1. **Go**, wenn: K1–K3 ✅, K4–K8 mindestens 🟡 mit bekanntem Plan, Smoke-Test und axe grün, Bericht 0 Fehler, `npm run build && npm run launch:check` ohne ✘.
 2. **Launch-Paket:** kurzer Ankündigungstext (DE/EN) mit 3 Beispielen, die das Projekt tragen: Ramstein und der Drohnenkrieg, Okinawa, „Deine Basis“. Dazu Vorschaubild und Link auf die Methodik-Seite.
 3. **Kanäle:** Partner benachrichtigen (Stopp Ramstein, World BEYOND War, CND, No to NATO), Einbett-Karte anbieten (Atlas → „Einbetten“).
 4. **Rückfallebene:** Ortssuche per `geocoder.json` abschaltbar; Fehlerseite verweist auf das Hinweisformular; jeder Merge löst ein neues Deployment aus.

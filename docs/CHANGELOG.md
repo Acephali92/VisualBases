@@ -6,7 +6,12 @@ Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
 ### Geändert
 - **Bildrechte:** Jedes Bild hat einen Rechtestatus (`free-licence` · `google-earth` · `own-archive` · `unclear`). 30 Bilder Dritter mit ungeklärter Lizenz (Kampagnen-Logos, Redner-Porträts, Flickr- und Commons-Übernahmen ohne Lizenzangabe, Screenshots und Dokumente Dritter) werden **nicht mehr veröffentlicht** und auch nicht mit ausgeliefert, bis sie geklärt sind. Die OSM-Kartenausschnitte tragen jetzt ihre Lizenz. Liste und Freigabeweg: [DATA-SOURCES.md](DATA-SOURCES.md).
-- **Barrierefreiheit:** axe-core (WCAG 2.1 A/AA) prüft im Smoke-Test 13 Seiten auf Desktop und Mobil; behoben: Sprachumschalter und Kennzahlen-Link (Label in Name).
+- **Barrierefreiheit:** axe-core (WCAG 2.1 A/AA) prüft im Smoke-Test 15 Seiten auf Desktop und Mobil; behoben: Sprachumschalter und Kennzahlen-Link (Label in Name).
+
+### Hinzugefügt
+- **Seite „Methodik & Datenqualität“** (`#/quality`): wie die Daten entstehen und geprüft werden, Kennzahlen mit Verlauf (aus `docs/data-quality-history.json`, veröffentlicht als `data/quality.json`), Genauigkeit der Positionen, **öffentliches Korrekturprotokoll** (alle angewandten Korrekturen mit Begründung, Quelle und Datum) und offene Prüfhinweise.
+- **Impressum und Datenschutzerklärung** (`#/impressum`, `#/datenschutz`), verlinkt im Seitenfuß und auf „Über & Daten“. Die Datenschutzerklärung beschreibt, was die App tatsächlich tut (keine Cookies, kein Tracking; GitHub Pages, EOX nur bei Satellitenansicht, Nominatim nur bei Suche; lokale Einstellungen). Die Impressum-Angaben stehen zentral in `src/lib/legal.ts` und fehlen noch.
+- **`npm run launch:check`:** prüft Impressum, Datenvalidierung, ausgeblendete Bilder in Daten und Build sowie das Alter des Qualitätsberichts; erinnert an die GitHub-Einstellungen.
 
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 4 (Quellen und Bericht)
 

@@ -47,6 +47,8 @@ for (const s of movement.congress?.speakers ?? []) {
   s.photo = m && m.rights !== 'unclear' ? m.thumb : undefined; // unsettled rights: not published
 }
 await fs.writeFile(path.join(out, 'movement.json'), JSON.stringify(movement));
+// key figures of the data quality report (docs/data-quality-history.json) for the method page
+await fs.writeFile(path.join(out, 'quality.json'), JSON.stringify(await readJson(path.join(ROOT, 'docs/data-quality-history.json'), [])));
 // the data licence travels with every download
 await fs.copyFile(path.join(ROOT, 'data/LICENSE.md'), path.join(out, 'LICENSE.txt'));
 const news = await readOpt('data/news.json');

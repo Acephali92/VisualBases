@@ -14,6 +14,8 @@
   import Quiz from './routes/Quiz.svelte';
   import Space from './routes/Space.svelte';
   import School from './routes/School.svelte';
+  import Quality from './routes/Quality.svelte';
+  import Legal from './routes/Legal.svelte';
 
   initRouter();
   onMount(loadData);
@@ -124,6 +126,10 @@
     <Act />
   {:else if section === 'about'}
     <About />
+  {:else if section === 'quality'}
+    <Quality />
+  {:else if section === 'impressum' || section === 'datenschutz'}
+    <Legal page={section} />
   {:else}
     <Home />
   {/if}
@@ -141,9 +147,12 @@
         <a href={href('/school')}>{t('nav.school')}</a>
         <a href={href('/act')}>{t('nav.act')}</a>
         <a href={href('/about')}>{t('nav.about')}</a>
+        <a href={href('/quality')}>{t('nav.quality')}</a>
         <a href="./data/bases.csv" download>CSV</a>
         <a href="./data/bases.geojson" download>GeoJSON</a>
         <a href="https://github.com/Acephali92/VisualBases" target="_blank" rel="noopener">GitHub</a>
+        <a href={href('/impressum')}>{t('nav.imprint')}</a>
+        <a href={href('/datenschutz')}>{t('nav.privacy')}</a>
       </nav>
     </div>
   </footer>

@@ -86,7 +86,8 @@ npm run check        # Typprüfung
 npm run validate     # Datenprüfung (läuft auch vor jedem Build)
 npm run data:report  # Datenqualitätsbericht nach docs/data-quality-report.md
 npm run build        # Produktions-Build nach dist/
-npm run test:smoke   # Browser-Test (nach dem Build)
+npm run test:smoke   # Browser-Test inkl. axe (nach dem Build)
+npm run launch:check # Launch-Kriterien: Impressum, Validierung, Bildrechte, Bericht (nach dem Build)
 ```
 
 Daten aktualisieren (die Crawler sind bewusst langsam und nutzen einen Cache in `.cache/`):

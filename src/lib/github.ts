@@ -1,6 +1,8 @@
-export const REPO_URL = 'https://github.com/Acephali92/VisualBases';
+import { CONTACT } from './legal';
 
-export const CONTACT = 'info@visualbases.org';
+export { CONTACT };
+
+export const REPO_URL = 'https://github.com/Acephali92/VisualBases';
 
 /** e-mail alternative for people without a GitHub account */
 export function mailUrl(subject: string, body: string): string {
