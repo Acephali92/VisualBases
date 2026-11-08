@@ -8,8 +8,10 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 |---|---|
 | Standorte | 365 |
 | mit eigener Quelle (außer Wikipedia) | 74 |
-| nur Wikipedia | 218 |
-| ohne jede Quelle | 73 |
+| ohne eigene, aber mit geprüfter Recherchequelle (sources.json) | 200 |
+| nur Wikipedia | 74 |
+| ohne jede Quelle | 17 |
+| Standorte mit widersprochener Aussage (Recherche oder offener Vorschlag) | 1 |
 | auf visualbases.org als „Review“ markiert | 21 |
 | angewandte Korrekturen (claims.json) / offene Vorschläge | 56 / 1 |
 | Einträge mit Prüfhinweis | 83 |
@@ -21,8 +23,44 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 17 / 12 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
-| **Fehler** | **0** |
-| Warnungen | 420 |
+| **Fehler** (blockieren das Deployment) | **0** |
+| Warnungen (blockieren nicht) | 220 |
+
+## Entwicklung seit 2026-11-07
+
+| Kennzahl | vorher | jetzt | Änderung |
+|---|---|---|---|
+| Fehler | 0 | 0 | ±0 |
+| Warnungen | 276 | 220 | -56 |
+| mit eigener Quelle | 74 | 74 | ±0 |
+| nur geprüfte Recherchequelle | 199 | 200 | +1 |
+| ohne geprüfte Quelle (nur Wikipedia oder keine) | 92 | 91 | -1 |
+| Position unabhängig belegt | 118 | 137 | +19 |
+| Position ungefähr | 8 | 14 | +6 |
+| geografische Warnungen | 24 | 8 | -16 |
+| ungeklärte Dubletten | 1 | 0 | -1 |
+| Standorte mit widersprochener Aussage | 1 | 1 | ±0 |
+| offene Vorschläge | 1 | 1 | ±0 |
+| angewandte Korrekturen | 46 | 56 | +10 |
+
+## Geografie
+
+| Kennzahl | Wert |
+|---|---|
+| Standorte mit Koordinate | 365 |
+| Position unabhängig belegt (mind. ein Beleg) | 137 |
+| … durch angenommene Positionskorrektur (claims.json) | 15 |
+| … durch geprüfte Quelle zur Lage (sources.json) | 1 |
+| … redaktionell bestätigt (corrections.json) | 17 |
+| … OpenStreetMap: Militärgelände ≤ 1 km an der aktuellen Position | 110 |
+| Position ohne unabhängigen Beleg (nur Kartenlink der Quelle) | 228 |
+| Genauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 11 / 340 / 9 / 5 |
+| Koordinate außerhalb des Gastlands (`coords-country`) | 0 |
+| in umstrittenem Gebiet / auf See (`coords-country-disputed`, `coords-offshore`) | 0 / 0 |
+| ungeklärte Dubletten (`duplicate-position-facility`, `duplicate-name-near`) | 0 |
+| Abweichung von Wikidata / kein Militärgelände in OSM | 0 / 1 |
+| OSM-Prüfung veraltet (Position seither geändert) | 7 |
+| quittierte Geo-Warnungen (corrections.json, `confirmed`) | 12 |
 
 ## Fehler
 
@@ -30,7 +68,7 @@ Keine.
 
 ## Warnungen
 
-### `sources-wikipedia-only` (218)
+### `sources-wikipedia-only` (74)
 
 - `al-minhad-ab`: only Wikipedia as source
 - `bagram-air-base`: only Wikipedia as source
@@ -39,84 +77,40 @@ Keine.
 - `herat-unnamed`: only Wikipedia as source
 - `kandahar-airfield`: only Wikipedia as source
 - `masar-i-sharif-communnity`: only Wikipedia as source
-- `kucova-albania`: only Wikipedia as source
 - `ushuaia`: only Wikipedia as source
-- `naval-comm-station-exmouth`: only Wikipedia as source
-- `robertson-barracks`: only Wikipedia as source
-- `tindal-raaf-base`: only Wikipedia as source
 - `savaneta-kamp`: only Wikipedia as source
 - `aruba`: only Wikipedia as source
-- `chievres-ab`: only Wikipedia as source
-- `kleine-brogel-air-base`: only Wikipedia as source
-- `shape-mons`: only Wikipedia as source
-- `zutendaal-ab-belgium`: only Wikipedia as source
-- `bezmer-air-base`: only Wikipedia as source
-- `graf-ignatievo-ab-bulgaria`: only Wikipedia as source
-- `nsa-coast-guard-bahrain`: only Wikipedia as source
-- `shaikh-isa-air-base-bahrain`: only Wikipedia as source
 - `bujumbura-burundi`: only Wikipedia as source
-- `bfb-garrison-seria`: only Wikipedia as source
-- `autec-bahamas`: only Wikipedia as source
 - `bdf-glen-valley-botswana`: only Wikipedia as source
-- `nas-argentia-newfoundland`: only Wikipedia as source
 - `air-force-301-cameroon`: only Wikipedia as source
 - `pratas-islands-south-china-sea`: only Wikipedia as source
-- `money-island-south-chinese-sea`: only Wikipedia as source
-- `apiay-ab`: only Wikipedia as source
 - `arauca`: only Wikipedia as source
-- `cartagena`: only Wikipedia as source
-- `bahia-malaga`: only Wikipedia as source
-- `fuerte-militar-larandia`: only Wikipedia as source
-- `malambo-ab`: only Wikipedia as source
-- `palanquero-ab`: only Wikipedia as source
-- `fuerte-militar-tolemaida`: only Wikipedia as source
 - `telecom-cape-verde`: only Wikipedia as source
-- `davis-monthan-ab-curacao`: only Wikipedia as source
-- … und 178 weitere
-
-### `sources-none` (73)
-
-- `abu-dhabi-uae-2`: no source at all
-- `kabul-isaf-headquarters`: no source at all
-- `durres-albania`: no source at all
-- `darwin-raaf-base`: no source at all
-- `east-chapman-satellite-station`: no source at all
-- `ghan-joint-defence-pine-gap`: no source at all
-- `learmonth-raaf-base`: no source at all
-- `kleine-brogel-nuclear`: no source at all
-- `ouagadougou`: no source at all
-- `aitos-bulgaria`: no source at all
-- `novo-selo`: no source at all
-- `salak-cameroon`: no source at all
-- `pattle-island`: no source at all
-- `gitmo-guantanamo-bay`: no source at all
-- `freihoelser-training-area-amberg`: no source at all
-- `barton-barracks-ansbach`: no source at all
-- `bismarck-kaserne-ansbach`: no source at all
-- `shipton-kaserne-ansbach`: no source at all
-- `baumholder-army-health-clinic`: no source at all
-- `ausenfeuerstellung-205-baumholder`: no source at all
-- `walter-wetzel-kaserne-baumholder`: no source at all
-- `artillery-kaserne-garmisch-partenkirchen`: no source at all
-- `gruenstadt-aafes-fac`: no source at all
-- `oberdachstetten-training-area`: no source at all
-- `eichbuck-illesheim`: no source at all
-- `mccully-barracks-wackernheim`: no source at all
-- `kaiserslautern-army-depot`: no source at all
-- `de-kl-warrior-preparation-center`: no source at all
-- `warrior-preparation-center-einsiedlerhof`: no source at all
-- `kapaun-air-station-kaiserslautern`: no source at all
-- `daenner-kaserne`: no source at all
-- `kleber-kaserne-kaiserslautern`: no source at all
-- `panzer-kaserne-kaiserslautern`: no source at all
-- `pulaski-barracks-kaiserslautern`: no source at all
-- `rhine-ordnance-barracks-vogelweh`: no source at all
-- `radio-relay-site-rummelsberg`: no source at all
-- `echterdingen-airfield`: no source at all
-- `base-aerienne-188-djibouti`: no source at all
-- `port-gentil-gabon`: no source at all
-- `base-nautique-de-stoupan`: no source at all
-- … und 33 weitere
+- `conversion-area-bitburg`: only Wikipedia as source
+- `tirpitzhafen-kiel`: only Wikipedia as source
+- `oberauerbach-polygone`: only Wikipedia as source
+- `medical-material-center-europe`: only Wikipedia as source
+- `satellite-ground-system-ramstein`: only Wikipedia as source
+- `marinestutzpunkt-hohe-dune-rostock`: only Wikipedia as source
+- `jsdf-base-djibouti`: only Wikipedia as source
+- `boufarik-base`: only Wikipedia as source
+- `nurmsi-airfield-estonia`: only Wikipedia as source
+- `lugar-research-center-georgia`: only Wikipedia as source
+- `librevillegabon`: only Wikipedia as source
+- `camp-century-greenland`: only Wikipedia as source
+- `pae-du-lamentin-guadeloupe`: only Wikipedia as source
+- `guam-naval-base`: only Wikipedia as source
+- `gracias-a-dios-honduras`: only Wikipedia as source
+- `training-area-eugen-kvaternik`: only Wikipedia as source
+- `dimona-radar-facility`: only Wikipedia as source
+- `camp-speicher`: only Wikipedia as source
+- `ghedi-ab`: only Wikipedia as source
+- `maritime-component-command-naples`: only Wikipedia as source
+- `salto-di-quirra-sardinia`: only Wikipedia as source
+- `decimomannu-ab-sardinia`: only Wikipedia as source
+- `okinawa`: only Wikipedia as source
+- `jasdf-naha-air-base`: only Wikipedia as source
+- … und 34 weitere
 
 ### `issue-site-type-from-status` (26)
 
@@ -198,6 +192,26 @@ Keine.
 - `ocean-side-mogadishu`: review-on-origin
 - `principe-island-sao-tome`: review-on-origin
 - `taiwan`: review-on-origin
+
+### `sources-none` (17)
+
+- `kabul-isaf-headquarters`: no source at all
+- `ouagadougou`: no source at all
+- `ausenfeuerstellung-205-baumholder`: no source at all
+- `eichbuck-illesheim`: no source at all
+- `radio-relay-site-rummelsberg`: no source at all
+- `port-gentil-gabon`: no source at all
+- `camp-ayanganna`: no source at all
+- `zadar-gazenica-croatia`: no source at all
+- `command-ground-system-sigonella`: no source at all
+- `vicenza-padova`: no source at all
+- `kenyan-naval-base`: no source at all
+- `taegu-region`: no source at all
+- `deblin-irena-air-base`: no source at all
+- `nadarzyce-air-base`: no source at all
+- `singapore`: no source at all
+- `ocean-side-mogadishu`: no source at all
+- `unnamed-syria-airfield`: no source at all
 
 ### `coords-approx` (14)
 

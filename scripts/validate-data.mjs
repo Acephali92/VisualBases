@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, ids } from '../src/lib/taxonomy.ts';
 import { distanceKm } from '../src/lib/geo.ts';
-import { resolveBases, CLAIM_FIELDS } from './lib/resolve.mjs';
+import { resolveBases, CLAIM_FIELDS, verdictFor } from './lib/resolve.mjs';
 import { SITE_TYPE_BY_CAT, FEATURE_BY_TERM, NATION_BY_TAG, CO_USER_BY_TAG, ORGANISATION_BY_TAG, THEME_BY_TAG, ACTIVITY_BY_TAG } from './import-visualbases.mjs';
 import { SOURCE_TYPES, CLAIMS, VERDICTS, readJson, tokens, placeOnlyName } from './research/lib.mjs';
 import { checkCountry, researchSignals, loadCountries } from './lib/geo-check.mjs';
@@ -26,6 +26,8 @@ export const DUPLICATE_METERS = 200;
 export const NAME_DUPLICATE_KM = 3;
 /** geographic warnings an editor can settle with a "confirmed" entry in data/corrections.json */
 export const GEO_RULES = ['coords-country', 'coords-country-disputed', 'coords-offshore', 'position-osm-none', 'position-wikidata-far', 'duplicate-name-near'];
+/** warnings meant to become blocking errors once the dataset is clean (docs/data-quality-audit.md, O5) */
+export const PLANNED_ERRORS = ['coords-country', 'duplicate-name-near', 'claim-upstream-changed'];
 /** site types that stand for several facilities, so sharing a position with a member is expected */
 const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
@@ -117,6 +119,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
 
   const ids = new Set();
   const byId = new Map(bases.map((b) => [b.id, b]));
+  // records with a manually checked source that supports at least one statement (data/research/sources.json)
+  const researched = new Set((research.sources ?? []).filter((s) => s.method === 'manual' && (s.supports ?? []).some((g) => verdictFor(s, g) === 'supports')).map((s) => s.base));
   const reviewed = new Set((corrections.positions ?? []).map((c) => c.id));
   const unverified = new Set((corrections.positions ?? []).filter((c) => c.status === 'proposed').map((c) => c.id));
   // editorially confirmed positions settle geographic warnings (all of them, or the listed rules)
@@ -180,8 +184,11 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
       if (!mappedTerm(t)) warn('term-unmapped', `term "${t}" of visualbases.org is not mapped to the classification`, b.id);
 
     // sources
-    if (!(b.sources ?? []).length && !b.wikipedia) warn('sources-none', 'no source at all', b.id);
-    else if (!(b.sources ?? []).length) warn('sources-wikipedia-only', 'only Wikipedia as source', b.id);
+    // a checked research source counts as a source (the record then shows its evidence per statement)
+    if (!(b.sources ?? []).length && !researched.has(b.id)) {
+      if (!b.wikipedia) warn('sources-none', 'no source at all', b.id);
+      else warn('sources-wikipedia-only', 'only Wikipedia as source', b.id);
+    }
     for (const s of b.sources ?? []) if (!/^https?:\/\//.test(s.url)) err('source-url', `invalid source URL "${s.url}"`, b.id);
     if (b.origin?.lastmod && !DATE.test(b.origin.lastmod)) err('date', `invalid lastmod "${b.origin.lastmod}"`, b.id);
 
@@ -324,6 +331,17 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
       // only checked sources may say "supports"/"contradicts"
       if ((s.verdict === 'supports' || s.verdict === 'contradicts') && s.method !== 'manual') err('research-verdict', `"${s.verdict}" needs method "manual" (${where})`);
       if (s.method === 'manual' && !s.summary) err('research-summary', `manual source without summary (${where})`);
+      // verdicts per statement group: only for groups the source covers, only checked sources may judge
+      if (s.verdicts !== undefined) {
+        if (typeof s.verdicts !== 'object' || Array.isArray(s.verdicts)) err('research-verdict', `"verdicts" must map statement groups to verdicts (${where})`);
+        else for (const [g, v] of Object.entries(s.verdicts)) {
+          if (!(s.supports ?? []).includes(g)) err('research-verdict', `verdict for "${g}", which the source does not cover (${where})`);
+          if (!VERDICTS.includes(v) || v === 'unreviewed') err('research-verdict', `unknown verdict "${v}" for "${g}" (${where})`);
+          if ((v === 'supports' || v === 'contradicts') && s.method !== 'manual') err('research-verdict', `"${v}" needs method "manual" (${where})`);
+        }
+      }
+      // how precisely a source locates the site (only for sources on the position)
+      if (s.precision !== undefined && (!(s.supports ?? []).includes('position') || !POSITION_PRECISIONS.includes(s.precision))) err('research-precision', `precision (${POSITION_PRECISIONS.join(' | ')}) only for sources on the position (${where})`);
     }
   }
   for (const id of Object.keys(research.checks ?? {})) if (!byId.has(id)) err('research-base', `checks.json refers to unknown base "${id}"`);
@@ -333,11 +351,30 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     if (r.verdict !== 'reject' && !r.site) err('research-review', `bsr-review.json: ${id} names no BSR row`);
   }
 
+  // independent evidence for the position of each published record
+  const samePos = (b, c) => typeof c?.lat === 'number' && Math.abs(c.lat - b.lat) < 1e-4 && Math.abs(c.lon - b.lon) < 1e-4;
+  const positionSourced = new Set((research.sources ?? []).filter((s) => s.method === 'manual' && (s.supports ?? []).includes('position') && verdictFor(s, 'position') === 'supports').map((s) => s.base));
+  const evidence = { claim: 0, source: 0, confirmed: 0, osm: 0, any: 0 };
+  for (const b of list) {
+    const kinds = {
+      claim: (b.corrections ?? []).some((c) => c.field === 'position'),
+      source: positionSourced.has(b.id),
+      confirmed: confirmed.has(b.id),
+      osm: research.checks?.[b.id]?.osm?.verdict === 'confirmed' && samePos(b, research.checks[b.id].osm),
+    };
+    for (const [k, v] of Object.entries(kinds)) if (v) evidence[k]++;
+    if (Object.values(kinds).some(Boolean)) evidence.any++;
+  }
+  const noOwn = (b) => !(b.sources ?? []).length;
   const stats = {
     bases: bases.length,
-    withSources: bases.filter((b) => (b.sources ?? []).length).length,
-    wikipediaOnly: bases.filter((b) => !(b.sources ?? []).length && b.wikipedia).length,
-    noSource: bases.filter((b) => !(b.sources ?? []).length && !b.wikipedia).length,
+    withSources: bases.filter((b) => !noOwn(b)).length,
+    researchOnly: bases.filter((b) => noOwn(b) && researched.has(b.id)).length,
+    wikipediaOnly: bases.filter((b) => noOwn(b) && !researched.has(b.id) && b.wikipedia).length,
+    noSource: bases.filter((b) => noOwn(b) && !researched.has(b.id) && !b.wikipedia).length,
+    positionEvidence: evidence,
+    countryChecked: countries ? list.length : 0,
+    disputed: resolved.filter((b) => Object.values(b.evidence ?? {}).includes('disputed')).length,
     underReview: bases.filter((b) => b.origin?.review).length,
     corrections: resolved.reduce((n, b) => n + (b.corrections?.length ?? 0), 0),
     proposals: resolved.reduce((n, b) => n + (b.proposals?.length ?? 0), 0),
@@ -356,7 +393,25 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   return { errors, warnings, stats };
 }
 
-export function report({ errors, warnings, stats }, date = new Date().toISOString().slice(0, 10)) {
+/** key figures kept in docs/data-quality-history.json to show the development between runs */
+export function snapshot({ errors, warnings, stats }, date) {
+  const count = (rules) => warnings.filter((w) => rules.includes(w.rule)).length;
+  return {
+    date, errors: errors.length, warnings: warnings.length, bases: stats.bases,
+    withSources: stats.withSources, researchOnly: stats.researchOnly, noSource: stats.noSource + stats.wikipediaOnly,
+    positionEvidence: stats.positionEvidence?.any ?? 0, approximate: stats.approximate,
+    geoWarnings: count([...GEO_RULES, 'position-check-stale']), unresolvedDuplicates: count(['duplicate-position-facility', 'duplicate-name-near']),
+    disputed: stats.disputed, proposals: stats.proposals, corrections: stats.corrections,
+  };
+}
+
+const HISTORY_LABELS = {
+  errors: 'Fehler', warnings: 'Warnungen', withSources: 'mit eigener Quelle', researchOnly: 'nur geprüfte Recherchequelle', noSource: 'ohne geprüfte Quelle (nur Wikipedia oder keine)',
+  positionEvidence: 'Position unabhängig belegt', approximate: 'Position ungefähr', geoWarnings: 'geografische Warnungen', unresolvedDuplicates: 'ungeklärte Dubletten',
+  disputed: 'Standorte mit widersprochener Aussage', proposals: 'offene Vorschläge', corrections: 'angewandte Korrekturen',
+};
+
+export function report({ errors, warnings, stats }, date = new Date().toISOString().slice(0, 10), previous = null) {
   const group = (items) => {
     const m = new Map();
     for (const i of items) m.set(i.rule, [...(m.get(i.rule) ?? []), i]);
@@ -373,8 +428,10 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     '|---|---|',
     `| Standorte | ${stats.bases} |`,
     `| mit eigener Quelle (außer Wikipedia) | ${stats.withSources} |`,
+    `| ohne eigene, aber mit geprüfter Recherchequelle (sources.json) | ${stats.researchOnly ?? 0} |`,
     `| nur Wikipedia | ${stats.wikipediaOnly} |`,
     `| ohne jede Quelle | ${stats.noSource} |`,
+    `| Standorte mit widersprochener Aussage (Recherche oder offener Vorschlag) | ${stats.disputed ?? 0} |`,
     `| auf visualbases.org als „Review“ markiert | ${stats.underReview} |`,
     `| angewandte Korrekturen (claims.json) / offene Vorschläge | ${stats.corrections} / ${stats.proposals} |`,
     `| Einträge mit Prüfhinweis | ${stats.withIssues} |`,
@@ -386,15 +443,48 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     `| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | ${stats.positionConfirmed ?? 0} / ${stats.geoSettled ?? 0} |`,
     `| Bilder / davon mit Lizenzangabe | ${stats.images} / ${stats.imagesWithLicence} |`,
     `| Meldungen | ${stats.news} |`,
-    `| **Fehler** | **${errors.length}** |`,
-    `| Warnungen | ${warnings.length} |`,
+    `| **Fehler** (blockieren das Deployment) | **${errors.length}** |`,
+    `| Warnungen (blockieren nicht) | ${warnings.length} |`,
     '',
   ];
+  const count = (rules) => warnings.filter((w) => rules.includes(w.rule)).length;
+
+  // development since the previous run
+  if (previous) {
+    const now = snapshot({ errors, warnings, stats }, date);
+    lines.push(`## Entwicklung seit ${previous.date}`, '', '| Kennzahl | vorher | jetzt | Änderung |', '|---|---|---|---|');
+    for (const [k, label] of Object.entries(HISTORY_LABELS)) {
+      if (previous[k] === undefined) continue;
+      const d = now[k] - previous[k];
+      lines.push(`| ${label} | ${previous[k]} | ${now[k]} | ${d > 0 ? '+' : ''}${d || '±0'} |`);
+    }
+    lines.push('');
+  }
+
+  // geography
+  const ev = stats.positionEvidence ?? {};
+  const geo = [
+    ['Standorte mit Koordinate', stats.countryChecked || '–'],
+    ['Position unabhängig belegt (mind. ein Beleg)', ev.any ?? 0],
+    ['… durch angenommene Positionskorrektur (claims.json)', ev.claim ?? 0],
+    ['… durch geprüfte Quelle zur Lage (sources.json)', ev.source ?? 0],
+    ['… redaktionell bestätigt (corrections.json)', ev.confirmed ?? 0],
+    ['… OpenStreetMap: Militärgelände ≤ 1 km an der aktuellen Position', ev.osm ?? 0],
+    ['Position ohne unabhängigen Beleg (nur Kartenlink der Quelle)', (stats.countryChecked || stats.bases) - (ev.any ?? 0)],
+    ['Genauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region', ['site', 'reference', 'town', 'region'].map((p) => stats.precision?.[p] ?? 0).join(' / ')],
+    ['Koordinate außerhalb des Gastlands (`coords-country`)', count(['coords-country'])],
+    ['in umstrittenem Gebiet / auf See (`coords-country-disputed`, `coords-offshore`)', `${count(['coords-country-disputed'])} / ${count(['coords-offshore'])}`],
+    ['ungeklärte Dubletten (`duplicate-position-facility`, `duplicate-name-near`)', count(['duplicate-position-facility', 'duplicate-name-near'])],
+    ['Abweichung von Wikidata / kein Militärgelände in OSM', `${count(['position-wikidata-far'])} / ${count(['position-osm-none'])}`],
+    ['OSM-Prüfung veraltet (Position seither geändert)', count(['position-check-stale'])],
+    ['quittierte Geo-Warnungen (corrections.json, `confirmed`)', stats.geoSettled ?? 0],
+  ];
+  lines.push('## Geografie', '', '| Kennzahl | Wert |', '|---|---|', ...geo.map(([k, v]) => `| ${k} | ${v} |`), '');
   for (const [title, items] of [['Fehler', errors], ['Warnungen', warnings]]) {
     lines.push(`## ${title}`, '');
     if (!items.length) { lines.push('Keine.', ''); continue; }
     for (const [rule, list] of group(items)) {
-      lines.push(`### \`${rule}\` (${list.length})`, '');
+      lines.push(`### \`${rule}\` (${list.length})${title === 'Warnungen' && PLANNED_ERRORS.includes(rule) ? ' – soll später blockieren' : ''}`, '');
       for (const i of list.slice(0, 40)) lines.push(`- ${i.id ? `\`${i.id}\`: ` : ''}${i.msg}`);
       if (list.length > 40) lines.push(`- … und ${list.length - 40} weitere`);
       lines.push('');
@@ -429,7 +519,14 @@ async function main() {
   result.errors.unshift(...fileErrors);
   const args = process.argv.slice(2);
   const out = args.includes('--report') ? args[args.indexOf('--report') + 1] : null;
-  if (out) await fs.writeFile(path.resolve(ROOT, out), report(result) + '\n');
+  if (out) {
+    // the report compares with the last run of an earlier day; the history keeps one snapshot per day
+    const historyFile = path.join(ROOT, 'docs/data-quality-history.json');
+    const date = new Date().toISOString().slice(0, 10);
+    const history = (await readJson(historyFile, [])).filter((h) => h.date !== date);
+    await fs.writeFile(path.resolve(ROOT, out), report(result, date, history.at(-1) ?? null) + '\n');
+    if (!result.errors.length) await fs.writeFile(historyFile, JSON.stringify([...history, snapshot(result, date)], null, 1) + '\n');
+  }
   for (const e of result.errors) console.error(`✘ [${e.rule}] ${e.id ? e.id + ': ' : ''}${e.msg}`);
   console.log(`${result.errors.length ? '✘' : '✔'} data validation: ${result.errors.length} errors, ${result.warnings.length} warnings${out ? ` → ${out}` : ''}`);
   if (result.errors.length) process.exit(1);

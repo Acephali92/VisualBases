@@ -2,6 +2,15 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 4 (Quellen und Bericht)
+
+### Hinzugefügt
+- **Urteil je Aussagegruppe** in `data/research/sources.json` (`verdicts`): Eine Quelle kann die Präsenz belegen und der Nation widersprechen. Umgestellt: BA 188 Dschibuti (Präsenz belegt, Nation widersprochen), Shamsi (Präsenz und Nation belegt, Status widersprochen). `precision` für Lagebelege.
+- **Bericht:** Abschnitt „Geografie“ (unabhängige Lagebelege, Genauigkeit, Abweichungen), Abschnitt „Entwicklung“ gegenüber dem letzten Lauf mit `docs/data-quality-history.json` (Ausgangsstand 2026-11-07 nachgerechnet), Standorte mit widersprochener Aussage, Markierung der Warnungen, die später blockieren sollen.
+
+### Geändert
+- Eine geprüfte, stützende Recherchequelle zählt als Quelle: `sources-none`/`sources-wikipedia-only` entfallen für 200 Standorte (Warnungen 420 → 220).
+
 ## [Unreleased] – Importer: genauere Koordinate aus dem Beitrag
 
 ### Geändert
@@ -14,19 +23,16 @@ Alle 25 geografischen Warnungen aus Paket 3 recherchiert (OSM/Nominatim, Wikidat
 ### Geändert
 - **Positionen korrigiert** (angenommene Claims mit OSM-Beleg): Robertson Barracks, Bezmer, Money Island, Second Thomas Shoal, Aruba (Flughafen Reina Beatrix), Camp Shaheen, Ouagadougou, Pemba.
 - **Libreville:** Region Zentralafrika statt Westafrika (`libreville-region`).
+- **Ouagadougou** auf den Flughafen gesetzt (Vorschlag angenommen am 2026-11-08), **Pemba** auf die Marinebasis (10 km); Gracias a Dios und Vieques als regional ungefähr gekennzeichnet.
 - 17 Positionen redaktionell bestätigt (`corrections.json`, `confirmed`): falsches Wikidata-Objekt oder -Koordinate, in OSM nicht als militärisch erfasst, Insel fehlt in den Grenzdaten; fünf Einträge, zu denen nur Ort oder Region bekannt ist, sind jetzt als ungefähr gekennzeichnet.
 - Wikidata-Objekte vom Typ „urban area“ zählen als Ort; Objekte, die zugleich Anlage sind, bleiben Anlage. Sammeleinträge werden nicht als „auf See“ gemeldet.
 
 ### Hinzugefügt
 - `corrections.json`: Grund `reference-mismatch` und `precision` für bestätigte Positionen (Genauigkeit festhalten, ohne den Punkt zu verschieben).
-
-- **Ouagadougou** auf den Flughafen gesetzt (Vorschlag angenommen am 2026-11-08), **Pemba** auf die Marinebasis (10 km).
-- Gracias a Dios und Vieques als regional ungefähr gekennzeichnet.
-- Abgleich aller 365 Originalbeiträge mit den darin genannten Koordinaten (Ergebnis in DATA-QUALITY.md).
+- Abgleich aller 365 Originalbeiträge mit den darin genannten Koordinaten (Ergebnis in DATA-QUALITY.md); daraus die Importer-Regel oben.
 
 ### Offen
 - Darmstadt Training Center: Lage nicht belegt.
-- Ob der Importer bei groben Kartenlinks eine genauere Koordinate aus dem Beitrag bevorzugen soll.
 
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 3 (Geo-Prüfungen)
 

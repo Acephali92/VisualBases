@@ -113,16 +113,25 @@ function siteTypeBasis(b) {
   return 'source';
 }
 
+/**
+ * verdict of a source on one statement group: a source may support one group and contradict another
+ * (e.g. confirm that a base exists, but not the stationing nation) – `verdicts` overrides `verdict` per group
+ */
+export function verdictFor(s, group) {
+  return s.verdicts?.[group] ?? s.verdict;
+}
+
 /** state of evidence per statement group (no scores – see EVIDENCE_STATES in src/lib/taxonomy.ts) */
 export function evidenceOf(research, { corrected = [], disputed = [], cited = new Set() } = {}) {
   const out = {};
   const types = new Set([...research.flatMap((s) => s.supports ?? []), ...corrected, ...disputed]);
   for (const t of types) {
     const manual = research.filter((s) => s.method === 'manual' && (s.supports ?? []).includes(t) && !cited.has(s.url));
+    const has = (v) => manual.some((s) => verdictFor(s, t) === v);
     if (corrected.includes(t)) out[t] = 'corrected';
-    else if (disputed.includes(t) || manual.some((s) => s.verdict === 'contradicts')) out[t] = 'disputed';
-    else if (manual.some((s) => s.verdict === 'supports')) out[t] = 'confirmed';
-    else if (manual.some((s) => s.verdict === 'context')) out[t] = 'context';
+    else if (disputed.includes(t) || has('contradicts')) out[t] = 'disputed';
+    else if (has('supports')) out[t] = 'confirmed';
+    else if (has('context')) out[t] = 'context';
   }
   return out;
 }
