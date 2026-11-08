@@ -2433,6 +2433,23 @@
   "collector": "manual"
  },
  {
+  "url": "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10",
+  "title": "Reverse geocoding of the Libreville record position (0.3895, 9.4551)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The record position lies in Libreville (Akanda, Estuaire), Gabon (country code GA). The source post is titled \"GH | Libreville\" (GH = Ghana) while its URL reads librevillegabon, so the host country code of the record does not match its location.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "base": "librevillegabon",
+  "method": "manual",
+  "collector": "manual"
+ },
+ {
   "base": "longare-communications-site-pluto-vicenza",
   "url": "https://www.basenation.us/uploads/5/7/1/7/57170837/base_structure_report_fy2023.xlsx",
   "title": "Base Structure Report FY2023 – Longare Communications Site (Army Active, Vicenza)",

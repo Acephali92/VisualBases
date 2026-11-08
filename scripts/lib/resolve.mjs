@@ -19,6 +19,9 @@ const AGGREGATE = new Set(['garrison', 'region-cluster']);
 export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
 export const CLAIM_FIELDS = ['presences', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
 
+/** precision levels that count as "approximate position" in the app (vocabulary: POSITION_PRECISIONS in src/lib/taxonomy.ts) */
+const APPROXIMATE = new Set(['town', 'region']);
+
 const clone = (x) => (x === undefined ? undefined : JSON.parse(JSON.stringify(x)));
 const sameItem = (a, b) => (a && typeof a === 'object' ? (a.nation ?? JSON.stringify(a)) === (b.nation ?? JSON.stringify(b)) : a === b);
 
@@ -28,14 +31,15 @@ const sameItem = (a, b) => (a && typeof a === 'object' ? (a.nation ?? JSON.strin
  */
 export function applyClaim(b, c) {
   if (!CLAIM_FIELDS.includes(c.field)) throw new Error(`unknown field "${c.field}"`);
-  // position: { lat, lon, approx? } – the coordinates live in two fields of the record
+  // position: { lat, lon, precision? } – the coordinates live in two fields of the record;
+  // the legacy flag `approx: true` reads as precision "town", no precision at all as "reference"
   if (c.field === 'position') {
     if (c.op !== 'set') throw new Error('position only supports "set"');
     const from = { lat: b.lat, lon: b.lon };
     if (from.lat === c.value.lat && from.lon === c.value.lon) throw new Error('value is already set (claim obsolete?)');
     b.lat = c.value.lat;
     b.lon = c.value.lon;
-    if (c.value.approx) b.approx = true;
+    b.positionPrecision = c.value.precision ?? (c.value.approx ? 'town' : 'reference');
     return { from, to: { lat: b.lat, lon: b.lon } };
   }
   const from = clone(b[c.field]);
@@ -54,6 +58,25 @@ export function applyClaim(b, c) {
   return { from, to: clone(b[c.field]) };
 }
 const stripVia = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === 'object' ? { nation: x.nation, role: x.role } : x)) : v);
+
+/**
+ * value of a claim field in an import record, in the form a claim's `expect` records it
+ * (position as { lat, lon }, presences without derivation, a missing field as null)
+ */
+export function sourceValue(src, field) {
+  if (field === 'position') return { lat: src.lat, lon: src.lon };
+  const v = field === 'presences' ? stripVia(src.presences) : src[field];
+  return v === undefined ? null : clone(v);
+}
+
+/**
+ * A `set` claim may record the source value it was decided against (`expect`). If the import now carries
+ * another value, visualbases.org has changed the field since – the claim still applies, but needs a look.
+ */
+export function upstreamChanged(src, c) {
+  if (c.expect === undefined) return false;
+  return JSON.stringify(sourceValue(src, c.field)) !== JSON.stringify(c.field === 'presences' ? stripVia(c.expect) : c.expect);
+}
 
 /** relation of a present state to the territory of the site */
 export function relation(nation, host) {
@@ -107,10 +130,12 @@ export function evidenceOf(research, { corrected = [], disputed = [], cited = ne
 const IMAGE_ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
 
 /**
- * @returns {{ bases: object[], problems: { rule: string, id: string, msg: string }[] }}
+ * @returns {{ bases: object[], problems: { rule: string, id: string, msg: string }[], notices: { rule: string, id: string, msg: string }[] }}
+ * problems are errors (the data does not fit), notices are warnings (e.g. a claim whose source value has changed)
  */
 export function resolveBases(input, { claims = [], research = [], corrections = {}, media = {}, wikimedia = {} } = {}) {
   const problems = [];
+  const notices = [];
   const byBase = (list) => { const m = new Map(); for (const x of list) m.set(x.base, [...(m.get(x.base) ?? []), x]); return m; };
   const claimsOf = byBase(claims);
   const researchOf = byBase(research);
@@ -119,11 +144,14 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
   const bases = input.map((src) => {
     const b = clone(src);
     b.basis = { siteType: siteTypeBasis(b), status: b.origin?.terms?.categories?.includes('closed') ? 'source' : 'implicit' };
+    // imported coordinates are the reference point of the source's map link; hand-geocoded ones count as town level
+    b.positionPrecision = b.approx ? 'town' : 'reference';
     const corrected = new Set();
     const disputed = new Set();
     const cited = new Set();
     const extraIssues = [];
     for (const c of claimsOf.get(b.id) ?? []) {
+      if (upstreamChanged(src, c)) notices.push({ rule: 'claim-upstream-changed', id: b.id, msg: `claim "${c.id}": the source value has changed since the decision (expected ${JSON.stringify(c.expect)}, now ${JSON.stringify(sourceValue(src, c.field))})` });
       if (c.status === 'proposed') {
         (b.proposals ??= []).push({ id: c.id, field: c.field, op: c.op, value: c.value, statement: c.statement, sources: c.sources });
         for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) disputed.add(t);
@@ -143,6 +171,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
       }
     }
 
+    if (APPROXIMATE.has(b.positionPrecision)) b.approx = true; else delete b.approx;
     b.presences = b.presences.map((p) => ({ ...p, relation: relation(p.nation, b.host) }));
     b.scope = scopeOf(b.presences);
     const issues = [...issuesOf(b), ...extraIssues];
@@ -190,5 +219,5 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     }
   }
   for (const c of claims) if (!byId.has(c.base)) problems.push({ rule: 'claim-base', id: c.base, msg: `claim "${c.id}" refers to unknown base` });
-  return { bases, problems };
+  return { bases, problems, notices };
 }

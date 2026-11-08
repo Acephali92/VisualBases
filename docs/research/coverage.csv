@@ -176,7 +176,7 @@ lugar-research-center-georgia,Lugar Research Center,GE,US,0,yes,candidates,,0,0,
 vaziani-military-base-georgia,Vaziani Military Base,GE,US,0,yes,verified,presence nation activity,1,0,0,0,20,,,Q269194,3.2,,,,Wikidata position 3.2 km away
 base-nautique-de-stoupan,Guayana: Base nautique de Stoupan,GF,FR,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 camp-ayanganna,Guayana: Camp Ayanganna,GF,FR,0,no,context,,1,1,0,0,0,,,,,,,,"contradicts (position/nation): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base."
-librevillegabon,Libreville,GH,US,0,yes,candidates,,0,0,0,0,21,,,Q3825,2.6,,,,Wikidata position 2.6 km away
+librevillegabon,Libreville,GH,US,0,yes,context,,1,1,0,0,21,,,Q3825,2.6,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 2.6 km away"
 hm-naval-base-gibraltar,Gibraltar HM Naval Base,GI,GB,0,yes,verified,presence nation,1,0,0,0,21,,,Q1410,1,,,,
 raf-gibraltar,Gibraltar RAF,GI,GB,0,yes,verified,presence nation,1,0,0,0,22,,,Q48374,0.1,,,,
 camp-century-greenland,Camp Century (Greenland),GL,US,0,yes,candidates,,0,0,0,0,20,,,Q2512856,1.6,,,,

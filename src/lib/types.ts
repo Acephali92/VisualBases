@@ -60,7 +60,7 @@ export interface SourceRecord {
   lon: number;
   /** zoom level of the source's map link */
   zoom: number;
-  /** position geocoded by hand because the source has no map link */
+  /** approximate position: geocoded by hand (import) or precision "town"/"region" (resolved) */
   approx?: boolean;
   continent: Continent | null;
   region: string | null;
@@ -128,6 +128,8 @@ export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
   basis: { siteType: 'source' | 'derived' | 'claim'; status: 'source' | 'implicit' | 'claim' };
   /** period of (foreign) use, only where documented */
   period?: { from?: string; to?: string };
+  /** how precisely the coordinate locates the facility (docs/DATA-QUALITY.md); approx = town or region */
+  positionPrecision: PositionPrecision;
   positionCheck?: {
     status: PositionCheckStatus;
     issue: PositionIssue;

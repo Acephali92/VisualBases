@@ -11,11 +11,13 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
-| angewandte Korrekturen (claims.json) / offene Vorschläge | 46 / 1 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 46 / 2 |
 | Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
 | Position ungeprüft (corrections.json) | 0 |
 | Position ungefähr | 8 |
+| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 4 / 353 / 7 / 1 |
+| Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
@@ -212,9 +214,9 @@ Keine.
 - `gitmo-guantanamo-bay`: approximate position (geocoded by hand)
 - `raf-akrotiri`: approximate position (geocoded by hand)
 - `camp-century-greenland`: approximate position (geocoded by hand)
-- `puerto-castilla-honduras`: approximate position (set by a position claim)
-- `karlovac-croatia-2`: approximate position (set by a position claim)
-- `jungle-warfare-training-center`: approximate position (set by a position claim)
+- `puerto-castilla-honduras`: approximate position (precision "town", set by a position claim)
+- `karlovac-croatia-2`: approximate position (precision "town", set by a position claim)
+- `jungle-warfare-training-center`: approximate position (precision "region", set by a position claim)
 - `white-beach-okinawa`: approximate position (geocoded by hand)
 - `inezgane-airport`: approximate position (geocoded by hand)
 

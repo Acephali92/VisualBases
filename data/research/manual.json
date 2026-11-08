@@ -1748,5 +1748,22 @@
   "bases": [
    "karlovac-croatia-2"
   ]
+ },
+ {
+  "url": "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10",
+  "title": "Reverse geocoding of the Libreville record position (0.3895, 9.4551)",
+  "publisher": "OpenStreetMap contributors (via Nominatim)",
+  "type": "geodata",
+  "accessed": "2026-11-08",
+  "httpStatus": 200,
+  "supports": [
+   "position"
+  ],
+  "verdict": "contradicts",
+  "summary": "The record position lies in Libreville (Akanda, Estuaire), Gabon (country code GA). The source post is titled \"GH | Libreville\" (GH = Ghana) while its URL reads librevillegabon, so the host country code of the record does not match its location.",
+  "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
+  "bases": [
+   "librevillegabon"
+  ]
  }
 ]

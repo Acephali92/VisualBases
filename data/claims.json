@@ -22,6 +22,12 @@
      "role": "stationing"
     }
    ],
+   "expect": [
+    {
+     "nation": "US",
+     "role": "stationing"
+    }
+   ],
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -40,6 +46,10 @@
    "value": {
     "country": "GY"
    },
+   "expect": {
+    "country": "FR",
+    "territory": "GF"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -56,6 +66,7 @@
    "field": "region",
    "op": "set",
    "value": "america-latin",
+   "expect": "caribbean",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -72,6 +83,12 @@
    "field": "presences",
    "op": "set",
    "value": [],
+   "expect": [
+    {
+     "nation": "FR",
+     "role": "stationing"
+    }
+   ],
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -88,6 +105,7 @@
    "field": "siteType",
    "op": "set",
    "value": "unspecified",
+   "expect": "overseas-base",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -125,6 +143,16 @@
      "role": "stationing"
     }
    ],
+   "expect": [
+    {
+     "nation": "US",
+     "role": "stationing"
+    },
+    {
+     "nation": "DE",
+     "role": "co-user"
+    }
+   ],
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -143,6 +171,7 @@
    "value": {
     "to": "2023-12-12"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -180,6 +209,7 @@
    "value": {
     "to": "2021-06-29"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -196,6 +226,7 @@
    "field": "status",
    "op": "set",
    "value": "closed",
+   "expect": "active",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -214,6 +245,7 @@
    "value": {
     "to": "2021-09"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -230,6 +262,7 @@
    "field": "status",
    "op": "set",
    "value": "closed",
+   "expect": "active",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -249,6 +282,7 @@
     "from": "1975",
     "to": "2021-10"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -265,6 +299,7 @@
    "field": "status",
    "op": "set",
    "value": "closed",
+   "expect": "active",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -283,6 +318,7 @@
    "value": {
     "to": "2011-12"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -299,6 +335,7 @@
    "field": "status",
    "op": "set",
    "value": "closed",
+   "expect": "active",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -317,6 +354,7 @@
    "value": {
     "to": "2025-07-17"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -335,6 +373,7 @@
    "value": {
     "to": "2021-07"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -353,6 +392,7 @@
    "value": {
     "to": "2024"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -371,6 +411,7 @@
    "value": {
     "to": "2024-08"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -389,6 +430,7 @@
    "value": {
     "to": "2026-02"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -407,6 +449,7 @@
    "value": {
     "to": "2026-03-14"
    },
+   "expect": null,
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -539,6 +582,9 @@
    "value": {
     "country": "BA"
    },
+   "expect": {
+    "country": "HR"
+   },
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -555,6 +601,7 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
+   "expect": "closed",
    "status": "accepted",
    "statement": {
     "de": "visualbases.org führt Khmeimim als geschlossen. Laut Vereinbarung vom August 2026 bleibt eine russische Präsenz in veränderter Form (gemeinsames Ausbildungszentrum); das endgültige Abkommen stand im Herbst 2026 aus.",
@@ -571,6 +618,7 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
+   "expect": "closed",
    "status": "accepted",
    "statement": {
     "de": "visualbases.org führt Tartus als geschlossen. Laut Vereinbarung vom August 2026 bleibt eine russische Präsenz in veränderter Form; das endgültige Abkommen stand im Herbst 2026 aus.",
@@ -589,6 +637,7 @@
    "value": {
     "to": "2025-06"
    },
+   "expect": null,
    "status": "accepted",
    "statement": {
     "de": "Frankreich hat im Juni 2025 die Basis Kossei in N’Djamena übergeben. Dass Kossei der Eintrag „Fort-Lamy“ ist, ist eine eigene Annahme und muss geprüft werden.",
@@ -626,6 +675,10 @@
     "country": "FR",
     "territory": "MQ"
    },
+   "expect": {
+    "country": "FR",
+    "territory": "GP"
+   },
    "status": "proposed",
    "statement": {
     "de": "Das Pôle aéronautique étatique liegt laut Verteidigungsministerium in Le Lamentin auf Martinique; vermutlich Verwechslung der beiden Lamentin-Gemeinden. Offen gelassen: Die Koordinaten des Eintrags liegen am Flughafen Pointe-à-Pitre (Guadeloupe); ob es dort ebenfalls eine staatliche Luftfahrtstelle gibt, ist nicht geprüft.",
@@ -641,6 +694,7 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
+   "expect": "active",
    "status": "accepted",
    "statement": {
     "de": "Das US-Kontingent in Estland ist 2026 auf unter 100 Soldaten gesunken; eine weitere Rotation und die Präsenz nach 2026 sind offen.",
@@ -657,6 +711,7 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
+   "expect": "active",
    "status": "accepted",
    "statement": {
     "de": "Die US-Präsenz in Rzeszów-Jasionka wurde 2025 an andere Orte in Polen verlagert; das Drehkreuz bleibt unter polnischer/NATO-Führung aktiv.",
@@ -673,6 +728,7 @@
    "field": "status",
    "op": "set",
    "value": "unknown",
+   "expect": "active",
    "status": "accepted",
    "statement": {
     "de": "Thumrait steht nur im Base Structure Report FY2019, nicht mehr in FY2023 – der aktuelle Status ist offen.",
@@ -690,7 +746,12 @@
    "op": "set",
    "value": {
     "lat": 36.58875,
-    "lon": -115.67146
+    "lon": -115.67146,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 36.5692,
+    "lon": -115.3722
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -709,7 +770,12 @@
    "op": "set",
    "value": {
     "lat": 31.82051,
-    "lon": 36.77942
+    "lon": 36.77942,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 31.8361,
+    "lon": 36.9645
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -728,7 +794,12 @@
    "op": "set",
    "value": {
     "lat": 36.96647,
-    "lon": 127.01257
+    "lon": 127.01257,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 37.1064,
+    "lon": 126.9975
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -748,7 +819,11 @@
    "value": {
     "lat": 26.71425,
     "lon": 128.25174,
-    "approx": true
+    "precision": "region"
+   },
+   "expect": {
+    "lat": 26.7364,
+    "lon": 128.3976
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -767,7 +842,12 @@
    "op": "set",
    "value": {
     "lat": -21.8187,
-    "lon": 114.16469
+    "lon": 114.16469,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": -21.8456,
+    "lon": 114.3
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -787,7 +867,11 @@
    "value": {
     "lat": 16.0096,
     "lon": -85.94942,
-    "approx": true
+    "precision": "town"
+   },
+   "expect": {
+    "lat": 14.382,
+    "lon": -87.6179
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -807,7 +891,11 @@
    "value": {
     "lat": 45.48925,
     "lon": 15.54863,
-    "approx": true
+    "precision": "town"
+   },
+   "expect": {
+    "lat": 44.0894,
+    "lon": 15.2811
    },
    "status": "accepted",
    "decided": "2026-11-07",
@@ -825,6 +913,7 @@
    "field": "name",
    "op": "set",
    "value": "Illesheim: Storck Barracks",
+   "expect": "Illesheim: Stock Barracks",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -841,6 +930,7 @@
    "field": "name",
    "op": "set",
    "value": "Kaiserslautern-Einsiedlerhof: USAFE-AFAFRICA Warfare Center (ehem. Warrior Preparation Center)",
+   "expect": "Kaiserslautern-Einsiedlerhof: Warrior Preparation Center",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -873,6 +963,7 @@
    "field": "name",
    "op": "set",
    "value": "Puerto Castilla (Honduras)",
+   "expect": "Base Aérea Coronel Enrique Soto Cano",
    "status": "accepted",
    "decided": "2026-11-07",
    "statement": {
@@ -881,6 +972,26 @@
    },
    "sources": [
     "https://nominatim.openstreetmap.org/lookup?osm_ids=N830322610&format=jsonv2"
+   ]
+  },
+  {
+   "id": "libreville-host",
+   "base": "librevillegabon",
+   "field": "host",
+   "op": "set",
+   "value": {
+    "country": "GA"
+   },
+   "expect": {
+    "country": "GH"
+   },
+   "status": "proposed",
+   "statement": {
+    "de": "Libreville ist die Hauptstadt von Gabun; die Koordinaten des Eintrags liegen dort. Der Beitrag auf visualbases.org trägt aber das Kürzel „GH“ (Ghana) im Titel, die Adresse lautet „librevillegabon“. Vorschlag: Gastland Gabun (GA). Nicht angewandt, bis die Projektverantwortlichen entscheiden.",
+    "en": "Libreville is the capital of Gabon and the record’s coordinates lie there. The post on visualbases.org, however, carries the code “GH” (Ghana) in its title, while its address reads “librevillegabon”. Proposal: host country Gabon (GA). Not applied until the project owners decide."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
    ]
   }
  ]

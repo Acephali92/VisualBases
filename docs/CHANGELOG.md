@@ -2,6 +2,18 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 2 (redaktionelle Schicht)
+
+Freigegeben von den Projektverantwortlichen am 2026-11-08. `data/bases.json` ist unverändert; kein angewandter Wert ändert sich.
+
+### Hinzugefügt
+- **Ausgangswert je Korrektur (`expect`):** Alle 39 `set`-Claims in `data/claims.json` halten jetzt den Wert fest, den `bases.json` bei der Entscheidung hatte (mechanisch nachgetragen). Ändert visualbases.org das Feld später, meldet die Validierung `claim-upstream-changed`, statt die neue Angabe stillschweigend zu überdecken. Neue `set`-Claims ohne `expect` erzeugen die Warnung `claim-expect-missing`.
+- **Genauigkeitsstufen (`precision`)** `site | reference | town | region` für Positionen statt nur `approx`. Die 7 Positions-Claims sind eingestuft (4× `site` nach OSM-Objekt der Anlage, Puerto Castilla und Karlovac `town`, Jungle Warfare Training Center `region`). Veröffentlicht als `positionPrecision` und CSV-Spalte `position_precision`; „Position ungefähr“ ergibt sich aus `town`/`region` und bleibt in der App unverändert (8 Standorte).
+- Bericht: Verteilung der Positionsgenauigkeit und Zahl der Korrekturen mit geändertem Quellwert.
+
+### Vorgeschlagen (nicht angewandt)
+- **Libreville (`librevillegabon`):** Der Beitrag trägt „GH | Libreville“ (Ghana), die Koordinaten liegen aber in Libreville, Gabun, und die Adresse lautet `librevillegabon`. Vorschlag `libreville-host` (Gastland GA) mit Beleg (OSM/Nominatim-Rückwärtssuche in `data/research/manual.json`). Die App zeigt das als offenen Prüfhinweis.
+
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 1
 
 Audit und priorisierter Verbesserungsvorschlag: [docs/data-quality-audit.md](data-quality-audit.md). Umgesetzt sind die notwendigen Punkte ohne Datenänderung; `data/*.json` ist unverändert.

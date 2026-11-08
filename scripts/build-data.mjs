@@ -31,8 +31,8 @@ const claims = (await readOpt('data/claims.json')).claims ?? [];
 const researchFile = await readOpt('data/research/sources.json');
 const research = Array.isArray(researchFile) ? researchFile : [];
 
-const { bases, problems } = resolveBases(sourceBases, { claims, research, corrections, media, wikimedia });
-for (const p of problems) console.warn(`! [${p.rule}] ${p.id}: ${p.msg}`);
+const { bases, problems, notices } = resolveBases(sourceBases, { claims, research, corrections, media, wikimedia });
+for (const p of [...problems, ...notices]) console.warn(`! [${p.rule}] ${p.id}: ${p.msg}`);
 await fs.mkdir(out, { recursive: true });
 
 // the app loads a lean file; research sources are loaded only when a profile is opened, and the raw

@@ -57,7 +57,7 @@ export function mappedTerm(t) {
 }
 
 /** schema of data/claims.json */
-export function validateClaims(claims, byId, err) {
+export function validateClaims(claims, byId, err, warn = () => {}) {
   const seen = new Set();
   for (const c of claims) {
     const where = `claim "${c.id}"`;
@@ -81,6 +81,12 @@ export function validateClaims(claims, byId, err) {
     if (c.field === 'host' && !validCountry(c.value?.country ?? '')) err('claim-value', `${where}: invalid host country`, c.base);
     if (c.field === 'period' && Object.values(c.value ?? {}).some((d) => !DATE.test(d))) err('claim-value', `${where}: invalid period`, c.base);
     if (c.field === 'position' && (c.op !== 'set' || !(Math.abs(c.value?.lat) <= 90) || !(Math.abs(c.value?.lon) <= 180))) err('claim-value', `${where}: position needs op "set" and valid lat/lon`, c.base);
+    if (c.field === 'position' && c.value?.precision !== undefined && !POSITION_PRECISIONS.includes(c.value.precision)) err('claim-value', `${where}: precision must be one of ${POSITION_PRECISIONS.join(', ')}`, c.base);
+    if (c.field === 'position' && c.status === 'accepted' && c.value?.precision === undefined) warn('claim-precision-missing', `${where}: position without precision (${POSITION_PRECISIONS.join(' | ')})`, c.base);
+    // expect: the source value the decision was made against (only meaningful when a value is replaced)
+    if (c.expect !== undefined && c.op !== 'set') err('claim-expect', `${where}: "expect" is only allowed with op "set"`, c.base);
+    if (c.field === 'position' && c.expect !== undefined && c.expect !== null && (!(Math.abs(c.expect.lat) <= 90) || !(Math.abs(c.expect.lon) <= 180))) err('claim-expect', `${where}: expect needs valid lat/lon`, c.base);
+    if (c.op === 'set' && c.field !== 'issues' && c.status === 'accepted' && c.expect === undefined) warn('claim-expect-missing', `${where}: no "expect" – a later change of the source value would go unnoticed`, c.base);
     if (c.field === 'name' && (c.op !== 'set' || typeof c.value !== 'string' || !c.value.trim())) err('claim-value', `${where}: name needs op "set" and a non-empty string`, c.base);
   }
 }
@@ -180,12 +186,13 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   }
 
   // claims layer and the resolved records (review notes become warnings)
-  validateClaims(claims, byId, err);
+  validateClaims(claims, byId, err, warn);
   let resolved = [];
   try {
     const r = resolveBases(bases.filter((b) => b.host && Array.isArray(b.presences)), { claims, research: research.sources ?? [], corrections });
     resolved = r.bases;
     for (const p of r.problems) err(p.rule, p.msg, p.id);
+    for (const n of r.notices ?? []) warn(n.rule, n.msg, n.id);
     for (const b of resolved) for (const i of b.issues ?? []) if (i !== 'position-unverified') warn(`issue-${i}`, i, b.id);
   } catch (e) { err('resolve', `records cannot be resolved: ${e.message}`); }
 
@@ -194,7 +201,7 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
   for (const b of list) {
     const viaClaim = (b.corrections ?? []).some((c) => c.field === 'position');
     if (decimals(b.lat) < 3 || decimals(b.lon) < 3) warn('coords-precision', `low precision (${b.lat}, ${b.lon})${viaClaim ? ' – set by a claim' : ''}`, b.id);
-    if (b.approx) warn('coords-approx', viaClaim ? 'approximate position (set by a position claim)' : 'approximate position (geocoded by hand)', b.id);
+    if (b.approx) warn('coords-approx', viaClaim ? `approximate position (precision "${b.positionPrecision}", set by a position claim)` : 'approximate position (geocoded by hand)', b.id);
   }
 
   // near-duplicate positions (not between an aggregate and its members, not when under review);
@@ -296,6 +303,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     contextSites: resolved.filter((b) => b.scope === 'domestic').length,
     positionUnverified: [...unverified].filter((id) => byId.has(id)).length,
     approximate: list.filter((b) => b.approx).length,
+    precision: Object.fromEntries(POSITION_PRECISIONS.map((p) => [p, list.filter((b) => (b.positionPrecision ?? (b.approx ? 'town' : 'reference')) === p).length])),
+    upstreamChanged: warnings.filter((w) => w.rule === 'claim-upstream-changed').length,
     images: Object.keys(media).length,
     imagesWithLicence: Object.values(media).filter((m) => m.license).length,
     news: news.length,
@@ -328,6 +337,8 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     `| Kontext-Standorte (eigenes Staatsgebiet) | ${stats.contextSites} |`,
     `| Position ungeprüft (corrections.json) | ${stats.positionUnverified} |`,
     `| Position ungefähr | ${stats.approximate} |`,
+    `| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | ${['site', 'reference', 'town', 'region'].map((p) => stats.precision?.[p] ?? 0).join(' / ')} |`,
+    `| Korrekturen, deren Quellwert sich inzwischen geändert hat | ${stats.upstreamChanged ?? 0} |`,
     `| Bilder / davon mit Lizenzangabe | ${stats.images} / ${stats.imagesWithLicence} |`,
     `| Meldungen | ${stats.news} |`,
     `| **Fehler** | **${errors.length}** |`,

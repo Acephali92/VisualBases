@@ -158,7 +158,7 @@ Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossen
 | Schicht | Datei | Inhalt | Pflege |
 |---|---|---|---|
 | Import | `data/bases.json` | normalisierte Einordnung von visualbases.org, Rohbegriffe, Quellenlinks, Notizen, Bilder | nur der Importer |
-| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, Status, Quellen, Entscheidungsdatum. Felder: `presences`, `host`, `region`, `position` (`{ lat, lon, approx? }`, nur `set`), `name` (nur `set`), `status`, `period`, `siteType`, `features`, `activities`, `issues` | von Hand |
+| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, bei `set` der Ausgangswert der Quelle (`expect`), Status, Quellen, Entscheidungsdatum. Felder: `presences`, `host`, `region`, `position` (`{ lat, lon, precision }`, nur `set`; das ältere `approx: true` wird als `town` gelesen), `name` (nur `set`), `status`, `period`, `siteType`, `features`, `activities`, `issues` | von Hand |
 | Positionen | `data/corrections.json` | zweifelhafte Koordinaten ohne belegte Korrektur (belegte Korrekturen stehen als `position` in `claims.json`) | von Hand |
 | Belege | `data/research/sources.json` | geprüfte Quellen je Standort: Herausgeber, Art (`official`, `academic`, `media`, `movement`, `dataset`, `geodata`), Veröffentlichungs- und Abrufdatum, Urteil, gestützte Aussagegruppen | Recherche-Skripte und von Hand |
 
@@ -167,7 +167,7 @@ Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossen
 - **`proposed`-Aussagen** ändern nichts; sie erscheinen als „Offener Prüfhinweis“ und setzen den Belegstatus der Aussagegruppe auf „umstritten“.
 - **Belegstatus je Aussagegruppe** (`evidence`: `presence`, `nation`, `position`, `status`, `facility`, `activity`): `corrected` (anhand einer Quelle korrigiert), `disputed` (geprüfte Quelle widerspricht oder Vorschlag offen), `confirmed` (mindestens eine von Hand geprüfte Quelle stützt), `context` (nur Kontext), sonst ungeprüft. Automatische, nicht geprüfte Treffer zählen nie. **Es gibt keine Vertrauenswerte** – nur nachvollziehbare Zustände.
 - `lastChecked` = jüngstes Abrufdatum einer von Hand geprüften Quelle. `origin.lastmod` = letzte Änderung auf visualbases.org.
-- **Geografische Genauigkeit**: Koordinate aus dem Kartenlink der Quelle (Standard), `approx` (von Hand geokodiert, „Position ungefähr“), `positionCheck` (zweifelhaft, „Position ungeprüft“). Es wird keine Genauigkeit aus der Zoomstufe abgeleitet.
+- **Geografische Genauigkeit**: `positionPrecision` je Standort: `site` (auf der Anlage, z. B. OSM-Objekt der Basis), `reference` (Referenzpunkt aus dem Kartenlink der Quelle, Standard), `town` (Ortsmitte; auch von Hand geokodierte Einträge mit `approx`), `region` (Gebiet oder Insel). `town` und `region` gelten in der App als „Position ungefähr“ (`approx`). Dazu `positionCheck` (zweifelhaft, „Position ungeprüft“). Es wird keine Genauigkeit aus der Zoomstufe abgeleitet.
 
 Die Quellenlinks von visualbases.org (`sources`, `wikipedia`) sind keiner einzelnen Aussage zugeordnet, weil die Quelle das nicht angibt; sie erscheinen als „Quellen & Kampagnen“.
 
