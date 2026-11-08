@@ -41,15 +41,15 @@ Wikipedia dient nur als Einstieg: Die Einzelnachweise der Artikel werden als Kan
 ## 2. Ergebnisse in Zahlen
 
 <!-- summary:start -->
-_Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-07._
+_Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-08._
 
 ### Abdeckung der Standorte ohne eigene Quelle
 
 | Belegstand nach der Recherche | ohne eigene Quelle (291) | davon ganz ohne Quelle (73) |
 | --- | ---: | ---: |
 | Präsenz von Hand belegt | 199 (68 %) | 55 (75 %) |
-| nur Kontext oder Widerspruch | 29 (10 %) | 11 (15 %) |
-| nur ungeprüfte Hinweise | 56 (19 %) | 0 (0 %) |
+| nur Kontext oder Widerspruch | 30 (10 %) | 11 (15 %) |
+| nur ungeprüfte Hinweise | 55 (19 %) | 0 (0 %) |
 | nichts gefunden | 7 (2 %) | 7 (10 %) |
 
 ### Belegte Aussagen (Standorte ohne eigene Quelle)
@@ -70,9 +70,9 @@ _Erzeugt mit `node scripts/research/summarize.mjs` – 2026-11-07._
 | official | 175 | 175 | 154 | 6 | 15 |
 | academic | 2 | 2 | 2 | 0 | 0 |
 | media | 62 | 60 | 46 | 8 | 8 |
-| geodata | 7 | 7 | 0 | 7 | 0 |
+| geodata | 8 | 8 | 0 | 8 | 0 |
 
-Sammler: manual 124, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
+Sammler: manual 125, bsr 154 Quelleneinträge; davon 32 noch ungeprüft.
 
 ### Nach Gastland (Standorte ohne eigene Quelle)
 
@@ -112,7 +112,7 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 | OSM: militärisches Objekt 1–3 km | 17 |
 | OSM: nichts im Umkreis von 3 km | 14 |
 
-### Gefundene Widersprüche (21 Standorte)
+### Gefundene Widersprüche (22 Standorte)
 
 - **Bagram Air Base** (`bagram-air-base`, AF): Status: Bagram has not been a US base since July 2021 (historical).
 - **Camp Marmal / John Pratt, Masar-i Sharif** (`camp-marmal-john-pratt`, AF): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation.
@@ -121,6 +121,7 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Pirmasens: US Army Medical Material Center Europe** (`medical-material-center-europe`, DE): Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.
 - **Base aérienne 188 Colonel Émile Massart** (`base-aerienne-188-djibouti`, DJ): Contradicts the stationing nation: the dataset lists the US, but BA 188 is a French air base. The US presence is the neighbouring Camp Lemonnier.
 - **Guayana: Camp Ayanganna** (`camp-ayanganna`, GF): Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.
+- **Libreville** (`librevillegabon`, GH): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Base Aérea Coronel Enrique Soto Cano** (`puerto-castilla-honduras`, HN): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Karlovac** (`karlovac-croatia-2`, HR): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 - **Muwaffaq Salti Air Base, Al Azraq** (`muwaffaq-salti-air-base-al-azraq-jordan`, JO): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
@@ -136,9 +137,9 @@ Weitere 68 Länder mit weniger als 4 solchen Standorten: 111 Standorte, davon 62
 - **Fort-Lamy Air Base, N’Djamena (Chad)** (`fort-lamy-ab-djamena`, TD): Status: the French air base at Dakar-Ouakam and the French base at N'Djamena (Kossei, the former Fort-Lamy air base) are no longer French bases. Identifying Kossei with the dataset entry 'Fort-Lamy' is our own assumption and needs checking.
 - **Creech Air Force Base, Nevada** (`creech-air-force-base`, US): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.
 
-### Weiterhin ohne geprüften Beleg (63 Standorte)
+### Weiterhin ohne geprüften Beleg (62 Standorte)
 
-`al-minhad-ab`, `camp-shaheen-camp-mike-spann`, `herat-unnamed`, `kandahar-airfield`, `masar-i-sharif-communnity`, `ushuaia`, `savaneta-kamp`, `aruba`, `ouagadougou`, `bujumbura-burundi`, `bdf-glen-valley-botswana`, `air-force-301-cameroon`, `pratas-islands-south-china-sea`, `arauca`, `telecom-cape-verde`, `conversion-area-bitburg`, `eichbuck-illesheim`, `tirpitzhafen-kiel`, `oberauerbach-polygone`, `satellite-ground-system-ramstein`, `radio-relay-site-rummelsberg`, `jsdf-base-djibouti`, `boufarik-base`, `nurmsi-airfield-estonia`, `lugar-research-center-georgia`, `librevillegabon`, `camp-century-greenland`, `guam-naval-base`, `gracias-a-dios-honduras`, `training-area-eugen-kvaternik`, `dimona-radar-facility`, `camp-speicher`, `salto-di-quirra-sardinia`, `decimomannu-ab-sardinia`, `vicenza-padova`, `okinawa`, `tachikawa-air-base-tokyo`, `jpn-yonaguni`, `camp-kim-yongsan`, `siauliai-lithuania`, `inezgane-airport`, `krivolak-training-area`, `bamako-mali`, `pemba-naval-base`, `windhoek-namibia`, `dirkou-ab-niger`, `ajf-brunssum`, `masirah-ab`, `iquitos-airport`, `mount-st-rita-naval-link-station`, `secon-thomas-shoal`, `makran-pakistan`, `deblin-irena-air-base`, `21-centralny-poligon-lotniczy`, `nadarzyce-air-base`, `maria-argana-paraguay`, `training-centre-general-popescu`, `five-eyes-station-lerkil`, `forsvarets-radioanstalt-lovon`, `dakar-senegal`, `principe-island-sao-tome`, `unnamed-syria-airfield`, `bizerte-sidi-ahmed-air-base`
+`al-minhad-ab`, `camp-shaheen-camp-mike-spann`, `herat-unnamed`, `kandahar-airfield`, `masar-i-sharif-communnity`, `ushuaia`, `savaneta-kamp`, `aruba`, `ouagadougou`, `bujumbura-burundi`, `bdf-glen-valley-botswana`, `air-force-301-cameroon`, `pratas-islands-south-china-sea`, `arauca`, `telecom-cape-verde`, `conversion-area-bitburg`, `eichbuck-illesheim`, `tirpitzhafen-kiel`, `oberauerbach-polygone`, `satellite-ground-system-ramstein`, `radio-relay-site-rummelsberg`, `jsdf-base-djibouti`, `boufarik-base`, `nurmsi-airfield-estonia`, `lugar-research-center-georgia`, `camp-century-greenland`, `guam-naval-base`, `gracias-a-dios-honduras`, `training-area-eugen-kvaternik`, `dimona-radar-facility`, `camp-speicher`, `salto-di-quirra-sardinia`, `decimomannu-ab-sardinia`, `vicenza-padova`, `okinawa`, `tachikawa-air-base-tokyo`, `jpn-yonaguni`, `camp-kim-yongsan`, `siauliai-lithuania`, `inezgane-airport`, `krivolak-training-area`, `bamako-mali`, `pemba-naval-base`, `windhoek-namibia`, `dirkou-ab-niger`, `ajf-brunssum`, `masirah-ab`, `iquitos-airport`, `mount-st-rita-naval-link-station`, `secon-thomas-shoal`, `makran-pakistan`, `deblin-irena-air-base`, `21-centralny-poligon-lotniczy`, `nadarzyce-air-base`, `maria-argana-paraguay`, `training-centre-general-popescu`, `five-eyes-station-lerkil`, `forsvarets-radioanstalt-lovon`, `dakar-senegal`, `principe-island-sao-tome`, `unnamed-syria-airfield`, `bizerte-sidi-ahmed-air-base`
 
 <!-- summary:end -->
 

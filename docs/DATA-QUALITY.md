@@ -68,7 +68,7 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 | `country-territory`, `territory-invalid` | Gastland ist der souveräne Staat, das Gebiet gehört zu ihm |
 | `rule-overseas`, `rule-domestic` | Fachregeln der Taxonomie ([TAXONOMY.md](TAXONOMY.md), Abschnitt 10) |
 | `origin` | Herkunft und Rohbegriffe vorhanden |
-| `claim-*` | `data/claims.json`: Schema, Quellen, Werte; Korrekturen müssen auf die aktuellen Daten passen |
+| `claim-*` | `data/claims.json`: Schema, Quellen, Werte (bei `position` auch `precision` aus dem Vokabular); Korrekturen müssen auf die aktuellen Daten passen; `expect` nur bei `set` (`claim-expect`) |
 | `related`, `relation-type`, `relation`, `news-base`, `movement-base` | Verweise zeigen auf existierende Standorte, Relationstyp ist `part-of`, `member-of` oder `related` |
 | `corrections` | Schema von `data/corrections.json` (siehe oben) |
 | `resolve` | die Datenschichten lassen sich zusammenführen |
@@ -79,7 +79,7 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 
 ### Warnungen (im Bericht, blockieren nicht)
 
-`sources-none` (keine Quelle) · `sources-wikipedia-only` · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `rule-civilian` (zivile Anlage mit nuklearer Teilhabe) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert oder per Claim als ungefähr gesetzt) · `duplicate-position-reviewed` (in `corrections.json` oder per angenommenem Claim als `duplicate-entry` markiert) / `-linked` (Sammeleintrag oder Relation) / `-facility` (`special-facility` ohne Relation: Teil der Basis oder zweiter Beitrag zur selben Anlage? Klären über `relations` oder `corrections.json`) · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
+`sources-none` (keine Quelle) · `sources-wikipedia-only` · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `rule-civilian` (zivile Anlage mit nuklearer Teilhabe) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert oder per Claim als ungefähr gesetzt) · `duplicate-position-reviewed` (in `corrections.json` oder per angenommenem Claim als `duplicate-entry` markiert) / `-linked` (Sammeleintrag oder Relation) / `-facility` (`special-facility` ohne Relation: Teil der Basis oder zweiter Beitrag zur selben Anlage? Klären über `relations` oder `corrections.json`) · `claim-upstream-changed` (der Wert in `bases.json` weicht vom `expect` eines Claims ab: visualbases.org hat das Feld seit der Entscheidung geändert; der Claim gilt weiter, die Entscheidung ist zu prüfen) · `claim-expect-missing` (angenommener `set`-Claim ohne `expect`) · `claim-precision-missing` (Positions-Claim ohne `precision`) · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
 
 `coords-precision`, `coords-approx` und die Dublettenprüfung laufen auf den **aufgelösten** Datensätzen, also mit den angenommenen `position`-Claims. Die Kennzahl „Position ungefähr“ zählt deshalb auch Positionen, die ein Claim als ungefähr setzt; „Position ungeprüft“ zählt nur Einträge mit `status: "proposed"`.
 
@@ -92,6 +92,21 @@ Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
 - **Kategorien:** Fehlende Region oder Kontinent werden für vier Beiträge über `FIXES` ergänzt; der Kontinent wird aus der Region abgeleitet. Die Zuordnung aller Begriffe zur Taxonomie steht im Importer (`SITE_TYPE_BY_CAT`, `FEATURE_BY_TERM`, `*_BY_TAG`).
 - **Gebiete:** Gebietscodes im Titel (`PR`, `GL`) werden zu Staat + Gebiet; Gebiete hinter Staatscodes werden am Ortsnamen erkannt (`TERRITORY_BY_NAME`).
 - **Links in der Presseschau:** Führende kodierte Leerzeichen (`%20https://…`) werden entfernt.
+
+## Korrekturen nachvollziehbar halten: `expect` und `precision`
+
+Jeder `set`-Claim in `data/claims.json` hält in `expect` den Wert fest, den `bases.json` bei der Entscheidung hatte (Position als `{ lat, lon }`, Präsenzen ohne `via`, ein fehlendes Feld als `null`). Ändert visualbases.org das Feld später, meldet die Validierung `claim-upstream-changed`, statt die neue Angabe stillschweigend zu überdecken. Zu entscheiden ist dann, ob der Claim noch nötig ist, angepasst wird oder entfällt. `add`/`remove` brauchen kein `expect`; sie schlagen ohnehin fehl, wenn der Wert schon da bzw. weg ist (`claim-apply`).
+
+Positions-Claims nennen die Genauigkeit des neuen Werts (`precision`):
+
+| Stufe | Bedeutung | App | Stand 2026-11-08 |
+|---|---|---|---|
+| `site` | auf der Anlage (z. B. OSM-Objekt der Basis) | – | 4 (Creech, Muwaffaq Salti, Humphreys, Harold E. Holt) |
+| `reference` | Referenzpunkt aus dem Kartenlink der Quelle (Standard für importierte Koordinaten) | – | 353 |
+| `town` | Ortsmitte | ≈ Position ungefähr | 7 (5 von Hand geokodiert, Puerto Castilla, Karlovac) |
+| `region` | Gebiet oder Insel | ≈ Position ungefähr | 1 (Jungle Warfare Training Center: Mittelpunkt des Northern Training Area) |
+
+Veröffentlicht als `positionPrecision` (JSON, GeoJSON) und CSV-Spalte `position_precision`. Der Bericht zeigt die Verteilung.
 
 ## Positionsgenauigkeit und „Deine Basis“
 

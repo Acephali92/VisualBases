@@ -2,7 +2,7 @@
 
 Geprüft wurde der Stand `main` @ `09a6f0b`: Code, Workflows und alle 365 Datensätze, nicht nur die Dokumentation. Leitlinie: **keine parallelen Systeme.** Erweitert werden `validate-data.mjs`, `resolve.mjs`, `corrections.json`, `claims.json`, `sources.json`, die Tests, [DATA-QUALITY.md](DATA-QUALITY.md) und der [Bericht](data-quality-report.md). Automatische Prüfungen melden und schlagen vor; sie übernehmen nichts in den Datenbestand.
 
-Status: ✅ umgesetzt (Paket 1) · ⏳ vorgeschlagen, wartet auf Freigabe
+Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Vorschlag Libreville) · ⏳ vorgeschlagen, wartet auf Umsetzung
 
 ## 1. Tatsächliche Abdeckung
 
@@ -31,10 +31,10 @@ Status: ✅ umgesetzt (Paket 1) · ⏳ vorgeschlagen, wartet auf Freigabe
 3. ✅ „Position ungeprüft“ zählte auch `applied`.
 4. ⏳ Die Quellenkennzahlen ignorieren `sources.json`: Von 291 Standorten „ohne eigene Quelle“ haben 199 eine manuell geprüfte, stützende Quelle.
 5. ✅ Die Dublettenprüfung nahm `special-facility` pauschal aus. Das WPC-Paar (194 m) war deshalb für die Validierung unsichtbar. Es war redaktionell zwar schon als `duplicate-entry` erfasst (Claim `wpc-duplicate`), aber ohne Verbindung zur Prüfung.
-6. ⏳ Genauigkeit: `corrections.proposal.precision` ✅ hat jetzt ein Vokabular, `claims.position` kennt aber weiterhin nur `approx: true/false`.
+6. ✅ Genauigkeit: `corrections.proposal.precision` und `claims.position.value.precision` nutzen dasselbe Vokabular; `positionPrecision` wird veröffentlicht.
 
 ### Fehlende Prüfungen
-- ⏳ **Koordinate ↔ Gastland:** `librevillegabon` hat `host.country = GH` (Ghana), die Koordinate liegt aber in Libreville, Gabon.
+- ⏳ **Koordinate ↔ Gastland:** Eine automatische Prüfung fehlt weiterhin (Paket 3). Der gefundene Fall `librevillegabon` (`host.country = GH`, die Koordinate liegt in Libreville, Gabun) ist als Vorschlag `libreville-host` erfasst (Paket 2).
 - ⏳ **Recherche-Signale nicht ausgewertet:** 15 Wikidata-Abweichungen über 25 km (z. B. `niamey-air-base` 925 km, `us-camp-castor` 433 km; teils falsch zugeordnete Items), 14 OSM-Urteile „none“.
 - ⏳ **Veraltete Prüfungen:** Die Collectors prüfen die Rohkoordinate. Bei den 7 korrigierten Positionen beziehen sich Wikidata- und OSM-Ergebnisse auf die alte Position (Creech, Exmouth …).
 - ⏳ **Kaum Positionsbelege:** Nur 10 Quellen nennen `position`; nur 1 Standort hat eine geprüfte, stützende Positionsquelle.
@@ -42,7 +42,7 @@ Status: ✅ umgesetzt (Paket 1) · ⏳ vorgeschlagen, wartet auf Freigabe
 
 ### Nachvollziehbarkeit
 1. ✅ **Kritisch:** Unlesbare oder fehlerhafte JSON-Dateien wurden zu leeren Daten, sodass die Validierung trotz Fehler grün war und Korrekturen verloren gingen. Behoben in Validator, `build-data.mjs` und `scripts/research/lib.mjs`.
-2. ⏳ Angenommene `set`-Claims halten den Ausgangswert nicht fest. Ändert visualbases.org den Wert, gewinnt der Claim, ohne dass es auffällt.
+2. ✅ Angenommene `set`-Claims hielten den Ausgangswert nicht fest (jetzt `expect`). Ändert visualbases.org den Wert, gewinnt der Claim, ohne dass es auffällt.
 3. ⏳ Der Bericht wird nur vom Import-Workflow erneuert und hat keine Historie.
 
 ### Quellenstruktur
@@ -58,13 +58,13 @@ Status: ✅ umgesetzt (Paket 1) · ⏳ vorgeschlagen, wartet auf Freigabe
 | N3 | Doku angleichen | ✅ |
 | N4 | Schema von `corrections.json` prüfen (Status inkl. `confirmed`, `issue`, `precision`) | ✅ |
 | N5 | Dubletten-Ausnahme eingrenzen (`duplicate-position-facility`, `duplicate-entry` gilt als geklärt) | ✅ |
-| N6 | `expect` in Claims (Ausgangswert) + Warnung `claim-upstream-changed`; Nachtrag für 49 Claims (redaktionelle Schicht, braucht Freigabe) | ⏳ |
+| N6 | `expect` in Claims (Ausgangswert) + Warnung `claim-upstream-changed`; Nachtrag für alle 39 `set`-Claims (Paket 2) | ✅ |
 
 ### Empfohlen
 | # | Maßnahme | Aufwand | Status |
 |---|---|---|---|
 | P1 | Koordinate ↔ Gastland/Gebiet offline (`world-atlas` 50m, Küstenpuffer); Warnung `coords-country`, umstrittene Gebiete getrennt | M | ⏳ |
-| P2 | Genauigkeitsstufen `site / reference / town / region` statt `approx` (Claims, Export, App) | M | ⏳ |
+| P2 | Genauigkeitsstufen `site / reference / town / region` statt `approx` (Claims, Export, App) | M | ✅ (Paket 2) |
 | P3 | Wikidata-, OSM- und veraltete Prüfungen als Warnungen; Collectors prüfen die korrigierte Position | M | ⏳ |
 | P4 | `corrections.json` `confirmed` in Auflösung und App nutzen (das Schema ist schon da) | S | ⏳ |
 | P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ⏳ |

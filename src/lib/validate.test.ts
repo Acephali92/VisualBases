@@ -124,10 +124,67 @@ describe('data validation', () => {
     const r = validate({ bases: [base()], claims: [claim], research });
     expect(r.errors).toEqual([]);
     // the claim sets a rounded, approximate position – both are reported, the raw record alone was fine
-    expect(r.warnings.filter((w: { rule: string; msg: string }) => w.rule === 'coords-approx').map((w: { msg: string }) => w.msg)).toEqual(['approximate position (set by a position claim)']);
+    expect(r.warnings.filter((w: { rule: string; msg: string }) => w.rule === 'coords-approx').map((w: { msg: string }) => w.msg)).toEqual(['approximate position (precision "town", set by a position claim)']);
     expect(warnRules(r)).toContain('coords-precision');
     expect(r.stats.approximate).toBe(1);
     expect(warnRules(validate({ bases: [base()] }))).not.toContain('coords-precision');
+  });
+
+  describe('position precision and the source value of claims', () => {
+    const research = { sources: [{ base: 'a', url: 'https://example.org/s', type: 'geodata', verdict: 'contradicts', method: 'manual', summary: 's', supports: ['position'], accessed: '2026-11-08' }] };
+    const claim = (p: Record<string, unknown> = {}) => ({ id: 'p1', base: 'a', field: 'position', op: 'set', value: { lat: 49.5123, lon: 7.6123, precision: 'site' }, expect: { lat: 49.4398, lon: 7.6019 }, status: 'accepted', decided: '2026-11-08', statement: { de: 'x', en: 'x' }, sources: ['https://example.org/s'], ...p });
+    const run = (p: Record<string, unknown> = {}, b: Record<string, unknown> = {}) => validate({ bases: [base(b)], claims: [claim(p)], research });
+
+    it('accepts a complete position claim without any warning about it', () => {
+      const r = run();
+      expect(r.errors).toEqual([]);
+      expect(warnRules(r).filter((w: string) => w.startsWith('claim-') || w.startsWith('coords-'))).toEqual([]);
+      expect(r.stats.precision).toEqual({ site: 1, reference: 0, town: 0, region: 0 });
+    });
+
+    it('derives "approximate" from the precision level', () => {
+      expect(run({ value: { lat: 49.5123, lon: 7.6123, precision: 'region' } }).stats.approximate).toBe(1);
+      // a hand-geocoded import record moved onto the facility is no longer approximate
+      expect(run({}, { approx: true }).stats.approximate).toBe(0);
+      // legacy flag: approx reads as town
+      const legacy = run({ value: { lat: 49.5123, lon: 7.6123, approx: true } });
+      expect(legacy.stats.precision.town).toBe(1);
+      expect(warnRules(legacy)).toContain('claim-precision-missing');
+      expect(rules(run({ value: { lat: 49.5123, lon: 7.6123, precision: 'street' } }))).toContain('claim-value');
+    });
+
+    it('notices when the source value has changed since the decision', () => {
+      const moved = run({}, { lat: 49.4, lon: 7.7 });
+      expect(moved.errors).toEqual([]);
+      expect(warnRules(moved)).toContain('claim-upstream-changed');
+      expect(moved.stats.upstreamChanged).toBe(1);
+      // other fields compare the plain value, presences without their derivation
+      const status = { id: 's1', field: 'status', value: 'closed', expect: 'active' };
+      expect(warnRules(run(status))).not.toContain('claim-upstream-changed');
+      expect(warnRules(run({ ...status, expect: 'unclear' }))).toContain('claim-upstream-changed');
+      const presences = { id: 'n1', field: 'presences', value: [{ nation: 'GB', role: 'stationing' }], expect: [{ nation: 'US', role: 'stationing' }] };
+      expect(warnRules(run(presences))).not.toContain('claim-upstream-changed');
+      // a field missing in the source is recorded as null
+      const period = { id: 'd1', field: 'period', value: { to: '2021' }, expect: null };
+      expect(warnRules(run(period))).not.toContain('claim-upstream-changed');
+    });
+
+    it('requires expect on accepted set claims and allows it only there', () => {
+      expect(warnRules(run({ expect: undefined }))).toContain('claim-expect-missing');
+      expect(warnRules(run({ expect: undefined, status: 'proposed', decided: undefined }))).not.toContain('claim-expect-missing');
+      expect(rules(run({ id: 'x1', field: 'presences', op: 'add', value: { nation: 'GB', role: 'co-user' }, expect: [] }))).toContain('claim-expect');
+    });
+
+    it('the committed claims record precision and source values that still match', () => {
+      const r = validate({ bases, media, wikimedia, news, movement, corrections, claims: claimsFile.claims, research: { sources: researchSources } });
+      expect(warnRules(r)).not.toContain('claim-expect-missing');
+      expect(warnRules(r)).not.toContain('claim-precision-missing');
+      expect(warnRules(r)).not.toContain('claim-upstream-changed');
+    });
+
+    it('exports the precision level', () => {
+      expect(CSV_COLUMNS.position_precision({ positionPrecision: 'town' })).toBe('town');
+    });
   });
 
   it('counts only proposed corrections as unverified positions', () => {
