@@ -11,9 +11,10 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
-| angewandte Korrekturen (claims.json) / offene Vorschläge | 47 / 1 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 87 / 1 |
 | Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
+| Präsenzen nach Art: fest / Rotation / Zugangsrecht / Übung / gemeinsam / historisch (davon abgeleitet) / geplant / nicht angegeben | 2 / 10 / 20 / 2 / 3 / 31 (31) / 3 / 287 |
 | Position ungeprüft (corrections.json) | 0 |
 | Position ungefähr | 8 |
 | Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 4 / 353 / 7 / 1 |

@@ -72,6 +72,7 @@
   function fmt(field: string, v: unknown): string {
     if (v == null || (Array.isArray(v) && !v.length)) return t('base.none');
     if (field === 'presences') return (v as { nation: string }[]).map((p) => countryName(p.nation)).join(', ');
+    if (field === 'presenceForm') { const p = v as { nation: string; form: string | null }; return `${countryName(p.nation)}: ${p.form ? tl('presenceForm', p.form) : t('base.formUnspecified')}`; }
     if (field === 'host') { const h = v as { country: string; territory?: string }; return countryName(h.territory ?? h.country) + (h.territory ? ` (${countryName(h.country)})` : ''); }
     if (field === 'status') return tl('status', String(v));
     if (field === 'siteType') return tl('siteType', String(v));
@@ -188,7 +189,7 @@
       <div><dt>{t('base.host')}</dt><dd>{#if base.host.country}{flag(base.host.country)} {countryName(base.host.country)}{#if base.host.territory}{' · '}{t('base.territory')}: {flag(base.host.territory)} {countryName(base.host.territory)}{/if}{:else}–{/if}</dd></div>
       <div><dt>{t('base.presences')}</dt><dd>
         {#each base.presences as p (p.nation)}
-          <span class="nat">{flag(p.nation)} {countryName(p.nation)}{#if p.role !== 'stationing'}{' · '}{tl('presenceRole', p.role)}{/if}{#if p.relation !== 'foreign'}{' · '}{tl('relation', p.relation)}{/if}{#if p.via !== 'tag'}<small class="basis" title={tl('presenceVia', p.via)}> ({p.via === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</span>
+          <span class="nat">{flag(p.nation)} {countryName(p.nation)}{#if p.role !== 'stationing'}{' · '}{tl('presenceRole', p.role)}{/if}{#if p.form}{' · '}<a href={href('/atlas', `forms=${p.form}`)} title={ti('presenceForm', p.form)}>{tl('presenceForm', p.form)}</a>{#if p.formVia === 'status'}<small class="basis" title={tl('presenceFormVia', p.formVia)}> ({t('base.basisDerived')})</small>{/if}{/if}{#if p.relation !== 'foreign'}{' · '}{tl('relation', p.relation)}{/if}{#if p.via !== 'tag'}<small class="basis" title={tl('presenceVia', p.via)}> ({p.via === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</span>
         {:else}<span class="muted">{t('base.none')}</span>{/each}
       </dd></div>
       {#if base.organisations.length}

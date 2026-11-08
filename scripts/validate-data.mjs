@@ -80,6 +80,7 @@ export function validateClaims(claims, byId, err, warn = () => {}) {
       if (!validCountry(p.nation)) err('claim-value', `${where}: invalid nation "${p.nation}"`, c.base);
       if (c.op !== 'remove' && !V.presenceRole.has(p.role)) err('claim-value', `${where}: invalid role "${p.role}"`, c.base);
     }
+    if (c.field === 'presenceForm' && (c.op !== 'set' || !validCountry(c.value?.nation ?? '') || !V.presenceForm.has(c.value?.form))) err('claim-value', `${where}: presenceForm needs op "set", a valid nation and a form (${[...V.presenceForm].join(' | ')})`, c.base);
     if (c.field === 'status' && !V.status.has(c.value)) err('claim-value', `${where}: invalid status "${c.value}"`, c.base);
     if (c.field === 'siteType' && !V.siteType.has(c.value)) err('claim-value', `${where}: invalid site type "${c.value}"`, c.base);
     if (c.field === 'issues' && !V.issue.has(c.value)) err('claim-value', `${where}: invalid issue "${c.value}"`, c.base);
@@ -91,7 +92,7 @@ export function validateClaims(claims, byId, err, warn = () => {}) {
     // expect: the source value the decision was made against (only meaningful when a value is replaced)
     if (c.expect !== undefined && c.op !== 'set') err('claim-expect', `${where}: "expect" is only allowed with op "set"`, c.base);
     if (c.field === 'position' && c.expect !== undefined && c.expect !== null && (!(Math.abs(c.expect.lat) <= 90) || !(Math.abs(c.expect.lon) <= 180))) err('claim-expect', `${where}: expect needs valid lat/lon`, c.base);
-    if (c.op === 'set' && c.field !== 'issues' && c.status === 'accepted' && c.expect === undefined) warn('claim-expect-missing', `${where}: no "expect" – a later change of the source value would go unnoticed`, c.base);
+    if (c.op === 'set' && !['issues', 'presenceForm'].includes(c.field) && c.status === 'accepted' && c.expect === undefined) warn('claim-expect-missing', `${where}: no "expect" – a later change of the source value would go unnoticed`, c.base);
     if (c.field === 'name' && (c.op !== 'set' || typeof c.value !== 'string' || !c.value.trim())) err('claim-value', `${where}: name needs op "set" and a non-empty string`, c.base);
   }
 }
@@ -341,6 +342,8 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     proposals: resolved.reduce((n, b) => n + (b.proposals?.length ?? 0), 0),
     withIssues: resolved.filter((b) => (b.issues ?? []).some((i) => i !== 'position-unverified')).length,
     contextSites: resolved.filter((b) => b.scope === 'domestic').length,
+    // presences (one per state and site) by form; "unspecified" = no documented form
+    presenceForms: countForms(resolved),
     positionUnverified: [...unverified].filter((id) => byId.has(id)).length,
     approximate: list.filter((b) => b.approx).length,
     precision: Object.fromEntries(POSITION_PRECISIONS.map((p) => [p, list.filter((b) => (b.positionPrecision ?? (b.approx ? 'town' : 'reference')) === p).length])),
@@ -352,6 +355,17 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
     news: news.length,
   };
   return { errors, warnings, stats };
+}
+
+/** number of presences per form (vocabulary order, then "unspecified"), with how many of them are derived */
+export function countForms(resolved) {
+  const out = Object.fromEntries([...V.presenceForm, 'unspecified'].map((f) => [f, 0]));
+  let derived = 0;
+  for (const b of resolved) for (const p of b.presences ?? []) {
+    out[p.form ?? 'unspecified']++;
+    if (p.formVia === 'status') derived++;
+  }
+  return { ...out, derived };
 }
 
 export function report({ errors, warnings, stats }, date = new Date().toISOString().slice(0, 10)) {
@@ -377,6 +391,7 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     `| angewandte Korrekturen (claims.json) / offene Vorschläge | ${stats.corrections} / ${stats.proposals} |`,
     `| Einträge mit Prüfhinweis | ${stats.withIssues} |`,
     `| Kontext-Standorte (eigenes Staatsgebiet) | ${stats.contextSites} |`,
+    ...(stats.presenceForms ? [`| Präsenzen nach Art: fest / Rotation / Zugangsrecht / Übung / gemeinsam / historisch (davon abgeleitet) / geplant / nicht angegeben | ${['permanent', 'rotational', 'access', 'exercise', 'joint'].map((f) => stats.presenceForms[f]).join(' / ')} / ${stats.presenceForms.historical} (${stats.presenceForms.derived}) / ${stats.presenceForms.planned} / ${stats.presenceForms.unspecified} |`] : []),
     `| Position ungeprüft (corrections.json) | ${stats.positionUnverified} |`,
     `| Position ungefähr | ${stats.approximate} |`,
     `| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | ${['site', 'reference', 'town', 'region'].map((p) => stats.precision?.[p] ?? 0).join(' / ')} |`,

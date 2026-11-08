@@ -2,6 +2,19 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Roadmap Paket A: Präsenzart (P1-1, P1-10)
+
+### Hinzugefügt
+- **Präsenzart je Präsenz** (`presences[].form`): fest, Rotation, Zugangsrecht, Übung, gemeinsam betrieben, historisch, geplant – mit Bezeichnungen und Definitionen DE/EN in `src/lib/taxonomy.ts` und `taxonomy.json` ([TAXONOMY.md](TAXONOMY.md), Abschnitt 6.1). Ohne Beleg bleibt sie „nicht angegeben“.
+- **Neue Claim-Art `presenceForm`** (`{ nation, form }`): ergänzt eine vorhandene Präsenz mit Quelle, ohne den Belegstatus der Präsenz zu ändern. Startbestand: 40 Claims aus den von Hand geprüften Quellen der Recherche, u. a. die schwedischen DCA-Standorte und Kolumbien (Zugangsrecht), Tapa, Ämari, Robertson Barracks und Keflavík (Rotation), Pine Gap und Globus II (gemeinsam betrieben), Weilerbach, Learmonth und Rūdninkai (geplant).
+- **Abgeleitet „historisch“:** Präsenzen an geschlossenen Standorten (31, u. a. Kabul, Bagram, Niger) ohne belegte Art; im Profil als „abgeleitet“ gekennzeichnet.
+- **Atlas-Filter „Präsenzart“** (`?forms=access,rotational`, auch „nicht angegeben“), mit Zählern wie die übrigen Filter.
+- Profil: Präsenzart je Staat mit Link auf den Filter; Korrekturliste zeigt „Bisher: Präsenzart nicht angegeben“. CSV-Spalte `presence_forms` (`US:access`), statische Seiten nennen die belegte Präsenzart. Qualitätsbericht: Verteilung der Präsenzarten.
+- Smoke-Test: Atlas mit Präsenzfilter, Profil Kiruna.
+
+### Geändert
+- `claim-expect-missing` gilt nicht für `presenceForm` (visualbases.org nennt keine Präsenzart, es gibt keinen Ausgangswert).
+
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 3 (Geo-Prüfungen)
 
 ### Geändert

@@ -160,6 +160,42 @@ describe('claims layer', () => {
   });
 });
 
+describe('presence form', () => {
+  const claim = (value: object, extra: object = {}) => ({ id: 'f', base: 'f', field: 'presenceForm', op: 'set', value, status: 'accepted', decided: '2026-11-08', statement: { de: 'x', en: 'x' }, sources: ['https://x'], ...extra });
+  const research = [{ base: 'f', url: 'https://x', method: 'manual', verdict: 'supports', supports: ['presence'] }];
+  it('a claim sets the form of one presence and keeps the original visible, the evidence stays as it is', () => {
+    const rec = sourceRecord({ id: 'f', presences: [{ nation: 'US', role: 'stationing', via: 'tag' }, { nation: 'GB', role: 'stationing', via: 'tag' }] });
+    const r = resolveBases([rec], { claims: [claim({ nation: 'US', form: 'access' })], research });
+    expect(r.problems).toEqual([]);
+    const b = r.bases[0] as Base;
+    expect(b.presences.map((p) => [p.nation, p.form, p.formVia])).toEqual([['US', 'access', 'claim'], ['GB', undefined, undefined]]);
+    expect(b.corrections![0]).toMatchObject({ field: 'presenceForm', from: { nation: 'US', form: null }, to: { nation: 'US', form: 'access' } });
+    // a refinement, not a correction of the presence: the checked source still confirms it
+    expect(b.evidence?.presence).toBe('confirmed');
+  });
+  it('a claim for a state without presence, or a form already set, is reported', () => {
+    const rec = sourceRecord({ id: 'f' });
+    expect(resolveBases([rec], { claims: [claim({ nation: 'FR', form: 'access' })], research }).problems.map((p: { rule: string }) => p.rule)).toEqual(['claim-apply']);
+    const twice = [claim({ nation: 'US', form: 'access' }), claim({ nation: 'US', form: 'access' }, { id: 'g' })];
+    expect(resolveBases([rec], { claims: twice, research }).problems.map((p: { rule: string }) => p.rule)).toEqual(['claim-apply']);
+  });
+  it('presences at closed sites are historical (derived), a documented form wins', () => {
+    const rec = sourceRecord({ id: 'f', status: 'closed', presences: [{ nation: 'US', role: 'stationing', via: 'tag' }, { nation: 'DE', role: 'stationing', via: 'tag' }] });
+    const b = resolveBases([rec], { claims: [claim({ nation: 'DE', form: 'rotational' })], research }).bases[0] as Base;
+    expect(b.presences.map((p) => [p.nation, p.form, p.formVia])).toEqual([['US', 'historical', 'status'], ['DE', 'rotational', 'claim']]);
+    expect((resolveBases([sourceRecord({ id: 'f' })], {}).bases[0] as Base).presences[0].form).toBeUndefined();
+  });
+  it('the dataset: access, rotation and closed sites are told apart', () => {
+    const form = (id: string, nation = 'US') => byId.get(id)!.presences.find((p) => p.nation === nation)?.form;
+    expect(form('s-kiruna')).toBe('access');
+    expect(form('palanquero-ab')).toBe('access');
+    expect(form('robertson-barracks')).toBe('rotational');
+    expect(form('rudninkai-litauen', 'DE')).toBe('planned');
+    for (const id of ['kabul-isaf-headquarters', 'bagram-air-base']) expect(form(id)).toBe('historical');
+    expect(all.filter((b) => b.status === 'closed').every((b) => b.presences.every((p) => p.form === 'historical'))).toBe(true);
+  });
+});
+
 describe('evidence', () => {
   const s = (verdict: string, supports: string[], method = 'manual', url = 'u') => ({ verdict, supports, method, url });
   it('derives a state per statement group without scores', () => {

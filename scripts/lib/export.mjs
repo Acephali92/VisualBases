@@ -37,6 +37,8 @@ export const CSV_COLUMNS = {
   scope: (b) => b.scope,
   stationing_nations: (b) => b.presences.filter((p) => p.role === 'stationing').map((p) => p.nation),
   co_users: (b) => b.presences.filter((p) => p.role === 'co-user').map((p) => p.nation),
+  // nation:form for every presence with a documented or derived form (PRESENCE_FORMS in taxonomy.json)
+  presence_forms: (b) => b.presences.filter((p) => p.form).map((p) => `${p.nation}:${p.form}`),
   organisations: (b) => b.organisations,
   infrastructure: (b) => b.features.filter((f) => FEATURE[f].kind === 'infrastructure'),
   civil_use: (b) => b.features.filter((f) => FEATURE[f].kind === 'civil-use'),

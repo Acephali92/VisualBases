@@ -23,6 +23,8 @@ const ROUTES = [
   ['#/atlas?status=closed&activities=defender-europe', '.meta-row'],
   ['#/base/naval-radio-transmitter-lualualei', '.profile h2'],
   ['#/base/base-aerienne-188-djibouti', '.profile .box'],
+  ['#/atlas?forms=access,rotational', '.meta-row'],
+  ['#/base/s-kiruna', '.profile .box'],
   ['#/base/buechel-nato-air-base', '.profile .chips'],
   ['#/base/ramstein-air-base', '.profile h2'],
   ['#/near', 'form.finder'],

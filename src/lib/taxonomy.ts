@@ -174,12 +174,31 @@ export const STATUSES: Term<Status>[] = [
 export type PresenceRole = 'stationing' | 'co-user';
 /** how the presence was derived from the source (see docs/TAXONOMY.md, "Herkunft") */
 export type PresenceVia = 'tag' | 'bsr' | 'us-posture' | 'site-type' | 'claim';
+/** form of a presence (docs/TAXONOMY.md, "Präsenzart"); not stated = no value, never guessed */
+export type PresenceForm = 'permanent' | 'rotational' | 'access' | 'exercise' | 'joint' | 'historical' | 'planned';
+/** where the form comes from: a correction with source, or derived from the status "closed" of the site */
+export type PresenceFormVia = 'claim' | 'status';
 /** relation between the present state and the territory – computed, never stored */
 export type Relation = 'foreign' | 'own-territory' | 'domestic';
 
 export const PRESENCE_ROLES: Term<PresenceRole>[] = [
   { id: 'stationing', label: { de: 'Stationierungsnation', en: 'Stationing nation' }, info: { de: 'Staat, der dort militärisch präsent ist.', en: 'State with a military presence at the site.' } },
   { id: 'co-user', label: { de: 'Mitnutzer', en: 'Co-user' }, info: { de: 'Weiterer Staat, der den Standort mitnutzt.', en: 'Further state that co-uses the site.' } },
+];
+
+export const PRESENCE_FORMS: Term<PresenceForm>[] = [
+  { id: 'permanent', label: { de: 'Feste Stationierung', en: 'Permanent stationing' }, info: { de: 'Dauerhaft dort stationierte Einheiten oder Personal des Staates.', en: 'Units or personnel of the state permanently stationed at the site.' } },
+  { id: 'rotational', label: { de: 'Rotation', en: 'Rotational presence' }, info: { de: 'Wiederkehrende, zeitlich begrenzte Verlegungen (z. B. sechsmonatige Rotationen), keine dauerhaft stationierte Einheit.', en: 'Recurring, time-limited deployments (e.g. six-month rotations), no permanently stationed unit.' } },
+  { id: 'access', label: { de: 'Zugangsrecht', en: 'Access rights' }, info: { de: 'Zugangs- und Nutzungsrechte aus einem Abkommen (z. B. DCA); kein Beleg für eine dauerhafte Stationierung.', en: 'Access and use rights under an agreement (e.g. a DCA); not evidence of permanent stationing.' } },
+  { id: 'exercise', label: { de: 'Übung', en: 'Exercise use' }, info: { de: 'Nutzung für Übungen oder Manöver, ohne dauerhaft stationierte Kräfte.', en: 'Use for exercises or manoeuvres, without permanently stationed forces.' } },
+  { id: 'joint', label: { de: 'Gemeinsam betrieben', en: 'Jointly operated' }, info: { de: 'Anlage, die der Staat gemeinsam mit dem Gastland betreibt.', en: 'Facility operated by the state jointly with the host country.' } },
+  { id: 'historical', label: { de: 'Historisch', en: 'Historical' }, info: { de: 'Die Präsenz dieses Staates ist beendet.', en: 'The presence of this state has ended.' } },
+  { id: 'planned', label: { de: 'Geplant / im Aufbau', en: 'Planned / under construction' }, info: { de: 'Angekündigt oder im Bau, noch keine belegte Präsenz.', en: 'Announced or under construction, no documented presence yet.' } },
+];
+
+export const PRESENCE_FORM_VIA: Term<PresenceFormVia>[] = [
+  { id: 'claim', label: { de: 'Korrektur mit Quelle', en: 'correction with source' } },
+  { id: 'status', label: { de: 'abgeleitet: Standort geschlossen', en: 'derived: site closed' } },
 ];
 
 export const RELATIONS: Term<Relation>[] = [
@@ -408,7 +427,7 @@ export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
 export const VOCABULARIES = {
   siteType: SITE_TYPES, status: STATUSES, organisation: ORGANISATIONS, feature: FEATURES, featureKind: FEATURE_KINDS,
   theme: THEMES, activity: ACTIVITIES, activityGroup: ACTIVITY_GROUPS, activityKind: ACTIVITY_KINDS, continent: CONTINENTS,
-  usPosture: US_POSTURES, listing: LISTINGS, presenceRole: PRESENCE_ROLES, presenceVia: PRESENCE_VIA, relation: RELATIONS,
+  usPosture: US_POSTURES, listing: LISTINGS, presenceRole: PRESENCE_ROLES, presenceVia: PRESENCE_VIA, presenceForm: PRESENCE_FORMS, presenceFormVia: PRESENCE_FORM_VIA, relation: RELATIONS,
   relationType: RELATION_TYPES, evidence: EVIDENCE_STATES, claimType: CLAIM_TYPES, issue: ISSUES,
 } as const;
 export type Dimension = keyof typeof VOCABULARIES;

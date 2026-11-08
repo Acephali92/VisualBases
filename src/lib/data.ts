@@ -2,8 +2,8 @@ import type { Base, Filters, Story } from './types';
 import { ACTIVITY, LEGACY_FILTERS, SITE_TYPE } from './taxonomy';
 import { distanceKm } from './geo';
 
-export const EMPTY_FILTERS: Filters = { q: '', kinds: [], status: [], nations: [], facilities: [], themes: [], activities: [], continents: [], countries: [] };
-export const FILTER_KEYS = ['kinds', 'status', 'nations', 'facilities', 'themes', 'activities', 'continents', 'countries'] as const;
+export const EMPTY_FILTERS: Filters = { q: '', kinds: [], status: [], forms: [], nations: [], facilities: [], themes: [], activities: [], continents: [], countries: [] };
+export const FILTER_KEYS = ['kinds', 'status', 'forms', 'nations', 'facilities', 'themes', 'activities', 'continents', 'countries'] as const;
 export type FilterKey = (typeof FILTER_KEYS)[number];
 
 export { distanceKm };
@@ -32,11 +32,23 @@ export function fold(s: string): string {
 /** states whose presence counts as foreign military presence (not the operator on its own soil) */
 export const foreignNations = (b: Base) => b.presences.filter((p) => p.relation !== 'domestic').map((p) => p.nation);
 
+/** filter value for presences without a documented form */
+export const FORM_UNSPECIFIED = 'unspecified';
+/**
+ * forms of the foreign presences (as counted by the nation filter); a presence without a documented form –
+ * or a record without any presence – counts as "unspecified"
+ */
+export function presenceForms(b: Base): string[] {
+  const forms = b.presences.filter((p) => p.relation !== 'domestic').map((p) => p.form ?? FORM_UNSPECIFIED);
+  return forms.length ? [...new Set(forms)] : [FORM_UNSPECIFIED];
+}
+
 /** values of a record for one filter facet */
 export function facetValues(b: Base, key: FilterKey): string[] {
   switch (key) {
     case 'kinds': return [b.siteType];
     case 'status': return [b.status];
+    case 'forms': return presenceForms(b);
     case 'nations': return foreignNations(b);
     case 'facilities': return b.features;
     case 'themes': return b.themes;

@@ -1,5 +1,5 @@
 import type {
-  Activity, ClaimType, EvidenceState, Feature, IssueCode, Listing, Organisation, PresenceRole, PresenceVia,
+  Activity, ClaimType, EvidenceState, Feature, IssueCode, Listing, Organisation, PresenceForm, PresenceFormVia, PresenceRole, PresenceVia,
   Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent, PositionCheckStatus, PositionIssue, PositionPrecision,
 } from './taxonomy';
 
@@ -40,6 +40,9 @@ export interface Presence {
   role: PresenceRole;
   /** how the presence was derived from the source */
   via: PresenceVia;
+  /** form of the presence, only where documented (set by a claim or derived from the status "closed") */
+  form?: PresenceForm;
+  formVia?: PresenceFormVia;
 }
 
 export interface Relationship {
@@ -187,6 +190,8 @@ export interface Filters {
   /** site types */
   kinds: SiteType[];
   status: Status[];
+  /** presence forms (PRESENCE_FORMS) and "unspecified" */
+  forms: string[];
   nations: string[];
   /** features: infrastructure, civilian use, functions, arrangements */
   facilities: Feature[];

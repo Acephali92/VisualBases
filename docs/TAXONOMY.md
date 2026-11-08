@@ -1,6 +1,6 @@
 # Klassifikationsmodell (Taxonomie v2)
 
-Stand: 2026-11-07. Maßgeblich für IDs, Bezeichnungen und Definitionen ist [`src/lib/taxonomy.ts`](../src/lib/taxonomy.ts); dieses Dokument erklärt das Modell. Die Bestandsaufnahme des alten Modells steht in [taxonomy/AUDIT.md](taxonomy/AUDIT.md), die Migration in [taxonomy/MIGRATION-REPORT.md](taxonomy/MIGRATION-REPORT.md).
+Stand: 2026-11-08 (Präsenzart). Maßgeblich für IDs, Bezeichnungen und Definitionen ist [`src/lib/taxonomy.ts`](../src/lib/taxonomy.ts); dieses Dokument erklärt das Modell. Die Bestandsaufnahme des alten Modells steht in [taxonomy/AUDIT.md](taxonomy/AUDIT.md), die Migration in [taxonomy/MIGRATION-REPORT.md](taxonomy/MIGRATION-REPORT.md).
 
 ## 1. Grundsätze
 
@@ -19,7 +19,7 @@ Stand: 2026-11-07. Maßgeblich für IDs, Bezeichnungen und Definitionen ist [`sr
 | Zeitraum | `period` | Seit/bis wann? | optional | `{ from, to }` (`YYYY[-MM[-DD]]`) |
 | Gastland | `host.country` | Auf welchem Staatsgebiet? | 1 | ISO 3166-1 (souveräner Staat, plus `XK`) |
 | Gebiet | `host.territory` | In welchem abhängigen Gebiet? | optional | ISO-Code des Gebiets (`GU`, `PR`, `GL`, `MQ` …) |
-| Präsenz | `presences[]` | Welche Staaten sind dort militärisch präsent? | 0–n | `{ nation, role, via }` |
+| Präsenz | `presences[]` | Welche Staaten sind dort militärisch präsent, und in welcher Form? | 0–n | `{ nation, role, via, form?, formVia? }` |
 | Organisation | `organisations[]` | Welche Organisationen nutzen ihn mit? | 0–n | `nato`, `eu`, `un` |
 | Einrichtungen & Funktionen | `features[]` | Welche Infrastruktur, welche Funktion? | 0–n | 14, Abschnitt 7 |
 | Themen | `themes[]` | Welche politischen/gesellschaftlichen/ökologischen Themen? | 0–n | `resistance`, `drone-warfare`, `environment` |
@@ -82,6 +82,29 @@ Abgrenzungen:
 | `role` | `stationing` (Stationierungsnation), `co-user` (Mitnutzer) | aus „Base nation: …“ bzw. „Base shared: …“ |
 | `via` | `tag`, `bsr`, `us-posture`, `site-type`, `claim` | Herkunft: ausdrücklich angegeben, abgeleitet aus BSR-Listung, aus der US-Kategorie, aus „USA Global Base“, oder Korrektur |
 | `relation` (berechnet) | `foreign`, `own-territory`, `domestic` | Nation ≠ Gastland → ausländisch; = Gastland mit Gebiet → eigenes Überseegebiet; = Gastland ohne Gebiet → eigenes Staatsgebiet |
+| `form` (optional) | Abschnitt 6.1 | Präsenzart, nur wo belegt |
+| `formVia` | `claim`, `status` | Herkunft der Präsenzart: Korrektur mit Quelle oder abgeleitet aus dem Status `closed` |
+
+### 6.1 Präsenzart (`presences[].form`)
+
+Unterscheidet, **wie** ein Staat an einem Standort präsent ist (Roadmap F22, Entscheidung vom 2026-11-07). Die Präsenzart gehört zur einzelnen Präsenz, nicht zum Standort: An einem Ort kann ein Staat fest stationiert sein und ein anderer rotieren.
+
+| ID | Deutsch | English | Definition |
+|---|---|---|---|
+| `permanent` | Feste Stationierung | Permanent stationing | Dauerhaft dort stationierte Einheiten oder Personal des Staates. |
+| `rotational` | Rotation | Rotational presence | Wiederkehrende, zeitlich begrenzte Verlegungen, keine dauerhaft stationierte Einheit. |
+| `access` | Zugangsrecht | Access rights | Zugangs- und Nutzungsrechte aus einem Abkommen (z. B. DCA); kein Beleg für eine dauerhafte Stationierung. |
+| `exercise` | Übung | Exercise use | Nutzung für Übungen oder Manöver, ohne dauerhaft stationierte Kräfte. |
+| `joint` | Gemeinsam betrieben | Jointly operated | Anlage, die der Staat gemeinsam mit dem Gastland betreibt. |
+| `historical` | Historisch | Historical | Die Präsenz dieses Staates ist beendet. |
+| `planned` | Geplant / im Aufbau | Planned / under construction | Angekündigt oder im Bau, noch keine belegte Präsenz. |
+
+Regeln:
+- **Keine Angabe ist der Normalfall.** visualbases.org nennt keine Präsenzart. Ohne Beleg bleibt das Feld leer; Filter und Bericht zeigen das als „nicht angegeben“. Nichts wird aus Standorttyp, US-Kategorie oder Aktivitäten geraten.
+- **Belegt** wird die Präsenzart über einen Claim `presenceForm` (`{ nation, form }`, nur `set`) mit Quelle aus `data/research/sources.json`. Der Claim ergänzt die vorhandene Präsenz und ändert die Liste nicht; fehlt die Präsenz des Staates, ist das ein Fehler (`claim-apply`). Weil er nichts korrigiert, bleibt der Belegstatus der Aussagegruppe `presence` unverändert.
+- **Abgeleitet:** An Standorten mit Status `closed` gilt jede Präsenz ohne belegte Art als `historical` (`formVia: status`). Eine belegte Art geht vor.
+- Der **Filter „Präsenzart“** im Atlas (`?forms=access,rotational`, auch `unspecified`) betrachtet nur ausländische Präsenzen, wie der Filter „Stationierungsnation“. Die Rangliste „Deine Basis“ berücksichtigt die Präsenzart (noch) nicht.
+- Startbestand 2026-11-08: 40 Claims aus den von Hand geprüften Quellen der Recherche (20 Zugangsrecht, 10 Rotation, 3 gemeinsam betrieben, 3 geplant, 2 Übung, 2 fest) und 31 abgeleitet historische Präsenzen. Nicht übernommen, weil die Quelle die Art nicht selbst belegt: Exmouth (gemeinsamer Betrieb nur in der Notiz), die pakistanischen Basen (Ende der Nutzung offen), Zadar (nur Kontext), Standorte ohne Präsenz (Teulada, Bergen, Kuçova).
 
 `scope` (berechnet): `foreign`, wenn mindestens eine Präsenz ausländisch ist; sonst `overseas`, `domestic` (**Kontext-Standort**) oder `unknown` (keine Präsenz bekannt). Der Filter „Stationierungsnation“ und die Kennzahl „mit US-Präsenz“ zählen keine Präsenzen auf eigenem Staatsgebiet.
 
@@ -158,7 +181,7 @@ Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossen
 | Schicht | Datei | Inhalt | Pflege |
 |---|---|---|---|
 | Import | `data/bases.json` | normalisierte Einordnung von visualbases.org, Rohbegriffe, Quellenlinks, Notizen, Bilder | nur der Importer |
-| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, bei `set` der Ausgangswert der Quelle (`expect`), Status, Quellen, Entscheidungsdatum. Felder: `presences`, `host`, `region`, `position` (`{ lat, lon, precision }`, nur `set`; das ältere `approx: true` wird als `town` gelesen), `name` (nur `set`), `status`, `period`, `siteType`, `features`, `activities`, `issues` | von Hand |
+| Korrekturen | `data/claims.json` | Aussagen mit Feld, Operation (`set`/`add`/`remove`), Wert, bei `set` der Ausgangswert der Quelle (`expect`), Status, Quellen, Entscheidungsdatum. Felder: `presences`, `presenceForm` (`{ nation, form }`, nur `set`, ergänzt eine Präsenz), `host`, `region`, `position` (`{ lat, lon, precision }`, nur `set`; das ältere `approx: true` wird als `town` gelesen), `name` (nur `set`), `status`, `period`, `siteType`, `features`, `activities`, `issues` | von Hand |
 | Positionen | `data/corrections.json` | zweifelhafte Koordinaten ohne belegte Korrektur (belegte Korrekturen stehen als `position` in `claims.json`) | von Hand |
 | Belege | `data/research/sources.json` | geprüfte Quellen je Standort: Herausgeber, Art (`official`, `academic`, `media`, `movement`, `dataset`, `geodata`), Veröffentlichungs- und Abrufdatum, Urteil, gestützte Aussagegruppen | Recherche-Skripte und von Hand |
 

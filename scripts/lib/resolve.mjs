@@ -15,9 +15,13 @@
 export const KIND_CATEGORIES = ['foreign-bases', 'shared-bases', 'national-base', 'us-global', 'civilian-location', 'extra-facility', 'meta-site'];
 const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
-/** claim field → statement group whose evidence it changes */
-export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
-export const CLAIM_FIELDS = ['presences', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
+/**
+ * claim field → statement group whose evidence it changes. presenceForm refines a presence without changing it:
+ * the evidence of the presence stays as it is, and its source keeps counting as evidence (REFINING_FIELDS)
+ */
+export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], presenceForm: [], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
+const REFINING_FIELDS = new Set(['presenceForm']);
+export const CLAIM_FIELDS = ['presences', 'presenceForm', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
 
 /** precision levels that count as "approximate position" in the app (vocabulary: POSITION_PRECISIONS in src/lib/taxonomy.ts) */
 const APPROXIMATE = new Set(['town', 'region']);
@@ -42,6 +46,17 @@ export function applyClaim(b, c) {
     b.positionPrecision = c.value.precision ?? (c.value.approx ? 'town' : 'reference');
     return { from, to: { lat: b.lat, lon: b.lon } };
   }
+  // presenceForm: { nation, form } – annotates the presence of one state, the list itself is left alone
+  if (c.field === 'presenceForm') {
+    if (c.op !== 'set') throw new Error('presenceForm only supports "set"');
+    const p = b.presences.find((x) => x.nation === c.value.nation);
+    if (!p) throw new Error(`no presence of "${c.value.nation}" (claim obsolete or in the wrong order?)`);
+    if (p.form === c.value.form) throw new Error('value is already set (claim obsolete?)');
+    const from = { nation: p.nation, form: p.form ?? null };
+    p.form = c.value.form;
+    p.formVia = 'claim';
+    return { from, to: { nation: p.nation, form: p.form } };
+  }
   const from = clone(b[c.field]);
   if (c.op === 'set') {
     if (JSON.stringify(stripVia(from)) === JSON.stringify(stripVia(c.value))) throw new Error('value is already set (claim obsolete?)');
@@ -58,6 +73,15 @@ export function applyClaim(b, c) {
   return { from, to: clone(b[c.field]) };
 }
 const stripVia = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === 'object' ? { nation: x.nation, role: x.role } : x)) : v);
+
+/**
+ * The status "closed" means that the use by the states listed has ended, so a presence without a documented
+ * form is historical. A form set by a claim is kept (mutates the record).
+ */
+export function deriveForms(b) {
+  if (b.status !== 'closed') return;
+  for (const p of b.presences) if (!p.form) Object.assign(p, { form: 'historical', formVia: 'status' });
+}
 
 /**
  * value of a claim field in an import record, in the form a claim's `expect` records it
@@ -163,7 +187,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
         const { from, to } = applyClaim(b, c);
         (b.corrections ??= []).push({ id: c.id, field: c.field, op: c.op, from, to, statement: c.statement, sources: c.sources, decided: c.decided });
         for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) corrected.add(t);
-        for (const s of c.sources) cited.add(s);
+        if (!REFINING_FIELDS.has(c.field)) for (const s of c.sources) cited.add(s);
         if (c.field === 'siteType') b.basis.siteType = 'claim';
         if (c.field === 'status') b.basis.status = 'claim';
       } catch (e) {
@@ -172,6 +196,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     }
 
     if (APPROXIMATE.has(b.positionPrecision)) b.approx = true; else delete b.approx;
+    deriveForms(b);
     b.presences = b.presences.map((p) => ({ ...p, relation: relation(p.nation, b.host) }));
     b.scope = scopeOf(b.presences);
     const issues = [...issuesOf(b), ...extraIssues];
