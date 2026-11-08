@@ -44,7 +44,7 @@ await fs.writeFile(path.join(out, 'stories.json'), JSON.stringify(stories));
 const movement = await readOpt('data/movement.json');
 for (const s of movement.congress?.speakers ?? []) {
   const m = media[`https://visualbases.org/wp-content/uploads/${s.photo}`];
-  s.photo = m ? m.thumb : undefined;
+  s.photo = m && m.rights !== 'unclear' ? m.thumb : undefined; // unsettled rights: not published
 }
 await fs.writeFile(path.join(out, 'movement.json'), JSON.stringify(movement));
 // the data licence travels with every download

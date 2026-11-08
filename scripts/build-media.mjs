@@ -25,6 +25,20 @@ const UA = 'VisualBases-open-data-import (+https://github.com/Acephali92/VisualB
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+const OSM_CREDIT = '© OpenStreetMap contributors · OpenStreetBrowser';
+
+/**
+ * rights status of a newly processed image (MEDIA_RIGHTS in src/lib/taxonomy.ts). Only what is certain is
+ * derived: a licence field, OpenStreetMap map views, Google Earth. Everything else starts as "unclear" and is
+ * not published until an editor sets it (e.g. "own-archive") in data/media.json.
+ */
+export function rightsOf(meta) {
+  if (meta.license) return { rights: 'free-licence' };
+  if (meta.credit === OSM_CREDIT) return { rights: 'free-licence', license: 'ODbL / CC BY-SA 2.0', licenseUrl: 'https://www.openstreetmap.org/copyright' };
+  if (meta.credit === 'Google Earth') return { rights: 'google-earth' };
+  return { rights: 'unclear' };
+}
+
 /** classify an image by its file name and caption */
 export function classify(file, caption = '') {
   const yearOf = (s) => (s.match(/\b(19[89]\d|20[0-4]\d)\b/g) ?? []).map(Number);
@@ -122,6 +136,7 @@ async function main() {
         w: f.width, h: f.height, tw: t.width, th: t.height,
         type: meta.type, year: meta.year, credit: meta.credit,
         license: meta.license, licenseUrl: meta.licenseUrl, sourceUrl: meta.sourceUrl ?? url,
+        ...rightsOf(meta),
       };
       done++;
       if (done % 10 === 0) await fs.writeFile(path.join(ROOT, 'data/media.json'), JSON.stringify(media, null, 1) + '\n');

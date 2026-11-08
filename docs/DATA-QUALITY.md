@@ -76,7 +76,7 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 | `corrections` | Schema von `data/corrections.json` (siehe oben) |
 | `resolve` | die Datenschichten lassen sich zusammenführen |
 | `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review`, `research-precision` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung; Urteile je Gruppe (`verdicts`) nur für abgedeckte Gruppen; `precision` nur bei Lagebelegen; `bsr-review.json` nennt die BSR-Zeile |
-| `image-file`, `media-file`, `media-credit` | Bilddateien vorhanden, Urheber angegeben |
+| `image-file`, `media-file`, `media-credit`, `media-rights` | Bilddateien vorhanden, Urheber angegeben, Rechtestatus gesetzt (`free-licence` nur mit Lizenzname); Bilder mit `unclear` werden nicht veröffentlicht und als Warnung `media-rights-unclear` gelistet ([DATA-SOURCES.md](DATA-SOURCES.md)) |
 | `wikimedia-license`, `wikimedia-credit`, `wikimedia-page` | Wikimedia-Fotos nur mit freier Lizenz, Urheber und Dateiseite |
 | `source-url`, `news-url`, `date`, `news-date` | gültige URLs und Datumsformate (`YYYY`, `YYYY-MM`, `YYYY-MM-DD`) |
 

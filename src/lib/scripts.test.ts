@@ -147,6 +147,30 @@ describe('coordinates', () => {
   });
 });
 
+describe('deployment', () => {
+  it('removes image files with unsettled rights from the build output', async () => {
+    // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+    const fs = await import('node:fs/promises');
+    // @ts-expect-error – see above
+    const os = await import('node:os');
+    // @ts-expect-error – see above
+    const path = await import('node:path');
+    // @ts-expect-error – plain ESM build script without type declarations
+    const { pruneUnclearMedia } = await import('../../scripts/prerender.mjs');
+    const dist = await fs.mkdtemp(path.join(os.tmpdir(), 'vb-dist-'));
+    await fs.mkdir(path.join(dist, 'media'));
+    for (const f of ['a.webp', 'a-480.webp', 'b.webp', 'b-480.webp']) await fs.writeFile(path.join(dist, 'media', f), 'x');
+    const media = {
+      u1: { src: 'media/a.webp', thumb: 'media/a-480.webp', rights: 'own-archive' },
+      u2: { src: 'media/b.webp', thumb: 'media/b-480.webp', rights: 'unclear' },
+      u3: { src: 'media/c.webp', thumb: 'media/c-480.webp', rights: 'unclear' }, // never processed – no file
+    };
+    expect(await pruneUnclearMedia(dist, media)).toBe(2);
+    expect((await fs.readdir(path.join(dist, 'media'))).sort()).toEqual(['a-480.webp', 'a.webp']);
+    await fs.rm(dist, { recursive: true });
+  });
+});
+
 describe('node scripts', () => {
   it('load in plain Node (type stripping needs explicit .ts imports down the chain)', async () => {
     // @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)

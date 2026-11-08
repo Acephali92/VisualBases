@@ -14,11 +14,23 @@ Stand: 2026-11-07. Dieses Dokument listet alle Daten, die VisualBases verwendet,
 
 ### Bilder
 
-| Herkunft | Lizenz | Hinweis |
-|---|---|---|
-| Fotos und Satellitenausschnitte von visualbases.org (Google Earth, Archiv) | Nutzung mit Karl-Heinz Peil abgestimmt; Google-Earth-Bilder © Google und Datenanbieter, Nennung im Bild | 164 Einträge in `data/media.json`, davon 19 mit Lizenzfeld |
-| Wikimedia Commons | je Datei (CC BY, CC BY-SA, gemeinfrei …), Urheber und Lizenz werden angezeigt | 191 Einträge in `data/wikimedia.json`; nur ein Teil heruntergeladen (Drosselung) |
-| Bilder Dritter mit ungeklärter Lizenz (Flickr Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, Kampagnen-Logos, Porträts) | **ungeklärt** | Roadmap P1-3, Entscheidung 2 |
+Jedes Bild in `data/media.json` hat einen **Rechtestatus** (`rights`, Vokabular `MEDIA_RIGHTS` in `src/lib/taxonomy.ts`). Bilder mit dem Status `unclear` werden **nicht veröffentlicht**: Sie fehlen in Profilen, Galerien, „Mitmachen“ und auf den statischen Seiten, bis der Status geklärt ist. Die Validierung verlangt einen Status (`media-rights`) und listet ungeklärte Bilder im Bericht (`media-rights-unclear`). Neue Bilder ordnet `build-media.mjs` nur dort selbst ein, wo es sicher ist (Lizenzfeld, OpenStreetMap, Google Earth); alles andere beginnt als `unclear`.
+
+| Status | Herkunft | Lizenz / Grundlage | Anzahl (2026-11-08) |
+|---|---|---|---|
+| `free-licence` | Wikimedia Commons (gemeinfrei, CC BY, CC BY-SA), Kartenausschnitte von OpenStreetMap/OpenStreetBrowser | Lizenz je Datei, Urheber und Lizenz werden angezeigt; OSM: „© OpenStreetMap contributors“, ODbL / CC BY-SA 2.0 | 61 (19 Commons, 42 OSM) |
+| `google-earth` | Satellitenausschnitte aus Google Earth (Archiv visualbases.org) | © Google und Datenanbieter, nicht-kommerzielle Nutzung mit der eingebetteten Nennung | 65 |
+| `own-archive` | eigenes Material von visualbases.org (Kongressfolien, Fotos der Kampagne Stopp Ramstein u. a.) | Nutzung mit Karl-Heinz Peil abgestimmt | 8 |
+| `unclear` | Material Dritter mit ungeklärter Lizenz, siehe unten | **nicht veröffentlicht** | 30 |
+
+**Ungeklärt und deshalb ausgeblendet** (Freigabe oder Urheber- und Lizenzangabe nötig):
+
+- Fotos: Flickr „Menwith Hill Day of Action 2011“; „Marcha contra la base de Rota“, Camp Delta (Guantánamo), Satellitenschüssel RAF Oakhanger, Aegis Ashore Rumänien (alle von Commons übernommen, aber ohne Datei- und Lizenzangabe); US-Army-Foto Bremerhaven
+- Kampagnen-Logos (10): Ansbach, Büchel, Kalkar, Erbenheim, Yorkshire CND, No MUOS, Okinawa, No Helipads Okinawa, Jeju Island, Shannonwatch
+- Porträts der Redner des Kongresses 2021 (10)
+- Dokumente und Screenshots Dritter: Wikipedia-Karte „Military facilities of the United States in Japan 2016“ (Urheber und Lizenz fehlen), Dokument des LBB Rheinland-Pfalz (NATO-Pipeline), Screenshots der Webseiten Germersheim und Flughafen Hahn
+
+Zum Freigeben den Status in `data/media.json` setzen (`own-archive` mit Zustimmung, `free-licence` mit `license`, `licenseUrl` und Urheber in `credit`) und `npm run data:build` ausführen.
 
 Bilder sind ausdrücklich **nicht** Teil der CC-BY-Datenlizenz.
 

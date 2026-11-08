@@ -124,7 +124,26 @@ ${context.length ? `<h2>Kontext-Standorte auf eigenem Staatsgebiet</h2>\n<ul>\n$
 `;
 }
 
+/**
+ * Vite copies public/media completely. Images whose rights are not settled (data/media.json, rights "unclear")
+ * are not referenced by the published data and must not be reachable by URL either – remove their files from dist.
+ * Media are not in the service worker precache (vite.config.ts), so removing them breaks nothing.
+ */
+export async function pruneUnclearMedia(dist = DIST, media = null) {
+  media ??= JSON.parse(await fs.readFile(path.join(ROOT, 'data/media.json'), 'utf8'));
+  let removed = 0;
+  for (const m of Object.values(media)) {
+    if (m.rights !== 'unclear') continue;
+    for (const f of [m.src, m.thumb]) {
+      try { await fs.unlink(path.join(dist, f)); removed++; } catch (e) { if (e.code !== 'ENOENT') throw e; }
+    }
+  }
+  return removed;
+}
+
 async function main() {
+  const pruned = await pruneUnclearMedia();
+  if (pruned) console.log(`  removed ${pruned} image files with unsettled rights from dist`);
   const bases = JSON.parse(await fs.readFile(path.join(DIST, 'data/bases.json'), 'utf8'));
   await fs.mkdir(path.join(DIST, 'b'), { recursive: true });
   for (const b of bases) await fs.writeFile(path.join(DIST, 'b', `${b.id}.html`), page(b));
