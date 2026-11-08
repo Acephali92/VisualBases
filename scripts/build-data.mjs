@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveBases } from './lib/resolve.mjs';
 import { toCsv, toGeoJSON } from './lib/export.mjs';
+import { readJson } from './research/lib.mjs';
 import { VOCABULARIES, TERRITORY_SOVEREIGN } from '../src/lib/taxonomy.ts';
 
 /** attribution required by the CC BY 4.0 data licence (data/LICENSE.md) */
@@ -21,7 +22,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(ROOT, 'public/data');
 const sourceBases = JSON.parse(await fs.readFile(path.join(ROOT, 'data/bases.json'), 'utf8'));
 const stories = JSON.parse(await fs.readFile(path.join(ROOT, 'data/stories.json'), 'utf8'));
-const readOpt = async (f) => { try { return JSON.parse(await fs.readFile(path.join(ROOT, f), 'utf8')); } catch { return {}; } };
+// optional files may be missing, but a malformed file stops the build (it must not drop corrections silently)
+const readOpt = (f) => readJson(path.join(ROOT, f), {});
 const media = await readOpt('data/media.json');
 const wikimedia = await readOpt('data/wikimedia.json');
 const corrections = await readOpt('data/corrections.json');

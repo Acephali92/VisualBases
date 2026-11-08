@@ -17,22 +17,35 @@ VisualBases soll nachvollziehbar sein: Jede Angabe braucht eine Herkunft, Unsich
 
 ## Prüf-Schicht `data/corrections.json`
 
-Für Datensätze, deren Position nachweislich zweifelhaft ist. Ein Eintrag mit `status: "proposed"` **ändert die Daten nicht**: Er kennzeichnet den Standort in der App als **„Position ungeprüft“**, nennt den Grund und einen Korrekturvorschlag mit Quelle. Erst nach Bestätigung durch die Projektverantwortlichen wird korrigiert (`status: "applied"` bzw. Korrektur an der Quelle).
+Für Datensätze, deren Position nachweislich zweifelhaft ist. Ein Eintrag mit `status: "proposed"` **ändert die Daten nicht**: Er kennzeichnet den Standort in der App als **„Position ungeprüft“**, nennt den Grund und einen Korrekturvorschlag mit Quelle. Korrigiert wird erst nach einer Entscheidung der Projektverantwortlichen, und zwar als angenommener `position`-Claim in `data/claims.json` oder an der Quelle. Danach wird der Eintrag entfernt oder auf `applied` gesetzt.
+
+Stand 2026-11-07: Die Datei enthält keine offenen Einträge. Die beiden früheren Fälle (Puerto Castilla, Karlovac) sind über angenommene `position`-Claims korrigiert (siehe unten).
 
 ```jsonc
 {
   "id": "karlovac-croatia-2",
-  "status": "proposed",               // proposed | applied
-  "issue": "duplicate-in-source",
+  "status": "proposed",               // proposed | applied | confirmed
+  "issue": "duplicate-in-source",     // Vokabular siehe unten
   "detail": "…",
   "duplicateOf": "zadar-gazenica-croatia",
-  "proposal": { "lat": 45.4893, "lon": 15.5486, "precision": "town",
+  "proposal": { "lat": 45.4893, "lon": 15.5486, "precision": "town",   // site | reference | town | region
                 "source": "OpenStreetMap relation 11227312", "url": "https://www.openstreetmap.org/relation/11227312",
                 "retrieved": "2026-11-07" }
 }
 ```
 
-Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJSON) bzw. als CSV-Spalte `position_check` (`unverified:<grund>` oder `approximate`).
+| Feld | Pflicht | Werte (geprüft von `npm run validate`, Regel `corrections`) |
+|---|---|---|
+| `id` | ja | existierender Standort |
+| `status` | ja | `proposed` (zweifelhaft, wird gekennzeichnet) · `applied` (korrigiert) · `confirmed` (redaktionell geprüft und beibehalten) |
+| `issue` | ja | `duplicate-in-source` · `copied-coordinates` · `wrong-country` · `off-site` (Referenzpunkt neben der Anlage) · `imprecise` (nur Ort/Region bekannt) · `shared-site` (mehrere Einträge teilen sich legitim einen Standort) |
+| `duplicateOf` | nein | existierender Standort |
+| `proposal` | nein | `lat`/`lon` gültig, `source`, `url` (http/https), optional `precision` (`site` · `reference` · `town` · `region`) und `retrieved` (Datum) |
+| `source`, `url`, `retrieved` | bei `confirmed` | Beleg für die redaktionelle Entscheidung |
+
+Die Vokabulare stehen in `src/lib/taxonomy.ts` (`POSITION_CHECK_STATUSES`, `POSITION_ISSUES`, `POSITION_PRECISIONS`). Jeder Eintrag, unabhängig vom Status, nimmt den Standort aus der Dublettenprüfung heraus (`duplicate-position-reviewed`).
+
+Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJSON) bzw. als CSV-Spalte `position_check` (`unverified:<grund>` nur bei `proposed`, sonst `approximate` für ungefähre Positionen).
 
 ## Automatische Validierung
 
@@ -45,23 +58,30 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 
 | Regel | Prüfung |
 |---|---|
+| `file-invalid`, `bases-empty` | Datendatei unlesbar, kein gültiges JSON oder falsche Struktur; `bases.json` leer. Fehlende optionale Dateien sind erlaubt, eine kaputte Datei gilt nie als „leer“ (das gilt auch für `npm run data:build` und die Recherche-Skripte) |
 | `duplicate-id`, `id`, `name` | eindeutige ID, Name vorhanden |
+| `schema` | Listenfelder (`features`, `themes`, `activities`, `organisations`, `presences`) sind Listen |
 | `coords-missing`, `coords-range`, `coords-null-island` | Koordinaten vorhanden, im gültigen Bereich, nicht 0/0 |
-| `duplicate-position` | zwei Standorte < 200 m auseinander, ohne Garnison-/Einrichtungsbezug und ohne Eintrag in `corrections.json` |
+| `duplicate-position` | zwei Standorte < 200 m auseinander (nach Anwendung der Claims), ohne Bezug über Sammeleintrag (`garrison`, `region-cluster`) oder `relations`, kein `special-facility`, ohne Eintrag in `corrections.json` und ohne Prüfhinweis `duplicate-entry` |
 | `country-missing`, `country-invalid`, `nation-invalid` | ISO-3166-Code (plus `XK`), geprüft mit `Intl.DisplayNames` |
 | `site-type`, `status`, `feature`, `theme`, `activity`, `organisation`, `listing`, `us-posture`, `continent`, `presence-*` | Werte aus dem Vokabular in `src/lib/taxonomy.ts` |
 | `country-territory`, `territory-invalid` | Gastland ist der souveräne Staat, das Gebiet gehört zu ihm |
 | `rule-overseas`, `rule-domestic` | Fachregeln der Taxonomie ([TAXONOMY.md](TAXONOMY.md), Abschnitt 10) |
 | `origin` | Herkunft und Rohbegriffe vorhanden |
 | `claim-*` | `data/claims.json`: Schema, Quellen, Werte; Korrekturen müssen auf die aktuellen Daten passen |
-| `related`, `news-base`, `movement-base`, `corrections` | Verweise zeigen auf existierende Standorte |
+| `related`, `relation-type`, `relation`, `news-base`, `movement-base` | Verweise zeigen auf existierende Standorte, Relationstyp ist `part-of`, `member-of` oder `related` |
+| `corrections` | Schema von `data/corrections.json` (siehe oben) |
+| `resolve` | die Datenschichten lassen sich zusammenführen |
+| `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung; `bsr-review.json` nennt die BSR-Zeile |
 | `image-file`, `media-file`, `media-credit` | Bilddateien vorhanden, Urheber angegeben |
 | `wikimedia-license`, `wikimedia-credit`, `wikimedia-page` | Wikimedia-Fotos nur mit freier Lizenz, Urheber und Dateiseite |
 | `source-url`, `news-url`, `date`, `news-date` | gültige URLs und Datumsformate (`YYYY`, `YYYY-MM`, `YYYY-MM-DD`) |
 
 ### Warnungen (im Bericht, blockieren nicht)
 
-`sources-none` (keine Quelle) · `sources-wikipedia-only` · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert) · `duplicate-position-reviewed` / `-linked` · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
+`sources-none` (keine Quelle) · `sources-wikipedia-only` · `issue-*` (Prüfhinweise der Taxonomie, z. B. `issue-multiple-site-types`, `issue-nation-missing`, `issue-review-on-origin`) · `term-unmapped` (neuer Begriff auf visualbases.org) · `rule-civilian` (zivile Anlage mit nuklearer Teilhabe) · `coords-precision` (weniger als 3 Nachkommastellen) · `coords-approx` (von Hand geokodiert oder per Claim als ungefähr gesetzt) · `duplicate-position-reviewed` (in `corrections.json` oder per angenommenem Claim als `duplicate-entry` markiert) / `-linked` (Sammeleintrag oder Relation) / `-facility` (`special-facility` ohne Relation: Teil der Basis oder zweiter Beitrag zur selben Anlage? Klären über `relations` oder `corrections.json`) · `image-unprocessed` · `news-date-vague` · `news-duplicate` · `wikimedia-orphan` · `continent-missing`
+
+`coords-precision`, `coords-approx` und die Dublettenprüfung laufen auf den **aufgelösten** Datensätzen, also mit den angenommenen `position`-Claims. Die Kennzahl „Position ungefähr“ zählt deshalb auch Positionen, die ein Claim als ungefähr setzt; „Position ungeprüft“ zählt nur Einträge mit `status: "proposed"`.
 
 Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
 
@@ -77,13 +97,13 @@ Neue Regeln brauchen einen Test in `src/lib/validate.test.ts`.
 
 Die Rangliste unter `#/near` verwendet die **gespeicherte** Koordinate jedes Eintrags. Unbestätigte Korrekturvorschläge werden **nicht** angewendet. Betroffene Treffer werden gekennzeichnet, aber nicht verschoben. Die Quelldaten (`data/*.json`) wurden dafür nicht geändert.
 
-Prüfung vom 2026-11-07 (alle 365 Einträge, paarweiser Abstand):
+Prüfung vom 2026-11-07, aktualisiert 2026-11-08 (alle 365 Einträge, paarweiser Abstand, nach Anwendung der Claims):
 
 | Befund | Einträge | Wirkung auf „Deine Basis“ |
 |---|---|---|
-| Koordinate identisch mit anderem Eintrag (Abstand 0 m) | `puerto-castilla-honduras` = `soto-cano-honduras`; `karlovac-croatia-2` = `zadar-gazenica-croatia` (beide `positionCheck: proposed`) | Die Entfernung zu Puerto Castilla bzw. Karlovac ist die zu Soto Cano bzw. Zadar und damit vermutlich falsch. Treffer tragen „⚠ Position ungeprüft“. Puerto Castilla (shared-base, US) ist aufgenommen. Karlovac (`unspecified`, US) ist aufgenommen und zusätzlich als „Nutzungsform nicht angegeben“ markiert. |
-| weitere Paare unter 100 m | keine | – |
-| von Hand verortet (`approx`) | `gitmo-guantanamo-bay`, `raf-akrotiri`, `camp-century-greenland` (geschlossen), `white-beach-okinawa`, `inezgane-airport` | Treffer tragen „≈ Position ungefähr“ |
+| Koordinate identisch mit anderem Eintrag (Abstand 0 m) in `bases.json` | `puerto-castilla-honduras` = `soto-cano-honduras`; `karlovac-croatia-2` = `zadar-gazenica-croatia` | Durch die angenommenen Claims `puerto-castilla-position` und `karlovac-position` korrigiert (Ortsmitte, ungefähr; Quelle OSM/Nominatim). Treffer tragen „≈ Position ungefähr“. Karlovac (`unspecified`, US) ist zusätzlich als „Nutzungsform nicht angegeben“ markiert. |
+| weitere Paare unter 200 m | `de-kl-warrior-preparation-center` ↔ `warrior-preparation-center-einsiedlerhof` (194 m) | zwei Beiträge zur selben Anlage; über den angenommenen Claim `wpc-duplicate` (Prüfhinweis `duplicate-entry`) geklärt → Warnung `duplicate-position-reviewed`. Bis 2026-11-07 nahm die Validierung `special-facility` pauschal aus und sah das Paar gar nicht. |
+| ungefähr (`approx`) | von Hand verortet: `gitmo-guantanamo-bay`, `raf-akrotiri`, `camp-century-greenland` (geschlossen), `white-beach-okinawa`, `inezgane-airport`; per Claim: `puerto-castilla-honduras`, `karlovac-croatia-2`, `jungle-warfare-training-center` | Treffer tragen „≈ Position ungefähr“ |
 | ungültige Koordinaten | keine (der Validator blockiert sie) | würden ausgeschlossen und unter „Wie genau ist das?“ gezählt |
 
 Allgemein steht jede Koordinate für einen Referenzpunkt aus dem Kartenlink der Quelle. Große Anlagen (Truppenübungsplätze, Flugplätze) erstrecken sich über mehrere Kilometer. Die App leitet daraus keine Fehlergrenzen ab (siehe TAXONOMY, Abschnitt 11) und erklärt Rechen- und Positionsgenauigkeit getrennt (Aufklappbereich „Wie genau sind diese Entfernungen?“).
@@ -92,7 +112,7 @@ Allgemein steht jede Koordinate für einen Referenzpunkt aus dem Kartenlink der 
 
 | Kennzeichen | Bedeutung |
 |---|---|
-| ⚠ Position ungeprüft | Eintrag in `corrections.json`, mit Grund und Vorschlag |
+| ⚠ Position ungeprüft | Eintrag in `corrections.json` mit `status: "proposed"`, mit Grund und Vorschlag |
 | ≈ Position ungefähr | von Hand geokodiert, weil die Quelle keine Koordinate enthält |
 | ⚠ Eintrag wird geprüft | auf visualbases.org als „Review required“ markiert |
 | 📄 Im Pentagon-Bericht gelistet | Quelle: Base Structure Report (BSR) |

@@ -1,6 +1,19 @@
 import { describe, expect, it } from 'vitest';
+// @ts-expect-error – Node built-ins are untyped here (no @types/node dependency)
+import fs from 'node:fs/promises';
+// @ts-expect-error – see above
+import os from 'node:os';
+// @ts-expect-error – see above
+import path from 'node:path';
 // @ts-expect-error – plain ESM build script without type declarations
 import { validate, validCountry, report, mappedTerm } from '../../scripts/validate-data.mjs';
+// @ts-expect-error – plain ESM build script without type declarations
+import { readJson } from '../../scripts/research/lib.mjs';
+// @ts-expect-error – plain ESM build script without type declarations
+import { CSV_COLUMNS } from '../../scripts/lib/export.mjs';
+import checks from '../../data/research/checks.json';
+import candidates from '../../data/research/candidates.json';
+import bsrReview from '../../data/research/bsr-review.json';
 import bases from '../../data/bases.json';
 import media from '../../data/media.json';
 import wikimedia from '../../data/wikimedia.json';
@@ -17,7 +30,7 @@ const warnRules = (r: { warnings: { rule: string }[] }) => r.warnings.map((e) =>
 
 describe('data validation', () => {
   it('the committed dataset has no errors', () => {
-    const r = validate({ bases, media, wikimedia, news, movement, corrections, claims: claimsFile.claims, research: { sources: researchSources } });
+    const r = validate({ bases, media, wikimedia, news, movement, corrections, claims: claimsFile.claims, research: { sources: researchSources, candidates, checks, bsrReview } });
     expect(r.errors).toEqual([]);
   });
 
@@ -88,6 +101,79 @@ describe('data validation', () => {
       fileExists: () => false,
     });
     expect(rules(r)).toEqual(expect.arrayContaining(['related', 'image-file', 'media-file', 'wikimedia-license', 'news-url']));
+  });
+
+  it('treats a malformed data file as an error, never as an empty one', async () => {
+    const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'vb-read-'));
+    await fs.writeFile(path.join(dir, 'ok.json'), '{"claims":[]}');
+    await fs.writeFile(path.join(dir, 'broken.json'), '{"claims":[');
+    expect(await readJson(path.join(dir, 'ok.json'), {})).toEqual({ claims: [] });
+    expect(await readJson(path.join(dir, 'missing.json'), { fallback: true })).toEqual({ fallback: true });
+    await expect(readJson(path.join(dir, 'broken.json'), {})).rejects.toThrow(/invalid JSON/);
+    await fs.rm(dir, { recursive: true });
+    // wrong shapes and an empty import are reported
+    expect(rules(validate({ bases: {} }))).toContain('file-invalid');
+    expect(rules(validate({ bases: [] }))).toContain('bases-empty');
+    expect(rules(validate({ bases: [base()], claims: {} }))).toContain('file-invalid');
+    expect(rules(validate({ bases: [base()], corrections: { positions: {} } }))).toContain('file-invalid');
+  });
+
+  it('checks precision and approximate positions on the resolved records', () => {
+    const claim = { id: 'p1', base: 'a', field: 'position', op: 'set', value: { lat: 49.5, lon: 7.6, approx: true }, status: 'accepted', decided: '2026-11-07', statement: { de: 'x', en: 'x' }, sources: ['https://example.org/s'] };
+    const research = { sources: [{ base: 'a', url: 'https://example.org/s', type: 'geodata', verdict: 'supports', method: 'manual', summary: 's', supports: ['position'], accessed: '2026-11-07' }] };
+    const r = validate({ bases: [base()], claims: [claim], research });
+    expect(r.errors).toEqual([]);
+    // the claim sets a rounded, approximate position – both are reported, the raw record alone was fine
+    expect(r.warnings.filter((w: { rule: string; msg: string }) => w.rule === 'coords-approx').map((w: { msg: string }) => w.msg)).toEqual(['approximate position (set by a position claim)']);
+    expect(warnRules(r)).toContain('coords-precision');
+    expect(r.stats.approximate).toBe(1);
+    expect(warnRules(validate({ bases: [base()] }))).not.toContain('coords-precision');
+  });
+
+  it('counts only proposed corrections as unverified positions', () => {
+    const positions = [
+      { id: 'a', status: 'proposed', issue: 'imprecise' },
+      { id: 'b', status: 'applied', issue: 'copied-coordinates' },
+    ];
+    const r = validate({ bases: [base(), base({ id: 'b', lat: 10 })], corrections: { positions } });
+    expect(r.errors).toEqual([]);
+    expect(r.stats.positionUnverified).toBe(1);
+  });
+
+  it('validates the schema of data/corrections.json', () => {
+    const v = (entry: Record<string, unknown>) => rules(validate({ bases: [base()], corrections: { positions: [{ id: 'a', status: 'proposed', issue: 'imprecise', ...entry }] } }));
+    expect(v({})).not.toContain('corrections');
+    expect(v({ status: 'maybe' })).toContain('corrections');
+    expect(v({ issue: 'odd' })).toContain('corrections');
+    expect(v({ proposal: { lat: 49, lon: 7, precision: 'town', source: 'OSM', url: 'https://www.openstreetmap.org/node/1', retrieved: '2026-11-07' } })).not.toContain('corrections');
+    expect(v({ proposal: { lat: 49, lon: 7, precision: 'street', source: 'OSM', url: 'https://www.openstreetmap.org/node/1' } })).toContain('corrections');
+    expect(v({ proposal: { lat: 49, lon: 7, source: 'OSM', url: 'osm' } })).toContain('corrections');
+    // confirmed = editorial decision, needs its own evidence
+    expect(v({ status: 'confirmed', issue: 'shared-site' })).toContain('corrections');
+    expect(v({ status: 'confirmed', issue: 'shared-site', source: 'Garrison website', url: 'https://example.org', retrieved: '2026-11-07' })).not.toContain('corrections');
+  });
+
+  it('does not exempt a special facility from duplicate checks without a relation', () => {
+    const facility = base({ id: 'f', siteType: 'special-facility', lat: 49.4399 });
+    const r = validate({ bases: [base(), facility] });
+    expect(rules(r)).not.toContain('duplicate-position');
+    expect(warnRules(r)).toContain('duplicate-position-facility');
+    // with a relation (or as part of an aggregate) the shared position is expected
+    expect(warnRules(validate({ bases: [base(), { ...facility, relations: [{ type: 'part-of', id: 'a' }] }] }))).toContain('duplicate-position-linked');
+    expect(warnRules(validate({ bases: [base(), base({ id: 'g', siteType: 'garrison', lat: 49.4399 })] }))).toContain('duplicate-position-linked');
+    // an accepted "duplicate-entry" note settles even a plain duplicate
+    const note = { id: 'd1', base: 'b', field: 'issues', op: 'add', value: 'duplicate-entry', status: 'accepted', decided: '2026-11-07', statement: { de: 'x', en: 'x' }, sources: ['https://example.org/s'] };
+    const research = { sources: [{ base: 'b', url: 'https://example.org/s', type: 'media', verdict: 'supports', method: 'manual', summary: 's', supports: ['presence'], accessed: '2026-11-07' }] };
+    const settled = validate({ bases: [base(), base({ id: 'b', lat: 49.4399 })], claims: [note], research });
+    expect(rules(settled)).not.toContain('duplicate-position');
+    expect(warnRules(settled)).toContain('duplicate-position-reviewed');
+  });
+
+  it('exports only proposed corrections as unverified positions', () => {
+    const issue = 'duplicate-in-source';
+    expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'proposed', issue } })).toBe(`unverified:${issue}`);
+    expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'confirmed', issue: 'shared-site' } })).toBe('');
+    expect(CSV_COLUMNS.position_check({ positionCheck: { status: 'applied', issue }, approx: true })).toBe('approximate');
   });
 
   it('warns (does not fail) on weak sourcing and on review notes', () => {

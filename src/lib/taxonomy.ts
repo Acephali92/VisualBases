@@ -374,6 +374,34 @@ export const ISSUES: Term<IssueCode>[] = [
   { id: 'duplicate-entry', label: { de: 'Doppelter Eintrag', en: 'Duplicate entry' }, info: { de: 'Dieselbe Einrichtung ist auf visualbases.org ein zweites Mal erfasst; siehe Korrektur.', en: 'The same facility is listed a second time on visualbases.org; see correction.' } },
 ];
 
+/* ------------------------------------------------------------------ review layer data/corrections.json */
+
+/**
+ * Status of an entry in data/corrections.json (docs/DATA-QUALITY.md):
+ * proposed – doubtful, shown as "position unverified", data unchanged · applied – fixed (claim or at the source) ·
+ * confirmed – checked by the editors and kept as it is (with source)
+ */
+export const POSITION_CHECK_STATUSES = ['proposed', 'applied', 'confirmed'] as const;
+export type PositionCheckStatus = (typeof POSITION_CHECK_STATUSES)[number];
+
+/** kind of position problem in data/corrections.json */
+export const POSITION_ISSUES = [
+  'duplicate-in-source', // same coordinates as another post on visualbases.org
+  'copied-coordinates', // coordinates belong to another place
+  'wrong-country', // coordinates and host country do not match
+  'off-site', // reference point clearly beside the described facility
+  'imprecise', // only a town or region is known
+  'shared-site', // several records legitimately share one site (with confirmed)
+] as const;
+export type PositionIssue = (typeof POSITION_ISSUES)[number];
+
+/**
+ * how precisely a coordinate locates the facility: site – on the facility · reference – reference point from
+ * the source's map link · town – town centre · region – region or island
+ */
+export const POSITION_PRECISIONS = ['site', 'reference', 'town', 'region'] as const;
+export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
+
 /* ------------------------------------------------------------------ helpers */
 
 /** all vocabularies by dimension – used for validation and completeness tests */

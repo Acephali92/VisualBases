@@ -41,7 +41,8 @@ async function main() {
   for (const arg of process.argv.slice(2)) {
     const [collector, dir] = arg.split('=');
     try { await fs.access(dir); } catch { console.log(`  ${collector}: no results (job failed or skipped) – previous results kept`); continue; }
-    const r = await collectorResults(collector, dir);
+    let r;
+    try { r = await collectorResults(collector, dir); } catch (e) { console.log(`  ${collector}: unreadable results (${e.message}) – previous results kept`); continue; }
     const out = OUTPUTS[collector];
     if (r.sources) await saveSources(collector, r.sources, out.sources);
     if (r.checks) await saveChecks(out.checks, r.checks);
