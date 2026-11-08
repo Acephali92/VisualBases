@@ -2,6 +2,11 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Importer: genauere Koordinate aus dem Beitrag
+
+### Geändert
+- Bei groben Kartenlinks (Zoomstufe ≤ 11) übernimmt der Importer eine nahe, genaue und eindeutige Koordinate aus dem Text oder einem Google-Earth-Link des Beitrags (`refineCoordinates`, Feld `positionFrom`, CSV-Spalte `position_from`). Wirkt beim nächsten Import: laut Probelauf 20 Positionen, darunter 13 Übungsplätze und Großanlagen; `data/bases.json` ist in diesem Schritt unverändert.
+
 ## [Unreleased] – Recherche der Geo-Warnungen
 
 Alle 25 geografischen Warnungen aus Paket 3 recherchiert (OSM/Nominatim, Wikidata, Base Structure Report, Originalbeiträge). Ergebnisse: [DATA-QUALITY.md](DATA-QUALITY.md), Abschnitt „Recherche der Geo-Warnungen“.

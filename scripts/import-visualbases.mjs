@@ -19,6 +19,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { TERRITORY_SOVEREIGN } from '../src/lib/taxonomy.ts';
+import { distanceKm } from '../src/lib/geo.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ORIGIN = 'https://visualbases.org';
@@ -244,8 +245,18 @@ export function parsePost(html, slug) {
     if (!notes.includes(cleaned)) notes.push(cleaned.length > 600 ? cleaned.slice(0, 597) + '…' : cleaned);
   }
 
+  // coordinates the post names besides its map links: a line "lat, lon" in the text and Google Earth links
+  const explicit = [];
+  const add = (from, a, b) => {
+    const [la, lo] = [+a, +b];
+    if (Number.isFinite(la) && Number.isFinite(lo) && Math.abs(la) <= 90 && Math.abs(lo) <= 180 && !explicit.some((x) => x.lat === la && x.lon === lo))
+      explicit.push({ from, lat: la, lon: lo, decimals: Math.min(a.split('.')[1]?.length ?? 0, b.split('.')[1]?.length ?? 0) });
+  };
+  for (const line of text) { const t = line.match(/^(-?\d{1,2}\.\d+)\s*,\s*(-?\d{1,3}\.\d+)$/); if (t) add('text', t[1], t[2]); }
+  for (const e of bodyMain.matchAll(/earth\.google\.com\/web\/search\/(-?\d+\.\d+)(?:,|\+|%20|\s)+(-?\d+\.\d+)/g)) add('google-earth', e[1], e[2]);
+
   const images = parseImages(bodyMain);
-  return { slug, title, cats, tags, lat, lon, zoom, approx, candidates, wikipedia, related, sources, notes, images };
+  return { slug, title, cats, tags, lat, lon, zoom, approx, candidates, explicit, wikipedia, related, sources, notes, images };
 }
 
 /** images inside a post: full-size URL (link target or src without -WxH suffix) + caption */
@@ -287,6 +298,39 @@ export function resolveCopiedCoordinates(posts) {
     if (!own) continue;
     p.lat = own.lat; p.lon = own.lon; p.zoom = own.zoom;
     changed.push(p.slug);
+  }
+  return changed;
+}
+
+/** map links at this zoom level or coarser show a region rather than a site */
+export const COARSE_ZOOM = 11;
+/** an explicit coordinate replaces a coarse map link only if it lies this close (same area, not another site) … */
+export const REFINE_KM = 20;
+/** … all explicit coordinates within that distance agree … */
+const AGREE_KM = 2;
+/** … and it has at least this many decimals (rounded values like "49.7, 11.9" are not more precise) */
+const MIN_DECIMALS = 3;
+
+/**
+ * Many posts give a coarse map link (zoom ≤ 11) and, in the text or as a Google Earth link, the coordinate of
+ * the site itself (e.g. Aruba: map link 11 km off, text coordinate on the airport). Take the explicit coordinate
+ * if it is precise, nearby, unambiguous and not another post's location. Run after resolveCopiedCoordinates.
+ * Returns [{ slug, from, km }] for the posts that were changed.
+ */
+export function refineCoordinates(posts) {
+  const taken = new Set(posts.filter((p) => p.lat != null).map((p) => coordKey(p.lat, p.lon)));
+  const changed = [];
+  for (const p of posts) {
+    if (p.lat == null || p.approx || (p.zoom ?? 14) > COARSE_ZOOM || !p.explicit?.length) continue;
+    const near = p.explicit.filter((c) => c.decimals >= MIN_DECIMALS && !taken.has(coordKey(c.lat, c.lon)) && distanceKm(p.lat, p.lon, c.lat, c.lon) <= REFINE_KM);
+    if (!near.length) continue;
+    if (near.some((a) => near.some((b) => distanceKm(a.lat, a.lon, b.lat, b.lon) > AGREE_KM))) continue; // ambiguous
+    const best = [...near].sort((a, b) => b.decimals - a.decimals || (a.from === 'text' ? -1 : 1))[0];
+    const km = distanceKm(p.lat, p.lon, best.lat, best.lon);
+    if (km < 0.05) continue;
+    taken.add(coordKey(best.lat, best.lon));
+    p.lat = best.lat; p.lon = best.lon; p.positionFrom = best.from;
+    changed.push({ slug: p.slug, from: best.from, km: Math.round(km * 10) / 10 });
   }
   return changed;
 }
@@ -349,6 +393,8 @@ export function toBase(p, lastmod) {
     lon: Math.round(p.lon * 1e5) / 1e5,
     zoom: p.zoom ?? 14,
     approx: p.approx || undefined,
+    // where the coordinate comes from if not from the post's map link (refineCoordinates)
+    positionFrom: p.positionFrom,
     continent,
     region,
     subregion: p.tags.map((t) => SUBREGION_BY_TAG[t]).filter(Boolean).at(-1),
@@ -444,6 +490,8 @@ async function main() {
   }
   const fixed = resolveCopiedCoordinates(parsed.map((x) => x.p));
   if (fixed.length) console.log(`  coordinates taken from the post's own map link: ${fixed.join(', ')}`);
+  const refined = refineCoordinates(parsed.map((x) => x.p));
+  if (refined.length) console.log(`  coarse map link replaced by the post's explicit coordinate: ${refined.map((r) => `${r.slug} (${r.from}, ${r.km} km)`).join(', ')}`);
   for (const { p, lastmod } of parsed) bases.push(toBase(p, lastmod));
   bases.sort((a, b) => (a.host.territory ?? a.host.country ?? '').localeCompare(b.host.territory ?? b.host.country ?? '') || a.name.localeCompare(b.name));
   // "related" links to non-location pages are dropped, the rest become typed relations

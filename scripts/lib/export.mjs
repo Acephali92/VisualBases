@@ -24,6 +24,17 @@ export function toGeoJSON(bases, attribution) {
   };
 }
 
+/**
+ * where the published coordinate comes from: a position claim, the post's text or Google Earth link,
+ * a hand geocoding in the importer (posts without any map link), or the post's map link
+ */
+export function positionFrom(b) {
+  if ((b.corrections ?? []).some((c) => c.field === 'position')) return 'claim';
+  if (b.positionFrom) return b.positionFrom;
+  if (b.approx && !b.positionCheck?.precision) return 'manual';
+  return 'map-link';
+}
+
 /** one row per record; lists are separated by ";" */
 export const CSV_COLUMNS = {
   id: (b) => b.id,
@@ -57,6 +68,7 @@ export const CSV_COLUMNS = {
   wikipedia_en: (b) => b.wikipedia?.en,
   position_check: (b) => (b.positionCheck?.status === 'proposed' ? `unverified:${b.positionCheck.issue}` : b.approx ? 'approximate' : ''),
   position_precision: (b) => b.positionPrecision,
+  position_from: (b) => positionFrom(b),
   origin: (b) => b.origin.url,
   lastmod: (b) => b.origin.lastmod,
   last_checked: (b) => b.lastChecked,
