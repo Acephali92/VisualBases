@@ -190,7 +190,8 @@
           <a class="btn btn-primary" href={href('/near')}>📍 {t('hero.ctaNear')}</a>
           <a class="btn" href={href('/atlas')}>{t('hero.ctaAtlas')} →</a>
         </div>
-        <a class="stats-link" href={href('/stats')} aria-label={t('nav.stats')}>
+        <a class="stats-link" href={href('/stats')}>
+        <span class="sr-only">{t('nav.stats')}: </span>
         <dl class="stats" aria-live="polite">
           <div><dt>{t('stat.locations')}</dt><dd>{formatNumber(shown.locations)}</dd></div>
           <div><dt>{t('stat.countries')}</dt><dd>{formatNumber(shown.countries)}</dd></div>

@@ -80,7 +80,9 @@
     </nav>
 
     <div class="tools">
-      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} aria-label={t('common.lang')}>
+      <!-- the accessible name starts with the visible label (WCAG 2.5.3), in the language it switches to -->
+      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} lang={i18n.lang === 'de' ? 'en' : 'de'}
+        aria-label="{i18n.lang === 'de' ? 'EN' : 'DE'} – {t('common.lang')}">
         {i18n.lang === 'de' ? 'EN' : 'DE'}
       </button>
       <button class="btn btn-ghost icon-btn menu-btn" aria-expanded={menuOpen} aria-label="Menü" onclick={() => (menuOpen = !menuOpen)}>
