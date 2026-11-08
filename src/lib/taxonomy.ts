@@ -392,6 +392,7 @@ export const POSITION_ISSUES = [
   'off-site', // reference point clearly beside the described facility
   'imprecise', // only a town or region is known
   'shared-site', // several records legitimately share one site (with confirmed)
+  'reference-mismatch', // a reference dataset disagrees (wrong Wikidata item, facility not mapped in OSM, simplified coastline) – the position itself was checked (with confirmed)
 ] as const;
 export type PositionIssue = (typeof POSITION_ISSUES)[number];
 

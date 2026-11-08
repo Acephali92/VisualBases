@@ -4,7 +4,7 @@ al-dhafra-air-base,Abu Dhabi: Al Dhafra Air Base,AE,FR US,1,yes,candidates,,0,0,
 al-minhad-ab,Dubai: Al Minhad Air Base,AE,GB,0,yes,candidates,,0,0,0,0,11,,,Q1934988,3.4,,confirmed,0,Wikidata position 3.4 km away
 bagram-air-base,Bagram Air Base,AF,US,0,yes,context,,1,1,0,0,20,,,Q800126,1,,confirmed,0,contradicts (status): Status: Bagram has not been a US base since July 2021 (historical).
 camp-marmal-john-pratt,"Camp Marmal / John Pratt, Masar-i Sharif",AF,US DE,0,yes,context,,1,1,0,0,10,,,Q470684,2.8,,confirmed,0.53,contradicts (status): Status: Camp Marmal is a former base (since June 2021). It was mainly a German camp – the dataset lists only the US as stationing nation. | Wikidata position 2.8 km away
-camp-shaheen-camp-mike-spann,"Camp Shaheen / Camp Mike Spann, Masar-i Sharif",AF,US,0,yes,candidates,,0,0,0,0,14,,,Q29546985,12.3,,near,1.99,Wikidata position 12.3 km away
+camp-shaheen-camp-mike-spann,"Camp Shaheen / Camp Mike Spann, Masar-i Sharif",AF,US,0,yes,context,,1,1,0,0,14,,,Q29546985,12.3,,near,1.99,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 12.3 km away"
 herat-unnamed,Herat Unnamed,AF,US,0,yes,candidates,,0,0,0,0,14,,,,,,near,1.38,
 kabul-isaf-headquarters,Kabul ISAF,AF,US,0,no,context,,1,1,0,0,0,,,,,,confirmed,0.3,contradicts (status): Status: the dataset still shows the Kabul ISAF/RS headquarters as an active site – it has been closed since 2021 (historical).
 kandahar-airfield,Kandahar Airfield,AF,US,0,yes,candidates,,0,0,0,0,21,,,Q33156,1.7,,confirmed,0.16,
@@ -17,18 +17,18 @@ east-chapman-satellite-station,East Chapman Australian Defence Satellite Comm. S
 ghan-joint-defence-pine-gap,"Ghan Joint Defence Facility, Pine Gap",AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.38,
 learmonth-raaf-base,Learmonth RAAF Base,AU,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,near,1.76,
 naval-comm-station-exmouth,Northwest Cape Exmouth: Naval Comm. Station Holt,AU,US,0,yes,verified,presence nation,2,1,0,0,20,NAVCOMMSTA H E Holt Exmouth,NAVCOMMSTA H E Holt Exmouth,Q1898404,14.2,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 14.2 km away | OSM: no military feature within 3 km"
-robertson-barracks,"Robertson Barracks, Northern Territory",AU,US,0,yes,verified,presence nation activity,1,0,0,0,10,,,Q7352085,9.5,,near,5.78,Wikidata position 9.5 km away
+robertson-barracks,"Robertson Barracks, Northern Territory",AU,US,0,yes,verified,presence nation activity,2,1,0,0,10,,,Q7352085,9.5,,near,5.78,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 9.5 km away"
 tindal-raaf-base,Tindal RAAF Base,AU,US,0,yes,verified,presence nation facility,1,0,0,0,7,,,Q1551495,0.5,,confirmed,0.63,
 savaneta-kamp,"Antilles, Aruba: Korps Mariniers / Savaneta Kamp",AW,US NL,0,yes,candidates,,0,0,0,0,21,,,Q1311437,,,confirmed,0.16,
-aruba,"Antilles, Aruba: Queen Beatrix International Airport",AW,US,0,yes,candidates,,0,0,0,0,11,,,Q6857712,,,none,,OSM: no military feature within 3 km
+aruba,"Antilles, Aruba: Queen Beatrix International Airport",AW,US,0,yes,context,,1,1,0,0,11,,,Q6857712,,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | OSM: no military feature within 3 km"
 chievres-ab,Chievres Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,16,Chievres AB,Chievres AB,Q43363,0.6,,confirmed,0.76,
 kleine-brogel-air-base,Kleine Brogel Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,21,Kleine Brogel AB,Kleine Brogel AB,Q1857706,0.9,,confirmed,0.79,
 kleine-brogel-nuclear,Kleine Brogel Nuclear Weapons Depot,BE,US,0,no,verified,presence nation facility,2,0,1,0,0,Kleine Brogel AB,,,,,confirmed,0.06,
 shape-mons,"Supreme HQ Allied Powers Europe, Mons",BE,US,0,yes,verified,presence nation,1,0,0,0,21,Shape Headquarters,,Q1432908,0.8,,confirmed,0.21,
 zutendaal-ab-belgium,Zutendaal Air Base,BE,US,0,yes,verified,presence nation,1,0,0,0,8,Zutendaal,Zutendaal,Q8075444,0.3,,confirmed,0.2,
-ouagadougou,Ouagadougou,BF,US,0,no,none,,0,0,0,0,0,,,,,,none,,OSM: no military feature within 3 km
+ouagadougou,Ouagadougou,BF,US,0,no,context,,1,1,0,0,0,,,,,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | OSM: no military feature within 3 km"
 aitos-bulgaria,Aitos Logistic Center,BG,US,0,no,verified,presence nation,1,0,0,0,0,,,,,,confirmed,0.93,
-bezmer-air-base,Bezmer Air Base,BG,US,0,yes,verified,presence nation,1,0,0,0,10,,,Q4900372,6.1,,none,,Wikidata position 6.1 km away | OSM: no military feature within 3 km
+bezmer-air-base,Bezmer Air Base,BG,US,0,yes,verified,presence nation,2,1,0,0,10,,,Q4900372,6.1,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 6.1 km away | OSM: no military feature within 3 km"
 graf-ignatievo-ab-bulgaria,Graf Ignatievo Air Base,BG,US,0,yes,verified,presence nation,1,0,0,1,12,Graf Ignatievo Air Base,,Q3914569,0.3,,confirmed,0,
 novo-selo,Novo Selo,BG,US,0,no,verified,presence nation,1,0,0,1,0,Novo Selo Training Area,Novo Selo Training Area,,,,confirmed,0.5,
 bahrain,Bahrain,BH,US,2,yes,candidates,,0,0,0,0,20,,,Q788615,,,none,,OSM: no military feature within 3 km
@@ -42,7 +42,7 @@ nas-argentia-newfoundland,Naval Air Station Argentia Newfoundland,CA,US,0,yes,ve
 air-force-301-cameroon,Air Force Base 301,CM,US,0,yes,candidates,,0,0,0,0,5,,,Q55606491,,,confirmed,0.72,
 salak-cameroon,Salak,CM,FR US,0,no,verified,presence nation activity,1,0,0,0,0,,,,,,near,2.32,
 pratas-islands-south-china-sea,"South China Sea, Pratas-Islands",CN,CN,0,yes,candidates,,0,0,0,0,20,,,Q11103595,0.2,,confirmed,0.55,
-money-island-south-chinese-sea,"South Chinese Sea, Money Island",CN,CN,0,yes,verified,presence nation facility,1,0,0,0,5,,,Q1098039,7.4,,none,,Wikidata position 7.4 km away | OSM: no military feature within 3 km
+money-island-south-chinese-sea,"South Chinese Sea, Money Island",CN,CN,0,yes,verified,presence nation facility,2,1,0,0,5,,,Q1098039,7.4,,none,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 7.4 km away | OSM: no military feature within 3 km"
 pattle-island,"South Chinese Sea, Pattle Island",CN,CN,0,no,verified,presence nation facility,1,0,0,0,0,,,,,,confirmed,0.23,
 apiay-ab,Apiay Air Base,CO,US,0,yes,verified,presence nation,1,0,0,0,10,,,Q5036722,0.4,,confirmed,0.42,
 arauca,Arauca,CO,US,0,yes,candidates,,0,0,0,0,21,,,Q626543,2.1,,confirmed,0.97,Wikidata position 2.1 km away
@@ -292,7 +292,7 @@ iquitos-airport,Iquitos International Airport,PE,US,0,yes,candidates,,0,0,0,0,17
 base-aerienne190,Base aèrienne190 (Tahiti),PF,FR,0,no,verified,presence nation,1,0,0,0,0,,,,,,,,
 tahiti-french-polynesia,Tahiti,PF,FR,0,yes,verified,presence nation,1,0,0,0,20,,,Q42000,16.5,,,,Wikidata position 16.5 km away
 mount-st-rita-naval-link-station,Mount Santa Rita Naval Link Station,PH,US,0,yes,candidates,,0,0,0,0,1,,,Q6923467,0.1,,,,
-secon-thomas-shoal,Spratly Islands: Second Thomas Shoal,PH,US,0,yes,candidates,,0,0,0,0,20,,,Q6855008,43.9,,,,Wikidata position 43.9 km away
+secon-thomas-shoal,Spratly Islands: Second Thomas Shoal,PH,US,0,yes,context,,1,1,0,0,20,,,Q6855008,43.9,,,,"contradicts (position): OpenStreetMap data (ODbL); confirms the location only, not the stationing nation. | Wikidata position 43.9 km away"
 jacobabad-dalbandin-ab,"Dalbandin Airport, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,19,,,Q1658016,1,,,,
 makran-pakistan,Naval Station Makran,PK,US,0,yes,candidates,,0,0,0,0,8,,,Q123089623,1.7,,,,
 khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q3696008,9.6,,,,Wikidata position 9.6 km away

@@ -11,18 +11,18 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | nur Wikipedia | 218 |
 | ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
-| angewandte Korrekturen (claims.json) / offene Vorschläge | 47 / 1 |
+| angewandte Korrekturen (claims.json) / offene Vorschläge | 54 / 2 |
 | Einträge mit Prüfhinweis | 83 |
 | Kontext-Standorte (eigenes Staatsgebiet) | 9 |
 | Position ungeprüft (corrections.json) | 0 |
-| Position ungefähr | 8 |
-| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 4 / 353 / 7 / 1 |
+| Position ungefähr | 12 |
+| Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 9 / 344 / 9 / 3 |
 | Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
-| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 0 / 0 |
+| Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 15 / 12 |
 | Bilder / davon mit Lizenzangabe | 164 / 19 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
-| Warnungen | 431 |
+| Warnungen | 418 |
 
 ## Fehler
 
@@ -199,31 +199,20 @@ Keine.
 - `principe-island-sao-tome`: review-on-origin
 - `taiwan`: review-on-origin
 
-### `position-wikidata-far` (11)
+### `coords-approx` (12)
 
-- `camp-shaheen-camp-mike-spann`: Wikidata Q29546985 (attempted murder) is 12.3 km away (tolerance 5 km) – wrong match or wrong position?
-- `robertson-barracks`: Wikidata Q7352085 (barracks) is 9.5 km away (tolerance 5 km) – wrong match or wrong position?
-- `money-island-south-chinese-sea`: Wikidata Q1098039 (island) is 7.4 km away (tolerance 5 km) – wrong match or wrong position?
-- `dhekelia-military-camp`: Wikidata Q37362 (British Overseas Territories) is 82.2 km away (tolerance 15 km) – wrong match or wrong position?
-- `us-camp-lemonnier`: Wikidata Q2935221 (military camp) is 25.6 km away (tolerance 5 km) – wrong match or wrong position?
-- `maritime-component-command-naples`: Wikidata Q1476257 (command) is 17.7 km away (tolerance 5 km) – wrong match or wrong position?
-- `secon-thomas-shoal`: Wikidata Q6855008 (reef) is 43.9 km away (tolerance 15 km) – wrong match or wrong position?
-- `redzikowo`: Wikidata Q4064211 (missile base) is 32.7 km away (tolerance 5 km) – wrong match or wrong position?
-- `s-kristinehamm`: Wikidata Q215832 (urban area in Sweden) is 40.9 km away (tolerance 15 km) – wrong match or wrong position?
-- `beale-air-force-base-california`: Wikidata Q812921 (airbase, census-designated place in the United States) is 5.7 km away (tolerance 5 km) – wrong match or wrong position?
-- `fort-greely-alaska`: Wikidata Q5471246 (military installation) is 29.7 km away (tolerance 15 km) – wrong match or wrong position?
-
-### `position-osm-none` (9)
-
-- `masar-i-sharif-communnity`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `aruba`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `ouagadougou`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `bezmer-air-base`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `money-island-south-chinese-sea`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `cartagena`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `darmstadt-training-center`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `grafenwoehr-training-area`: OpenStreetMap shows no military area or aerodrome within 3 km
-- `gruenstadt-aafes-fac`: OpenStreetMap shows no military area or aerodrome within 3 km
+- `masar-i-sharif-communnity`: approximate position (precision "town", confirmed in corrections.json)
+- `cartagena`: approximate position (precision "region", confirmed in corrections.json)
+- `gitmo-guantanamo-bay`: approximate position (geocoded by hand)
+- `raf-akrotiri`: approximate position (geocoded by hand)
+- `bann-communications-station`: approximate position (precision "town", confirmed in corrections.json)
+- `camp-century-greenland`: approximate position (geocoded by hand)
+- `puerto-castilla-honduras`: approximate position (precision "town", set by a position claim)
+- `karlovac-croatia-2`: approximate position (precision "town", set by a position claim)
+- `jungle-warfare-training-center`: approximate position (precision "region", set by a position claim)
+- `white-beach-okinawa`: approximate position (geocoded by hand)
+- `inezgane-airport`: approximate position (geocoded by hand)
+- `secon-thomas-shoal`: approximate position (precision "region", set by a position claim)
 
 ### `coords-precision` (8)
 
@@ -236,17 +225,6 @@ Keine.
 - `kadena-ammunition-okinawa`: low precision (26.3989, 127.81)
 - `ramsund-naval-station`: low precision (68.46, 16.5371)
 
-### `coords-approx` (8)
-
-- `gitmo-guantanamo-bay`: approximate position (geocoded by hand)
-- `raf-akrotiri`: approximate position (geocoded by hand)
-- `camp-century-greenland`: approximate position (geocoded by hand)
-- `puerto-castilla-honduras`: approximate position (precision "town", set by a position claim)
-- `karlovac-croatia-2`: approximate position (precision "town", set by a position claim)
-- `jungle-warfare-training-center`: approximate position (precision "region", set by a position claim)
-- `white-beach-okinawa`: approximate position (geocoded by hand)
-- `inezgane-airport`: approximate position (geocoded by hand)
-
 ### `issue-multiple-site-types` (6)
 
 - `deu-bellheim`: multiple-site-types
@@ -255,6 +233,15 @@ Keine.
 - `i-solbiate-olona`: multiple-site-types
 - `sinjajevina-montenegro`: multiple-site-types
 - `rzeszow`: multiple-site-types
+
+### `position-check-stale` (6)
+
+- `camp-shaheen-camp-mike-spann`: OSM check refers to a position 3.1 km away – run scripts/research/osm-check.mjs again
+- `naval-comm-station-exmouth`: OSM check refers to a position 14.3 km away – run scripts/research/osm-check.mjs again
+- `robertson-barracks`: OSM check refers to a position 8.9 km away – run scripts/research/osm-check.mjs again
+- `aruba`: OSM check refers to a position 11.1 km away – run scripts/research/osm-check.mjs again
+- `bezmer-air-base`: OSM check refers to a position 5.4 km away – run scripts/research/osm-check.mjs again
+- `money-island-south-chinese-sea`: OSM check refers to a position 7.3 km away – run scripts/research/osm-check.mjs again
 
 ### `news-date-vague` (6)
 
@@ -286,11 +273,10 @@ Keine.
 - `money-island-south-chinese-sea`: foreign-without-foreign-presence
 - `pattle-island`: foreign-without-foreign-presence
 
-### `coords-offshore` (3)
+### `position-osm-none` (2)
 
-- `bahrain`: position lies at sea, no land within 10 km (host BH)
-- `pratas-islands-south-china-sea`: position lies at sea, no land within 10 km (host CN)
-- `secon-thomas-shoal`: position lies at sea, no land within 10 km (host PH)
+- `ouagadougou`: OpenStreetMap shows no military area or aerodrome within 3 km
+- `darmstadt-training-center`: OpenStreetMap shows no military area or aerodrome within 3 km
 
 ### `issue-duplicate-entry` (1)
 
@@ -303,12 +289,4 @@ Keine.
 ### `duplicate-position-reviewed` (1)
 
 - `de-kl-warrior-preparation-center`: same position as warrior-preparation-center-einsiedlerhof (194 m) – de-kl-warrior-preparation-center is marked as duplicate entry in claims.json
-
-### `duplicate-name-near` (1)
-
-- `bann-communications-station`: same name as bann-communications-station-2 ("Landstuhl: Bann Communications Station 2"), 2.6 km apart – one facility posted twice?
-
-### `position-check-stale` (1)
-
-- `naval-comm-station-exmouth`: OSM check refers to a position 14.3 km away – run scripts/research/osm-check.mjs again
 

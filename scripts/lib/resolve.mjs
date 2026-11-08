@@ -171,6 +171,9 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
       }
     }
 
+    // an editorially confirmed position may state how precise it is without moving it (data/corrections.json)
+    const checked = positionOf.get(b.id);
+    if (checked?.status === 'confirmed' && checked.precision) b.positionPrecision = checked.precision;
     if (APPROXIMATE.has(b.positionPrecision)) b.approx = true; else delete b.approx;
     b.presences = b.presences.map((p) => ({ ...p, relation: relation(p.nation, b.host) }));
     b.scope = scopeOf(b.presences);
@@ -179,7 +182,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     if (pc) {
       b.positionCheck = { status: pc.status, issue: pc.issue, duplicateOf: pc.duplicateOf, proposal: pc.proposal };
       // a confirmed position carries the evidence of the editorial decision
-      if (pc.status === 'confirmed') Object.assign(b.positionCheck, { source: pc.source, url: pc.url, retrieved: pc.retrieved, note: pc.note });
+      if (pc.status === 'confirmed') Object.assign(b.positionCheck, { source: pc.source, url: pc.url, retrieved: pc.retrieved, note: pc.note, precision: pc.precision });
       if (pc.status === 'proposed') issues.push('position-unverified');
     }
     if (issues.length) b.issues = [...new Set(issues)];

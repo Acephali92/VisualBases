@@ -38,11 +38,12 @@ Stand 2026-11-07: Die Datei enthält keine offenen Einträge. Die beiden früher
 |---|---|---|
 | `id` | ja | existierender Standort |
 | `status` | ja | `proposed` (zweifelhaft, wird gekennzeichnet) · `applied` (korrigiert) · `confirmed` (redaktionell geprüft und beibehalten) |
-| `issue` | ja | `duplicate-in-source` · `copied-coordinates` · `wrong-country` · `off-site` (Referenzpunkt neben der Anlage) · `imprecise` (nur Ort/Region bekannt) · `shared-site` (mehrere Einträge teilen sich legitim einen Standort) |
+| `issue` | ja | `duplicate-in-source` · `copied-coordinates` · `wrong-country` · `off-site` (Referenzpunkt neben der Anlage) · `imprecise` (nur Ort/Region bekannt) · `shared-site` (mehrere Einträge teilen sich legitim einen Standort) · `reference-mismatch` (Abgleichsdaten passen nicht – falsches Wikidata-Objekt, Anlage in OSM nicht als militärisch erfasst, Insel fehlt in den Grenzdaten –, die Position selbst ist geprüft) |
 | `duplicateOf` | nein | existierender Standort |
 | `proposal` | nein | `lat`/`lon` gültig, `source`, `url` (http/https), optional `precision` (`site` · `reference` · `town` · `region`) und `retrieved` (Datum) |
 | `source`, `url`, `retrieved` | bei `confirmed` | Beleg für die redaktionelle Entscheidung; das Profil zeigt „✓ Position redaktionell geprüft“ mit Link |
 | `note` | nein | Begründung (z. B. „Riff, Position korrekt“) |
+| `precision` | nein, nur bei `confirmed` | Genauigkeit der unverändert beibehaltenen Position (`site` · `reference` · `town` · `region`), z. B. `town` für einen Eintrag, zu dem nur die Stadt bekannt ist |
 | `rules` | nein, nur bei `confirmed` | welche Geo-Warnungen der Eintrag quittiert (`coords-country`, `coords-country-disputed`, `coords-offshore`, `position-osm-none`, `position-wikidata-far`, `duplicate-name-near`); ohne `rules` alle |
 
 Die Vokabulare stehen in `src/lib/taxonomy.ts` (`POSITION_CHECK_STATUSES`, `POSITION_ISSUES`, `POSITION_PRECISIONS`). Jeder Eintrag, unabhängig vom Status, nimmt den Standort aus der Dublettenprüfung heraus (`duplicate-position-reviewed`).
@@ -104,6 +105,24 @@ Läuft in `npm run validate` auf den aufgelösten Datensätzen (`scripts/lib/geo
 Sammeleinträge (`garrison`, `region-cluster`) und ungefähre Positionen (`town`, `region`) werden nicht mit OSM und Wikidata abgeglichen. Geprüfte Fehlalarme quittiert ein Eintrag `status: "confirmed"` in `data/corrections.json` (mit Quelle, optional `rules`); der Bericht zählt die quittierten Warnungen. Die Recherche-Skripte (`scripts/research/*`) prüfen seit 2026-11-08 die **korrigierte** Position und das korrigierte Gastland (angenommene Claims angewandt).
 
 Gegenprobe beim Einführen: Auf den Rohdaten findet `coords-country` genau die drei schon über Claims korrigierten Fälle (`librevillegabon`, `camp-ayanganna`, `sarajevo-military-airport`), auf den aufgelösten Daten keinen.
+
+### Recherche der Geo-Warnungen (2026-11-08)
+
+Alle 25 geografischen Warnungen der Einführung wurden mit OpenStreetMap (Nominatim), Wikidata, dem Base Structure Report und den Originalbeiträgen geprüft:
+
+| Ergebnis | Standorte | Umsetzung |
+|---|---|---|
+| Position falsch, OSM-Objekt der Anlage belegt | Robertson Barracks (8,9 km), Bezmer (5,4 km), Money Island (7,3 km, offene See), Second Thomas Shoal (40 km), Aruba (11 km; der Beitrag nennt die Flughafenkoordinate selbst im Text), Camp Shaheen (3,1 km) | angenommene `position`-Claims |
+| Position fraglich, Ermessensfall | Ouagadougou (Wohngebiet 7,9 km östlich des Flughafens) | Vorschlag `ouagadougou-position` |
+| Position stimmt, Wikidata-Objekt oder -Koordinate falsch | Camp Lemonnier, Redzikowo, Fort Greely, Beale, Maritime Component Command Neapel (Nisida), Dhekelia, Camp Shaheen | `confirmed`, `reference-mismatch` |
+| Position stimmt, OSM erfasst die Anlage nicht als militärisch | Grafenwöhr (Verwaltungsgrenze), Grünstadt (Funkturm) | `confirmed`, `reference-mismatch` |
+| Position stimmt, Insel/Riff fehlt in den Grenzdaten | Pratas, Second Thomas Shoal, Money Island | `confirmed`, `reference-mismatch` |
+| nur Ort oder Region bekannt | Masar-i Scharif (Sammeleintrag), Cartagena (regionaler Kartenlink), Bann Communications Station (laut BSR eigener Standort neben „Station 2“, Position = Ort Bann) | `confirmed`, `imprecise`, mit `precision` |
+| Wikidata-Treffer ist die Stadt | Kristinehamn | Regel angepasst (Objekte vom Typ „urban area“ zählen als Ort) |
+| Sammeleintrag auf See | Bahrain | Regel angepasst (Sammeleinträge werden nicht als „auf See“ gemeldet) |
+| offen | Darmstadt Training Center (geschlossen 2008, Lage nicht belegt) | – |
+
+Die OSM-Prüfung der korrigierten Positionen (6× `position-check-stale`) erneuert der monatliche Recherche-Workflow.
 
 ## Importer-Regeln, die Fehler der Quelle abfangen
 

@@ -12,6 +12,10 @@
   {
    "date": "2026-11-08",
    "text": "Projektverantwortliche: Vorschlag libreville-host angenommen (Gastland Gabun statt Ghana)."
+  },
+  {
+   "date": "2026-11-08",
+   "text": "Projektverantwortliche: Libreville auch in der Region korrigieren; die geografischen Prüfhinweise recherchieren, belegte Positionsfehler direkt korrigieren, Ermessensfälle als Vorschlag."
   }
  ],
  "claims": [
@@ -994,6 +998,190 @@
    "statement": {
     "de": "Libreville ist die Hauptstadt von Gabun; die Koordinaten des Eintrags liegen dort. Der Beitrag auf visualbases.org trägt aber das Kürzel „GH“ (Ghana) im Titel, die Adresse lautet „librevillegabon“. Gastland daher Gabun (GA).",
     "en": "Libreville is the capital of Gabon and the record’s coordinates lie there. The post on visualbases.org, however, carries the code “GH” (Ghana) in its title, while its address reads “librevillegabon”. Host country therefore Gabon (GA)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
+   ]
+  },
+  {
+   "id": "robertson-position",
+   "base": "robertson-barracks",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": -12.43717,
+    "lon": 130.97547,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": -12.3695,
+    "lon": 130.9323
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Robertson Barracks liegt in Holtze bei Palmerston; die bisherige Position lag rund 8,9 km nordwestlich.",
+    "en": "Robertson Barracks is at Holtze near Palmerston; the previous position was about 8.9 km to the north-west."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W219723912&format=jsonv2"
+   ]
+  },
+  {
+   "id": "bezmer-position",
+   "base": "bezmer-air-base",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 42.45422,
+    "lon": 26.36005,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 42.4497,
+    "lon": 26.4257
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Der Militärflugplatz Bezmer liegt zwischen Bezmer und Boljarsko; die bisherige Position lag rund 5,4 km östlich davon.",
+    "en": "Bezmer air base lies between Bezmer and Bolyarsko; the previous position was about 5.4 km east of it."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W194574301&format=jsonv2"
+   ]
+  },
+  {
+   "id": "money-island-position",
+   "base": "money-island-south-chinese-sea",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 16.44725,
+    "lon": 111.50758,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 16.4907,
+    "lon": 111.5593
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Die bisherige Position lag rund 7,3 km nordöstlich von Money Island auf offener See; Position jetzt die Insel.",
+    "en": "The previous position lay about 7.3 km north-east of Money Island in the open sea; position now the island."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=R19123019&format=jsonv2"
+   ]
+  },
+  {
+   "id": "second-thomas-position",
+   "base": "secon-thomas-shoal",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 9.73084,
+    "lon": 115.86234,
+    "precision": "region"
+   },
+   "expect": {
+    "lat": 9.9087,
+    "lon": 115.5472
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Die bisherige Position lag rund 40 km nordwestlich des Riffs Second Thomas Shoal (Ayungin), wo das philippinische Wrack BRP Sierra Madre liegt. Position jetzt die Mitte des Riffs (Gebiet).",
+    "en": "The previous position lay about 40 km north-west of Second Thomas Shoal (Ayungin), where the Philippine wreck BRP Sierra Madre is grounded. Position now the centre of the shoal (area)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W159002400&format=jsonv2"
+   ]
+  },
+  {
+   "id": "aruba-position",
+   "base": "aruba",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 12.50211,
+    "lon": -70.01412,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 12.5894,
+    "lon": -69.9654
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Der Eintrag beschreibt den Flughafen Reina Beatrix; die übernommene Kartenposition lag rund 11 km nordöstlich. Der Beitrag nennt im Text selbst die Flughafenkoordinate (12.50363, -70.01266).",
+    "en": "The record describes Queen Beatrix airport; the imported map position was about 11 km to the north-east. The post itself gives the airport coordinate in its text (12.50363, -70.01266)."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W97834000&format=jsonv2"
+   ]
+  },
+  {
+   "id": "shaheen-position",
+   "base": "camp-shaheen-camp-mike-spann",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 36.64263,
+    "lon": 66.99263,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 36.6336,
+    "lon": 67.0252
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Camp Shaheen (Dehdadi, westlich von Masar-i Scharif) ist in OpenStreetMap als Militärgelände erfasst; die bisherige Position lag rund 3,1 km östlich davon.",
+    "en": "Camp Shaheen (Dehdadi, west of Mazar-i-Sharif) is mapped as a military area in OpenStreetMap; the previous position was about 3.1 km east of it."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W441455363&format=jsonv2"
+   ]
+  },
+  {
+   "id": "ouagadougou-position",
+   "base": "ouagadougou",
+   "field": "position",
+   "op": "set",
+   "value": {
+    "lat": 12.35041,
+    "lon": -1.51244,
+    "precision": "site"
+   },
+   "expect": {
+    "lat": 12.3489,
+    "lon": -1.4396
+   },
+   "status": "proposed",
+   "statement": {
+    "de": "Der Eintrag ist als Nutzung eines zivilen Flughafens eingeordnet; die Position liegt aber in einem Wohngebiet rund 7,9 km östlich des Flughafens (mit der Base aérienne 511). Vorschlag: Flughafen. Offen, ob eine andere Anlage gemeint ist; die Textkoordinate des Beitrags (12.330854, -1.497857) liegt an einer Straße in Silmissin.",
+    "en": "The record is classified as use of a civilian airport, but its position lies in a residential area about 7.9 km east of the airport (with Base aérienne 511). Proposal: the airport. Open whether another site is meant; the post’s text coordinate (12.330854, -1.497857) lies on a road in Silmissin."
+   },
+   "sources": [
+    "https://nominatim.openstreetmap.org/lookup?osm_ids=W27798095&format=jsonv2"
+   ]
+  },
+  {
+   "id": "libreville-region",
+   "base": "librevillegabon",
+   "field": "region",
+   "op": "set",
+   "value": "africa-central-south",
+   "expect": "africa-west",
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Libreville (Gabun) liegt in Zentralafrika, nicht in Westafrika; Region angepasst an das korrigierte Gastland.",
+    "en": "Libreville (Gabon) lies in Central Africa, not West Africa; region aligned with the corrected host country."
    },
    "sources": [
     "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
