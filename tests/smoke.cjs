@@ -1,6 +1,7 @@
 /**
  * Browser smoke test: opens every route of the built app (vite preview) in Chromium and fails on
- * uncaught errors, console errors or missing key elements.
+ * uncaught errors, console errors, missing key elements or accessibility violations (axe-core: WCAG 2.1 A/AA
+ * and best practices, on every route and both widths – roadmap P1-4).
  *
  *   npm run build && npm run test:smoke
  */
@@ -15,6 +16,14 @@ const PORT = 4179;
 const FIXTURES = path.join(__dirname, '../src/lib/fixtures/nominatim');
 const fixture = (name) => fs.readFileSync(path.join(FIXTURES, `${name}.json`), 'utf8');
 const BASE = `http://localhost:${PORT}/`;
+const AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+const AXE_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'];
+/** axe violations of the current page, as readable lines */
+async function axeViolations(page) {
+  await page.addScriptTag({ content: AXE });
+  const v = await page.evaluate(async (tags) => (await window.axe.run(document, { runOnly: tags })).violations.map((x) => ({ id: x.id, impact: x.impact, nodes: x.nodes.map((n) => n.target.join(' ')) })), AXE_TAGS);
+  return v.map((x) => `axe ${x.id} (${x.impact}): ${x.nodes.slice(0, 3).join(' ; ')}${x.nodes.length > 3 ? ` … ${x.nodes.length} nodes` : ''}`);
+}
 const ROUTES = [
   ['#/', 'h1'],
   ['#/atlas', '.results li a'],
@@ -23,6 +32,9 @@ const ROUTES = [
   ['#/atlas?status=closed&activities=defender-europe', '.meta-row'],
   ['#/base/naval-radio-transmitter-lualualei', '.profile h2'],
   ['#/base/base-aerienne-188-djibouti', '.profile .box'],
+  ['#/atlas?forms=access,rotational', '.meta-row'],
+  ['#/atlas?evidence=context,wikipedia-only,none', '.meta-row'],
+  ['#/base/s-kiruna', '.profile .box'],
   ['#/base/buechel-nato-air-base', '.profile .chips'],
   ['#/base/ramstein-air-base', '.profile h2'],
   ['#/near', 'form.finder'],
@@ -155,6 +167,7 @@ async function nearFlows() {
         await page.goto(BASE + route, { waitUntil: 'load' });
         try { await page.waitForSelector(selector, { timeout: 15000 }); } catch { errors.push(`missing ${selector}`); }
         await page.waitForTimeout(800);
+        errors.push(...(await axeViolations(page)));
         const ok = errors.length === 0;
         if (!ok) failed++;
         console.log(`${ok ? '✔' : '✘'} ${viewport.width}px ${route}${ok ? '' : '\n    ' + errors.join('\n    ')}`);

@@ -60,8 +60,24 @@ describe('filters', () => {
     expect(facetValues(own, 'nations')).toEqual([]);
     expect(summary([own]).us).toBe(0);
   });
+  it('filters by the form of the foreign presences; undocumented forms count as "unspecified"', () => {
+    const p = (nation: string, form?: string, relation = 'foreign') => ({ nation, role: 'stationing', via: 'tag', relation, ...(form ? { form } : {}) }) as Base['presences'][number];
+    const mixed = base({ presences: [p('US', 'access'), p('GB')] });
+    expect(facetValues(mixed, 'forms')).toEqual(['access', 'unspecified']);
+    expect(matches(mixed, { ...EMPTY_FILTERS, forms: ['access'] })).toBe(true);
+    expect(matches(mixed, { ...EMPTY_FILTERS, forms: ['rotational'] })).toBe(false);
+    // a state on its own territory is not a foreign presence; no presence at all is "unspecified"
+    expect(facetValues(base({ presences: [p('US', 'permanent', 'domestic')], scope: 'domestic' }), 'forms')).toEqual(['unspecified']);
+    expect(facetValues(base({ presences: [] }), 'forms')).toEqual(['unspecified']);
+  });
+  it('filters by the evidence level of the site', () => {
+    const b = base({ sourceLevel: 'wikipedia-only' });
+    expect(facetValues(b, 'evidence')).toEqual(['wikipedia-only']);
+    expect(matches(b, { ...EMPTY_FILTERS, evidence: ['none', 'wikipedia-only'] })).toBe(true);
+    expect(matches(b, { ...EMPTY_FILTERS, evidence: ['verified'] })).toBe(false);
+  });
   it('round-trips through the URL', () => {
-    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign-base', 'shared-base'] as Base['siteType'][], status: ['closed'] as Base['status'][], themes: ['drone-warfare' as const], activities: ['nato'], countries: ['DE'] };
+    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign-base', 'shared-base'] as Base['siteType'][], status: ['closed'] as Base['status'][], forms: ['access', 'unspecified'], evidence: ['none', 'context'] as Base['sourceLevel'][], themes: ['drone-warfare' as const], activities: ['nato'], countries: ['DE'] };
     expect(queryToFilters(filtersToQuery(f))).toEqual(f);
     expect(filtersToQuery(EMPTY_FILTERS)).toBe('');
   });

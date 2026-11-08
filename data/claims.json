@@ -12,6 +12,10 @@
   {
    "date": "2026-11-08",
    "text": "Projektverantwortliche: Vorschlag libreville-host angenommen (Gastland Gabun statt Ghana)."
+  },
+  {
+   "date": "2026-11-08",
+   "text": "Projektverantwortliche: Präsenzart (Roadmap P1-1, Paket A) – Startbestand aus den von Hand geprüften Quellen der Recherche; Präsenzen geschlossener Standorte gelten als historisch (abgeleitet)."
   }
  ],
  "claims": [
@@ -997,6 +1001,766 @@
    },
    "sources": [
     "https://nominatim.openstreetmap.org/reverse?lat=0.3895&lon=9.4551&format=jsonv2&zoom=10"
+   ]
+  },
+  {
+   "id": "apiay-ab-form",
+   "base": "apiay-ab",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "bahia-malaga-form",
+   "base": "bahia-malaga",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "cartagena-form",
+   "base": "cartagena",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "fuerte-militar-larandia-form",
+   "base": "fuerte-militar-larandia",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "fuerte-militar-tolemaida-form",
+   "base": "fuerte-militar-tolemaida",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "malambo-ab-form",
+   "base": "malambo-ab",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "palanquero-ab-form",
+   "base": "palanquero-ab",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Zugangs- und Nutzungsrechte der US-Streitkräfte aus dem Abkommen zwischen Kolumbien und den USA von 2009, keine dauerhafte Stationierung. Das kolumbianische Verfassungsgericht verlangte 2010 die Zustimmung des Kongresses; der heutige Rechtsstatus ist offen.",
+    "en": "Access and use rights of US forces under the 2009 Colombia–US agreement, not permanent stationing. Colombia's Constitutional Court required congressional approval in 2010; the current legal status is open."
+   },
+   "sources": [
+    "https://www.biobiochile.cl/noticias/2009/11/03/gobierno-colombiano-divulgo-acuerdo-militar-firmado-con-estados-unidos.shtml"
+   ]
+  },
+  {
+   "id": "s-berga-form",
+   "base": "s-berga",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-boden-regimental-area-and-military-training-area-form",
+   "base": "s-boden-regimental-area-and-military-training-area",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-halmstad-regimental-area-and-flotilla-area-form",
+   "base": "s-halmstad-regimental-area-and-flotilla-area",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-harnosand-form",
+   "base": "s-harnosand",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-kiruna-form",
+   "base": "s-kiruna",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-kristinehamm-form",
+   "base": "s-kristinehamm",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-kvarn-form",
+   "base": "s-kvarn",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "s-ravlunda-military-camp-and-training-area-form",
+   "base": "s-ravlunda-military-camp-and-training-area",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "In Anhang A des Verteidigungsabkommens zwischen Schweden und den USA (DCA, 2023) als vereinbarte Einrichtung genannt: Zugangs- und Nutzungsrechte, kein Beleg für eine dauerhafte Stationierung.",
+    "en": "Listed in Annex A of the Sweden–US Defense Cooperation Agreement (DCA, 2023) as an agreed facility: access and use rights, not evidence of permanent stationing."
+   },
+   "sources": [
+    "https://www.government.se/contentassets/ad5f87be923e4065b658189a9294f480/agreement-on-defense-cooperation-between-sweden-and-the-united-states-of-america.pdf"
+   ]
+  },
+  {
+   "id": "orland-militaerbase-form",
+   "base": "orland-militaerbase",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Vereinbarte Einrichtung des ergänzenden Verteidigungsabkommens zwischen Norwegen und den USA (SDCA, Erweiterung 2024): Zugangs- und Nutzungsrechte.",
+    "en": "Agreed facility under the Norway–US Supplementary Defense Cooperation Agreement (SDCA, extended 2024): access and use rights."
+   },
+   "sources": [
+    "https://thebarentsobserver.com/en/security/2024/02/norway-expands-defense-agreement-american-troops"
+   ]
+  },
+  {
+   "id": "aitos-bulgaria-form",
+   "base": "aitos-bulgaria",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Abkommen zwischen Bulgarien und den USA von 2006 als gemeinsam genutzte Einrichtung aufgeführt: Zugangs- und Nutzungsrechte der US-Streitkräfte.",
+    "en": "Listed as a shared facility in the 2006 Bulgaria–US agreement: access and use rights of US forces."
+   },
+   "sources": [
+    "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago"
+   ]
+  },
+  {
+   "id": "bezmer-air-base-form",
+   "base": "bezmer-air-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Abkommen zwischen Bulgarien und den USA von 2006 als gemeinsam genutzte Einrichtung aufgeführt: Zugangs- und Nutzungsrechte der US-Streitkräfte.",
+    "en": "Listed as a shared facility in the 2006 Bulgaria–US agreement: access and use rights of US forces."
+   },
+   "sources": [
+    "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago"
+   ]
+  },
+  {
+   "id": "graf-ignatievo-ab-bulgaria-form",
+   "base": "graf-ignatievo-ab-bulgaria",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Abkommen zwischen Bulgarien und den USA von 2006 als gemeinsam genutzte Einrichtung aufgeführt: Zugangs- und Nutzungsrechte der US-Streitkräfte.",
+    "en": "Listed as a shared facility in the 2006 Bulgaria–US agreement: access and use rights of US forces."
+   },
+   "sources": [
+    "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago"
+   ]
+  },
+  {
+   "id": "novo-selo-form",
+   "base": "novo-selo",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "access"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Abkommen zwischen Bulgarien und den USA von 2006 als gemeinsam genutzte Einrichtung aufgeführt: Zugangs- und Nutzungsrechte der US-Streitkräfte.",
+    "en": "Listed as a shared facility in the 2006 Bulgaria–US agreement: access and use rights of US forces."
+   },
+   "sources": [
+    "https://www.bta.bg/en/news/1115633-bulgaria-us-ink-defence-cooperation-accord-20-years-ago"
+   ]
+  },
+  {
+   "id": "amari-air-base-form",
+   "base": "amari-air-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Von den USA finanzierte Infrastruktur und wiederkehrende Verlegungen der US Air Force, keine dauerhaft stationierte US-Einheit.",
+    "en": "US-funded infrastructure and recurring US Air Force deployments, no permanently stationed US unit."
+   },
+   "sources": [
+    "https://news.err.ee/1122683/us-air-force-completes-us-10-8-million-amari-investment"
+   ]
+  },
+  {
+   "id": "bemowo-piskie-form",
+   "base": "bemowo-piskie",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Von den USA geführte NATO-Kampfgruppe (enhanced Forward Presence) mit sechsmonatigen Rotationen.",
+    "en": "US-led NATO battle group (enhanced Forward Presence) on six-month rotations."
+   },
+   "sources": [
+    "https://www.army.mil/article/193970/us_army_led_nato_battle_group_on_deterrence_mission_in_poland"
+   ]
+  },
+  {
+   "id": "bemowo-piskie-form-gb",
+   "base": "bemowo-piskie",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "GB",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Britisches Kontingent der NATO-Kampfgruppe in Polen (enhanced Forward Presence), rotierend.",
+    "en": "British contingent of the NATO battle group in Poland (enhanced Forward Presence), rotational."
+   },
+   "sources": [
+    "https://www.army.mil/article/193970/us_army_led_nato_battle_group_on_deterrence_mission_in_poland"
+   ]
+  },
+  {
+   "id": "keflavik-base-form",
+   "base": "keflavik-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Seit 2016 rotierende Verlegungen von P-8-Seeaufklärern der US Navy; die feste US-Basis wurde 2006 aufgegeben.",
+    "en": "Rotational deployments of US Navy P-8 maritime patrol aircraft since 2016; the permanent US base was given up in 2006."
+   },
+   "sources": [
+    "https://en.highnorthnews.com/home/waking-up-the-keflavik-air-base-us-navy-returns-after-10-years-of-absence/104589"
+   ]
+  },
+  {
+   "id": "pabrades-poligonas-lithuania-form",
+   "base": "pabrades-poligonas-lithuania",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Rotierende US-Kräfte im Camp Herkus auf dem Übungsplatz Pabradė (Stand April 2026).",
+    "en": "US rotational forces at Camp Herkus, Pabradė Training Area (as of April 2026)."
+   },
+   "sources": [
+    "https://www.dvidshub.net/image/9650853/eucom-senior-enlisted-leader-visits-us-rotational-forces-lithuania"
+   ]
+  },
+  {
+   "id": "robertson-barracks-form",
+   "base": "robertson-barracks",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Jährliche sechsmonatige Rotation der Marine Rotational Force – Darwin, keine feste US-Basis.",
+    "en": "Annual six-month rotation of Marine Rotational Force – Darwin, not a permanent US base."
+   },
+   "sources": [
+    "https://www.dvidshub.net/image/9117253/us-marines-sailors-with-mrf-d-253-conduct-integration-check"
+   ]
+  },
+  {
+   "id": "tindal-raaf-base-form",
+   "base": "tindal-raaf-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Von den USA finanzierter Ausbau für rotierende Verlegungen von US-Bombern, keine dauerhaft stationierte US-Einheit.",
+    "en": "US-funded upgrades for rotational US bomber deployments, no permanently stationed US unit."
+   },
+   "sources": [
+    "https://www.twz.com/australian-airbase-gets-upgrades-for-american-bomber-deployments"
+   ]
+  },
+  {
+   "id": "zagan-training-area-form",
+   "base": "zagan-training-area",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Rotierende US-Panzerbrigaden im Rahmen von Atlantic Resolve; die aktuelle Rotation ist nicht geprüft.",
+    "en": "Rotational US armoured brigades under Atlantic Resolve; the current rotation has not been checked."
+   },
+   "sources": [
+    "https://www.dvidshub.net/image/6783550/1st-armored-brigade-combat-team-1st-infantry-division-assumes-authority-zagan-poland"
+   ]
+  },
+  {
+   "id": "tapa-army-base-form",
+   "base": "tapa-army-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Laut estnischem Verteidigungsministerium dienen US-Einheiten in Estland rotierend auf Grundlage eines bilateralen Abkommens. 2026 wurde das Kontingent stark verkleinert.",
+    "en": "According to the Estonian ministry of defence, US units serve in Estonia on a rotational basis under a bilateral agreement. The contingent was strongly reduced in 2026."
+   },
+   "sources": [
+    "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia"
+   ]
+  },
+  {
+   "id": "tapa-training-area-form",
+   "base": "tapa-training-area",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "rotational"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Laut estnischem Verteidigungsministerium dienen US-Einheiten in Estland rotierend auf Grundlage eines bilateralen Abkommens. 2026 wurde das Kontingent stark verkleinert.",
+    "en": "According to the Estonian ministry of defence, US units serve in Estonia on a rotational basis under a bilateral agreement. The contingent was strongly reduced in 2026."
+   },
+   "sources": [
+    "https://kaitseministeerium.ee/en/international-cooperation-and-allied-relations/allied-forces-estonia/us-forces-estonia"
+   ]
+  },
+  {
+   "id": "durres-albania-form",
+   "base": "durres-albania",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "exercise"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Nutzung des Handelshafens für die Übung DEFENDER-Europe 21, keine feste Basis.",
+    "en": "Use of the commercial port for the exercise DEFENDER-Europe 21, not a permanent base."
+   },
+   "sources": [
+    "https://www.dvidshub.net/news/395769/historical-port-offers-strategic-access-defender-europe-21"
+   ]
+  },
+  {
+   "id": "vaziani-military-base-georgia-form",
+   "base": "vaziani-military-base-georgia",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "exercise"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Wiederkehrende Übungen (Noble Partner), keine dauerhafte US-Stationierung.",
+    "en": "Recurring exercises (Noble Partner), not permanent US stationing."
+   },
+   "sources": [
+    "https://www.dvidshub.net/news/428233/noble-partner-opening-ceremony"
+   ]
+  },
+  {
+   "id": "ghan-joint-defence-pine-gap-form",
+   "base": "ghan-joint-defence-pine-gap",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "joint"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Von Australien und den USA gemeinsam betriebene Anlage (Joint Defence Facility); die Quelle von 1988 belegt die gemeinsame Betriebsform.",
+    "en": "Joint Defence Facility operated by Australia and the United States; the 1988 source documents the joint arrangement."
+   },
+   "sources": [
+    "https://pmtranscripts.pmc.gov.au/node/18152"
+   ]
+  },
+  {
+   "id": "globus-ii-norway-form",
+   "base": "globus-ii-norway",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "joint"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Norwegisch-amerikanisches Kooperationsprojekt (Nachrichtendienst und US Space Force), betrieben von norwegischem Personal.",
+    "en": "Norwegian–US cooperation project (Intelligence Service and US Space Force), operated by Norwegian personnel."
+   },
+   "sources": [
+    "https://snl.no/GLOBUS_-_radar"
+   ]
+  },
+  {
+   "id": "papa-ab-hungary-form",
+   "base": "papa-ab-hungary",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "joint"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Multinationale Heavy Airlift Wing (Strategic Airlift Capability, zwölf Staaten einschließlich Ungarn und der USA), gemeinsam betrieben.",
+    "en": "Multinational Heavy Airlift Wing (Strategic Airlift Capability, twelve nations including Hungary and the US), jointly operated."
+   },
+   "sources": [
+    "https://honvedelem.hu/hirek/heavy-airlift-wing-of-papa-reaches-full-operational-capability.html"
+   ]
+  },
+  {
+   "id": "hospital-weilerbach-form",
+   "base": "hospital-weilerbach",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "planned"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Bau; Fertigstellung des US-Militärkrankenhauses für 2027 erwartet.",
+    "en": "Under construction; the US military hospital is expected to be completed in 2027."
+   },
+   "sources": [
+    "https://www.stripes.com/theaters/europe/2024-04-22/rhine-ordnance-barracks-medical-center-construction-cost-13623428.html"
+   ]
+  },
+  {
+   "id": "learmonth-raaf-base-form",
+   "base": "learmonth-raaf-base",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "planned"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Bei AUSMIN 2024 als neuer Ort der Zusammenarbeit angekündigt, noch kein Beleg für eine US-Präsenz.",
+    "en": "Announced at AUSMIN 2024 as a new force posture location, no evidence of a US presence yet."
+   },
+   "sources": [
+    "https://theprint.in/defence/eye-on-china-us-to-increase-bomber-and-military-rotational-deployments-in-australia/2212612"
+   ]
+  },
+  {
+   "id": "rudninkai-litauen-form",
+   "base": "rudninkai-litauen",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "DE",
+    "form": "planned"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Im Bau für die Panzerbrigade 45 der Bundeswehr; dauerhafte Stationierung geplant.",
+    "en": "Under construction for the Bundeswehr's Panzerbrigade 45; permanent stationing planned."
+   },
+   "sources": [
+    "https://www.lrt.lt/en/news-in-english/19/2779098/construction-at-german-brigade-s-training-area-in-rudninkai-advances-ahead-of-schedule"
+   ]
+  },
+  {
+   "id": "base-aerienne-188-djibouti-form",
+   "base": "base-aerienne-188-djibouti",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "FR",
+    "form": "permanent"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Einheit der in Dschibuti stationierten französischen Streitkräfte (FFDj, rund 1450 Personen auf Grundlage des Verteidigungsvertrags von 2011).",
+    "en": "Unit of the French forces stationed in Djibouti (FFDj, about 1,450 personnel under the 2011 defence treaty)."
+   },
+   "sources": [
+    "https://www.defense.gouv.fr/operations/actualites/ffdj-formation-eor-au-profit-policiers-djiboutiens"
+   ]
+  },
+  {
+   "id": "kleine-brogel-nuclear-form",
+   "base": "kleine-brogel-nuclear",
+   "field": "presenceForm",
+   "op": "set",
+   "value": {
+    "nation": "US",
+    "form": "permanent"
+   },
+   "status": "accepted",
+   "decided": "2026-11-08",
+   "statement": {
+    "de": "Dort stationierte US-Einheit (701st Munitions Support Squadron).",
+    "en": "US unit stationed there (701st Munitions Support Squadron)."
+   },
+   "sources": [
+    "https://www.rtbf.be/article/base-de-kleine-brogel-des-travaux-d-infrastructures-pour-le-detachement-americain-ont-ete-effectues-constatent-des-experts-11096052"
    ]
   }
  ]

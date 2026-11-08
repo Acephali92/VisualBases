@@ -25,8 +25,9 @@ export function describe(b) {
   const where = b.host.territory ? `${country(b.host.territory)} (${country(b.host.country)})` : country(b.host.country);
   const parts = [`${label('siteType', b.siteType, 'de')} in ${where || 'unbekanntem Land'}`];
   if (b.status !== 'active') parts.push(label('status', b.status, 'de') + (b.period?.to ? ` (bis ${b.period.to})` : ''));
-  const nations = b.presences.filter((p) => p.relation !== 'domestic').map((p) => country(p.nation));
-  if (nations.length) parts.push(`stationiert: ${nations.join(', ')}`);
+  // the form of a presence is named where documented (a derived "historical" adds nothing to the status "closed")
+  const nations = b.presences.filter((p) => p.relation !== 'domestic').map((p) => country(p.nation) + (p.form && p.formVia !== 'status' ? ` (${label('presenceForm', p.form, 'de')})` : ''));
+  if (nations.length) parts.push(`${b.presences.some((p) => p.form && p.formVia !== 'status') ? 'Präsenz' : 'stationiert'}: ${nations.join(', ')}`);
   if (b.features?.length) parts.push(b.features.map((f) => label('feature', f, 'de')).join(', '));
   return `${parts.join(' · ')}. Karte, Satellitenbilder, Quellen und Widerstand vor Ort auf VisualBases.`;
 }

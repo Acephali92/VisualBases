@@ -42,14 +42,14 @@
   });
 </script>
 
-<div class="embed">
+<main class="embed" aria-label="VisualBases">
   <div class="map" bind:this={el}>{#if mapFailed}<MapNotice kind={mapFailed} />{/if}</div>
   {#if tip}<div class="tip" style:left="{tip.x}px" style:top="{tip.y}px">{tip.name}</div>{/if}
   <a class="badge" href="{site()}#/atlas{route.query ? '?' + route.query : ''}" target="_blank" rel="noopener">
     Visual<b>Bases</b> · {t('filters.results', { n: shown.length })} ↗
   </a>
   <div class="leg"><Legend compact /></div>
-</div>
+</main>
 
 <style>
   .embed { position: fixed; inset: 0; background: var(--bg); }

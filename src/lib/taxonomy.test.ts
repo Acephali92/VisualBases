@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { VOCABULARIES, LEGACY_FILTERS, SITE_TYPE, TERRITORY_SOVEREIGN, colorGroup, label, ids, SITE_TYPES, FEATURES, ACTIVITY_GROUPS, ACTIVITIES, type Term } from './taxonomy';
 // @ts-expect-error – plain ESM build script without type declarations
-import { resolveBases, evidenceOf, relation } from '../../scripts/lib/resolve.mjs';
+import { resolveBases, evidenceOf, relation, sourceLevelOf } from '../../scripts/lib/resolve.mjs';
 import sourceBases from '../../data/bases.json';
 import claimsFile from '../../data/claims.json';
 import researchSources from '../../data/research/sources.json';
@@ -9,6 +9,7 @@ import corrections from '../../data/corrections.json';
 import i18nSource from './i18n.svelte.ts?raw';
 import type { Base, SourceRecord } from './types';
 import { sourceRecord } from './fixtures';
+import { verdictsOf, groupsWith, uniformVerdict } from './verdicts';
 
 const src = sourceBases as unknown as SourceRecord[];
 const { bases: all, problems } = resolveBases(src, { claims: claimsFile.claims, research: researchSources, corrections }) as { bases: Base[]; problems: unknown[] };
@@ -160,6 +161,87 @@ describe('claims layer', () => {
   });
 });
 
+describe('presence form', () => {
+  const claim = (value: object, extra: object = {}) => ({ id: 'f', base: 'f', field: 'presenceForm', op: 'set', value, status: 'accepted', decided: '2026-11-08', statement: { de: 'x', en: 'x' }, sources: ['https://x'], ...extra });
+  const research = [{ base: 'f', url: 'https://x', method: 'manual', verdict: 'supports', supports: ['presence'] }];
+  it('a claim sets the form of one presence and keeps the original visible, the evidence stays as it is', () => {
+    const rec = sourceRecord({ id: 'f', presences: [{ nation: 'US', role: 'stationing', via: 'tag' }, { nation: 'GB', role: 'stationing', via: 'tag' }] });
+    const r = resolveBases([rec], { claims: [claim({ nation: 'US', form: 'access' })], research });
+    expect(r.problems).toEqual([]);
+    const b = r.bases[0] as Base;
+    expect(b.presences.map((p) => [p.nation, p.form, p.formVia])).toEqual([['US', 'access', 'claim'], ['GB', undefined, undefined]]);
+    expect(b.corrections![0]).toMatchObject({ field: 'presenceForm', from: { nation: 'US', form: null }, to: { nation: 'US', form: 'access' } });
+    // a refinement, not a correction of the presence: the checked source still confirms it
+    expect(b.evidence?.presence).toBe('confirmed');
+  });
+  it('a claim for a state without presence, or a form already set, is reported', () => {
+    const rec = sourceRecord({ id: 'f' });
+    expect(resolveBases([rec], { claims: [claim({ nation: 'FR', form: 'access' })], research }).problems.map((p: { rule: string }) => p.rule)).toEqual(['claim-apply']);
+    const twice = [claim({ nation: 'US', form: 'access' }), claim({ nation: 'US', form: 'access' }, { id: 'g' })];
+    expect(resolveBases([rec], { claims: twice, research }).problems.map((p: { rule: string }) => p.rule)).toEqual(['claim-apply']);
+  });
+  it('presences at closed sites are historical (derived), a documented form wins', () => {
+    const rec = sourceRecord({ id: 'f', status: 'closed', presences: [{ nation: 'US', role: 'stationing', via: 'tag' }, { nation: 'DE', role: 'stationing', via: 'tag' }] });
+    const b = resolveBases([rec], { claims: [claim({ nation: 'DE', form: 'rotational' })], research }).bases[0] as Base;
+    expect(b.presences.map((p) => [p.nation, p.form, p.formVia])).toEqual([['US', 'historical', 'status'], ['DE', 'rotational', 'claim']]);
+    expect((resolveBases([sourceRecord({ id: 'f' })], {}).bases[0] as Base).presences[0].form).toBeUndefined();
+  });
+  it('the dataset: access, rotation and closed sites are told apart', () => {
+    const form = (id: string, nation = 'US') => byId.get(id)!.presences.find((p) => p.nation === nation)?.form;
+    expect(form('s-kiruna')).toBe('access');
+    expect(form('palanquero-ab')).toBe('access');
+    expect(form('robertson-barracks')).toBe('rotational');
+    expect(form('rudninkai-litauen', 'DE')).toBe('planned');
+    for (const id of ['kabul-isaf-headquarters', 'bagram-air-base']) expect(form(id)).toBe('historical');
+    expect(all.filter((b) => b.status === 'closed').every((b) => b.presences.every((p) => p.form === 'historical'))).toBe(true);
+  });
+});
+
+describe('verdicts per statement group', () => {
+  it('reads one verdict for all groups, or per group where they differ', () => {
+    expect(verdictsOf({ supports: ['presence', 'status'], verdict: 'contradicts' })).toEqual({ presence: 'contradicts', status: 'contradicts' });
+    const split = { supports: ['presence', 'nation', 'status'], verdict: 'contradicts' as const, verdicts: { presence: 'supports' as const, nation: 'supports' as const } };
+    expect(verdictsOf(split)).toEqual({ presence: 'supports', nation: 'supports', status: 'contradicts' });
+    expect(groupsWith(split, 'supports')).toEqual(['presence', 'nation']);
+    expect(uniformVerdict(split)).toBe(false);
+    // verdicts may name a group that is not in supports
+    expect(verdictsOf({ supports: ['presence'], verdict: 'supports', verdicts: { position: 'context' } })).toEqual({ presence: 'supports', position: 'context' });
+  });
+  it('a split verdict yields different evidence states per group', () => {
+    const src = { method: 'manual', url: 'x', supports: ['presence', 'status'], verdict: 'contradicts', verdicts: { presence: 'supports' } };
+    expect(evidenceOf([src])).toEqual({ presence: 'confirmed', status: 'disputed' });
+  });
+  it('a source cited by a correction is set aside only for the groups the correction changes', () => {
+    const src = { method: 'manual', url: 'x', supports: ['presence', 'status'], verdict: 'supports' };
+    expect(evidenceOf([src], { corrected: ['status'], cited: new Map([['x', new Set(['status'])]]) })).toEqual({ presence: 'confirmed', status: 'corrected' });
+    // the dataset: the name correction of Storck Barracks no longer hides the source on the presence
+    expect(byId.get('stock-barracks-illesheim')!.evidence?.presence).toBe('confirmed');
+    expect(byId.get('shamsi-airfield-pakistan')!.evidence).toMatchObject({ presence: 'confirmed', status: 'corrected' });
+  });
+});
+
+describe('evidence level of a site', () => {
+  const lvl = (p: Record<string, unknown>) => sourceLevelOf({ sources: [], ...p }).level;
+  const manual = (verdict: string, supports = ['presence']) => ({ method: 'manual', verdict, supports, url: 'https://x', publisher: 'P', accessed: '2026-11-07' });
+  it('ranks checked evidence on presence or nation above links from visualbases.org and Wikipedia', () => {
+    expect(lvl({ evidence: { presence: 'confirmed' }, research: [manual('supports')] })).toBe('verified');
+    expect(lvl({ evidence: { nation: 'corrected' } })).toBe('verified');
+    expect(lvl({ evidence: { presence: 'confirmed', nation: 'disputed' } })).toBe('disputed');
+    expect(lvl({ evidence: { status: 'confirmed' }, research: [manual('supports', ['status'])] })).toBe('context');
+    expect(lvl({ sources: [{ url: 'https://a' }], wikipedia: { en: 'x' } })).toBe('source-listed');
+    expect(lvl({ wikipedia: { en: 'x' } })).toBe('wikipedia-only');
+    expect(lvl({ wikipedia: {} })).toBe('none');
+  });
+  it('names the checked source behind the level', () => {
+    expect(sourceLevelOf({ sources: [], evidence: { presence: 'confirmed' }, research: [manual('context'), manual('supports')] }).key).toEqual({ publisher: 'P', url: 'https://x', accessed: '2026-11-07', published: undefined });
+  });
+  it('the dataset: every record has a level, every verified one a dated key source', () => {
+    for (const b of all) expect(ids(VOCABULARIES.sourceLevel), b.id).toContain(b.sourceLevel);
+    for (const b of all.filter((x) => x.sourceLevel === 'verified')) expect(b.keySource?.accessed, b.id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(all.filter((b) => b.sourceLevel === 'verified').length).toBeGreaterThanOrEqual(199);
+  });
+});
+
 describe('evidence', () => {
   const s = (verdict: string, supports: string[], method = 'manual', url = 'u') => ({ verdict, supports, method, url });
   it('derives a state per statement group without scores', () => {
@@ -167,11 +249,11 @@ describe('evidence', () => {
     expect(evidenceOf([s('context', ['status'])])).toEqual({ status: 'context' });
     expect(evidenceOf([s('contradicts', ['nation'])])).toEqual({ nation: 'disputed' });
     expect(evidenceOf([s('supports', ['nation'], 'auto')])).toEqual({});
-    expect(evidenceOf([s('contradicts', ['nation'], 'manual', 'x')], { corrected: ['nation'], cited: new Set(['x']) })).toEqual({ nation: 'corrected' });
+    expect(evidenceOf([s('contradicts', ['nation'], 'manual', 'x')], { corrected: ['nation'], cited: new Map([['x', new Set(['nation'])]]) })).toEqual({ nation: 'corrected' });
   });
   it('unreviewed automatic matches never count as evidence', () => {
     for (const b of all) for (const [k, v] of Object.entries(b.evidence ?? {})) {
-      if (v === 'confirmed') expect(b.research!.some((r) => r.method === 'manual' && r.verdict === 'supports' && r.supports.includes(k as never)), `${b.id} ${k}`).toBe(true);
+      if (v === 'confirmed') expect(b.research!.some((r) => r.method === 'manual' && verdictsOf(r)[k] === 'supports'), `${b.id} ${k}`).toBe(true);
     }
   });
 });

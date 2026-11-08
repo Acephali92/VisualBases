@@ -30,7 +30,7 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 1. ✅ `DATA-QUALITY.md` führte Puerto Castilla und Karlovac als `positionCheck: proposed`; beide sind aber über angenommene `position`-Claims korrigiert, und `corrections.json` ist leer.
 2. ✅ „Position ungefähr“ zeigte 5 statt 8: `approx`-Claims wurden nicht mitgezählt, `coords-precision`/`coords-approx` prüften die Rohposition.
 3. ✅ „Position ungeprüft“ zählte auch `applied`.
-4. ⏳ Die Quellenkennzahlen ignorieren `sources.json`: Von 291 Standorten „ohne eigene Quelle“ haben 199 eine manuell geprüfte, stützende Quelle.
+4. ✅ Die Quellenkennzahlen ignorierten `sources.json`: Von 291 Standorten „ohne eigene Quelle“ haben 199 eine manuell geprüfte, stützende Quelle. Jetzt zählt der Bericht die Belegstufe je Standort mit Recherche (Roadmap Paket B).
 5. ✅ Die Dublettenprüfung nahm `special-facility` pauschal aus. Das WPC-Paar (194 m) war deshalb für die Validierung unsichtbar. Es war redaktionell zwar schon als `duplicate-entry` erfasst (Claim `wpc-duplicate`), aber ohne Verbindung zur Prüfung.
 6. ✅ Genauigkeit: `corrections.proposal.precision` und `claims.position.value.precision` nutzen dasselbe Vokabular; `positionPrecision` wird veröffentlicht.
 
@@ -47,7 +47,7 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 3. ⏳ Der Bericht wird nur vom Import-Workflow erneuert und hat keine Historie.
 
 ### Quellenstruktur
-⏳ `sources.json` kennt Aussagegruppen (`supports`), aber nur **ein** `verdict` je Quelle. „Belegt die Existenz, für die Lage nur Kontext“ lässt sich nicht ausdrücken, und es fehlt die Genauigkeit eines Positionsbelegs.
+✅ (Paket B: `verdicts`, `precision`) `sources.json` kannte Aussagegruppen (`supports`), aber nur **ein** `verdict` je Quelle. „Belegt die Existenz, für die Lage nur Kontext“ lässt sich nicht ausdrücken, und es fehlt die Genauigkeit eines Positionsbelegs.
 
 ## 3. Verbesserungsvorschlag
 
@@ -68,8 +68,8 @@ Status: ✅ umgesetzt (Paket 1: N1–N5; Paket 2: N6, P2, Libreville; Paket 3: P
 | P2 | Genauigkeitsstufen `site / reference / town / region` statt `approx` (Claims, Export, App) | M | ✅ (Paket 2) |
 | P3 | Wikidata-, OSM- und veraltete Prüfungen als Warnungen; Collectors prüfen die korrigierte Position | M | ✅ (Paket 3) |
 | P4 | `corrections.json` `confirmed` in Auflösung und App nutzen, quittiert Geo-Warnungen (`rules`) | S | ✅ (Paket 3) |
-| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ⏳ |
-| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ⏳ |
+| P5 | Urteile je Aussagegruppe in `sources.json` (`verdicts`, Positionsgenauigkeit) | M | ✅ Roadmap P1-12 (Paket B) |
+| P6 | Bericht: Abschnitt Geografie, Quellen inkl. Recherche, Widersprüche, Trend (`data-quality-history.json`) | M | ⏳ → Roadmap P1-13 (Paket E) |
 | P7 | Dubletten nach Name und Nähe (`duplicate-name-near`) | S | ✅ (Paket 3) |
 
 ### Optional

@@ -90,6 +90,27 @@ describe('data validation', () => {
     expect(rules(validate({ bases: [base()], claims: [{ ...claim, value: 'gone' }], research }))).toContain('claim-value');
     expect(rules(validate({ bases: [base()], claims: [{ ...claim, decided: undefined }], research }))).toContain('claim-decided');
     expect(rules(validate({ bases: [base()], claims: [{ ...claim, base: 'nope' }], research }))).toContain('claim-base');
+    // presence form: a valid nation and form, op "set", no "expect" needed (the source never states a form)
+    const form = { ...claim, field: 'presenceForm', value: { nation: 'US', form: 'access' } };
+    const ok = validate({ bases: [base()], claims: [form], research });
+    expect(ok.errors).toEqual([]);
+    expect(rules(ok)).not.toContain('claim-expect-missing');
+    expect(rules(validate({ bases: [base()], claims: [{ ...form, value: { nation: 'US', form: 'occupied' } }], research }))).toContain('claim-value');
+    expect(rules(validate({ bases: [base()], claims: [{ ...form, op: 'add' }], research }))).toContain('claim-value');
+    expect(rules(validate({ bases: [base()], claims: [{ ...form, value: { nation: 'FR', form: 'access' } }], research }))).toContain('claim-apply');
+  });
+
+  it('checks verdicts per statement group and the precision of position sources', () => {
+    const src = { base: 'a', url: 'https://example.org/s', type: 'media', verdict: 'contradicts', method: 'manual', summary: 's', supports: ['status'], accessed: '2026-11-07' };
+    const check = (s: object) => rules(validate({ bases: [base()], research: { sources: [{ ...src, ...s }] } }));
+    expect(check({ verdicts: { presence: 'supports' } })).not.toContain('research-verdict');
+    expect(check({ verdicts: { presence: 'maybe' } })).toContain('research-verdict');
+    expect(check({ verdicts: { weather: 'supports' } })).toContain('research-claim');
+    expect(check({ verdicts: {} })).toContain('research-verdict');
+    expect(check({ method: 'auto', verdict: 'unreviewed', verdicts: { presence: 'supports' } })).toContain('research-verdict');
+    expect(check({ supports: ['position'], precision: 'site' })).not.toContain('research-precision');
+    expect(check({ precision: 'site' })).toContain('research-precision');
+    expect(check({ supports: ['position'], precision: 'street' })).toContain('research-precision');
   });
 
   it('checks references, image files and licences', () => {

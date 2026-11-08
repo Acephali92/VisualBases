@@ -1,25 +1,49 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, type Component } from 'svelte';
   import { route, initRouter, href } from './lib/router.svelte';
   import { t, i18n, setLang } from './lib/i18n.svelte';
   import { db, loadData } from './lib/store.svelte';
-  import Home from './routes/Home.svelte';
-  import Atlas from './routes/Atlas.svelte';
-  import Near from './routes/Near.svelte';
-  import Stats from './routes/Stats.svelte';
-  import About from './routes/About.svelte';
-  import News from './routes/News.svelte';
-  import Act from './routes/Act.svelte';
-  import Embed from './routes/Embed.svelte';
-  import Quiz from './routes/Quiz.svelte';
-  import Space from './routes/Space.svelte';
-  import School from './routes/School.svelte';
+
+  /**
+   * Each view is its own chunk, loaded when it is opened (P1-8): the shell (header, router, data store,
+   * translations) stays small. Atlas and profile share one view, so switching between them keeps the map.
+   */
+  const VIEWS: Record<string, () => Promise<{ default: Component }>> = {
+    home: () => import('./routes/Home.svelte'),
+    atlas: () => import('./routes/Atlas.svelte'),
+    near: () => import('./routes/Near.svelte'),
+    stats: () => import('./routes/Stats.svelte'),
+    news: () => import('./routes/News.svelte'),
+    school: () => import('./routes/School.svelte'),
+    space: () => import('./routes/Space.svelte'),
+    quiz: () => import('./routes/Quiz.svelte'),
+    act: () => import('./routes/Act.svelte'),
+    about: () => import('./routes/About.svelte'),
+    embed: () => import('./routes/Embed.svelte'),
+  };
 
   initRouter();
   onMount(loadData);
 
   const section = $derived(route.path.split('/')[1] || '');
   const isMapView = $derived(section === 'atlas' || section === 'base');
+  const viewKey = $derived(isMapView ? 'atlas' : section in VIEWS ? section : 'home');
+  let View = $state<Component | null>(null);
+  let viewFailed = $state(false);
+  /** loaded views: switching back is immediate, and a view is never shown under another view's route */
+  const loaded = new Map<string, Component>();
+  $effect(() => {
+    const key = viewKey;
+    let current = true;
+    viewFailed = false;
+    View = loaded.get(key) ?? null;
+    if (View) return;
+    VIEWS[key]()
+      .then((m) => { loaded.set(key, m.default); if (current) View = m.default; })
+      // a chunk can fail after a deployment (old page, new file names) or offline
+      .catch(() => { if (current) viewFailed = true; });
+    return () => { current = false; };
+  });
   let menuOpen = $state(false);
   let scrolled = $state(false);
   onMount(() => {
@@ -58,7 +82,7 @@
 </script>
 
 {#if section === 'embed'}
-  <Embed />
+  {#if View && viewKey === 'embed'}<View />{/if}
 {:else}
 <a class="skip-link" href="#main" onclick={(e) => { e.preventDefault(); document.getElementById('main')?.focus(); }}>{t('nav.skip')}</a>
 
@@ -80,7 +104,7 @@
     </nav>
 
     <div class="tools">
-      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} aria-label={t('common.lang')}>
+      <button class="btn btn-ghost btn-sm lang" onclick={() => setLang(i18n.lang === 'de' ? 'en' : 'de')} aria-label="{i18n.lang === 'de' ? 'EN' : 'DE'} – {t('common.lang')}" lang={i18n.lang === 'de' ? 'en' : 'de'}>
         {i18n.lang === 'de' ? 'EN' : 'DE'}
       </button>
       <button class="btn btn-ghost icon-btn menu-btn" aria-expanded={menuOpen} aria-label="Menü" onclick={() => (menuOpen = !menuOpen)}>
@@ -102,28 +126,15 @@
       <p>{t('common.error')}</p>
       <button class="btn" onclick={() => { db.status = 'idle'; loadData(); }}>{t('common.retry')}</button>
     </div>
-  {:else if section === ''}
-    <Home />
-  {:else if isMapView}
-    <Atlas />
-  {:else if section === 'near'}
-    <Near />
-  {:else if section === 'stats'}
-    <Stats />
-  {:else if section === 'news'}
-    <News />
-  {:else if section === 'school'}
-    <School />
-  {:else if section === 'space'}
-    <Space />
-  {:else if section === 'quiz'}
-    <Quiz />
-  {:else if section === 'act'}
-    <Act />
-  {:else if section === 'about'}
-    <About />
+  {:else if viewFailed}
+    <div class="container state">
+      <p>{t('common.error')}</p>
+      <button class="btn" onclick={() => location.reload()}>{t('common.retry')}</button>
+    </div>
+  {:else if View}
+    <View />
   {:else}
-    <Home />
+    <div class="container state" aria-busy="true"><p class="muted">{t('common.loading')}</p></div>
   {/if}
 </main>
 

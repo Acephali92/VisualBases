@@ -72,6 +72,7 @@
   function fmt(field: string, v: unknown): string {
     if (v == null || (Array.isArray(v) && !v.length)) return t('base.none');
     if (field === 'presences') return (v as { nation: string }[]).map((p) => countryName(p.nation)).join(', ');
+    if (field === 'presenceForm') { const p = v as { nation: string; form: string | null }; return `${countryName(p.nation)}: ${p.form ? tl('presenceForm', p.form) : t('base.formUnspecified')}`; }
     if (field === 'host') { const h = v as { country: string; territory?: string }; return countryName(h.territory ?? h.country) + (h.territory ? ` (${countryName(h.country)})` : ''); }
     if (field === 'status') return tl('status', String(v));
     if (field === 'siteType') return tl('siteType', String(v));
@@ -92,9 +93,12 @@
     { label: t('base.earth'), url: `https://earth.google.com/web/search/${base.lat},${base.lon}` },
   ]);
 
+  /** the heading takes the focus when a profile opens, so keyboard and screen reader users land in it (P1-4) */
+  let heading: HTMLHeadingElement | undefined = $state();
   $effect(() => {
     void base.id;
     scroller?.scrollTo({ top: 0 });
+    heading?.focus({ preventScroll: true });
     copied = false;
     // reset the share card only when the base changes (untracked: must not react to `card` itself)
     untrack(() => { if (card) { URL.revokeObjectURL(card.url); card = null; } });
@@ -136,7 +140,7 @@
   <header>
     <span class="tag kind"><span class="dot" class:ring={group === 'aggregate'} style:background={GROUP_COLOR[group]}></span>{tl('siteType', base.siteType)}</span>
     {#if base.status !== 'active'}<span class="tag status">{tl('status', base.status)}{#if base.period?.to}{' '}{t('base.until')} {base.period.to}{/if}</span>{/if}
-    <h2>{base.name}</h2>
+    <h2 tabindex="-1" bind:this={heading}>{base.name}</h2>
     <p class="where">{#if base.host.country}<a class="cc" href={href('/atlas', `countries=${base.host.territory ?? base.host.country}`)}>{flag(base.host.territory ?? base.host.country)} {countryName(base.host.territory ?? base.host.country)}</a>{#if base.host.territory}{' '}<span class="muted">({countryName(base.host.country)})</span>{/if}{/if}{#if base.subregion}{' · '}{base.subregion}{/if}</p>
     <p class="kind-info">{ti('siteType', base.siteType)}</p>
     {#if base.scope === 'domestic' && base.siteType !== 'domestic-global'}<p class="kind-info">ℹ {t('base.context')}</p>{:else if base.scope === 'overseas'}<p class="kind-info">ℹ {t('base.overseas')}</p>{/if}
@@ -148,6 +152,7 @@
       </p>
     {/if}
     <div class="flags">
+      <a class="tag lvl lvl-{base.sourceLevel}" href={href('/atlas', `evidence=${base.sourceLevel}`)} title={ti('sourceLevel', base.sourceLevel)}>{base.sourceLevel === 'verified' ? '✓' : base.sourceLevel === 'disputed' ? '⚠' : '○'} {tl('sourceLevel', base.sourceLevel)}</a>
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
       {#if base.origin.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
       {#if base.positionCheck?.status === 'proposed'}<span class="tag warn">⚠ {t('base.positionUnverified')}</span>{/if}
@@ -188,7 +193,7 @@
       <div><dt>{t('base.host')}</dt><dd>{#if base.host.country}{flag(base.host.country)} {countryName(base.host.country)}{#if base.host.territory}{' · '}{t('base.territory')}: {flag(base.host.territory)} {countryName(base.host.territory)}{/if}{:else}–{/if}</dd></div>
       <div><dt>{t('base.presences')}</dt><dd>
         {#each base.presences as p (p.nation)}
-          <span class="nat">{flag(p.nation)} {countryName(p.nation)}{#if p.role !== 'stationing'}{' · '}{tl('presenceRole', p.role)}{/if}{#if p.relation !== 'foreign'}{' · '}{tl('relation', p.relation)}{/if}{#if p.via !== 'tag'}<small class="basis" title={tl('presenceVia', p.via)}> ({p.via === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</span>
+          <span class="nat">{flag(p.nation)} {countryName(p.nation)}{#if p.role !== 'stationing'}{' · '}{tl('presenceRole', p.role)}{/if}{#if p.form}{' · '}<a href={href('/atlas', `forms=${p.form}`)} title={ti('presenceForm', p.form)}>{tl('presenceForm', p.form)}</a>{#if p.formVia === 'status'}<small class="basis" title={tl('presenceFormVia', p.formVia)}> ({t('base.basisDerived')})</small>{/if}{/if}{#if p.relation !== 'foreign'}{' · '}{tl('relation', p.relation)}{/if}{#if p.via !== 'tag'}<small class="basis" title={tl('presenceVia', p.via)}> ({p.via === 'claim' ? t('base.basisClaim') : t('base.basisDerived')})</small>{/if}</span>
         {:else}<span class="muted">{t('base.none')}</span>{/each}
       </dd></div>
       {#if base.organisations.length}
@@ -303,6 +308,13 @@
 
   <section>
     <h3>{t('base.evidence')}</h3>
+    <p class="level">
+      <b class="lvl-{base.sourceLevel}">{tl('sourceLevel', base.sourceLevel)}</b> – {ti('sourceLevel', base.sourceLevel)}
+      {#if base.keySource}<br /><small>{t('base.keySource')}: <a href={base.keySource.url} target="_blank" rel="noopener">{base.keySource.publisher}</a>{#if base.keySource.published}{' · '}{base.keySource.published}{/if}{#if base.keySource.accessed}{' · '}{t('base.accessed')} {base.keySource.accessed}{/if}</small>{/if}
+    </p>
+    {#if base.sourceLevel !== 'verified'}
+      <p class="wanted">🔎 {t('base.sourceWanted')} <a href={issueUrl('beleg', { title: `Beleg: ${base.name}`, base: base.id })} target="_blank" rel="noopener">{t('base.reportSource')} ↗</a></p>
+    {/if}
     {#if base.evidence && Object.keys(base.evidence).length}
       <div class="chips ev">
         {#each CLAIM_TYPES.filter((c) => base.evidence?.[c.id]) as c (c.id)}
@@ -319,8 +331,6 @@
       <p class="small muted">{t('base.evidenceNote', { date: base.lastChecked ?? (research[0]?.accessed ?? '') })}</p>
     {:else if db.research === null && base.evidence}
       <p class="small muted">{t('common.loading')}</p>
-    {:else}
-      <p class="small muted">{t('base.evidenceNone')}</p>
     {/if}
   </section>
 
@@ -421,6 +431,13 @@
   .ev .chip { cursor: default; }
   .ev-confirmed, .ev-corrected { border-color: #199e70; }
   .ev-disputed { border-color: #c9a227; }
+  .tag.lvl { text-decoration: none; }
+  .tag.lvl-verified { border-color: #199e70; }
+  .tag.lvl-disputed { border-color: #c9a227; }
+  b.lvl-verified { color: #2bbf8a; } b.lvl-disputed { color: #e0b43a; }
+  .level { margin: 0 0 8px; color: var(--text-2); font-size: 0.92rem; }
+  .level small { color: var(--muted); }
+  .wanted { margin: 0 0 10px; font-size: 0.92rem; }
   .research small { white-space: normal; }
   .v-supports { color: #2bbf8a; } .v-contradicts { color: #e8692f; }
 

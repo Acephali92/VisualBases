@@ -35,7 +35,8 @@ export default defineConfig({
           // geocoder switch (Nominatim policy: must be switchable at any time) – always fetched fresh
           '**/config/geocoder.json',
           '**/assets/map-*',
-          '**/assets/maplibre-gl-worker-*',
+          // the map engine is its own chunk since the rolldown build (map-* is only the small wrapper)
+          '**/assets/maplibre-gl-*',
           '**/assets/countries-*',
           '**/assets/shareImage-*',
           '**/assets/inter-{cyrillic,cyrillic-ext,greek,greek-ext,vietnamese}-*',

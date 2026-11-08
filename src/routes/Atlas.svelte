@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { onMount, untrack } from 'svelte';
+  import { onMount, untrack, tick } from 'svelte';
   import { t, tl, ti, countryName, formatNumber } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { route, go, href } from '../lib/router.svelte';
-  import { matches, queryToFilters, filtersToQuery, nearest, countBy, facetCounts, facetValues, foreignNations, isAggregate, FILTER_KEYS, type FilterKey } from '../lib/data';
+  import { matches, queryToFilters, filtersToQuery, nearest, countBy, facetCounts, facetValues, foreignNations, isAggregate, FILTER_KEYS, FORM_UNSPECIFIED, type FilterKey } from '../lib/data';
   import type { MapHandle } from '../lib/map';
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
-  import { GROUP_COLOR, SITE_TYPES, STATUSES, FEATURES, FEATURE_KINDS, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, CONTINENTS, SITE_TYPE, colorGroup, flag, ids, type Dimension } from '../lib/taxonomy';
+  import { GROUP_COLOR, SITE_TYPES, STATUSES, PRESENCE_FORMS, SOURCE_LEVELS, FEATURES, FEATURE_KINDS, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, CONTINENTS, SITE_TYPE, colorGroup, flag, ids, type Dimension } from '../lib/taxonomy';
   import { settings, setSatellite } from '../lib/settings.svelte';
   import type { Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
@@ -72,6 +72,8 @@
   const groups = $derived<Group[]>([
     { title: t('filters.kind'), key: 'kinds', dim: 'siteType', items: ids(SITE_TYPES), dot: true, hint: t('filters.context') },
     { title: t('filters.status'), key: 'status', dim: 'status', items: ids(STATUSES) },
+    { title: t('filters.form'), key: 'forms', dim: 'presenceForm', items: [...ids(PRESENCE_FORMS), FORM_UNSPECIFIED], label: (v) => (v === FORM_UNSPECIFIED ? t('filters.formUnspecified') : tl('presenceForm', v)), hint: t('filters.formHint') },
+    { title: t('filters.evidence'), key: 'evidence', dim: 'sourceLevel', items: ids(SOURCE_LEVELS), hint: t('filters.evidenceHint') },
     { title: t('filters.nation'), key: 'nations', items: nationOptions, label: (v) => `${flag(v)} ${countryName(v)}` },
     { title: t('filters.theme'), key: 'themes', dim: 'theme', items: ids(THEMES) },
     { title: t('filters.facility'), key: 'facilities', dim: 'feature', items: [], sub: FEATURE_KINDS.map((k) => ({ title: tl('featureKind', k.id), items: FEATURES.filter((f) => f.kind === k.id).map((f) => f.id) })) },
@@ -95,6 +97,23 @@
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => update({ q: v }), 150);
   }
+
+  /** skip link: open the sheet (mobile) and move the focus to the result list */
+  let listEl: HTMLUListElement | undefined = $state();
+  async function toList(e: MouseEvent) {
+    e.preventDefault();
+    sheetOpen = true;
+    if (selectedId) closeBase();
+    await tick();
+    listEl?.focus();
+  }
+  /** number of results for screen readers, announced once the filters have settled (not on every keystroke or map move) */
+  let announced = $state('');
+  $effect(() => {
+    const text = t('filters.results', { n: formatNumber(results.length) });
+    const timer = setTimeout(() => (announced = text), 700);
+    return () => clearTimeout(timer);
+  });
 
   const openBase = (id: string) => go(`/base/${encodeURIComponent(id)}`, route.query);
   const closeBase = () => go('/atlas', route.query);
@@ -175,7 +194,9 @@
 </script>
 
 <div class="atlas">
-  <div class="map" bind:this={mapEl} role="application" aria-label={t('nav.atlas')}>
+  <!-- the map is a pointer interface; keyboard and screen reader users get the result list (P1-4) -->
+  <a class="skip-link skip-map" href="#atlas-results" onclick={toList}>{t('atlas.skipToList')}</a>
+  <div class="map" bind:this={mapEl} role="application" aria-label={t('atlas.mapLabel')}>
     {#if mapFailed}<MapNotice kind={mapFailed} hint={t('map.listHint')} />{/if}
   </div>
   {#if tip}
@@ -280,7 +301,7 @@
                 {:else}
                   {@render chips(g, g.items)}
                 {/if}
-                {#if g.hint && (filters.kinds.includes('domestic-global') || counts.kinds.get('domestic-global'))}<p class="hint">{g.hint}</p>{/if}
+                {#if g.hint && (g.key !== 'kinds' || filters.kinds.includes('domestic-global') || counts.kinds.get('domestic-global'))}<p class="hint">{g.hint}</p>{/if}
               </fieldset>
             {/if}
           {/each}
@@ -297,7 +318,10 @@
         </div>
       {/if}
 
-      <ul class="results" aria-label={t('filters.list')}>
+      <p class="sr-only" role="status" aria-live="polite" aria-atomic="true">{announced}</p>
+      <!-- an empty list can still scroll in the small mobile sheet; a scrollable region without links must be reachable by keyboard (WCAG 2.1.1, axe scrollable-region-focusable) -->
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+      <ul class="results" id="atlas-results" tabindex={results.length ? -1 : 0} bind:this={listEl} aria-label={t('filters.list')}>
         {#each results.slice(0, 400) as b (b.id)}
           <li>
             <a href={href(`/base/${encodeURIComponent(b.id)}`, route.query)} onmouseenter={() => handle?.focus([b.id])} onmouseleave={() => handle?.focus([])}>
@@ -354,6 +378,8 @@
   .filter-btn { min-height: 40px; }
   .badge { background: var(--accent-strong); color: #fff; border-radius: 999px; font-size: 0.72rem; padding: 0 6px; line-height: 1.5; }
 
+  .skip-map:focus { top: calc(var(--header-h) + 8px); }
+  .results:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
   .meta-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; padding: 4px 16px 10px; font-size: 0.9rem; border-bottom: 1px solid var(--line); }
   .meta-row strong { white-space: nowrap; }
   .row-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 14px; }

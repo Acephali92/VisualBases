@@ -23,7 +23,7 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 - [ ] **Eigene Domain** (z. B. `visualbases.org` auf die neue App umstellen oder `app.visualbases.org`): DNS-Eintrag (CNAME auf `acephali92.github.io`) setzen und unter Settings → Pages die „Custom domain“ eintragen. Danach passe ich `SITE_URL` an (für Vorschaubilder und Sitemap).
 - [ ] **Partner informieren**, dass es eine einbettbare Karte gibt (Atlas → „Einbetten“): Stopp Ramstein, World BEYOND War, CND, No to NATO …
-- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur` (werden von den Issue-Formularen gesetzt).
+- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur`, `beleg` (werden von den Issue-Formularen gesetzt; `beleg` ist neu für „Beleg melden“).
 - [ ] **Branch-Schutz** für `main` aktivieren (Settings → Branches), damit Änderungen immer über Pull Requests mit grüner CI laufen.
 
 
@@ -41,9 +41,9 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 ## 6. Datenprüfung (neu)
 
-- [ ] **Korrekturvorschläge bestätigen** (`data/corrections.json`, in der App als „Position ungeprüft“ markiert):
-  - *Puerto Castilla (Honduras):* Auf visualbases.org hat dieser Beitrag Titel und Koordinate von Soto Cano. Ist es ein Duplikat (löschen/zusammenführen) oder ein eigener Ort Puerto Castilla (Vorschlag: OSM-Position 16.0096, −85.9494)?
-  - *Karlovac (Kroatien):* Koordinate identisch mit Zadar Gazenica. Wo genau liegt der Hubschrauberlandeplatz/Übungsplatz in Karlovac?
+- [ ] **Karlovac (Kroatien) genauer verorten:** Die Koordinate war identisch mit Zadar Gazenica; jetzt steht der Standort ungefähr in der Stadtmitte (`town`). Wo genau liegt der Hubschrauberlandeplatz/Übungsplatz in Karlovac?
+  (Puerto Castilla ist als eigener Ort korrigiert, Libreville am 2026-11-08 angenommen.)
 - [ ] **Ortssuche „Deine Basis“ absichern** (siehe `docs/GEOCODING.md`): Die öffentliche Nominatim-Instanz erlaubt höchstens 1 Anfrage pro Sekunde für die *ganze* App, also für alle Nutzer zusammen. Bei viel Andrang (Presse, Schulklassen) droht eine Sperre. Empfehlung: einen statischen PLZ-Index für DE/AT/CH ins Repo aufnehmen (z. B. GeoNames, CC BY 4.0), damit Postleitzahlen ohne externe Anfrage aufgelöst werden. Bitte entscheiden. Notfalls lässt sich die Suche über `public/config/geocoder.json` abschalten oder umleiten.
-- [ ] **Offene Rechtsfragen** aus `docs/IMPROVEMENT-ROADMAP.md`, Abschnitt 4 (Datenlizenz, Bilder Dritter, Anrisstexte der Presseschau, Impressum).
-- [ ] Die **Roadmap freigeben** oder Prioritäten ändern; danach setze ich P1 um.
+- [ ] **Offene Rechtsfragen** aus `docs/IMPROVEMENT-ROADMAP.md`, Abschnitt 4 (Bilder Dritter – blockiert Paket F, Anrisstexte der Presseschau, Impressum).
+- [ ] **Präsenzart in „Deine Basis“** (Roadmap Abschnitt 4.10): Sollen Standorte, an denen ein Staat nur Zugangsrechte hat, nur übt oder erst plant (z. B. die schwedischen DCA-Standorte, Learmonth), in der Rangliste ausgeblendet oder als „unsicher“ markiert werden? Bis dahin bleiben sie unverändert drin.
+- [x] **Roadmap freigegeben** (2026-11-08). Reihenfolge und Arbeitspakete: `docs/IMPROVEMENT-ROADMAP.md`, Abschnitt 5.

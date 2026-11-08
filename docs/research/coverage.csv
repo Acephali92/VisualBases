@@ -298,7 +298,7 @@ makran-pakistan,Naval Station Makran,PK,US,0,yes,candidates,,0,0,0,0,8,,,Q123089
 khalid-ab,"PAF Base Samungli / Khalid / Quetta, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q3696008,9.6,,,,Wikidata position 9.6 km away
 shahbaz-ab,"PAF Base Shahbaz / Jacobabad Airbase, Sindh",PK,US,0,yes,verified,presence nation,1,0,0,0,12,,,Q3694521,1,,,,
 pasni-base-port,"Pasni Base, Baloshistan",PK,US,0,yes,verified,presence nation,1,0,0,0,4,,,Q7231225,0.5,,,,
-shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,context,,1,1,0,0,20,,,Q775164,0.7,,,,contradicts (presence/nation/status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).
+shamsi-airfield-pakistan,"Shamsi Airfield, Washuk / Balochistan",PK,US,1,yes,verified,presence nation,1,1,0,0,20,,,Q775164,0.7,,,,contradicts (status): Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).
 bemowo-piskie,Bemowo Piskie: Orzysz military training ground,PL,GB US,0,yes,verified,presence nation,1,0,0,0,9,,,Q4885135,14.8,,,,Wikidata position 14.8 km away
 deblin-irena-air-base,Deblin-Irena Air Base,PL,US,0,no,none,,0,0,0,0,0,,,,,,,,
 training-center-drawsko,Drawsko: Land Forces Training Center,PL,US,0,yes,verified,presence nation,1,0,0,0,15,Drawsko Pomorskie Training Area,,,,,,,

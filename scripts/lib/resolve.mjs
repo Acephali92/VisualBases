@@ -10,14 +10,18 @@
  * Pure functions without I/O, used by scripts/build-data.mjs, the validator and the tests.
  * The model is documented in docs/TAXONOMY.md.
  */
+import { verdictsOf } from '../../src/lib/verdicts.ts';
 
 /** kind categories of visualbases.org (one per post expected) */
 export const KIND_CATEGORIES = ['foreign-bases', 'shared-bases', 'national-base', 'us-global', 'civilian-location', 'extra-facility', 'meta-site'];
 const AGGREGATE = new Set(['garrison', 'region-cluster']);
 
-/** claim field → statement group whose evidence it changes */
-export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
-export const CLAIM_FIELDS = ['presences', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
+/**
+ * claim field → statement groups whose evidence it changes; a source cited by the claim is set aside for these
+ * groups only. presenceForm refines a presence without changing it, so the evidence of the presence stays as it is.
+ */
+export const FIELD_CLAIM_TYPE = { presences: ['nation', 'presence'], presenceForm: [], host: ['position'], region: ['position'], position: ['position'], status: ['status'], period: ['status'], siteType: ['presence'], features: ['facility'], activities: ['activity'], name: [] };
+export const CLAIM_FIELDS = ['presences', 'presenceForm', 'host', 'region', 'position', 'name', 'status', 'period', 'siteType', 'features', 'activities', 'issues'];
 
 /** precision levels that count as "approximate position" in the app (vocabulary: POSITION_PRECISIONS in src/lib/taxonomy.ts) */
 const APPROXIMATE = new Set(['town', 'region']);
@@ -42,6 +46,17 @@ export function applyClaim(b, c) {
     b.positionPrecision = c.value.precision ?? (c.value.approx ? 'town' : 'reference');
     return { from, to: { lat: b.lat, lon: b.lon } };
   }
+  // presenceForm: { nation, form } – annotates the presence of one state, the list itself is left alone
+  if (c.field === 'presenceForm') {
+    if (c.op !== 'set') throw new Error('presenceForm only supports "set"');
+    const p = b.presences.find((x) => x.nation === c.value.nation);
+    if (!p) throw new Error(`no presence of "${c.value.nation}" (claim obsolete or in the wrong order?)`);
+    if (p.form === c.value.form) throw new Error('value is already set (claim obsolete?)');
+    const from = { nation: p.nation, form: p.form ?? null };
+    p.form = c.value.form;
+    p.formVia = 'claim';
+    return { from, to: { nation: p.nation, form: p.form } };
+  }
   const from = clone(b[c.field]);
   if (c.op === 'set') {
     if (JSON.stringify(stripVia(from)) === JSON.stringify(stripVia(c.value))) throw new Error('value is already set (claim obsolete?)');
@@ -58,6 +73,15 @@ export function applyClaim(b, c) {
   return { from, to: clone(b[c.field]) };
 }
 const stripVia = (v) => (Array.isArray(v) ? v.map((x) => (x && typeof x === 'object' ? { nation: x.nation, role: x.role } : x)) : v);
+
+/**
+ * The status "closed" means that the use by the states listed has ended, so a presence without a documented
+ * form is historical. A form set by a claim is kept (mutates the record).
+ */
+export function deriveForms(b) {
+  if (b.status !== 'closed') return;
+  for (const p of b.presences) if (!p.form) Object.assign(p, { form: 'historical', formVia: 'status' });
+}
 
 /**
  * value of a claim field in an import record, in the form a claim's `expect` records it
@@ -114,17 +138,46 @@ function siteTypeBasis(b) {
 }
 
 /** state of evidence per statement group (no scores – see EVIDENCE_STATES in src/lib/taxonomy.ts) */
-export function evidenceOf(research, { corrected = [], disputed = [], cited = new Set() } = {}) {
+export function evidenceOf(research, { corrected = [], disputed = [], cited = new Map() } = {}) {
+  // cited: url → groups the citing claims changed. The source is set aside for those groups only (the correction
+  // already speaks for them); for every other group it counts like any checked source.
+  const setAside = (s, t) => cited.get(s.url)?.has(t);
   const out = {};
-  const types = new Set([...research.flatMap((s) => s.supports ?? []), ...corrected, ...disputed]);
+  const types = new Set([...research.flatMap((s) => Object.keys(verdictsOf(s))), ...corrected, ...disputed]);
   for (const t of types) {
-    const manual = research.filter((s) => s.method === 'manual' && (s.supports ?? []).includes(t) && !cited.has(s.url));
+    // verdicts of the hand-checked sources on this group (a source can judge groups differently, see verdicts.ts)
+    const v = research.filter((s) => s.method === 'manual' && !setAside(s, t)).map((s) => verdictsOf(s)[t]).filter(Boolean);
     if (corrected.includes(t)) out[t] = 'corrected';
-    else if (disputed.includes(t) || manual.some((s) => s.verdict === 'contradicts')) out[t] = 'disputed';
-    else if (manual.some((s) => s.verdict === 'supports')) out[t] = 'confirmed';
-    else if (manual.some((s) => s.verdict === 'context')) out[t] = 'context';
+    else if (disputed.includes(t) || v.includes('contradicts')) out[t] = 'disputed';
+    else if (v.includes('supports')) out[t] = 'confirmed';
+    else if (v.includes('context')) out[t] = 'context';
   }
   return out;
+}
+
+/**
+ * Evidence level of a site (SOURCE_LEVELS in src/lib/taxonomy.ts) and the checked source that carries it.
+ * Presence and nation are what a site entry claims first; position, status etc. do not lift the level.
+ */
+export function sourceLevelOf(b) {
+  const ev = b.evidence ?? {};
+  const core = [ev.presence, ev.nation];
+  const manual = (b.research ?? []).filter((s) => s.method === 'manual');
+  const key = (verdict) => manual.find((s) => ['presence', 'nation'].some((g) => verdictsOf(s)[g] === verdict));
+  let level;
+  if (core.includes('disputed')) level = 'disputed';
+  else if (core.includes('confirmed') || core.includes('corrected')) level = 'verified';
+  else if (manual.length) level = 'context';
+  else if ((b.sources ?? []).length) level = 'source-listed';
+  else if (b.wikipedia && Object.keys(b.wikipedia).length) level = 'wikipedia-only';
+  else level = 'none';
+  // a corrected presence or nation is carried by the source of its correction
+  const correcting = () => {
+    const url = (b.corrections ?? []).find((c) => (FIELD_CLAIM_TYPE[c.field] ?? []).some((g) => g === 'presence' || g === 'nation'))?.sources[0];
+    return url && ((b.research ?? []).find((x) => x.url === url) ?? { publisher: new URL(url).hostname, url, accessed: undefined });
+  };
+  const s = level === 'verified' ? key('supports') ?? correcting() : level === 'disputed' ? key('contradicts') : undefined;
+  return { level, key: s ? { publisher: s.publisher, url: s.url, accessed: s.accessed, published: s.published } : undefined };
 }
 
 const IMAGE_ORDER = { photo: 0, satellite: 1, map: 2, document: 3, logo: 4 };
@@ -148,7 +201,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     b.positionPrecision = b.approx ? 'town' : 'reference';
     const corrected = new Set();
     const disputed = new Set();
-    const cited = new Set();
+    const cited = new Map();
     const extraIssues = [];
     for (const c of claimsOf.get(b.id) ?? []) {
       if (upstreamChanged(src, c)) notices.push({ rule: 'claim-upstream-changed', id: b.id, msg: `claim "${c.id}": the source value has changed since the decision (expected ${JSON.stringify(c.expect)}, now ${JSON.stringify(sourceValue(src, c.field))})` });
@@ -163,7 +216,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
         const { from, to } = applyClaim(b, c);
         (b.corrections ??= []).push({ id: c.id, field: c.field, op: c.op, from, to, statement: c.statement, sources: c.sources, decided: c.decided });
         for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) corrected.add(t);
-        for (const s of c.sources) cited.add(s);
+        for (const s of c.sources) for (const t of FIELD_CLAIM_TYPE[c.field] ?? []) cited.set(s, new Set([...(cited.get(s) ?? []), t]));
         if (c.field === 'siteType') b.basis.siteType = 'claim';
         if (c.field === 'status') b.basis.status = 'claim';
       } catch (e) {
@@ -172,6 +225,7 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     }
 
     if (APPROXIMATE.has(b.positionPrecision)) b.approx = true; else delete b.approx;
+    deriveForms(b);
     b.presences = b.presences.map((p) => ({ ...p, relation: relation(p.nation, b.host) }));
     b.scope = scopeOf(b.presences);
     const issues = [...issuesOf(b), ...extraIssues];
@@ -197,6 +251,10 @@ export function resolveBases(input, { claims = [], research = [], corrections = 
     for (const c of [...(b.corrections ?? []), ...(b.proposals ?? [])]) {
       for (const url of c.sources) if (!rs.some((s) => s.url === url) && !research.some((s) => s.url === url)) problems.push({ rule: 'claim-source', id: b.id, msg: `claim "${c.id}": source not in data/research/sources.json: ${url}` });
     }
+
+    const { level, key } = sourceLevelOf(b);
+    b.sourceLevel = level;
+    if (key) b.keySource = key; else delete b.keySource;
 
     // images: the project's own photos first, then the Wikimedia photo; satellites chronologically
     const refs = [...(b.images ?? [])];

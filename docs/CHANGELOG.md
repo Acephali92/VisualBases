@@ -2,6 +2,49 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Roadmap Paket C: Zugänglichkeit und Performance (F25, P1-5, P1-8, P1-4)
+
+### Behoben
+- **Precache wieder klein (F25):** Die Karten-Engine (`maplibre-gl-*`, 1,1 MB) war seit dem Build-Update nicht mehr vom Precache ausgenommen. Precache 2 MB → 0,97 MB.
+- **Globus-Rotation:** Die Pause hätte im Browser nie gegriffen (`cancelAnimationFrame` ohne Bindung warf „Illegal invocation“). Neu in `src/lib/spin.ts` mit Tests.
+
+### Geändert
+- **Rotation auf der Startseite** läuft nur bei sichtbarem Tab, sichtbarem Globus und im ersten Kapitel und endet nach 60 s; gemessen: 0 rAF-Aufrufe im Hintergrund-Tab (P1-5).
+- **Ansichten werden nachgeladen** (`import()` in `src/App.svelte`): Haupt-Bundle 261 → 124 KB (45 KB gz). Die detaillierten Länderformen (50m) lädt die Startseite erst, wenn man in die Story scrollt (P1-8).
+- Statistik-Link der Startseite ist keine Live-Region mehr (das Hochzählen wurde Bild für Bild vorgelesen); Sprachumschalter mit passendem Namen und `lang`; Einbettung als `main`-Landmark.
+
+### Hinzugefügt
+- **Build-Prüfung** `scripts/check-precache.mjs` (in `npm run build`): Precache ≤ 1280 KB, App-Shell ≤ 130 KB – eine Umbenennung von Chunks fällt sofort auf.
+- **Barrierefreiheit (P1-4):** Sprunglink „Karte überspringen: zur Ergebnisliste“ im Atlas, Kartenbeschreibung für Tastatur, Fokus auf die Profil-Überschrift beim Öffnen, Trefferzahl als Live-Region (verzögert, nicht bei jedem Tastendruck).
+- **axe-core im Smoke-Test** (CI): WCAG 2.1 A/AA und Best Practices auf allen Routen in beiden Breiten, auch statische Seiten; jeder Verstoß lässt den Test scheitern. Stand: 0 Verstöße.
+
+## [Unreleased] – Roadmap Paket B: Belegstatus (P1-2, P1-12)
+
+### Hinzugefügt
+- **Belegstufe je Standort** (`sourceLevel`): geprüft belegt, umstritten, nur Kontext, Quelle von visualbases.org, nur Wikipedia, ohne Beleg ([TAXONOMY.md](TAXONOMY.md), Abschnitt 11). Stand: 205 / 0 / 29 / 69 / 55 / 7. Mit `keySource` (Herausgeber, Datum, Abrufdatum der Quelle hinter „geprüft belegt“).
+- Profil: Belegstufe als Kennzeichen im Kopf (Link auf den Atlas-Filter) und im Abschnitt „Belege aus der Recherche“; unterhalb von „geprüft belegt“ ein Aufruf **„Beleg melden“** mit vorausgefüllter Standort-ID.
+- Neues Issue-Formular **„Beleg melden“** (`.github/ISSUE_TEMPLATE/beleg.yml`, Label `beleg`).
+- **„Belege gesucht“** auf „Mitmachen“: 91 Standorte mit nur Kontext, nur Wikipedia oder ohne Beleg, nach Ländern, je mit „Beleg melden“; Link auf den Atlas und Versand per E-Mail.
+- Atlas-Filter **„Belegstufe“** (`?evidence=`), CSV-Spalte `source_level`, Smoke-Test-Route.
+- **Urteil je Aussagegruppe** (`verdicts`) und **Genauigkeit von Positionsquellen** (`precision`) in `data/research/manual.json`/`sources.json`, gelesen über `verdictsOf()` (`src/lib/verdicts.ts`) in Auflösung, Recherche-Zusammenfassung, Validierung (`research-verdict`, `research-precision`) und Profil. Eingetragen: Shamsi (widerspricht dem Status, bestätigt die frühere US-Präsenz) und die Genauigkeit der 11 Positionsquellen (7 Anlage, 4 Ort, 1 Region).
+- Qualitätsbericht: Belegstufen mit Recherche und Zahl der gesuchten Belege; die bisherigen Quellenzahlen heißen jetzt „laut visualbases.org“ (Audit-Befund 4).
+
+### Behoben
+- **Zitierte Quellen gingen für alle Aussagegruppen verloren:** Eine Quelle, die eine Korrektur belegt, wurde bisher für den ganzen Standort ignoriert. Jetzt nur für die korrigierte Gruppe. Dadurch neu belegt: Präsenz und Nation von Storck Barracks, Warrior Preparation Center, Thumrait, Khmeimim, Tartus, Sarajevo und Shamsi; Einrichtung von Kleine Brogel; Lage von USAMMCE Pirmasens jetzt „umstritten“ (Quelle: Umzug nach Kaiserslautern), Präsenz von Rzeszów „nur Kontext“.
+
+## [Unreleased] – Roadmap Paket A: Präsenzart (P1-1, P1-10)
+
+### Hinzugefügt
+- **Präsenzart je Präsenz** (`presences[].form`): fest, Rotation, Zugangsrecht, Übung, gemeinsam betrieben, historisch, geplant – mit Bezeichnungen und Definitionen DE/EN in `src/lib/taxonomy.ts` und `taxonomy.json` ([TAXONOMY.md](TAXONOMY.md), Abschnitt 6.1). Ohne Beleg bleibt sie „nicht angegeben“.
+- **Neue Claim-Art `presenceForm`** (`{ nation, form }`): ergänzt eine vorhandene Präsenz mit Quelle, ohne den Belegstatus der Präsenz zu ändern. Startbestand: 40 Claims aus den von Hand geprüften Quellen der Recherche, u. a. die schwedischen DCA-Standorte und Kolumbien (Zugangsrecht), Tapa, Ämari, Robertson Barracks und Keflavík (Rotation), Pine Gap und Globus II (gemeinsam betrieben), Weilerbach, Learmonth und Rūdninkai (geplant).
+- **Abgeleitet „historisch“:** Präsenzen an geschlossenen Standorten (31, u. a. Kabul, Bagram, Niger) ohne belegte Art; im Profil als „abgeleitet“ gekennzeichnet.
+- **Atlas-Filter „Präsenzart“** (`?forms=access,rotational`, auch „nicht angegeben“), mit Zählern wie die übrigen Filter.
+- Profil: Präsenzart je Staat mit Link auf den Filter; Korrekturliste zeigt „Bisher: Präsenzart nicht angegeben“. CSV-Spalte `presence_forms` (`US:access`), statische Seiten nennen die belegte Präsenzart. Qualitätsbericht: Verteilung der Präsenzarten.
+- Smoke-Test: Atlas mit Präsenzfilter, Profil Kiruna.
+
+### Geändert
+- `claim-expect-missing` gilt nicht für `presenceForm` (visualbases.org nennt keine Präsenzart, es gibt keinen Ausgangswert).
+
 ## [Unreleased] – Audit des Datenqualitätsmanagements, Paket 3 (Geo-Prüfungen)
 
 ### Geändert

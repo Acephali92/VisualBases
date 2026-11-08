@@ -6,6 +6,7 @@
   import { href } from '../lib/router.svelte';
   import { summary, filtersToQuery, matches, isAggregate, EMPTY_FILTERS } from '../lib/data';
   import type { MapHandle } from '../lib/map';
+  import { createSpinner, type Spinner } from '../lib/spin';
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
   import type { Base, Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
@@ -129,25 +130,39 @@
     return () => cancelAnimationFrame(raf);
   });
 
+  // idle rotation: only while the tab is visible, the globe is on screen and the hero chapter is active (P1-5)
+  let spinner: Spinner | null = $state.raw(null);
+  let pageVisible = $state(typeof document === 'undefined' || document.visibilityState === 'visible');
+  let globeInView = $state(true);
+  $effect(() => spinner?.set(pageVisible && globeInView && active === 0));
+
+  // the coarse world shapes (110m) suffice for the globe; the detailed ones (50m, ~240 KB gz) with small islands
+  // (Okinawa) are loaded when the reader scrolls into the story – one chapter ahead of Okinawa (P1-8)
+  let detailed = false;
+  $effect(() => {
+    if (handle && active >= 1 && !detailed) { detailed = true; handle.upgradeDetail(); }
+  });
+
   onMount(() => {
     let destroyed = false;
-    let raf = 0;
+    const onVisibility = () => (pageVisible = document.visibilityState === 'visible');
+    document.addEventListener('visibilitychange', onVisibility);
+    const globeIo = new IntersectionObserver((entries) => { for (const e of entries) globeInView = e.isIntersecting; });
+    globeIo.observe(mapEl);
     import('../lib/map').then(({ createMap }) => createMap(mapEl, { detail: '110m', interactive: false, center: [25, 28], zoom: 1.5 + zoomAdj() })).then((h) => {
       if (destroyed) return h.destroy();
       h.map.setPadding(camPadding());
-      // the coarse world shapes load fast; small islands (Okinawa, Diego Garcia …) follow
-      h.map.once('idle', () => h.upgradeDetail());
       handle = h;
-      // slow spin while the hero is visible
+      // slow spin while the hero is visible; stops for good after 60 s of rotation
       if (!prefersReducedMotion()) {
-        const spin = () => {
-          if (active === 0 && !h.map.isMoving()) {
+        h.map.once('idle', () => {
+          if (destroyed) return;
+          spinner = createSpinner(() => {
+            if (h.map.isMoving()) return;
             const c = h.map.getCenter();
             h.map.setCenter([c.lng + 0.04, c.lat]);
-          }
-          raf = requestAnimationFrame(spin);
-        };
-        h.map.once('idle', () => (raf = requestAnimationFrame(spin)));
+          });
+        });
       }
     }).catch((e) => {
       mapFailed = handleMapError(e);
@@ -163,7 +178,9 @@
 
     return () => {
       destroyed = true;
-      cancelAnimationFrame(raf);
+      spinner?.destroy();
+      document.removeEventListener('visibilitychange', onVisibility);
+      globeIo.disconnect();
       io.disconnect();
       handle?.destroy();
     };
@@ -190,13 +207,15 @@
           <a class="btn btn-primary" href={href('/near')}>📍 {t('hero.ctaNear')}</a>
           <a class="btn" href={href('/atlas')}>{t('hero.ctaAtlas')} →</a>
         </div>
-        <a class="stats-link" href={href('/stats')} aria-label={t('nav.stats')}>
-        <dl class="stats" aria-live="polite">
+        <!-- the link is named by its content (the numbers) plus the target; no live region: the count-up would be read out frame by frame -->
+        <a class="stats-link" href={href('/stats')}>
+        <dl class="stats">
           <div><dt>{t('stat.locations')}</dt><dd>{formatNumber(shown.locations)}</dd></div>
           <div><dt>{t('stat.countries')}</dt><dd>{formatNumber(shown.countries)}</dd></div>
           <div><dt>{t('stat.us')}</dt><dd>{formatNumber(shown.us)}</dd></div>
           <div><dt>{t('stat.resistance')}</dt><dd>{formatNumber(shown.resistance)}</dd></div>
         </dl>
+        <span class="sr-only">– {t('nav.stats')}</span>
         </a>
       </div>
       <a class="scroll-hint" href="#step-1">{t('hero.scroll')} ↓</a>

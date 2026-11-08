@@ -174,12 +174,31 @@ export const STATUSES: Term<Status>[] = [
 export type PresenceRole = 'stationing' | 'co-user';
 /** how the presence was derived from the source (see docs/TAXONOMY.md, "Herkunft") */
 export type PresenceVia = 'tag' | 'bsr' | 'us-posture' | 'site-type' | 'claim';
+/** form of a presence (docs/TAXONOMY.md, "Präsenzart"); not stated = no value, never guessed */
+export type PresenceForm = 'permanent' | 'rotational' | 'access' | 'exercise' | 'joint' | 'historical' | 'planned';
+/** where the form comes from: a correction with source, or derived from the status "closed" of the site */
+export type PresenceFormVia = 'claim' | 'status';
 /** relation between the present state and the territory – computed, never stored */
 export type Relation = 'foreign' | 'own-territory' | 'domestic';
 
 export const PRESENCE_ROLES: Term<PresenceRole>[] = [
   { id: 'stationing', label: { de: 'Stationierungsnation', en: 'Stationing nation' }, info: { de: 'Staat, der dort militärisch präsent ist.', en: 'State with a military presence at the site.' } },
   { id: 'co-user', label: { de: 'Mitnutzer', en: 'Co-user' }, info: { de: 'Weiterer Staat, der den Standort mitnutzt.', en: 'Further state that co-uses the site.' } },
+];
+
+export const PRESENCE_FORMS: Term<PresenceForm>[] = [
+  { id: 'permanent', label: { de: 'Feste Stationierung', en: 'Permanent stationing' }, info: { de: 'Dauerhaft dort stationierte Einheiten oder Personal des Staates.', en: 'Units or personnel of the state permanently stationed at the site.' } },
+  { id: 'rotational', label: { de: 'Rotation', en: 'Rotational presence' }, info: { de: 'Wiederkehrende, zeitlich begrenzte Verlegungen (z. B. sechsmonatige Rotationen), keine dauerhaft stationierte Einheit.', en: 'Recurring, time-limited deployments (e.g. six-month rotations), no permanently stationed unit.' } },
+  { id: 'access', label: { de: 'Zugangsrecht', en: 'Access rights' }, info: { de: 'Zugangs- und Nutzungsrechte aus einem Abkommen (z. B. DCA); kein Beleg für eine dauerhafte Stationierung.', en: 'Access and use rights under an agreement (e.g. a DCA); not evidence of permanent stationing.' } },
+  { id: 'exercise', label: { de: 'Übung', en: 'Exercise use' }, info: { de: 'Nutzung für Übungen oder Manöver, ohne dauerhaft stationierte Kräfte.', en: 'Use for exercises or manoeuvres, without permanently stationed forces.' } },
+  { id: 'joint', label: { de: 'Gemeinsam betrieben', en: 'Jointly operated' }, info: { de: 'Anlage, die der Staat gemeinsam mit dem Gastland betreibt.', en: 'Facility operated by the state jointly with the host country.' } },
+  { id: 'historical', label: { de: 'Historisch', en: 'Historical' }, info: { de: 'Die Präsenz dieses Staates ist beendet.', en: 'The presence of this state has ended.' } },
+  { id: 'planned', label: { de: 'Geplant / im Aufbau', en: 'Planned / under construction' }, info: { de: 'Angekündigt oder im Bau, noch keine belegte Präsenz.', en: 'Announced or under construction, no documented presence yet.' } },
+];
+
+export const PRESENCE_FORM_VIA: Term<PresenceFormVia>[] = [
+  { id: 'claim', label: { de: 'Korrektur mit Quelle', en: 'correction with source' } },
+  { id: 'status', label: { de: 'abgeleitet: Standort geschlossen', en: 'derived: site closed' } },
 ];
 
 export const RELATIONS: Term<Relation>[] = [
@@ -347,6 +366,22 @@ export const EVIDENCE_STATES: Term<EvidenceState>[] = [
   { id: 'unverified', label: { de: 'ungeprüft', en: 'unverified' }, info: { de: 'Nur die Einordnung von visualbases.org, noch keine geprüfte Quelle.', en: 'Only the classification of visualbases.org, no checked source yet.' } },
 ];
 
+/**
+ * evidence level of a site as a whole (docs/TAXONOMY.md, "Belegstufe"), derived from the evidence on the
+ * presence and the stationing nation and from the source links; strongest first
+ */
+export type SourceLevel = 'verified' | 'disputed' | 'context' | 'source-listed' | 'wikipedia-only' | 'none';
+export const SOURCE_LEVELS: Term<SourceLevel>[] = [
+  { id: 'verified', label: { de: 'geprüft belegt', en: 'checked source' }, info: { de: 'Eine von Hand geprüfte Quelle stützt die militärische Präsenz oder die Stationierungsnation, oder sie wurde anhand einer Quelle korrigiert.', en: 'A manually checked source supports the military presence or the stationing nation, or it was corrected based on a source.' } },
+  { id: 'disputed', label: { de: 'umstritten', en: 'disputed' }, info: { de: 'Eine geprüfte Quelle widerspricht der Präsenz oder der Stationierungsnation, oder ein Korrekturvorschlag dazu ist offen.', en: 'A checked source contradicts the presence or the stationing nation, or a proposed correction is open.' } },
+  { id: 'context', label: { de: 'nur Kontext', en: 'context only' }, info: { de: 'Es gibt von Hand geprüfte Quellen, aber keine belegt die Präsenz.', en: 'There are manually checked sources, but none documents the presence.' } },
+  { id: 'source-listed', label: { de: 'Quelle von visualbases.org', en: 'source from visualbases.org' }, info: { de: 'visualbases.org nennt eine Quelle; sie ist noch nicht geprüft.', en: 'visualbases.org names a source; it has not been checked yet.' } },
+  { id: 'wikipedia-only', label: { de: 'nur Wikipedia', en: 'Wikipedia only' }, info: { de: 'Einzige Quelle ist ein Wikipedia-Artikel.', en: 'The only source is a Wikipedia article.' } },
+  { id: 'none', label: { de: 'ohne Beleg', en: 'no source' }, info: { de: 'Keine Quelle angegeben.', en: 'No source given.' } },
+];
+/** levels below which a site counts as "source wanted" (Mitmachen, Atlas) */
+export const SOURCE_WANTED: SourceLevel[] = ['context', 'wikipedia-only', 'none'];
+
 export const CLAIM_TYPES: Term<ClaimType>[] = [
   { id: 'presence', label: { de: 'Militärische Präsenz', en: 'Military presence' } },
   { id: 'nation', label: { de: 'Stationierungsnation', en: 'Stationing nation' } },
@@ -408,8 +443,8 @@ export type PositionPrecision = (typeof POSITION_PRECISIONS)[number];
 export const VOCABULARIES = {
   siteType: SITE_TYPES, status: STATUSES, organisation: ORGANISATIONS, feature: FEATURES, featureKind: FEATURE_KINDS,
   theme: THEMES, activity: ACTIVITIES, activityGroup: ACTIVITY_GROUPS, activityKind: ACTIVITY_KINDS, continent: CONTINENTS,
-  usPosture: US_POSTURES, listing: LISTINGS, presenceRole: PRESENCE_ROLES, presenceVia: PRESENCE_VIA, relation: RELATIONS,
-  relationType: RELATION_TYPES, evidence: EVIDENCE_STATES, claimType: CLAIM_TYPES, issue: ISSUES,
+  usPosture: US_POSTURES, listing: LISTINGS, presenceRole: PRESENCE_ROLES, presenceVia: PRESENCE_VIA, presenceForm: PRESENCE_FORMS, presenceFormVia: PRESENCE_FORM_VIA, relation: RELATIONS,
+  relationType: RELATION_TYPES, evidence: EVIDENCE_STATES, sourceLevel: SOURCE_LEVELS, claimType: CLAIM_TYPES, issue: ISSUES,
 } as const;
 export type Dimension = keyof typeof VOCABULARIES;
 

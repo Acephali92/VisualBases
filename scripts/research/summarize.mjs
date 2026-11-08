@@ -13,6 +13,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { ROOT, loadBases, loadResearch, CLAIMS, SOURCE_TYPES } from './lib.mjs';
+import { groupsWith } from '../../src/lib/verdicts.ts';
 
 const DOCS = path.join(ROOT, 'docs', 'research');
 const REPORT = path.join(DOCS, 'SOURCE-RESEARCH.md');
@@ -31,10 +32,10 @@ export function summarize(bases, { sources, candidates, checks }) {
     const own = (b.sources ?? []).length;
     const mine = sources.filter((s) => s.base === b.id);
     const manual = mine.filter((s) => s.method === 'manual');
-    const supports = new Set(manual.filter((s) => s.verdict === 'supports').flatMap((s) => s.supports));
+    const supports = new Set(manual.flatMap((s) => groupsWith(s, 'supports')));
     const c = checks[b.id] ?? {};
     const issues = [];
-    for (const s of manual.filter((x) => x.verdict === 'contradicts')) issues.push(`contradicts (${s.supports.join('/')}): ${s.note || s.summary}`);
+    for (const s of manual.filter((x) => groupsWith(x, 'contradicts').length)) issues.push(`contradicts (${groupsWith(s, 'contradicts').join('/')}): ${s.note || s.summary}`);
     if (c.wikidata?.dissolved) issues.push(`Wikidata: closed/dissolved ${c.wikidata.dissolved}`);
     if (c.wikidata?.distanceKm > FAR_KM) issues.push(`Wikidata position ${c.wikidata.distanceKm} km away`);
     if (c.osm?.verdict === 'none') issues.push('OSM: no military feature within 3 km');
