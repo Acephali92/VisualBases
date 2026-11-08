@@ -1,49 +1,44 @@
 # Aufgaben für dich (Projekt-Inhaber)
 
-Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub-Konto, Entscheidungen oder Kontakte erfordern. Sortiert nach Dringlichkeit.
+Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub-Konto, Entscheidungen oder Kontakte erfordern. Sortiert nach Dringlichkeit. Den Gesamtplan zeigt [docs/IMPROVEMENT-ROADMAP.md](docs/IMPROVEMENT-ROADMAP.md) (Abschnitt 2 „Launch-Plan“).
 
-## 1. Sofort: damit die Seite online geht
+## 1. Jetzt: Launch (Block A der Roadmap, ca. 1 Stunde)
 
-- [ ] **Pull Request zusammenführen:** [Acephali92/VisualBases#1](https://github.com/Acephali92/VisualBases/pull/1) öffnen, kurz durchsehen und auf **„Merge pull request“** klicken.
-  (Mir fehlt die Berechtigung, ohne Review auf `main` zu mergen.)
-- [ ] **GitHub Pages auf „GitHub Actions“ stellen:** Repository → **Settings → Pages → Build and deployment → Source: „GitHub Actions“**.
-  Im Moment steht die Quelle vermutlich auf „Deploy from a branch“. Dann würde nur die README angezeigt, nicht die App.
-- [ ] Nach dem Merge unter **Actions** prüfen, dass „CI & Deploy“ grün durchläuft. Die Seite ist danach unter
-  **https://acephali92.github.io/VisualBases/** erreichbar.
+- [ ] **PR-Kette mergen**, in dieser Reihenfolge. Nach jedem Merge stellst du beim nächsten PR die Basis auf `main` um (im PR oben „Edit“ → base: `main`):
+  1. [Acephali92/VisualBases#11](https://github.com/Acephali92/VisualBases/pull/11) Geo-Prüfungen
+  2. [Acephali92/VisualBases#12](https://github.com/Acephali92/VisualBases/pull/12) Geo-Recherche
+  3. [Acephali92/VisualBases#13](https://github.com/Acephali92/VisualBases/pull/13) Importer
+  4. [Acephali92/VisualBases#14](https://github.com/Acephali92/VisualBases/pull/14) Paket 4
+  5. der Roadmap-PR
 
-## 2. Bald: Inhalte und Rechte
+  Der Branch `claude/dq-audit-paket4` ist überholt und kann gelöscht werden.
+- [ ] **Impressum-Angaben schicken:** verantwortliche Person oder Verein (z. B. Friedens- und Zukunftswerkstatt e. V.), Anschrift, E-Mail. Für eine öffentliche deutsche Seite ist das Pflicht. Ich baue dann Impressum und Datenschutzerklärung.
+- [ ] **Bildrechte entscheiden:**
+  - Sind die eigenen Archivbilder von visualbases.org freigegeben?
+  - Sollen Bilder Dritter bis zur Klärung ausgeblendet werden? Betroffen sind das Flickr-Foto von Menwith Hill, „Marcha a Rota“, Camp Delta, Oakhanger, Aegis Ashore, die Kampagnen-Logos und die Redner-Porträts.
+- [ ] **Automatische Daten-Aktualisierung einschalten:**
+  - Unter **Settings → Actions → General → Workflow permissions** „Read and write permissions“ wählen **und** „Allow GitHub Actions to create and approve pull requests“ anhaken.
+  - Danach **Actions → „Daten aktualisieren“ → „Run workflow“** starten. Der erste Lauf übernimmt auch die neue Importer-Regel (20 genauere Positionen) und lädt die restlichen Wikimedia-Fotos.
+- [ ] **Labels** `hinweis`, `korrektur` und `daten` anlegen (Issues → Labels). Die Formulare und der Daten-Workflow setzen sie.
+- [ ] **Branch-Schutz** für `main` (Settings → Branches): Änderungen nur per Pull Request mit grüner CI.
+- [ ] **Kontakt-E-Mail bestätigen:** Hinweise „per E-Mail“ gehen derzeit an **info@visualbases.org**. Die Adresse steht zentral in `src/lib/github.ts`.
 
-- [x] **Datenlizenz festlegen** – entschieden: CC BY 4.0 (umgesetzt, siehe `data/LICENSE.md`).
-  Danach ersetze ich den Hinweis „Lizenz noch abzustimmen“ in README und „Über & Daten“.
-- [ ] **Bildrechte der eigenen Fotos bestätigen:** Die Protestfotos stammen aus dem Archiv von visualbases.org. Bei Fotos Dritter (z. B. Kampagnen, Flickr-Bild von Menwith Hill, „Marcha a Rota“) bitte mit Karl-Heinz Peil klären, ob Urheber genannt werden sollen. Ich trage sie dann ein (`data/media.json` → `credit`).
-- [ ] **Google-Earth-Bilder:** Google erlaubt die nicht-kommerzielle Nutzung mit Namensnennung. Die Bilder müssen die eingebaute Google-Kennzeichnung behalten; das tun sie. Nichts weiter zu tun, solange das Projekt nicht kommerziell wird.
-- [ ] **Impressum / Verantwortliche Stelle:** Für eine öffentliche deutsche Seite ist ein Impressum Pflicht. Bitte Name und Adresse der verantwortlichen Person oder des Vereins nennen (z. B. Friedens- und Zukunftswerkstatt e. V.). Ich baue dann eine Impressum-Seite.
+## 2. Entscheidungen (Roadmap, Abschnitt 6)
 
-## 3. Optional: Reichweite
+- [ ] **PLZ-Index für „Deine Basis“** ins Repository aufnehmen (GeoNames, CC BY 4.0). Empfohlen: Postleitzahlen funktionieren dann auch bei Presseandrang ohne externe Anfrage. Notfalls lässt sich die Ortssuche über `public/config/geocoder.json` abschalten.
+- [ ] **Anrisstexte der Presseschau:** eigene Zusammenfassungen oder Zitate?
+- [ ] **Eigene Domain** (z. B. `app.visualbases.org`): DNS-Eintrag (CNAME auf `acephali92.github.io`) setzen und unter Settings → Pages die „Custom domain“ eintragen. Danach passe ich `SITE_URL` an (Vorschaubilder, Sitemap).
+- [ ] **Datenreleases mit DOI** (GitHub Release → Zenodo), damit Forschende eine feste Datenversion zitieren können.
+- [ ] **Darmstadt Training Center:** Falls jemand die Lage kennt (geschlossen 2008), bitte mit Quelle melden.
 
-- [ ] **Eigene Domain** (z. B. `visualbases.org` auf die neue App umstellen oder `app.visualbases.org`): DNS-Eintrag (CNAME auf `acephali92.github.io`) setzen und unter Settings → Pages die „Custom domain“ eintragen. Danach passe ich `SITE_URL` an (für Vorschaubilder und Sitemap).
+## 3. Nach dem Launch: Reichweite
+
 - [ ] **Partner informieren**, dass es eine einbettbare Karte gibt (Atlas → „Einbetten“): Stopp Ramstein, World BEYOND War, CND, No to NATO …
-- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur` (werden von den Issue-Formularen gesetzt).
-- [ ] **Branch-Schutz** für `main` aktivieren (Settings → Branches), damit Änderungen immer über Pull Requests mit grüner CI laufen.
-
-
-## 4. Automatische Daten-Aktualisierung einschalten
-
-- [ ] **Settings → Actions → General → Workflow permissions:** „Read and write permissions“ wählen **und** „Allow GitHub Actions to create and approve pull requests“ anhaken.
-  Danach erstellt der Workflow **„Daten aktualisieren“** jeden Montag automatisch einen Pull Request mit neuen Standorten, Presseschau und Fotos.
-- [ ] Einmal manuell starten: **Actions → „Daten aktualisieren“ → „Run workflow“.** Dabei werden auch die restlichen Wikimedia-Fotos geladen (aus meiner Cloud-Umgebung wurde der Download von Wikimedia gedrosselt).
-- [ ] Label **`daten`** im Repo anlegen (optional; der Workflow setzt es an den Pull Request).
-
-## 5. Kontakt und Kanäle
-
-- [ ] **E-Mail-Adresse bestätigen:** Hinweise „per E-Mail“ gehen an **info@visualbases.org** (laut Impressum der Originalseite). Falls eine andere Adresse gewünscht ist, sag Bescheid. Sie steht zentral in `src/lib/github.ts`.
 - [ ] **Newsletter / Messenger-Kanal** (optional): Wenn es einen Signal-, Telegram- oder Mastodon-Kanal oder einen Newsletter gibt bzw. geben soll, nenn mir die Links. Ich binde sie auf „Mitmachen“ und im Fußbereich ein.
 
-## 6. Datenprüfung (neu)
+## Erledigt
 
-- [ ] **Korrekturvorschläge bestätigen** (`data/corrections.json`, in der App als „Position ungeprüft“ markiert):
-  - *Puerto Castilla (Honduras):* Auf visualbases.org hat dieser Beitrag Titel und Koordinate von Soto Cano. Ist es ein Duplikat (löschen/zusammenführen) oder ein eigener Ort Puerto Castilla (Vorschlag: OSM-Position 16.0096, −85.9494)?
-  - *Karlovac (Kroatien):* Koordinate identisch mit Zadar Gazenica. Wo genau liegt der Hubschrauberlandeplatz/Übungsplatz in Karlovac?
-- [ ] **Ortssuche „Deine Basis“ absichern** (siehe `docs/GEOCODING.md`): Die öffentliche Nominatim-Instanz erlaubt höchstens 1 Anfrage pro Sekunde für die *ganze* App, also für alle Nutzer zusammen. Bei viel Andrang (Presse, Schulklassen) droht eine Sperre. Empfehlung: einen statischen PLZ-Index für DE/AT/CH ins Repo aufnehmen (z. B. GeoNames, CC BY 4.0), damit Postleitzahlen ohne externe Anfrage aufgelöst werden. Bitte entscheiden. Notfalls lässt sich die Suche über `public/config/geocoder.json` abschalten oder umleiten.
-- [ ] **Offene Rechtsfragen** aus `docs/IMPROVEMENT-ROADMAP.md`, Abschnitt 4 (Datenlizenz, Bilder Dritter, Anrisstexte der Presseschau, Impressum).
-- [ ] Die **Roadmap freigeben** oder Prioritäten ändern; danach setze ich P1 um.
+- [x] Seite online unter https://acephali92.github.io/VisualBases/ (GitHub Pages über GitHub Actions)
+- [x] Datenlizenz CC BY 4.0 (`data/LICENSE.md`)
+- [x] Puerto Castilla und Karlovac korrigiert (Ortsmitte, „ungefähr“); Libreville (Gabun), Ouagadougou (Flughafen) und weitere Positionen nach Recherche korrigiert
+- [x] Google-Earth-Bilder: nicht-kommerzielle Nutzung mit Namensnennung, Kennzeichnung bleibt erhalten
