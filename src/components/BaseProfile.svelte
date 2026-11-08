@@ -149,6 +149,7 @@
       </p>
     {/if}
     <div class="flags">
+      <a class="tag lvl lvl-{base.sourceLevel}" href={href('/atlas', `evidence=${base.sourceLevel}`)} title={ti('sourceLevel', base.sourceLevel)}>{base.sourceLevel === 'verified' ? '✓' : base.sourceLevel === 'disputed' ? '⚠' : '○'} {tl('sourceLevel', base.sourceLevel)}</a>
       {#if base.approx}<span class="tag">≈ {t('base.approx')}</span>{/if}
       {#if base.origin.review}<span class="tag warn">⚠ {t('base.review')}</span>{/if}
       {#if base.positionCheck?.status === 'proposed'}<span class="tag warn">⚠ {t('base.positionUnverified')}</span>{/if}
@@ -304,6 +305,13 @@
 
   <section>
     <h3>{t('base.evidence')}</h3>
+    <p class="level">
+      <b class="lvl-{base.sourceLevel}">{tl('sourceLevel', base.sourceLevel)}</b> – {ti('sourceLevel', base.sourceLevel)}
+      {#if base.keySource}<br /><small>{t('base.keySource')}: <a href={base.keySource.url} target="_blank" rel="noopener">{base.keySource.publisher}</a>{#if base.keySource.published}{' · '}{base.keySource.published}{/if}{#if base.keySource.accessed}{' · '}{t('base.accessed')} {base.keySource.accessed}{/if}</small>{/if}
+    </p>
+    {#if base.sourceLevel !== 'verified'}
+      <p class="wanted">🔎 {t('base.sourceWanted')} <a href={issueUrl('beleg', { title: `Beleg: ${base.name}`, base: base.id })} target="_blank" rel="noopener">{t('base.reportSource')} ↗</a></p>
+    {/if}
     {#if base.evidence && Object.keys(base.evidence).length}
       <div class="chips ev">
         {#each CLAIM_TYPES.filter((c) => base.evidence?.[c.id]) as c (c.id)}
@@ -320,8 +328,6 @@
       <p class="small muted">{t('base.evidenceNote', { date: base.lastChecked ?? (research[0]?.accessed ?? '') })}</p>
     {:else if db.research === null && base.evidence}
       <p class="small muted">{t('common.loading')}</p>
-    {:else}
-      <p class="small muted">{t('base.evidenceNone')}</p>
     {/if}
   </section>
 
@@ -422,6 +428,13 @@
   .ev .chip { cursor: default; }
   .ev-confirmed, .ev-corrected { border-color: #199e70; }
   .ev-disputed { border-color: #c9a227; }
+  .tag.lvl { text-decoration: none; }
+  .tag.lvl-verified { border-color: #199e70; }
+  .tag.lvl-disputed { border-color: #c9a227; }
+  b.lvl-verified { color: #2bbf8a; } b.lvl-disputed { color: #e0b43a; }
+  .level { margin: 0 0 8px; color: var(--text-2); font-size: 0.92rem; }
+  .level small { color: var(--muted); }
+  .wanted { margin: 0 0 10px; font-size: 0.92rem; }
   .research small { white-space: normal; }
   .v-supports { color: #2bbf8a; } .v-contradicts { color: #e8692f; }
 

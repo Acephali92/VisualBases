@@ -201,6 +201,7 @@
    "nation"
   ],
   "verdict": "contradicts",
+  "precision": "town",
   "summary": "Camp Ayanganna is in Thomas Lands, Georgetown (Guyana), established 1965 as a site of the Guyana Defence Force.",
   "note": "Contradicts the record: the dataset lists Camp Ayanganna under French Guiana with France as stationing nation. It is the headquarters of Guyana's own armed forces, not a foreign base.",
   "bases": [
@@ -297,6 +298,7 @@
    "position"
   ],
   "verdict": "supports",
+  "precision": "site",
   "summary": "The regiment sheet of the 2nd Marine Infantry Parachute Regiment gives its address as Caserne CBA Dupuis, Pierrefonds, 97457 Saint-Pierre (Réunion).",
   "note": "Confirms the barracks at Pierrefonds/Saint-Pierre, matching the dataset position; publication date from the PDF metadata.",
   "bases": [
@@ -1257,6 +1259,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "site",
   "summary": "A farewell ceremony in October 2021 marked the move of the US Army Medical Materiel Center–Europe from Husterhoeh Kaserne, Pirmasens (its home since 1975) to Kaiserslautern Army Depot.",
   "note": "Status/position: USAMMCE is no longer in Pirmasens – the entry should move to Kaiserslautern Army Depot or be marked historical.",
   "bases": [
@@ -1604,6 +1607,10 @@
    "status"
   ],
   "verdict": "contradicts",
+  "verdicts": {
+   "presence": "supports",
+   "nation": "supports"
+  },
   "summary": "The US vacated Shamsi air base in Balochistan in December 2011 after a 15-day ultimatum from Islamabad following a NATO strike that killed 24 Pakistani soldiers.",
   "note": "Status: US use of Shamsi ended in December 2011 – historical. Confirms the former US use (drone servicing).",
   "bases": [
@@ -1641,6 +1648,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "site",
   "summary": "The OSM object of Creech AFB (aerodrome, Indian Springs, Nevada) lies about 27 km west of the dataset position. OSM coordinates: 36.58875, -115.67146.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1658,6 +1666,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "site",
   "summary": "The OSM object of the air base near Azraq lies about 17 km west of the dataset position. OSM coordinates: 31.82051, 36.77942.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1675,6 +1684,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "site",
   "summary": "The OSM military area of Camp Humphreys (Pyeongtaek) lies about 16 km south of the dataset position, which is near Osan. OSM coordinates: 36.96647, 127.01257.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1692,6 +1702,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "region",
   "summary": "The OSM military area of the Northern Training Area (Kunigami/Higashi), where the Jungle Warfare Training Center (Camp Gonsalves) lies, is about 15 km west of the dataset position. OSM coordinates: 26.71425, 128.25174.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1709,6 +1720,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "site",
   "summary": "The OSM military area of the Harold E. Holt station on North West Cape lies about 14 km west of the dataset position, which is in Exmouth Gulf. OSM coordinates: -21.81870, 114.16469.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1726,6 +1738,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "town",
   "summary": "Location of Puerto Castilla, Colón, Honduras; the dataset entry carries the coordinates of Soto Cano Air Base. OSM coordinates: 16.00960, -85.94942.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1743,6 +1756,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "town",
   "summary": "Location of Karlovac, Croatia; the dataset entry carries the coordinates of Zadar Gazenica, about 160 km away. OSM coordinates: 45.48925, 15.54863.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [
@@ -1760,6 +1774,7 @@
    "position"
   ],
   "verdict": "contradicts",
+  "precision": "town",
   "summary": "The record position lies in Libreville (Akanda, Estuaire), Gabon (country code GA). The source post is titled \"GH | Libreville\" (GH = Ghana) while its URL reads librevillegabon, so the host country code of the record does not match its location.",
   "note": "OpenStreetMap data (ODbL); confirms the location only, not the stationing nation.",
   "bases": [

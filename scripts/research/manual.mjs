@@ -9,6 +9,8 @@
  *   { "url": …, "title": …, "publisher": …, "type": …, "published": …, "accessed": …, "httpStatus": 200,
  *     "supports": ["presence","nation"], "verdict": "supports", "summary": "…",
  *     "bases": ["s-berga", …], "perBase": { "s-halmstad-…": { "verdict": "context", "note": "…" } } }
+ * Optional: "verdicts" per statement group where the verdict differs ({ "presence": "supports", "status": "contradicts" },
+ * read with verdictsOf in src/lib/verdicts.ts) and "precision" of a position source (site | reference | town | region).
  * Every entry is a page that was actually opened and read (scripts/research/inspect.mjs).
  */
 import path from 'node:path';

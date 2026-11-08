@@ -2,6 +2,20 @@
 
 Format angelehnt an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/).
 
+## [Unreleased] – Roadmap Paket B: Belegstatus (P1-2, P1-12)
+
+### Hinzugefügt
+- **Belegstufe je Standort** (`sourceLevel`): geprüft belegt, umstritten, nur Kontext, Quelle von visualbases.org, nur Wikipedia, ohne Beleg ([TAXONOMY.md](TAXONOMY.md), Abschnitt 11). Stand: 205 / 0 / 29 / 69 / 55 / 7. Mit `keySource` (Herausgeber, Datum, Abrufdatum der Quelle hinter „geprüft belegt“).
+- Profil: Belegstufe als Kennzeichen im Kopf (Link auf den Atlas-Filter) und im Abschnitt „Belege aus der Recherche“; unterhalb von „geprüft belegt“ ein Aufruf **„Beleg melden“** mit vorausgefüllter Standort-ID.
+- Neues Issue-Formular **„Beleg melden“** (`.github/ISSUE_TEMPLATE/beleg.yml`, Label `beleg`).
+- **„Belege gesucht“** auf „Mitmachen“: 91 Standorte mit nur Kontext, nur Wikipedia oder ohne Beleg, nach Ländern, je mit „Beleg melden“; Link auf den Atlas und Versand per E-Mail.
+- Atlas-Filter **„Belegstufe“** (`?evidence=`), CSV-Spalte `source_level`, Smoke-Test-Route.
+- **Urteil je Aussagegruppe** (`verdicts`) und **Genauigkeit von Positionsquellen** (`precision`) in `data/research/manual.json`/`sources.json`, gelesen über `verdictsOf()` (`src/lib/verdicts.ts`) in Auflösung, Recherche-Zusammenfassung, Validierung (`research-verdict`, `research-precision`) und Profil. Eingetragen: Shamsi (widerspricht dem Status, bestätigt die frühere US-Präsenz) und die Genauigkeit der 11 Positionsquellen (7 Anlage, 4 Ort, 1 Region).
+- Qualitätsbericht: Belegstufen mit Recherche und Zahl der gesuchten Belege; die bisherigen Quellenzahlen heißen jetzt „laut visualbases.org“ (Audit-Befund 4).
+
+### Behoben
+- **Zitierte Quellen gingen für alle Aussagegruppen verloren:** Eine Quelle, die eine Korrektur belegt, wurde bisher für den ganzen Standort ignoriert. Jetzt nur für die korrigierte Gruppe. Dadurch neu belegt: Präsenz und Nation von Storck Barracks, Warrior Preparation Center, Thumrait, Khmeimim, Tartus, Sarajevo und Shamsi; Einrichtung von Kleine Brogel; Lage von USAMMCE Pirmasens jetzt „umstritten“ (Quelle: Umzug nach Kaiserslautern), Präsenz von Rzeszów „nur Kontext“.
+
 ## [Unreleased] – Roadmap Paket A: Präsenzart (P1-1, P1-10)
 
 ### Hinzugefügt

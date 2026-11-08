@@ -1,0 +1,44 @@
+name: "🔎 Beleg melden"
+description: "Quelle für einen Standort nennen, der noch keinen geprüften Beleg hat"
+title: "Beleg: "
+labels: ["beleg"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke! Wir prüfen jede Quelle von Hand, bevor sie in der App als Beleg erscheint (`data/research/manual.json`).
+        Am besten sind amtliche Dokumente, Haushaltspläne, wissenschaftliche Arbeiten oder seriöse Presse.
+        Persönliche Daten bitte nicht eintragen – dieses Formular ist öffentlich.
+  - type: input
+    id: base
+    attributes:
+      label: Standort (ID oder Link)
+      description: Steht im Link des Profils, z. B. `…#/base/ramstein-air-base`
+      placeholder: "ramstein-air-base"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Link zur Quelle
+      placeholder: "https://…"
+    validations:
+      required: true
+  - type: checkboxes
+    id: supports
+    attributes:
+      label: Was belegt die Quelle?
+      options:
+        - label: Militärische Präsenz eines anderen Staates
+        - label: Stationierungsnation
+        - label: Lage
+        - label: Status (in Betrieb, geschlossen, geplant)
+        - label: Art der Präsenz (fest, Rotation, Zugangsrecht, Übung …)
+        - label: Einrichtungen oder Funktionen
+  - type: textarea
+    id: details
+    attributes:
+      label: Was steht in der Quelle?
+      description: Kurz zusammengefasst, gern mit Seitenzahl und Veröffentlichungsdatum. Widerspricht die Quelle einer Angabe, bitte auch das.
+    validations:
+      required: true

@@ -2,8 +2,8 @@ import type { Base, Filters, Story } from './types';
 import { ACTIVITY, LEGACY_FILTERS, SITE_TYPE } from './taxonomy';
 import { distanceKm } from './geo';
 
-export const EMPTY_FILTERS: Filters = { q: '', kinds: [], status: [], forms: [], nations: [], facilities: [], themes: [], activities: [], continents: [], countries: [] };
-export const FILTER_KEYS = ['kinds', 'status', 'forms', 'nations', 'facilities', 'themes', 'activities', 'continents', 'countries'] as const;
+export const EMPTY_FILTERS: Filters = { q: '', kinds: [], status: [], forms: [], evidence: [], nations: [], facilities: [], themes: [], activities: [], continents: [], countries: [] };
+export const FILTER_KEYS = ['kinds', 'status', 'forms', 'evidence', 'nations', 'facilities', 'themes', 'activities', 'continents', 'countries'] as const;
 export type FilterKey = (typeof FILTER_KEYS)[number];
 
 export { distanceKm };
@@ -49,6 +49,7 @@ export function facetValues(b: Base, key: FilterKey): string[] {
     case 'kinds': return [b.siteType];
     case 'status': return [b.status];
     case 'forms': return presenceForms(b);
+    case 'evidence': return [b.sourceLevel];
     case 'nations': return foreignNations(b);
     case 'facilities': return b.features;
     case 'themes': return b.themes;

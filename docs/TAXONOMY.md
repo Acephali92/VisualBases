@@ -1,6 +1,6 @@
 # Klassifikationsmodell (Taxonomie v2)
 
-Stand: 2026-11-08 (Präsenzart). Maßgeblich für IDs, Bezeichnungen und Definitionen ist [`src/lib/taxonomy.ts`](../src/lib/taxonomy.ts); dieses Dokument erklärt das Modell. Die Bestandsaufnahme des alten Modells steht in [taxonomy/AUDIT.md](taxonomy/AUDIT.md), die Migration in [taxonomy/MIGRATION-REPORT.md](taxonomy/MIGRATION-REPORT.md).
+Stand: 2026-11-08 (Präsenzart, Belegstufe). Maßgeblich für IDs, Bezeichnungen und Definitionen ist [`src/lib/taxonomy.ts`](../src/lib/taxonomy.ts); dieses Dokument erklärt das Modell. Die Bestandsaufnahme des alten Modells steht in [taxonomy/AUDIT.md](taxonomy/AUDIT.md), die Migration in [taxonomy/MIGRATION-REPORT.md](taxonomy/MIGRATION-REPORT.md).
 
 ## 1. Grundsätze
 
@@ -188,7 +188,20 @@ Stand 2026-11-07: 365 Einträge, davon 284 in der Rangliste (314 mit geschlossen
 `scripts/lib/resolve.mjs` führt die Schichten zusammen:
 - **`accepted`-Aussagen** werden angewandt; der vorherige Wert steht in `corrections[].from` und im Profil („Bisher laut visualbases.org: …“).
 - **`proposed`-Aussagen** ändern nichts; sie erscheinen als „Offener Prüfhinweis“ und setzen den Belegstatus der Aussagegruppe auf „umstritten“.
-- **Belegstatus je Aussagegruppe** (`evidence`: `presence`, `nation`, `position`, `status`, `facility`, `activity`): `corrected` (anhand einer Quelle korrigiert), `disputed` (geprüfte Quelle widerspricht oder Vorschlag offen), `confirmed` (mindestens eine von Hand geprüfte Quelle stützt), `context` (nur Kontext), sonst ungeprüft. Automatische, nicht geprüfte Treffer zählen nie. **Es gibt keine Vertrauenswerte** – nur nachvollziehbare Zustände.
+- **Urteil je Aussagegruppe:** Eine Quelle hat ein `verdict` für alle Gruppen in `supports`. Wo es sich zwischen den Gruppen unterscheidet, trägt sie zusätzlich `verdicts` (`{ "presence": "supports", "status": "contradicts" }`), das Vorrang hat. Positionsquellen können ihre Genauigkeit angeben (`precision`: `site`, `reference`, `town`, `region`). Gelesen wird beides nur über `verdictsOf()` (`src/lib/verdicts.ts`). Gepflegt wird es in `data/research/manual.json` (auch je Standort über `perBase`).
+- **Belegstatus je Aussagegruppe** (`evidence`: `presence`, `nation`, `position`, `status`, `facility`, `activity`): `corrected` (anhand einer Quelle korrigiert), `disputed` (geprüfte Quelle widerspricht oder Vorschlag offen), `confirmed` (mindestens eine von Hand geprüfte Quelle stützt), `context` (nur Kontext), sonst ungeprüft. Automatische, nicht geprüfte Treffer zählen nie. **Es gibt keine Vertrauenswerte** – nur nachvollziehbare Zustände. Eine Quelle, die eine Korrektur belegt, zählt für die korrigierte Gruppe nicht mehr (die Korrektur spricht dort für sie), für alle anderen Gruppen weiter.
+- **Belegstufe je Standort** (`sourceLevel`), aus dem Belegstatus von Präsenz und Nation und den Quellenlinks, in dieser Reihenfolge:
+
+  | ID | Deutsch | Bedingung |
+  |---|---|---|
+  | `disputed` | umstritten | Präsenz oder Nation `disputed` |
+  | `verified` | geprüft belegt | Präsenz oder Nation `confirmed` oder `corrected` |
+  | `context` | nur Kontext | von Hand geprüfte Quellen, aber keine belegt Präsenz oder Nation |
+  | `source-listed` | Quelle von visualbases.org | Quellenlink von visualbases.org, nicht geprüft |
+  | `wikipedia-only` | nur Wikipedia | nur ein Wikipedia-Artikel |
+  | `none` | ohne Beleg | keine Quelle |
+
+  `keySource` nennt Herausgeber, Datum und Abrufdatum der Quelle hinter „geprüft belegt“ (bei einer Korrektur die Quelle der Korrektur). **Belege gesucht** sind `context`, `wikipedia-only` und `none` (`SOURCE_WANTED`): Atlas-Filter `?evidence=`, Abschnitt auf „Mitmachen“ und Qualitätsbericht zählen dieselbe Menge. Position, Status oder Einrichtungen heben die Stufe nicht.
 - `lastChecked` = jüngstes Abrufdatum einer von Hand geprüften Quelle. `origin.lastmod` = letzte Änderung auf visualbases.org.
 - **Geografische Genauigkeit**: `positionPrecision` je Standort: `site` (auf der Anlage, z. B. OSM-Objekt der Basis), `reference` (Referenzpunkt aus dem Kartenlink der Quelle, Standard), `town` (Ortsmitte; auch von Hand geokodierte Einträge mit `approx`), `region` (Gebiet oder Insel). `town` und `region` gelten in der App als „Position ungefähr“ (`approx`). Dazu `positionCheck` (zweifelhaft, „Position ungeprüft“). Es wird keine Genauigkeit aus der Zoomstufe abgeleitet.
 

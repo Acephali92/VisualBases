@@ -7,9 +7,11 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | Kennzahl | Wert |
 |---|---|
 | Standorte | 365 |
-| mit eigener Quelle (außer Wikipedia) | 74 |
-| nur Wikipedia | 218 |
-| ohne jede Quelle | 73 |
+| **Belegstufe** (mit Recherche): geprüft belegt / umstritten / nur Kontext / Quelle von visualbases.org / nur Wikipedia / ohne Beleg | 205 / 0 / 29 / 69 / 55 / 7 |
+| Belege gesucht (nur Kontext, nur Wikipedia, ohne Beleg) | 91 |
+| laut visualbases.org: mit eigener Quelle (außer Wikipedia) | 74 |
+| laut visualbases.org: nur Wikipedia | 218 |
+| laut visualbases.org: ohne jede Quelle | 73 |
 | auf visualbases.org als „Review“ markiert | 21 |
 | angewandte Korrekturen (claims.json) / offene Vorschläge | 87 / 1 |
 | Einträge mit Prüfhinweis | 83 |

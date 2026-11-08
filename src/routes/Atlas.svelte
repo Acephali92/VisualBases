@@ -6,7 +6,7 @@
   import { matches, queryToFilters, filtersToQuery, nearest, countBy, facetCounts, facetValues, foreignNations, isAggregate, FILTER_KEYS, FORM_UNSPECIFIED, type FilterKey } from '../lib/data';
   import type { MapHandle } from '../lib/map';
   import { prefersReducedMotion, isNarrow } from '../lib/motion';
-  import { GROUP_COLOR, SITE_TYPES, STATUSES, PRESENCE_FORMS, FEATURES, FEATURE_KINDS, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, CONTINENTS, SITE_TYPE, colorGroup, flag, ids, type Dimension } from '../lib/taxonomy';
+  import { GROUP_COLOR, SITE_TYPES, STATUSES, PRESENCE_FORMS, SOURCE_LEVELS, FEATURES, FEATURE_KINDS, THEMES, ACTIVITY_GROUPS, ORGANISATIONS, CONTINENTS, SITE_TYPE, colorGroup, flag, ids, type Dimension } from '../lib/taxonomy';
   import { settings, setSatellite } from '../lib/settings.svelte';
   import type { Filters } from '../lib/types';
   import Legend from '../components/Legend.svelte';
@@ -73,6 +73,7 @@
     { title: t('filters.kind'), key: 'kinds', dim: 'siteType', items: ids(SITE_TYPES), dot: true, hint: t('filters.context') },
     { title: t('filters.status'), key: 'status', dim: 'status', items: ids(STATUSES) },
     { title: t('filters.form'), key: 'forms', dim: 'presenceForm', items: [...ids(PRESENCE_FORMS), FORM_UNSPECIFIED], label: (v) => (v === FORM_UNSPECIFIED ? t('filters.formUnspecified') : tl('presenceForm', v)), hint: t('filters.formHint') },
+    { title: t('filters.evidence'), key: 'evidence', dim: 'sourceLevel', items: ids(SOURCE_LEVELS), hint: t('filters.evidenceHint') },
     { title: t('filters.nation'), key: 'nations', items: nationOptions, label: (v) => `${flag(v)} ${countryName(v)}` },
     { title: t('filters.theme'), key: 'themes', dim: 'theme', items: ids(THEMES) },
     { title: t('filters.facility'), key: 'facilities', dim: 'feature', items: [], sub: FEATURE_KINDS.map((k) => ({ title: tl('featureKind', k.id), items: FEATURES.filter((f) => f.kind === k.id).map((f) => f.id) })) },

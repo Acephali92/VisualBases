@@ -366,6 +366,22 @@ export const EVIDENCE_STATES: Term<EvidenceState>[] = [
   { id: 'unverified', label: { de: 'ungeprüft', en: 'unverified' }, info: { de: 'Nur die Einordnung von visualbases.org, noch keine geprüfte Quelle.', en: 'Only the classification of visualbases.org, no checked source yet.' } },
 ];
 
+/**
+ * evidence level of a site as a whole (docs/TAXONOMY.md, "Belegstufe"), derived from the evidence on the
+ * presence and the stationing nation and from the source links; strongest first
+ */
+export type SourceLevel = 'verified' | 'disputed' | 'context' | 'source-listed' | 'wikipedia-only' | 'none';
+export const SOURCE_LEVELS: Term<SourceLevel>[] = [
+  { id: 'verified', label: { de: 'geprüft belegt', en: 'checked source' }, info: { de: 'Eine von Hand geprüfte Quelle stützt die militärische Präsenz oder die Stationierungsnation, oder sie wurde anhand einer Quelle korrigiert.', en: 'A manually checked source supports the military presence or the stationing nation, or it was corrected based on a source.' } },
+  { id: 'disputed', label: { de: 'umstritten', en: 'disputed' }, info: { de: 'Eine geprüfte Quelle widerspricht der Präsenz oder der Stationierungsnation, oder ein Korrekturvorschlag dazu ist offen.', en: 'A checked source contradicts the presence or the stationing nation, or a proposed correction is open.' } },
+  { id: 'context', label: { de: 'nur Kontext', en: 'context only' }, info: { de: 'Es gibt von Hand geprüfte Quellen, aber keine belegt die Präsenz.', en: 'There are manually checked sources, but none documents the presence.' } },
+  { id: 'source-listed', label: { de: 'Quelle von visualbases.org', en: 'source from visualbases.org' }, info: { de: 'visualbases.org nennt eine Quelle; sie ist noch nicht geprüft.', en: 'visualbases.org names a source; it has not been checked yet.' } },
+  { id: 'wikipedia-only', label: { de: 'nur Wikipedia', en: 'Wikipedia only' }, info: { de: 'Einzige Quelle ist ein Wikipedia-Artikel.', en: 'The only source is a Wikipedia article.' } },
+  { id: 'none', label: { de: 'ohne Beleg', en: 'no source' }, info: { de: 'Keine Quelle angegeben.', en: 'No source given.' } },
+];
+/** levels below which a site counts as "source wanted" (Mitmachen, Atlas) */
+export const SOURCE_WANTED: SourceLevel[] = ['context', 'wikipedia-only', 'none'];
+
 export const CLAIM_TYPES: Term<ClaimType>[] = [
   { id: 'presence', label: { de: 'Militärische Präsenz', en: 'Military presence' } },
   { id: 'nation', label: { de: 'Stationierungsnation', en: 'Stationing nation' } },
@@ -428,7 +444,7 @@ export const VOCABULARIES = {
   siteType: SITE_TYPES, status: STATUSES, organisation: ORGANISATIONS, feature: FEATURES, featureKind: FEATURE_KINDS,
   theme: THEMES, activity: ACTIVITIES, activityGroup: ACTIVITY_GROUPS, activityKind: ACTIVITY_KINDS, continent: CONTINENTS,
   usPosture: US_POSTURES, listing: LISTINGS, presenceRole: PRESENCE_ROLES, presenceVia: PRESENCE_VIA, presenceForm: PRESENCE_FORMS, presenceFormVia: PRESENCE_FORM_VIA, relation: RELATIONS,
-  relationType: RELATION_TYPES, evidence: EVIDENCE_STATES, claimType: CLAIM_TYPES, issue: ISSUES,
+  relationType: RELATION_TYPES, evidence: EVIDENCE_STATES, sourceLevel: SOURCE_LEVELS, claimType: CLAIM_TYPES, issue: ISSUES,
 } as const;
 export type Dimension = keyof typeof VOCABULARIES;
 

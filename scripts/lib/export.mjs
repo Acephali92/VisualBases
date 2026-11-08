@@ -54,6 +54,7 @@ export const CSV_COLUMNS = {
   period_from: (b) => b.period?.from,
   period_to: (b) => b.period?.to,
   evidence: (b) => Object.entries(b.evidence ?? {}).map(([k, v]) => `${k}:${v}`),
+  source_level: (b) => b.sourceLevel,
   corrections: (b) => (b.corrections ?? []).map((c) => c.id),
   issues: (b) => b.issues,
   wikipedia_en: (b) => b.wikipedia?.en,

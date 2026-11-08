@@ -11,9 +11,10 @@ import fs from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, ids } from '../src/lib/taxonomy.ts';
+import { VOCABULARIES, TERRITORY_SOVEREIGN, POSITION_CHECK_STATUSES, POSITION_ISSUES, POSITION_PRECISIONS, SOURCE_WANTED, ids } from '../src/lib/taxonomy.ts';
 import { distanceKm } from '../src/lib/geo.ts';
 import { resolveBases, CLAIM_FIELDS } from './lib/resolve.mjs';
+import { verdictsOf } from '../src/lib/verdicts.ts';
 import { SITE_TYPE_BY_CAT, FEATURE_BY_TERM, NATION_BY_TAG, CO_USER_BY_TAG, ORGANISATION_BY_TAG, THEME_BY_TAG, ACTIVITY_BY_TAG } from './import-visualbases.mjs';
 import { SOURCE_TYPES, CLAIMS, VERDICTS, readJson, tokens, placeOnlyName } from './research/lib.mjs';
 import { checkCountry, researchSignals, loadCountries } from './lib/geo-check.mjs';
@@ -318,6 +319,14 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
       if (!SOURCE_TYPES.includes(s.type)) err('research-type', `unknown type "${s.type}" in ${where}`);
       if (!VERDICTS.includes(s.verdict)) err('research-verdict', `unknown verdict "${s.verdict}" in ${where}`);
       for (const c of s.supports ?? []) if (!CLAIMS.includes(c)) err('research-claim', `unknown claim "${c}" in ${where}`);
+      // verdicts per statement group (src/lib/verdicts.ts) and the precision of a position source
+      if (s.verdicts !== undefined && (typeof s.verdicts !== 'object' || Array.isArray(s.verdicts) || !Object.keys(s.verdicts).length)) err('research-verdict', `"verdicts" must be an object group → verdict in ${where}`);
+      for (const [c, v] of Object.entries(s.verdicts ?? {})) {
+        if (!CLAIMS.includes(c)) err('research-claim', `unknown claim "${c}" in verdicts of ${where}`);
+        if (!VERDICTS.includes(v)) err('research-verdict', `unknown verdict "${v}" for ${c} in ${where}`);
+        if ((v === 'supports' || v === 'contradicts') && s.method !== 'manual') err('research-verdict', `"${v}" needs method "manual" (${where})`);
+      }
+      if (s.precision !== undefined && (!POSITION_PRECISIONS.includes(s.precision) || !verdictsOf(s).position)) err('research-precision', `precision must be one of ${POSITION_PRECISIONS.join(', ')} and needs a verdict on "position" (${where})`);
       if (!DATE.test(s.accessed ?? '')) err('research-date', `missing or invalid access date in ${where}`);
       if (s.published && !DATE.test(s.published)) err('research-date', `invalid publication date "${s.published}" in ${where}`);
       // only checked sources may say "supports"/"contradicts"
@@ -334,6 +343,9 @@ export function validate({ bases, media = {}, wikimedia = {}, news = [], movemen
 
   const stats = {
     bases: bases.length,
+    // evidence level per site including the research (SOURCE_LEVELS); the three counts below only look at visualbases.org
+    sourceLevels: Object.fromEntries([...V.sourceLevel].map((l) => [l, resolved.filter((b) => b.sourceLevel === l).length])),
+    sourceWanted: resolved.filter((b) => SOURCE_WANTED.includes(b.sourceLevel)).length,
     withSources: bases.filter((b) => (b.sources ?? []).length).length,
     wikipediaOnly: bases.filter((b) => !(b.sources ?? []).length && b.wikipedia).length,
     noSource: bases.filter((b) => !(b.sources ?? []).length && !b.wikipedia).length,
@@ -384,9 +396,13 @@ export function report({ errors, warnings, stats }, date = new Date().toISOStrin
     '| Kennzahl | Wert |',
     '|---|---|',
     `| Standorte | ${stats.bases} |`,
-    `| mit eigener Quelle (außer Wikipedia) | ${stats.withSources} |`,
-    `| nur Wikipedia | ${stats.wikipediaOnly} |`,
-    `| ohne jede Quelle | ${stats.noSource} |`,
+    ...(stats.sourceLevels ? [
+      `| **Belegstufe** (mit Recherche): geprüft belegt / umstritten / nur Kontext / Quelle von visualbases.org / nur Wikipedia / ohne Beleg | ${['verified', 'disputed', 'context', 'source-listed', 'wikipedia-only', 'none'].map((l) => stats.sourceLevels[l] ?? 0).join(' / ')} |`,
+      `| Belege gesucht (nur Kontext, nur Wikipedia, ohne Beleg) | ${stats.sourceWanted} |`,
+    ] : []),
+    `| laut visualbases.org: mit eigener Quelle (außer Wikipedia) | ${stats.withSources} |`,
+    `| laut visualbases.org: nur Wikipedia | ${stats.wikipediaOnly} |`,
+    `| laut visualbases.org: ohne jede Quelle | ${stats.noSource} |`,
     `| auf visualbases.org als „Review“ markiert | ${stats.underReview} |`,
     `| angewandte Korrekturen (claims.json) / offene Vorschläge | ${stats.corrections} / ${stats.proposals} |`,
     `| Einträge mit Prüfhinweis | ${stats.withIssues} |`,

@@ -1,7 +1,9 @@
 import type {
   Activity, ClaimType, EvidenceState, Feature, IssueCode, Listing, Organisation, PresenceForm, PresenceFormVia, PresenceRole, PresenceVia,
-  Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent, PositionCheckStatus, PositionIssue, PositionPrecision,
+  Relation, RelationType, SiteType, Status, Theme, UsPosture, Continent, PositionCheckStatus, PositionIssue, PositionPrecision, SourceLevel,
 } from './taxonomy';
+
+import type { Verdict } from './verdicts';
 
 export type { Activity, Feature, Organisation, SiteType, Status, Theme, Continent } from './taxonomy';
 
@@ -103,7 +105,11 @@ export interface Evidence {
   published?: string;
   accessed: string;
   supports: ClaimType[];
-  verdict: 'supports' | 'contradicts' | 'context' | 'unreviewed';
+  verdict: Verdict;
+  /** verdict per statement group where it differs from `verdict` (read with verdictsOf, src/lib/verdicts.ts) */
+  verdicts?: Partial<Record<ClaimType, Verdict>>;
+  /** how precisely a position source locates the facility */
+  precision?: PositionPrecision;
   method: 'manual' | 'auto';
   summary: string;
   note?: string;
@@ -152,6 +158,10 @@ export interface Base extends Omit<SourceRecord, 'images' | 'presences'> {
   research?: Evidence[];
   /** date of the most recent manual check of a source for this record */
   lastChecked?: string;
+  /** evidence level of the site as a whole (SOURCE_LEVELS) */
+  sourceLevel: SourceLevel;
+  /** the checked source behind "verified" (or "disputed") */
+  keySource?: { publisher: string; url: string; accessed: string; published?: string };
   issues?: IssueCode[];
   /** inverse relations (computed) */
   includes?: string[];
@@ -192,6 +202,8 @@ export interface Filters {
   status: Status[];
   /** presence forms (PRESENCE_FORMS) and "unspecified" */
   forms: string[];
+  /** evidence levels of the sites (SOURCE_LEVELS) */
+  evidence: SourceLevel[];
   nations: string[];
   /** features: infrastructure, civilian use, functions, arrangements */
   facilities: Feature[];

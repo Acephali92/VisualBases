@@ -23,7 +23,7 @@ Diese Punkte kann ich (Claude) nicht selbst erledigen, weil sie Rechte im GitHub
 
 - [ ] **Eigene Domain** (z. B. `visualbases.org` auf die neue App umstellen oder `app.visualbases.org`): DNS-Eintrag (CNAME auf `acephali92.github.io`) setzen und unter Settings → Pages die „Custom domain“ eintragen. Danach passe ich `SITE_URL` an (für Vorschaubilder und Sitemap).
 - [ ] **Partner informieren**, dass es eine einbettbare Karte gibt (Atlas → „Einbetten“): Stopp Ramstein, World BEYOND War, CND, No to NATO …
-- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur` (werden von den Issue-Formularen gesetzt).
+- [ ] **Labels im Repo anlegen**: `hinweis`, `korrektur`, `beleg` (werden von den Issue-Formularen gesetzt; `beleg` ist neu für „Beleg melden“).
 - [ ] **Branch-Schutz** für `main` aktivieren (Settings → Branches), damit Änderungen immer über Pull Requests mit grüner CI laufen.
 
 

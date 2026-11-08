@@ -16,5 +16,6 @@ export function resolved(p: Partial<Base> & Record<string, unknown> = {}): Base 
   r.presences = (p.presences ?? [{ nation: 'US', role: 'stationing', via: 'tag', relation: 'foreign' }]) as Base['presences'];
   r.scope = (p.scope ?? 'foreign') as Base['scope'];
   r.basis = p.basis ?? { siteType: 'source', status: 'implicit' };
+  r.sourceLevel = (p.sourceLevel ?? 'source-listed') as Base['sourceLevel'];
   return r;
 }

@@ -70,8 +70,14 @@ describe('filters', () => {
     expect(facetValues(base({ presences: [p('US', 'permanent', 'domestic')], scope: 'domestic' }), 'forms')).toEqual(['unspecified']);
     expect(facetValues(base({ presences: [] }), 'forms')).toEqual(['unspecified']);
   });
+  it('filters by the evidence level of the site', () => {
+    const b = base({ sourceLevel: 'wikipedia-only' });
+    expect(facetValues(b, 'evidence')).toEqual(['wikipedia-only']);
+    expect(matches(b, { ...EMPTY_FILTERS, evidence: ['none', 'wikipedia-only'] })).toBe(true);
+    expect(matches(b, { ...EMPTY_FILTERS, evidence: ['verified'] })).toBe(false);
+  });
   it('round-trips through the URL', () => {
-    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign-base', 'shared-base'] as Base['siteType'][], status: ['closed'] as Base['status'][], forms: ['access', 'unspecified'], themes: ['drone-warfare' as const], activities: ['nato'], countries: ['DE'] };
+    const f = { ...EMPTY_FILTERS, q: 'x y', kinds: ['foreign-base', 'shared-base'] as Base['siteType'][], status: ['closed'] as Base['status'][], forms: ['access', 'unspecified'], evidence: ['none', 'context'] as Base['sourceLevel'][], themes: ['drone-warfare' as const], activities: ['nato'], countries: ['DE'] };
     expect(queryToFilters(filtersToQuery(f))).toEqual(f);
     expect(filtersToQuery(EMPTY_FILTERS)).toBe('');
   });

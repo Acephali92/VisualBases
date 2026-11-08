@@ -2,7 +2,8 @@
   import { t, i18n, countryName } from '../lib/i18n.svelte';
   import { db } from '../lib/store.svelte';
   import { href } from '../lib/router.svelte';
-  import { flag } from '../lib/taxonomy';
+  import { flag, SOURCE_WANTED } from '../lib/taxonomy';
+  import { tl } from '../lib/i18n.svelte';
   import { issueUrl, mailUrl, REPO_URL } from '../lib/github';
   import type { Base } from '../lib/types';
 
@@ -27,6 +28,16 @@
   const congress = $derived(db.movement.congress);
   const date = (d: string) => new Date(d).toLocaleDateString(i18n.lang === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   const baseOf = (id?: string): Base | undefined => (id ? db.byId.get(id) : undefined);
+
+  /** records without a checked source for the presence, by host country – the same set as the atlas filter and the report */
+  const wanted = $derived(db.bases.filter((b) => (SOURCE_WANTED as string[]).includes(b.sourceLevel)));
+  const wantedByCountry = $derived.by(() => {
+    const m = new Map<string, Base[]>();
+    for (const b of wanted) { const cc = b.host.territory ?? b.host.country ?? ''; m.set(cc, [...(m.get(cc) ?? []), b]); }
+    return [...m.entries()]
+      .map(([cc, list]) => ({ cc, list: list.sort((x, y) => x.name.localeCompare(y.name)) }))
+      .sort((x, y) => y.list.length - x.list.length || countryName(x.cc).localeCompare(countryName(y.cc)));
+  });
 </script>
 
 <div class="act">
@@ -59,6 +70,30 @@
       </a>
     </div>
   </header>
+
+  <section class="container" aria-labelledby="wanted-h">
+    <h2 id="wanted-h">🔎 {t('act.wantedTitle')} <span class="n">{wanted.length}</span></h2>
+    <p class="sub">{t('act.wantedText')}</p>
+    <p class="wlinks">
+      <a class="btn btn-sm" href={href('/atlas', `evidence=${SOURCE_WANTED.join(',')}`)}>{t('act.wantedAtlas')}</a>
+      <a href={mailUrl(t('act.wantedMailSubject'), t('act.wantedMailBody'))}>✉ {t('act.wantedMail')}</a>
+    </p>
+    <div class="wanted">
+      {#each wantedByCountry as g (g.cc)}
+        <details>
+          <summary>{g.cc ? `${flag(g.cc)} ${countryName(g.cc)}` : '–'} <span class="n">{g.list.length}</span></summary>
+          <ul>
+            {#each g.list as b (b.id)}
+              <li>
+                <a href={href(`/base/${b.id}`)}>{b.name}</a>
+                <small>{tl('sourceLevel', b.sourceLevel)} · <a class="rep" href={issueUrl('beleg', { title: `Beleg: ${b.name}`, base: b.id })} target="_blank" rel="noopener">{t('base.reportSource')} ↗</a></small>
+              </li>
+            {/each}
+          </ul>
+        </details>
+      {/each}
+    </div>
+  </section>
 
   <section class="container" aria-labelledby="camp-h">
     <h2 id="camp-h">{t('act.localTitle')} <span class="n">{campaigns.length}</span></h2>
@@ -139,6 +174,14 @@
   .action .alt { display: flex; gap: 14px; margin-top: 6px; color: var(--text) !important; font-weight: 600; }
   .action .alt a { color: var(--text); }
 
+  .wlinks { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 14px 0 18px; }
+  .wanted { columns: 280px; column-gap: 8px; }
+  .wanted details { break-inside: avoid; margin-bottom: 8px; border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--bg-2); padding: 8px 12px; }
+  .wanted summary { cursor: pointer; font-weight: 600; }
+  .wanted ul { list-style: none; padding: 0; margin: 8px 0 2px; display: grid; gap: 8px; }
+  .wanted li { display: flex; flex-direction: column; gap: 1px; font-size: 0.92rem; }
+  .wanted li small { color: var(--muted); font-size: 0.78rem; }
+  .wanted .rep { font-size: 0.84rem; color: var(--text-2); }
   .camps { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
   .camp { display: flex; gap: 12px; padding: 10px; align-items: center; }
   .cimg { width: 76px; height: 76px; flex: none; border-radius: 8px; overflow: hidden; background: var(--bg-2); display: grid; place-items: center; }

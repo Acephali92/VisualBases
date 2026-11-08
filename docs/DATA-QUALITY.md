@@ -74,7 +74,7 @@ Veröffentlicht wird das als Feld `positionCheck` an jedem Standort (JSON, GeoJS
 | `related`, `relation-type`, `relation`, `news-base`, `movement-base` | Verweise zeigen auf existierende Standorte, Relationstyp ist `part-of`, `member-of` oder `related` |
 | `corrections` | Schema von `data/corrections.json` (siehe oben) |
 | `resolve` | die Datenschichten lassen sich zusammenführen |
-| `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung; `bsr-review.json` nennt die BSR-Zeile |
+| `research-base`, `research-url`, `research-type`, `research-verdict`, `research-claim`, `research-date`, `research-summary`, `research-review`, `research-precision` | `data/research/*.json`: bekannter Standort, gültige URL, Quellentyp und Aussagegruppe aus dem Vokabular, Zugriffsdatum; `supports`/`contradicts` nur bei manueller Prüfung (`method: "manual"`) mit Zusammenfassung, auch in `verdicts` (Urteil je Aussagegruppe, Objekt Gruppe → Urteil); `precision` nur aus dem Vokabular und nur mit einem Urteil zur Lage; `bsr-review.json` nennt die BSR-Zeile |
 | `image-file`, `media-file`, `media-credit` | Bilddateien vorhanden, Urheber angegeben |
 | `wikimedia-license`, `wikimedia-credit`, `wikimedia-page` | Wikimedia-Fotos nur mit freier Lizenz, Urheber und Dateiseite |
 | `source-url`, `news-url`, `date`, `news-date` | gültige URLs und Datumsformate (`YYYY`, `YYYY-MM`, `YYYY-MM-DD`) |

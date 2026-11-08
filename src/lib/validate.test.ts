@@ -100,6 +100,19 @@ describe('data validation', () => {
     expect(rules(validate({ bases: [base()], claims: [{ ...form, value: { nation: 'FR', form: 'access' } }], research }))).toContain('claim-apply');
   });
 
+  it('checks verdicts per statement group and the precision of position sources', () => {
+    const src = { base: 'a', url: 'https://example.org/s', type: 'media', verdict: 'contradicts', method: 'manual', summary: 's', supports: ['status'], accessed: '2026-11-07' };
+    const check = (s: object) => rules(validate({ bases: [base()], research: { sources: [{ ...src, ...s }] } }));
+    expect(check({ verdicts: { presence: 'supports' } })).not.toContain('research-verdict');
+    expect(check({ verdicts: { presence: 'maybe' } })).toContain('research-verdict');
+    expect(check({ verdicts: { weather: 'supports' } })).toContain('research-claim');
+    expect(check({ verdicts: {} })).toContain('research-verdict');
+    expect(check({ method: 'auto', verdict: 'unreviewed', verdicts: { presence: 'supports' } })).toContain('research-verdict');
+    expect(check({ supports: ['position'], precision: 'site' })).not.toContain('research-precision');
+    expect(check({ precision: 'site' })).toContain('research-precision');
+    expect(check({ supports: ['position'], precision: 'street' })).toContain('research-precision');
+  });
+
   it('checks references, image files and licences', () => {
     const r = validate({
       bases: [base({ relations: [{ type: 'member-of', id: 'nope' }], images: [{ url: 'u1', caption: '' }] })],
