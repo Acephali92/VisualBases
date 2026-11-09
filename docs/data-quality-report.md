@@ -1,6 +1,6 @@
 # Datenqualitätsbericht
 
-Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
+Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-09. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
 
 ## Überblick
 
@@ -22,7 +22,7 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 4 / 353 / 7 / 1 |
 | Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
 | Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 0 / 0 |
-| Bilder / davon mit Lizenzangabe | 164 / 19 |
+| Bilder / davon mit Lizenzangabe | 274 / 129 |
 | Meldungen | 78 |
 | **Fehler** | **0** |
 | Warnungen | 431 |
