@@ -1,6 +1,6 @@
 # Datenqualitätsbericht
 
-Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
+Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-16. Regeln: [DATA-QUALITY.md](DATA-QUALITY.md).
 
 ## Überblick
 
@@ -22,8 +22,8 @@ Automatisch erzeugt von `scripts/validate-data.mjs` am 2026-11-08. Regeln: [DATA
 | Positionsgenauigkeit: Anlage / Referenzpunkt der Quelle / Ort / Region | 4 / 353 / 7 / 1 |
 | Korrekturen, deren Quellwert sich inzwischen geändert hat | 0 |
 | Position redaktionell bestätigt (corrections.json) / damit quittierte Geo-Warnungen | 0 / 0 |
-| Bilder / davon mit Lizenzangabe | 164 / 19 |
-| Meldungen | 78 |
+| Bilder / davon mit Lizenzangabe | 274 / 129 |
+| Meldungen | 79 |
 | **Fehler** | **0** |
 | Warnungen | 431 |
 
@@ -106,8 +106,8 @@ Keine.
 - `eichbuck-illesheim`: no source at all
 - `mccully-barracks-wackernheim`: no source at all
 - `kaiserslautern-army-depot`: no source at all
-- `de-kl-warrior-preparation-center`: no source at all
 - `warrior-preparation-center-einsiedlerhof`: no source at all
+- `de-kl-warrior-preparation-center`: no source at all
 - `kapaun-air-station-kaiserslautern`: no source at all
 - `daenner-kaserne`: no source at all
 - `kleber-kaserne-kaiserslautern`: no source at all
@@ -305,7 +305,7 @@ Keine.
 
 ### `duplicate-position-reviewed` (1)
 
-- `de-kl-warrior-preparation-center`: same position as warrior-preparation-center-einsiedlerhof (194 m) – de-kl-warrior-preparation-center is marked as duplicate entry in claims.json
+- `warrior-preparation-center-einsiedlerhof`: same position as de-kl-warrior-preparation-center (194 m) – de-kl-warrior-preparation-center is marked as duplicate entry in claims.json
 
 ### `duplicate-name-near` (1)
 

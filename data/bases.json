@@ -5171,62 +5171,6 @@
   }
  },
  {
-  "id": "de-kl-warrior-preparation-center",
-  "name": "Kaiserslautern-Einsiedlehof: Warrior Preparation Center",
-  "host": {
-   "country": "DE"
-  },
-  "lat": 49.42907,
-  "lon": 7.65706,
-  "zoom": 19,
-  "continent": "europe",
-  "region": "germany",
-  "subregion": "Kaiserslautern",
-  "siteType": "special-facility",
-  "status": "active",
-  "presences": [
-   {
-    "nation": "US",
-    "role": "stationing",
-    "via": "tag"
-   }
-  ],
-  "organisations": [],
-  "features": [
-   "depot"
-  ],
-  "themes": [],
-  "activities": [],
-  "listedIn": [],
-  "sources": [],
-  "notes": [
-   "Belongs to: Ramstein Air Base"
-  ],
-  "origin": {
-   "url": "https://visualbases.org/de-kl-warrior-preparation-center/",
-   "lastmod": "2026-10-18",
-   "terms": {
-    "categories": [
-     "extra-facility",
-     "depot",
-     "europe",
-     "de"
-    ],
-    "tags": [
-     "us",
-     "de-rlp",
-     "reg_de-rlp-kl"
-    ]
-   }
-  },
-  "relations": [
-   {
-    "type": "part-of",
-    "id": "ramstein-air-base"
-   }
-  ]
- },
- {
   "id": "warrior-preparation-center-einsiedlerhof",
   "name": "Kaiserslautern-Einsiedlerhof: Warrior Preparation Center",
   "host": {
@@ -5275,6 +5219,62 @@
     ]
    }
   }
+ },
+ {
+  "id": "de-kl-warrior-preparation-center",
+  "name": "Kaiserslautern-Einsiedlerhof: Warrior Preparation Center",
+  "host": {
+   "country": "DE"
+  },
+  "lat": 49.42907,
+  "lon": 7.65706,
+  "zoom": 19,
+  "continent": "europe",
+  "region": "germany",
+  "subregion": "Kaiserslautern",
+  "siteType": "special-facility",
+  "status": "active",
+  "presences": [
+   {
+    "nation": "US",
+    "role": "stationing",
+    "via": "tag"
+   }
+  ],
+  "organisations": [],
+  "features": [
+   "depot"
+  ],
+  "themes": [],
+  "activities": [],
+  "listedIn": [],
+  "sources": [],
+  "notes": [
+   "Belongs to: Ramstein Air Base"
+  ],
+  "origin": {
+   "url": "https://visualbases.org/de-kl-warrior-preparation-center/",
+   "lastmod": "2026-11-10",
+   "terms": {
+    "categories": [
+     "extra-facility",
+     "depot",
+     "europe",
+     "de"
+    ],
+    "tags": [
+     "us",
+     "de-rlp",
+     "reg_de-rlp-kl"
+    ]
+   }
+  },
+  "relations": [
+   {
+    "type": "part-of",
+    "id": "ramstein-air-base"
+   }
+  ]
  },
  {
   "id": "kapaun-air-station-kaiserslautern",
